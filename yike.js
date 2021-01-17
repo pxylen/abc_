@@ -11,6 +11,8 @@ https://api.yikeapp.com url script-request-body https://raw.githubusercontent.co
 
 0,30 0-12 * * * https://raw.githubusercontent.com/age174/-/main/yike.js, tag=一刻视频, enabled=true
 
+hostname = api.yikeapp.com
+
 */
 
 
