@@ -4,7 +4,7 @@
 
 [rewrite_local]
 #一刻视频
-https://api.yikeapp.com - script-request-body yike.js
+https://api.yikeapp.com - script-request-body https://raw.githubusercontent.com/age174/-/main/yike.js
 [task_local]
 0,30 0-12 * * * yike.js, tag=一刻, 
 
