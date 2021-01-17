@@ -1,12 +1,15 @@
 /*
-打开'我的'获取Cookie
+打开'我的'获取Cookie，获取不到切换一下页面。
 邀请码：12642334
 
 [rewrite_local]
 #一刻视频
-https://api.yikeapp.com - script-request-body https://raw.githubusercontent.com/age174/-/main/yike.js
+
+https://api.yikeapp.com url script-request-body https://raw.githubusercontent.com/age174/-/main/yike.js
+
 [task_local]
-0,30 0-12 * * * yike.js, tag=一刻, 
+
+0,30 0-12 * * * https://raw.githubusercontent.com/age174/-/main/yike.js, tag=一刻视频, enabled=true
 
 */
 
@@ -35,7 +38,7 @@ if (typeof $request !== 'undefined') {
    }
 } else {
 !(async() => {
-
+//以下是控制运行时间
    if (now.getHours() <= 12){
       $.msg($.name, '自動閱讀开始🎉🎉🎉')
    }else {
