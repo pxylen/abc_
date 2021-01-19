@@ -1,0 +1,14 @@
+
+// 汽车之家极速版重复写😂，QX订阅时请开启使用解析器
+
+# 注意，此处设置MitM的hostname为*，解析所有请求主机名，获取完cookie后最好禁用下此配置；若复写无效果，建议手动添加hostname，而不是用订阅中的hostname
+hostname = *
+
+[Script]
+# 汽车极速版获取用户名
+http-request ^https?://(mobile\.app|pay|openapi)\.autohome\.com\.cn/.+/GetUserInfo\.ashx script-path=https://raw.githubusercontent.com/ztxtop/x/main/qczjspeed.cookie.js, tag=汽车极速版获取用户名
+
+# 汽车极速版获取其余ck
+http-request ^https?://(mobile\.app|pay|openapi)\.autohome\.com\.cn/.+/(init/coin|init/task|init/activity|invite/addRewardLog|mainpagecoin/addCoin|dealers/reportAss|coin/cointowallet) script-path=https://raw.githubusercontent.com/ztxtop/x/main/qczjspeed.cookie.js, requires-body=1, tag=汽车极速版获取其余ck
+
+
