@@ -1,0 +1,144 @@
+{
+  "id": "ztxtop.script.sub",
+  "name": "ztxtop 自用脚本订阅",
+  "author": "@ztxtop",
+  "icon": "https://avatars3.githubusercontent.com/u/52337422?s=460&u=0aa6057c2af304d742d20b3b865c34f2902ad5c1&v=4",
+  "repo": "https://github.com/ztxtop",
+  "apps": [{
+      "id": "youthNeRead",
+      "name": "中青阅读",
+      "keys": ["youthheader_zq", "read_zq", "red_zq", "readtime_zq", "youthheader_zq2", "read_zq2", "red_zq2", "readtime_zq2", "youthheader_zq3", "read_zq3", "red_zq3", "readtime_zq3", "youthheader_zq4", "read_zq4", "red_zq4", "readtime_zq4"],
+      "author": "@ztxtop",
+      "settings": [{
+        "id": "readMode",
+        "name": "执行模式（点击查看设置说明）",
+        "val": "0",
+        "type": "text",
+        "desc": "0-循环阅读：任务执行时间需大于21秒\n1-去重排序：根据响应数据判断重复并将视频往前排，依此优化阅读效率（可用半角逗号间隔该模式运行的账号，如账号一跟账号三才执行去重排序：1,1,3）\n3-备份数据：根据指定的备份格式，将要备份的数据以log的形式打印出来\n4-清空所有中青数据"
+      }, {
+        "id": "zqReadScheme",
+        "name": "阅读数据备份输出格式",
+        "val": "DF",
+        "type": "radios",
+        "items": [{
+            "key": "QX",
+            "label": "QX持久化数据代码"
+          },
+          {
+            "key": "LS",
+            "label": "Loon&Surge持久化数据代码"
+          },
+          {
+            "key": "GA",
+            "label": "Github Actions使用的以&分隔数据"
+          },
+          {
+            "key": "DF",
+            "label": "Default"
+          }
+        ]
+      }, {
+        "id": "zqSuffix",
+        "name": "抓包账号",
+        "val": "1",
+        "type": "number",
+        "desc": "指定抓取的数据包用于哪个账号，设置数值如：1、2、3..."
+      }, {
+        "id": "zqCount",
+        "name": "阅读账号数",
+        "val": "1",
+        "type": "number",
+        "desc": "设置阅读任务执行几个账号，根据抓包账号最大值设置即可将执行所有阅读账号任务"
+      }, {
+        "id": "read_count",
+        "name": "账号1总阅读数",
+        "val": "0",
+        "type": "number",
+        "desc": "账号1阅读数据总行数"
+      }, {
+        "id": "read_count2",
+        "name": "账号2总阅读数",
+        "val": "0",
+        "type": "number",
+        "desc": "账号2阅读数据总行数"
+      }, {
+        "id": "read_count3",
+        "name": "账号3总阅读数",
+        "val": "0",
+        "type": "number",
+        "desc": "账号3阅读数据总行数"
+      }, {
+        "id": "read_count4",
+        "name": "账号4总阅读数",
+        "val": "0",
+        "type": "number",
+        "desc": "账号4阅读数据总行数"
+      }],
+      "repo": "https://github.com/ztxtop/x/blob/main/zqread.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/youth.png", "https://raw.githubusercontent.com/Orz-3/task/master/youth.png"],
+      "script": "https://raw.githubusercontent.com/ztxtop/x/main/youth.js",
+      "scripts": [{
+        "name": "自动阅读",
+        "script": "https://raw.githubusercontent.com/ztxtop/x/main/zqread.js"
+      }]
+    },
+    {
+      "id": "youthBanner",
+      "name": "中青看看赚",
+      "keys": ["youth_banner", "youth_android_readtime", "youth_android_reward", "youth_android_newtask", "youth_banner2", "youth_android_readtime2", "youth_android_reward2", "youth_android_newtask2", "youth_banner3", "youth_android_readtime3", "youth_android_reward3", "youth_android_newtask3", "youth_banner4", "youth_android_readtime4", "youth_android_reward4", "youth_android_newtask4"],
+      "author": "@ztxtop",
+      "settings": [{
+        "id": "zqSuffix",
+        "name": "抓包账号",
+        "val": "1",
+        "type": "number",
+        "desc": "指定抓取的数据包用于哪个账号，设置数值如：1、2、3..."
+      }, {
+        "id": "zqCount",
+        "name": "阅读账号数",
+        "val": "1",
+        "type": "number",
+        "desc": "设置阅读任务执行几个账号，根据抓包账号最大值设置即可将执行所有阅读账号任务"
+      }, {
+        "id": "delErrorData",
+        "name": "移除当日失败两次+的任务数据",
+        "val": "0",
+        "type": "radios",
+        "items": [{
+            "key": "0",
+            "label": "不移除"
+          },
+          {
+            "key": "1",
+            "label": "移除"
+          }
+        ]
+      }],
+      "repo": "https://github.com/ztxtop/x/blob/main/youth_banner.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/youth.png", "https://raw.githubusercontent.com/Orz-3/task/master/youth.png"],
+      "script": "https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js"
+    },
+    {
+      "id": "kuaishou",
+      "name": "快手极速版",
+      "author": "@sunert",
+      "keys": ["cookie_ks", "cookies_ks"],
+      "descs_html": [
+        "多账号ck脚本地址【<a href=\"https://raw.githubusercontent.com/ztxtop/x/main/NE.cookie.js\">Cookie采集器</a>】",
+        "注：NE工具中直接执行脚本将移除重复的Cookie"
+      ],
+      "settings": [{
+        "id": "cookies_ks",
+        "name": "CK 列表",
+        "val": "",
+        "type": "textarea",
+        "autoGrow": true,
+        "rows": 8,
+        "desc": "CK 列表 (JSON 格式)"
+      }],
+      "repo": "https://gitee.com/Sunert/Scripts/blob/master/Task/kuaishou.js",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/kuaishou.png", "https://raw.githubusercontent.com/Orz-3/task/master/kuaishou.png"],
+      "script": "https://raw.githubusercontent.com/ztxtop/x/main/kuaishou.js"
+    }
+  ]
+}
