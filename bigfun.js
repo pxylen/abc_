@@ -24,7 +24,9 @@ TG电报群: https://t.me/hahaha8028
 #loon
 ^https:\/\/api\.bigfun\.cn\/webview\/iphone? script-path=https://raw.githubusercontent.com/age174/-/main/bigfun.js, requires-body=true, timeout=10, tag=bigfun签到
 
-#surgebigfun签到 = type=http-request,pattern=^https:\/\/api\.bigfun\.cn\/webview\/iphone?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/bigfun.js,script-update-interval=0
+#surge
+
+bigfun = type=http-response,pattern=https:\/\/api\.bigfun\.cn\/webview\/iphone?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/bigfun.js,script-update-interval=0
 
 [MITM]
 hostname = api.bigfun.cn
