@@ -220,7 +220,7 @@ let url = {
          //$.log(dkdhd.match(/headerinfo":"\w+/))
     const result = JSON.parse(data)
         if(result.status_code == 200){
-        console.log('提现回执:成功🌝 '+result.data.award)
+        console.log('提现回执:成功🌝 '+result.message)
 }
 if(result.status_code == 10020){
         console.log('提现回执:失败🚫 '+result.message)}
