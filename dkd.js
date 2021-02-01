@@ -30,8 +30,7 @@ TG电报群: https://t.me/hahaha8028
 
 #surge
 
-多看点 = type=http-response,pattern=^http:\/\/dkd-api\.dysdk\.com\/user\/index,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/dkd.js,script-update-interval=0
-
+多看点 = type=http-request,pattern=^http:\/\/dkd-api\.dysdk\.com\/user\/index,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/dkd.js,script-update-interval=0
 [MITM]
 hostname = dkd-api.dysdk.com
 */
