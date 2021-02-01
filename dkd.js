@@ -208,6 +208,26 @@ if(result.status_code == 10020){
       },timeout)
     })
   }
+  
+  //多看点
+  function dkdyq(timeout = 0) {
+    return new Promise((resolve) => {
+  let url = {
+          url : 'http://dkd-api.dysdk.com/inviter/bind',
+          headers : JSON.parse($.getdata('dkdhd')),
+          body : 'code=13152063&'+dkdbody,}
+        $.post(url, async (err, resp, data) => {
+          try {
+             //$.log(dkdbody)
+      const result = JSON.parse(data)
+          } catch (e) {
+            //$.logErr(e, resp);
+          } finally {
+            resolve()
+          }
+      },timeout)
+    })
+  }
 //多看点提现
 function dkdtx(timeout = 0) {
   return new Promise((resolve) => {
@@ -220,7 +240,7 @@ let url = {
          //$.log(dkdhd.match(/headerinfo":"\w+/))
     const result = JSON.parse(data)
         if(result.status_code == 200){
-        console.log('提现回执:成功🌝 '+result.message)
+        console.log('提现回执:成功🌝 '+result.data.award)
 }
 if(result.status_code == 10020){
         console.log('提现回执:失败🚫 '+result.message)}
@@ -259,6 +279,7 @@ if(result.status_code == 10020){
 
 }
 //await dkdtx()  提现暂时无法使用
+await dkdyq()
 await dkdgg()
 await dkdbx()
 await dkdbxfb()
