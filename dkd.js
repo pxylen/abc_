@@ -19,7 +19,7 @@ TG电报群: https://t.me/hahaha8028
 圈X配置如下，其他软件自行测试
 [task_local]
 #多看点
-*/10 * * * * https://raw.githubusercontent.com/age174/-/main/dkd.js, tag=多看点, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
+10 * * * * https://raw.githubusercontent.com/age174/-/main/dkd.js, tag=多看点, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
 
 [rewrite_local]
 #获取多看点Cookie
