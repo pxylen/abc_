@@ -303,7 +303,7 @@ let url = {
 if(result.status_code == 10020){
         console.log('签到回执:失败🚫 '+result.message)
 
-}$.msg($.name,"",'多看点开始🖨')
+}
 await dkdgg()
 await dkdbx()
 await dkdbxfb()
