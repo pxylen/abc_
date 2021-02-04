@@ -65,13 +65,11 @@ $.begin = indexLast ? parseInt(indexLast,10) : 1;
   if (!ReadArr[0]) {
     console.log($.name, '【提示】请把抓包的请求体填入Github 的 Secrets 中，请以&隔开')
     return;
-  }if(ReadArr.length < 5){
-$.msg("", "", '请先刷视频获取至少五个body再运行！')
-$.done()
+  
 } 
   console.log(`多body数：${ReadArr.length}个\n上次执行到第${$.begin}个\n预计执行${((ReadArr.length - $.begin) / 120).toFixed(2)}个小时🍺`)
   $.index = 0;
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 2; i++) {
     if (ReadArr[i]) {
       articlebody = ReadArr[i];
       $.index = $.index + 1;
@@ -98,7 +96,7 @@ function AutoRead() {
     $.post(url, async (error, response, data) => {
       $.begin=$.begin+1;
       let res=$.begin%ReadArr.length
-      $.setdata(res+"", 'kd_body_index');
+      $.setdata(res+"", 'dkdvd_body_index');
       let readres = JSON.parse(data);
       if (readres.status_code == 200) {
         console.log(`\n本次自动刷视频获得${readres.data.award}个金币，30秒后进行下次自动刷视频🌝\n`);
