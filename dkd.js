@@ -294,6 +294,28 @@ if(result.status_code == 10020){
       },timeout)
     })
   }
+
+
+  function dkdz(timeout = 0) {
+    return new Promise((resolve) => {
+  let url = {
+          url : 'http://dkd-api.dysdk.com/comment/video_like?'+dkdbody+'&type=1&video_id=8263',
+          headers : JSON.parse($.getdata('dkdhd')),
+          body : '',}
+        $.post(url, async (err, resp, data) => {
+          try {
+            
+      const result = JSON.parse(data)
+     
+          } catch (e) {
+           
+
+          } finally {
+            resolve()
+          }
+      },timeout)
+    })
+  }
 //多看点提现
 function dkdtx(timeout = 0) {
   return new Promise((resolve) => {
@@ -353,7 +375,7 @@ await dkdcj()
 await dkdfx()
 await dkdxs()
 await dkdxx()
-
+await dkdz()
 await dkdyq()
 
         } catch (e) {
