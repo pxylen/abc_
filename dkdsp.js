@@ -4,7 +4,7 @@
 脚本说明：多看点自动刷视频
 本脚本为多看点自动刷视频
 请获取多个body再运行脚本
-最少获取五个body，根据群友测试，可以领取100次金币
+最少获取五个body，根据群友测试，可以领取100次金币左右
 一个body可以执行两次，50个body可能足够了，自行测试吧
 cron可设置五分钟一次，脚本每次执行运行五个body并执行一次视频红包领取。
 
@@ -20,9 +20,8 @@ TG电报群: https://t.me/hahaha8028
 #多看点
 10 * * * * https://raw.githubusercontent.com/age174/-/main/dkd.js, tag=多看点, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
 
-[task_local]
 #多看点视频
-10 * * * * https://raw.githubusercontent.com/age174/-/main/dkdsp.js, tag=多看点视频, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
+5 * * * * https://raw.githubusercontent.com/age174/-/main/dkdsp.js, tag=多看点视频, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
 
 [rewrite_local]
 
