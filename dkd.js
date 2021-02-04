@@ -366,7 +366,7 @@ let url = {
 if(result.status_code == 10020){
         console.log('签到回执:失败🚫 '+result.message)
 
-}await dkdtx() 
+}
 await dkdgg()
 await dkdbx()
 await dkdbxfb()
@@ -377,6 +377,7 @@ await dkdxs()
 await dkdxx()
 await dkdz()
 await dkdyq()
+await dkdtx() 
 
         } catch (e) {
           //$.logErr(e, resp);
