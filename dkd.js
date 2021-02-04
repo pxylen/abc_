@@ -1,6 +1,6 @@
 /*
 软件名称:多看点 商店搜索下载
-更新时间：2021-02-01 @肥皂
+更新时间：2021-02-04 @肥皂
 脚本说明：多看点自动任务
 目前包含签到，开宝箱，开双倍宝箱
 看广告，任务列表奖励领取，自动提现
@@ -16,12 +16,16 @@ TG电报群: https://t.me/hahaha8028
 
 2021.02.01 加入自动提现功能
 获取方式，进入提现页面，选择需要自动提现的面额点击提现获取
-
+2021.02.04 修复转盘抽奖提示刷新的问题，加入赚钱抽奖自动刷新并显示抽奖剩余次数
 多看点自动任务
 圈X配置如下，其他软件自行测试
 [task_local]
 #多看点
 10 * * * * https://raw.githubusercontent.com/age174/-/main/dkd.js, tag=多看点, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
+
+[task_local]
+#多看点视频
+10 * * * * https://raw.githubusercontent.com/age174/-/main/dkdsp.js, tag=多看点视频, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
 
 [rewrite_local]
 #获取多看点Cookie
@@ -30,17 +34,30 @@ TG电报群: https://t.me/hahaha8028
 #获取多看点提现Cookie
 ^http:\/\/dkd-api\.dysdk\.com\/money\/withdraw_do? url script-request-body https://raw.githubusercontent.com/age174/-/main/dkd.js
 
+#获取多看点视频body
+^http://dkd-api.dysdk.com/android_video/getaward url script-request-body https://raw.githubusercontent.com/age174/-/main/dkdbody.js
+
 #loon
 ^http:\/\/dkd-api\.dysdk\.com\/user\/index script-path=https://raw.githubusercontent.com/age174/-/main/dkd.js, requires-body=true, timeout=10, tag=多看点任务cookie
 
 #获取多看点提现Cookie
 ^http:\/\/dkd-api\.dysdk\.com\/money\/withdraw_do? script-path=https://raw.githubusercontent.com/age174/-/main/dkd.js, requires-body=true, timeout=10, tag=多看点提现cookie
+
+#获取多看点视频body
+^http://dkd-api.dysdk.com/android_video/getaward script-path=https://raw.githubusercontent.com/age174/-/main/dkd.js, requires-body=true, timeout=10, tag=多看点视频body
+
+
 #surge
 
 多看点任务cookie = type=http-request,pattern=^http:\/\/dkd-api\.dysdk\.com\/user\/index,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/dkd.js,script-update-interval=0
 
 #获取多看点提现Cookie
 多看点提现cookie = type=http-request,pattern=^http:\/\/dkd-api\.dysdk\.com\/money\/withdraw_do?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/dkd.js,script-update-interval=0
+
+多看点视频body = type=^http://dkd-api.dysdk.com/android_video/getaward,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/dkdbody.js,script-update-interval=0
+
+
+
 [MITM]
 hostname = dkd-api.dysdk.com
 */
@@ -233,7 +250,31 @@ if(result.status_code == 10020){
       },timeout)
     })
   }
-  
+  //多看点刷新转盘
+function dkdsxzp(timeout = 0) {
+  return new Promise((resolve) => {
+let sx = dkdtxhd.match(/headerInfo":"\w+/)+''
+let url = {
+        url : 'http://dkd-api.dysdk.com/lotto/index?'+dkdbody+'&headerInfo='+sx.replace('headerInfo":"',""),
+        headers : JSON.parse($.getdata('dkdtxhd')),
+        body : dkdtxbody,}
+      $.post(url, async (err, resp, data) => {
+        try {
+         //$.log(str.replace('headerInfo":"',""))
+    const result = JSON.parse(data)
+        if(result.status_code == 200){
+        console.log('开始刷新转抽奖页面，回执:成功🌝 剩余抽奖次数: '+result.data.times)
+}
+if(result.status_code == 10020){
+        console.log('开始刷新抽奖页面，回执:失败🚫 '+result.message)}
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
   //多看点
   function dkdyq(timeout = 0) {
     return new Promise((resolve) => {
@@ -303,15 +344,16 @@ let url = {
 if(result.status_code == 10020){
         console.log('签到回执:失败🚫 '+result.message)
 
-}
+}await dkdtx() 
 await dkdgg()
 await dkdbx()
 await dkdbxfb()
+await dkdsxzp()
 await dkdcj()
 await dkdfx()
 await dkdxs()
 await dkdxx()
-await dkdtx() 
+
 await dkdyq()
 
         } catch (e) {
