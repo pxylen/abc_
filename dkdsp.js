@@ -31,7 +31,7 @@ TG电报群: https://t.me/hahaha8028
 #loon
 
 #获取多看点视频body
-^http://dkd-api.dysdk.com/android_video/getaward script-path=https://raw.githubusercontent.com/age174/-/main/dkd.js, requires-body=true, timeout=10, tag=多看点视频body
+^http://dkd-api.dysdk.com/android_video/getaward script-path=https://raw.githubusercontent.com/age174/-/main/dkdbody.js, requires-body=true, timeout=10, tag=多看点视频body
 
 
 #surge
