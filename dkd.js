@@ -16,16 +16,17 @@ TG电报群: https://t.me/hahaha8028
 
 2021.02.01 加入自动提现功能
 获取方式，进入提现页面，选择需要自动提现的面额点击提现获取
-2021.02.04 修复转盘抽奖提示刷新的问题，加入赚钱抽奖自动刷新并显示抽奖剩余次数
+2021.02.04 修复转盘抽奖提示刷新的问题，加入赚钱抽奖自动刷新并显示抽奖剩余次数，加入观看十分钟视频奖励领取
+
 多看点自动任务
 圈X配置如下，其他软件自行测试
 [task_local]
 #多看点
-10 * * * * https://raw.githubusercontent.com/age174/-/main/dkd.js, tag=多看点, img-url= https://gitee.com/ydj0602/hym/raw/img/DKD.PNG, enabled=true
+10 * * * * https://raw.githubusercontent.com/age174/-/main/dkd.js, tag=多看点, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
 
 [task_local]
 #多看点视频
-5 9,16,21 * * * https://raw.githubusercontent.com/age174/-/main/dkdsp.js, tag=多看点视频, img-url= https://gitee.com/ydj0602/hym/raw/img/DKD.PNG, enabled=true
+10 * * * * https://raw.githubusercontent.com/age174/-/main/dkdsp.js, tag=多看点视频, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
 
 [rewrite_local]
 #获取多看点Cookie
@@ -250,6 +251,32 @@ if(result.status_code == 10020){
       },timeout)
     })
   }
+
+  //多看点视频时长
+  function dkdsc(timeout = 0) {
+    return new Promise((resolve) => {
+  let url = {
+          url : 'http://dkd-api.dysdk.com/task/get_ad_award',
+          headers : JSON.parse($.getdata('dkdhd')),
+          body : 'adType=2&'+dkdbody+'&type=1&overLimit',}
+        $.post(url, async (err, resp, data) => {
+          try {
+             //$.log(dkdbody)
+      const result = JSON.parse(data)
+          if(result.status_code == 200){
+          console.log('时长任务回执:成功🌝 '+result.data.award)
+  }
+  if(result.status_code == 10020){
+          console.log('时长任务回执:失败🚫 '+result.message)}
+          } catch (e) {
+            //$.logErr(e, resp);
+          } finally {
+            resolve()
+          }
+      },timeout)
+    })
+  }
+
   //多看点刷新转盘
 function dkdsxzp(timeout = 0) {
   return new Promise((resolve) => {
@@ -368,6 +395,7 @@ if(result.status_code == 10020){
 
 }
 await dkdgg()
+await dkdsc()
 await dkdbx()
 await dkdbxfb()
 await dkdsxzp()
@@ -378,6 +406,7 @@ await dkdxx()
 await dkdz()
 await dkdyq()
 await dkdtx() 
+
 
         } catch (e) {
           //$.logErr(e, resp);
