@@ -20,6 +20,10 @@ body一天左右过期，可以不用关闭芝嫲视频的重写。
 
 芝嫲视频
 圈X配置如下，其他软件自行测试
+
+[MITM]
+hostname = api.sxsjyzm.com
+
 [task_local]
 #芝嫲视频
 15 50 3 * * * https://raw.githubusercontent.com/age174/-/main/zmsp.js, tag=芝嫲视频, img-url=https://s3.ax1x.com/2021/02/06/yYzeWn.png, enabled=true
@@ -45,6 +49,8 @@ body一天左右过期，可以不用关闭芝嫲视频的重写。
 
 [MITM]
 hostname = api.sxsjyzm.com
+
+
 */
 const $ = new Env('芝麻视频晶石收取');
 let zmurl = $.getdata('zmurl')
