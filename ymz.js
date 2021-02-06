@@ -20,12 +20,14 @@ TG电报群: https://t.me/hahaha8028
 
 二维码下载地址 https://raw.githubusercontent.com/age174/-/main/A6021BD8-081E-4BAF-A0E6-14198AA23EB5.jpeg
 
-我的邀请码 : 10008612  感谢大佬们填写
+我的邀请码 : 10008612  感谢大佬们填写 
+
+2.7 修复一些错误，判断广告和视频的body是否获取
 
 脚本每天运行一次即可
 
 羊毛赚
-圈X配置如下，其他软件自行测试
+圈X配置如下，其他软件自行测试，羊毛赚没有任务界面请务必复制上面的二维码链接到浏览器打开保存扫码，然后到扫码结果上打开
 [task_local]
 #羊毛赚
 15 10 * * * https://raw.githubusercontent.com/age174/-/main/ymz.js, tag=羊毛赚, img-url=https://s3.ax1x.com/2021/02/06/yYzYWR.png, enabled=true
@@ -61,7 +63,7 @@ let ymzurl1 = $.getdata('ymzurl1')
 let ymzhd1 = $.getdata('ymzhd1')
 let ymzbody = $.getdata('ymzbody')
 let ymzbody1 = $.getdata('ymzbody1')
-let ymzbod21 = $.getdata('ymzbody2')
+let ymzbody2 = $.getdata('ymzbody2')
 !(async () => {
   if (typeof $request !== "undefined") {
     await ymzck()
@@ -98,31 +100,7 @@ $.log(ymzbody1)
   }
 
 
-//羊毛赚广告     
-function ymzgg(timeout = 0) {
-  return new Promise((resolve) => {
-let url = {
-        url : 'http://ymz.iphonezhuan.com/addaction',
-        headers : JSON.parse($.getdata('ymzhd')),
-        body : ymzbody,}
-      $.post(url, async (err, resp, data) => {
-        try {
-           
-    const result = JSON.parse(data)
-        if(result.statuscode == 200){
-        console.log('羊毛赚广告回执:成功🌝 '+result.msg)
-}
-if(result.statuscode == 400 || result.statuscode == 410){
-        console.log('羊毛赚广告回执:失败🚫 '+result.msg)}
 
-        } catch (e) {
-          //$.logErr(e, resp);
-        } finally {
-          resolve()
-        }
-    },timeout)
-  })
-}
 
 //羊毛赚视频     
 function ymzsp(timeout = 0) {
@@ -150,12 +128,12 @@ if(result.statuscode == 400 || result.statuscode == 410){
   })
 }
 
-//羊毛赚签到
+//羊毛赚广告
 function ymzqd(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('ymzurl') === "undefined") {
-        $.msg($.name,"",'请先获取羊毛赚body!😓',)
+      if (typeof $.getdata('ymzbody') === "undefined"||typeof $.getdata('ymzbody1') === "undefined") {
+        $.msg($.name,"",'请先获取羊毛赚广告和视频body!😓',)
         $.done()
       }
 let url = {
