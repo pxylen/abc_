@@ -22,7 +22,7 @@ TG电报群: https://t.me/hahaha8028
 
 我的邀请码 : 10008612  感谢大佬们填写
 
-脚本每天五行一次即可
+脚本每天运行一次即可
 
 羊毛赚
 圈X配置如下，其他软件自行测试
@@ -51,6 +51,8 @@ TG电报群: https://t.me/hahaha8028
 
 [MITM]
 hostname = ymz.iphonezhuan.com
+
+
 */
 const $ = new Env('羊毛赚');
 let ymzurl = $.getdata('ymzurl')
