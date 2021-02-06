@@ -1,6 +1,6 @@
 /*
 软件名称:多看点
-更新时间：2021-02-04 @肥皂
+更新时间：2021-02-06 @肥皂
 脚本说明：多看点自动刷视频
 本脚本为多看点自动刷视频
 请获取多个body再运行脚本
@@ -16,12 +16,14 @@ TG电报群: https://t.me/hahaha8028
 
 脚本请配合多看点自动任务使用
 
+2.6更新 加入满收益判断，收益满了停止运行
+
 [task_local]
 #多看点
-10 * * * * https://raw.githubusercontent.com/age174/-/main/dkd.js, tag=多看点, img-url= https://gitee.com/ydj0602/hym/raw/img/DKD.PNG, enabled=true
+10 * * * * https://raw.githubusercontent.com/age174/-/main/dkd.js, tag=多看点, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
 
 #多看点视频
-5 9,16,21 * * * https://raw.githubusercontent.com/age174/-/main/dkdsp.js, tag=多看点视频, img-url= https://gitee.com/ydj0602/hym/raw/img/DKD.PNG, enabled=true
+5 * * * * https://raw.githubusercontent.com/age174/-/main/dkdsp.js, tag=多看点视频, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png, enabled=true
 
 [rewrite_local]
 
@@ -116,8 +118,11 @@ function AutoRead() {
         console.log(`\n检测到红包，，即将开始领取👏🏻\n`)     
 await dkdhbsp();
       
+}
+if (readres.status_code == 200&&readres.data.award == 0) {
+        $.msg("","","今日多看点视频收益已满，自动结束运行!")
+$.done()  
       }
-
       else if (readres.status_code == 10020) {
         console.log(`第${$.index}次视频请求失败,回执🚫: `+readres.message+'等待30秒执行下次视频')
    
