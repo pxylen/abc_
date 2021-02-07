@@ -1,11 +1,11 @@
 /*
 软件名称:多看点 商店搜索下载
-更新时间：2021-02-07 @肥皂
+更新时间：2021-02-04 @肥皂
 脚本说明：多看点自动任务
 目前包含签到，开宝箱，开双倍宝箱
 看广告，任务列表奖励领取，自动提现
 自动抽奖
-能力有限，自动刷视频请使用另一个配套脚本
+能力有限，自动刷小视频暂时无法完成
 本脚本以学习为主！
 首次运行脚本，会提示获取Cookie，
 点击我的获取Cookie！
@@ -283,9 +283,9 @@ function dkdsxzp(timeout = 0) {
   return new Promise((resolve) => {
 let sx = dkdtxhd.match(/headerInfo":"\w+/)+''
 let url = {
-        url : 'http://dkd-api.dysdk.com/lotto/index?'+dkdbody,
+        url : 'http://dkd-api.dysdk.com/lotto/index?'+dkdbody+'&headerInfo='+sx.replace('headerInfo":"',""),
         headers : JSON.parse($.getdata('dkdhd')),
-        body : dkdbody,}
+        body : '',}
       $.post(url, async (err, resp, data) => {
         try {
          //$.log(str.replace('headerInfo":"',""))
