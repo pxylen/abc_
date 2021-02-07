@@ -1,11 +1,11 @@
 /*
 软件名称:多看点 商店搜索下载
-更新时间：2021-02-04 @肥皂
+更新时间：2021-02-07 @肥皂
 脚本说明：多看点自动任务
 目前包含签到，开宝箱，开双倍宝箱
 看广告，任务列表奖励领取，自动提现
 自动抽奖
-能力有限，自动刷小视频暂时无法完成
+能力有限，自动刷视频请使用另一个配套脚本
 本脚本以学习为主！
 首次运行脚本，会提示获取Cookie，
 点击我的获取Cookie！
@@ -17,6 +17,7 @@ TG电报群: https://t.me/hahaha8028
 2021.02.01 加入自动提现功能
 获取方式，进入提现页面，选择需要自动提现的面额点击提现获取
 2021.02.04 修复转盘抽奖提示刷新的问题，加入赚钱抽奖自动刷新并显示抽奖剩余次数，加入观看十分钟视频奖励领取
+2021.02.07 任务加入小说时段奖励领取
 
 多看点自动任务
 圈X配置如下，其他软件自行测试
@@ -276,15 +277,15 @@ if(result.status_code == 10020){
       },timeout)
     })
   }
-
+//+'&headerInfo='+sx.replace('headerInfo":"',"")
   //多看点刷新转盘
 function dkdsxzp(timeout = 0) {
   return new Promise((resolve) => {
 let sx = dkdtxhd.match(/headerInfo":"\w+/)+''
 let url = {
-        url : 'http://dkd-api.dysdk.com/lotto/index?'+dkdbody+'&headerInfo='+sx.replace('headerInfo":"',""),
-        headers : JSON.parse($.getdata('dkdtxhd')),
-        body : dkdtxbody,}
+        url : 'http://dkd-api.dysdk.com/lotto/index?'+dkdbody,
+        headers : JSON.parse($.getdata('dkdhd')),
+        body : dkdbody,}
       $.post(url, async (err, resp, data) => {
         try {
          //$.log(str.replace('headerInfo":"',""))
@@ -294,6 +295,32 @@ let url = {
 }
 if(result.status_code == 10020){
         console.log('开始刷新抽奖页面，回执:失败🚫 '+result.message)}
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+ //多看点小说时段奖励
+function dkdsdjl(timeout = 0) {
+  return new Promise((resolve) => {
+
+let url = {
+        url : 'http://dkd-api.dysdk.com/video/extra_get',
+        headers : JSON.parse($.getdata('dkdhd')),
+        body : dkdbody,}
+      $.post(url, async (err, resp, data) => {
+        try {
+         //$.log(str.replace('headerInfo":"',""))
+    const result = JSON.parse(data)
+        if(result.status_code == 200){
+        console.log('开始领取小说时段奖励，回执:成功🌝    '+result.data.award)
+}
+if(result.status_code == 10020){
+        console.log('开始领取小说时段奖励，回执:失败🚫 '+result.message)}
         } catch (e) {
           //$.logErr(e, resp);
         } finally {
@@ -402,6 +429,7 @@ await dkdsxzp()
 await dkdcj()
 await dkdfx()
 await dkdxs()
+await dkdsdjl()
 await dkdxx()
 await dkdz()
 await dkdyq()
