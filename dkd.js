@@ -1,6 +1,6 @@
 /*
 软件名称:多看点 商店搜索下载
-更新时间：2021-02-07 @肥皂
+更新时间：2021-02-04 @肥皂
 脚本说明：多看点自动任务
 目前包含签到，开宝箱，开双倍宝箱
 看广告，任务列表奖励领取，自动提现
@@ -18,6 +18,7 @@ TG电报群: https://t.me/hahaha8028
 获取方式，进入提现页面，选择需要自动提现的面额点击提现获取
 2021.02.04 修复转盘抽奖提示刷新的问题，加入赚钱抽奖自动刷新并显示抽奖剩余次数，加入观看十分钟视频奖励领取
 2021.02.07 任务加入小说时段奖励领取
+2021.02.08 修复小说时段奖励倒计时问题
 
 多看点自动任务
 圈X配置如下，其他软件自行测试
@@ -349,7 +350,24 @@ if(result.status_code == 10020){
     })
   }
 
-
+function dkddjs(timeout = 0) {
+    return new Promise((resolve) => {
+  let url = {
+          url : 'http://dkd-api.dysdk.com/video/extra_time',
+          headers : JSON.parse($.getdata('dkdhd')),
+          body : dkdbody,}
+        $.post(url, async (err, resp, data) => {
+          try {
+             //$.log(dkdbody)
+      const result = JSON.parse(data)
+          } catch (e) {
+            //$.logErr(e, resp);
+          } finally {
+            resolve()
+          }
+      },timeout)
+    })
+  }
   function dkdz(timeout = 0) {
     return new Promise((resolve) => {
   let url = {
@@ -429,6 +447,7 @@ await dkdsxzp()
 await dkdcj()
 await dkdfx()
 await dkdxs()
+await dkddjs()
 await dkdsdjl()
 await dkdxx()
 await dkdz()
@@ -461,7 +480,7 @@ let url = {
        $.msg($.name+'运行完毕！',"",'用户信息回执:成功🌝\n'+'用户名: '+result.data.nickname+'\n当前余额:'+result.data.cash+'\n总金币:'+result.data.gold+'\n今日金币:'+result.data.today_gold)
 }
 if(result.status_code == 10020){
-        $.msg($.name,"",'运行完毕,用户信息获取失败🚫 '+result.message)}
+        $.msg($.name,"",'运行完毕，用户信息获取失败🚫 '+result.message)}
         } catch (e) {
           //$.logErr(e, resp);
         } finally {
