@@ -47,10 +47,20 @@ const readMode = parseInt(rmArr[0]) || 0;
     // 根据执行环境所在时区的时间，获得北京时间戳
     const currDate = new Date();
     const utc8 = currDate.getTime() + (currDate.getTimezoneOffset() * 60 * 1000) + 8 * 60 * 60 * 1000;
-    $.zqCount = ($.zqCount = ($.getval('zqCount') || '1') - 1) > 0 ? $.zqCount + 1 : 1; // 执行任务的账号个数
-    $.log('', `======== 共${$.zqCount}个账号位，执行时间(UTC+8)：${new Date(utc8).toLocaleString()}  ========`, '');
-    for (let index = 0; index < $.zqCount; index++) {
-      $.idx = $.suffix(index);
+    let zqAc = $.getval('zqExecAc') || '';
+    if (/^(,?\d+)+$/.test(zqAc)) {
+      zqAc = zqAc.split(',').sort();
+    } else {
+      zqAc = [];
+      // 兼容旧配置
+      $.zqCount = ($.zqCount = ($.getval('zqCount') || '1') - 1) > 0 ? $.zqCount + 1 : 1; // 执行任务的账号个数
+      for (let index = 1; index <= $.zqCount; index++) {
+        zqAc.push(index + '');
+      }
+    }
+    $.log('', `======== 共${zqAc.length}个账号位，执行时间(UTC+8)：${new Date(utc8).toLocaleString()}  ========`, '');
+    for (let acIdx of zqAc) {
+      $.idx = $.suffix(acIdx-1);
       $.acName = $.name + ($.idx || '1');
       const count = ($.getval(countKey + $.idx) || 0) - 0;
       if (readMode === 4 && count > 0) {
@@ -68,7 +78,7 @@ const readMode = parseInt(rmArr[0]) || 0;
       } else if (readMode === 1) {
         if (count > 0) {
           let t = rmArr.slice(1);
-          if (t.length == 0 || t.findIndex(o => o == (index + 1)) >= 0) {
+          if (t.length == 0 || t.findIndex(o => o == acIdx) >= 0) {
             const videoCount = ($.getval(lastReplacedNo + $.idx) || '0') - 0;
             $.setval('', numKey + $.idx);
             $.setval('', lastReplacedNo + $.idx);
@@ -90,7 +100,7 @@ function getRequestData() {
   return new Promise(async resolve => {
     let subt = '重写数据';
     try {
-      if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/article\/complete/)) {
+      if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/article\/complete\.json/)) {
         subt = '新增阅读数据';
         let count = ($.getval(countKey + $.idx) || 0) - 0 + 1;
         $.setval($request.body, mainKey + $.idx + '_' + count);
@@ -98,7 +108,7 @@ function getRequestData() {
         let tips = `新增第${count}条阅读数据，下次阅读第${currNum}条数据`;
         $.msg($.acName, subt, tips);
         $.setval(count + '', countKey + $.idx);
-      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/article\/info\/get/)) {
+      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/article\/info\/get\.json/)) {
         subt = '新增阅读数据new';
         let count = ($.getval(countKey + $.idx) || 0) - 0 + 1;
         $.setval($request.url.match(/\?(p=.+$)/)[1], mainKey + $.idx + '_' + count);
@@ -106,7 +116,7 @@ function getRequestData() {
         let tips = `新增第${count}条阅读数据，下次阅读第${currNum}条数据`;
         $.msg($.acName, subt, tips);
         $.setval(count + '', countKey + $.idx);
-      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/v5\/user\/app_stay/)) {
+      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/v5\/user\/app_stay\.json/)) {
         subt = '获取阅读时长数据';
         // 顺序提交两个阅读时长，检查数据记录的时长是多少
         let start = await execReadTime($request.body);
@@ -120,12 +130,12 @@ function getRequestData() {
         } else {
           $.msg($.acName, subt, `😭获取阅读时长数据失败；上传时长仅${end-start}秒`);
         }
-      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/article\/red_packet/)) {
+      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/article\/red_packet\.json/)) {
         subt = '获取惊喜红包数据';
         $.setval($request.body, redKey + $.idx);
         let tips = `🎉获取惊喜红包数据成功`;
         $.msg($.acName, subt, tips);
-      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/TaskCenter\/(sign|getSign)/)) {
+      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/(TaskCenter|NewTaskIos)\/(sign|getSign)(\?.+)?$/)) {
         subt = '获取签到数据';
         $.setval(JSON.stringify($request.headers), signKey + $.idx);
         let tips = `🎉获取签到数据成功`;

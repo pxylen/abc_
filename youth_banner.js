@@ -33,13 +33,23 @@ const delFirstZeroRewardData = 0; // 是否移除首次领取奖励无青豆的�
     // 根据执行环境所在时区的时间，获得北京时间戳
     const currDate = new Date();
     const utc8 = currDate.getTime() + (currDate.getTimezoneOffset() * 60 * 1000) + 8 * 60 * 60 * 1000;
-    $.zqCount = ($.zqCount = ($.getval('zqCount') || '1') - 1) > 0 ? $.zqCount + 1 : 1; // 执行任务的账号个数
-    $.log('', `======== 共${$.zqCount}个账号，执行时间(UTC+8)：${new Date(utc8).toLocaleString()}  ========`, '');
+    let zqAc = $.getval('zqExecAc') || '';
+    if (/^(,?\d+)+$/.test(zqAc)) {
+      zqAc = zqAc.split(',').sort();
+    } else {
+      zqAc = [];
+      // 兼容旧配置
+      $.zqCount = ($.zqCount = ($.getval('zqCount') || '1') - 1) > 0 ? $.zqCount + 1 : 1; // 执行任务的账号个数
+      for (let index = 1; index <= $.zqCount; index++) {
+        zqAc.push(index + '');
+      }
+    }
+    $.log('', `======== 共${zqAc.length}个账号位，执行时间(UTC+8)：${new Date(utc8).toLocaleString()}  ========`, '');
     $.nowDate = $.time('yyyy-MM-dd', utc8);
-    const delRepeatErrorData = $.getval('delErrorData'); // 删除一天内出错两次的看看赚数据
+    const delRepeatErrorData = $.getval('delErrorData') - 0; // 删除一天内出错两次的看看赚数据
     const logData = $.getjson('acExecLogData') || {};
-    for (let index = 0; index < $.zqCount; index++) {
-      $.idx = $.suffix(index);
+    for (let acIdx of zqAc) {
+      $.idx = $.suffix(acIdx-1);
       $.acName = $.name + ($.idx || '1');
 
       let doTask = {
@@ -71,7 +81,7 @@ const delFirstZeroRewardData = 0; // 是否移除首次领取奖励无青豆的�
       let allScore = Number();
       let yb = $.getjson(youthBanner + $.idx) || {};
       let change = false;
-      const acLog = logData[index] || {};
+      const acLog = logData[acIdx-1] || {};
       if (acLog['date'] != $.nowDate) {
         acLog['date'] = $.nowDate;
         acLog['errorId'] = [];
@@ -184,7 +194,7 @@ const delFirstZeroRewardData = 0; // 是否移除首次领取奖励无青豆的�
         $.setjson(reward, youthAndroidReward + $.idx);
       }
       $.msg($.acName, '', `任务完成，执行总计获得${allScore}个青豆，当前阅读时长：${Math.floor(time / 60)}分钟`);
-      logData[index] = acLog;
+      logData[acIdx-1] = acLog;
     }
     $.setjson(logData, 'acExecLogData');
   }

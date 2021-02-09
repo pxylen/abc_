@@ -7,14 +7,14 @@
   "apps": [{
       "id": "youthNeRead",
       "name": "中青阅读",
-      "keys": ["youthheader_zq", "read_zq", "red_zq", "readtime_zq", "youthheader_zq2", "read_zq2", "red_zq2", "readtime_zq2", "youthheader_zq3", "read_zq3", "red_zq3", "readtime_zq3", "youthheader_zq4", "read_zq4", "red_zq4", "readtime_zq4"],
+      "keys": ["youthheader_zq", "read_zq", "readtime_zq", "youthheader_zq2", "read_zq2", "readtime_zq2", "youthheader_zq3", "read_zq3", "readtime_zq3", "youthheader_zq4", "read_zq4", "readtime_zq4"],
       "author": "@ztxtop",
       "settings": [{
         "id": "readMode",
         "name": "执行模式（点击查看设置说明）",
         "val": "0",
         "type": "text",
-        "desc": "0-循环阅读：任务执行时间需大于21秒\n1-去重排序：根据响应数据判断重复并将视频往前排，依此优化阅读效率（可用半角逗号间隔该模式运行的账号，如账号一跟账号三才执行去重排序：1,1,3）\n3-备份数据：根据指定的备份格式，将要备份的数据以log的形式打印出来\n4-清空所有中青数据"
+        "desc": "0-循环阅读：任务执行时间需大于21秒\n1-去重排序：根据响应数据判断重复并将视频往前排，依此优化阅读效率（可用半角逗号间隔该模式运行的账号，如账号一跟账号三才执行去重排序：1,1,3）\n3-备份数据：根据指定的备份格式，将要备份的数据以log的形式打印出来（高版本qx限制了打印日志长度，需使用其它方式导出）\n4-清空所有中青数据"
       }, {
         "id": "zqReadScheme",
         "name": "阅读数据备份输出格式",
@@ -44,11 +44,11 @@
         "type": "number",
         "desc": "指定抓取的数据包用于哪个账号，设置数值如：1、2、3..."
       }, {
-        "id": "zqCount",
-        "name": "阅读账号数",
+        "id": "zqExecAc",
+        "name": "中青执行账号",
         "val": "1",
-        "type": "number",
-        "desc": "设置阅读任务执行几个账号，根据抓包账号最大值设置即可将执行所有阅读账号任务"
+        "type": "text",
+        "desc": "设置中青的执行账号，如：1,2,4"
       }, {
         "id": "read_count",
         "name": "账号1总阅读数",
@@ -94,11 +94,11 @@
         "type": "number",
         "desc": "指定抓取的数据包用于哪个账号，设置数值如：1、2、3..."
       }, {
-        "id": "zqCount",
-        "name": "阅读账号数",
+        "id": "zqExecAc",
+        "name": "中青执行账号",
         "val": "1",
-        "type": "number",
-        "desc": "设置阅读任务执行几个账号，根据抓包账号最大值设置即可将执行所有阅读账号任务"
+        "type": "text",
+        "desc": "设置中青的执行账号，如：1,2,4"
       }, {
         "id": "delErrorData",
         "name": "移除当日失败两次+的任务数据",
