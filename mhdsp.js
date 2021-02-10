@@ -32,7 +32,9 @@ TG电报群: https://t.me/hahaha8028
 圈X配置如下，其他软件自行测试
 [task_local]
 #陌嗨短视频
-15 10 * * * https://raw.githubusercontent.com/age174/-/main/mhdsp.js, tag=陌嗨短视频, img-url=https://s3.ax1x.com/2021/02/06/yYzYWR.png, enabled=true
+
+#陌嗨短视频
+15 10 * * * https://raw.githubusercontent.com/age174/-/main/mhdsp.js, tag=陌嗨短视频, img-url=https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X007.png, enabled=true
 
 
 [rewrite_local]
