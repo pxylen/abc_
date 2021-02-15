@@ -53,7 +53,7 @@ let jqbzpbody = $.getdata('jqbzpbody')
   }else {
        console.log(`\n金钱豹开始执行签到任务！💦\n`)
        await jqbqd();
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 6; i++) {
       $.index = i + 1      
        console.log(`\n金钱豹已执行第一个看视频任务！💦\n等待10秒开始执行第二个看视频任务`)
        await jqbsp1();
