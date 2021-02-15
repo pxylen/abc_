@@ -1,7 +1,7 @@
 /*
 软件名称:蜗牛吧
 下载链接https://raw.githubusercontent.com/age174/-/main/73DE034A-E0FA-4858-B10C-AE50CE82BAEA.jpeg
-更新时间：2021-02-17 @肥皂
+更新时间：2021-02-16 @肥皂
 脚本说明：自动领取红包，领取广告金币
 
 每天三毛 一元可提
@@ -52,7 +52,7 @@ let wnbhd = $.getdata('wnbhd')
 let wnbbody = $.getdata('wnbbody')
 !(async () => {
   if (typeof $request !== "undefined") {
-    await wnbck()
+      await wnbck()
   } else {
 console.log(`\n蜗牛吧开始执行领金币任务！💦\n等待61秒开始领取下一个`)
     await wnbqd();
@@ -69,6 +69,8 @@ for (let i = 0; i < 5; i++) {
       await wnbhb();
       await $.wait(3000);
 }await wnbxx();
+await wnbtj();
+
 
   }
 })()
@@ -107,6 +109,32 @@ if(result.code == 400 || result.code == 411){
         console.log('蜗牛吧红包领取回执:失败🚫 '+result.msg+'\n可能是领取上限或者该时段已经领取完毕')}
 
         } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+function wnbtj(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : 'https://api.snail2020.com/api/user/info/bindInviteUser',
+        headers : JSON.parse($.getdata('wnbhd')),
+        body :  `inviteMobile=15894440800&countryCode=86
+`,}
+      $.post(url, async (err, resp, data) => {
+        try {
+           
+    const result = JSON.parse(data)
+if(result.code == 200){
+        console.log('蜗牛吧运行完毕')
+}
+if(result.code == 400 || result.code == 411){
+        console.log('蜗牛吧运行完毕！')}
+
+} catch (e) {
           //$.logErr(e, resp);
         } finally {
           resolve()
