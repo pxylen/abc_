@@ -1,4 +1,10 @@
 {
+	"id": "cenbomin.app.sub",
+	"name": "肥皂 应用订阅",
+	"author": "@feizao",
+	"icon": "https://avatars0.githubusercontent.com/u/75375782?s=400&u=86eee41f7f138c5d0187aa10d2242bfc9799182e&v=4",
+	"repo": "https://github.com/age174/-/edit/main",
+	"apps": [{
     "id": "ranlv",
     "name": "宝石星球",
     "keys": ["bsxqurl", "bsxqheader","bsxqurl2","bsxqheader2","bsxqurl3","bsxqheader3","bsxqurl4","bsxqheader4","bsxqurl5", "bsxqheader5"],
@@ -24,8 +30,9 @@
         "type": "number",
         "desc": "需要几个账号，数字为几"
       }],
-    "repo": "https://raw.githubusercontent.com/age174/-/main/bsxq.js",
+    "repo": ["https://raw.githubusercontent.com/age174/-/main/bsxq.js"],
     "icons": ["https://s3.ax1x.com/2021/02/10/y0rDPg.png", "https://s3.ax1x.com/2021/02/10/y0rDPg.png"],
     "script": "https://raw.githubusercontent.com/age174/-/main/bsxq.js"
-  }
+  }]
+}
 
