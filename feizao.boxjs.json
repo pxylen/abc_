@@ -1,0 +1,36 @@
+{
+  "id": "feizao.app.sub",
+  "name": "肥皂应用订阅",
+  "author": "@feizao",
+  "icon": "https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/img/ZhiYi-N.png",
+  "repo": "https://raw.githubusercontent.com/age174/-/main/",
+  "apps": [{
+    "id": "ranlv",
+    "name": "宝石星球",
+    "keys": ["bsxqurl", "bsxqheader","bsxqurl2","bsxqheader2","bsxqurl3","bsxqheader3","bsxqurl4","bsxqheader4","bsxqurl5", "bsxqheader5"],
+    "author": "@feizao",
+    "settings": [{
+            "id": "tz",
+            "name": "静默运行",
+            "val": "1",
+            "type": "number",
+            "desc": "0为不通知，1为全部通知"
+        },
+      {
+        "id": "bsxqstatus",
+        "name": "当前账号",
+        "val": "1",
+        "type": "number",
+        "desc": "当前账号对应"
+      },
+      {
+        "id": "rlcount",
+        "name": "账号个数",
+        "val": "1",
+        "type": "number",
+        "desc": "需要几个账号，数字为几"
+      }],
+    "repo": "https://raw.githubusercontent.com/age174/-/main/bsxq.js",
+    "icons": ["https://s3.ax1x.com/2021/02/10/y0rDPg.png", "https://s3.ax1x.com/2021/02/10/y0rDPg.png"],
+    "script": "https://raw.githubusercontent.com/age174/-/main/bsxq.js"
+  }
