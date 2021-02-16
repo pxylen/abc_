@@ -25,6 +25,6 @@ jobs:
           npm install
       - name: '运行 【步步宝】'
         run: |
-          node workflow/BBB.js
+          node ./workflow/BBB.js
         env:
           TZ: Asia/shanghai

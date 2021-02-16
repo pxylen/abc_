@@ -27,7 +27,7 @@ jobs:
 
       - name: '运行 【百度极速版】'
         run: |
-          node workflow/baidu_speed.js
+          node ./workflow/baidu_speed.js
         env:
           TZ: Asia/shanghai
 

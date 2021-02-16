@@ -26,7 +26,7 @@ jobs:
 
       - name: '运行 【抖音火山版】'
         run: |
-          node workflow/huoshan.js
+          node ./workflow/huoshan.js
         env:
           TZ: Asia/shanghai
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
