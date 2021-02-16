@@ -1,0 +1,27 @@
+{
+  "name": "pxylen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "baidu_speed.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pxylen/abc_.git"
+  },
+  "keywords": ["百度极速版"],
+  "author": "pxylen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pxylen/abc_/issues"
+  },
+  "homepage": "https://github.com/pxylen/abc_#readme",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "got": "^11.7.0",
+    "http-server": "^0.12.3",
+    "tough-cookie": "^4.0.0",
+    "download": "^8.0.0"
+  }
+}
