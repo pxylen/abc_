@@ -9,13 +9,7 @@
     "name": "宝石星球",
     "keys": ["bsxqurl", "bsxqhd","bsxqurl2","bsxqhd2","bsxqurl3","bsxqhd3","bsxqurl4","bsxqhd4","bsxqurl5", "bsxqhd5"],
     "author": "@feizao",
-    "settings": [{
-            "id": "tz",
-            "name": "静默运行",
-            "val": "1",
-            "type": "number",
-            "desc": "0为不通知，1为全部通知"
-        },
+    "settings": [
       {
         "id": "bsxqstatus",
         "name": "当前账号",
