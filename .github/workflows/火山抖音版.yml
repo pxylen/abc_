@@ -24,6 +24,7 @@ jobs:
         run: |
           npm install
 
+
       - name: '运行 【抖音火山版】'
         run: |
           node ./workflow/huoshan.js
