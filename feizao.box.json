@@ -1,0 +1,256 @@
+{
+            "id": "age174.app.sub",
+            "name": "肥皂 应用订阅",
+            "author": "@feizao",
+            "icon": "https://s3.ax1x.com/2021/02/10/y0rDPg.png",
+            "repo": "https://github.com/age174/-/edit/main",
+            "apps": [{
+            "id": "sfk",
+            "name": "刷福卡",
+            "keys": ["sfkurl","sfkhd","sfkbody"],
+            "author": "@feizao",
+             "settings": [{
+            "id": "sfk",
+            "name": "静默运行",
+            "val": "1",
+            "type": "number",
+            "desc": "0为不通知，1为全部通知"
+    },
+    {
+            "id": "sfkdsetting",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "sfkdcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://raw.githubusercontent.com/age174/-/main/sfk.js",
+            "icons": ["https://raw.githubusercontent.com/Patrick0108/qx/master/flk.jpg", "https://raw.githubusercontent.com/Patrick0108/qx/master/flk.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/sfk.js"
+    },
+    {
+            "id": "dkd",
+            "name": "多看点",
+            "keys": ["dkdurl", "dkdhd", "dkdbody", "dkdtxurl", "dkdtxhd", "dkdtxbody"],
+            "author": "@Patrick0108",
+            "settings": [{
+            "id": "dkd",
+            "name": "静默运行",
+            "val": "1",
+            "type": "number",
+            "desc": "0为不通知，1为全部通知"
+    },
+    {
+            "id": "dkdsetting",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "dkdcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://raw.githubusercontent.com/age174/-/main/dkd.js",
+            "icons": ["https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png", "https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/dkd.js"
+    },
+    {
+            "id": "zmsp",
+            "name": "芝嫲视频",
+            "keys": ["zmurl", "zmhd", "zmbody"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "zmsp",
+            "name": "静默运行",
+            "val": "1",
+            "type": "number",
+            "desc": "0为不通知，1为全部通知"
+    },
+    {
+            "id": "zmspsetting",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "zmspcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://raw.githubusercontent.com/age174/-/main/zmsp.js",
+            "icons": ["https://s3.ax1x.com/2021/02/06/yYzeWn.png", "https://s3.ax1x.com/2021/02/06/yYzeWn.png"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/zmsp.js"
+    },
+    {
+            "id": "mhdsp",
+            "name": "陌嗨短视频 ",
+            "keys": ["mhurl", "mhhd", "mhbody"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "mhdsp",
+            "name": "静默运行",
+            "val": "1",
+            "type": "number",
+            "desc": "0为不通知，1为全部通知"
+    },
+    {
+            "id": "mhdspsetting",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "mhdspcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://raw.githubusercontent.com/age174/-/main/mhdsp.js",
+            "icons": ["https://raw.githubusercontent.com/usrnb/options/main/QuantumultX/icons/task/mhdsp.png", "https://raw.githubusercontent.com/usrnb/options/main/QuantumultX/icons/task/mhdsp.png"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/mhdsp.js"
+    },
+    {
+            "id": "wnb",
+            "name": "蜗牛吧",
+            "keys": ["wnburl", "wnbhd", "wnbbody"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "wnb",
+            "name": "静默运行",
+            "val": "1",
+            "type": "number",
+            "desc": "0为不通知，1为全部通知"
+    },
+    {
+            "id": "wnbsetting",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "wnbcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://raw.githubusercontent.com/age174/-/main/wnb.js",
+            "icons": ["https://ftp.bmp.ovh/imgs/2021/02/221a7d94eaa0dddf.jpeg", "https://ftp.bmp.ovh/imgs/2021/02/221a7d94eaa0dddf.jpeg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/wnb.js"
+    },
+    {
+            "id": "ymz",
+            "name": "羊毛赚",
+            "keys": ["ymzurl","ymzhd","ymzurl1","ymzhd1","ymzbody","ymzbody1","ymzbody2"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "sfk",
+            "name": "静默运行",
+            "val": "1",
+            "type": "number",
+            "desc": "0为不通知，1为全部通知"
+    },
+    {
+            "id": "ymzdsetting",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "ymzdcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://raw.githubusercontent.com/age174/-/main/ymz.js",
+            "icons": ["https://s3.ax1x.com/2021/02/06/yYzYWR.png", "https://s3.ax1x.com/2021/02/06/yYzYWR.png"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/ymz.js"
+    },
+    {
+            "id": "jqb",
+            "name": "金钱豹",
+            "keys": ["jqburl", "jqbhd", "jqbggbody", "jqbqdbody", "jqbbody1", "jqbbody2", "jqbbody3", "jqbbody4", "jqbbody5", "jqbrwbody", "jqbzpbody"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "tz",
+            "name": "静默运行",
+            "val": "1",
+            "type": "number",
+            "desc": "0为不通知，1为全部通知"
+    },
+    {
+            "id": "jqbsetting",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "jqbcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    },
+    {
+            "id": "jqbCASH",
+            "name": "提现标准",
+            "val": "0",
+            "type": "number",
+            "desc": "0不提现，可设置2 5 10 20 50 100 "
+    },
+    {
+            "id": "jqbCASHTIME",
+            "name": "提现时间",
+            "val": "0",
+            "type": "number",
+            "desc": "默认0点后提现，可设置 0 ~ 23  "
+    }],
+            "repo": "https://raw.githubusercontent.com/age174/-/main/jqb.js",
+            "icons": ["https://github.com/Patrick0108/qx/raw/master/jqb.png", "https://github.com/Patrick0108/qx/raw/master/jqb.png"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/jqb.js"
+    },
+	{
+            "id": "bsxq",
+            "name": "宝石星球",
+            "keys": ["bsxqurl", "bsxqhd","bsxqurl2","bsxqhd2","bsxqurl3","bsxqhd3","bsxqurl4","bsxqhd4","bsxqurl5", "bsxqhd5"],
+            "author": "@feizao",
+            "settings": [
+    {
+            "id": "bsxqstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "bsxqcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/FEFE8C6EB5DD.js",
+            "icons": ["https://s3.ax1x.com/2021/02/10/y0rDPg.png", "https://s3.ax1x.com/2021/02/10/y0rDPg.png"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/FEFE8C6EB5DD.js"
+    }]
+}
+
