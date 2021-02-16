@@ -24,7 +24,7 @@
         "desc": "当前账号对应"
       },
       {
-        "id": "rlcount",
+        "id": "bsxqcount",
         "name": "账号个数",
         "val": "1",
         "type": "number",
