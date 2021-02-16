@@ -7,7 +7,7 @@
 	"apps": [{
     "id": "bsxq",
     "name": "宝石星球",
-    "keys": ["bsxqurl", "bsxqheader","bsxqurl2","bsxqheader2","bsxqurl3","bsxqheader3","bsxqurl4","bsxqheader4","bsxqurl5", "bsxqheader5"],
+    "keys": ["bsxqurl", "bsxqhd","bsxqurl2","bsxqhd2","bsxqurl3","bsxqhd3","bsxqurl4","bsxqhd4","bsxqurl5", "bsxqhd5"],
     "author": "@feizao",
     "settings": [{
             "id": "tz",
