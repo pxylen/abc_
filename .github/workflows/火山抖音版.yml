@@ -9,8 +9,6 @@ on:
     - cron: '5 */6 * * *' # UTC时间 +8 北京时间
   watch:
     types: started
-  repository_dispatch:
-    types: started
 jobs:
   build:
     runs-on: ubuntu-latest

@@ -9,8 +9,6 @@ on:
     - cron: '0 * * * *'
   watch:
     types: started
-  repository_dispatch:
-    types: zq
 jobs:
   build:
     runs-on: ubuntu-latest
