@@ -2,14 +2,15 @@
 刷齐了可以换现金88元，888元，iphone11，华为p40
 玩玩吧，别太快了，别把人服务器搞炸了
 
-下载地址  https://raw.githubusercontent.com/age174/-/main/38600B49-DE8D-40CE-9BD2-09825DE8FB95.jpeg
+下载地址  https://raw.githubusercontent.com/age174/-/main/B6690880-AA3D-4C02-90E9-FADCFFFFC55D.jpeg
+
 下载完了进软件，点击福利界面，集福卡领大奖，开始集福卡，点击一个气泡，完了获取数据，开刷，运行一次刷三十次，一分钟运行一次吧，看运气了，玩玩而已，别太认真
 
 
 圈X配置如下，其他软件自行测试
 [task_local]
 
-1 * * * * https://raw.githubusercontent.com/age174/-/main/sfk.js, tag=刷福卡, img-url= https://raw.githubusercontent.com/age174/-/main/38600B49-DE8D-40CE-9BD2-09825DE8FB95.jpeg, enabled=true
+1 * * * * https://raw.githubusercontent.com/age174/-/main/sfk.js, tag=刷福卡, img-url=https://raw.githubusercontent.com/age174/-/main/B6690880-AA3D-4C02-90E9-FADCFFFFC55D.jpeg, enabled=true
 
 
 [rewrite_local]
@@ -78,9 +79,9 @@ $.log(ddbody)
 function sfk(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('ttwksignurl') === "undefined") {
-        $.msg($.name,"",'请先启用获取Cookie脚本然后点击此通知！', openurl)
-        return
+      if (typeof $.getdata('ddurl') === "undefined") {
+        $.msg($.name,"",'请先获取刷福卡数据')
+        $.done()
       }
       let url = {
         url : 'https://ddaydshuibaojk.tiantianzf.cn/blessCard/openBall',
