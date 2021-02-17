@@ -24,7 +24,7 @@
             "desc": "需要几个账号，数字为几"
     }],
             "repo": "https://raw.githubusercontent.com/age174/-/main/dkd.js",
-            "icons": ["https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png", "https://raw.githubusercontent.com/shoujiqiyuan/PokemonGOforQuanX/master/IconSet/X003.png"],
+            "icons": ["https://gitee.com/ydj0602/hym/raw/img/DKD.PNG", "https://gitee.com/ydj0602/hym/raw/img/DKD.PNG"],
             "script": "https://raw.githubusercontent.com/age174/-/main/dkd.js"
     },
     {
