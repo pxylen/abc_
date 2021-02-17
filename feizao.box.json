@@ -8,7 +8,7 @@
             "id": "dkd",
             "name": "多看点",
             "keys": ["dkdurl", "dkdhd", "dkdbody", "dkdtxurl", "dkdtxhd", "dkdtxbody"],
-            "author": "@Patrick0108",
+            "author": "@feizao",
             "settings": [{
             "id": "dkdsetting",
             "name": "当前账号",
