@@ -99,7 +99,7 @@
     {
             "id": "ymz",
             "name": "羊毛赚",
-            "keys": ["ymzurl","ymzhd","ymzurl1","ymzhd1","ymzbody","ymzbody1","ymzbody2"],
+            "keys": ["ymzurl","ymzhd","ymzbody","ymzbody1"],
             "author": "@feizao",
             "settings": [{
             "id": "ymzdsetting",
