@@ -40,7 +40,6 @@ let ReadArr = [], YouthBody = "",readscore = 0;
     return;
   }
 
-  while(true){
     for (let i = 0; i < ReadArr.length; i++) {
 
     try {
@@ -52,7 +51,6 @@ let ReadArr = [], YouthBody = "",readscore = 0;
         await AutoRead();
      }catch(e){ }
 
-   }
      console.log(`-------------------------\n\n中青看点共完成${$.index}次阅读，共计获得${readscore}个青豆，阅读请求全部结束`)
   }
 
