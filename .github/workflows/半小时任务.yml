@@ -44,3 +44,10 @@ jobs:
           node ./workflow/bbb/BBB2.js
         env:
           TZ: Asia/shanghai
+
+
+      - name: '运行 【火山抖音版】'
+        run: |
+          node ./workflow/huoshan.js
+        env:
+          TZ: Asia/shanghai
