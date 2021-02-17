@@ -25,6 +25,6 @@ jobs:
           npm install
       - name: '运行 【中青阅读2】'
         run: |
-          node ./workflow/youth_Read2.js
+          node ./workflow/youth/youth_Read2.js
         env:
           TZ: Asia/shanghai

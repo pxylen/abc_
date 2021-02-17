@@ -25,6 +25,6 @@ jobs:
           npm install
       - name: '运行 【中青阅读_混合】'
         run: |
-          node ./workflow/youth_Read_mix.js
+          node ./workflow/youth/youth_Read_mix.js
         env:
           TZ: Asia/shanghai
