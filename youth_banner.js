@@ -14,6 +14,8 @@ https://raw.githubusercontent.com/ztxtop/x/main/rewrite-zqkkz.sgmodule
 
 const $ = new Env("中青看看赚");
 $.suffix = i => i > 0 ? i + 1 + '' : '';
+$.isRewrite = 'undefined' !== typeof $request;
+$.isResponse = 'undefined' !== typeof $response;
 const youthBanner = 'youth_banner';
 const youthAndroidReadtime = 'youth_android_readtime';
 const youthAndroidReward = 'youth_android_reward';
@@ -21,12 +23,49 @@ const youthAndroidNewtask = 'youth_android_newtask';
 const delFirstZeroRewardData = 0; // 是否移除首次领取奖励无青豆的数据，0-否、1-是
 
 !(async () => {
-  if (typeof $request !== `undefined`) {
+  if ($.isRewrite) {
     // 抓包
-    if ($request && $request.method != 'OPTIONS') {
+    let url = $request.url;
+    if (!$.isResponse && $request.method != 'OPTIONS') {
       $.idx = $.suffix(($.getval('zqSuffix') || '1') - 1); // 抓包账号扩展字符
       $.acName = $.name + ($.idx || '1');
-      await GetCookie();
+      await GetCookie(url);
+    } else if (url.match(/\/WebApi\/NewTaskIos\/getTaskList\?/)) {
+      // 任务中心接口，尝试添加火爆转发、看看赚入口
+      let body = JSON.parse($response.body);
+      if (body) {
+        let hd = body.list && body.list.heard;
+        if (hd) {
+          // let shareLen = hd.filter(o=>o.event =='task_page_fire_share_icon').length;
+          let fxLen = hd.filter(o => o.event == 'task_page_fire_share_icon').length;
+          if (fxLen == 0) {
+            hd.push({
+              "title": "火爆转发+",
+              "event": "task_page_fire_share_icon",
+              "logo": "http://res.youth.cn/img-cover/10bdf5c3c8cca6c1176107044b50472f:88:88.gif",
+              "topIcon": "日赚18元",
+              "minlogo": "",
+              "action": "",
+              "url": "https://kd.youth.cn/h5/20200612makeMoney",
+              "jump_type": 1
+            });
+          }
+          let kkzLen = hd.filter(o => o.event == 'task_lookmaking').length;
+          if (kkzLen == 0) {
+            hd.push({
+              "title": "看看赚+",
+              "event": "task_lookmaking",
+              "logo": "http://res.youth.cn/img-cover/24c833abc8f19c6d97bb962bbc50890f:88:88.png",
+              "topIcon": "",
+              "minlogo": "",
+              "action": "",
+              "url": "https://kd.youth.cn/h5/20190527watchMoney",
+              "jump_type": 1
+            });
+          }
+          $.done({body: JSON.stringify(body)})
+        }
+      }
     }
   } else {
     // 定时任务
@@ -201,8 +240,7 @@ const delFirstZeroRewardData = 0; // 是否移除首次领取奖励无青豆的�
 })().catch((e) => $.logErr(e)).finally(() => $.done());
 
 
-async function GetCookie() {
-  let url = $request.url;
+async function GetCookie(url) {
   if (url.match(/\/(browse_|adlick)start\.json/)) {
     // 开始任务
     let bannerId = await bannerTask(null, url, $request.headers, $request.body, -1);
