@@ -13,21 +13,21 @@ on:
 jobs:
   build:
     env:
-      BAIDU_CASH: ${{ secrets.BAIDU_CASH }}
+      BAIDU_COOKIE: ${{ secrets.BAIDU_COOKIE }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
-        if: env.BAIDU_CASH
+        if: env.BAIDU_COOKIE
         run: |
           git clone https://github.com/Sunert/Scripts.git ~/Scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
-        if: env.BAIDU_CASH
+        if: env.BAIDU_COOKIE
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
-        if: env.BAIDU_CASH
+        if: env.BAIDU_COOKIE
         uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
         env:
           cache-name: cache-node-modules
@@ -35,7 +35,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
-        if: env.BAIDU_CASH
+        if: env.BAIDU_COOKIE
         run: |
           cd ~/Scripts
           git checkout master
@@ -46,5 +46,5 @@ jobs:
           cd ~/Scripts/Task
           node baidu_speed.js
         env:
-          BAIDU_CASH: ${{ secrets.BAIDU_CASH }}
+          BAIDU_COOKIE: ${{ secrets.BAIDU_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
