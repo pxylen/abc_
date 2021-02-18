@@ -48,3 +48,13 @@ jobs:
         env:
           BAIDU_COOKIE: ${{ secrets.BAIDU_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
+
+      - name: '运行 【电视家】'
+        run: |
+          cd ~/Scripts/Task
+          node dianshijia.js
+        env:
+          DSJ_HEADERS: ${{ secrets.DSJ_HEADERS }}
+          DSJ_DRAWAL: ${{ secrets.DSJ_DRAWAL }}
+
