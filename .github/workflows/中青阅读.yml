@@ -1,12 +1,12 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 半小时任务
+name: 中青阅读
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0,30 * * * *'
+    - cron: '0 */2 * * *'
   watch:
     types: started
 jobs:
@@ -25,28 +25,22 @@ jobs:
           npm install
 
 
-      - name: '运行 【百度极速版】'
+      - name: '运行 【中青阅读1】'
         run: |
-          node ./workflow/baidu_speed.js
+          node ./workflow/youth/youth_Read1.js
         env:
           TZ: Asia/shanghai
 
 
-      - name: '运行 【步步宝】'
+      - name: '运行 【中青阅读2】'
         run: |
-          node ./workflow/bbb/BBB.js
+          node ./workflow/youth/youth_Read2.js
         env:
           TZ: Asia/shanghai
 
 
-      - name: '运行 【步步宝1】'
+      - name: '运行 【中青阅读_混合】'
         run: |
-          node ./workflow/bbb/BBB2.js
-        env:
-          TZ: Asia/shanghai
-
-      - name: '运行 【火山抖音版】'
-        run: |
-          node ./workflow/huoshan.js
+          node ./workflow/youth/youth_Read_mix.js
         env:
           TZ: Asia/shanghai
