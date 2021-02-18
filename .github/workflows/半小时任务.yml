@@ -24,27 +24,27 @@ jobs:
         run: |
           npm install
 
-      - name: '运行 【今日头条极速版】'
-        run: |
-          node ./workflow/jrtt.js
-        env:
-          TZ: Asia/shanghai
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+#       - name: '运行 【今日头条极速版】'
+#         run: |
+#           node ./workflow/jrtt.js
+#         env:
+#           TZ: Asia/shanghai
+#           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
-      - name: '运行 【步步宝】'
-        run: |
-          node ./workflow/bbb/BBB.js
-        env:
-          TZ: Asia/shanghai
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+#       - name: '运行 【步步宝】'
+#         run: |
+#           node ./workflow/bbb/BBB.js
+#         env:
+#           TZ: Asia/shanghai
+#           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
-      - name: '运行 【步步宝1】'
-        run: |
-          node ./workflow/bbb/BBB2.js
-        env:
-          TZ: Asia/shanghai
+#       - name: '运行 【步步宝1】'
+#         run: |
+#           node ./workflow/bbb/BBB2.js
+#         env:
+#           TZ: Asia/shanghai
 
 
       - name: '运行 【火山抖音版】'
