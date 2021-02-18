@@ -48,5 +48,5 @@ jobs:
         env:
           XP_refreshTOKEN: ${{ secrets.XP_refreshTOKEN }}
           XP_CASH: ${{ secrets.XP_CASH }}
-          XP_LIVE: ${{ secrets.XP_LIVE }}
+          XP_live: ${{ secrets.XP_live }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
