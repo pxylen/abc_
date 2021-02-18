@@ -275,7 +275,7 @@ async function GetCookie(url) {
     $.setjson(yb, youthBanner + $.idx);
     $.msg($.acName, '数据获取成功');
   } else if (url.match(/\/user\/stay\.json/)) {
-    subt = '获取阅读时长数据';
+    subt = '获取Android阅读时长数据';
     // 顺序提交两个阅读时长，检查数据记录的时长是多少
     let start = await readTime($request.body, 0);
     let end = await readTime($request.body, 0);
@@ -285,7 +285,20 @@ async function GetCookie(url) {
       $.setdata($request.body, youthAndroidReadtime + $.idx);
       $.msg($.acName, subt, `🎉获取阅读时长数据成功；每次上传时长为${end-start}秒`);
     } else {
-      $.msg($.acName, subt, `😭获取阅读时长数据失败；上传时长仅${end-start}秒`);
+      $.log($.acName, subt, `😭获取阅读时长数据失败；上传时长仅${end-start}秒`);
+    }
+  } else if (url.match(/\/v5\/user\/app_stay\.json/)) {
+    subt = '获取iOS阅读时长数据';
+    // 顺序提交两个阅读时长，检查数据记录的时长是多少
+    let start = await readTime($request.body, 0, 'iOS');
+    let end = await readTime($request.body, 0, 'iOS');
+    let oldBody = $.getval('readtime_zq' + $.idx);
+    if (!oldBody || (start >= 0 && end > 0 && end - start > 60)) {
+      // 已有时长数据时，仅存储大于60秒的阅读时长
+      $.setdata($request.body, 'readtime_zq' + $.idx);
+      $.msg($.acName, subt, `🎉获取阅读时长数据成功；每次上传时长为${end-start}秒`);
+    } else {
+      $.log($.acName, subt, `😭获取阅读时长数据失败；上传时长仅${end-start}秒`);
     }
   } else if (url.match(/\/CommonReward\/(toGetReward|toDouble)\.json/) && $request.body) {
     let reward = $.getjson(youthAndroidReward + $.idx) || {};
@@ -373,12 +386,12 @@ function bannerTask(bannerId, url, headers, body, type = -1) {
 }
 
 // 提交阅读时长
-function readTime(body, type = 1) {
+function readTime(body, type = 1, pf = 'android') {
   return new Promise(resolve => {
     if(!body){
       resolve(-1);
     }
-    $.post({
+    let opts = {
       url: 'https://kandian.youth.cn/v5/user/stay.json',
       headers: {
         'User-Agent': 'okhttp/3.12.2',
@@ -386,7 +399,17 @@ function readTime(body, type = 1) {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       body: body
-    }, async (error, response, data) => {
+    };
+    if(pf == 'iOS'){
+      opts = {
+        url: `https://ios.baertt.com/v5/user/stay.json`,
+        headers: {
+          'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
+        },
+        body: body
+      }
+    }
+    $.post(opts, async (error, response, data) => {
       try {
         let obj = JSON.parse(data);
         if (obj.success == true) {
