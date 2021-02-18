@@ -59,7 +59,7 @@ if (isGetCookie) {
    GetCookie();
    $.done()
 } 
-if ($.isNode()||!$.isNode()) {
+if ($.isNode()) {
 //   if (process.env.HSURL && process.env.HSURL.indexOf('#') > -1) {
 //   hsurl = process.env.HSURL.split('#');
 //   console.log(`您选择的是用"#"隔开\n`)
