@@ -1,0 +1,50 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: 百度极速版
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/30 * * * *'
+  watch:
+    types: started
+
+jobs:
+  build:
+    env:
+      BAIDU_CASH: ${{ secrets.BAIDU_CASH }}
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
+    steps:
+      - name: Checkout
+        if: env.BAIDU_CASH
+        run: |
+          git clone https://github.com/Sunert/Scripts.git ~/Scripts
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        if: env.BAIDU_CASH
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Cache node_modules
+        if: env.BAIDU_CASH
+        uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
+      - name: npm install
+        if: env.BAIDU_CASH
+        run: |
+          cd ~/Scripts
+          git checkout main
+          npm install
+
+      - name: '运行 【百度极速版】'
+        run: |
+          cd ~/Scripts/Task
+          node baidu_speed.js
+        env:
+          BAIDU_CASH: ${{ secrets.BAIDU_CASH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
