@@ -38,7 +38,7 @@ jobs:
         if: env.BAIDU_CASH
         run: |
           cd ~/Scripts
-          git checkout main
+          git checkout master
           npm install
 
       - name: '运行 【百度极速版】'
