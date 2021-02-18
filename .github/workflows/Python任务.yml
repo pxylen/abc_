@@ -1,4 +1,4 @@
-name: 半小时python任务
+name: Python任务
 
 on:
   schedule:
