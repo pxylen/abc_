@@ -24,6 +24,13 @@ jobs:
         run: |
           npm install
 
+      - name: '运行 【今日头条极速版】'
+        run: |
+          node ./workflow/jrtt.js
+        env:
+          TZ: Asia/shanghai
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【步步宝】'
         run: |
