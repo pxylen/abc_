@@ -32,43 +32,43 @@ jobs:
           TZ: Asia/shanghai
 
 
-      - name: '运行 【步步宝】'
-        run: |
-          node ./workflow/bbb/BBB.js
-        env:
-          TZ: Asia/shanghai
-
-
-      - name: '运行 【步步宝1】'
-        run: |
-          node ./workflow/bbb/BBB2.js
-        env:
-          TZ: Asia/shanghai
-
-
-      - name: '运行 【火山抖音版】'
-        run: |
-          node ./workflow/huoshan.js
-        env:
-          TZ: Asia/shanghai
-
-
-      - name: '运行 【中青阅读1】'
-        run: |
-          node ./workflow/youth/youth_Read1.js
-        env:
-          TZ: Asia/shanghai
-
-
-      - name: '运行 【中青阅读2】'
-        run: |
-          node ./workflow/youth/youth_Read2.js
-        env:
-          TZ: Asia/shanghai
-
-
-      - name: '运行 【中青阅读_混合】'
-        run: |
-          node ./workflow/youth/youth_Read_mix.js
-        env:
-          TZ: Asia/shanghai
+#      - name: '运行 【步步宝】'
+#        run: |
+#          node ./workflow/bbb/BBB.js
+#        env:
+#          TZ: Asia/shanghai
+#
+#
+#      - name: '运行 【步步宝1】'
+#        run: |
+#          node ./workflow/bbb/BBB2.js
+#        env:
+#          TZ: Asia/shanghai
+#
+#
+#      - name: '运行 【火山抖音版】'
+#        run: |
+#          node ./workflow/huoshan.js
+#        env:
+#          TZ: Asia/shanghai
+#
+#
+#      - name: '运行 【中青阅读1】'
+#        run: |
+#          node ./workflow/youth/youth_Read1.js
+#        env:
+#          TZ: Asia/shanghai
+#
+#
+#      - name: '运行 【中青阅读2】'
+#        run: |
+#          node ./workflow/youth/youth_Read2.js
+#        env:
+#          TZ: Asia/shanghai
+#
+#
+#      - name: '运行 【中青阅读_混合】'
+#        run: |
+#          node ./workflow/youth/youth_Read_mix.js
+#        env:
+#          TZ: Asia/shanghai
