@@ -57,4 +57,4 @@ jobs:
         env:
           DSJ_HEADERS: ${{ secrets.DSJ_HEADERS }}
           DSJ_DRAWAL: ${{ secrets.DSJ_DRAWAL }}
-
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
