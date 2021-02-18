@@ -18,7 +18,7 @@ jobs:
           python-version: 3.7
 
       - name: 'Install requirements'
-        run: pip install -r ./requirements.txt
+        run: pip install -r ./workflow/requirements.txt
 
 
       - name: '运行 【喜马拉雅极速版】'
