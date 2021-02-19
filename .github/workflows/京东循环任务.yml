@@ -42,7 +42,7 @@ jobs:
           git checkout master
           npm install
 
-      - name: '运行 【东东农场】'
+      - name: '运行 【美丽研究院】'
         run: |
           cd ~/TaskAction
           node jd_beauty.js
