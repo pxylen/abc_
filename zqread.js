@@ -100,7 +100,7 @@ function getRequestData() {
   return new Promise(async resolve => {
     let subt = '重写数据';
     try {
-      if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/article\/complete\.json/)) {
+      if ($request.method != 'OPTIONS' && $request.url.match(/\/article\/complete\.json/)) {
         subt = '新增阅读数据';
         let count = ($.getval(countKey + $.idx) || 0) - 0 + 1;
         $.setval($request.body, mainKey + $.idx + '_' + count);
@@ -108,7 +108,7 @@ function getRequestData() {
         let tips = `新增第${count}条阅读数据，下次阅读第${currNum}条数据`;
         $.msg($.acName, subt, tips);
         $.setval(count + '', countKey + $.idx);
-      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/article\/info\/get\.json/)) {
+      } else if ($request.method != 'OPTIONS' && $request.url.match(/\/article\/info\/get\.json/)) {
         subt = '新增阅读数据new';
         let count = ($.getval(countKey + $.idx) || 0) - 0 + 1;
         $.setval($request.url.match(/\?(p=.+$)/)[1], mainKey + $.idx + '_' + count);
@@ -116,8 +116,8 @@ function getRequestData() {
         let tips = `新增第${count}条阅读数据，下次阅读第${currNum}条数据`;
         $.msg($.acName, subt, tips);
         $.setval(count + '', countKey + $.idx);
-      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/v5\/user\/app_stay\.json/)) {
-        subt = '获取阅读时长数据';
+      } else if ($request.method != 'OPTIONS' && $request.url.match(/\/v5\/user\/app_stay\.json/)) {
+        subt = '获取iOS阅读时长数据';
         // 顺序提交两个阅读时长，检查数据记录的时长是多少
         let start = await execReadTime($request.body);
         let end = await execReadTime($request.body);
@@ -128,16 +128,17 @@ function getRequestData() {
           let tips = `🎉获取阅读时长数据成功；每次上传时长为${end-start}秒`;
           $.msg($.acName, subt, tips);
         } else {
-          $.msg($.acName, subt, `😭获取阅读时长数据失败；上传时长仅${end-start}秒`);
+          $.log($.acName, subt, `😭获取阅读时长数据失败；上传时长仅${end-start}秒`);
         }
-      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/article\/red_packet\.json/)) {
-        subt = '获取惊喜红包数据';
-        $.setval($request.body, redKey + $.idx);
-        let tips = `🎉获取惊喜红包数据成功`;
-        $.msg($.acName, subt, tips);
-      } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/(TaskCenter|NewTaskIos)\/(sign|getSign)(\?.+)?$/)) {
+      } else if ($request.method != 'OPTIONS' && $request.url.match(/\/(TaskCenter|NewTaskIos)\/(sign|getSign)(\?.+)?$/)) {
         subt = '获取签到数据';
-        $.setval(JSON.stringify($request.headers), signKey + $.idx);
+        let ckFormat = $.getval('ckFormat') || ''
+        let cookie = JSON.stringify($request.headers);
+        if (ckFormat == 'true' && $request.headers) {
+          let RefererVal = $request.headers.Referer;
+          cookie = RefererVal.match(/&uid=\d+/) + RefererVal.match(/&cookie=[_a-zA-Z0-9-]+/) + RefererVal.match(/&cookie_id=[a-zA-Z0-9]+/);
+        }
+        $.setval(cookie, signKey + $.idx);
         let tips = `🎉获取签到数据成功`;
         $.msg($.acName, '', tips);
       }

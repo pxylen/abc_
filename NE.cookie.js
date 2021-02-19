@@ -8,9 +8,8 @@
   访问京东APP内嵌了H5页面：后台杀京东APP后再进入或进首页的免费水果都可获取
   ^https?://un\.m\.jd\.com/cgi-bin/app/appjmp url script-request-header NE.cookie.js
 
-  ^https?://api\.m\.jd\.com/client\.action.*functionId=signBean(Index|GroupStageIndex) url script-request-header NE.cookie.js
-  复制 https://home.m.jd.com/myJd/newhome.action 到浏览器打开 ，在个人中心自动获取 cookie，没成功就试试刷新页面
-  ^https?://wq\.jd\.com/user_new/info/GetJDUserInfoUnion url script-request-header NE.cookie.js
+  复制 https://bean.m.jd.com/bean/signIndex.action 或 https://home.m.jd.com/myJd/newhome.action 地址到浏览器打开，登录后可自动获取Cookie，没成功就登录后再次访问下之前复制的地址
+  ^https?://api\.m\.jd\.com/client\.action\?functionId=(signBeanIndex|signBeanGroupStageIndex|trade_config) url script-request-header NE.cookie.js
 
 快手Cookie：
   hostname = nebula.kuaishou.com, *.gifshow.com, *.ksapisrv.com
@@ -65,7 +64,6 @@ $.isTask = `undefined` === typeof $request;
       }
       $.setdata(JSON.stringify(newCks, null, 2), 'CookiesJD');
     }
-    $.log('京东Cookie 整理操作完成');
 
     // 整理快手Cookie
     ckArr = [$.getdata('cookie_ks') || ''];
@@ -84,7 +82,7 @@ $.isTask = `undefined` === typeof $request;
       $.setdata(ck, 'cookie_ks');
       $.setdata(JSON.stringify(ckArr, null, 2), 'cookies_ks');
     }
-    $.log('快手Cookie 整理操作完成');
+    $.log('Cookie 整理操作完成');
   }
 })().catch((e) => $.logErr(e)).finally(() => $.done());
 
@@ -95,7 +93,7 @@ function GetJDCookie(appName) {
       if ($request.headers) {
         let acObj = {};
         // 提取ck数据
-        let ck = ($request.headers['Cookie'] || $request.headers['cookie'] || '').replace(/ /g, '') + ';';
+        let ck = ($request.headers['Cookie'] || $request.headers['cookie'] || '').replace(/ /g, '');
         let ckItems = ck.split(';').filter(s => /^(pt_key|pt_pin)=.+/.test(s)).sort();
         if (ckItems.length == 2) {
           acObj.cookie = ckItems.join(';') + ';';
@@ -108,22 +106,24 @@ function GetJDCookie(appName) {
           const ckArr = [$.getdata('CookieJD'), $.getdata('CookieJD2')];
           const oldCks = $.getjson('CookiesJD', []);
           oldCks.forEach(item => ckArr.push(item.cookie));
-          let seatNo = chooseSeatNo(acObj.cookie, ckArr, /pt_pin=(.+?);/);
-          if (seatNo) {
-            let no = Math.abs(seatNo);
-            if (no <= 2) {
-              $.setdata(acObj.cookie, `CookieJD${$.suffix(no-1)}`);
-            } else {
-              if (oldCks.length < no - 2) {
-                oldCks.push(acObj);
+          let [status, seatNo] = chooseSeatNo(acObj.cookie, ckArr, /pt_pin=(.+?);/);
+          if (status) {
+            if (status > 0) {
+              let wt = '';
+              if (seatNo < 2) {
+                wt = $.setdata(acObj.cookie, `CookieJD${$.suffix(seatNo)}`);
               } else {
-                oldCks[no - 3] = acObj;
+                if (oldCks.length <= seatNo - 2) {
+                  oldCks.push(acObj);
+                } else {
+                  oldCks[seatNo - 2] = acObj;
+                }
+                wt = $.setdata(JSON.stringify(oldCks, null, 2), 'CookiesJD');
               }
-              $.setdata(JSON.stringify(oldCks, null, 2), 'CookiesJD');
+              $.msg($.name, `${appName} ${seatNo+1}: ${acObj.userName}`, `${status==1?'新增':'更新'}京东Cookie${wt?`成功 🎉`:`失败 ‼️`}`);
+            } else {
+              $.log($.name, `${appName} ${seatNo+1}: ${acObj.userName}`, 'Cookie数据已存在，跳过处理');
             }
-            $.msg($.name, `${appName} ${no}: ${acObj.userName}`, `${seatNo>0?'新增':'更新'}Cookie成功 🎉`);
-          } else {
-            $.log($.name, appName, 'Cookie数据已存在，跳过处理');
           }
         }
       }
@@ -135,34 +135,32 @@ function GetJDCookie(appName) {
   });
 }
 
-function chooseSeatNo(newCk, oldCks, reg) {
-  let seatNo = oldCks.length + 1; // 存储位置，默认添加到最后面：小于0更新、等于0不操作、大于0新增
+function chooseSeatNo(newCk, allCk, reg) {
+  // status-获取操作状态-0:异常、1-新增、2-更新、-1-相同 seatNo-存储位置，默认添加到最后面
+  let [status, seatNo] = [1, allCk.length];
   try {
     let newId = ((newCk || '').match(reg) || ['', ''])[1];
-    for (let i = 0, len = oldCks.length; i < len; i++) {
-      let oldId = ((oldCks[i] || '').match(reg) || ['', ''])[1];
+    for (let i = 0, len = allCk.length; i < len; i++) {
+      let oldId = ((allCk[i] || '').match(reg) || ['', ''])[1];
       if (oldId) {
-        // 账号位数据存在，判断是否为当前账号的数据，不是则跳过，否则继续判断
+        // 账号位数据存在，判断是否为当前账号的数据，不是则跳过，否则设置数据并跳出循环
         if (oldId == newId) {
-          // 账号数据是否相同，是则不更新，否则要更新
-          if (newCk == oldCks[i]) {
-            seatNo = 0;
-          } else {
-            seatNo = -(i + 1);
-          }
+          seatNo = i;
+          status = newCk == allCk[i] ? -1 : 2;
           break;
         }
-      } else if (seatNo == len + 1) {
+      } else if (seatNo == len) {
         // 旧cookie无效且在初始账号位，先标记新cookie数据存储于此位置
-        seatNo = i + 1;
+        seatNo = i;
+        status = 1;
       }
     }
   } catch (e) {
     // 异常时，不操作cookie
-    seatNo = 0;
+    status = 0;
     $.logErr(e);
   }
-  return seatNo;
+  return [status, seatNo];
 }
 
 function layOutCookie(oldCks, reg) {
@@ -198,7 +196,7 @@ function GetKSCookie(appName) {
     try {
       if ($request.headers) {
         let acObj = {};
-        let ck = ($request.headers['Cookie'] || $request.headers['cookie'] || '').replace(/ /g, '') + ';';
+        let ck = ($request.headers['Cookie'] || $request.headers['cookie'] || '').replace(/ /g, '');
         let ckItems = ck.split(';').filter(s => /^(client_key|kpf|kpn|kuaishou.api_st|userId|token)=.+/.test(s)).sort().reverse();
         let newCk = '';
         if (ckItems.includes('kpn=NEBULA') && ckItems.length >= 5) {
@@ -217,22 +215,24 @@ function GetKSCookie(appName) {
           const ckArr = [$.getdata('cookie_ks') || ''];
           const oldCks = $.getjson('cookies_ks', []);
           oldCks.forEach(cookie => ckArr.push(cookie));
-          let seatNo = chooseSeatNo(acObj.cookie, ckArr, /userId=(.+?);/);
-          if (seatNo) {
-            let no = Math.abs(seatNo);
-            if (no == 1) {
-              $.setdata(acObj.cookie, 'cookie_ks');
-            } else {
-              if (oldCks.length < no - 1) {
-                oldCks.push(acObj.cookie);
+          let [status, seatNo] = chooseSeatNo(acObj.cookie, ckArr, /userId=(.+?);/);
+          if (status) {
+            if (status > 0) {
+              let wt = '';
+              if (seatNo == 0) {
+                wt = $.setdata(acObj.cookie, 'cookie_ks');
               } else {
-                oldCks[no - 2] = acObj.cookie;
+                if (oldCks.length <= seatNo - 1) {
+                  oldCks.push(acObj);
+                } else {
+                  oldCks[seatNo - 1] = acObj;
+                }
+                wt = $.setdata(JSON.stringify(oldCks, null, 2), 'cookies_ks');
               }
-              $.setdata(JSON.stringify(oldCks, null, 2), 'cookies_ks');
+              $.msg($.name, `${appName} ${seatNo+1}: ${acObj.userId}`, `${status==1?'新增':'更新'}快手Cookie${wt?`成功 🎉`:`失败 ‼️`}`);
+            } else {
+              $.log($.name, `${appName} ${seatNo+1}: ${acObj.userId}`, 'Cookie数据已存在，跳过处理');
             }
-            $.msg($.name, `${appName} ${no}: ${acObj.userId}`, `${seatNo>0?'新增':'更新'}Cookie成功 🎉`);
-          } else {
-            $.log($.name, appName, 'Cookie数据已存在，跳过处理');
           }
         }
       }
