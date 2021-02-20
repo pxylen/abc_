@@ -1,6 +1,7 @@
 
 // 中青看点极速版复写配置，QX可在开启解析器情况下使用
 
+[MITM]
 hostname = ios.baertt.com
 
 [Script]

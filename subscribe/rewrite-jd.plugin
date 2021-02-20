@@ -1,6 +1,7 @@
 
 // 京东Cookie抓包订阅
 
+[MITM]
 hostname = api.m.jd.com
 
 [Script]
