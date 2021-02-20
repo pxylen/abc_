@@ -205,20 +205,6 @@
             "val": "1",
             "type": "number",
             "desc": "需要几个账号，数字为几"
-    },
-    {
-            "id": "fqkkxh",
-            "name": "循环次数",
-            "val": "100",
-            "type": "number",
-            "desc": "需要循环几次，数字为几，每天不要超过一百次"
-    },
-    {
-            "id": "fqkktx",
-            "name": "提现金额",
-            "val": "100",
-            "type": "number",
-            "desc": "需要提现多少，数字为该金额的十倍，如提现0.3元填写30,1元填写100"
     }],
             "repo": "https://github.com/age174/-/blob/main/fqkk.js",
             "icons": ["https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg", "https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg"],
