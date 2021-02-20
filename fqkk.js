@@ -1,6 +1,3 @@
-// Variables used by Scriptable.
-// These must be at the very top of the file. Do not edit.
-// icon-color: teal; icon-glyph: magic;
 /*
 软件名称:番茄看看 微信扫描二维码打开
 更新时间：2021-02-21 @肥皂
