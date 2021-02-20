@@ -13,21 +13,21 @@ on:
 jobs:
   build:
     env:
-      QQ_QQreadHEADER: ${{ secrets.QQ_QQreadHEADER }}
+      QQ_QQreadURL: ${{ secrets.QQ_QQreadURL }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
-        if: env.QQ_QQreadHEADER
+        if: env.QQ_QQreadURL
         run: |
           git clone https://github.com/ziye66666/JavaScript.git ~/JavaScript
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
-        if: env.QQ_QQreadHEADER
+        if: env.QQ_QQreadURL
         with:
           node-version: ${{ matrix.node-version }}
       - name: Cache node_modules
-        if: env.QQ_QQreadHEADER
+        if: env.QQ_QQreadURL
         uses: actions/cache@v2 # 使用 GitHub 官方的缓存 Action。
         env:
           cache-name: cache-node-modules
@@ -35,7 +35,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
       - name: npm install
-        if: env.QQ_QQreadHEADER
+        if: env.QQ_QQreadURL
         run: |
           cd ~/JavaScript
           git checkout main
@@ -46,5 +46,5 @@ jobs:
           cd ~/JavaScript/Task
           node QQread.js
         env:
-          QQ_QQreadHEADER: ${{ secrets.QQ_QQreadHEADER }}
+          QQ_QQreadURL: ${{ secrets.QQ_QQreadURL }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
