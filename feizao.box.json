@@ -217,7 +217,7 @@
             "id": "fqkktx",
             "name": "提现金额",
             "val": "100",
-            "type": "string",
+            "type": "number",
             "desc": "需要提现多少，数字为该金额的十倍，如提现0.3元填写30,1元填写100"
     }],
             "repo": "https://github.com/age174/-/blob/main/fqkk.js",
