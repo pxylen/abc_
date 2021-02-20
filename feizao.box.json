@@ -186,6 +186,28 @@
             "repo": "https://github.com/age174/-/blob/main/FEFE8C6EB5DD.js",
             "icons": ["https://s3.ax1x.com/2021/02/10/y0rDPg.png", "https://s3.ax1x.com/2021/02/10/y0rDPg.png"],
             "script": "https://raw.githubusercontent.com/age174/-/main/FEFE8C6EB5DD.js"
+    },
+	{
+            "id": "fqkk",
+            "name": "番茄看看",
+            "keys": ["fqkkurl", "fqkkhd","fqkkurl2","fqkkhd2","fqkkurl3","fqkkhd3","fqkkurl4","fqkkhd4","fqkkurl5", "fqkkhd5","fqkkurl6","fqkkhd6","fqkkurl7","fqkkhd7","fqkkurl8","fqkkhd8","fqkkurl9", "fqkkhd9","fqkkurl10","fqkkhd10","fqkkurl11","fqkkhd11","fqkkurl12","fqkkhd12","fqkkurl13", "fqkkhd13","fqkkurl14","fqkkhd14","fqkkurl15", "fqkkhd15"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "fqkkstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "fqkkcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/fqkk.js",
+            "icons": ["https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg", "https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/fqkk.js"
     }]
 }
-
