@@ -48,7 +48,7 @@ jobs:
           node jd_fruit.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【京东种豆得豆】'
         run: |
@@ -56,7 +56,7 @@ jobs:
           node jd_plantBean.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【东东萌宠】'
         run: |
@@ -64,7 +64,7 @@ jobs:
           node jd_pet.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
       - name: '运行 【口袋书店】'
