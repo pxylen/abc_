@@ -49,7 +49,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           PLANT_BEAN_SHARECODES: ${{ secrets.PLANT_BEAN_SHARECODES }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【东东农场】'
         run: |
@@ -58,7 +58,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
       - name: '运行 【东东工厂】'
@@ -68,7 +68,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
       - name: '运行 【京喜农场】'
@@ -79,7 +79,7 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
           JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【京喜工厂】'
         run: |
@@ -89,7 +89,7 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
           DREAM_FACTORY_SHARE_CODES: ${{ secrets.DREAM_FACTORY_SHARE_CODES }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
       - name: '运行 【东东萌宠】'
