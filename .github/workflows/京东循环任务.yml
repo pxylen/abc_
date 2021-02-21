@@ -78,7 +78,6 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
-          JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
 #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【京喜工厂】'
