@@ -42,13 +42,14 @@ jobs:
           git checkout master
           npm install
 
-      - name: '运行 【东东工厂】'
+      - name: '运行 【京东种豆得豆】'
         run: |
           cd ~/TaskAction
-          node jd_jdfactory.js
+          node jd_plantBean.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【东东农场】'
         run: |
@@ -59,13 +60,33 @@ jobs:
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
-      - name: '运行 【京东种豆得豆】'
+      - name: '运行 【东东工厂】'
         run: |
           cd ~/TaskAction
-          node jd_plantBean.js
+          node jd_jdfactory.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
+
+      - name: '运行 【京喜农场】'
+        run: |
+          cd ~/TaskAction
+          node jd_jxnc.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
+      - name: '运行 【京喜工厂】'
+        run: |
+          cd ~/TaskAction
+          node jd_dreamFactory.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【东东萌宠】'
         run: |
@@ -83,26 +104,6 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
-
-      - name: '运行 【京喜农场】'
-        run: |
-          cd ~/TaskAction
-          node jd_jxnc.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
-#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
-      - name: '运行 【京喜工厂】'
-        run: |
-          cd ~/TaskAction
-          node jd_dreamFactory.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
-  #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
 
 
       - name: '运行 【宠汪汪积分兑换奖品】'
@@ -180,7 +181,7 @@ jobs:
           node jd_beauty.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
-      #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
 
