@@ -157,12 +157,17 @@ let url = {
 }      
       $.post(url, async (err, resp, data) => {
         try {
+        if (err) {
+          console.log("⛔️API查询请求失败❌ ‼️‼️");
+          console.log(JSON.stringify(err));
+          $.logErr(err);
+        } else {
            
     const result = JSON.parse(data)
        console.log('\n番茄看看key提交成功,即将开始领取阅读奖励')       
        await $.wait(8000);
         await fqkk3();
-        } catch (e) {
+        }} catch (e) {
           //$.logErr(e, resp);
         } finally {
           resolve()
