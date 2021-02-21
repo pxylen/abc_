@@ -42,6 +42,14 @@ jobs:
           git checkout master
           npm install
 
+      - name: '运行 【东东工厂】'
+        run: |
+          cd ~/TaskAction
+          node jd_jdfactory.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
       - name: '运行 【东东农场】'
         run: |
           cd ~/TaskAction
@@ -49,6 +57,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【京东种豆得豆】'
         run: |
@@ -84,6 +93,16 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
 #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
+      - name: '运行 【京喜工厂】'
+        run: |
+          cd ~/TaskAction
+          node jd_dreamFactory.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
+  #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
 
       - name: '运行 【宠汪汪积分兑换奖品】'
