@@ -49,7 +49,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
+          PLANT_BEAN_SHARECODES: ${{ secrets.PLANT_BEAN_SHARECODES }}
 
       - name: '运行 【东东农场】'
         run: |
@@ -58,6 +58,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
 
 
       - name: '运行 【东东工厂】'
@@ -77,6 +78,7 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
 
       - name: '运行 【京喜工厂】'
         run: |
@@ -95,7 +97,7 @@ jobs:
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
+          PETSHARECODES: ${{ secrets.PETSHARECODES }}
 
       - name: '运行 【口袋书店】'
         run: |
