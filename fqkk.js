@@ -1,6 +1,6 @@
 /*
 软件名称:番茄看看 微信扫描二维码打开
-更新时间：2021-02-21 @肥皂
+更新时间：2021-02-23 @肥皂
 脚本说明：番茄看看自动阅读
 脚本为自动完成番茄看看的阅读任务
 每日收益一元左右，可多号撸。提现秒到
@@ -21,7 +21,10 @@ TG电报群: https://t.me/hahaha8028
 我的邀请码 : 3950781  感谢大佬们填写
 
 注意:脚本默认循环次数为25次，运行时间大概5分钟,每天共运行四次超过一百次容易被微信阅读限制，切记。。。。。。
-别几天就把羊薅死了，账号多的大佬觉得运行一次太久的话也可以去boxjs自行修改循环次数，比如修改循环次数为20，则每天运行五次脚本，循环次数为50则每天要运行两次脚本。。默认为循环次数为100一天运行一次，反正不管怎么修改，尽量每天循环次数别超过100
+别几天就把羊薅死了
+如果显示被微信限制，二十四小时之后再跑脚本吧
+
+2.23更新加入运行次数和今日奖励总和，尝试修复key无法提交的问题
 
 boxjs地址 :  
 
@@ -130,11 +133,11 @@ let url = {
            
     const result = JSON.parse(data)
         if(result.code == 0){
-        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg)
+        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
 }
 if(result.code !== 0){
 
-       console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg)
+       console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
 zz = 1
 }
    
@@ -165,8 +168,7 @@ let url = {
            
     const result = JSON.parse(data)
        console.log('\n番茄看看key提交成功,即将开始领取阅读奖励')       
-       await $.wait(8000);
-        await fqkk3();
+       
         }} catch (e) {
           //$.logErr(e, resp);
         } finally {
@@ -200,7 +202,8 @@ let url = {
         console.log(fqkey)
         await $.wait(2000);
         await fqkk2()
-}
+}       await $.wait(10000);
+        await fqkk3();   
 if(result.code !== 0){
 console.log('番茄看看获取key回执:失败🚫 '+result.msg)
 
