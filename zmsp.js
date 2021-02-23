@@ -59,21 +59,14 @@ const $ = new Env('芝麻视频晶石收取');
 let zmurl = $.getdata('zmurl')
 let zmhd = $.getdata('zmhd')
 let zmbody = $.getdata('zmbody')
-var zz = ''
+let zz = 1
 !(async () => {
   if (typeof $request !== "undefined") {
     await zmck()
    
   } else {
     await zmum()
-for (let i = 0; i < 30; i++) {
-      $.index = i + 1
-      console.log(`\n芝嫲视频开始执行第${i+1}次领取晶石！💦\n等待11秒开始执行下一次领取`)
     await zmsx();
-if(zz==1){
-break;
-}
-  }console.log('芝嫲视频本轮晶石已全部领取完毕，，等待下次成熟!')
   }
 })()
   .catch((e) => $.logErr(e))
@@ -107,8 +100,7 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 200){
         console.log('\n芝嫲激励视频回执:成功🌝 '+result.mess)
-}
-if(result.code == 190){
+}else{
 
        console.log('\n芝嫲激励视频回执:失败🚫 '+result.mess)}
         } catch (e) {
@@ -133,11 +125,11 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 200){
         console.log('\n芝嫲视频收取晶石回执:成功🌝 '+result.mess)
+    z++
+    await zmsx();
+}else{
+       console.log('\n芝嫲视频收取晶石回执:失败🚫 '+result.mess)
 }
-if(result.code == 1002){
-   zz = 1
-
-       console.log('\n芝嫲视频收取晶石回执:失败🚫 '+result.mess)}
         } catch (e) {
           //$.logErr(e, resp);
         } finally {
@@ -166,14 +158,13 @@ let url = {
           
     const result = JSON.parse(data)
         if(result.code == 200){
-        console.log('\n芝嫲视频刷新回执:成功🌝 '+result.mess)
-}
-if(result.code == 2970){
-        console.log('芝嫲视频回执:失败🚫 '+result.mess+'请重新获取body')
+        console.log('\n芝嫲视频刷新回执:成功🌝 '+result.mess+'开始第 '+zz+' 次收取晶石')
+}else{
+        $.msg('','','芝嫲视频回执:失败🚫 '+result.mess)
 
 } console.log(`\n芝嫲视频刷新成功,等待11秒开始收取晶石`)
 await $.wait(11000);
-await zmlq()
+await zmlq();
 
         } catch (e) {
           //$.logErr(e, resp);
