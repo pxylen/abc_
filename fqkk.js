@@ -73,7 +73,6 @@ let fqkkhd = $.getdata('fqkkhd')
 let fqkey = ''
 let fqkkxh = ($.getval('fqkkxh') || '25');  // 此处修改循环次数，默认一百
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等于30，默认为提现一元，也就是100
-var zz = ''
 !(async () => {
   if (typeof $request !== "undefined") {
     await fqkkck()
@@ -94,19 +93,19 @@ var zz = ''
           fqkkhd = fqkkhdArr[i];
           $.index = i + 1;
           console.log(`\n开始【番茄看看${$.index}】`)
-          for (let x = 0; x < fqkkxh; x++) {
+tcxh:    for (let x = 0; x < fqkkxh; x++) {
       $.index = x + 1
       console.log(`\n番茄看看开始执行第${x+1}次阅读任务！💦\n`)
     await fqkk1();
-if(zz==1){
+if(x == 1){
 console.log('番茄看看任务异常，请查看脚本运行日志查看情况!')
-break;
+//break tcxh;
 }
-  }if(zz==1){
-$.msg($.name,'','番茄看看任务异常，请查看脚本运行日志查看情况!')
-}
+  }
   await fqkktx();
 }}}
+if(x == 1){
+$.msg($.name,'','番茄看看任务异常，请查看脚本运行日志查看情况!')}
 })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
@@ -138,11 +137,8 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 0){
         console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
-}
-if(result.code !== 0){
-
+} else {
        console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
-zz = 1
 }
    
         } catch (e) {
@@ -164,7 +160,7 @@ let url = {
 }      
       $.get(url, async (err, resp, data) => {
         try {
-         console.log('\n开始重定向跳转，跳转返回结果：'+data)
+         //console.log('\n开始重定向跳转，跳转返回结果：'+data)
         if (err) {
           console.log(`${$.name} 请求失败，请检查网路重试`)
         } else {
@@ -210,7 +206,7 @@ let url = {
         await fqread();
 } else {
 console.log('番茄看看获取key回执:失败🚫 '+result.msg)
-zz = 1
+x = 1
 }
         } catch (e) {
           //$.logErr(e, resp);
@@ -236,9 +232,7 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 0){
         console.log('\n番茄看看提现回执:成功🌝 ')
-}
-if(result.code !== 0){
-
+} else {
        console.log('\n番茄看看提现回执:失败🚫 '+result.msg)
 }
    
