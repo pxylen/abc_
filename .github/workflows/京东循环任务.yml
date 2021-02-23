@@ -101,6 +101,15 @@ jobs:
           PETSHARECODES: ${{ secrets.PETSHARECODES }}
 #          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
+
+      - name: '运行 【东东超市】'
+        run: |
+          cd ~/TaskAction
+          node jd_superMarket.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
       - name: '运行 【口袋书店】'
         run: |
           cd ~/TaskAction
@@ -162,14 +171,13 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
-      - name: '运行 【东东超市】'
+      - name: '运行 【crazyJoy任务】'
         run: |
           cd ~/TaskAction
-          node jd_superMarket.js
+          node jd_crazy_joy.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
 
       - name: '运行 【环球挑战赛】'
         run: |
