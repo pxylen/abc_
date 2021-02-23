@@ -208,11 +208,9 @@ let url = {
         console.log(fqkey)
         await fqkk2();
         await fqread();
-}    
-if(result.code !== 0){
+} else {
 console.log('番茄看看获取key回执:失败🚫 '+result.msg)
 zz = 1
-await fqkk2();
 }
         } catch (e) {
           //$.logErr(e, resp);
