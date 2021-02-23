@@ -199,7 +199,7 @@ let url = {
         fqkey = result.data.jkey
         console.log(fqkey)
         await fqkk2()
-}       await $.wait(10000);
+}       await $.wait(15000);
         await fqkk3();   
 if(result.code !== 0){
 console.log('番茄看看获取key回执:失败🚫 '+result.msg)
