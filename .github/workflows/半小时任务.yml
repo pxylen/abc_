@@ -32,6 +32,8 @@ jobs:
           node ./workflow/sunert/baidu_speed.js
         env:
           TZ: Asia/shanghai
+          BAIDU_COOKIE: ${{ secrets.BAIDU_COOKIE }}
+          BAIDU_CASH: ${{ secrets.BAIDU_CASH }}
 
 
       - name: '运行 【电视家】'
@@ -39,6 +41,8 @@ jobs:
           node ./workflow/sunert/dianshijia.js
         env:
           TZ: Asia/shanghai
+          DSJ_HEADERS: ${{ secrets.DSJ_HEADERS }}
+          DSJ_DRAWAL: ${{ secrets.DSJ_DRAWAL }}
 
 
       - name: '运行 【今日头条极速版】'
