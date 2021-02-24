@@ -24,6 +24,8 @@
 
 [@whyour](https://github.com/whyour/hundun) - 中青py...
 
+[@moposmall](https://github.com/moposmall/Script) - moposmall
+
 [@adwktt](https://github.com/adwktt/adwktt) - 步步宝、一刻
 
 [@age174](https://github.com/age174/-) - age174
