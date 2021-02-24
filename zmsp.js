@@ -59,7 +59,6 @@ const $ = new Env('芝麻视频晶石收取');
 let zmurl = $.getdata('zmurl')
 let zmhd = $.getdata('zmhd')
 let zmbody = $.getdata('zmbody')
-let zz = 1
 !(async () => {
   if (typeof $request !== "undefined") {
     await zmck()
@@ -125,7 +124,7 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 200){
         console.log('\n芝嫲视频收取晶石回执:成功🌝 '+result.mess)
-    z++
+    
     await zmsx();
 }else{
        console.log('\n芝嫲视频收取晶石回执:失败🚫 '+result.mess)
@@ -158,13 +157,15 @@ let url = {
           
     const result = JSON.parse(data)
         if(result.code == 200){
-        console.log('\n芝嫲视频刷新回执:成功🌝 '+result.mess+'开始第 '+zz+' 次收取晶石')
+        console.log('\n芝嫲视频刷新回执:成功🌝 '+result.mess+'开始收取晶石')
+
+console.log(`\n芝嫲视频刷新成功,等待11秒开始收取晶石`)
+await $.wait(11000);
+await zmlq();
 }else{
         $.msg('','','芝嫲视频回执:失败🚫 '+result.mess)
 
-} console.log(`\n芝嫲视频刷新成功,等待11秒开始收取晶石`)
-await $.wait(11000);
-await zmlq();
+} 
 
         } catch (e) {
           //$.logErr(e, resp);
