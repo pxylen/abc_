@@ -26,7 +26,7 @@ jobs:
           node-version: 10.x
       - name: npm install
         run: |
-          cd ~/scripts
+          cd ~/TaskAction
           npm install
 
 
