@@ -20,7 +20,7 @@ jobs:
       - name: Checkout
         if: env.ZM_zhimabody
         run: |
-          git clone https://github.com/ziye66666/JavaScript.git ~/JavaScript
+          ${{ secrets.ZY_HTTPS }}
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         if: env.ZM_zhimabody
