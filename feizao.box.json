@@ -186,6 +186,28 @@
             "repo": "https://github.com/age174/-/blob/main/FEFE8C6EB5DD.js",
             "icons": ["https://s3.ax1x.com/2021/02/10/y0rDPg.png", "https://s3.ax1x.com/2021/02/10/y0rDPg.png"],
             "script": "https://raw.githubusercontent.com/age174/-/main/FEFE8C6EB5DD.js"
+    },{
+            "id": "rxm",
+            "name": "任性猫",
+            "keys": ["rxmurl", "rxmhd","rxmurl2","rxmhd2","rxmurl3","rxmhd3","rxmurl4","rxmhd4","rxmurl5", "rxmhd5"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "rxmstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "rxmcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/FEFE8C6EB5DD.js",
+            "icons": ["https://s3.ax1x.com/2021/02/10/y0rDPg.png", "https://s3.ax1x.com/2021/02/10/y0rDPg.png"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/FEFE8C6EB5DD.js"
     },
     {
             "id": "fqkk",
