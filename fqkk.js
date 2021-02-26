@@ -122,7 +122,7 @@ $.log(fqkkhd)
 function fqkk3(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?).top/)[1]+".top/reada/finishTask",
+        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/finishTask",
         headers : JSON.parse(fqkkhd),
         body : 'readLastKey='+fqkey,}
       $.post(url, async (err, resp, data) => {
@@ -186,7 +186,7 @@ function fqkk1(timeout = 0) {
         $.done()
       }
 let fqjs = 1
-console.log(fqkkurl.match(/m.(.*?)reada/)[1])
+//console.log(fqkkurl.match(/m.(.*?)reada/)[1])
 
 let url = {
         url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/getTask",
