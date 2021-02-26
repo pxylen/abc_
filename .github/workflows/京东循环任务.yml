@@ -108,6 +108,7 @@ jobs:
           node jd_superMarket.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JOIN_PK_TEAM: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【口袋书店】'
@@ -134,6 +135,8 @@ jobs:
           node jd_joy_steal.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JOY_HELP_FEED: ${{ secrets.JOY_HELP_FEED }}
+          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【点点券】'
@@ -185,8 +188,17 @@ jobs:
           node jd_crazy_joy.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
+      - name: '运行 【京东摇钱树】'
+        run: |
+          cd ~/TaskAction
+          node jd_moneyTree.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          MONEY_TREE_SELL_FRUIT: ${{ secrets.MONEY_TREE_SELL_FRUIT }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
       - name: '运行 【美丽研究院】'
         run: |
