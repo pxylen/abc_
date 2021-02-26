@@ -1,6 +1,6 @@
 /*
 软件名称:番茄看看 微信扫描二维码打开
-更新时间：2021-02-24 @肥皂
+更新时间：2021-02-27 @肥皂
 脚本说明：番茄看看自动阅读
 脚本为自动完成番茄看看的阅读任务
 每日收益1.7元左右，可多号撸。提现秒到
@@ -26,6 +26,8 @@ TG电报群: https://t.me/hahaha8028
 2.24更新 运行日志加入boxjs设置的循环次数和提现金额，key提交因为有很多302重定向，如跑脚本没有金币请查看日志的重定向是否错误
 已修改循环方式，方式循环方式为一直阅读，直到当前无任务可做自动停止
 
+2.27修复番茄看看因跟换域名无法获取数据的问题，自行更换重写和mitm
+
 boxjs地址 :  
 
 https://raw.githubusercontent.com/age174/-/main/feizao.box.json
@@ -40,24 +42,24 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #番茄看看
-^http://m.*.top/reada/getTask url script-request-header https://raw.githubusercontent.com/age174/-/main/fqkk.js
+^http://m.*./reada/getTask url script-request-header https://raw.githubusercontent.com/age174/-/main/fqkk.js
 
 
 
 #loon
-^http://m.*.top/reada/getTask script-path=https://raw.githubusercontent.com/age174/-/main/fqkk.js, requires-header=true, timeout=10, tag=番茄看看
+^http://m.*./reada/getTask script-path=https://raw.githubusercontent.com/age174/-/main/fqkk.js, requires-header=true, timeout=10, tag=番茄看看
 
 
 
 #surge
 
-番茄看看 = type=http-request,pattern=^http://m.*.top/reada/getTask,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/fqkk.js,script-update-interval=0
+番茄看看 = type=http-request,pattern=^http://m.*./reada/getTask,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/fqkk.js,script-update-interval=0
 
 
 
 
 [MITM]
-hostname = m.*.top
+hostname = m.*
 
 
 */
@@ -71,7 +73,7 @@ let fqkkurl = $.getdata('fqkkurl')
 let fqkkhd = $.getdata('fqkkhd')
 let fqkey = ''
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等于30，默认为提现一元，也就是100
-let fqjs = 1
+
 !(async () => {
   if (typeof $request !== "undefined") {
     await fqkkck()
@@ -129,6 +131,7 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 0){
         console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
+        await fqkk1();
 } else {
        console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
 }
@@ -146,7 +149,7 @@ let url = {
 function fqkk2(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?).top/)[1]+".top/reada/jump?key="+fqkey,
+        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/jump?key="+fqkey,
         headers : JSON.parse(fqkkhd),
        
 }      
@@ -160,7 +163,7 @@ let url = {
     //const result = JSON.parse(data)
        console.log('\n番茄看看key提交成功,即将开始领取阅读奖励') 
        
-        await $.wait(10000);
+        await $.wait(15000);
         await fqkk3(); 
        
         }} catch (e) {
@@ -182,8 +185,11 @@ function fqkk1(timeout = 0) {
         $.msg($.name,"",'请先获取番茄看看数据!😓',)
         $.done()
       }
+let fqjs = 1
+console.log(fqkkurl.match(/m.(.*?)reada/)[1])
+
 let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?).top/)[1]+".top/reada/getTask",
+        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/getTask",
         headers : JSON.parse(fqkkhd),
         body : '',}
       $.post(url, async (err, resp, data) => {
@@ -198,7 +204,6 @@ let url = {
         await fqread();
         await $.wait(1000);
         fqjs++
-        await fqkk1();
 } else {
 console.log('番茄看看获取key回执:失败🚫 '+result.msg+' 已停止当前账号运行!')
 }
@@ -217,7 +222,7 @@ console.log('番茄看看获取key回执:失败🚫 '+result.msg+' 已停止当�
 function fqkktx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?).top/)[1]+".top/withdrawal/doWithdraw",
+        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"withdrawal/doWithdraw",
         headers : JSON.parse(fqkkhd),
         body : 'amount='+fqtx,}
       $.post(url, async (err, resp, data) => {
@@ -244,7 +249,7 @@ let url = {
 function fqread(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?).top/)[1]+".top/reada/toRead?sign="+fqkey+"&for=",
+        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/toRead?sign="+fqkey+"&for=",
         headers : JSON.parse(fqkkhd),
    }
       $.get(url, async (err, resp, data) => {
