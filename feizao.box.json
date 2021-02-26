@@ -56,14 +56,14 @@
             "keys": ["mhhd", "mhhd1", "mhhd2", "mhhd3", "mhhd4"],
             "author": "@feizao",
             "settings": [{
-            "id": "mhdspsetting",
+            "id": "mhsetting",
             "name": "当前账号",
             "val": "1",
             "type": "number",
             "desc": "当前账号对应"
     },
     {
-            "id": "mhdspcount",
+            "id": "mhcount",
             "name": "账号个数",
             "val": "1",
             "type": "number",
