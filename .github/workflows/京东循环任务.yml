@@ -171,6 +171,14 @@ jobs:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
+      - name: '运行 【京喜财富岛】'
+        run: |
+          cd ~/TaskAction
+          node jx_cfd.js
+        env:
+          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
       - name: '运行 【crazyJoy任务】'
         run: |
           cd ~/TaskAction
