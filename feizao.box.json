@@ -56,7 +56,7 @@
             "keys": ["mhhd", "mhhd1", "mhhd2", "mhhd3", "mhhd4"],
             "author": "@feizao",
             "settings": [{
-            "id": "mhsetting",
+            "id": "mhstatus",
             "name": "当前账号",
             "val": "1",
             "type": "number",
