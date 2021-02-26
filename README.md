@@ -8,7 +8,7 @@
 
 [@Sunert](https://github.com/Sunert/Scripts) - Sunert
 
-[@lxk0301](https://gitee.com/lxk0301/jd_scripts/tree/master/) - 狗东系列
+[@lxk0301](https://gitee.com/lxk0301/projects) - 狗东系列
 
 [@shylocks](https://bitbucket.org/jd-study/shylocks/src) - 狗东系列2
 
