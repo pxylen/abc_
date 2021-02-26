@@ -166,7 +166,7 @@
     },{
             "id": "rxm",
             "name": "任性猫",
-            "keys": ["rxmurl", "rxmhd","rxmurl2","rxmhd2","rxmurl3","rxmhd3","rxmurl4","rxmhd4","rxmurl5", "rxmhd5"],
+            "keys": ["rxmurl", "rxmhd","rxmurl2","rxmhd2","rxmurl3","rxmhd3","rxmurl4","rxmhd4","rxmurl5", "rxmhd5","rxmurl6", "rxmhd6","rxmurl7", "rxmhd7","rxmurl8", "rxmhd8","rxmurl9", "rxmhd9","rxmurl10", "rxmhd10","rxmurl11", "rxmhd11","rxmurl12", "rxmhd12","rxmurl13", "rxmhd13","rxmurl14", "rxmhd14","rxmurl15", "rxmhd15","rxmurl16", "rxmhd16","rxmurl17", "rxmhd17","rxmurl18", "rxmhd18","rxmurl19", "rxmhd19","rxmurl20", "rxmhd20","rxmurl21", "rxmhd21","rxmurl22", "rxmhd22"],
             "author": "@feizao",
             "settings": [{
             "id": "rxmstatus",
