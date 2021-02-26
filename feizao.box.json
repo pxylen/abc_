@@ -53,7 +53,7 @@
     {
             "id": "mhdsp",
             "name": "陌嗨短视频 ",
-            "keys": ["mhurl", "mhhd", "mhbody"],
+            "keys": ["mhhd", "mhhd1", "mhhd2", "mhhd3", "mhhd4"],
             "author": "@feizao",
             "settings": [{
             "id": "mhdspsetting",
