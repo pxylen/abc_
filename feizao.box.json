@@ -51,29 +51,6 @@
             "script": "https://raw.githubusercontent.com/age174/-/main/zmsp.js"
     },
     {
-            "id": "mhdsp",
-            "name": "陌嗨短视频 ",
-            "keys": ["mhhd", "mhhd1", "mhhd2", "mhhd3", "mhhd4"],
-            "author": "@feizao",
-            "settings": [{
-            "id": "mhstatus",
-            "name": "当前账号",
-            "val": "1",
-            "type": "number",
-            "desc": "当前账号对应"
-    },
-    {
-            "id": "mhcount",
-            "name": "账号个数",
-            "val": "1",
-            "type": "number",
-            "desc": "需要几个账号，数字为几"
-    }],
-            "repo": "https://raw.githubusercontent.com/age174/-/main/mhdsp.js",
-            "icons": ["https://raw.githubusercontent.com/usrnb/options/main/QuantumultX/icons/task/mhdsp.png", "https://raw.githubusercontent.com/usrnb/options/main/QuantumultX/icons/task/mhdsp.png"],
-            "script": "https://raw.githubusercontent.com/age174/-/main/mhdsp.js"
-    },
-    {
             "id": "wnb",
             "name": "蜗牛吧",
             "keys": ["wnburl", "wnbhd", "wnbbody"],
@@ -200,6 +177,28 @@
     },
     {
             "id": "rxmcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/FEFE8C6EB5DD.js",
+            "icons": ["https://s3.ax1x.com/2021/02/10/y0rDPg.png", "https://s3.ax1x.com/2021/02/10/y0rDPg.png"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/FEFE8C6EB5DD.js"
+    },{
+            "id": "mh",
+            "name": "陌嗨视频",
+            "keys": ["mhurl", "mhhd","mhurl2","mhhd2","mhurl3","mhhd3","mhurl4","mhhd4","mhurl5", "mhhd5"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "mhstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "mhcount",
             "name": "账号个数",
             "val": "1",
             "type": "number",
