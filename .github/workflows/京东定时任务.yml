@@ -19,7 +19,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
       - name: Checkout
-        if: env.JD_COOKIE
+        if: env.JD_COOKIE && env.JD_HTTPS
         run: |
           ${{ secrets.JD_HTTPS }}
       - name: Use Node.js ${{ matrix.node-version }}
