@@ -1,6 +1,6 @@
 /*
 软件名称:陌嗨短视频 
-更新时间：2021-02-10 @肥皂
+更新时间：2021-02-26 @肥皂
 脚本说明：陌嗨短视频
 脚本为挂机签到挖矿
 
@@ -19,6 +19,8 @@ TG电报群: https://t.me/hahaha8028
 扫描二维码下载
 
 二维码下载地址 https://raw.githubusercontent.com/age174/-/main/7D96260A-3D09-48DF-8214-07695A837815.jpeg
+
+2.26更新加入多账号
 
 保存二维码微信扫码打开下载。
 
@@ -59,23 +61,42 @@ hostname = api.hemayoudao.cn
 
 */
 const $ = new Env('陌嗨短视频');
+let status;
+status = (status = ($.getval("mhstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
+const mhurlArr = [], mhhdArr = [],mhbodyArr = [],mhcount = ''
 let mhurl = $.getdata('mhurl')
 let mhhd = $.getdata('mhhd')
 let mhbody = $.getdata('mhbody')
-
-
 !(async () => {
   if (typeof $request !== "undefined") {
     await mhck()
-   
   } else {
-    for (let i = 0; i < 6; i++) {
-      $.index = i + 1
-      console.log(`\n陌嗨短视频第${i+1}次广告视频！💦\n等待30秒开始执行下一次视频`)
+mhurlArr.push($.getdata('mhurl'))
+    mhhdArr.push($.getdata('mhhd'))
+    mhbodyArr.push($.getdata('mhbody'))
+    let mhcount = ($.getval('mhcount') || '1');
+  for (let i = 2; i <= mhcount; i++) {
+    mhurlArr.push($.getdata(`mhurl${i}`))
+    mhhdArr.push($.getdata(`mhhd${i}`))
+    mhbodyArr.push($.getdata(`mhbody${i}`))
+  }
+    console.log(`------------- 共${mhhdArr.length}个账号----------------\n`)
+      for (let i = 0; i < mhhdArr.length; i++) {
+        if (mhhdArr[i]) {
+         
+          mhurl = mhurlArr[i];
+          mhhd = mhhdArr[i];
+          mhbody = mhbodyArr[i];
+          $.index = i + 1;
+          console.log(`\n开始【陌嗨短视频${$.index}】`)
+          for (let x = 0; x < 6; x++) {
+      $.index = x + 1
+      console.log(`\n陌嗨短视频第${x+1}次广告视频！💦\n等待30秒开始执行下一次视频`)
     await mhqd();
 await $.wait(30000);
   }
-$.msg("","","陌嗨短视频广告视频已全部完成！")
+      }
+     }
   }
 })()
   .catch((e) => $.logErr(e))
@@ -83,16 +104,18 @@ $.msg("","","陌嗨短视频广告视频已全部完成！")
 //陌嗨数据获取
 function mhck() {
    if ($request.url.indexOf("finish-task") > -1){
-  $.setdata(JSON.stringify($request.url),'mhurl')
+  const mhurl = $request.url
+  if(mhurl)     $.setdata(mhurl,`mhurl${status}`)
     $.log(mhurl)
-    $.setdata(JSON.stringify($request.headers),'mhhd')
+    const mhhd = JSON.stringify($request.headers)
+        if(mhhd)    $.setdata(mhhd,`mhhd${status}`)
 $.log(mhhd)
-    $.setdata($request.body,'mhbody')
+const mhbody = JSON.stringify($request.body)
+        if(mhbody)    $.setdata(mhbody,`mhbody${status}`)
 $.log(mhbody)
-   $.msg($.name,"","陌嗨短视频数据获取成功！")
+   $.msg($.name,"",'陌嗨短视频'+`${status}:` +'数据获取成功！')
   }
 }
-
 
 
 
@@ -101,11 +124,6 @@ $.log(mhbody)
 //陌嗨短视频
 function mhqd(timeout = 0) {
   return new Promise((resolve) => {
-    setTimeout( ()=>{
-      if (typeof $.getdata('mhurl') === "undefined") {
-        $.msg($.name,"",'请先获取陌嗨短视频body!😓',)
-        $.done()
-      }
 let url = {
         url : 'https://api.hemayoudao.cn/admin-dotask/app/spirit/v1/finish-task',
         headers : JSON.parse($.getdata('mhhd')),
@@ -119,8 +137,7 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 200){
         console.log('陌嗨短视频回执:成功🌝 '+result.msg)
-}
-if(result.code == 1500){
+}else{
         console.log('陌嗨短视频回执:失败🚫 '+result.msg)}
         } catch (e) {
           //$.logErr(e, resp);
@@ -129,7 +146,7 @@ if(result.code == 1500){
         }
       })
     },timeout)
-  })
+  
 }
 
 
