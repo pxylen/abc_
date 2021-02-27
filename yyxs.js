@@ -236,7 +236,8 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 0){
           console.log('\n阅友小说视频奖励领取回执:成功🌝 开始执行'+sp+'次') 
-           await yyxssp();
+           await $.wait(1000);
+            await yyxssp();
 } else {
 console.log('阅友小说视频奖励领取回执:失败🚫 '+result.msg)
 }
