@@ -148,15 +148,6 @@ jobs:
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
-      - name: '运行 【取关京东店铺商品】'
-        run: |
-          cd ~/TaskAction
-          node jd_unsubscribe.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
-
       - name: '运行 【京东天天加速】'
         run: |
           cd ~/TaskAction
