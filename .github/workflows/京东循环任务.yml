@@ -15,6 +15,8 @@ jobs:
   build:
     env:
       JD_COOKIE: ${{ secrets.JD_COOKIE }}
+      TG_USER_ID: ${{ secrets.TG_USER_ID }}
+      TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
@@ -47,28 +49,22 @@ jobs:
           cd ~/TaskAction
           node jd_plantBean.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           PLANT_BEAN_SHARECODES: ${{ secrets.PLANT_BEAN_SHARECODES }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          
 
       - name: '运行 【东东农场】'
         run: |
           cd ~/TaskAction
           node jd_fruit.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
-
-
+          
       - name: '运行 【东东工厂】'
         run: |
           cd ~/TaskAction
           node jd_jdfactory.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
-#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
       - name: '运行 【京喜农场】'
@@ -76,20 +72,17 @@ jobs:
           cd ~/TaskAction
           node jd_jxnc.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
           JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
-#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【京喜工厂】'
         run: |
           cd ~/TaskAction
           node jd_dreamFactory.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
           DREAM_FACTORY_SHARE_CODES: ${{ secrets.DREAM_FACTORY_SHARE_CODES }}
-#          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
       - name: '运行 【东东萌宠】'
@@ -97,9 +90,7 @@ jobs:
           cd ~/TaskAction
           node jd_pet.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           PETSHARECODES: ${{ secrets.PETSHARECODES }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
       - name: '运行 【东东超市】'
@@ -107,26 +98,20 @@ jobs:
           cd ~/TaskAction
           node jd_superMarket.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          JOIN_PK_TEAM: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          JOIN_PK_TEAM: ${{ secrets.JOIN_PK_TEAM }}
+          
 
       - name: '运行 【口袋书店】'
         run: |
           cd ~/TaskAction
           node jd_bookshop.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
 
       - name: '运行 【宠汪汪积分兑换奖品】'
         run: |
           cd ~/TaskAction
           node jd_joy_reward.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
       - name: '运行 【宠汪汪偷好友积分与狗】'
@@ -134,70 +119,55 @@ jobs:
           cd ~/TaskAction
           node jd_joy_steal.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JOY_HELP_FEED: ${{ secrets.JOY_HELP_FEED }}
           JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          
 
       - name: '运行 【点点券】'
         run: |
           cd ~/TaskAction
           node jd_necklace.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
       - name: '运行 【京东天天加速】'
         run: |
           cd ~/TaskAction
           node jd_speed.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
 
 
       - name: '运行 【天天提鹅】'
         run: |
           cd ~/TaskAction
           node jd_daily_egg.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【京喜财富岛】'
         run: |
           cd ~/TaskAction
           node jx_cfd.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
       - name: '运行 【crazyJoy任务】'
         run: |
           cd ~/TaskAction
           node jd_crazy_joy.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          
 
       - name: '运行 【京东摇钱树】'
         run: |
           cd ~/TaskAction
           node jd_moneyTree.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
           MONEY_TREE_SELL_FRUIT: ${{ secrets.MONEY_TREE_SELL_FRUIT }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          
 
       - name: '运行 【美丽研究院】'
         run: |
           cd ~/TaskAction
           node jd_beauty.js
-        env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
-          BARK_PUSH: ${{ secrets.BARK_PUSH }}
+
 
 
 
