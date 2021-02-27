@@ -121,8 +121,6 @@ let yyxsxxurl = $.getdata('yyxsxxurl')
           yyxsxxurl = yyxsxxurlArr[i];
           $.index = i + 1;
           console.log(`\n开始【阅友小说${$.index}】`)
-    await yyxssp();
-    await yyxscj();
     
     for (let sc = 1 ; sc < 200 ; sc++) {
     console.log('\n阅友小说阅读时长上传回执:成功🌝 已上传'+sc+'分钟') 
@@ -130,6 +128,9 @@ let yyxsxxurl = $.getdata('yyxsxxurl')
     await $.wait(100);
     
     }await yyxsjs();
+     await yyxssp();
+     await yyxscj();
+     await yyxsxx();
 
       
   }
@@ -207,7 +208,7 @@ let url = {
         } else {
        
        console.log('\n阅友小说阅读计时奖励回执:失败🚫 '+result.msg) 
-        await yyxsxx();
+        
         }} catch (e) {
           //$.logErr(e, resp);
         } finally {
@@ -240,7 +241,7 @@ let url = {
            await yyxssp();
            await $.wait(3000);
 } else {
-console.log('阅友小说视频奖励领取回执:失败🚫 '+result.msg)
+console.log('\n阅友小说视频奖励领取回执:失败🚫 '+result.msg)
 }
         } catch (e) {
           //$.logErr(e, resp);
@@ -268,8 +269,6 @@ let url = {
         try {
          const result = JSON.parse(data)
         if (result.code == 0) {
-     
-          
            
         } else {
        
