@@ -124,7 +124,7 @@ let sc = 1,sp = 0,js = 0;
     await yyxssp();
     await yyxscj();
     
-    for (sc; sc < 20 ; sc++) {
+    for (sc; sc < 200 ; sc++) {
     await yyxssc();
     await $.wait(100);
     
