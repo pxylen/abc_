@@ -96,12 +96,6 @@ $.log(rxmbody)
 function rxmqd(timeout = 0) {
   return new Promise((resolve) => {
       //console.log(rxmhd.match(/Cookie":"(.+?)","/)[1])
-const head = {
-
-'User-Agent' : `Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x18000230) NetType/4G Language/zh_CN`,
-'Cookie' : rxmhd.match(/Cookie":"(.+?)","/)[1],
-
-};
 let url = {
         url : rxmurl,
         headers : JSON.parse($.getdata('rxmhd')),
