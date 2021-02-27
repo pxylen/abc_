@@ -237,5 +237,28 @@
             "repo": "https://github.com/age174/-/blob/main/fqkk.js",
             "icons": ["https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg", "https://ftp.bmp.ovh/imgs/2021/02/f8306006536eb49c.jpeg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/fqkk.js"
+    },
+    {
+            "id": "yyxs",
+            "name": "阅友小说",
+            "keys": ["yyxsspurl", "yyxssphd","yyxsspbody","yyxsjsurl","yyxsjsbody","yyxsscurl","yyxsschd","yyxscjurl","yyxscjhd", "yyxsxxurl", "yyxsspurl1", "yyxssphd1","yyxsspbody1","yyxsjsurl1","yyxsjsbody1","yyxsscurl1","yyxsschd1","yyxscjurl1","yyxscjhd1", "yyxsxxurl1", "yyxsspurl2", "yyxssphd2","yyxsspbody2","yyxsjsurl2","yyxsjsbody2","yyxsscurl2","yyxsschd2","yyxscjurl2","yyxscjhd2", "yyxsxxurl2", "yyxsspurl3", "yyxssphd3","yyxsspbody3","yyxsjsurl3","yyxsjsbody3","yyxsscurl3","yyxsschd3","yyxscjurl3","yyxscjhd3", "yyxsxxurl3"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "yyxsstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "yyxscount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/yyxs.js",
+            "icons": ["https://s3.ax1x.com/2021/02/27/6pouiF.jpg", "https://s3.ax1x.com/2021/02/27/6pouiF.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/yyxs.js"
     }]
 }
