@@ -1,403 +1,233 @@
 {
-  "id":"sunert.app.sub",
-  "name":"自用订阅",
-  "author":"@lensu",
-  "icon":"https:\/\/avatars2.githubusercontent.com\/u\/47924389?s=460&u=5152f048a9e8aaa45102763a578172407c40fcc8&v=4",
-  "repo":"https:\/\/github.com\/pxylen\/abc_.git",
-  "apps":[
+  "id": "sunert.app.sub",
+  "name": "自用订阅",
+  "author": "@lensu",
+  "icon": "https://avatars2.githubusercontent.com/u/47924389?s=460&u=5152f048a9e8aaa45102763a578172407c40fcc8&v=4",
+  "repo": "https://github.com/pxylen/abc_.git",
+  "apps": [
     {
-      "id":"youth",
-      "name":"中青看点(自用)",
-      "keys":[
-        "youthheader_zq",
-        "read_zq",
-        "red_zq",
-        "readtime_zq",
-        "youthheader_zq2",
-        "read_zq2",
-        "red_zq2",
-        "readtime_zq2"
-      ],
-      "author":"@lensu",
-      "settings":[
-        {
-          "id":"notifytimes",
-          "name":"通知频率 (点击查看设置说明)",
-          "val":"",
-          "type":"number",
-          "desc":"设定通知频率，前三次为全部通知，之后转盘次数\/设定频率整除时通知，如设置0为无通知，设置1为全部通知，设置其他数可整除余0时通知，默认值50"
-        },
-        {
-          "id":"zqlogs",
-          "name":"调试日志",
-          "val":false,
-          "type":"boolean",
-          "desc":"调试日志开关，默认关闭"
-        }
-      ],
-      "repo":"https:\/\/raw.githubusercontent.com\/pxylen\/abc_\/master\/workflow\/youth.js",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/youth.png",
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/task\/master\/youth.png"
-      ],
-      "script":"https:\/\/raw.githubusercontent.com\/pxylen\/abc_\/master\/workflow\/youth.js"
-    },
-    {
-      "id":"kuaishou",
-      "name":"快手极速版",
-      "keys":[
+      "id": "kuaishou",
+      "name": "快手极速版",
+      "keys": [
         "cookie_ks",
         "cookie_ks2"
       ],
-      "author":"@lensu",
-      "repo":"https:\/\/gitee.com\/pjxy_len\/loon\/raw\/main\/scripts\/kuaishou.js",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/kuaishou.png",
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/task\/master\/kuaishou.png"
+      "author": "@lensu",
+      "repo": "https://raw.githubusercontent.com/pxylen/abc_/master/scripts/kuaishou.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/kuaishou.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/kuaishou.png"
       ],
-      "script":"https:\/\/gitee.com\/pjxy_len\/loon\/raw\/main\/scripts\/kuaishou.js"
+      "script": "https://raw.githubusercontent.com/pxylen/abc_/master/scripts/kuaishou.js"
     },
     {
-      "id":"weibo",
-      "name":"新浪微博",
-      "keys":[
+      "id": "weibo",
+      "name": "新浪微博",
+      "keys": [
         "sy_payheader_wb",
         "sy_token_wb"
       ],
-      "author":"@lensu",
-      "repo":"https:\/\/github.com\/Sunert\/Scripts",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/weibo.png",
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/task\/master\/weibo.png"
+      "author": "@lensu",
+      "repo": "https://github.com/Sunert/Scripts",
+      "icons": [
+        "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/weibo.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/weibo.png"
       ],
-      "script":"https:\/\/raw.githubusercontent.com\/Sunert\/Scripts\/master\/Task\/weibo.js"
+      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js"
     },
     {
-      "id":"jxnc",
-      "name":"惊喜农场",
-      "keys":[
-        "jxnc_token1",
-        "jxnc_token2"
-      ],
-      "author":"@lensu",
-      "repo":"https:\/\/github.com\/pxylen\/abc_",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/weibo.png",
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/task\/master\/weibo.png"
-      ],
-      "script":"https:\/\/gitee.com\/lxk0301\/jd_scripts\/raw\/master\/jd_jxnc.js"
-    },
-    {
-      "id":"dingdongmaicai",
-      "name":"叮咚买菜",
-      "keys":[
+      "id": "dingdongmaicai",
+      "name": "叮咚买菜",
+      "keys": [
         "chavy_home_url_mcdd",
         "chavy_home_header_mcdd"
       ],
-      "author":"@lensu",
-      "repo":"https:\/\/github.com\/chavyleung\/scripts",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/weibo.png",
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/task\/master\/weibo.png"
+      "author": "@lensu",
+      "repo": "https://github.com/chavyleung/scripts",
+      "icons": [
+        "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/weibo.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/weibo.png"
       ],
-      "script":"https:\/\/raw.githubusercontent.com\/chavyleung\/scripts\/master\/mcdd\/mcdd.js"
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/mcdd/mcdd.js"
     },
     {
-      "id":"dingdongyangyu",
-      "name":"叮咚农场养鱼",
-      "keys":[
+      "id": "dingdongyangyu",
+      "name": "叮咚农场养鱼",
+      "keys": [
         "CookieDDXQfarm",
         "CookieDDXQfarmStationId"
       ],
-      "author":"@lensu",
-      "repo":"https:\/\/github.com\/iepngs\/Script",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/weibo.png",
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/task\/master\/weibo.png"
+      "author": "@lensu",
+      "repo": "https://github.com/iepngs/Script",
+      "icons": [
+        "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/weibo.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/weibo.png"
       ],
-      "script":"https:\/\/raw.githubusercontent.com\/iepngs\/Script\/master\/dingdong\/index.js"
+      "script": "https://raw.githubusercontent.com/iepngs/Script/master/dingdong/index.js"
     },
     {
-      "id":"qqyuedu",
-      "name":"QQ阅读",
-      "keys":[
-        "QQreadhd",
-        "QQreadvideohd"
-      ],
-      "author":"@lensu",
-      "repo":"https:\/\/github.com\/ziye66666\/JavaScript",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/weibo.png",
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/task\/master\/weibo.png"
-      ],
-      "script":"https:\/\/raw.githubusercontent.com\/ziye66666\/JavaScript\/master\/Task\/QQread.js"
-    },
-    {
-      "id":"bububao",
-      "name":"步步宝",
-      "keys":[
+      "id": "bububao",
+      "name": "步步宝",
+      "keys": [
         "bbb_ck"
       ],
-      "author":"@lensu",
-      "repo":"https:\/\/github.com\/adwktt\/adwktt",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/weibo.png",
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/task\/master\/weibo.png"
+      "author": "@lensu",
+      "repo": "https://github.com/adwktt/adwktt",
+      "icons": [
+        "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/weibo.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/weibo.png"
       ],
-      "script":"https:\/\/raw.githubusercontent.com\/adwktt\/adwktt\/master\/yk.js"
+      "script": "https://raw.githubusercontent.com/adwktt/adwktt/master/yk.js"
     },
     {
-      "id":"txstockapp",
-      "name":"腾旭自选股",
-      "keys":[
-        "signheader",
-        "signkey",
-        "cashheader",
-        "taskheader",
-        "taskkey",
-        "userheader",
-        "userkey",
-        "wxtaskkey",
-        "cowkey",
-        "cash"
-      ],
-      "settings":[
-        {
-          "id":"cash",
-          "name":"提现开关:0,不自动提现;1，提现1元；5，提现5元",
-          "val":"5",
-          "type":"number",
-          "desc":"默认为0,不自动提现"
-        }
-      ],
-      "author":"@cenbomin",
-      "repo":[
-        "https:\/\/raw.githubusercontent.com\/CenBoMin\/GithubSync"
-      ],
-      "script":"https:\/\/raw.githubusercontent.com\/CenBoMin\/GithubSync\/main\/TXSTOCK\/txstockqx.js",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/CenBoMin\/GithubSync\/main\/TXSTOCK\/txzxg.png",
-        "https:\/\/raw.githubusercontent.com\/CenBoMin\/GithubSync\/main\/TXSTOCK\/txzxg.png"
-      ]
-    },
-    {
-      "id":"chonghauapp",
-      "name":"葱花视频",
-      "keys":[
-        "uid",
-        "chgetbody_video",
-        "chgetbody_share",
-        "chgetbody_timered",
-        "chgetbody_taskcenter",
-        "chgetbody_sharereward",
-        "callbackurl",
-        "callbackkey",
-        "cashkey",
-        "cashbody",
-        "logbutton",
-        "tzbutton",
-        "chgetbody_video_index"
-      ],
-      "settings":[
-        {
-          "id":"chgetbody_video",
-          "name":"请求body",
-          "val":"",
-          "type":"textarea",
-          "autoGrow":false,
-          "rows":1,
-          "desc":"看视频，倒计时转一圈显示金币到账。。建议看5篇视频,获取请求包"
-        },
-        {
-          "id":"uid",
-          "name":"自己的邀请码",
-          "val":"",
-          "type":"text",
-          "desc":"输入才可查看账户金币明细"
-        },
-        {
-          "id":"chgetbody_video_index",
-          "name":"上次执行位置",
-          "val":"",
-          "type":"textarea",
-          "autoGrow":false,
-          "rows":1,
-          "desc":"记录上次执行的位置，可以控制从第几个body开始执行"
-        },
-        {
-          "id":"logbutton",
-          "name":"日志开关",
-          "val":"",
-          "type":"number",
-          "desc":"0为关闭日志，1为开启，默认为关闭日志"
-        },
-        {
-          "id":"tzbutton",
-          "name":"安静开关",
-          "val":"",
-          "type":"number",
-          "desc":"0为关闭通知，1为所有通知，默认为关闭通知"
-        }
-      ],
-      "author":"@cenbomin",
-      "repo":[
-        "https:\/\/raw.githubusercontent.com\/CenBoMin\/GithubSync"
-      ],
-      "script":"https:\/\/raw.githubusercontent.com\/CenBoMin\/GithubSync\/main\/CONGHUA\/chonghua.js",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/ChuheGit\/1\/main\/QuantumultX\/Gallery\/API-Icon\/AutoRead.png",
-        "https:\/\/raw.githubusercontent.com\/58xinian\/icon\/master\/chsp.png"
-      ]
-    },
-    {
-      "id":"wps_sign",
-      "name":"WPS签到",
-      "keys":[
+      "id": "wps_sign",
+      "name": "WPS签到",
+      "keys": [
         "chavy_signhomeurl_wps",
         "chavy_signhomeheader_wps"
       ],
-      "author":"@lensu",
-      "repo":"https:\/\/github.com\/chavyleung\/scripts",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/weibo.png",
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/task\/master\/weibo.png"
+      "author": "@lensu",
+      "repo": "https://github.com/chavyleung/scripts",
+      "icons": [
+        "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/weibo.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/weibo.png"
       ],
-      "script":"https:\/\/raw.githubusercontent.com\/chavyleung\/scripts\/master\/wps\/wps.js"
+      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/wps/wps.js"
     },
     {
-      "author":"@sunert",
-      "keys":[
+      "author": "@sunert",
+      "keys": [
         "baidu_nick",
         "chavy_cookie_tieba",
         "CookieTB",
         "cash_baidu"
       ],
-      "repo":"https:\/\/github.com\/Sunert\/Scripts\/blob\/master\/Task\/baiduspeed.js",
-      "id":"baidu",
-      "script":"https:\/\/raw.githubusercontent.com\/Sunert\/Scripts\/master\/Task\/baiduspeed.js",
-      "settings":[
+      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/baiduspeed.js",
+      "id": "baidu",
+      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/baiduspeed.js",
+      "settings": [
         {
-          "items":[
+          "items": [
             {
-              "key":"5",
-              "label":"5元"
+              "key": "5",
+              "label": "5元"
             },
             {
-              "key":"30",
-              "label":"30元"
+              "key": "30",
+              "label": "30元"
             },
             {
-              "key":"50",
-              "label":"50元"
+              "key": "50",
+              "label": "50元"
             },
             {
-              "key":"100",
-              "label":"100元"
+              "key": "100",
+              "label": "100元"
             }
           ],
-          "id":"cash_baidu",
-          "val":"30",
-          "name":"提现金额",
-          "type":"radios",
-          "desc":"自动提现金额"
+          "id": "cash_baidu",
+          "val": "30",
+          "name": "提现金额",
+          "type": "radios",
+          "desc": "自动提现金额"
         },
         {
-          "id":"task_baidu",
-          "val":true,
-          "name":"任务开关",
-          "type":"boolean",
-          "desc":"除提现和兑换金币外开关，默认开启所有任务"
+          "id": "task_baidu",
+          "val": true,
+          "name": "任务开关",
+          "type": "boolean",
+          "desc": "除提现和兑换金币外开关，默认开启所有任务"
         }
       ],
-      "name":"百度极速任务",
-      "icons":[
-        "https:\/\/cdn.jsdelivr.net\/gh\/Sunert\/Profiles@master\/QuantumultX\/Rules\/Images\/icon\/baiduspeed_mini.png",
-        "https:\/\/cdn.jsdelivr.net\/gh\/Sunert\/Profiles@master\/QuantumultX\/Rules\/Images\/icon\/baiduspeed.png"
+      "name": "百度极速任务",
+      "icons": [
+        "https://cdn.jsdelivr.net/gh/Sunert/Profiles@master/QuantumultX/Rules/Images/icon/baiduspeed_mini.png",
+        "https://cdn.jsdelivr.net/gh/Sunert/Profiles@master/QuantumultX/Rules/Images/icon/baiduspeed.png"
       ]
     },
     {
-      "id":"zZ.DiDi",
-      "name":"滴滴出行",
-      "descs_html":[
-        "请先按<a href=\"https:\/\/raw.githubusercontent.com\/zZPiglet\/Task\/master\/DiDi\/DiDi_new.js\">脚本注释<\/a>进行配置，然后进入\"滴滴出行\"，若弹出\"首次写入滴滴出行 Token 成功\"即可正常食用。",
-        "若无法通过上述方法获取 Token，可使用<a href=\"https:\/\/raw.githubusercontent.com\/zZPiglet\/Task\/master\/DiDi\/DiDi_ticket.js\">此脚本脚本<\/a>获取 Token，并按照此脚本注释进行配置。",
-        "如需使用抢券功能，请设置好抢券时间，同时在抢券前运行一次脚本存储券编号，如不知如何操作请勿修改建议的 cron 设置，请参考 <a href=\"https:\/\/raw.githubusercontent.com\/zZPiglet\/Task\/master\/DiDi\/README.md\">README<\/a> 。"
+      "id": "zZ.DiDi",
+      "name": "滴滴出行",
+      "descs_html": [
+        "请先按<a href=\"https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js\">脚本注释</a>进行配置，然后进入\"滴滴出行\"，若弹出\"首次写入滴滴出行 Token 成功\"即可正常食用。",
+        "若无法通过上述方法获取 Token，可使用<a href=\"https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_ticket.js\">此脚本脚本</a>获取 Token，并按照此脚本注释进行配置。",
+        "如需使用抢券功能，请设置好抢券时间，同时在抢券前运行一次脚本存储券编号，如不知如何操作请勿修改建议的 cron 设置，请参考 <a href=\"https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/README.md\">README</a> 。"
       ],
-      "keys":[
+      "keys": [
         "DiDi",
         "DiDi_city",
         "@Didi.drawdelay",
         "@Didi.actIdPM"
       ],
-      "settings":[
+      "settings": [
         {
-          "id":"@Didi.debug",
-          "name":"测试环境",
-          "val":false,
-          "type":"boolean",
-          "desc":"如未出现特殊报错等问题请保持关闭。"
+          "id": "@Didi.debug",
+          "name": "测试环境",
+          "val": false,
+          "type": "boolean",
+          "desc": "如未出现特殊报错等问题请保持关闭。"
         },
         {
-          "id":"@Didi.noaff",
-          "name":"不支持作者",
-          "val":false,
-          "type":"boolean",
-          "desc":"开启后不使用内置的邀请码，但无法获得需要持续维护的活动编号。"
+          "id": "@Didi.noaff",
+          "name": "不支持作者",
+          "val": false,
+          "type": "boolean",
+          "desc": "开启后不使用内置的邀请码，但无法获得需要持续维护的活动编号。"
         },
         {
-          "id":"@Didi.isFinance",
-          "name":"滴滴金融",
-          "val":false,
-          "type":"boolean",
-          "desc":"钱包 - 金融服务 - 天天有奖自动签到，即使开启也只自动领取奖品，不使用奖品不会开启滴滴金融服务。由于需要持续维护活动编号，需开启支持作者后使用。"
+          "id": "@Didi.isFinance",
+          "name": "滴滴金融",
+          "val": false,
+          "type": "boolean",
+          "desc": "钱包 - 金融服务 - 天天有奖自动签到，即使开启也只自动领取奖品，不使用奖品不会开启滴滴金融服务。由于需要持续维护活动编号，需开启支持作者后使用。"
         },
         {
-          "id":"@Didi.isExpenddrawlids",
-          "name":"可能亏损的抽奖",
-          "val":false,
-          "type":"boolean",
-          "desc":"开启后，会参与可能亏损的抽奖。由于需要持续维护活动编号，需开启支持作者后使用。"
+          "id": "@Didi.isExpenddrawlids",
+          "name": "可能亏损的抽奖",
+          "val": false,
+          "type": "boolean",
+          "desc": "开启后，会参与可能亏损的抽奖。由于需要持续维护活动编号，需开启支持作者后使用。"
         },
         {
-          "id":"DiDi",
-          "name":"Token",
-          "val":"",
-          "type":"textarea",
-          "autoGrow":true,
-          "rows":7,
-          "desc":"Token 可同时存在多个，可使用不同日期获取的 Token 进行测试。"
+          "id": "DiDi",
+          "name": "Token",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 7,
+          "desc": "Token 可同时存在多个，可使用不同日期获取的 Token 进行测试。"
         },
         {
-          "id":"DiDi_city",
-          "name":"城市编号",
-          "val":"",
-          "type":"number",
-          "desc":"滴滴出行城市编号，可更改至别的城市进行测试。"
+          "id": "DiDi_city",
+          "name": "城市编号",
+          "val": "",
+          "type": "number",
+          "desc": "滴滴出行城市编号，可更改至别的城市进行测试。"
         },
         {
-          "id":"@Didi.drawdelay",
-          "name":"抽奖延迟",
-          "val":"",
-          "type":"number",
-          "placeholder":"2000",
-          "desc":"每次抽奖之间的间隔，单位为毫秒，不填默认为 2000 毫秒。如提示抽奖过快请加大延迟。"
+          "id": "@Didi.drawdelay",
+          "name": "抽奖延迟",
+          "val": "",
+          "type": "number",
+          "placeholder": "2000",
+          "desc": "每次抽奖之间的间隔，单位为毫秒，不填默认为 2000 毫秒。如提示抽奖过快请加大延迟。"
         },
         {
-          "id":"@Didi.actIdPM",
-          "name":"晚八点券",
-          "val":"",
-          "type":"textarea",
-          "autoGrow":true,
-          "rows":1,
-          "desc":"晚八点的优惠券编号组（如果有）。"
+          "id": "@Didi.actIdPM",
+          "name": "晚八点券",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 1,
+          "desc": "晚八点的优惠券编号组（如果有）。"
         }
       ],
-      "author":"@zZPiglet",
-      "repo":"https:\/\/github.com\/zZPiglet\/Task\/blob\/master\/DiDi\/README.md",
-      "script":"https:\/\/raw.githubusercontent.com\/zZPiglet\/Task\/master\/DiDi\/DiDi_new.js",
-      "icons":[
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/Alpha\/didi.png",
-        "https:\/\/raw.githubusercontent.com\/Orz-3\/mini\/master\/Color\/didi.png"
+      "author": "@zZPiglet",
+      "repo": "https://github.com/zZPiglet/Task/blob/master/DiDi/README.md",
+      "script": "https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/didi.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png"
       ]
     }
   ]
