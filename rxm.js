@@ -104,7 +104,7 @@ const head = {
 };
 let url = {
         url : rxmurl,
-        headers : head,
+        headers : JSON.parse($.getdata('rxmhd')),
         body : 'method=havest',}
 
  $.post(url, async(error, resp, data) =>{
@@ -113,9 +113,9 @@ let url = {
     const result = JSON.parse(data)
   
        if(result.state == 1){
-        console.log('任性猫回执:失败🚫 '+result.msg)
+        console.log('任性猫回执:成功🌝 '+result.msg)
 } else {
-        console.log('任性猫回执:成功🌝 '+result.msg)}
+        console.log('任性猫回执:失败🚫 '+result.msg)}
 //$.msg("","","任性猫已运行完毕")
         } catch (e) {
           //$.logErr(e, resp);
