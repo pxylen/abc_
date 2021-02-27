@@ -76,7 +76,7 @@ let yyxsschd = $.getdata('yyxsschd')
 let yyxscjurl = $.getdata('yyxscjurl')
 let yyxscjhd = $.getdata('yyxscjhd')
 let yyxsxxurl = $.getdata('yyxsxxurl')
-let sc = 1,sp = 0,js = 0;
+
 !(async () => {
   if (typeof $request !== "undefined") {
     await yyxsck()
@@ -124,7 +124,8 @@ let sc = 1,sp = 0,js = 0;
     await yyxssp();
     await yyxscj();
     
-    for (sc; sc < 200 ; sc++) {
+    for (let sc = 1 ; sc < 200 ; sc++) {
+    console.log('\n阅友小说阅读时长上传回执:成功🌝 已上传'+sc+'分钟') 
     await yyxssc();
     await $.wait(100);
     
@@ -268,7 +269,7 @@ let url = {
          const result = JSON.parse(data)
         if (result.code == 0) {
      
-          console.log('\n阅友小说阅读时长上传回执:成功🌝 已上传'+sc+'分钟') 
+          
            
         } else {
        
