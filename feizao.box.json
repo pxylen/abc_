@@ -241,7 +241,7 @@
     {
             "id": "yyxs",
             "name": "阅友小说",
-            "keys": ["yyxsspurl", "yyxssphd","yyxsspbody","yyxsjsurl","yyxsscurl","yyxsschd","yyxscjurl","yyxscjhd", "yyxsxxurl", "yyxsspurl1", "yyxssphd1","yyxsspbody1","yyxsjsurl1","yyxsscurl1","yyxsschd1","yyxscjurl1","yyxscjhd1", "yyxsxxurl1", "yyxsspurl2", "yyxssphd2","yyxsspbody2","yyxsjsurl2","yyxsscurl2","yyxsschd2","yyxscjurl2","yyxscjhd2", "yyxsxxurl2", "yyxsspurl3", "yyxssphd3","yyxsspbody3","yyxsjsurl3","yyxsscurl3","yyxsschd3","yyxscjurl3","yyxscjhd3", "yyxsxxurl3"],
+            "keys": ["yyxsspurl", "yyxssphd","yyxsspbody","yyxsjsurl","yyxsscurl","yyxsschd","yyxscjurl","yyxscjhd", "yyxsxxurl", "yyxsspurl2", "yyxssphd2","yyxsspbody2","yyxsjsurl2","yyxsscurl2","yyxsschd2","yyxscjurl2","yyxscjhd2", "yyxsxxurl2", "yyxsspurl3", "yyxssphd3","yyxsspbody3","yyxsjsurl3","yyxsscurl3","yyxsschd3","yyxscjurl3","yyxscjhd3", "yyxsxxurl3", "yyxsspurl4", "yyxssphd4","yyxsspbody4","yyxsjsurl4","yyxsscurl4","yyxsschd4","yyxscjurl4","yyxscjhd4", "yyxsxxurl4"],
             "author": "@feizao",
             "settings": [{
             "id": "yyxsstatus",
