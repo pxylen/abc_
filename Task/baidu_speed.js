@@ -43,7 +43,7 @@ if ($.isNode()) {
  else if (process.env.BAIDU_COOKIE && process.env.BAIDU_COOKIE.indexOf('\n') > -1) {
   BDCookie = process.env.BAIDU_COOKIE.split('\n');
   } else {
-  BDCookie = process.env.BAIDU_COOKIE.split()
+  BDCookie = [process.env.BAIDU_COOKIE]
   };
   if (process.env.BAIDU_CASH && process.env.BAIDU_CASH.indexOf('&') > -1) {
   BDCASH = process.env.BAIDU_CASH.split('&');
