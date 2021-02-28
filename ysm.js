@@ -83,7 +83,6 @@ let ysmkey = ''
     ysm2bodyArr.push($.getdata(`ysm2body${i}`))
   }
     console.log(`------------- 共${ysmhdArr.length}个账号-------------\n`)
-    console.log('\n云扫码当前设置的提现金额为: '+ysmtx / 100 + ' 元')
       for (let i = 0; i < ysmhdArr.length; i++) {
         if (ysmhdArr[i]) {
          
