@@ -67,13 +67,13 @@ jobs:
           DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
 
 
-      - name: '运行 【京喜农场】'
-        run: |
-          cd ~/TaskAction
-          node jd_jxnc.js
-        env:
-          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
-          JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
+#      - name: '运行 【京喜农场】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_jxnc.js
+#        env:
+#          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
+#          JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
 
 
       - name: '运行 【京喜工厂】'
