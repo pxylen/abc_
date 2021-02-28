@@ -260,5 +260,28 @@
             "repo": "https://github.com/age174/-/blob/main/yyxs.js",
             "icons": ["https://s3.ax1x.com/2021/02/27/6pouiF.jpg", "https://s3.ax1x.com/2021/02/27/6pouiF.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/yyxs.js"
+    },
+    {
+            "id": "dka",
+            "name": "蛋咖",
+            "keys": ["dkahd", "dkabody","dkaxsurl","dkaxshd","dkakkzhd","dkakkzbody","dkadthd","dkadtbody", "dkaqdbody", "dkahd2", "dkabody2","dkaxsurl2","dkaxshd2","dkakkzhd2","dkakkzbody2","dkadthd2","dkadtbody2", "dkaqdbody2", "dkahd3", "dkabody3","dkaxsurl3","dkaxshd3","dkakkzhd3","dkakkzbody3","dkadthd3","dkadtbody3", "dkaqdbody3"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "dkasstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "dkacount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/dka.js",
+            "icons": ["https://s3.ax1x.com/2021/02/28/6C3Gpn.jpg", "https://s3.ax1x.com/2021/02/28/6C3Gpn.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/dka.js"
     }]
 }
