@@ -121,7 +121,7 @@ if ($request.url.indexOf("add_gold") > -1) {
  const ysm2body = $request.body
   if(ysm2body)     $.setdata(ysm2body,`ysm2body${status}`)
     $.log(ysm2body)
-$.msg($.name,"",'云扫码'+`${status}` +'获取任务数据获取成功！')
+$.msg($.name,"",'云扫码'+`${status}` +'提交任务数据获取成功！')
    }
 }
 
