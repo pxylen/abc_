@@ -150,7 +150,7 @@ let tm = ''
   .finally(() => $.done())
 //蛋咖数据获取
 function dkack() {
-   if ($request.url.indexOf("IFS/BaseData/GetUserInfo.ashx") > -1 && $request.body.indexOf("keycode") > -1) {
+   if ($request.url.indexOf("IFS/BaseData/GetUserInfo.ashx") > -1) {
  const dkabody = $request.body
   if(dkabody)     $.setdata(dkabody,`dkabody${status}`)
     $.log(dkabody)
