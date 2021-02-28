@@ -161,12 +161,12 @@ jobs:
           node jd_cfd.js
 
 
-    - name: '运行 【京东摇钱树】'
-      run: |
-        cd ~/TaskAction
-        node jd_moneyTree.js
-      env:
-        MONEY_TREE_SELL_FRUIT: ${{ secrets.MONEY_TREE_SELL_FRUIT }}
+      - name: '运行 【京东摇钱树】'
+        run: |
+          cd ~/TaskAction
+          node jd_moneyTree.js
+        env:
+          MONEY_TREE_SELL_FRUIT: ${{ secrets.MONEY_TREE_SELL_FRUIT }}
 
 
       - name: '运行 【美丽研究院】'
