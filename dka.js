@@ -38,18 +38,18 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #蛋咖
-http://*.pceggs.com/IFS url script-request-header https://raw.githubusercontent.com/age174/-/main/dka.js
+http://.*.pceggs.com/IFS/ url script-request-header https://raw.githubusercontent.com/age174/-/main/dka.js
 #蛋咖小说
 http://www.ipadview.com/rpads/score/award? url script-request-header https://raw.githubusercontent.com/age174/-/main/dka.js
 
 #loon
-http://*.pceggs.com/IFS script-path=https://raw.githubusercontent.com/age174/-/main/dka.js, requires-header=true, timeout=10, tag=蛋咖
+http://.*.pceggs.com/IFS/ script-path=https://raw.githubusercontent.com/age174/-/main/dka.js, requires-header=true, timeout=10, tag=蛋咖
 #蛋咖小说
 http://www.ipadview.com/rpads/score/award? script-path=https://raw.githubusercontent.com/age174/-/main/dka.js, requires-header=true, timeout=10, tag=蛋咖小说
 
 #surge
 
-蛋咖 = type=http-request,pattern=http://*.pceggs.com/IFS,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/dka.js,script-update-interval=0
+蛋咖 = type=http-request,pattern=http://.*.pceggs.com/IFS/,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/dka.js,script-update-interval=0
 
 #蛋咖小说
 蛋咖小说 = type=http-request,pattern=http://www.ipadview.com/rpads/score/award?,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174
@@ -150,7 +150,7 @@ let tm = ''
   .finally(() => $.done())
 //蛋咖数据获取
 function dkack() {
-   if ($request.url.indexOf("GetUserInfo") > -1) {
+   if ($request.url.indexOf("IFS/BaseData/GetUserInfo.ashx") > -1 && $request.body.indexOf("keycode") > -1) {
  const dkabody = $request.body
   if(dkabody)     $.setdata(dkabody,`dkabody${status}`)
     $.log(dkabody)
