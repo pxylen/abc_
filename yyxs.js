@@ -142,7 +142,7 @@ let yyxsxxurl = $.getdata('yyxsxxurl')
   .finally(() => $.done())
 //阅友小说数据获取
 function yyxsck() {
-   if ($request.url.indexOf("notify") > -1 && $request.body.indexOf("trans_id") > -1) {
+   if ($request.url.indexOf("notify") > -1 && $request.body.indexOf("siteId") > -1) {
  const yyxsspurl = $request.url
   if(yyxsspurl)     $.setdata(yyxsspurl,`yyxsspurl${status}`)
     $.log(yyxsspurl)
