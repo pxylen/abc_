@@ -23,12 +23,10 @@
         "xmSportsToken",
         "xmMinStep",
         "xmMaxStep",
-        "evil_tokenurl",
-        "evil_tokenheaders",
-        "evil_tokencheckinurl",
-        "evil_tokencheckinheaders",
-        "evil_tokensinceurl",
-        "evil_tokensinceheaders"
+        "evil_checkintitle",
+        "evil_checkinlogin",
+        "evil_checkinemail",
+        "evil_checkinpwd"
       ],
       "author": "@lensu",
       "repo": "https://raw.githubusercontent.com/pxylen/abc_",
