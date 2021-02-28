@@ -208,9 +208,6 @@ let url = {
         if(result.errcode == 0){
         console.log('\n云扫码获取key回执:成功🌝 开始 循环观看💦')
         ysmkey = result.data.link
-      if(ysmkey = 'undefined'){
-       console.log('\n当前无任务'+result.data.msg)
-}
         //console.log(ysmkey)
         await ysm2();
         await $.wait(1000);
