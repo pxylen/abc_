@@ -1,6 +1,6 @@
 /*
 软件名称:云扫码 微信扫描二维码打开
-更新时间：2021-02-28 @肥皂
+更新时间：2021-03-1 @肥皂
 脚本说明：云扫码自动阅读
 脚本为自动完成云扫码的阅读任务
 每日收益1元左右，可多号撸。提现秒到
@@ -155,7 +155,7 @@ let url = {
         if(result.data.last_gold >= 3000){
     console.log('\n检测到当前金额可提现，前去执行提现')                
 await ysmdh();
-}       await $.wait(2000);  
+}       await $.wait(2000);
         await ysm1();
         
 } else {
@@ -226,13 +226,16 @@ let url = {
 }
       $.post(url, async (err, resp, data) => {
         try {
+      if(data == '{"errcode":0,"msg":"success"}'){
+       console.log('\n🧼来自肥皂的提示:当前没有任务啊,手动进云扫码看看是不是一直显示更新中,别问肥皂什么原因啦～')
+}
           //console.log(data)
     const result = JSON.parse(data)
         if(result.errcode == 0){
-         
+         //console.log(data)
         console.log('\n云扫码获取key回执:成功🌝 开始 循环观看💦')
       if(result.data.link === undefined){
-       console.log('\n没有匹配到key'+result.data.msg)
+       console.log('\n🧼来自肥皂的提示:没有匹配到key'+result.data.msg)
 } else {
         ysmkey = result.data.link
         await ysm2();
