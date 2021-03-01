@@ -152,8 +152,4 @@ jobs:
           node jd_ms.js
 
 
-      - name: '运行 【小鸽有礼2】'
-        run: |
-          cd ~/TaskAction
-          node jd_xgyl.js
 

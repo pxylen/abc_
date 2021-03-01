@@ -169,6 +169,14 @@ jobs:
           MONEY_TREE_SELL_FRUIT: ${{ secrets.MONEY_TREE_SELL_FRUIT }}
 
 
+      - name: '运行 【她的节享京豆】'
+        run: |
+          cd ~/TaskAction
+          node jd_firecrackers.js
+        env:
+          FIRECRACKERS_NOTITY_BEAN: ${{ secrets.FIRECRACKERS_NOTITY_BEAN }}
+
+
       - name: '运行 【美丽研究院】'
         run: |
           cd ~/TaskAction
