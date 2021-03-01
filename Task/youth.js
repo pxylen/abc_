@@ -1,5 +1,5 @@
 /*
-更新时间: 2021-02-24 13:30
+更新时间: 2021-03-01 19:50
 赞赏:中青邀请码`46308484`,农妇山泉 -> 有点咸，万分感谢
 本脚本仅适用于中青看点极速版领取青豆
 食用说明请查看本仓库目录Taskconf/youth/readme.md，其中打卡挑战赛可通过Boxjs开关，报名时间为23点，早起打卡时间为早5点，报名需1000青豆押金，打卡成功可返1000+青豆，打卡失败则押金不予返还，请注意时间运行，
@@ -487,7 +487,8 @@ function friendsign() {
                 friendsitem = addsign.data.active_list;
                 for (friends of friendsitem) {
                     if (friends.button == 1) {
-                        await friendSign(friends.uid)
+                        await $.wait(2000)
+                        await friendSign(friends.uid,friends.nickname)
                     }
                 }
             }
@@ -496,13 +497,16 @@ function friendsign() {
     })
 }
 
-function friendSign(uid) {
+function friendSign(uid,friendnick) {
     return new Promise((resolve, reject) => {
         $.get(kdHost('WebApi/ShareSignNew/sendScoreV2?friend_uid=' + uid), (error, resp, data) => {
             let friendres = JSON.parse(data);
+//$.log(JSON.stringify(friendres,null,2))
             if (friendres.error_code == "0") {
                 $.desc += '【好友红包】+' + friendres.data[0].score + '个青豆\n';
-                $.log('好友签到，我得红包 +' + friendres.data[0].score + '个青豆')
+                $.log('您的好友'+friendnick+'已签到，我得红包 +' + friendres.data[0].score + '个青豆')
+            } else {
+             $.log(friendres.message)
             }
             resolve()
         })
