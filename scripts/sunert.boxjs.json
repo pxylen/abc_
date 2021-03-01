@@ -333,6 +333,65 @@
       "script": "https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkin_env.js"
     },
     {
+      "id": "sy_youth_read",
+      "name": "中青自动阅读",
+      "keys": [
+        "zqgetbody_body",
+        "zqgetbody_body1"
+      ],
+      "settings": [
+        {
+          "id": "YOUNTH_READ_Notify",
+          "name": "静默运行",
+          "val": true,
+          "type": "boolean",
+          "desc": "运行脚本时不发出系统弹窗通知"
+        },
+        {
+          "id": "zqgetbody_body",
+          "name": "请求body",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": false,
+          "rows": 1,
+          "desc": "阅读文章和看视频，倒计时转一圈显示青豆到账即可，多看几篇文章和视频，获得更多包数据"
+        },
+        {
+          "id": "zqgetbody_body1",
+          "name": "请求body",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": false,
+          "rows": 1,
+          "desc": "阅读文章和看视频，倒计时转一圈显示青豆到账即可，多看几篇文章和视频，获得更多包数据"
+        },
+        {
+          "id": "zqgetbody_body_index",
+          "name": "上次执行位置",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": false,
+          "rows": 1,
+          "desc": "记录上次执行的位置，可以控制从第几个body开始执行"
+        },
+        {
+          "id": "zqgetbody_body_index1",
+          "name": "上次执行位置",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": false,
+          "rows": 1,
+          "desc": "记录上次执行的位置，可以控制从第几个body开始执行"
+        }
+      ],
+      "author": "@syzzzf",
+      "repo": "https://github.com/songyangzz/QuantumultX/blob/master/YOUTH_READ.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/youth.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/youth.png"
+      ]
+    },
+    {
       "id": "JD_UA",
       "name": "自定义京东脚本的UserAgent",
       "keys": [
