@@ -155,7 +155,7 @@ let url = {
         if(result.data.last_gold >= 3000){
     console.log('\n检测到当前金额可提现，前去执行提现')                
 await ysmdh();
-}  
+}       await $.wait(2000);  
         await ysm1();
         
 } else {
@@ -189,7 +189,7 @@ let url = {
     //const result = JSON.parse(data)
        console.log('\n云扫码key提交成功,即将开始领取阅读奖励') 
        
-        await $.wait(10000);
+        await $.wait(8000);
         await ysm3(); 
        
         }} catch (e) {
