@@ -144,7 +144,7 @@ function ysm3(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/add_gold",
-        headers : JSON.parse($.getdata('ysmhd')),
+        headers : JSON.parse(ysmhd),
         body : ysm2body,}
       $.post(url, async (err, resp, data) => {
         try {
@@ -176,7 +176,7 @@ function ysm2(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : ysmkey,
-        headers : JSON.parse($.getdata('ysmhd')),
+        headers : JSON.parse(ysmhd),
        
 }      
       $.get(url, async (err, resp, data) => {
@@ -221,7 +221,7 @@ function ysm1(timeout = 0) {
 
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/task",
-        headers : JSON.parse($.getdata('ysmhd')),
+        headers : JSON.parse(ysmhd),
         body : 'secret='+ysmbody.match(/secret=(.*?)&/)[1]+'&type=read',
 }
       $.post(url, async (err, resp, data) => {
@@ -259,7 +259,7 @@ function ysmdh(timeout = 0) {
 
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/user_gold",
-        headers : JSON.parse($.getdata('ysmhd')),
+        headers : JSON.parse(ysmhd),
         body : 'openid='+ysmtx.match(/openid=(.*?)ua/)[1]+'gold=3000',
 }
       $.post(url, async (err, resp, data) => {
@@ -289,7 +289,7 @@ function ysmwx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/withdraw",
-        headers : JSON.parse($.getdata('ysmhd')),
+        headers : JSON.parse(ysmhd),
         body : ysmtx,}
       $.post(url, async (err, resp, data) => {
         try {
