@@ -20,6 +20,7 @@ TG电报群: https://t.me/hahaha802
 
 3.1更新增加是否有阅读任务的判断
 加入自动兑换和自动提现，当前金币大于等于3000会自动提现，请自行去获取提现数据，方法，进入云扫码，成功提现一次获取数据成功
+解决多账号问题，可以多账号撸了
 
 boxjs地址 :  
 
@@ -213,14 +214,19 @@ function ysm1(timeout = 0) {
 //console.log("http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/add_gold")
 //$.done()
 //erd14.jkfjcop.top/
+//console.log("http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/task")
+//console.log(ysmhd)
+//console.log(ysmbody)
+
+
 let url = {
         url : "http:"+ysmurl.match(/http:(.*?)yunonline/)[1]+"yunonline/v1/task",
         headers : JSON.parse($.getdata('ysmhd')),
-        body : JSON.parse($.getdata('ysmbody')),
+        body : 'secret='+ysmbody.match(/secret=(.*?)&/)[1]+'&type=read',
 }
       $.post(url, async (err, resp, data) => {
         try {
-          
+          //console.log(data)
     const result = JSON.parse(data)
         if(result.errcode == 0){
          
