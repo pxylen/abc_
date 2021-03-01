@@ -5,44 +5,36 @@
 const scripts = [
   {
     moduleName: "Install Scripts",
-    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/Install%20Scripts.js",
+    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/Install%20Scripts.js",
    },
    {
      moduleName: "DmYY",
-     url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/DmYY.js",
+     url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/DmYY.js",
    },
    {
     moduleName: "机场流量",
-    url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/VpnBoard.js",
+    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/VpnBoard.js",
    },
    {
     moduleName: "京豆k线1",
-    url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/JDDouK.js",
+    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDouK.js",
    },
    {
     moduleName: "京豆k线2",
-    url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/JDDouK.js",
+    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDouK.js",
    },
    {
     moduleName: "京豆k线3",
-    url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/JDDouK.js",
+    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDouK.js",
    },
    {
     moduleName: "京豆收支",
-    url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/JDDou.js",
+    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDou.js",
    },
    {
     moduleName: "京豆收支2",
-    url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/JDDou.js",
+    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDou.js",
    },
-//   {
-//    moduleName: "中国联通",
-//    url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/ChinaUnicom.js",
-//   },
-//   {
-//    moduleName: "油管视频",
-//    url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/YouTube.js",
-//   },
 ];
 class YaYaInstall {
 	constructor() {
