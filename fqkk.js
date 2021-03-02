@@ -131,7 +131,7 @@ let url = {
            
     const result = JSON.parse(data)
         if(result.code == 0){
-        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score+' 当前剩余可执行任务次数:'+result.data.infoView.rest)
+        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score+'\n当前剩余可执行任务次数:'+result.data.infoView.rest)
         await fqkk1();
 } else {
        console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
