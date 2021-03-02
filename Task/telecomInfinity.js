@@ -43,7 +43,7 @@ let config = {
     info: 1, //是否显示手机归属地，1为显示，0为不显示
 }
 let $ = new Env(config.name),
-     Y = $.time('yyyy'),
+     Y = $.getdata('Mon').slice(0,4)||$.time('yyyy'),
      M = $.getdata('Mon').slice(-2)||$.time('MM') ; //查询前几个月，可以')'号后减几
      const notify = $.isNode() ? require('./sendNotify') : '';
    let AUTHTOKEN = $.getdata(config.authTokenKey)
