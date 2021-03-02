@@ -12,26 +12,32 @@ boxjs：https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/ZhiYi-N.
 #签到详情获取signheader and signkey，一定要签到详情界面获取到的
 #看广告获取adheader and adkey
 #看一个视频获取readheader and readkey
-
 [mitm]
 hostname = *.snssdk.com
 #圈x
 [rewrite local]
-/luckycat/hotsoon/v1/task/done/daily_read_\d+m? url script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js
-/luckycat/hotsoon/v1/task/done/draw_excitation_ad? url script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js
-/luckycat/hotsoon/v1/task/sign_in_detail? script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js
+https://(\w+-\w+||\w+).snssdk.com/luckycat/hotsoon/v1/task/done/daily_read_\d+m? url script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js
+
+https://(\w+-\w+||\w+).snssdk.com/luckycat/hotsoon/v1/task/done/draw_excitation_ad? url script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js
+
+https://(\w+-\w+||\w+).snssdk.com/luckycat/hotsoon/v1/task/sign_in_detail? script-request-header https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js
+
 #loon
-http-request /luckycat/hotsoon/v1/task/done/daily_read_\d+m? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonread
-http-request /luckycat/hotsoon/v1/task/done/draw_excitation_ad? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonad
-http-request /luckycat/hotsoon/v1/task/sign_in_detail? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonsign
+http-request ^https://(\w+-\w+||\w+).snssdk.com/luckycat/hotsoon/v1/task/done/daily_read_\d+m? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonread
+
+http-request https://(\w+-\w+||\w+).snssdk.com/luckycat/hotsoon/v1/task/done/draw_excitation_ad? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonad
+
+http-request https://(\w+-\w+||\w+).snssdk.com/luckycat/hotsoon/v1/task/sign_in_detail? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-body=true, timeout=10, tag=hotsoonsign
+
 #surge
-hotsoonsign = type=http-request,pattern=/luckycat/hotsoon/v1/task/sign_in_detail?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js,script-update-interval=0
-hotsoonad = type=http-request,pattern=/luckycat/hotsoon/v1/task/done/draw_excitation_ad?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js,script-update-interval=0
-hotsoonread = type=http-request,pattern=/luckycat/hotsoon/v1/task/done/daily_read_\d+m?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js,script-update-interval=0
+hotsoonsign = type=http-request,pattern=^https://(\w+-\w+||\w+).snssdk.com/luckycat/hotsoon/v1/task/sign_in_detail?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js,script-update-interval=0
+hotsoonad = type=http-request,pattern=^https://(\w+-\w+||\w+).snssdk.com/luckycat/hotsoon/v1/task/done/draw_excitation_ad?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js,script-update-interval=0
+hotsoonread = type=http-request,pattern=https://(\w+-\w+||\w+).snssdk.com/luckycat/hotsoon/v1/task/done/daily_read_\d+m?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js,script-update-interval=0
+
 */
 
 
-const jsname='火山视频极速版'
+const jsname='火山视频极速版_151'
 const $ = Env(jsname)
 const notify = $.isNode() ?require('./sendNotify') : '';
 $.idx = ($.idx = ($.getval("hotsooncount") || "1") - 1) > 0 ? `${$.idx + 1}` : ""; // 账号扩展字符
@@ -47,7 +53,7 @@ let no = 1;
 let hotsoonreadheader = $.getdata('hotsoonreadheader')
 let hotsoonreadkey = $.getdata('hotsoonreadkey')
 let hotsoonaccount = ($.getval('hotsoonaccount') || 0);
-let tz = ($.getval('tz') || '1');//0关闭通知，1默认开启
+let tz = ($.getval('tz') || '0');//0关闭通知，1默认开启
 const logs =0;//0为关闭日志，1为开启
 var hour=''
 var minute=''
@@ -171,7 +177,6 @@ if ($.isNode()) {
     console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
  } else {
 
-
    hotsoonsignheaderArr.push('version_code=7.6.4&app_name=live_stream_lite&vid=6930885F-B76B-4570-802C-CBE2C7BB045F&device_id=351497504961854&new_nav=0&channel=App%20Store&aid=1350&screen_width=828&client_request_id=3d2f2327eafe2c685399c896f66d3921&openudid=c97301d33dc1224c17020e9772778d1db79c8536&live_sdk_version=7.6.4&update_version_code=7642&os_api=18&ws_status=CONNECTED&ac=WIFI&mccmnc=46001&os_version=14.5&client_version_code=764&device_platform=iphone&iid=633737802162488&device_type=iPhone11,8&idfa=00000000-0000-0000-0000-000000000000')
    hotsoonsignkeyArr.push('{"Host":"ib.snssdk.com","Connection":"keep-alive","x-Tt-Token":"004056fdb7c9d4cfb2118b8e3cae96ac3300b93f36fd7047c84d13e2aeed1a158340aee1b92751d2f28bec4d037636937ffa39a488b229d1b9289a3fa4326ccead4c8b60bd3dd9fa0997ee34d62937f686c42454ad68559c6eba265cef9b2d2ebaa05-1.0.1","sdk-version":"1","User-Agent":"HotsoonLite 7.6.4 rv:7642 (iPhone; iOS 14.5; zh_CN) Cronet","x-tt-trace-id":"00-c23072990d13faf63ec353e2bb720546-c23072990d13faf6-01","Accept-Encoding":"gzip, deflate","Cookie":"passport_csrf_token=e4b35709ecca4e1c9127fef4de9e775f; passport_csrf_token_default=e4b35709ecca4e1c9127fef4de9e775f; odin_tt=9a237a5f3b7a4f5ffab342695a2a63af427a442fdf460800a2dfbfb6d8a112a3f76bf8bccdf805d633fcff4ba04b254d3011aa8cf6e91cac79dbd7e3513f6942; d_ticket=27ece2bc11ca601666a4989a02992f88cde6f; n_mh=tHU9IKvHFaiSsjfvw6xnIy4GFdtrO_DoNDiZiZKbCMw; sid_guard=4056fdb7c9d4cfb2118b8e3cae96ac33%7C1613869580%7C5184000%7CThu%2C+22-Apr-2021+01%3A06%3A20+GMT; uid_tt=b302f5f0c4064fb803e8db3865134e5f; uid_tt_ss=b302f5f0c4064fb803e8db3865134e5f; sid_tt=4056fdb7c9d4cfb2118b8e3cae96ac33; sessionid=4056fdb7c9d4cfb2118b8e3cae96ac33; sessionid_ss=4056fdb7c9d4cfb2118b8e3cae96ac33; excgd=20210221; install_id=633737802162488; ttreq=1$b952696d0c0e982afa82641ed4434b45aad6ffcb","X-Khronos":"1613870689","X-Gorgon":"8402209f00007fa2ae84f013de4f3b1b22e0ed14762843fe6289"}')
    hotsoonadheaderArr.push('')
@@ -194,7 +199,7 @@ if ($.isNode()) {
 //    hotsoonadkeyArr.push($.getdata(`hotsoonadkey${i}`))
 //    hotsoonreadheaderArr.push($.getdata(`hotsoonreadheader${i}`))
 //    hotsoonreadkeyArr.push($.getdata(`hotsoonreadkey${i}`))
-  }
+//  }
 }
 !(async () => {
 if (!hotsoonsignheaderArr[0]) {
