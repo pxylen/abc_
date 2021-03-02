@@ -304,7 +304,7 @@
             "desc": "需要几个账号，数字为几"
     }],
             "repo": "https://github.com/age174/-/blob/main/ysm.js",
-            "icons": ["https://s3.ax1x.com/2021/02/28/6CRWb8.jpg", "https://s3.ax1x.com/2021/02/28/6CRWb8.jpg"],
+            "icons": ["https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Yunsaoma.png", "https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Yunsaoma.png"],
             "script": "https://raw.githubusercontent.com/age174/-/main/ysm.js"
     }
 ]
