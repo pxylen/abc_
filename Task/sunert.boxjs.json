@@ -224,11 +224,13 @@
       "author": "@sunert", 
       "keys": [
         "china_telecom_authToken_10000", 
-        "china_telecom_cookie"
+        "china_telecom_cookie",
+        "telecom_sign",
+        "telecom_act"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/telecomInfinity.js", 
+      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/telecomSky.js", 
       "id": "chinatelecomEnquiry", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomInfinity.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomSky.js", 
       "settings": [
         {
           "id": "Mon", 

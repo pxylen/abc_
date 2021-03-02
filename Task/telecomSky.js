@@ -1,13 +1,15 @@
-
-
+/*
+签到兑好礼活动Token
+https:\/\/mkt\.21cn\.com\/mkt\/api\/user\/queryActivityInfo\.do\?activityId=\d+ url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomSky.js
+*/
 const $ = new Env("中国电信 世界触手可及🤝");
 const Y = $.getdata('Mon').slice(0,4)||$.time('yyyy');
 const M = $.getdata('Mon').slice(-2)||$.time('MM') ; //查询前几个月，可以')'号后减几
-$.log(Y)
 const notify = $.isNode() ? require('./sendNotify') : '';
 const AUTHTOKEN = $.getdata("china_telecom_authToken_10000");
 const COOKIE = $.getdata("china_telecom_cookie");
-
+const token = $.getdata("telecom_sign");
+const Actid = $.getdata("telecom_act");
 const requests = {
     detail: {
         url: "https://e.189.cn/store/user/package_detail.do",
@@ -42,6 +44,14 @@ const requests = {
             "Cookie": COOKIE
         },
         method: "GET"
+    },
+      signin: {
+        url: "https://mkt.21cn.com/mkt/api/user/sign/sign.do",
+        headers: {
+          Host: 'mkt.21cn.com',
+          token: token
+     },
+        body: 'activityId='+Actid+'&uxChannel="10012"'
     }
 }
 
@@ -53,7 +63,9 @@ if (isGetCookie = typeof $request !== 'undefined') {
    await balaninfo();
    await packinfo();
    await billinfo();
-   $.msg($.name,$.sub,$.desc)
+   token?await mktSign():"";
+   $.msg($.name,$.sub,$.desc);
+   $.isNode()?await notify.sendNotify($.name,$.sub+"\n"+$.desc):""
  })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
@@ -171,17 +183,39 @@ function balaninfo() {
   })
 }
 
+function mktSign() {
+  return new Promise((resolve, reject) => {
+    $.post(requests.signin, (err, resp, data) => {
+      try{ 
+        let obj = JSON.parse(data);
+        if(obj.resCode=="00000"){
+        signres = (obj.data.status==1)?"签到成功，已签到"+obj.data.signNum+"天":"今日已签到，总计签到"+obj.data.signNum+"天";
+        $.log("\n签到兑豪礼: "+signres)
+        }
+      } catch(e){
+        $.logErr("查询余额失败"+e)
+      } finally {
+       resolve()
+      }
+    })
+  })
+}
 function GetCookie() {
-  if ($request && $request.headers) {
+    if ($request && $request.url.match(/\/e\.189\.cn\/store/)) {
         var cookieVal = $request.headers['authToken']
         var COOKIE = $request.headers['Cookie']
-      $.setdata(COOKIE, "china_telecom_cookie")
+        $.setdata(COOKIE, "china_telecom_cookie")
         if (cookieVal) {
             if ($.setdata(cookieVal, "china_telecom_authToken_10000")) {
                 $.msg($.name, '获取authToken: 成功', '')
-              // console.log(`[${config.name}] 获取authToken: 成功, authToken: ${cookieVal}, Cookie: [${COOKIE}]` )
             }
         }
+    } else if ($request.url.indexOf("mkt.21cn.com") > -1) {
+        const signtoken = $request.headers['token']
+        const actid = $request.url.match(/activityId=(\d+)/)[1]
+        $.setdata(signtoken, "telecom_sign");
+        $.setdata(actid,"telecom_act");
+        $.msg($.name, "获取签到兑豪礼活动token成功")
     }
 }
 function formatFlow(number) {
