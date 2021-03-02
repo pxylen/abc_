@@ -18,6 +18,7 @@ let ONCard = $.getdata('zqcard') || "false"; //早起打卡开关
 let s = $.getdata('delay_rotary_zq') || "10"; //转盘延迟时间
 let withdrawcash = $.getdata('zqcash') || 30; //提现金额
 let cardTime = $.getdata('zqtime') || "05"; //打卡时间
+let readtimes = 0;
 
 // 需获取部分
 let withdrawUrl = $.getdata('cashurl_zq'); //提现地址，可选
