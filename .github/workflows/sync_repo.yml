@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: sync_code
+name: sync_repo
 on:
   schedule:
     - cron: '30 */6 * * *'
