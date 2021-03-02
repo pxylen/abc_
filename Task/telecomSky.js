@@ -10,6 +10,7 @@ const AUTHTOKEN = $.getdata("china_telecom_authToken_10000");
 const COOKIE = $.getdata("china_telecom_cookie");
 const token = $.getdata("telecom_sign");
 const Actid = $.getdata("telecom_act");
+let  special = "";
 const requests = {
     detail: {
         url: "https://e.189.cn/store/user/package_detail.do",
