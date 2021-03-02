@@ -257,16 +257,14 @@ function GetCookie() {
             }
         }
     } else if ($request.url.indexOf("mkt.21cn.com") > -1) {
-      let aid = "", actarr = [], tokenarr = [];
+      let aid = "", actarr = [];
          signtoken = $request.headers['token'];
          actid = $request.url.match(/activityId=(\d+)/)[1];
          $.setdata(signtoken,"telecom_sign")
-       if(Actid.indexOf(actid)==-1){
-        if(Actid){
+       if(Actid&&Actid.indexOf(actid)==-1){
          aid = JSON.parse(Actid).toString()
          actarr.push(aid)
-      } 
-        actarr.push(actid)
+         actarr.push(actid)
 $.setdata(JSON.stringify(actarr),"telecom_act");
        $.msg($.name, "获取活动token成功")
       }
