@@ -85,7 +85,7 @@ function packinfo() {
           lulbalance= obj.balance,
           usedCommon = obj.usedCommon;
           mainProduct = obj.items[0].productOFFName;
-          $.desc+="【使用详情】\n  "
+          $.desc+="【使用详情】:\n  "
           $.log("您已开通的套餐:\n")
           for(list of obj.items){
             productOFFName = list.productOFFName,
@@ -174,7 +174,7 @@ function balaninfo() {
           }
          }
          $.log("您的余额总计"+totalBalance+"通用余额为"+general+(special?"专用余额为"+special:"")+"\n")
-         $.desc += "余额总计"+totalBalance+"通用"+general+(special?"专用"+special:"")+"\n"
+         $.desc += "总计:"+totalBalance+"通用:"+general+(special?"专用:"+special:"")+"\n"
        }
       } catch(e){
         $.logErr("查询余额失败"+e)
