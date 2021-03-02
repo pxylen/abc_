@@ -183,7 +183,7 @@ function signShare() {
      if (sign_share.ret == "ok"){
        $.log("签到分享收益: +"+sign_share.profit)
         await Stimulate("23")
-        await invite()
+        //await invite()
          }  else {
        $.log(sign_share.rtn_msg)
      }
