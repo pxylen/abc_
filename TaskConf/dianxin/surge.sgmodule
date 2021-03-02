@@ -1,6 +1,5 @@
-
 #!name= dianxin Rewrite
-#!desc= 电信套餐重写配置
+#!desc= 天翼账号中心重写配置
 #!system=ios
 
 [Script]
