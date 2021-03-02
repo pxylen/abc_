@@ -2,8 +2,8 @@
     "id": "ziye.app.sub",
     "name": "ziye 脚本订阅",
     "author": "@ZIYE",
-    "icon": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/ziye.png",
-    "repo": "https://github.com/ziye66666",
+    "icon": "https://raw.githubusercontent.com/ziye11/JavaScript/main/ziye.png",
+    "repo": "https://github.com/ziye11",
     "apps": [{
             "id": "qczjspeed",
             "name": "汽车之家极速版",
@@ -38,9 +38,9 @@
                     "desc": "默认0点后提现，可设置 0 ~ 23  "
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/qczjspeed.js",
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/qczjspeed.js",
             "icons": ["https://raw.githubusercontent.com/Orz-3/task/master/qczj.png", "https://raw.githubusercontent.com/Orz-3/task/master/qczj.png"],
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/qczjspeed.js"
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/qczjspeed.js"
         },
         {
             "id": "xiaole",
@@ -62,9 +62,9 @@
                     "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/xiaole.js",
-            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/xiaole.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/xiaole.png"],
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/xiaole.js"
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/xiaole.js",
+            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/xiaole.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/xiaole.png"],
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/xiaole.js"
         },
         {
             "id": "iboxpay",
@@ -114,9 +114,9 @@
                     "desc": "输入短信验证码，默认为0，不启动获取token功能"
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.js",
-            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.png"],
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.js"
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/iboxpay.js",
+            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/iboxpay.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/iboxpay.png"],
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/iboxpay.js"
         },
         {
             "id": "flw",
@@ -152,9 +152,9 @@
                     "desc": "默认0，可设置设置 0 5 50 100"
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.js",
-            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.png"],
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/flw.js"
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/flw.js",
+            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/flw.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/flw.png"],
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/flw.js"
         },
         {
             "id": "githubAC",
@@ -176,9 +176,9 @@
                     "desc": "指定任务最多跑几个js，根据抓取的js数据个数来设值"
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/githubAC.js",
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/githubAC.js",
             "icons": ["https://github.githubassets.com/images/modules/site/home/astro-mona.jpg", "https://github.githubassets.com/images/modules/site/home/astro-mona.jpg"],
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/githubAC.js"
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/githubAC.js"
         },
         {
             "id": "duokandian",
@@ -207,9 +207,9 @@
                     "desc": "0不提现，可设置 0 1 3 5 15 "
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/duokandian.js",
-            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/duokandian.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/duokandian.png"],
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/duokandian.js"
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/duokandian.js",
+            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/duokandian.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/duokandian.png"],
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/duokandian.js"
         },
         {
             "id": "zhima",
@@ -238,9 +238,9 @@
                     "desc": "0不提现，可设置 0 0.3 0.5 1 5 10 30 50 100 等"
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/zhima.js",
-            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/zhima.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/zhima.png"],
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/zhima.js"
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/zhima.js",
+            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/zhima.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/zhima.png"],
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/zhima.js"
         },
         {
             "id": "QQread",
@@ -262,9 +262,9 @@
                     "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/QQread.js",
-            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/QQread.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/QQread.png"],
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/QQread.js"
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/QQread.js",
+            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/QQread.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/QQread.png"],
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/QQread.js"
         },
         {
             "id": "bububao",
@@ -293,9 +293,9 @@
                     "desc": "0不提现，可设置 0 0.3 50 100 200 888  设置888由上至下循环提现 "
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.js",
-            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.png"],
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.js"
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/bububao.js",
+            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/bububao.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/bububao.png"],
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/bububao.js"
         },
         {
             "id": "ymzhuan",
@@ -331,9 +331,40 @@
                     "desc": "0不使用，输入id模拟登录，一般为4位"
                 }
             ],
-            "repo": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ymzhuan.js",
-            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ymzhuan.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ymzhuan.png"],
-            "script": "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/ymzhuan.js"
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ymzhuan.js",
+            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ymzhuan.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ymzhuan.png"],
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ymzhuan.js"
+        },
+        {
+            "id": "yuedongzu",
+            "name": "悦动族APP",
+            "keys": ["yuedongzutoken", "yuedongzutoken2", "yuedongzutoken3", "yuedongzutoken4", "yuedongzutoken5", "yuedongzutoken6", "yuedongzutoken7", "yuedongzutoken8", "yuedongzutoken9", "yuedongzutoken10", "yuedongzutoken11", "yuedongzutoken12", "yuedongzutoken13", "yuedongzutoken14", "yuedongzutoken15", "yuedongzutoken16", "yuedongzutoken17", "yuedongzutoken18", "yuedongzutoken19", "yuedongzutoken20"],
+            "author": "@ziye",
+            "settings": [{
+                    "id": "yuedongzuSuffix",
+                    "name": "当前账号",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+                },
+                {
+                    "id": "yuedongzuCount",
+                    "name": "账号个数",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+                },
+                {
+                    "id": "yuedongzuCASH",
+                    "name": "提现标准",
+                    "val": "0",
+                    "type": "number",
+                    "desc": "0不提现，可设置 0 0.3 1 5 50 100 200 888  设置888由上至下循环提现 "
+                }
+            ],
+            "repo": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/yuedongzu.js",
+            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/yuedongzu.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/yuedongzu.png"],
+            "script": "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/yuedongzu.js"
         }
     ]
 }
