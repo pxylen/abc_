@@ -1,6 +1,7 @@
 # File: .github/workflows/repo-sync.yml
 name: sync_repo
 on:
+  workflow_dispatch:
   schedule:
     - cron: '30 */6 * * *'
 
