@@ -7,10 +7,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 */6 * * *'
-  watch:
-    types: started
-  repository_dispatch:
-    types: crazyJoy挂机
+
 jobs:
   build:
     env:
