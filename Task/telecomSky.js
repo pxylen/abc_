@@ -97,8 +97,8 @@ function packinfo() {
             usageAmount = formatFlow(products.usageAmount),
             balanceAmount = formatFlow(products.balanceAmount),
             ratablename = products.ratableResourcename;
-           $.log("套餐名称:"+productOFFName+"\n"+ratablename+": 总计:"+ratableAmount+" 使用: "+usageAmount+ " 剩余"+balanceAmount+"\n")
-           $.desc += ratablename+": 总计:"+ratableAmount+" 使用: "+usageAmount+ " 剩余"+balanceAmount+"\n  "
+           $.log("套餐名称:"+productOFFName+"\n"+ratablename+": 总计:"+ratableAmount+" 使用:"+usageAmount+ " 剩余:"+balanceAmount+"\n")
+           $.desc += ratablename+": 总计:"+ratableAmount+" 使用:"+usageAmount+ " 剩余:"+balanceAmount+"\n  "
            }
            } else {
            $.log("套餐名称:"+productOFFName+"\n")
