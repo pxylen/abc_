@@ -134,8 +134,8 @@ let tm = ''
           await dkatm();
           await $.wait(1000);
           await dkaxw();
-          await $.wait(1000);
-          await dkaxs();
+          //await $.wait(1000);
+//await dkaxs();//蛋咖小说，已禁用，需要开启的自己删了注释
           await $.wait(1000);
           await dkakkz();
           await dkaxx();
@@ -227,7 +227,7 @@ let url = {
         if(result.status == 0){
         console.log('\n蛋咖获取题目回执:成功🌝 当前题目为:\n'+result.data.title+'\n\n成功找到题目答案，正在前往答题')
         tm = result.data.realnum
-        await $.wait(1500);
+       await $.wait(1500);
        await dkatj();
 } else {
        console.log('\n蛋咖获取题目回执:失败🚫 '+result.msg)
@@ -259,9 +259,9 @@ let url = {
        const result = JSON.parse(data)
       if(result.status == 0){
         console.log('\n蛋咖答题回执:成功🌝 '+result.msg)
-        tm = result.data.realnum
+        
        await $.wait(1500);
-        await dkatm();
+       await dkatm();
 } else {
        console.log('\n蛋咖答题回执:失败🚫 '+result.msg)
 }
