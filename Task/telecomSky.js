@@ -261,13 +261,15 @@ function GetCookie() {
          signtoken = $request.headers['token'];
          actid = $request.url.match(/activityId=(\d+)/)[1];
          $.setdata(signtoken,"telecom_sign")
-       if(Actid&&Actid.indexOf(actid)==-1){
+       if(Actid){
          aid = JSON.parse(Actid).toString()
          actarr.push(aid)
+         };
+        if(!Actid ||Actid.indexOf(actid)==-1){
          actarr.push(actid)
 $.setdata(JSON.stringify(actarr),"telecom_act");
-       $.msg($.name, "获取活动token成功")
       }
+       $.msg($.name, "获取活动token成功")
     }
 }
 function formatFlow(number) {
