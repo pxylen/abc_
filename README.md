@@ -1,6 +1,6 @@
 饮水思源：
 
-[@ziye12](https://github.com/ziye11/JavaScript) - ziye66666
+[@ziye12](https://github.com/ziye11/JavaScript) - ziye
 
 [@CenBoMin](https://github.com/CenBoMin/GithubSync) - CenBoMin
 
