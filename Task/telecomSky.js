@@ -49,7 +49,8 @@ const requests = {
 }
 
 if (isGetCookie = typeof $request !== 'undefined') {
-    GetCookie()
+    GetCookie();
+    $.done()
 } else {
  !(async() => {
    await userinfo();
