@@ -193,9 +193,11 @@ function mktSign() {
         if(obj.resCode=="00000"){
         signres = (obj.data.status==1)?"签到成功，已签到"+obj.data.signNum+"天":"今日已签到，总计签到"+obj.data.signNum+"天";
         $.log("\n签到兑豪礼: "+signres)
+        } else if(obj.resCode=="51301"){
+        $.log("登陆已失效"+obj.resDesc)
         }
       } catch(e){
-        $.logErr("查询余额失败"+e)
+        $.logErr("获取活动失败"+e)
       } finally {
        resolve()
       }
