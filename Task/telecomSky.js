@@ -10,6 +10,7 @@ const AUTHTOKEN = $.getdata("china_telecom_authToken_10000");
 const COOKIE = $.getdata("china_telecom_cookie");
 const token = $.getdata("telecom_sign");
 const Actid = $.getdata("telecom_act");
+
 let  special = "";
 const requests = {
     detail: {
@@ -45,14 +46,6 @@ const requests = {
             "Cookie": COOKIE
         },
         method: "GET"
-    },
-      signin: {
-        url: "https://mkt.21cn.com/mkt/api/user/sign/sign.do",
-        headers: {
-          Host: 'mkt.21cn.com',
-          token: token
-     },
-        body: 'activityId='+Actid+'&uxChannel="10012"'
     }
 }
 
@@ -64,7 +57,15 @@ if (isGetCookie = typeof $request !== 'undefined') {
    await balaninfo();
    await packinfo();
    await billinfo();
-   token?await mktSign():"";
+   if (Actid) {
+       for (x of JSON.parse(Actid)) {
+          if (x == "10925") {
+              await mktSign()
+          } else if (x == "10924") {
+              await mktDraw()
+          }
+       }
+    };
    $.msg($.name,$.sub,$.desc);
    $.isNode()?await notify.sendNotify($.name,$.sub+"\n"+$.desc):""
  })()
@@ -187,7 +188,14 @@ function balaninfo() {
 
 function mktSign() {
   return new Promise((resolve, reject) => {
-    $.post(requests.signin, (err, resp, data) => {
+     let url= {
+        url: "https://mkt.21cn.com/mkt/api/user/sign/sign.do",
+        headers: {
+          Host: 'mkt.21cn.com',
+          token: token
+      }
+    }
+    $.post(url, (err, resp, data) => {
       try{ 
         let obj = JSON.parse(data);
         if(obj.resCode=="00000"){
@@ -204,6 +212,34 @@ function mktSign() {
     })
   })
 }
+
+function mktDraw() {
+  return new Promise((resolve, reject) => {
+      let url ={
+        url: "https://mkt.21cn.com/mkt/api/user/draw.do?uxChannel=10012&activityId="+x,
+        headers: {
+          Host: 'mkt.21cn.com',
+          token: token
+      }
+    };
+    $.get(url, (err, resp, data) => {
+      try{ 
+        let obj = JSON.parse(data);
+        if(obj.resCode=="00000"){
+         rewards = obj.data.awardName;
+         $.log("恭喜您获得"+rewards+"，话费红包有效期为7天")
+        } else if(obj.resCode=="51301"){
+        $.log("登陆已失效"+obj.resDesc)
+        }
+      } catch(e){
+        $.logErr("获取活动失败"+e)
+      } finally {
+       resolve()
+      }
+    })
+  })
+}
+
 function GetCookie() {
     if ($request && $request.url.match(/\/e\.189\.cn\/store/)) {
         var cookieVal = $request.headers['authToken']
@@ -215,11 +251,19 @@ function GetCookie() {
             }
         }
     } else if ($request.url.indexOf("mkt.21cn.com") > -1) {
-        const signtoken = $request.headers['token']
-        const actid = $request.url.match(/activityId=(\d+)/)[1]
-        $.setdata(signtoken, "telecom_sign");
-        $.setdata(actid,"telecom_act");
-        $.msg($.name, "获取签到兑豪礼活动token成功")
+      let aid = "", actarr = [], tokenarr = [];
+         signtoken = $request.headers['token'];
+         actid = $request.url.match(/activityId=(\d+)/)[1];
+         $.setdata(signtoken,"telecom_sign")
+       if(Actid.indexOf(actid)==-1){
+        if(Actid){
+         aid = JSON.parse(Actid).toString()
+         actarr.push(aid)
+      } 
+        actarr.push(actid)
+$.setdata(JSON.stringify(actarr),"telecom_act");
+       $.msg($.name, "获取活动token成功")
+      }
     }
 }
 function formatFlow(number) {
