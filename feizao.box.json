@@ -306,6 +306,29 @@
             "repo": "https://github.com/age174/-/blob/main/ysm.js",
             "icons": ["https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Yunsaoma.png", "https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Yunsaoma.png"],
             "script": "https://raw.githubusercontent.com/age174/-/main/ysm.js"
+    } ,
+    {
+            "id": "xsmm",
+            "name": "悬赏喵喵",
+            "keys": ["xsmmurl", "xsmmhd","xsmmurl2", "xsmmhd2","xsmmurl3", "xsmmhd3","xsmmurl4", "xsmmhd4","xsmmurl5", "xsmmhd5","xsmmurl6", "xsmmhd6","xsmmurl7", "xsmmhd7","xsmmurl8", "xsmmhd8","xsmmurl9", "xsmmhd9","xsmmurl10", "xsmmhd10",],
+            "author": "@feizao",
+            "settings": [{
+            "id": "xsmmstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "xsmmcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/xsmm.js",
+            "icons": ["https://s3.ax1x.com/2021/03/03/6E17fU.jpg", "https://s3.ax1x.com/2021/03/03/6E17fU.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/xsmm.js"
     }
 ]
 }
