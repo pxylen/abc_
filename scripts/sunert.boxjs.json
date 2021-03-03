@@ -6,37 +6,6 @@
   "repo": "https://github.com/pxylen/abc_.git",
   "apps": [
     {
-      "id": "zhuanyi_ck",
-      "name": "转移cookie",
-      "keys": [
-        "chavy_cookie_videoqq",
-        "chavy_auth_url_videoqq",
-        "chavy_auth_header_videoqq",
-        "chavy_msign_url_videoqq",
-        "chavy_msign_header_videoqq",
-        "DiDi",
-        "DiDi_city",
-        "@Didi.drawdelay",
-        "@Didi.actIdPM",
-        "ttwksignurl",
-        "ttwksignheader",
-        "xmSportsToken",
-        "xmMinStep",
-        "xmMaxStep",
-        "evil_checkintitle",
-        "evil_checkinlogin",
-        "evil_checkinemail",
-        "evil_checkinpwd"
-      ],
-      "author": "@lensu",
-      "repo": "https://raw.githubusercontent.com/pxylen/abc_",
-      "icons": [
-        "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/weibo.png",
-        "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/weibo.png"
-      ],
-      "script": "https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.js"
-    },
-    {
       "id": "kuaishou",
       "name": "快手极速版",
       "keys": [
