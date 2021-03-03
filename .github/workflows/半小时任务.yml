@@ -27,6 +27,15 @@ jobs:
 
 
 
+      - name: '运行 【百度极速版】'
+        run: |
+          node ./workflow/sunert/baidu_speed.js
+        env:
+          TZ: Asia/shanghai
+          BAIDU_COOKIE: ${{ secrets.BAIDU_COOKIE }}
+          BAIDU_CASH: ${{ secrets.BAIDU_CASH }}
+
+
       - name: '运行 【电视家】'
         run: |
           node ./workflow/sunert/dianshijia.js
