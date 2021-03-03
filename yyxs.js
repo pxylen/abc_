@@ -2,6 +2,7 @@
 软件名称:阅友小说 商店自己下载
 更新时间：2021-02-28 @肥皂
 脚本说明：阅友小说自动任务
+阅友计时任务最多只有3金币了
 
 
 本脚本以学习为主
@@ -195,7 +196,7 @@ function yyxsjs(timeout = 0) {
 let url = {
         url : yyxsjsurl,
         headers : JSON.parse($.getdata('yyxssphd')),
-        body : 'coins=50'
+        body : 'coins=3'
        
 }      
       $.post(url, async (err, resp, data) => {
