@@ -97,20 +97,6 @@
       "script": "https://raw.githubusercontent.com/iepngs/Script/master/dingdong/index.js"
     },
     {
-      "id": "bububao",
-      "name": "步步宝",
-      "keys": [
-        "bbb_ck"
-      ],
-      "author": "@lensu",
-      "repo": "https://github.com/adwktt/adwktt",
-      "icons": [
-        "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/weibo.png",
-        "https://raw.githubusercontent.com/Orz-3/task/master/weibo.png"
-      ],
-      "script": "https://raw.githubusercontent.com/adwktt/adwktt/master/yk.js"
-    },
-    {
       "id": "wps_sign",
       "name": "WPS签到",
       "keys": [
