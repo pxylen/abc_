@@ -41,27 +41,27 @@ jobs:
           git checkout master
           npm install
 
-      - name: '运行 【京东种豆得豆】'
-        run: |
-          cd ~/TaskAction
-          node jd_plantBean.js
-        env:
-          PLANT_BEAN_SHARECODES: ${{ secrets.PLANT_BEAN_SHARECODES }}
+#      - name: '运行 【京东种豆得豆】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_plantBean.js
+#        env:
+#          PLANT_BEAN_SHARECODES: ${{ secrets.PLANT_BEAN_SHARECODES }}
           
 
-      - name: '运行 【东东农场】'
-        run: |
-          cd ~/TaskAction
-          node jd_fruit.js
-        env:
-          FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
+#      - name: '运行 【东东农场】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_fruit.js
+#        env:
+#          FRUITSHARECODES: ${{ secrets.FRUITSHARECODES }}
           
-      - name: '运行 【东东工厂】'
-        run: |
-          cd ~/TaskAction
-          node jd_jdfactory.js
-        env:
-          DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
+#      - name: '运行 【东东工厂】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_jdfactory.js
+#        env:
+#          DDFACTORY_SHARECODES: ${{ secrets.DDFACTORY_SHARECODES }}
 
 
 #      - name: '运行 【京喜农场】'
@@ -73,29 +73,29 @@ jobs:
 #          JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
 
 
-      - name: '运行 【京喜工厂】'
-        run: |
-          cd ~/TaskAction
-          node jd_dreamFactory.js
-        env:
-          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
-          DREAM_FACTORY_SHARE_CODES: ${{ secrets.DREAM_FACTORY_SHARE_CODES }}
+#      - name: '运行 【京喜工厂】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_dreamFactory.js
+#        env:
+#          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
+#          DREAM_FACTORY_SHARE_CODES: ${{ secrets.DREAM_FACTORY_SHARE_CODES }}
 
 
-      - name: '运行 【东东萌宠】'
-        run: |
-          cd ~/TaskAction
-          node jd_pet.js
-        env:
-          PETSHARECODES: ${{ secrets.PETSHARECODES }}
+#      - name: '运行 【东东萌宠】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_pet.js
+#        env:
+#          PETSHARECODES: ${{ secrets.PETSHARECODES }}
 
 
-      - name: '运行 【东东超市】'
-        run: |
-          cd ~/TaskAction
-          node jd_superMarket.js
-        env:
-          JOIN_PK_TEAM: ${{ secrets.JOIN_PK_TEAM }}
+#      - name: '运行 【东东超市】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_superMarket.js
+#        env:
+#          JOIN_PK_TEAM: ${{ secrets.JOIN_PK_TEAM }}
           
 
       - name: '运行 【口袋书店】'
