@@ -329,6 +329,29 @@
             "repo": "https://github.com/age174/-/blob/main/xsmm.js",
             "icons": ["https://s3.ax1x.com/2021/03/03/6E17fU.jpg", "https://s3.ax1x.com/2021/03/03/6E17fU.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/xsmm.js"
+    },
+    {
+            "id": "ddxq",
+            "name": "嘀嗒星球",
+            "keys": ["ddxqurl", "ddxqhd", "ddxqggurl","ddxqurl2", "ddxqhd2", "ddxqggurl2","ddxqurl3", "ddxqhd3", "ddxqggurl3","ddxqurl4", "ddxqhd4", "ddxqggurl4","ddxqurl5", "ddxqhd5", "ddxqggurl5","ddxqurl6", "ddxqhd6", "ddxqggurl6","ddxqurl7", "ddxqhd7", "ddxqggurl7","ddxqurl8", "ddxqhd8", "ddxqggurl8","ddxqurl9", "ddxqhd9", "ddxqggurl9"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "ddxqstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "ddxqcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/ddxq.js",
+            "icons": ["https://s3.ax1x.com/2021/03/04/6E5k0H.jpg", "https://s3.ax1x.com/2021/03/04/6E5k0H.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/ddxq.js"
     }
 ]
 }
