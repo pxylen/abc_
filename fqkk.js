@@ -3,7 +3,7 @@
 更新时间：2021-03-02 @肥皂
 脚本说明：番茄看看自动阅读
 脚本为自动完成番茄看看的阅读任务
-每日收益1.7元左右，可多号撸。提现秒到
+每日收益2.7元左右，可多号撸。提现秒到
 
 任务打开二维码地址 https://raw.githubusercontent.com/age174/-/main/3F545C70-389B-4155-ACB1-15B6FDA95501.jpeg
 
@@ -130,7 +130,7 @@ let url = {
            
     const result = JSON.parse(data)
         if(result.code == 0){
-        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score+'\n当前剩余可执行任务次数:'+result.data.infoView.rest)
+        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score+' 当前剩余可执行任务次数:'+result.data.infoView.rest)
         await fqkk1();
 } else {
        console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
@@ -230,7 +230,8 @@ let url = {
            
     const result = JSON.parse(data)
         if(result.code == 0){
-        console.log('\n番茄看看提现回执:成功🌝 ')
+        console.log('\n番茄看看提现回执:成功🌝 成功提现'+fqtx / 100 + ' 元')
+        $.msg('番茄看看提现','','番茄看看已成功提现微信'+fqtx / 100 + ' 元')
 } else {
        console.log('\n番茄看看提现回执:失败🚫 '+result.msg)
 }
