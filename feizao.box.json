@@ -310,7 +310,7 @@
     {
             "id": "xsmm",
             "name": "悬赏喵喵",
-            "keys": ["xsmmurl", "xsmmhd","xsmmurl2", "xsmmhd2","xsmmurl3", "xsmmhd3","xsmmurl4", "xsmmhd4","xsmmurl5", "xsmmhd5","xsmmurl6", "xsmmhd6","xsmmurl7", "xsmmhd7","xsmmurl8", "xsmmhd8","xsmmurl9", "xsmmhd9","xsmmurl10", "xsmmhd10",],
+            "keys": ["xsmmurl", "xsmmhd","xsmmurl2", "xsmmhd2","xsmmurl3", "xsmmhd3","xsmmurl4", "xsmmhd4","xsmmurl5", "xsmmhd5","xsmmurl6", "xsmmhd6","xsmmurl7", "xsmmhd7","xsmmurl8", "xsmmhd8","xsmmurl9", "xsmmhd9","xsmmurl10", "xsmmhd10"],
             "author": "@feizao",
             "settings": [{
             "id": "xsmmstatus",
