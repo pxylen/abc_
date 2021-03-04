@@ -19,7 +19,7 @@ let videoscore = 0,readscore = 0;
 let artArr = [], delbody = 0;
 if (isGetbody = typeof $request !==`undefined`) {
    Getbody();
-   $done()
+   $.done()
 } 
 let lastIndex = $.getdata('zqbody_index')
 if (!$.isNode() && !YouthBody == true) {
