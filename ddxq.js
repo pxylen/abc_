@@ -36,7 +36,7 @@ https://ddstar.palmmob.com/ddstar_app/activity/ReceiveAdBonus?bonusboxid=1&v=44&
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
 [task_local]
 #嘀嗒星球
-15 0,6,12,18, * * * https://raw.githubusercontent.com/age174/-/main/ddxq.js, tag=嘀嗒星球, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Yunsaoma.png, enabled=true
+15 0 * * * https://raw.githubusercontent.com/age174/-/main/ddxq.js, tag=嘀嗒星球, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Yunsaoma.png, enabled=true
 
 
 [rewrite_local]
