@@ -93,17 +93,17 @@ jobs:
 #          JOIN_PK_TEAM: ${{ secrets.JOIN_PK_TEAM }}
           
 
-      - name: '运行 【口袋书店】'
-        run: |
-          cd ~/TaskAction
-          node jd_bookshop.js
+#      - name: '运行 【口袋书店】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_bookshop.js
 
 
 
-      - name: '运行 【宠汪汪积分兑换奖品】'
-        run: |
-          cd ~/TaskAction
-          node jd_joy_reward.js
+#      - name: '运行 【宠汪汪积分兑换奖品】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_joy_reward.js
 
 
       - name: '运行 【宠汪汪偷好友积分与狗】'
@@ -115,22 +115,22 @@ jobs:
           JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
           
 
-      - name: '运行 【点点券】'
-        run: |
-          cd ~/TaskAction
-          node jd_necklace.js
+#      - name: '运行 【点点券】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_necklace.js
 
 
-      - name: '运行 【京东天天加速】'
-        run: |
-          cd ~/TaskAction
-          node jd_speed.js
+#      - name: '运行 【京东天天加速】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_speed.js
 
 
-      - name: '运行 【天天提鹅】'
-        run: |
-          cd ~/TaskAction
-          node jd_daily_egg.js
+#      - name: '运行 【天天提鹅】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_daily_egg.js
 
 
       - name: '运行 【crazyJoy任务】'
@@ -141,10 +141,10 @@ jobs:
           JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }}
           
 
-      - name: '运行 【京东财富岛】'
-        run: |
-          cd ~/TaskAction
-          node jd_cfd.js
+#      - name: '运行 【京东财富岛】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_cfd.js
 
 
       - name: '运行 【京东摇钱树】'
