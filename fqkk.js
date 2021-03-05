@@ -65,50 +65,92 @@ hostname = m.*
 */
 
 
-const $ = new Env('番茄看看自动阅读');
-let status;
-status = (status = ($.getval("fqkkstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
+const $ = new Env('番茄看看');
 const fqkkurlArr = [], fqkkhdArr = []
 let fqkk = $.getjson('fqkk', [])
 let fqkkCkMoveFlag = $.getval('fqkkCkMove') || ''
-let fqkey = ''
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等于30，默认为提现一元，也就是100
+let concurrency = ($.getval('fqkkConcurrency') || '1') - 0; // 并发执行任务的账号数，默单账号循环执行
+concurrency = concurrency < 1 ? 1 : concurrency;
 
 !(async () => {
   if (typeof $request !== "undefined") {
-    await fqkkck()
+    await fqkkck();
   } else if (fqkkCkMoveFlag == 'true') {
     await fqkkCkMove();
   } else {
-    fqkk.forEach(o=>{
-      fqkkurlArr.push(o.url)
-      fqkkhdArr.push(o.hd)
+    let acList = fqkk.filter(o => o.hd).map((o, i) => ({no: i+1, uid: o.uid, gold: 0, score: 0, rest: 0, num: 0, url: o.url, headers: JSON.parse(o.hd)}));
+    let execAcList = [];
+    let slot = acList.length % concurrency == 0 ? acList.length / concurrency : parseInt(acList.length / concurrency) + 1;
+    acList.forEach((o, i) => {
+      let idx = i % slot;
+      if (execAcList[idx]) {
+        execAcList[idx].push(o);
+      } else {
+        execAcList[idx] = [o];
+      }
     });
-    console.log(`------------- 共${fqkkhdArr.length}个账号-------------\n`)
-    console.log('\n番茄看看当前设置的提现金额为: '+fqtx / 100 + ' 元')
-      for (let i = 0; i < fqkkhdArr.length; i++) {
-        if (fqkkhdArr[i]) {
-         
-          fqkkurl = fqkkurlArr[i];
-          fqkkhd = fqkkhdArr[i];
-          $.index = i + 1;
-          console.log(`\n开始【番茄看看${$.index}】`)
-    await fqkk1();
-
+    $.log(`番茄看看当前设置的提现金额为: ${fqtx / 100} 元`, `----------- 共${acList.length}个账号分${execAcList.length}组去执行 -----------`);
+    for (let arr of execAcList) {
+      let allAc = arr.map(ac=>ac.no).join(', ');
+      $.log(`\n=======================================\n开始【${$.name}账号：${allAc}】`);
+      let rtList = await Promise.all(arr.map((ac, i) => execTask(ac, i)));
+      for (let ac of rtList) {
+        let msg = '';
+        if (ac.uid && ac.gold >= fqtx) {
+          msg = await fqkktx(ac);
+        }
+        ac.msg = msg;
+      }
+      $.msg(`${$.name} ${allAc}`, '', rtList.map(ac => `【账号${ac.no}】余额：${ac.gold}币\n\t今日奖励：${ac.score}\n\t已阅读数：${ac.num}\n\t待阅读数：${ac.rest}${ac.msg?'\n'+ac.msg:''}`).join('\n\n'));
+    }
   }
-  let host = fqkkurl.match(/^https?:\/\/(.+?)\//)[1];
-  let hd = JSON.parse(fqkkhd);
-  let ck = hd['Cookie'] || hd['cookie']
-  let [userId, gold] = await userInfo(host, ck);
-  $.log(`【番茄看看${$.index}】用户ID：${userId} 余额：${gold}币`)
-  if (userId && gold >= fqtx) {
-    await fqkktx();
-  }
-}}
-
 })()
-  .catch((e) => $.logErr(e))
-  .finally(() => $.done())
+.catch((e) => $.logErr(e))
+  .finally(() => $.done());
+
+function execTask(ac, i) {
+  return new Promise(resolve => {
+    setTimeout(async () => {
+      try {
+        let msg = await fqkk3(ac, '');
+        if (ac.rest) {
+          if (ac.rest <= 0) {
+            $.log(`账号${ac.no}今日已阅读${ac.num}次，本阶段待阅读${ac.rest}次，跳过阅读`);
+          } else {
+            $.log(`账号${ac.no}今日已阅读${ac.num}次，本阶段待阅读${ac.rest}次，开始阅读\n`);
+            let flag = 0;
+            let count = 1;
+            let allowErrorCount = 3;
+            do {
+              let [f, m] = await fqkk1(ac, count++);
+              flag = f;
+              msg = m;
+              if (flag > 0) {
+                $.log(`🌝账号${ac.no}在本阶段还有${ac.rest}次阅读待执行，立即阅读\n`);
+              } else if (flag < 0) {
+                allowErrorCount--;
+              } else {
+                $.log(`🌝账号${ac.no}在本阶段待阅读任务已完成：\n${msg}`);
+              }
+            } while (flag && allowErrorCount);
+          }
+        } else {
+          $.log(`账号${ac.no}今日已阅读${ac.num}次，本阶段还有${ac.rest}次待阅读：\n${msg}`);
+        }
+        let host = ac.url.match(/^https?:\/\/(.+?)\//)[1];
+        let ck = ac.headers['Cookie'] || ac.headers['cookie'];
+        let [userId, gold] = await userInfo(host, ck);
+        ac.gold = gold;
+      } catch (e) {
+        $.logErr(e, `账号${ac.no} 循环执行任务出现异常`);
+      } finally{
+        resolve(ac);
+      }
+    }, i * 500);
+  })
+}
+
 //番茄看看数据获取
 async function fqkkck() {
   if ($request.url.indexOf("getTask") > -1) {
@@ -169,17 +211,17 @@ async function fqkkCkMove() {
   $.setval('', 'fqkkCkMove');
 }
 
-function userInfo(host, ck, timeout = 0) {
+function userInfo(host, ck) {
   return new Promise((resolve) => {
-    let url = {
+    let opts = {
       url: `http://${host}/user/`,
       headers: {
         Cookie: ck
       }
     }
-    $.get(url, async (err, resp, data) => {
+    $.get(opts, async (err, resp, data) => {
       let userId = 0;
-      let gold = 0;
+      let gold = -1;
       try {
         if (err) {
           $.logErr(`❌ API请求失败，清检查网络设置 \n ${JSON.stringify(err)}`)
@@ -190,164 +232,143 @@ function userInfo(host, ck, timeout = 0) {
           }
         }
       } catch (e) {
-        //$.logErr(e, resp);
+        $.log(`=================\nurl: ${opts.url}\ndata: ${resp && resp.body}`);
+        $.logErr(e, resp);
       } finally {
         resolve([userId, gold])
       }
+    })
+  })
+}
+
+//番茄看看领取
+function fqkk3(ac, fqkey) {
+  return new Promise(resolve => {
+    let opts = {
+      url: ac.url.replace('getTask', 'finishTask'),
+      headers: ac.headers,
+      body: `readLastKey=${fqkey||''}`,
+    }
+    $.post(opts, (err, resp, data) => {
+      let msg = '未知问题';
+      try {
+        if (err) {
+          $.log(`${$.name} ${ac.no} 请求失败，请检查网路重试\n url: ${opts.url} \n data: ${JSON.stringify(err, null, 2)}`);
+        } else {
+          const result = JSON.parse(data);
+          if (fqkey) {
+            if (result.code == 0) {
+              $.log(`🌝账号${ac.no}：${result.msg}`, `今日阅读次数: ${result.data.infoView.num}, 今日阅读奖励: ${result.data.infoView.score}`);
+            } else {
+              $.log(`🚫账号${ac.no}：${result.msg}`, `今日阅读次数: ${result.data.infoView.num}, 今日阅读奖励: ${result.data.infoView.score}`);
+            }
+          }
+          if (result.data && result.data.infoView) {
+            ac.rest = (result.data.infoView.rest || 0) - 0;
+            ac.num = (result.data.infoView.num || 0) - 0;
+            ac.score = (result.data.infoView.score || 0) - 0;
+            msg = ac.rest > 0 ? '-' : (result.data.infoView.msg || msg);
+          }
+        }
+      } catch (e) {
+        $.log(`======== 账号 ${ac.no} ========\nurl: ${opts.url}\ndata: ${resp && resp.body}`);
+        $.logErr(e, resp);
+      } finally {
+        resolve(msg)
+      }
+    })
+  })
+}
+
+function fqkk2(ac, fqkey) {
+  return new Promise((resolve) => {
+    let opts = {
+      url: ac.url.replace('getTask', `jump?key=${fqkey}`),
+      headers: ac.headers
+    };
+    $.get(opts, (err, resp, data) => {
+      let rtObj = '';
+      try {
+        if (err) {
+          $.log(`${$.name} ${ac.no} 请求失败，请检查网路重试\n url: ${opts.url} \n data: ${JSON.stringify(err, null, 2)}`);
+        } else {
+          rtObj = $.toObj(data, {});
+        }
+      } catch (e) {
+        $.log(`======== 账号 ${ac.no} ========\nurl: ${opts.url}\ndata: ${resp && resp.body}`);
+        $.logErr(e, resp);
+      } finally {
+        resolve(rtObj)
+      }
+    })
+  })
+}
+
+//番茄看看key
+function fqkk1(ac, fqjs, timeout = 0) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      let opts = {
+        url: ac.url,
+        headers: ac.headers,
+        body: '',
+      }
+      $.post(opts, async (err, resp, data) => {
+        let f = -1;
+        let m = '';
+        try {
+          const result = JSON.parse(data)
+          if (result.code == 0 && result.data && result.data.jkey) {
+            $.log(`🌝账号${ac.no}获取key回执成功，开始第${fqjs}次跳转阅读📖`);
+            let jumpObj = await fqkk2(ac, result.data.jkey);
+            if (jumpObj) {
+              $.log(`🌝账号${ac.no}等待10秒后提交本次阅读领取奖励`);
+              await $.wait(10000);
+              m = await fqkk3(ac, result.data.jkey);
+              f = ac.rest;
+            } else {
+              $.log(`🌝账号${ac.no}jump接口请求失败，重新执行阅读任务`);
+            }
+          } else {
+            f = 0;
+            $.log(`🚫账号${ac.no}获取key回执失败：${result.msg}`);
+          }
+        } catch (e) {
+          $.log(`======== 账号 ${ac.no} ========\nurl: ${opts.url}\ndata: ${resp && resp.body}`);
+          // $.logErr(e, resp);
+        } finally {
+          resolve([f, m]);
+        }
+      })
     }, timeout)
   })
 }
 
-
-
-//番茄看看领取
-function fqkk3(timeout = 0) {
-  return new Promise((resolve) => {
-let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/finishTask",
-        headers : JSON.parse(fqkkhd),
-        body : 'readLastKey='+fqkey,}
-      $.post(url, async (err, resp, data) => {
-        try {
-           
-    const result = JSON.parse(data)
-        if(result.code == 0){
-        console.log('\n番茄看看领取阅读奖励回执:成功🌝 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score+' 当前剩余可执行任务次数:'+result.data.infoView.rest)
-        await fqkk1();
-} else {
-       console.log('\n番茄看看领取阅读奖励回执:失败🚫 '+result.msg+'\n今日阅读次数: '+result.data.infoView.num+' 今日阅读奖励: '+result.data.infoView.score)
-}
-   
-        } catch (e) {
-          //$.logErr(e, resp);
-        } finally {
-          resolve()
-        }
-    },timeout)
-  })
-}
-
-//番茄看看提交     
-function fqkk2(timeout = 0) {
-  return new Promise((resolve) => {
-let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/jump?key="+fqkey,
-        headers : JSON.parse(fqkkhd),
-       
-}      
-      $.get(url, async (err, resp, data) => {
-        try {
-         //console.log('\n开始重定向跳转，跳转返回结果：'+data)
-        if (err) {
-          console.log(`${$.name} 请求失败，请检查网路重试`)
-        } else {
-           
-    //const result = JSON.parse(data)
-       console.log('\n番茄看看key提交成功,即将开始领取阅读奖励') 
-       
-        await $.wait(15000);
-        await fqkk3(); 
-       
-        }} catch (e) {
-          //$.logErr(e, resp);
-        } finally {
-          resolve()
-        }
-    },timeout)
-  })
-}
-
-
-
-//番茄看看key
-function fqkk1(timeout = 0) {
-  return new Promise((resolve) => {
-    setTimeout( ()=>{
-      if (typeof $.getdata('fqkkhd') === "undefined") {
-        $.msg($.name,"",'请先获取番茄看看数据!😓',)
-        $.done()
-      }
-let fqjs = 1
-//console.log(fqkkurl.match(/m.(.*?)reada/)[1])
-
-let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/getTask",
-        headers : JSON.parse(fqkkhd),
-        body : '',}
-      $.post(url, async (err, resp, data) => {
-        try {
-          
-    const result = JSON.parse(data)
-        if(result.code == 0){
-        console.log('\n番茄看看获取key回执:成功🌝 开始 循环观看💦')
-        fqkey = result.data.jkey
-        console.log(fqkey)
-        await fqkk2();
-        await fqread();
-        await $.wait(1000);
-        fqjs++
-} else {
-console.log('番茄看看获取key回执:失败🚫 '+result.msg+' 已停止当前账号运行!')
-}
-        } catch (e) {
-          //$.logErr(e, resp);
-        } finally {
-          resolve()
-        }
-      })
-    },timeout)
-  })
-}
-
-
 //提现
-function fqkktx(timeout = 0) {
+function fqkktx(ac) {
   return new Promise((resolve) => {
-let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"withdrawal/doWithdraw",
-        headers : JSON.parse(fqkkhd),
-        body : 'amount='+fqtx,}
-      $.post(url, async (err, resp, data) => {
-        try {
-           
-    const result = JSON.parse(data)
-        if(result.code == 0){
-        console.log('\n番茄看看提现回执:成功🌝 成功提现'+fqtx / 100 + ' 元')
-        $.msg('番茄看看提现','','番茄看看已成功提现微信'+fqtx / 100 + ' 元')
-} else {
-       console.log('\n番茄看看提现回执:失败🚫 '+result.msg)
-}
-   
-        } catch (e) {
-          //$.logErr(e, resp);
-        } finally {
-          resolve()
+    let opts = {
+      url: ac.url.match(/^(https?:\/\/.+?)\//)[1] + '/withdrawal/doWithdraw',
+      headers: ac.headers,
+      body: `amount=${fqtx}`
+    }
+    $.post(opts, async (err, resp, data) => {
+      let msg = '';
+      try {
+        const result = JSON.parse(data)
+        if (result.code == 0) {
+          msg = `提现成功🌝`;
+        } else {
+          msg = `提现失败🚫: ${result.msg}`;
         }
-    },timeout)
-  })
-}
-
-
-//番茄read
-function fqread(timeout = 0) {
-  return new Promise((resolve) => {
-let url = {
-        url : "http://m."+fqkkurl.match(/m.(.*?)reada/)[1]+"reada/toRead?sign="+fqkey+"&for=",
-        headers : JSON.parse(fqkkhd),
-   }
-      $.get(url, async (err, resp, data) => {
-        try {
-           
-    const result = JSON.parse(data)
-        
-        console.log(result)
-   
-        } catch (e) {
-          //$.logErr(e, resp);
-        } finally {
-          resolve()
-        }
-    },timeout)
+      } catch (e) {
+        $.log(`======== 账号 ${ac.no} ========\nurl: ${opts.url}\ndata: ${resp && resp.body}`);
+        $.logErr(e, resp);
+        msg = `提现异常：${e}`;
+      } finally {
+        resolve(msg)
+      }
+    })
   })
 }
 
