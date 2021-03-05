@@ -101,6 +101,7 @@ let fqkktz = ''
       for (let ac of rtList) {
         let msg = '';
         if (ac.uid && ac.gold >= fqtx) {
+          $.log('检测到当前账号已满足设置的提现金额，前去执行提现任务\n')
           msg = await fqkktx(ac);
         }
         ac.msg = msg;
@@ -141,7 +142,7 @@ function execTask(ac, i) {
         } else {
           $.log(`账号${ac.no}今日已阅读${ac.num}次，本阶段还有${ac.rest}次待阅读：\n${msg}`);
         }
-        let host = ac.url.match(/^https?:\/\/(.+?)\//)[1];
+        let host = ac.url.match(/http?:\/\/(.+?)\//)[1];
         let ck = ac.headers['Cookie'] || ac.headers['cookie'];
         let [userId, gold] = await userInfo(host, ck);
         ac.gold = gold;
@@ -159,7 +160,7 @@ async function fqkkck() {
   if ($request.url.indexOf("getTask") > -1) {
     const fqkkurl = $request.url;
     const fqkkhd = JSON.stringify($request.headers);
-    let host = fqkkurl.match(/^https?:\/\/(.+?)\//)[1];
+    let host = fqkkurl.match(/http?:\/\/(.+?)\//)[1];
     let ck = $request.headers['Cookie'] || $request.headers['cookie'];
     let [userId, gold] = await userInfo(host, ck);
     if (userId) {
@@ -199,7 +200,10 @@ async function fqkkCkMove() {
     for (let i = 0, len = fqkkhdArr.length; i < len; i++) {
       fqkkurl = fqkkurlArr[i];
       fqkkhd = fqkkhdArr[i];
-      let host = fqkkurl.match(/^https?:\/\/(.+?)\//)[1];
+    if(!fqkkurl || !fqkkhd){
+      continue;
+}
+      let host = fqkkurl.match(/http?:\/\/(.+?)\//)[1];
       let hd = JSON.parse(fqkkhd);
       let ck = hd['Cookie'] || hd['cookie']
       let [userId, gold] = await userInfo(host, ck);
@@ -227,7 +231,7 @@ function userInfo(host, ck) {
       let gold = -1;
       try {
         if (err) {
-          $.logErr(`❌ API请求失败，清检查网络设置 \n ${JSON.stringify(err)}`)
+          $.logErr(`❌ 用户信息API请求失败，清检查网络设置 \n ${JSON.stringify(err)}`)
         } else {
           userId = (data.match(/\[用户ID:(\d+?)\]/) || ['', '0'])[1] - 0;
           if (userId) {
@@ -360,9 +364,11 @@ function fqkktx(ac) {
       try {
         const result = JSON.parse(data)
         if (result.code == 0) {
-          msg = `提现成功🌝`;
+          msg = `提现成功🌝\n`;
+          $.msg(`番茄看看账号 ${ac.no}`,'','成功提现至微信: '+fqtx / 100 +' 元')
         } else {
-          msg = `提现失败🚫: ${result.msg}`;
+          msg = `提现失败🚫: ${result.msg}\n\n`;
+          $.msg(`番茄看看账号 ${ac.no}`,'',`提现失败🚫: ${result.msg}`)
         }
       } catch (e) {
         $.log(`======== 账号 ${ac.no} ========\nurl: ${opts.url}\ndata: ${resp && resp.body}`);
