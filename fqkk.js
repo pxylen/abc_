@@ -68,23 +68,22 @@ hostname = m.*
 const $ = new Env('番茄看看自动阅读');
 let status;
 status = (status = ($.getval("fqkkstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const fqkkurlArr = [], fqkkhdArr = [],fqkkbodyArr = [],fqkkcount = ''
-let fqkkurl = $.getdata('fqkkurl')
-let fqkkhd = $.getdata('fqkkhd')
+const fqkkurlArr = [], fqkkhdArr = []
+let fqkk = $.getjson('fqkk', [])
+let fqkkCkMoveFlag = $.getval('fqkkCkMove') || ''
 let fqkey = ''
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等于30，默认为提现一元，也就是100
 
 !(async () => {
   if (typeof $request !== "undefined") {
     await fqkkck()
-   
-  } else {fqkkurlArr.push($.getdata('fqkkurl'))
-    fqkkhdArr.push($.getdata('fqkkhd'))
-    let fqkkcount = ($.getval('fqkkcount') || '1');
-  for (let i = 2; i <= fqkkcount; i++) {
-    fqkkurlArr.push($.getdata(`fqkkurl${i}`))
-    fqkkhdArr.push($.getdata(`fqkkhd${i}`))
-  }
+  } else if (fqkkCkMoveFlag == 'true') {
+    await fqkkCkMove();
+  } else {
+    fqkk.forEach(o=>{
+      fqkkurlArr.push(o.url)
+      fqkkhdArr.push(o.hd)
+    });
     console.log(`------------- 共${fqkkhdArr.length}个账号-------------\n`)
     console.log('\n番茄看看当前设置的提现金额为: '+fqtx / 100 + ' 元')
       for (let i = 0; i < fqkkhdArr.length; i++) {
@@ -97,23 +96,106 @@ let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等
     await fqkk1();
 
   }
-  await fqkktx();
+  let host = fqkkurl.match(/^https?:\/\/(.+?)\//)[1];
+  let hd = JSON.parse(fqkkhd);
+  let ck = hd['Cookie'] || hd['cookie']
+  let [userId, gold] = await userInfo(host, ck);
+  $.log(`【番茄看看${$.index}】用户ID：${userId} 余额：${gold}币`)
+  if (userId && gold >= fqtx) {
+    await fqkktx();
+  }
 }}
 
 })()
   .catch((e) => $.logErr(e))
   .finally(() => $.done())
 //番茄看看数据获取
-function fqkkck() {
-   if ($request.url.indexOf("getTask") > -1) {
- const fqkkurl = $request.url
-  if(fqkkurl)     $.setdata(fqkkurl,`fqkkurl${status}`)
-    $.log(fqkkurl)
-  const fqkkhd = JSON.stringify($request.headers)
-        if(fqkkhd)    $.setdata(fqkkhd,`fqkkhd${status}`)
-$.log(fqkkhd)
-   $.msg($.name,"",'番茄看看'+`${status}` +'数据获取成功！')
+async function fqkkck() {
+  if ($request.url.indexOf("getTask") > -1) {
+    const fqkkurl = $request.url;
+    const fqkkhd = JSON.stringify($request.headers);
+    let host = fqkkurl.match(/^https?:\/\/(.+?)\//)[1];
+    let ck = $request.headers['Cookie'] || $request.headers['cookie'];
+    let [userId, gold] = await userInfo(host, ck);
+    if (userId) {
+      // 获取到用户ID，记录
+      let status = 1;
+      let no = fqkk.length;
+      for (let i = 0, len = no; i < len; i++) {
+        let ac = fqkk[i] || {};
+        if (ac.uid) {
+          if (ac.uid == userId) {
+            no = i;
+            status = 0;
+            break;
+          }
+        } else if (no == len) {
+          no = i;
+        }
+      }
+      fqkk[no] = {uid: userId, url: fqkkurl, hd: fqkkhd};
+      $.setdata(JSON.stringify(fqkk, null, 2), 'fqkk');
+      $.msg($.name, "", `番茄看看[账号${no+1}] ${status?'新增':'更新'}数据成功！`);
+    } else {
+      // 未获取到用户ID，提示
+      $.msg($.name, "", '番茄看看用户ID获取失败⚠️');
+    }
   }
+}
+
+async function fqkkCkMove() {
+  let fqkkcount = ($.getval('fqkkcount') || '0') - 0;
+  for (let i = 1; i <= fqkkcount; i++) {
+    fqkkurlArr.push($.getdata(`fqkkurl${i>1?i:''}`))
+    fqkkhdArr.push($.getdata(`fqkkhd${i>1?i:''}`))
+  }
+  if (fqkkhdArr.length > 0) {
+    let existsId = fqkk.map(o => o.uid - 0);
+    for (let i = 0, len = fqkkhdArr.length; i < len; i++) {
+      fqkkurl = fqkkurlArr[i];
+      fqkkhd = fqkkhdArr[i];
+      let host = fqkkurl.match(/^https?:\/\/(.+?)\//)[1];
+      let hd = JSON.parse(fqkkhd);
+      let ck = hd['Cookie'] || hd['cookie']
+      let [userId, gold] = await userInfo(host, ck);
+      if (userId && !existsId.includes(userId)) {
+        fqkk.push({uid: userId, url: fqkkurl,hd: fqkkhd});
+        existsId.push(userId);
+      }
+    }
+    $.setdata(JSON.stringify(fqkk, null, 2), 'fqkk');
+    $.msg($.name, "", `番茄看看数据迁移后共${fqkk.length}个账号！`);
+  }
+  $.setval('', 'fqkkCkMove');
+}
+
+function userInfo(host, ck, timeout = 0) {
+  return new Promise((resolve) => {
+    let url = {
+      url: `http://${host}/user/`,
+      headers: {
+        Cookie: ck
+      }
+    }
+    $.get(url, async (err, resp, data) => {
+      let userId = 0;
+      let gold = 0;
+      try {
+        if (err) {
+          $.logErr(`❌ API请求失败，清检查网络设置 \n ${JSON.stringify(err)}`)
+        } else {
+          userId = (data.match(/\[用户ID:(\d+?)\]/) || ['', '0'])[1] - 0;
+          if (userId) {
+            gold = (data.match(/余额.+?([\d\.]+?)币/) || ['', '0'])[1] - 0;
+          }
+        }
+      } catch (e) {
+        //$.logErr(e, resp);
+      } finally {
+        resolve([userId, gold])
+      }
+    }, timeout)
+  })
 }
 
 
