@@ -163,10 +163,10 @@ jobs:
           FIRECRACKERS_NOTITY_BEAN: ${{ secrets.FIRECRACKERS_NOTITY_BEAN }}
 
 
-      - name: '运行 【美丽研究院】'
-        run: |
-          cd ~/TaskAction
-          node jd_beauty.js
+#      - name: '运行 【美丽研究院】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_beauty.js
 
 
 
