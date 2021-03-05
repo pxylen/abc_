@@ -1,6 +1,6 @@
 /*
 软件名称:番茄看看 微信扫描二维码打开
-更新时间：2021-03-02 @肥皂
+更新时间：2021-03-05 @肥皂
 脚本说明：番茄看看自动阅读
 脚本为自动完成番茄看看的阅读任务
 每日收益2.7元左右，可多号撸。提现秒到
@@ -27,6 +27,9 @@ TG电报群: https://t.me/hahaha8028
 
 2.27修复番茄看看因跟换域名无法获取数据的问题，自行更换重写和mitm
 3.2增加剩余阅读次数查询
+3.5番茄看看更新，优化为不指定账号抓包方便羊毛党等多账号；以前抓到的数据可以迁移一次，通过boxjs设置跑一次脚本就可以 ，现在番茄看看可以并发执行了，简而言之就是多账号不需要一个账号跑完再去跑下一个账号，而是多个账号同时跑任务了，需要并发几个账号就去boxjs修改数值就可以了
+
+感谢@ztxtop大佬pr
 
 boxjs地址 :  
 
@@ -72,7 +75,7 @@ let fqkkCkMoveFlag = $.getval('fqkkCkMove') || ''
 let fqtx = ($.getval('fqtx') || '100');  // 此处修改提现金额，0.3元等于30，默认为提现一元，也就是100
 let concurrency = ($.getval('fqkkConcurrency') || '1') - 0; // 并发执行任务的账号数，默单账号循环执行
 concurrency = concurrency < 1 ? 1 : concurrency;
-
+let fqkktz = ''
 !(async () => {
   if (typeof $request !== "undefined") {
     await fqkkck();
@@ -102,9 +105,9 @@ concurrency = concurrency < 1 ? 1 : concurrency;
         }
         ac.msg = msg;
       }
-      $.msg(`${$.name} ${allAc}`, '', rtList.map(ac => `【账号${ac.no}】余额：${ac.gold}币\n\t今日奖励：${ac.score}\n\t已阅读数：${ac.num}\n\t待阅读数：${ac.rest}${ac.msg?'\n'+ac.msg:''}`).join('\n\n'));
+      fqkktz += rtList.map(ac => `【账号${ac.no}】\n余额：${ac.gold}币\n今日奖励：${ac.score}\n已阅读数：${ac.num}\n待阅读数：${ac.rest}${ac.msg?'\n'+ac.msg:''}`).join('\n\n');
     }
-  }
+  $.log('\n======== [脚本运行完毕,打印日志结果] ========\n'+fqkktz)  }
 })()
 .catch((e) => $.logErr(e))
   .finally(() => $.done());
