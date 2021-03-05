@@ -37,7 +37,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试
 [task_local]
 #阳光果园
-15 50 3 * * * https://raw.githubusercontent.com/age174/-/main/yggy.js, tag=阳光果园, img-url=https://s3.ax1x.com/2021/02/06/yYzeWn.png, enabled=true
+50 12 * * * https://raw.githubusercontent.com/age174/-/main/yggy.js, tag=阳光果园, img-url=https://s3.ax1x.com/2021/02/06/yYzeWn.png, enabled=true
 
 
 [rewrite_local]
@@ -161,6 +161,7 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 10000){
         console.log('\n阳光果园签到回执:成功🌝 '+result.msg+'开始收取果实')
+        $.msg('阳光果园','','阳光果园签到成功')
 
 }else{
         console.log('\n阳光果园签到回执:失败🚫 '+result.msg)
