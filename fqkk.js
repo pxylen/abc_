@@ -264,18 +264,19 @@ function fqkk3(ac, fqkey) {
           $.log(`${$.name} ${ac.no} 请求失败，请检查网路重试\n url: ${opts.url} \n data: ${JSON.stringify(err, null, 2)}`);
         } else {
           const result = JSON.parse(data);
-          if (fqkey) {
-            if (result.code == 0) {
-              $.log(`🌝账号${ac.no}：${result.msg}`, `今日阅读次数: ${result.data.infoView.num}, 今日阅读奖励: ${result.data.infoView.score}`);
-            } else {
-              $.log(`🚫账号${ac.no}：${result.msg}`, `今日阅读次数: ${result.data.infoView.num}, 今日阅读奖励: ${result.data.infoView.score}`);
-            }
-          }
           if (result.data && result.data.infoView) {
             ac.rest = (result.data.infoView.rest || 0) - 0;
             ac.num = (result.data.infoView.num || 0) - 0;
             ac.score = (result.data.infoView.score || 0) - 0;
             msg = ac.rest > 0 ? '-' : (result.data.infoView.msg || msg);
+          }
+          if (fqkey) {
+            if (result.code == 0) {
+              $.log(`🌝账号${ac.no}：${result.msg}`, `今日阅读次数: ${result.data.infoView.num}, 今日阅读奖励: ${result.data.infoView.score}`);
+            } else {
+              ac.rest = -1;
+              $.log(`🚫账号${ac.no}：${result.msg}`, `今日阅读次数: ${result.data.infoView.num}, 今日阅读奖励: ${result.data.infoView.score}`, `resp: ${JSON.stringify(resp||'', null, 2)}`);
+            }
           }
         }
       } catch (e) {
