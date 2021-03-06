@@ -9,7 +9,7 @@ const scripts = [
    },
    {
      moduleName: "DmYY",
-     url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/DmYY.js",
+     url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/DmYY.js",
    },
    {
     moduleName: "机场流量",
