@@ -20,21 +20,9 @@ const scripts = [
     url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDouK.js",
    },
    {
-    moduleName: "京豆k线2",
-    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDouK.js",
-   },
-   {
-    moduleName: "京豆k线3",
-    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDouK.js",
-   },
-   {
     moduleName: "京豆收支",
     url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDou.js",
-   },
-   {
-    moduleName: "京豆收支2",
-    url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDou.js",
-   },
+   }
 ];
 class YaYaInstall {
 	constructor() {
