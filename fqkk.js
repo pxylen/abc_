@@ -102,7 +102,7 @@ let fqkktz = ''
       for (let ac of rtList) {
         let msg = '';
         if (ac.uid && ac.gold >= fqtx) {
-          $.log('检测到账号${ac.no}已满足设置的提现金额，前去执行提现任务\n')
+          $.log(`检测到账号${ac.no}已满足设置的提现金额，前去执行提现任务\n`)
           msg = await fqkktx(ac);
         }
         ac.msg = msg;
