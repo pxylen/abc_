@@ -20,7 +20,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE.gitt"
+          source_repo: "https://github.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE.git"
           source_branch: "main"
           destination_branch: "ziye"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
@@ -44,5 +44,27 @@ jobs:
           source_branch: "master"
           destination_branch: "hundun"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
+
+
+      - name: sync sync-age174
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/age174/-.git"
+          source_branch: "main"
+          destination_branch: "age174"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
+
+
+      - name: sync sync-ztxtop
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/ztxtop/x.git"
+          source_branch: "main"
+          destination_branch: "ztxtop"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
+
+
 
 
