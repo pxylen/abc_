@@ -20,7 +20,7 @@ jobs:
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/eml5ZQ/SmF2YVNjcmlwdAsss.git"
+          source_repo: "https://github.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE.gitt"
           source_branch: "main"
           destination_branch: "ziye"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
