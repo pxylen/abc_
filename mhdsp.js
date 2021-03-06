@@ -126,7 +126,7 @@ function mhqd(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'https://api.hemayoudao.cn/admin-dotask/app/spirit/v1/finish-task',
-        headers : JSON.parse($.getdata('mhhd')),
+        headers : JSON.parse(mhhd),
         body : `{
   "type": 1,
   "taskId": 0
