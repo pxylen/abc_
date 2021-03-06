@@ -220,6 +220,12 @@
                 "type": "boolean",
                 "desc": "开启该选项，执行一次脚本可将原有ck转换为此脚本可用的格式"
               }, {
+                "id": "fqkkBanfirstTask",
+                "val": "",
+                "name": "限制脚本跑每日首次任务",
+                "type": "boolean",
+                "desc": "开启该选项时，每需手动阅读一次文章后脚本才能正常执行任务，尽量避免因脚本跑首次任务遭微信限制的情况"
+              }, {
                 "id": "fqkkConcurrency",
                 "val": "1",
                 "name": "并发执行账号数",
