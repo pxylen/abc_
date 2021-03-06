@@ -186,6 +186,8 @@ async function fqkkck() {
       }
       fqkk[no] = {uid: userId, url: fqkkurl, hd: fqkkhd};
       $.setdata(JSON.stringify(fqkk, null, 2), 'fqkk');
+      $.log(fqkkurl);
+      $.log(fqkkhd);
       $.msg($.name, "", `番茄看看[账号${no+1}] ${status?'新增':'更新'}数据成功！`);
     } else {
       // 未获取到用户ID，提示
