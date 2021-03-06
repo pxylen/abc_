@@ -21,6 +21,22 @@
       "script": "https://raw.githubusercontent.com/pxylen/abc_/master/scripts/kuaishou.js"
     },
     {
+      "id": "zhifubao—sign",
+      "name": "支付宝天天挖矿",
+      "keys": [
+        "ttwksignurl",
+        "ttwksignheader",
+        "ttwksignbody"
+      ],
+      "author": "@lensu",
+      "repo": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/kuaishou.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/kuaishou.png"
+      ],
+      "script": "https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js"
+    },
+    {
       "id": "weibo",
       "name": "新浪微博",
       "keys": [
