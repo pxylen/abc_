@@ -120,7 +120,11 @@ function execTask(ac, i) {
       try {
         let msg = await fqkk3(ac, '');
         if (ac.rest) {
-          if (ac.rest <= 0 || (ac.num >= 0) + '' == fqkkBanfirstTask) {
+   let skip = false;
+if(fqkkBanfirstTask == 'ture' && ac.num <= 0){
+        saip = ture;
+}
+          if (ac.rest <= 0 || skip) {
             $.log(`账号${ac.no}今日已阅读${ac.num}次，本阶段待阅读${ac.rest}次，跳过阅读`);
           } else {
             $.log(`账号${ac.no}今日已阅读${ac.num}次，本阶段待阅读${ac.rest}次，开始阅读\n`);
