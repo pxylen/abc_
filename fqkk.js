@@ -121,8 +121,8 @@ function execTask(ac, i) {
         let msg = await fqkk3(ac, '');
         if (ac.rest) {
    let skip = false;
-if(fqkkBanfirstTask == 'ture' && ac.num <= 0){
-        saip = ture;
+if(fqkkBanfirstTask == 'true' && ac.num <= 0){
+        saip = true;
 }
           if (ac.rest <= 0 || skip) {
             $.log(`账号${ac.no}今日已阅读${ac.num}次，本阶段待阅读${ac.rest}次，跳过阅读`);
