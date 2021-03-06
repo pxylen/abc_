@@ -1,5 +1,5 @@
 /*
-更新时间: 2020-09-18 22:35 
+更新时间: 2021-03-06 20:50 
 
 本脚本仅适用于数码之家每日签到
 获取Cookie方法:
@@ -62,8 +62,8 @@ if (isGetCookie) {
 } else {
  !(async () => {
   await signin();
-  await Idinfo();
-  await Minfo();
+  await userInfo();
+  await mCoin();
   await showmsg()
 })()
   .catch((e) => $.logErr(e))
@@ -75,6 +75,7 @@ function signin() {
     const opts = JSON.parse($.getdata($.KEY_sign))
     $.get(opts,(err, resp, data)=> {
        //console.log(data);
+         //if ($.digit.match(/[\u4e00-\u9fa5]+/g)[0]=='签到成功') {$.subt = '签到成功'}
       try {
         $.digit = data
        signatatus = resp.statusCode
@@ -88,38 +89,40 @@ function signin() {
 }
 function showmsg() {
   return new Promise((resolve) => {
-    if ($.digit.match(/[\u4e00-\u9fa5]+/g)[0]=='今日已签') {$.subt = '签到重复'}
+    if ($.digit.match(/[\u4e00-\u9fa5]+/g)[0]=='今日已签') {$.subt = '签到重复';$.log($.subt)}
     else if (signatatus=='200'){$.subt += '签到成功'}
     else { $.subt = '签到失败'}
-    $.desc = coin+"  "+Mcoin+"  会员等级: "+level+" \n"+signday+' '+totalday
-    $.msg($.name, $.subt+ '  签到等级:'+signlevel, $.desc)
+    $.desc = coin+"  "+Mcoin+" \n"+signday+' '+totalday
+    $.msg($.name+ " 昵称:"+username, $.subt+ ' 签到等级:'+signlevel, $.desc)
     resolve()
   })
 }
 
-function Idinfo() {
+function userInfo() {
   return new Promise((resolve) => {
    signheaders = JSON.parse($.getdata($.KEY_sign)).headers
-   userInfo = JSON.parse($.getdata($.KEY_sign)).headers.Referer
+   userurl = JSON.parse($.getdata($.KEY_sign)).headers.Referer
    const url = { 
-       url:'https://www.mydigit.cn/plugin.php?id=k_misign:sign&mobile=2'
-,
+       url:userurl,
        headers: signheaders,
-}
-      url.headers['User-Agent'] = 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.1 Mobile/15E148 Safari/604.1'
+};
+      url.headers['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.3; Win64, x64; Trident/7.0; rv:11.0) like Gecko'
     $.post(url, (err, resp, data) => {
      //console.log(data);
+    try{
      coin = data.match(/积分: [0-9]+/g)[0];
-     level = data.match(/Lv.[0-9]+/g)[0];
-     signlevel = data.match(/Lv.[0-9]+/g)[1];
-     signday = data.match(/连续签到<\/span>[0-9]+/g)[0].replace('</span>',"")+"天";
-     totalday = data.match(/累计签到<\/span>[0-9]+/g)[0].replace('</span>',"")+"天";
+     signlevel = data.match(/lxlevel" value\=\"([0-9]+)/)[1]+"级";;
+     signday = "已签到"+data.match(/lxdays" value\=\"([0-9]+)/)[1]+"天";
+     totalday = "总计签到"+data.match(/lxtdays" value\=\"([0-9]+)/)[1]+"天";
+   } catch(e){
+    $.log("获取用户信息失败")
+   }
     resolve()
   })
  })
 }
 
-function Minfo() {
+function mCoin() {
   return new Promise((resolve) => {
    cookieval = JSON.parse($.getdata($.KEY_sign)).headers.Cookie
    const url = { 
@@ -128,7 +131,12 @@ function Minfo() {
 }
     $.post(url, (err, resp, data) => {
        //console.log(data);
+    try{
+       username = data.match(/user_tit fyy">(\w+)<\/span>/)[1]?data.match(/user_tit fyy">(\w+)<\/span>/)[1]:"null"
        Mcoin = data.match(/M币: (<\/span>||<\/em>)[-0-9]+/g)[0].replace(/[</spanem>]/g,"");
+     } catch(e){
+       $.log("获取M币余额失败")
+    }
     resolve()
   })
  })
