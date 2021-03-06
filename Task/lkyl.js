@@ -215,7 +215,7 @@ function status() {
                     $.log(" " + taskname);
                     if (taskstatus != 'received') {
                         lotteryed = dailyAmout - dailyFinish;
-                        $.log("已完成" + dailyFinish + "次，还有" + lotteryed + "次未完成")
+                        $.log("已完成" + dailyFinish + "次，还有" + lotteryed + "次未完成");
                         if (taskCode == "lottery") {
                             if (lotterystimes > lotteryed) {
                                 $.log("已参与" + lotterystimes + "次抽奖，等待开奖")
@@ -226,7 +226,7 @@ function status() {
                             await video()
                         }
                         if (lotteryed == 0) {
-                            await Daily()
+                            await rewardTask()
                         }
                     } else if (taskstatus == 'received') {
                         $.desc += '【' + taskname + '】: ✅ ' + dailyTasks.taskReward + '银豆\n'
@@ -239,11 +239,11 @@ function status() {
                     taskstatus = weeklyTasks.status,
                         taskname = weeklyTasks.taskName,
                         taskCode = weeklyTasks.taskCode;
-                    $.log("  " + taskname)
-                    if (taskstatus != 'received') {
-                        $.log("已完成" + weeklyTasks.finishedCount + "次，还有" + (weeklyTasks.inviteAmount - weeklyTasks.finishedCount) + "次未完成")
+                    $.log("  " + taskname);
+                    $.log("已完成" + weeklyTasks.finishedCount + "次，还有" + (weeklyTasks.inviteAmount - weeklyTasks.finishedCount) + "次未完成")
+                    if (taskstatus == 'unreceive') {
                         if (weeklyTasks.inviteAmount - weeklyTasks.finishedCount == 0) {
-                            await weektask()
+                            await rewardTask()
                         }
                     } else if (taskstatus == 'received') {
                         $.desc += '【' + taskname + '】: ✅ ' + weeklyTasks.taskReward + '银豆\n'
@@ -286,7 +286,7 @@ function lottery() {
             if (uncomplete > 0 && lotterystimes < totalSteps) {
                 for (tasks of task.data.homeActivities) {
                     if (tasks.participated == false) {
-                        for (j = 0; j < uncomplete; j++) {
+                        for (j = 0; j < uncomplete-lotterystimes; j++) {
                             lotteryId = tasks.activityId;
                             await cycleLucky()
                         }
@@ -327,21 +327,11 @@ function cycleLucky() {
     })
 }
 
-//日常抽奖银豆
-function Daily() {
-        return new Promise((resolve, reject) => {
-            $.get(Host('bean/square/silverBean/taskReward/get?taskCode=lottery&taskType=lottery&inviterOpenId=&'), (error, resp, data) => {
-                $.log(` 日常抽奖银豆: ${data}`)
-            })
-            resolve();
-        })
-    }
-    // 每周银豆
-
-function weektask() {
+// 获取任务银豆
+function rewardTask() {
     return new Promise((resolve, reject) => {
-        $.get(Host('square/silverBean/taskReward/get?taskCode=lottery_multi&taskType=lottery_multi&inviterOpenId=&'), (error, response, data) => {
-            $.log(`本周任务: ${data}`)
+        $.get(Host('bean/square/silverBean/taskReward/get?taskCode='+taskCode+'&taskType='+taskCode+'&inviterOpenId=&'), (error, response, data) => {
+            $.log(`任务: ${data}`)
         })
         resolve()
     })
