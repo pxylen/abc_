@@ -38,7 +38,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试
 [task_local]
 #阳光果园
-50 12 * * * https://raw.githubusercontent.com/age174/-/main/yggy.js, tag=阳光果园, img-url=https://s3.ax1x.com/2021/02/06/yYzeWn.png, enabled=true
+50 12 * * * https://raw.githubusercontent.com/age174/-/main/yggy.js, tag=阳光果园, img-url= https://ae01.alicdn.com/kf/Ubf3bd5e9c2414c18a96a3a2b20a9d2c5C.jpg, enabled=true
 
 
 [rewrite_local]
