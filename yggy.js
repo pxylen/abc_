@@ -4,7 +4,7 @@
 脚本说明：阳光果园自动签到和收取果实
 
 零撸版，一天可以收取三个果实，一个果实1.5元
-20元提现，六天可撸二十，里面有充值入口，别充值就行了
+20元提现，六天可撸二十
 
 果实出售方法，点击市场  选择官方回收或者我要出售都可以
 建议官方回收
@@ -15,13 +15,14 @@
 企业版二维码下载地址 https://raw.githubusercontent.com/age174/-/main/DFB97E20-66E7-49E7-98F6-E9433FECFFDA.jpeg
 微信扫描打不开网址的用其他扫码软件打开就行了
 
-或者用 https://645695.com/index.html?invite_code=3EI8GJSILF 链接打开注册下载
+或者用 https://645695.com/index.html?invite_code=3EI8GJSILF 链接打开下载
 
 
 
 本脚本以学习为主！
 使用方法:
 打开阳光果园，找到首页 任务 签到，获得阳光果园的数据
+或者点收取果实也能获取数据
 
 
 TG电报群: https://t.me/hahaha802
@@ -103,7 +104,7 @@ let yggyhd = $.getdata('yggyhd')
 
 
 function yggyck() {
-   if ($request.url.indexOf("signIn") > -1) {
+   if ($request.url.indexOf("signIn") > -1 || $request.url.indexOf("collectFruit") > -1) {
  const yggybody = $request.body
   if(yggybody)     $.setdata(yggybody,`yggybody${status}`)
     $.log(yggybody)
