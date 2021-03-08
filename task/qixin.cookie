@@ -1,0 +1,555 @@
+hostname = www.52pojie.cn, c.tieba.baidu.com, manga.bilibili.com, ifac*.iqiyi.com, api.kkmh.com, wapside.189.cn, act.10010.com, m.client.10010.com, clientaccess.10086.cn, *.acfun.cn, apk.tw, group.baicizhan.com, *.bilibili.com, sapi.beingfine.cn, *.csdn.net, frodo.douban.com, www.duokan.com, api.dongqiudi.com, api.everphoto.cn, api.dushu.io, *.feng.com, pm.m.fenqile.com, www.flyertea.com, m.gdoil.cn, activity-1.m.duiba.com.cn, gameapi.hellobike.com, wxprdapplet.gac-nio.com, www.maomicd.com, maicai.api.ddxq.mobi, i.meituan.com, credits.bz.mgtv.com, apiwz.midukanshu.com, api-takumi.mihoyo.com, music.163.com, *.m.163.com, app.nio.com, note.youdao.com, xiaoshuo.qm989.com, node.kg.qq.com, *.y.qq.com, api.1sapp.com, user.qunar.com, *.rr.tv, sf-integral-sign-in.weixinjia.net, mcs-mimp-web.sf-express.com, *.smzdm.com, passport.suning.com, luckman.suning.com, sign.suning.com, gameapi.suning.com, tieba.baidu.com, tncj.hortorgames.com, *.v2ex.com, user-api-prd-mx.wandafilm.com, *.video.qq.com, promotion.waimai.meituan.com, 110.43.90.61, zt.wps.cn, m-bean.kaola.com, mobwsa.ximalaya.com, *.you.163.com, iphone.myzaker.com, *.rrys2019.com, ios.zmzapi.com, wx-mini.pagoda.com.cn, api.infzm.com, my.ruanmei.com, mwegame.qq.com, m.ctrip.com, proapi.115.com, h5.bianlifeng.com, as.xiaojukeji.com, superapp.kiwa-tech.com, activity-1.m.duiba.com.cn, webapi.qmai.cn, teacherapi.zmlearn.com, mall.oclean.com, api.xiaoheihe.cn, h5.ele.me, *.xmcimg.com, nebula.kuaishou.com, draw.jdfcloud.com, newsapi.sina.cn, e.189.cn, api.inews.qq.com, pay.sc.weibo.com, *.youth.cn, www.mydigit.cn, maicai.api.ddxq.mobi, proxy.vac.qq.com, app*.jegotrip.com.cn, task.jegotrip.com.cn, api.umer.com.cn, exp.angelalign.com, ngabbs.com, h5.youzan.com, weibo.com, yuba.douyu.com, dominos0724.shjimang.com, frodo.douban.com, e.189.cn, huiyuan.163.com, app.kxp.com, geekhub.com, cxdng.cpic.com.cn, weather-data.apple.com, api.weather.com, mobile01.91quzou.com, mk.immomo.com, api.cashtoutiao.com, appv8.qukantianxia.com, appv7.qukantx.com, m.xiaomiyoupin.com, qqpet.jwetech.com, sports.lifesense.com, studygolang.com, cloud.umetrip.com, www.2xtj7.cn,www.baimaa.com,www.hnmiaosu.cc, m.ctrp.com, *.ctrp.com, m.elong.com, activity.m.duiba.com.cn, icbc1.wlphp.com:8444, wx.17u.cn, ios-fenqu11.lxsjgo.com, i.snssdk.com, is.snssdk.com, ph0001.hezyq.com, wq.02gk.com, jdread-api.jd.com, mobile.app.autohome.com.cn, hongbao.youzikuaibao.com, getconfig-globalapi.zymk.cn, marketappapi.biyao.com, app.ymatou.com, appsmall.rtmap.com, wox2019.woxshare.com, api.momosyb.com, *.zhuishushenqi.com, youhui.95516.com, operation-api.jimistore.com, api.tuhu.cn, commontgw6.reader.qq.com, eventv3.reader.qq.com, api.sdbao.com, app.oscaches.com, now.qq.com, daojia.jd.com, yuba.douyu.com, j1.pupuapi.com, club.yili.com, wxavip-up.ezrpro.cn, common.diditaxi.com.cn, biz.caiyunapp.com, non-existed-domain.com, *.non-connected-domain.com, mqqapi.reader.qq.com, *.*apps.com, bea.sportq.com, api.meiyan.com, *.gao1gps.cn, avoscloud.com, app.flashdown365.com, m.samh.xndm.tech, mob2015.kekenet.com, vipapi.jxedt.com, api.interpreter.caiyunai.com, pocketlists.com, dida365.com, ticktick.com, book.haitunwallet.com, mubu.com, app.xunjiepdf.com, miaow.yiyongcad.com, api.lennou.com, api.gkocr.com, vira.llsapp.com, commerce-.*api.faceu.mobi, commerce-api.faceu.mobi, pan.baidu.com, api.rr.tv, editorapi.115.com, api.lakecoloring.com, ctrl.playcvn.com, dict.eudic.net, api.wakamoment.ga, *.bh3.com, api.diyidan.net, api.flexibits.com, api.jiaonizuocai.com, api.sololearn.com, bkcd.b-cdn.net, souhu.mett.me, ayk.tmdidi.com, m.pearkin.com, www.baidu.com2.club, claritywallpaper.com, bookapi.ihuman.com, rest.zhibo.tv, billing.peakcloud.org, api.ithome.com, www.xmind.cn, *.arten.cn, api.weiqire.com, api.shimo.im, pay.wecut.com, *.videostarapp.com, app.api.versa-ai.com, *.bjxkhc.com, api.591master.com, jdytv.cn, user.shywck.com, *.xunjie*.com, api.psy-1.com, snailsleep.net, api.bilibili.com, link.zhihu.com, aweme*.snssdk.com, *.xiao*.com, *.xiaoxiao*.com, *.musical.ly, p.du.163.com, getuserinfo.321mh.com, getuserinfo-globalapi.zymk.cn, ios.fuliapps.com, vsco.co, api.vnision.com, *.my10api.com, sp.kaola.com, r.inews.qq.com, apple.fuliapps.com, newdrugs.dxy.cn, app101.avictown.cc, api.hlo.xyz, api.ijo.xyz, www.luqijianggushi.com, account.wps.*, u.kanghuayun.com, api.gyrosco.pe, api1.dobenge.cn, api.mvmtv.com, mitaoapp.yeduapp.com, origin-prod-phoenix.jibjab.com, www.3ivf.com, pay.guoing.com, api.termius.com, api.bjxkhc.com, viva.v21xy.com, api.gotokeep.com, ap*.intsig.net, mp.bybutter.com, api.vuevideo.net, api.picsart.c*, api.meiease.c*, splice.oracle.*.com, ios.xiangjiaoapps.com, apple.xiangjiaoapps.com, *.lagoapps.com, *.xiangxiangapps.com, avatar-nct.nixcdn.com, spclient.wg.spotify.com, oa.zalo.me, origin-prod-phoenix.jibjab.com, api.meiease.c*, api.unfold.app, viva-asia1.vvbrd.com, graph.nhaccuatui.com, api.memrise.com, api.sync.me, pool.elsanow.io, lambda.us-east-1.amazonaws.com, api.mondlylanguages.com, api.busuu.com, owa.videoshowiosglobalserver.com:0, accounts.elevateapp.net, purchases.ws.pho.to, api-intl.mr.meitu.com, bmall.camera360.com, api.tv.zing.vn, api.calm.com, www.calm.com, api.global.mp3.zing.vn, apimboom2.globaldelight.net, haokan.baidu.com, photos.adobe.io, license.pdfexpert.com, subs.platforms.team, apic.musixmatch.com, api.getmimo.com, api.revenuecat.com, engbright.com, api.lingokids.com, www.peacefulsoundsapp.com, duolingo-leaderboards-prod.duolingo.com, mobile-api.adguard.com, api.blinkist.com, api-kinemaster-assetstore.*, api.pushover.net, ap*.intsig.net, api.overhq.com, receipt-validator.herewetest.com, lcs-mobile-cops.adobe.io, education.github.com, backend.getdrafts.com, ssl-api.itranslateapp.com, sk.ulysses.app, dayone.me, license.enpass.io, mp.bybutter.com, *.grammarly.com, splice.oracle.*.com, api.keepkeep.com, planner5d.com, secure.istreamer.com, www.api.monkeyuni.net, api.textnow.me, *.youth.cn, j1.pupuapi.com, api.m.jd.com, jdjoy.jd.com, account.huami.com, api3-normal-c-*.snssdk.com, *.tenpay.com, api5-normal-c-*.amemv.com, passport.biligame.com, me-api.jd.com, wq.jd.com, m.jingxi.com, *.pceggs.com, www.ipadview.com, greasyfork.org, openuserjs.org, api.bigfun.cn, kd.youth.cn, ios.baertt.com, *.snssdk.com, alipaymini.189.cn, alipaymini.189.cn:8043, api.sxsjyzm.com, runstep.kujievip.com, api.xiaomuyu888.com, api.hemayoudao.cn, interface.baoshixingqiu.com, veishop.iboxpay.com, cat.rxmao.net, api.yuncheapp.cn, jqb.iphonezhuan.com, ranlv.lvfacn.com, api.snail2020.com, api-9f9d25.sz365.cn, m.*, bububao.duoshoutuan.com, app.klcw.net.cn, api.huke88.com, minapp.xqrobot.net, node.52tt.com, www.xiaodouzhuan.cn, *.pceggs.com, www.ipadview.com, .*.top, *.snssdk.com, *.huoshan.com, yuedongzu.yichengw.cn, api.weibo.cn, m.weibo.cn,  vip.75787.com, ddstar.palmmob.com, qmyd.yichengw.cn, ymz.iphonezhuan.com, sdk.121827.com, pingyouquan.com
+
+
+
+
+
+
+#评有圈   pingyouquan.com
+http-request https://pingyouquan.com/tp5/public/index.php/app/gold/adv script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/pyq.js, requires-body=true, tag=评有圈
+
+#阳光果园      sdk.121827.com
+http-request https://sdk.121827.com/index/guoyuan script-path=https://raw.githubusercontent.com/age174/-/main/yggy.js, requires-body=true, tag=阳光果园
+
+#羊毛赚获取BODY
+http-request http:\/\/ymz\.iphonezhuan\.com\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/ymzhuan.js, requires-body=true, tag=羊毛赚获取BODY
+#羊毛赚模拟登录
+http-response http:\/\/ymz\.iphonezhuan\.com\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/ymzhuan.js,  tag=羊毛赚模拟登录
+
+#京东到家     daojia.jd.com
+http-request https:\/\/daojia\.jd\.com\/client\?_jdrandom=\d{13}&functionId=%2Fsignin script-path=https://gitee.com/Sunert/Scripts/raw/master/Task/jddj.js, requires-header=true, tag=京东到家
+
+#全民悦动获取TOKEN     qmyd.yichengw.cn
+http-request https:\/\/qmyd\.yichengw\.cn\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/qmyd.js, requires-header=true, tag=全民悦动获取TOKEN
+
+#嘀嗒星球     ddstar.palmmob.com
+http-request https://ddstar.palmmob.com/ddstar_app/activity/ReceiveAdBonus? script-path=https://raw.githubusercontent.com/age174/-/main/ddxq.js, requires-header=true, tag=嘀嗒星球
+
+#悬赏喵喵   vip.75787.com
+http-request https://vip.75787.com/app/index.php script-path=https://raw.githubusercontent.com/age174/-/main/xsmm.js, requires-header=true, tag=悬赏喵喵
+
+#百度极速版
+http-request https:\/\/haokan\.baidu\.com\/activity\/h5\/vault\?productid=\d script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/baidu_speed.js, requires-header=true, tag=百度极速版
+
+#百度贴吧
+http-request https?:\/\/c\.tieba\.baidu\.com\/c\/s\/login script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js, requires-header=true, tag=百度贴吧
+
+#悦动族      yuedongzu.yichengw.cn
+http-request https:\/\/yuedongzu\.yichengw\.cn\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/yuedongzu.js, requires-header=true, tag=悦动族
+
+#抖音火山版   *.huoshan.com
+http-request /hotsoon/flame/task_done/? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/huoshan.js, requires-body=true, tag=抖音火山版
+http-request /hotsoon/item/reaction/_play/? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/huoshan.js, requires-body=true, tag=抖音火山版
+
+#火山小视频极速版获取Cookie    *.snssdk.com
+http-request /luckycat/hotsoon/v1/task/done/daily_read_\d+m? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-header=true, tag=火山小视频极速版获取Cookie
+http-request /luckycat/hotsoon/v1/task/done/draw_excitation_ad? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-header=true, tag=火山小视频极速版获取Cookie
+http-request /luckycat/hotsoon/v1/task/sign_in_detail? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/hotsoon.js, requires-header=true, tag=火山小视频极速版获取Cookie
+
+
+#云扫码    .*.top
+http-request ^http://.*./yunonline/v1/ script-path=https://raw.githubusercontent.com/age174/-/main/ysm.js, requires-body=true, tag=云扫码
+
+#蛋咖     *.pceggs.com, www.ipadview.com
+http-request http://.*.pceggs.com/IFS/ script-path=https://raw.githubusercontent.com/age174/-/main/dka.js, requires-body=true, tag=蛋咖
+#蛋咖小说
+http-request http://www.ipadview.com/rpads/score/award? script-path=https://raw.githubusercontent.com/age174/-/main/dka.js, requires-header=true, tag=蛋咖小说
+
+#聚看点    www.xiaodouzhuan.cn
+http-request https:\/\/www\.xiaodouzhuan\.cn\/jkd\/newMobileMenu\/infoMe\.action script-path=https://qxzy.top/rules/QuantumultX/js/jukan.js, requires-body=true, tag=聚看点
+
+#TT语音    node.52tt.com
+http-request https://node.52tt.com/activity-production/new-user-month-checkin/activity.Checkin/checkin script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/TT.js, requires-body=true, tag=TT语音
+
+#小乐获取ck   minapp.xqrobot.net
+http-request https:\/\/minapp\.xqrobot\.net\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/xiaole.js, requires-header=true, tag=小乐获取ck
+
+#虎课网   api.huke88.com
+http-request ^https:\/\/api\.huke88\.com\/v5\/activity\/sign script-path=https://raw.githubusercontent.com/58xinian/Surge/master/Script/huke.js, requires-header=true, tag=虎课网
+
+#酷乐潮玩App    app.klcw.net.cn
+http-request https:\/\/app\.klcw\.net\.cn\/omp\_cmanage\/mallgateway script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/klcw/klcw-app.js, requires-body=true, tag=酷乐潮玩App
+
+#步步宝获取TOKEN     bububao.duoshoutuan.com
+http-request https:\/\/bububao\.duoshoutuan\.com\/user\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/bububao.js, requires-header=true, tag=步步宝获取TOKEN
+
+#番茄看看  m.*
+http-request ^http://m.*./reada/getTask script-path=https://raw.githubusercontent.com/age174/-/main/fqkk.js, requires-header=true, tag=番茄看看
+
+#闪挣  api-9f9d25.sz365.cn
+http-request ^https://api-9f9d25.sz365.cn/api/virtual_currency_v2/reward script-path=https://raw.githubusercontent.com/age174/-/main/sz.js, requires-header=true, tag=闪挣
+
+#蜗牛吧   api.snail2020.com
+http-request ^https://api.snail2020.com/api/hb/hb/ script-path=https://raw.githubusercontent.com/age174/-/main/wnb.js, requires-body=true, tag=蜗牛吧
+
+#燃旅视频  ranlv.lvfacn.com
+http-request https://ranlv.lvfacn.com/api.php/Common/pvlog script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/ranlv.js, requires-header=true, tag=燃旅视频
+
+#金钱豹  jqb.iphonezhuan.com
+http-request ^http://jqb.iphonezhuan.com/ script-path=https://raw.githubusercontent.com/age174/-/main/jqb.js, requires-body=true, tag=金钱豹
+
+#快看点获取Cookie    api.yuncheapp.cn
+http-request ^https:\/\/api\.yuncheapp\.cn\/pearl-incentive\/api\/v1\/task\/intervalAward\/receive script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kkd.js, requires-header=true, tag=快看点获取Cookie
+
+#任性猫    cat.rxmao.net
+http-request https://cat.rxmao.net/miner/cat.php script-path=https://raw.githubusercontent.com/age174/-/main/rxm.js, requires-body=true, tag=任性猫
+
+#宝石星球   interface.baoshixingqiu.com
+http-request https://interface.baoshixingqiu.com/member/user/batch-diggle script-path=https://raw.githubusercontent.com/age174/-/main/baosxq.js, requires-header=true, tag=宝石星球
+
+#笑谱获取更新TOKEN     veishop.iboxpay.com
+http-response https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/iboxpay.js,  tag=笑谱获取更新TOKEN
+
+#陌嗨短视频   api.hemayoudao.cn
+http-request ^https://api.hemayoudao.cn/admin-dotask/app/spirit/v1/finish-task script-path=https://raw.githubusercontent.com/age174/-/main/mhdsp.js, requires-header=true, tag=陌嗨短视频
+
+#支付宝天天挖矿   获取挖矿Cookie    operation-api.jimistore.com
+http-request ^https:\/\/operation-api\.jimistore\.com\/* script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js, requires-body=true, tag=支付宝天天挖矿
+
+#走路赚   api.xiaomuyu888.com
+http-request ^https?:\/\/api\.xiaomuyu888\.com\/* script-path=https://raw.githubusercontent.com/DD-D1/Script/main/zoulusign.js, requires-body=true, tag=走路赚
+
+#走路赚钱 提现专用  runstep.kujievip.com
+http-request https://runstep.kujievip.com/runstep/advlist? script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/cookie.js, requires-header=true, tag=走路赚钱
+http-request https://runstep.kujievip.com/runstep/myself? script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/RUNSTEP/cookie.js, requires-header=true, tag=走路赚钱
+
+#芝麻视频   api.sxsjyzm.com
+http-request ^https://api.sxsjyzm.com/api2/loot/index script-path=https://gitee.com/curtinlv/qx/raw/master/Script/zmsp.js, requires-body=true, tag=芝麻视频
+
+#电信营业厅整点开宝箱.  alipaymini.189.cn, alipaymini.189.cn:8043
+http-request https:\/\/alipaymini\.189\.cn:8043\/treasureBox\/queryUserActivityInfo script-path=https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/dianx/dxbox.js, requires-body=true, tag=电信营业厅整点开宝箱.
+
+#今日头条极速版获取Cookie     *.snssdk.com
+http-request ^https:\/\/api3-normal-c-\w+\.snssdk\.com\/score_task\/v1\/task\/(sign_in|get_read_bonus) script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js, requires-header=true, tag=今日头条极速版获取Cookie
+http-request ^https:\/\/api3-normal-c-\w+\.snssdk\.com\/ttgame\/game_farm\/home_info script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js, requires-header=true, tag=今日头条极速版获取Cookie
+
+# 油猴转换器 (by Peng-YM)     greasyfork.org, openuserjs.org
+http-response https:\/\/greasyfork\.org\/scripts\/.*\.user\.js script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GreasyFork/greasy-fork.js,  tag=
+
+#获取bigfunCookie       api.bigfun.cn
+http-request ^https:\/\/api\.bigfun\.cn\/webview\/iphone? script-path=https://raw.githubusercontent.com/age174/-/main/bigfun.js, requires-body=true, tag=获取bigfunCookie
+
+#中青cookie获取   kd.youth.cn, ios.baertt.com
+http-request https:\/\/kd\.youth\.cn\/WebApi\/NewTaskIos\/getTaskList script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, requires-header=true, tag=中青cookie获取
+http-request https:\/\/ios\.baertt\.com\/v5\/article\/info\/get\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, requires-header=true, tag=中青cookie获取
+http-request https:\/\/ios\.baertt\.com\/v5\/user\/stay\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, requires-body=true, tag=中青cookie获取
+http-request https:\/\/ios\.baertt\.com\/v5\/task\/browse_(start|end)\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth_gain.js, requires-body=true, tag=中青cookie获取
+http-request https:\/\/ios\.baertt\.com\/v5\/\w+\/withdraw\d?\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, requires-body=true, tag=中青cookie获取
+# 中青body获取
+http-request https:\/\/ios\.baertt\.com\/v5\/article\/info\/get\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js, requires-header=true, tag=
+http-request https:\/\/ios\.baertt\.com\/v5\/user\/stay\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js, requires-body=true, tag=
+http-request https:\/\/ios\.baertt\.com\/v5\/\w+\/withdraw\d?\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, requires-body=true, tag=
+
+#抖音极速版获取Cookie    未添加*.amemv.com
+http-request luckycat/aweme/v1/task/sign_in/detail? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/dyjsb.js, requires-header=true, tag=抖音极速版获取Cookie
+http-request luckycat/aweme/v1/task/done/read? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/dyjsb.js, requires-header=true, tag=抖音极速版获取Cookie
+http-request luckycat/aweme/v1/task/walk/step_submit? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/dyjsb.js, requires-header=true, tag=抖音极速版获取Cookie
+
+#京喜财富岛   wq.jd.com, m.jingxi.com
+http-request ^https\:\/\/wq\.jd\.com\/cubeactive\/farm\/dotask script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-header=true, tag=京喜财富岛
+http-request ^https\:\/\/m\.jingxi\.com\/dreamfactory\/generator\/CollectCurrentElectricity script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-header=true, tag=京喜财富岛
+http-request ^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_tokens.js, requires-header=true, tag=京喜财富岛
+
+#腾讯自选股app获取ck
+http-request https://wzq.tenpay.com/activity/page/welwareCenter/ script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txs_cookie.js, requires-header=true, tag=腾讯自选股app获取ck
+http-request https://wzq.tenpay.com/resources/vtools script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txs_cookie.js, requires-header=true, tag=腾讯自选股app获取ck
+http-request https://wzq.tenpay.com/cgi-bin/activity_usercenter.fcgi? script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txs_cookie.js, requires-header=true, tag=腾讯自选股app获取ck
+http-request https://zqact.tenpay.com/cgi-bin/open_stockinfo.fcgi? script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txs_cookie.js, requires-header=true, tag=腾讯自选股app获取ck
+http-request https://zqact.tenpay.com/cgi-bin/shop.fcgi? script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txs_cookie.js, requires-header=true, tag=腾讯自选股app获取ck
+
+#腾讯自选股微信小程序获取ck
+#活动长牛获取ck
+http-request https://wzq.tenpay.com/cgi-bin/redpoint.fcgi? script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txs_cookie.js, requires-header=true, tag=活动长牛获取ck
+#活动cow
+http-request https://zqact03.tenpay.com/activity/page/raisebull/ script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txs_cookie.js, requires-header=true, tag=活动cow
+
+#快手获取ck
+http-request http:\/\/uploads2\.gifshow\.com\/rest\/n\/system\/speed script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js, requires-header=true, tag=快手获取ck
+#快手极速版获取ck
+http-request https:\/\/nebula\.kuaishou\.com\/nebula\/task\/earning\? script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js, requires-header=true, tag=快手极速版获取ck
+
+# 获取多账号京东Cookie   wq.jd.com
+http-request https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion script-path=https://qxzy.top/rules/QuantumultX/js/JD_extra_cookie1.js, requires-header=true, tag=
+
+#京东获取Cookie    api.m.jd.com
+http-request https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js, requires-header=true, tag=京东获取Cookie
+
+# 宠汪汪强制为别人助力
+http-request ^https:\/\/draw\.jdfcloud\.com\/\/common\/pet\/enterRoom\/h5\?invitePin=.*(&inviteSource=task_invite&shareSource=\w+&inviteTimeStamp=\d+&openId=\w+)?&reqSource=weapp|^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/pet\/helpFriend\?friendPin script-path=https://qxzy.top/rules/QuantumultX/js/jd_joy_help.js, requires-header=true, tag=
+
+# 宠汪汪赛跑
+http-response ^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/api\/user\/addUser\?code= script-path=https://qxzy.top/rules/QuantumultX/js/jd_joy_run.js,  tag=
+
+# 宠汪汪赛跑
+http-request ^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/api\/user\/user\/detail\?openId= script-path=https://qxzy.top/rules/QuantumultX/js/jd_joy_run.js, requires-header=true, tag=
+
+# 小米运动       account.huami.com
+http-response ^https:\/\/account\.huami\.com\/v2\/client\/login script-path=https://qxzy.top/rules/QuantumultX/js/xmSports.js,  tag=
+#QQ阅读APP获取ck    commontgw6.reader.qq.com, eventv3.reader.qq.com
+http-request ^https:\/\/(commontgw6|eventv3)\.reader\.qq\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/QQReadSign.js, requires-header=true, tag=QQ阅读APP获取ck
+#朴朴签到cookie
+http-request https:\/\/j1.pupuapi.com\/client\/account\/discount\/count script-path=https://raw.githubusercontent.com/lowking/Scripts/master/pupu/pupuCheckIn.js, requires-header=true, tag=朴朴签到cookie
+#葱花视频body获取
+http-request https:\/\/app\.kxp\.com\/video\/v1\/video\/complete script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/CONGHUA/conghuabody.js, requires-body=true, tag=葱花视频body获取
+http-request https:\/\/app\.kxp\.com\/video\/v1\/video\/share script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/CONGHUA/conghuabody.js, requires-body=true, tag=葱花视频body获取
+http-request https:\/\/app\.kxp\.com\/task\/v1\/task_center\/data script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/CONGHUA/conghuabody.js, requires-body=true, tag=葱花视频body获取
+http-request https:\/\/app\.kxp\.com\/task\/v1\/task_center\/red script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/CONGHUA/conghuabody.js, requires-body=true, tag=葱花视频body获取
+http-request https:\/\/app\.kxp\.com\/task\/v1\/task_center\/share_video_reward script-path=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/CONGHUA/conghuabody.js, requires-body=true, tag=葱花视频body获取
+
+#彩云天气    weather-data.apple.com, api.weather.com
+http-request https:\/\/((weather-data\.apple)|(api.weather))\.com script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js, requires-header=true, tag=彩云天气
+
+#52pojie    www.52pojie.cn
+http-request https:\/\/www\.52pojie\.cn\/home\.php\?mod=space script-path=https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js, requires-header=true, tag=52pojie
+#TieBa
+http-request https?:\/\/c\.tieba\.baidu\.com\/c\/s\/login script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js, requires-header=true, tag=TieBa
+#Manga
+http-request https:\/\/manga\.bilibili\.com\/.*\.User\/GetWallet script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js, requires-header=true, tag=Manga
+
+#iQIYI
+http-request ^https?:\/\/iface(\d)?\.iqiyi\.com\/ script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, requires-header=true, tag=iQIYI
+#KuaiKan
+http-request ^https:\/\/api\.kkmh\.com\/v\d\/passport\/user script-path=https://raw.githubusercontent.com/NobyDa/Script/master/KuaiKan-DailyBonus/KKMH.js, requires-header=true, tag=KuaiKan
+
+#Chavy
+#10000
+http-request ^https:\/\/wapside.189.cn:9001\/api\/home\/sign script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10000/10000.cookie.js, requires-body=true, tag=10000
+#10010
+http-request ^https:\/\/act.10010.com\/SigninApp\/signin\/querySigninActivity.htm script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js, requires-header=true, tag=10010
+http-request ^https:\/\/act.10010.com\/SigninApp(.*?)\/signin\/daySign script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js, requires-header=true, tag=10010
+http-request ^https:\/\/m.client.10010.com\/dailylottery\/static\/(textdl\/userLogin|active\/findActivityInfo) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js, requires-header=true, tag=10010
+#10086
+http-request ^http:\/\/wx.10086.cn\/website\/taskCenter\/index\? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.cookie.js, requires-header=true, tag=10086
+http-request ^http:\/\/wx.10086.cn\/website\/taskCenter\/sign\? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.cookie.js, requires-header=true, tag=10086
+http-request ^https:\/\/clientaccess.10086.cn\/biz-orange\/LN\/uamrandcodelogin\/autoLogin script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.cookie.js, requires-body=true, tag=10086
+http-request ^https:\/\/clientaccess.10086.cn\/biz-orange\/BN\/realFeeQuery\/getRealFee script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10086/10086.fee.cookie.js, requires-body=true, tag=10086
+#acfun
+http-request ^https:\/\/api\-new\.app\.acfun\.cn\/rest\/app\/user\/personalInfo script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/acfun/acfun.cookie.js, requires-header=true, tag=acfun
+#apktw
+http-request ^https://apk.tw\/member.php(.*?)action=login script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/apktw/apktw.cookie.js, requires-body=true, tag=apktw
+#bcz
+http-request ^https://group\.baicizhan\.com/group/rewards? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/bcz/bcz.cookie.js, requires-header=true, tag=bcz
+#bilibili
+http-request ^https:\/\/(www|live)\.bilibili\.com\/?.? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/bilibili/bilibili.cookie.js, requires-header=true, tag=bilibili
+#bubei
+http-request ^https:\/\/sapi\.beingfine\.cn\/v3\/bb\/reward\/by-sign-in script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/bubei/bubei.js, requires-header=true, tag=bubei
+#csdn
+http-request ^https:\/\/passport.csdn.net\/v2\/api\/app\/login\/checkAndRefreshToken script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/csdn/csdn.cookie.js, requires-header=true, tag=csdn
+http-request ^https:\/\/gw.csdn.net\/mini-app\/v2\/lucky_draw\/login\/sign_in\? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/csdn/csdn.cookie.js, requires-header=true, tag=csdn
+#dbsj
+http-request ^https:\/\/frodo\.douban\.com\/api\/v2\/niffler\/check_in\/status script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/dbsj/dbsj.cookie.js, requires-header=true, tag=dbsj
+#dongqiudi
+http-request ^https:\/\/api\.dongqiudi\.com\/v2\/user\/is_login script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/dongqiudi/dongqiudi.cookie.js, requires-header=true, tag=dongqiudi
+#duokan
+http-request ^https:\/\/www\.duokan\.com\/checkin\/v0\/status script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/duokan/duokan.cookie.js, requires-body=true, tag=duokan
+#everphoto
+http-request ^https:\/\/api.everphoto.cn\/users\/self\/checkin\/v2 script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/everphoto/everphoto.cookie.js, requires-header=true, tag=everphoto
+#fandeng
+http-request ^https://api\.dushu\.io/CheckIn script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/fandeng/fandeng.cookie.js, requires-body=true, tag=fandeng
+#feng
+http-request ^https:\/\/(www\.)?feng\.com\/?.? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/feng/feng.cookie.js, requires-header=true, tag=feng
+#fenqile
+http-request ^https://pm\.m\.fenqile\.com/route0014/star/sign/sign.json script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/fenqile/fenqile.cookie.js, requires-body=true, tag=fenqile
+http-request ^https:\/\/pm\.m\.fenqile\.com/route0014\/app\/tab\/privilege\/convertTaskReward.json script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/fenqile/fenqile.cookie.js, requires-body=true, tag=fenqile
+#flyertea
+http-request ^https:\/\/www\.flyertea\.com\/source\/plugin\/mobile\/mobile\.php\?module=getdata&.* script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/flyertea/flyertea.cookie.js, requires-header=true, tag=flyertea
+#gdoil
+http-request ^https:\/\/m.gdoil.cn\/webapi\/usersign\/addusersign script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/gdoil/gdoil.cookie.js, requires-header=true, tag=gdoil
+#haidilao
+http-request ^https:\/\/activity-1\.m\.duiba\.com\.cn\/signactivity\/doSign$ script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/haidilao/hdl.js, requires-body=true, tag=haidilao
+#哈啰hellobike
+http-request ^https:\/\/gameapi\.hellobike\.com\/api script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js, requires-body=true, tag=哈啰hellobike
+
+#hycan
+http-request ^https:\/\/wxprdapplet\.gac-nio\.com\/community\/userSignIn\/simpleAuth\/front\/.*\/sign$ script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/hycan/hycan.cookie.js, requires-header=true, tag=hycan
+#jddj
+http-request ^https:\/\/daojia.jd.com/client(.*?)functionId=signin(.*?)userSigninNew script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/jddj/jddj.cookie.js, requires-header=true, tag=jddj
+#maomicd
+http-request https:\/\/www.maomicd.com\/plugin.php\?id=k_misign:sign&operation=qiandao script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/maomicd/maomicd.cookie.js, requires-header=true, tag=maomicd
+#mcdd
+http-request ^https:\/\/maicai.api.ddxq.mobi\/point\/home script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/mcdd/mcdd.cookie.js, requires-header=true, tag=mcdd
+#meituan
+http-request ^https:\/\/i.meituan.com\/evolve\/signin\/signpost\/ script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.cookie.js, requires-body=true, tag=meituan
+#mgtv
+http-request ^https:\/\/credits.bz.mgtv.com\/user\/creditsTake script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/mgtv/mgtv.cookie.js, requires-header=true, tag=mgtv
+#midu
+http-request ^https:\/\/apiwz\.midukanshu\.com script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/midu/midu.cookie.js, requires-body=true, tag=midu
+#mihoyo
+http-request ^https:\/\/api-takumi.mihoyo.com\/apihub\/api\/getGameList script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/mihoyo/mihoyo.cookie.js, requires-header=true, tag=mihoyo
+#neteasemusic
+http-request ^https:\/\/music.163.com\/weapi\/user\/level script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/neteasemusic.cookie.js, requires-body=true, tag=neteasemusic
+#neteasenews
+http-request ^https:\/\/(.*?)c\.m\.163\.com\/uc\/api\/sign\/v3\/commit script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.cookie.js, requires-body=true, tag=neteasenews
+#nio
+http-request ^https:\/\/app\.nio\.com\/api\/1\/app\/daily_checkin script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/nio/nio.cookie.js, requires-header=true, tag=nio
+#noteyoudao
+http-request ^https:\/\/note.youdao.com\/yws\/mapi\/user\?method=checkin script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/noteyoudao/noteyoudao.cookie.js, requires-body=true, tag=noteyoudao
+#qimao
+http-request ^https:\/\/xiaoshuo\.qm989\.com script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qimao/qmnovel.js, requires-header=true, tag=qimao
+#qmkg
+http-request ^https://node\.kg\.qq\.com/webapp/proxy? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qmkg/qmkg.cookie.js, requires-body=true, tag=qmkg
+#qqmusic
+http-request ^https:\/\/u.y.qq.com\/cgi\-bin\/musicu.fcg script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qqmusic/qqmusic.cookie.js, requires-body=true, tag=qqmusic
+http-response ^https:\/\/u.y.qq.com\/cgi\-bin\/musicu.fcg script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qqmusic/qqmusic.cookie.js,  tag=qqmusic
+#qtt
+http-request ^https:\/\/api\.1sapp\.com\/sign\/info? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.cookie.js, requires-header=true, tag=qtt
+http-request ^https:\/\/api\.1sapp\.com\/content\/readV2? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.cookie.js, requires-header=true, tag=qtt
+http-request ^https:\/\/api\.1sapp\.com\/x\/feed\/getReward? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qtt/qtt.cookie.js, requires-header=true, tag=qtt
+#qunar
+http-request ^https:\/\/user.qunar.com\/webapi\/member\/signIndexV2.htm script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/qunar/qunar.cookie.js, requires-header=true, tag=qunar
+#rrtv
+http-request ^https:\/\/api\.rr\.tv\/user\/profile script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/rrtv/rrtv.cookie.js, requires-header=true, tag=rrtv
+#sfexpress
+http-request ^https:\/\/sf-integral-sign-in.weixinjia.net\/app\/index script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/sfexpress/sfexpress.cookie.js, requires-header=true, tag=sfexpress
+http-request ^https:\/\/mcs-mimp-web.sf-express.com\/mcs-mimp\/share\/(.*?)Redirect script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/sfexpress/sfexpress.cookie.js, requires-header=true, tag=sfexpress
+#smzdm
+http-request ^https:\/\/www\.smzdm\.com\/?.? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/smzdm/quanx/smzdm.cookie.js, requires-header=true, tag=smzdm
+#suning
+http-request ^https:\/\/passport.suning.com\/ids\/login$ script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/suning/suning.cookie.js, requires-body=true, tag=suning
+http-request ^https:\/\/luckman.suning.com\/luck-web\/sign\/api\/clock_sign.do script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/suning/suning.cookie.js, requires-header=true, tag=suning
+http-request ^https:\/\/sign.suning.com\/sign-web\/m\/promotion\/sign\/doSign.do script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/suning/suning.cookie.js, requires-header=true, tag=suning
+http-request ^https:\/\/gameapi.suning.com\/sngame-web\/(api\/signin\/private\/customerSignOperation.do|gateway\/api\/queryPrize.do) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/suning/suning.cookie.js, requires-header=true, tag=suning
+#tieba
+http-request ^https?:\/\/tieba\.baidu\.com\/?.? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tieba/tieba.cookie.js, requires-header=true, tag=tieba
+#tncj
+http-response ^https://tncj.hortorgames.com/chicken/fight/(answer|findQuiz) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/tncj/tncj.min.js,  tag=tncj
+#v2ex
+http-request ^https:\/\/www\.v2ex\.com\/mission\/daily script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/v2ex/quanx/v2ex.cookie.js, requires-header=true, tag=v2ex
+#videoqq
+http-request ^https:\/\/access.video.qq.com\/user\/auth_refresh script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.cookie.js, requires-header=true, tag=videoqq
+#wanda
+http-request ^https:\/\/user-api-prd-mx\.wandafilm\.com\/user\/islogin\.api script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wanda/wanda.cookie.js, requires-header=true, tag=wanda
+#wmmeituan
+http-request ^https:\/\/promotion.waimai.meituan.com\/playcenter\/signIn\/entry script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wmmeituan/wmmeituan.cookie.js, requires-header=true, tag=wmmeituan
+http-request ^https:\/\/promotion.waimai.meituan.com\/playcenter\/signIn\/doaction script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wmmeituan/wmmeituan.cookie.js, requires-body=true, tag=wmmeituan
+#wps
+http-request ^https:\/\/zt.wps.cn\/2018\/docer_check_in\/api\/act_list script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wps/wps.cookie.js, requires-header=true, tag=wps
+#wykl
+http-request ^https:\/\/m-bean\.kaola\.com/m/point/sign\.html script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/wykl/wykl.cookie.js, requires-body=true, tag=wykl
+#ximalaya
+http-request ^https?:\/\/.*\/mobile\-user\/homePage\/.* script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ximalaya/ximalaya.cookie.js, requires-header=true, tag=ximalaya
+#yanxuan
+http-request ^https:\/\/m\.you\.163\.com\/xhr\/points\/index\.json script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/yanxuan/yanxuan.cookie.js, requires-header=true, tag=yanxuan
+#zaker
+http-request ^https:\/\/iphone\.myzaker\.com\/zaker\/sign_in\/\/api\/sign_in\.php script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zaker/zaker.js, requires-header=true, tag=zaker
+#zimuzu
+http-request ^https?:\/\/(www\.)?rrys2020\.com\/?.? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.cookie.js, requires-header=true, tag=zimuzu
+http-request ^http:\/\/ios.zmzapi.com\/index.php.*a=(mobile_)?login script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zimuzu/zimuzu.cookie.js, requires-header=true, tag=zimuzu
+#zsfc
+http-request ^https:\/\/mwegame\.qq\.com\/ams\/sign\/doSign\/month script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zsfc/zsfc.js, requires-header=true, tag=zsfc
+#zxhc
+http-request ^https:\/\/m\.ctrip\.com/restapi/soa2/14593/json/attendanceDay? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/zxhc/zxhc.cookie.js, requires-body=true, tag=zxhc
+#pagoda
+http-request ^https:\/\/wx-mini.pagoda.com.cn\/api\/v1\/wxmini\/signIn\/customer script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/pagoda/pagoda.cookie.js, requires-header=true, tag=pagoda
+#ithome
+http-request ^https:\/\/my\.ruanmei\.com\/api\/usersign\/getsigninfo? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.cookie.js, requires-header=true, tag=ithome
+#nfzm
+http-request ^http:\/\/api\.infzm\.com\/mobile\/pumpkin_task\/complete? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/nfzm/nfzm.cookie.js, requires-header=true, tag=nfzm
+
+#zZPiglet
+#115
+http-request ^https?:\/\/proapi\.115\.com\/ios\/user\/takespc\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/115/115.js, requires-header=true, tag=115
+#Blibee
+http-request ^https:\/\/h5\.bianlifeng\.com\/meepo\/taskCenter\/home\/v\d script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Blibee/Blibee.js, requires-header=true, tag=Blibee
+#DiDi
+http-request ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js, requires-header=true, tag=DiDi
+http-request ^https:\/\/common\.diditaxi\.com\.cn\/webapp\/config\/sidebar\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js, requires-header=true, tag=DiDi
+#Haidilao
+http-request ^https:\/\/superapp\.kiwa-tech\.com\/app\/coupon\/customerLevelShow script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Haidilao/Haidilao.js, requires-body=true, tag=Haidilao
+http-request ^https:\/\/activity-1\.m\.duiba\.com\.cn\/signactivity\/getSignInfo script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Haidilao/Haidilao.js, requires-header=true, tag=Haidilao
+#Naixue
+http-request ^https:\/\/webapi\.qmai\.cn\/web\/cy\/v\d\/store\/template-scene script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Naixue/Naixue.js, requires-header=true, tag=Naixue
+#ZMTeacher
+http-request ^https:\/\/teacherapi\.zmlearn\.com\/v1\/teacherApp\/app\/points\/taskCenter script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/ZMTeacher/ZMTeacher.js, requires-header=true, tag=ZMTeacher
+#Oclean
+http-request ^https:\/\/mall\.oclean\.com\/API\/VshopProcess\.ashx$ script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Oclean/Oclean.js, requires-header=true, tag=Oclean
+#heybox
+http-request ^https:\/\/api\.xiaoheihe\.cn\/account\/home_v2\/\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/heybox/heybox.js, requires-header=true, tag=heybox
+#Domino
+http-request ^https?:\/\/dominos0724\.shjimang\.com\/Ajax\/GetSmsCode script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/Domino/Domino_getSMS.js, requires-body=true, tag=Domino
+#MovieCalendar
+http-request ^https:\/\/frodo\.douban\.com\/api\/v\d\/calendar\/today script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/MovieCalendar/MovieCalendar.js, requires-header=true, tag=MovieCalendar
+#umetrip
+http-request ^https:\/\/cloud\.umetrip\.com\/gateway\/api\/web\/rest\/polite\/app\/sign\/signpageinitdata script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/umetrip/umetrip.js, requires-header=true, tag=umetrip
+
+#songyangzz
+#elem
+http-request ^https:\/\/h5\.ele\.me\/restapi\/eus\/v\d\/current_user$ script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/elem/elemGetCookies.js, requires-header=true, tag=elem
+
+#toulanboy
+#muchong
+http-request ^https?:\/\/mapi.xmcimg.com\/bbs\/memcp.php\?action script-path=https://raw.githubusercontent.com/toulanboy/scripts/master/muchong/muchong.js, requires-header=true, tag=muchong
+#weibotalk
+http-request ^https:\/\/api\.weibo\.cn\/2\/(cardlist|page\/button) script-path=https://raw.githubusercontent.com/toulanboy/scripts/master/weibo/weibotalk.cookie.js, requires-header=true, tag=weibotalk
+
+#Sunert
+#dianshijia
+http-request http:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/sign\/signin script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js, requires-header=true, tag=dianshijia
+http-request http:\/\/api\.gaoqingdianshi\.com\/api\/v2\/cash\/withdrawal script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js, requires-header=true, tag=dianshijia
+#jddj
+http-request https:\/\/daojia\.jd\.com\/client\?_jdrandom=\d{13}&functionId=%2Fsignin script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/jddj.js, requires-header=true, tag=jddj
+#kuaishou
+http-request https:\/\/nebula\.kuaishou\.com\/rest\/n\/nebula\/activity\/earn\/overview script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js, requires-header=true, tag=kuaishou
+#lkyl
+http-request https:\/\/draw\.jdfcloud\.com\/\/api\/bean\/square\/silverBean\/task\/get\? script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/lkyl.js, requires-header=true, tag=lkyl
+#mydigit
+http-request id=k_misign:sign&operation=qiandao&format=text script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/mydigit.js, requires-header=true, tag=mydigit
+
+#telecomInfinity
+http-request ^https?:\/\/e\.189\.cn\/store\/user\/package_detail\.do script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomInfinity.js, requires-header=true, tag=telecomInfinity
+#txnews
+http-request https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\? script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, requires-body=true, tag=txnews
+
+#jukan
+http-request https:\/\/www\.xiaodouzhuan\.cn\/jkd\/newMobileMenu\/infoMe\.action script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/jukan.js, requires-body=true, tag=jukan
+
+#iepngs
+#dingdong
+http-request https:\/\/maicai\.api\.ddxq\.mobi\/user\/checkLogin script-path=https://raw.githubusercontent.com/iepngs/Script/master/dingdong/index.js, requires-header=true, tag=dingdong
+#步数上传
+http-request ^https:\/\/sports\.lifesense\.com\/sport_service\/sport\/sport\/uploadMobileStepV2 script-path=https://raw.githubusercontent.com/iepngs/Script/master/lxhealth/manual.js, requires-body=true, tag=步数上传
+#go语言中文网签到
+http-request https:\/\/studygolang\.com\/account\/edit script-path=https://raw.githubusercontent.com/iepngs/Script/master/studygolang/index.js, requires-header=true, tag=go语言中文网签到
+#ctrip
+http-request https:\/\/m\.ctrip\.com\/restapi\/soa2\/14946\/json\/userBaseInfo script-path=https://raw.githubusercontent.com/iepngs/Script/master/ctrip/index.js, requires-body=true, tag=ctrip
+#jrtt
+http-request ^https:\/\/is\.snssdk\.com\/score_task\/v1\/task\/(sign_in|get_read_bonus) script-path=https://raw.githubusercontent.com/iepngs/Script/master/jrtt/index.js, requires-body=true, tag=jrtt
+http-request ^https:\/\/i\.snssdk\.com\/ttgame\/game_farm\/home_info script-path=https://raw.githubusercontent.com/iepngs/Script/master/jrtt/index.js, requires-body=true, tag=jrtt
+#lxsj
+http-request ^https:\/\/ios-fenqu11\.lxsjgo\.com\/dog\/bug\?ts script-path=https://raw.githubusercontent.com/iepngs/Script/master/lxsj/index.js, requires-body=true, tag=lxsj
+http-response ^https:\/\/ios-fenqu11\.lxsjgo\.com\/dog\/bug\?ts script-path=https://raw.githubusercontent.com/iepngs/Script/master/lxsj/index.js,  tag=lxsj
+
+#lowking
+#qq会员成长值
+http-request https:\/\/proxy.vac.qq.com\/cgi-bin\/srfentry.fcgi? script-path=https://raw.githubusercontent.com/lowking/Scripts/master/QQVip/qqVipCheckIn.js, requires-header=true, tag=qq会员成长值
+#weibo
+http-request https:\/\/weibo\.com\/p\/aj\/general\/button\?ajwvr=6&api=http:\/\/i\.huati\.weibo\.com\/aj\/super\/checkin script-path=https://raw.githubusercontent.com/lowking/Scripts/master/weibo/weiboSTCookie.js, requires-header=true, tag=weibo
+
+#获取Bili漫画Cookie    passport.biligame.com
+http-request ^https:\/\/passport\.biligame\.com\/api\/login\/sso.+?version%22%3A%22(3|4|5) script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Bilibili-DailyBonus/Manga.js, requires-header=true, tag=获取Bili漫画Cookie
+#哔哩哔哩大会员特权领取cookie
+http-request https:\/\/api.bilibili.com\/x\/vip\/privilege\/receive script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bilibili/privilegeReceive.js, requires-header=true, tag=哔哩哔哩大会员特权领取cookie
+#哔哩哔哩番剧监控cookie
+http-request https?:\/\/app.bilibili.com\/x\/v2\/space\/bangumi script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bilibili/bangumiMonitor.js, requires-header=true, tag=哔哩哔哩番剧监控cookie
+#QQ萌宠获取cookie
+http-response https:\/\/qqpet.jwetech.com\/api\/authorizations script-path=https://raw.githubusercontent.com/lowking/Scripts/master/QQPet/lkQQPet.js,  tag=QQ萌宠获取cookie
+#斗鱼鱼吧获取cookie
+http-request ^https://yuba.douyu.com/wbapi/web/group/myFollow? script-path=https://raw.githubusercontent.com/lowking/Scripts/master/douyu/yubaSign.js, requires-header=true, tag=斗鱼鱼吧获取cookie
+#朴朴签到cookie
+http-request https:\/\/j1.pupuapi.com\/client\/account\/discount\/count script-path=https://raw.githubusercontent.com/lowking/Scripts/master/pupu/pupuCheckIn.js, requires-header=true, tag=朴朴签到cookie
+
+
+#ooxx
+#jegotrip
+http-response https?:\/\/app.*\.jegotrip\.com\.cn\/.*getUser\? script-path=https://ooxx.be/js/jegotrip.js,  tag=jegotrip
+http-response https?:\/\/task\.jegotrip\.com\.cn\:8080\/app\/tasks\?userid script-path=https://ooxx.be/js/jegotrip.js,  tag=jegotrip
+#umer
+http-request https?:\/\/api\.umer\.com\.cn\/.*getCurrentUmerSign script-path=https://ooxx.be/js/umer.js, requires-header=true, tag=umer
+#chouchoui
+#angelalign
+http-request ^https:\/\/exp.angelalign.com\/api\/v1\/mini_program\/get_plan_list script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/angelalign/angelalign.cookie.js, requires-header=true, tag=angelalign
+#nga
+http-request ^https:\/\/ngabbs.com\/nuke.php\?? script-path=https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/nga/nga.cookie.js, requires-body=true, tag=nga
+
+#evilbutcher
+#funboat
+http-request https:\/\/h5\.youzan\.com\/wscump\/checkin\/checkin script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/funboat/funboat.js, requires-header=true, tag=funboat
+http-request https:\/\/h5\.youzan\.com\/wscuser\/membercenter\/stats script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/funboat/funboat.js, requires-header=true, tag=funboat
+#九木
+http-request https:\/\/wxavip\-up\.ezrpro\.cn\/Vip\/SignIn\/SignIn script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/jiumu/jiumu.js, requires-body=true, tag=九木
+#微博超话获取
+http-request ^https?://m?api\.weibo\.c(n|om)\/2\/(cardlist|page\/button|page) script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/weibo/weibotalk.cookie.js, requires-header=true, tag=微博超话获取
+# 去微博应用内广告 (By yichahucha)
+http-response ^https?://(sdk|wb)app.uve.weibo.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,  tag=
+http-response ^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/photos/pic_recommend_status|video/tiny_stream_video_list|photo/info) script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js,  tag=
+
+#网易游戏会员
+http-request ^https:\/\/huiyuan\.163\.com\/jf\-mall\-api\/api\/sign_up\/(lucky|normal) script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/task/163GameVip.cookie.js, requires-header=true, tag=网易游戏会员
+#Geekhub
+http-request ^https:\/\/geekhub\.com\/checkins\/start script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/task/geekhub.cookie.js, requires-header=true, tag=Geekhub
+#太好购
+http-request ^https:\/\/cxdng\.cpic\.com\.cn\/taieshop\/api\/CustomerFansInfo\/GetFansInfo script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/task/thg.cookie.js, requires-header=true, tag=太好购
+#伊利乳品ck
+http-request https:\/\/club\.yili\.com\/MALLIFChe\/MCSWSIAPI\.asmx\/Call script-path=https://raw.githubusercontent.com/id77/QuantumultX/master/task/yiLi.cookie.js, requires-body=true, tag=伊利乳品ck
+#彩云
+http-request https:\/\/((weather-data\.apple)|(api.weather))\.com script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js, requires-header=true, tag=彩云
+#京东粉丝专享
+http-request https:\/\/wq\.jd\.com\/bases\/jssdk\/GetWxJsApiSign script-path=https://qxzy.top/rules/QuantumultX/js/jd_wechat_sign.js, requires-header=true, tag=京东粉丝专享
+
+
+#小米有品
+http-request ^https:\/\/m\.xiaomiyoupin\.com\/api\/auth\/login\/isloggedin script-path=https://raw.githubusercontent.com/dompling/Script/master/xiaomiyp/xiaomiyp.cookie.js, requires-header=true, tag=小米有品
+#必要
+http-request ^https:\/\/marketappapi\.biyao\.com\/signIn\/getGeneralPage\.do script-path=https://raw.githubusercontent.com/dompling/Script/master/biyao/biyao.cookie.js, requires-header=true, tag=必要
+#洋码头
+http-request ^https:\/\/app\.ymatou\.com\/api\/trading\/scartprodnum script-path=https://raw.githubusercontent.com/dompling/Script/master/ymatou/ymatou.cookie.js, requires-header=true, tag=洋码头
+
+#barrym-chen
+#ctrip
+http-request ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/14946\/json\/userBaseInfo script-path=https://raw.githubusercontent.com/barrym-chen/Script/master/ctrip/ctrip_cookie.js, requires-header=true, tag=ctrip
+#wxctrip
+https://socketio\.ctrip\.com/api url reject
+http-request ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/16575\/signin script-path=https://raw.githubusercontent.com/barrym-chen/Script/master/ctrip_wx/ct_cookie.js, requires-body=true, tag=wxctrip
+#elong
+http-request ^https:\/\/m\.elong\.com\/my\/rafflemileagejson\/getRaffleMileageTodayCount script-path=https://raw.githubusercontent.com/barrym-chen/Script/master/elong/elong_draw_cookis.js, requires-header=true, tag=elong
+#fcz
+http-request ^https:\/\/activity\.m\.duiba\.com\.cn\/signactivity\/getSignInfo? script-path=https://raw.githubusercontent.com/barrym-chen/Script/master/fcz/fcz_cookie.js, requires-header=true, tag=fcz
+#ICBC
+http-request ^https:\/\/icbc1\.wlphp\.com:8444\/js\/api\/index\/signIn script-path=https://raw.githubusercontent.com/barrym-chen/Script/master/icbc/icbc_cookie.js, requires-body=true, tag=ICBC
+#jdczf
+http-request ^https:\/\/ms\.jr\.jd\.com\/gw\/generic\/bt\/h5\/m\/queryUserSignFlow script-path=https://raw.githubusercontent.com/barrym-chen/Script/master/jdczf/jdczf_cookie.js, requires-header=true, tag=jdczf
+#tongc
+http-request ^https:\/\/wx\.17u\.cn\/wcsign\/sign\/GetSignInfo script-path=https://raw.githubusercontent.com/barrym-chen/Script/master/tongc/tongc_cookie.js, requires-body=true, tag=tongc
+
+#wangdelu2020
+#陌陌
+http-request https:\/\/mk\.immomo\.com\/activity\/fastsign\/index\/signIn? script-path=https://qxzy.top/rules/QuantumultX/js/momosign.js, requires-body=true, tag=陌陌
+#联通流量话费提醒
+http-request https:\/\/m.client\.10010\.com\/mobileService\/home\/queryUserInfoSeven\.htm? script-path=https://qxzy.top/rules/QuantumultX/js/liantongnotice.js, requires-header=true, tag=联通流量话费提醒
+#新浪超话签到
+http-request https:\/\/m\.weibo\.cn\/api\/config script-path=https://qxzy.top/rules/QuantumultX/js/newsinachaohua.js, requires-header=true, tag=新浪超话签到
+#新浪微博签到
+http-request https:\/\/api\.weibo\.cn\/\d\/users\/show script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js, requires-header=true, tag=新浪微博签到
+http-request https:\/\/m\.weibo\.cn\/c\/checkin\/ug\/v2\/signin\/module\?module script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js, requires-header=true, tag=新浪微博签到
+#新浪news
+http-request https:\/\/newsapi\.sina\.cn\/\?resource=hbpage&newsId=HB-1-sina_gold_center script-path=https://qxzy.top/rules/QuantumultX/js/sinanews.js, requires-header=true, tag=新浪news
+http-request https:\/\/newsapi\.sina\.cn\/\?resource=userpoint\/signIn script-path=https://qxzy.top/rules/QuantumultX/js/sinanews.js, requires-header=true, tag=新浪news
+
+#iisams
+#梨涡
+http-request https:\/\/api\.m\.jd\.com\/api\/v1\/sign\/doSign script-path=https://raw.githubusercontent.com/iisams/Scripts/master/liwo/7dayscookie.js, requires-body=true, tag=梨涡
+
+#DD-D1
+#QQ阅读
+http-request ^https:\/\/(commontgw6|eventv3)\.reader\.qq\.com\/* script-path=https://raw.githubusercontent.com/DD-D1/2020scripts/master/QQReadSign.js, requires-header=true, tag=QQ阅读
+#海德汇一城
+http-request ^https:\/\/wox2019\.woxshare\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/hdhycSign.js, requires-body=true, tag=海德汇一城
+#京东读书
+http-request ^https:\/\/jdread-api\.jd\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/jddsSign.js, requires-header=true, tag=京东读书
+#民盈国贸城
+http-request ^https:\/\/appsmall\.rtmap\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/mygmcSign.js, requires-body=true, tag=民盈国贸城
+#汽车之家极速版
+http-request ^https:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js, requires-body=true, tag=汽车之家极速版
+http-request ^http:\/\/mobile\.app\.autohome\.com\.cn\/fasthome\/coin\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/qczjSign.js, requires-body=true, tag=汽车之家极速版
+#水滴筹
+http-request ^https:\/\/api\.sdbao\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/sdcbxscSign.js, requires-body=true, tag=水滴筹
+#水晶DJ
+http-request ^http:\/\/app\.oscaches\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/sjdjSign.js, requires-body=true, tag=水晶DJ
+#天天挖矿
+http-request ^https:\/\/operation-api\.jimistore\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/ttwbxcxSign.js, requires-body=true, tag=天天挖矿
+#微商星球
+http-request ^https:\/\/api\.momosyb\.com\/(v6|v1)\/(fans|user)\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/wsxqSign.js, requires-body=true, tag=微商星球
+#柚子快报
+http-request ^http?:\/\/hongbao\.youzikuaibao\.com\/youzi\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/yzkbSign.js, requires-body=true, tag=柚子快报
+#追书畅读版
+http-request ^https:\/\/.+zhuishushenqi\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/zscdbSign.js, requires-body=true, tag=追书畅读版
+#知音漫客
+http-request ^https:\/\/getconfig-globalapi\.zymk\.cn\/app_api\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/zymkSign.js, requires-body=true, tag=知音漫客
+
+#passerby-b
+#云闪付
+http-request https://youhui.95516.com/newsign/public/app/index.html script-path=https://gitee.com/passerby-b/javascript/raw/master/unipay.js, requires-header=true, tag=云闪付
+
+#photonmang
+#途虎养车
+http-request https://api.tuhu.cn/User/GetUserCurrentAndNextGradeInfo script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/tuhu/tuhu.Cookie.js, requires-header=true, tag=途虎养车
