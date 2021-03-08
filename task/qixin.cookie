@@ -91,9 +91,6 @@ http-request ^http://jqb.iphonezhuan.com/ script-path=https://raw.githubusercont
 #快看点获取Cookie    api.yuncheapp.cn
 http-request ^https:\/\/api\.yuncheapp\.cn\/pearl-incentive\/api\/v1\/task\/intervalAward\/receive script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kkd.js, requires-header=true, tag=快看点获取Cookie
 
-#任性猫    cat.rxmao.net
-http-request https://cat.rxmao.net/miner/cat.php script-path=https://raw.githubusercontent.com/age174/-/main/rxm.js, requires-body=true, tag=任性猫
-
 #宝石星球   interface.baoshixingqiu.com
 http-request https://interface.baoshixingqiu.com/member/user/batch-diggle script-path=https://raw.githubusercontent.com/age174/-/main/baosxq.js, requires-header=true, tag=宝石星球
 
