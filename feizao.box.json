@@ -405,7 +405,7 @@
     {
             "id": "xyzd",
             "name": "幸运赚点",
-            "keys": ["xyzdurl", "xyzdhd", "xyzdbody""xyzdurl2", "xyzdhd2", "xyzdbody2","xyzdurl3", "xyzdhd3", "xyzdbody3","xyzdurl4", "xyzdhd4", "xyzdbody4","xyzdurl5", "xyzdhd5", "xyzdbody5","xyzdurl6", "xyzdhd6", "xyzdbody6","xyzdurl7", "xyzdhd7", "xyzdbody7","xyzdurl8", "xyzdhd8", "xyzdbody8"],
+            "keys": ["xyzdurl", "xyzdhd", "xyzdbody","xyzdurl2", "xyzdhd2", "xyzdbody2","xyzdurl3", "xyzdhd3", "xyzdbody3","xyzdurl4", "xyzdhd4", "xyzdbody4","xyzdurl5", "xyzdhd5", "xyzdbody5","xyzdurl6", "xyzdhd6", "xyzdbody6","xyzdurl7", "xyzdhd7", "xyzdbody7","xyzdurl8", "xyzdhd8", "xyzdbody8"],
             "author": "@feizao",
             "settings": [{
             "id": "xyzdstatus",
