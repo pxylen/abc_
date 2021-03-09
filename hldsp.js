@@ -8,7 +8,7 @@
 
 本脚本以学习为主！
 使用方法:
-打开哈喽短视频小程序，点击签到获取数据
+打开哈喽短视频小程序，点击我的或者任务获取数据
 
 TG电报群: https://t.me/hahaha802
 
@@ -88,7 +88,7 @@ let hlsign = '',hluid = ''
 
 
 function hldspck() {
-   if ($request.url.indexOf("Doqiandao") > -1) {
+   if ($request.url.indexOf("Vgetuserinfo") > -1) {
  const hldspurl = $request.url
   if(hldspurl)     $.setdata(hldspurl,`hldspurl${status}`)
     $.log(hldspurl)
