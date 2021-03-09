@@ -90,7 +90,7 @@ function signin() {
 function showmsg() {
   return new Promise((resolve) => {
     if ($.digit.match(/[\u4e00-\u9fa5]+/g)[0]=='今日已签') {$.subt = '签到重复';$.log($.subt)}
-    else if (signatatus=='200'){$.subt += '签到成功'}
+    else if (signatatus=='200'){$.subt = '签到成功'}
     else { $.subt = '签到失败'}
     $.desc = coin+"  "+Mcoin+" \n"+signday+' '+totalday
     $.msg($.name+ " 昵称:"+username, $.subt+ ' 签到等级:'+signlevel, $.desc)
