@@ -83,8 +83,6 @@ let bx = 0   //此处为选择宝箱的碎片id，如果为0，宝箱开启获�
     console.log(`------------- 共${xyzdhdArr.length}个账号-------------\n`)
       for (let i = 0; i < xyzdhdArr.length; i++) {
         if (xyzdhdArr[i]) {
-         xyzdsign = xyzdurl.match(/sign=(\w+)/)[1]
-    xyzdtoken = xyzdbody.match(/token=(\w+)/)[1]
           xyzdurl = xyzdurlArr[i];
           xyzdhd = xyzdhdArr[i];
           xyzdbody = xyzdbodyArr[i];
@@ -222,7 +220,8 @@ function cgrwlb(timeout = 0) {
         $.msg($.name,"",'请先获取幸运赚点数据!😓',)
         $.done()
       }
-    
+    xyzdsign = xyzdurl.match(/sign=(\w+)/)[1]
+    xyzdtoken = xyzdbody.match(/token=(\w+)/)[1]
 let url = {
         url : 'https://vip.75787.com/app/index.php?i=21&c=entry&from=wxapp&a=wxapp&do=index&t=0&v=6.4.2&m=panda_key&sign='+xyzdsign,
         headers : JSON.parse(xyzdhd),
@@ -239,6 +238,7 @@ await xcxrwlb();
 
     const result = JSON.parse(data)
         if(result.code == 1){
+
      
       xyzdcgid = data.match(/"id":"(\w+)",/)[1]
         console.log('\n幸运赚点[获取常规任务列表]回执:成功🌝  \n[任务ID]: '+xyzdcgid+'\n开始领取任务奖励')
