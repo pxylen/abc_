@@ -301,6 +301,7 @@ return new Promise((resolve, reject) => {
    $.get(profiturl,(error, response, data) =>{
      const result = JSON.parse(data)
         if(logs)$.log(data)
+        try{
 for(let i =0;i<=result.data.profit_detail.score_income_list.length;i++){
 if(result.data.profit_detail.score_income_list[i].desc.match(/\d+/)) {
          no = result.data.profit_detail.score_income_list[i].desc.match(/\d+/)
@@ -308,6 +309,7 @@ $.log(no)
          break;
 }
 }
+}catch(e){}
           resolve()
     })
    })
