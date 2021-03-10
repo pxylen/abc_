@@ -17,7 +17,6 @@ let tz = ($.getval('tz') || '0');//0关闭通知，1默认开启
 const logs =0;//0为关闭日志，1为开启
 var hour=''
 var minute=''
-let coins;
 
 if ($.isNode()) {
    hour = new Date( new Date().getTime() + 8 * 60 * 60 * 1000 ).getHours();
@@ -181,6 +180,7 @@ if (!hotsoonsignheaderArr[0]) {
       await sign_in()
       await treasure_task()
       await control()
+      await profit()
       await watch_video(no)
       await showmsg()
   }
@@ -266,10 +266,6 @@ async function control(){
    }else{
      $.log("跳过广告收益，您没有此活动")
      }
-     await profit()
-     if(coins >= 20){
-       await withdraw()
-     }
 }
 //广告
 function ad() {
@@ -306,7 +302,6 @@ return new Promise((resolve, reject) => {
      const result = JSON.parse(data)
         if(logs)$.log(data)
         try{
-coins = result.data.income_data.cash_balance
 for(let i =0;i<=result.data.profit_detail.score_income_list.length;i++){
 if(result.data.profit_detail.score_income_list[i].desc.match(/\d+/)) {
          no = result.data.profit_detail.score_income_list[i].desc.match(/\d+/)
@@ -368,39 +363,6 @@ return new Promise((resolve, reject) => {
     })
    })
   }
-
-  //withdraw
-  function withdraw() {
-  return new Promise((resolve, reject) => {
-    let withdrawurl ={
-      url: `https://i-hl.snssdk.com/luckycat/hotsoon/v1/wallet/take_cash?polaris_version=2.0.0&${hotsoonreadheader}`,
-      headers: JSON.parse(hotsoonreadkey),
-      body:`{
-    "task_id" : 215,
-    "account" : "151****880",
-    "cash_amount" : -20,
-    "is_auto" : true,
-    "name" : "",
-    "take_cash_way" : "alipay"
-  }`
-  }
-     $.post(withdrawurl,(error, response, data) =>{
-       const result = JSON.parse(data)
-          $.log(data)
-         message += '📣提现0.2元\n'
-        if(result.err_no == 0){
-            console.log(result.err_tips+'提现0.2元\n')
-            message += result.err_tips+'提现0.2元\n'
-        }
-        else{
-            console.log(result.err_tips+"\n")
-          }
-            resolve()
-      })
-     })
-    }
-
-
 async function showmsg(){
 if(tz==1){
     if ($.isNode()){
