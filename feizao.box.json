@@ -451,7 +451,7 @@
     {
             "id": "cfz",
             "name": "春风转",
-            "keys": ["cfz"],
+            "keys": ["cfzurl", "cfzhd", "cfzsbhd", "cfzurl2", "cfzhd2", "cfzsbhd2","cfzurl3", "cfzhd3", "cfzsbhd3","cfzurl4", "cfzhd4", "cfzsbhd4","cfzurl5", "cfzhd5", "cfzsbhd5","cfzurl6", "cfzhd6", "cfzsbhd6","cfzurl7", "cfzhd7", "cfzsbhd7","cfzurl8", "cfzhd8", "cfzsbhd8","cfzurl9", "cfzhd9", "cfzsbhd9","cfzurl10", "cfzhd10", "cfzsbhd10"],
             "author": "@feizao",
             "settings": [{
                 "id": "cfzConcurrency",
@@ -459,7 +459,20 @@
                 "name": "并发执行账号数",
                 "type": "text",
                 "desc": "默认单账号跑任务，指定大于1的数值时，将并发执行多个账号的任务，请勿设置过大，避免NE工具崩溃（太大估计会崩溃吧）"
-            }],
+              }, {
+            "id": "cfzstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "cfzcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
             "repo": "https://github.com/age174/-/blob/main/cfz.js",
             "icons": ["https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg", "https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/cfz.js"
