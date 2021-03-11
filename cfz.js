@@ -41,7 +41,7 @@ http://cf-api.douzhuanapi.cn:10002/api/ url script-request-header https://raw.gi
 
 
 #loon
-http://cf-api.douzhuanapi.cn:10002/api/ script-path=https://raw.githubusercontent.com/age174/-/main/cfz.js, requires-header=true, timeout=10, tag=春风转
+http-request http://cf-api.douzhuanapi.cn:10002/api/ script-path=https://raw.githubusercontent.com/age174/-/main/cfz.js, requires-header=true, timeout=10, tag=春风转
 
 
 
