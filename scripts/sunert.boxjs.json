@@ -6,6 +6,52 @@
   "repo": "https://github.com/pxylen/abc_.git",
   "apps": [
     {
+      "id": "jdAllck",
+      "name": "京东CK集合",
+      "author": "@ztxtop",
+      "keys": [
+        "CookieJD",
+        "CookieJD2",
+        "CookiesJD"
+      ],
+      "descs_html": [
+        "复制 <a href=\"https://bean.m.jd.com/bean/signIndex.action\">签到日历</a> 或 <a href=\"https://home.m.jd.com/myJd/newhome.action\">京东用户中心</a> 地址到浏览器打开，登录后可自动获取Cookie，没成功就登录后再次访问下之前复制的地址",
+        "管理野比NobyDa及毛哥lxk的京东账号ck 重写订阅地址【<a href=\"https://raw.githubusercontent.com/ztxtop/x/main/subscribe/rewrite-jd.plugin\">京东多账号CK订阅</a>】",
+        "注：Loon的订阅插件，QX使用需开启解析器；NE工具中直接执行脚本将移除重复的Cookie"
+      ],
+      "settings": [
+        {
+          "id": "CookieJD",
+          "name": "账号1",
+          "val": "",
+          "type": "text",
+          "desc": "NobyDa的京东账号1 Cookie"
+        },
+        {
+          "id": "CookieJD2",
+          "name": "账号2",
+          "val": "",
+          "type": "text",
+          "desc": "NobyDa的京东账号2 Cookie"
+        },
+        {
+          "id": "CookiesJD",
+          "name": "CK 列表",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 8,
+          "desc": "京东扩展CK 列表 (JSON 格式)"
+        }
+      ],
+      "repo": "https://gitee.com/Sunert/Scripts/blob/master/Task/NE.cookie.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/jd.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
+      ],
+      "script": "https://raw.githubusercontent.com/ztxtop/x/main/NE.cookie.js"
+    },
+    {
       "id": "kuaishou",
       "name": "快手极速版",
       "keys": [
