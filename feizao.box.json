@@ -451,7 +451,7 @@
     {
             "id": "cfz",
             "name": "春风转",
-            "keys": ["cfzurl", "cfzhd", "cfzsbhd", "cfzurl2", "cfzhd2", "cfzsbhd2","cfzurl3", "cfzhd3", "cfzsbhd3","cfzurl4", "cfzhd4", "cfzsbhd4","cfzurl5", "cfzhd5", "cfzsbhd5","cfzurl6", "cfzhd6", "cfzsbhd6","cfzurl7", "cfzhd7", "cfzsbhd7","cfzurl8", "cfzhd8", "cfzsbhd8","cfzurl9", "cfzhd9", "cfzsbhd9","cfzurl10", "cfzhd10", "cfzsbhd10"],
+            "keys": ["cfzurl", "cfzhd", "cfzurl2", "cfzhd2","cfzurl3", "cfzhd3", "cfzurl4", "cfzhd4","cfzurl5", "cfzhd5", "cfzurl6", "cfzhd6", "cfzurl7", "cfzhd7","cfzurl8", "cfzhd8", "cfzurl9", "cfzhd9", "cfzurl10", "cfzhd10"],
             "author": "@feizao",
             "settings": [{
                 "id": "cfzConcurrency",
