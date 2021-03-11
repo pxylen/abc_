@@ -93,7 +93,7 @@ if (isGetCookie = typeof $request !== `undefined`) {
 function GetCookie() {
         if ($request && $request.method != 'OPTIONS' && $request.url.indexOf("gsid=") > -1) {
             const signurlVal = $request.url;
-            let token = signurlVal.replace(/(.+)(from=\w+)(.+)(&uid=\d+)(.+)(&gsid=[_a-zA-Z0-9-]+)(&.+)(&s=\w+)(.+)/, '$2$4$6$8'),
+            let token = signurlVal.match(/&uid=\d+/)+signurlVal.match(/&gsid=[_a-zA-Z0-9-]+/)+signurlVal.match(/&s=\w+/);
                 uid = token.match(/uid=\d+/)[0];
             if (wbtoken) {
                 if (wbtoken.indexOf(uid) > -1) {
@@ -133,7 +133,7 @@ function GetCookie() {
 function getsign() {
     return new Promise((resolve, reject) => {
         let signurl = {
-            url: `https://api.weibo.cn/2/checkin/add?c=iphone&${token}`,
+            url: `https://api.weibo.cn/2/checkin/add?&from=10B3193010&c=iphone`+token,
             headers: {
                 "User-Agent": `Weibo/52021 (iPhone; iOS 14.5; Scale/3.00)`
             }
@@ -184,7 +184,7 @@ function getcash() {
 function doCard() {
     return new Promise((resolve, reject) => {
         let doCardurl = {
-            url: `https://api.weibo.cn/2/!/ug/king_act_home?c=iphone&${token}`,
+            url: `https://api.weibo.cn/2/!/ug/king_act_home?&from=10B3193010&c=iphone&${token}`,
             headers: {
                 "User-Agent": `Weibo/52021 (iPhone; iOS 14.5; Scale/3.00)`
             }
