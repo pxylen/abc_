@@ -30,7 +30,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
 [task_local]
 #春风转
-15 13 * * * https://raw.githubusercontent.com/age174/-/main/cfz.js, tag=春风转, img-url=https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg, enabled=true
+/30 8-22 * * * https://raw.githubusercontent.com/age174/-/main/cfz.js, tag=春风转, img-url=https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg, enabled=true
 
 
 [rewrite_local]
@@ -87,8 +87,13 @@ let cfzlb = '',cfzid = '',cfzmc = '',page = 1
           $.index = i + 1;
           console.log(`\n开始【春风转${$.index}】`)
           //await cfzhhb();
-            await cfzqd();
-            
+    for (let i = 0; i < 20; i++) {
+            $.index = i + 1 
+console.log('\n'+`春风转开始执行循环阅读，本次共执行20次，已执行${i+1}次`)
+
+            await cfzqd()
+            await $.wait(31000);
+            }
   }
 }}
 
@@ -192,8 +197,6 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 200){
         console.log('\n春风转[数据上报]回执:成功🌝'+result.data)  
-await $.wait(32000);
-await cfzqd()
 } else {
 console.log('\n春风转[上报数据]回执:失败🌚'+result.message)
 
