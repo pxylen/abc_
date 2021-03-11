@@ -10,11 +10,16 @@ const scripts = [
    {
      moduleName: "DmYY",
      url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/DmYY.js",
+//     url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/DmYY.js",
    },
    {
     moduleName: "机场流量",
     url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/VpnBoard.js",
    },
+   {
+    moduleName: "京东多合一",
+    url:"https://raw.githubusercontent.com/anker1209/Scriptable/main/scripts/JD-in-one-v2.js",
+   }
    {
     moduleName: "京豆k线1",
     url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDouK.js",
