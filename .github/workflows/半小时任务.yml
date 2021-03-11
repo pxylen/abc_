@@ -52,18 +52,18 @@ jobs:
           TZ: Asia/shanghai
 
 
-      - name: '运行 【步步宝】'
-        run: |
-          node ./workflow/bbb/BBB.js
-        env:
-          TZ: Asia/shanghai
-
-
-      - name: '运行 【步步宝1】'
-        run: |
-          node ./workflow/bbb/BBB2.js
-        env:
-          TZ: Asia/shanghai
+#      - name: '运行 【步步宝】'
+#        run: |
+#          node ./workflow/bbb/BBB.js
+#        env:
+#          TZ: Asia/shanghai
+#
+#
+#      - name: '运行 【步步宝1】'
+#        run: |
+#          node ./workflow/bbb/BBB2.js
+#        env:
+#          TZ: Asia/shanghai
 
 
       - name: '运行 【抖音火山版】'
