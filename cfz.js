@@ -79,11 +79,13 @@ concurrency = concurrency < 1 ? 1 : concurrency;
     let execAcList = [];
     let slot = cfzhdArr.length % concurrency == 0 ? cfzhdArr.length / concurrency : parseInt(cfzhdArr.length / concurrency) + 1;
     cfzhdArr.forEach((o, i) => {
-      let idx = i % slot;
-      if (execAcList[idx]) {
-        execAcList[idx].push({no: i + 1, cfzhd: o, cfzsbhd: cfzsbhdArr[i], cfzid: ''});
-      } else {
-        execAcList[idx] = [{no: i + 1, cfzhd: o, cfzsbhd: cfzsbhdArr[i], cfzid: ''}];
+      if(o){
+        let idx = i % slot;
+        if (execAcList[idx]) {
+          execAcList[idx].push({no: i + 1, cfzhd: o, cfzsbhd: cfzsbhdArr[i], cfzid: ''});
+        } else {
+          execAcList[idx] = [{no: i + 1, cfzhd: o, cfzsbhd: cfzsbhdArr[i], cfzid: ''}];
+        }
       }
     });
     $.log(`----------- 共${cfzhdArr.length}个账号分${execAcList.length}组去执行 -----------`);
