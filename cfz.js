@@ -181,7 +181,7 @@ function cfztj(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
         url : 'http://cf-api.douzhuanapi.cn:10002/api/ad_sense/report',
-        headers : JSON.parse(cfzsbhd),
+        headers : JSON.parse(cfzhd),
         body : 'ad_source=1&location=3&position=8&report_type=1',
         
         }
