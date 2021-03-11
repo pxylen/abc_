@@ -1,5 +1,5 @@
 /*
-更新时间: 2021-03-11 19:30
+更新时间: 2021-03-11 20:20
 
 本脚本仅适用于微博每日签到，支持多账号运行  
 
@@ -133,7 +133,7 @@ function GetCookie() {
 function getsign() {
     return new Promise((resolve, reject) => {
         let signurl = {
-            url: `https://api.weibo.cn/2/checkin/add?c=iphone`+token,
+            url: `https://api.weibo.cn/2/checkin/add?c=iphone&`+token,
             headers: {
                 "User-Agent": `Weibo/52588 (iPhone; iOS 14.5; Scale/3.00)`
             }
