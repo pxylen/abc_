@@ -154,7 +154,7 @@ async function cfzck() {
 async function cfzckMove(){
   $base64 = new Base64();
   let acArr = []
-    let cfzcount = ($.getval('cfzcount') || '0') - 0
+    let cfzcount = ($.getval('cfzcount') || '1') - 0
     for (let i = 1; i <= cfzcount; i++) {
       let url = $.getjson(`cfzurl${i>1?i:''}`)
       let hd = $.getjson(`cfzhd${i>1?i:''}`)
@@ -175,7 +175,7 @@ async function cfzckMove(){
         }
       }
       $.setdata(JSON.stringify(cfz), 'cfz')
-      $.msg($.name, "", `迁移账号数：${acArr.length}\n合计账号数：${cfz.length}！`)
+      $.msg($.name, "", `迁移账号数：${acArr.length}\n合计账号数：${cfz.length}`)
     } else {
       $.log('无待迁移的旧数据')
     }
