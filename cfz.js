@@ -10,9 +10,9 @@
 
 下载地址 
 
-https://ss.tblk.me/dnI9m
+https://ss.tblk.me/Cpwav
 
-二维码地址 https://raw.githubusercontent.com/age174/-/main/4705AE1B-41ED-4341-9CCD-5E06F3372D30.jpeg
+二维码地址 https://raw.githubusercontent.com/age174/-/main/9DE99CAF-DF19-4F86-94A9-D9112BB77A2B.jpeg
 
 本脚本以学习为主！
 使用方法:
