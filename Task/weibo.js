@@ -1,5 +1,5 @@
 /*
-更新时间: 2021-02-21 22:30
+更新时间: 2021-03-11 19:30
 
 本脚本仅适用于微博每日签到，支持多账号运行  
 
@@ -77,7 +77,7 @@ if (isGetCookie = typeof $request !== `undefined`) {
                 $.index = i + 1;
                 console.log(`\n开始【微博签到${$.index}】`)
                 if (token.indexOf("from") == -1) {
-                    token += "from=10B2193010&"
+                    token = "&from=10B3193010"+token
                 }
                 await getsign();
                 await doCard();
@@ -93,7 +93,7 @@ if (isGetCookie = typeof $request !== `undefined`) {
 function GetCookie() {
         if ($request && $request.method != 'OPTIONS' && $request.url.indexOf("gsid=") > -1) {
             const signurlVal = $request.url;
-            let token = signurlVal.match(/&uid=\d+/)+signurlVal.match(/&gsid=[_a-zA-Z0-9-]+/)+signurlVal.match(/&s=\w+/);
+            let token = signurlVal.match(/from=\w+/)+signurlVal.match(/&uid=\d+/)+signurlVal.match(/&gsid=[_a-zA-Z0-9-]+/)+signurlVal.match(/&s=\w+/);
                 uid = token.match(/uid=\d+/)[0];
             if (wbtoken) {
                 if (wbtoken.indexOf(uid) > -1) {
@@ -133,9 +133,9 @@ function GetCookie() {
 function getsign() {
     return new Promise((resolve, reject) => {
         let signurl = {
-            url: `https://api.weibo.cn/2/checkin/add?&from=10B3193010&c=iphone`+token,
+            url: `https://api.weibo.cn/2/checkin/add?c=iphone`+token,
             headers: {
-                "User-Agent": `Weibo/52021 (iPhone; iOS 14.5; Scale/3.00)`
+                "User-Agent": `Weibo/52588 (iPhone; iOS 14.5; Scale/3.00)`
             }
         }
         $.get(signurl, async(error, resp, data) => {
@@ -184,9 +184,9 @@ function getcash() {
 function doCard() {
     return new Promise((resolve, reject) => {
         let doCardurl = {
-            url: `https://api.weibo.cn/2/!/ug/king_act_home?&from=10B3193010&c=iphone&${token}`,
+            url: `https://api.weibo.cn/2/!/ug/king_act_home?c=iphone&${token}`,
             headers: {
-                "User-Agent": `Weibo/52021 (iPhone; iOS 14.5; Scale/3.00)`
+                "User-Agent": `Weibo/52588(iPhone; iOS 14.5; Scale/3.00)`
             }
         }
         $.get(doCardurl, (error, resp, data) => {
