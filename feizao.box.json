@@ -454,6 +454,12 @@
             "keys": ["cfzurl", "cfzhd", "cfzsbhd", "cfzurl2", "cfzhd2", "cfzsbhd2","cfzurl3", "cfzhd3", "cfzsbhd3","cfzurl4", "cfzhd4", "cfzsbhd4","cfzurl5", "cfzhd5", "cfzsbhd5","cfzurl6", "cfzhd6", "cfzsbhd6","cfzurl7", "cfzhd7", "cfzsbhd7","cfzurl8", "cfzhd8", "cfzsbhd8","cfzurl9", "cfzhd9", "cfzsbhd9","cfzurl10", "cfzhd10", "cfzsbhd10"],
             "author": "@feizao",
             "settings": [{
+                "id": "cfzConcurrency",
+                "val": "1",
+                "name": "并发执行账号数",
+                "type": "text",
+                "desc": "默认单账号跑任务，指定大于1的数值时，将并发执行多个账号的任务，请勿设置过大，避免NE工具崩溃（太大估计会崩溃吧）"
+              }, {
             "id": "cfzstatus",
             "name": "当前账号",
             "val": "1",
