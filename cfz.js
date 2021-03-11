@@ -134,7 +134,8 @@ let url = {
            
 } else {
      
-console.log('\n春风转[领取阅读奖励]回执:失败🌚'+result.message)
+console.log('\n春风转[领取阅读奖励]回执:失败🌚'+result.message+'\n恭喜您，您的账号黑了，尝试上报数据修复，提示上报数据成功请关闭脚本等待一分钟再次运行试试')
+await cfzxf();
 
 }
    
@@ -208,7 +209,34 @@ console.log('\n春风转[上报数据]回执:失败🌚'+result.message)
 }
 
 
+//春风转修复系统错误
+function cfzxf(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : 'http://cf-api.douzhuanapi.cn:10002/api/ad_sense/report',
+        headers : JSON.parse(cfzhd),
+        body : 'ad_source=1&location=3&position=8&report_type=1',
+        
+        }
+      $.post(url, async (err, resp, data) => {
+        try {
+           
+    const result = JSON.parse(data)
+        if(result.code == 200){
+        console.log('\n春风转[数据上报]回执:成功🌝'+result.data)  
+} else {
+console.log('\n春风转[上报数据]回执:失败🌚'+result.message)
 
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
 //春风转列表
 function cfzqd(timeout = 0) {
   return new Promise((resolve) => {
