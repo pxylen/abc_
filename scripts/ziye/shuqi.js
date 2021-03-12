@@ -2430,48 +2430,46 @@ async function all() {
         }
         //await $.wait(1000)
 
-        await readlist(); //每日阅读
+        if (shuqisyurlVal && shuqisybodyVal && shuqisyurlVal != '' && shuqisybodyVal != '') {
+            await coin() //用户收益
+        }
+        if (shuqirwbodyVal && shuqirwbodyVal != '') {
+            await resource() //任务列表
+        }
 
-//        if (shuqisyurlVal && shuqisybodyVal && shuqisyurlVal != '' && shuqisybodyVal != '') {
-//            await coin() //用户收益
-//        }
-//        if (shuqirwbodyVal && shuqirwbodyVal != '') {
-//            await resource() //任务列表
-//        }
-//
-//        if (shuqisprwurlVal && shuqisprwurlVal != '') {
-//            await videolist(); //视频任务
-//        }
-//        if (shuqimrydbodyVal && shuqimrydbodyVal != '') {
-//            await readlist(); //每日阅读
-//        }
-//        if (shuqibqqdyurlVal && shuqibqqdyurlVal != '') {
-//            await bqsignlist(); ///补签页
-//        }
-//
-//        if (shuqicjyurlVal && shuqicjyurlVal != '') {
-//            await lotteryinfo(); //抽奖页面
-//        }
-//
-//
-//        if (shuqijsrwbodyVal && shuqijsrwbodyVal != '') {
-//            await jsresource() //极速版任务列表
-//        }
-//        if (shuqijssprwurlVal && shuqijssprwurlVal != '') {
-//            await jsvideolist() //极速版视频任务
-//        }
-//        if (shuqijsbqqdyurlVal && shuqijsbqqdyurlVal != '') {
-//            await jsbqsignlist(); ///补签页
-//        }
-//        if (shuqijsqdspyurlVal && shuqijsqdspyurlVal != '') {
-//            await jsqdvideolist(); //极速版签到视频任务
-//        }
-//
-//
-//
-//        if (shuqijlbodyVal && shuqijlbodyVal != '') {
-//            await bubble(); //奖励页面
-//        }
+        if (shuqisprwurlVal && shuqisprwurlVal != '') {
+            await videolist(); //视频任务
+        }
+        if (shuqimrydbodyVal && shuqimrydbodyVal != '') {
+            await readlist(); //每日阅读
+        }
+        if (shuqibqqdyurlVal && shuqibqqdyurlVal != '') {
+            await bqsignlist(); ///补签页
+        }
+
+        if (shuqicjyurlVal && shuqicjyurlVal != '') {
+            await lotteryinfo(); //抽奖页面
+        }
+
+
+        if (shuqijsrwbodyVal && shuqijsrwbodyVal != '') {
+            await jsresource() //极速版任务列表
+        }
+        if (shuqijssprwurlVal && shuqijssprwurlVal != '') {
+            await jsvideolist() //极速版视频任务
+        }
+        if (shuqijsbqqdyurlVal && shuqijsbqqdyurlVal != '') {
+            await jsbqsignlist(); ///补签页
+        }
+        if (shuqijsqdspyurlVal && shuqijsqdspyurlVal != '') {
+            await jsqdvideolist(); //极速版签到视频任务
+        }
+
+
+
+        if (shuqijlbodyVal && shuqijlbodyVal != '') {
+            await bubble(); //奖励页面
+        }
 
 
         console.log(`${GXRZ}\n`);
