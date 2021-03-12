@@ -3001,13 +3001,8 @@ function readlist(timeout = 0) {
                         console.log(`每日阅读：今日阅读${$.readlist.data.readTime}分钟\n`);
                         $.message += `【每日阅读】：今日阅读${$.readlist.data.readTime}分钟\n`;
 
-//                        if (shuqimrydbodyVal && shuqimrydbodyVal != '' &&
-//                            is_ok) {
-//                            mrydID = is_ok.actTaskId
-//                            await readjl(); //每日阅读奖励
-//                        }
-
-                        if (is_ok) {
+                        if (shuqimrydbodyVal && shuqimrydbodyVal != '' &&
+                            is_ok) {
                             mrydID = is_ok.actTaskId
                             await readjl(); //每日阅读奖励
                         }
