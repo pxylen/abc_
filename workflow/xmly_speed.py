@@ -1,10 +1,3 @@
-'''
-Author: whyour
-Github: https://github.com/whyour
-Date: 2020-11-19 23:25:22
-LastEditors: whyour
-LastEditTime: 2021-01-18 13:46:46
-'''
 import json
 import rsa
 import base64
@@ -43,7 +36,7 @@ if "AUTO_TAKE_OUT" in os.environ:
     autoTakeOut = os.environ["AUTO_TAKE_OUT"]
 
 # 自定义设备命名,非必须 ;devices=["iPhone7P","huawei"];与cookiesList对应
-devices = []
+devices = ["iPhoneXsMax","iPhone6s"]
 notify_time = 23                            # 通知时间,24小时制,默认19
 XMLY_ACCUMULATE_TIME = 1                    # 希望刷时长的,此处置1,默认打开;关闭置0
 UserAgent = "Mozilla/5.0 (iPhone; CPU iPhone OS 13_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 iting/1.0.12 kdtunion_iting/1.0 iting(main)/1.0.12/ios_1"
@@ -1067,9 +1060,9 @@ def run():
                         "accountNumber": pay_info["accountNumber"], "amount": amount, "takeOutType": takeOutType}
                 task_out_res = task_out(cookies=cookies, body=body)
                 if task_out_res:
-                    send(title=title, content=f"{device} 提现到账户【{pay_info['accountNumber']}】20元成功")
+                    send(title=title, content=f"{user_info_res['nickname']} 提现到账户【{pay_info['accountNumber']}】20元成功")
             else:
-                send(title=title, content=f"请先手动填写【账号{k+1}】支付宝账号提现一次")
+                send(title=title, content=f"请先手动填写【user_info_res['nickname']】支付宝账号提现一次")
         print("###"*20)
         print("\n"*4)
 
