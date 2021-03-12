@@ -158,7 +158,7 @@ let url = {
         console.log('\n哈喽短视频[签到]回执:成功🌝  \n获得金币:'+result.data.price)
      //$.done()
        await $.wait(2000);
-        await hldsprw();
+        await hldspsp();
         
 } else {
 console.log('哈喽短视频[签到]回执:失败🚫 '+result.message)
