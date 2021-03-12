@@ -4,7 +4,7 @@
 
 cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/qixin.cookie
 
-京东订阅：https://jdcdn.lensu.workers.dev/jdresource/lxk0301_LoonTask.conf
+京东订阅：https://jdsharedresourcescdn.azureedge.net/jdresource/lxk0301_LoonTask.conf
 
 
 
