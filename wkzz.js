@@ -61,6 +61,7 @@ const $ = new Env('微客众智自动阅读');
 let status;
 status = (status = ($.getval("wkzzstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const wkzzurlArr = [], wkzzhdArr = [],wkzzcount = ''
+let times = Math.round(Date.now() / 1000)
 let wkzzurl = $.getdata('wkzzurl')
 let wkzzhd = $.getdata('wkzzhd')
 let wkzzkey = '',id = '',uid='',tid='',name=''
@@ -216,7 +217,7 @@ function wkzzyd(timeout = 0) {
 let url = {
         url : "http://wx.tiantianaiyuedu.site/read/article",
         headers : JSON.parse(wkzzhd),
-        body : `{"data":{"wxuser_id":${id},"receive_article_id":${tid} ,"article_created_at":1615548360,"task_id": ${uid}}}`,
+        body : `{"data":{"wxuser_id":${id},"receive_article_id":${tid} ,"article_created_at":${times},"task_id": ${uid}}}`,
 }
       $.post(url, async (err, resp, data) => {
         try {
