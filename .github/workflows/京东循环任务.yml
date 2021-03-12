@@ -95,13 +95,13 @@ jobs:
 #          node jd_joy_reward.js
 #
 #
-#      - name: '运行 【宠汪汪偷好友积分与狗】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_joy_steal.js
-#        env:
-#          JOY_HELP_FEED: ${{ secrets.JOY_HELP_FEED }}
-#          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
+      - name: '运行 【宠汪汪偷好友积分与狗】'
+        run: |
+          cd ~/TaskAction
+          node jd_joy_steal.js
+        env:
+          JOY_HELP_FEED: ${{ secrets.JOY_HELP_FEED }}
+          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
 #
 #
 #      - name: '运行 【点点券】'
