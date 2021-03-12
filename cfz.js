@@ -160,7 +160,7 @@ let url = {
           } else {
     const result = JSON.parse(data)
         if(result.code == 200){
-        console.log('\n春风转[领取阅读奖励]回执:成功🌝 \n获得奖励: '+result.data.amount+'金币，等待30秒继续领取')       
+        console.log('\n春风转[领取阅读奖励]回执:成功🌝 \n获得奖励: '+result.data.amount+'金币，等待60秒继续领取')       
            await cfzsb(ac);
            
            
