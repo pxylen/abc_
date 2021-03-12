@@ -1,0 +1,31 @@
+name: Python任务
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  build:
+    env:
+      TG_USER_ID: ${{ secrets.TG_USER_ID }}
+      TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+
+      - name: 'Install requirements'
+        run: pip install -r workflow/requirements.txt
+
+
+      - name: '运行 【喜马拉雅极速版】'
+        run: python3 workflow/xmly_speed.py
+
+
+      - name: '运行 【中青极速版】'
+        run: python3 workflow/youth.py
