@@ -1,4 +1,4 @@
-脚本大集合
+脚本大集合（loon专用）
 
 订阅集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/qixin.conf
 
