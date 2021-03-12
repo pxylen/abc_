@@ -476,29 +476,6 @@
             "repo": "https://github.com/age174/-/blob/main/cfz.js",
             "icons": ["https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg", "https://ae01.alicdn.com/kf/U8a3a2572bf5d4584928d1d7cde52b50ba.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/cfz.js"
-    },
-    {
-            "id": "wkzz",
-            "name": "微客众智",
-            "keys": ["wkzzurl", "wkzzhd", "wkzzurl2", "wkzzhd2", "wkzzurl3", "wkzzhd3", "wkzzurl4", "wkzzhd4", "wkzzurl5", "wkzzhd5", "wkzzurl6", "wkzzhd6", "wkzzurl7", "wkzzhd7", "wkzzurl8", "wkzzhd8", "wkzzurl9", "wkzzhd9", "wkzzurl10", "wkzzhd10", "wkzzurl11", "wkzzhd11", "wkzzurl12", "wkzzhd12", ],
-            "author": "@feizao",
-            "settings": [{
-            "id": "wkzzstatus",
-            "name": "当前账号",
-            "val": "1",
-            "type": "number",
-            "desc": "当前账号对应"
-    },
-    {
-            "id": "wkzzcount",
-            "name": "账号个数",
-            "val": "1",
-            "type": "number",
-            "desc": "需要几个账号，数字为几"
-    }],
-            "repo": "https://github.com/age174/-/blob/main/wkzz.js",
-            "icons": ["https://ae01.alicdn.com/kf/Uff0a0bb9e66a479591c9b02c176fd276A.jpg", "https://ae01.alicdn.com/kf/Uff0a0bb9e66a479591c9b02c176fd276A.jpg"],
-            "script": "https://raw.githubusercontent.com/age174/-/main/wkzz.js"
     }
 ]
 }
