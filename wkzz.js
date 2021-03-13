@@ -171,7 +171,7 @@ name =data.match(/"content_url":"(.*?)",/)[1]
 
         console.log('\n微客众智获取任务ID成功\n当前任务ID: '+uid+' '+tid+'\n开始循环阅读:')
         await $.wait(1000);
-        await wkzzwz();
+        await wkzzyd();
 } else {
        console.log('\n微客众智获取任务ID失败  '+result.data.message)
 }
