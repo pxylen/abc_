@@ -30,7 +30,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
 [task_local]
 #微客众智
-5,35 9-22 * * * https://raw.githubusercontent.com/age174/-/main/wkzz.js, tag=微客众智阅读, img-url=https://ae01.alicdn.com/kf/Uff0a0bb9e66a479591c9b02c176fd276A.jpg, enabled=true
+5,35 9-22 * * * https://raw.githubusercontent.com/age174/-/main/wkzz.js, tag=微客众智, img-url=https://ae01.alicdn.com/kf/Uff0a0bb9e66a479591c9b02c176fd276A.jpg, enabled=true
 
 
 [rewrite_local]
@@ -40,13 +40,13 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 
 #loon
-http://wx.tiantianaiyuedu.site/ script-path=https://raw.githubusercontent.com/age174/-/main/wkzz.js, requires-body=true, timeout=10, tag=微客众智阅读
+http://wx.tiantianaiyuedu.site/ script-path=https://raw.githubusercontent.com/age174/-/main/wkzz.js, requires-body=true, timeout=10, tag=微客众智
 
 
 
 #surge
 
-微客众智阅读 = type=http-request,pattern=http://wx.tiantianaiyuedu.site/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/wkzz.js,script-update-interval=0
+微客众智 = type=http-request,pattern=http://wx.tiantianaiyuedu.site/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/wkzz.js,script-update-interval=0
 
 
 
@@ -125,15 +125,16 @@ let url = {
         
 }
       $.get(url, async (err, resp, data) => {
+if(resp.statusCode == 301){
+$.log('\n微客众智访问失败，可能是Cookie过期或网络问题')
+}
         try {
           //console.log(data)
     const result = JSON.parse(data)
         if(result.errors == false){
    id = result.data.wxuser_id
         console.log('\n微客众智获取用户信息成功\n当前用户名:'+result.data.nickname+' 用户ID:'+id+'\n开始查询任务信息')
-await wkzzlb();
-$.done()
-      
+await wkzzlb();      
         
 } else {
 console.log('微客众智获取用户信息失败 已停止当前账号运行!')
@@ -159,11 +160,11 @@ let url = {
        
 }
       $.get(url, async (err, resp, data) => {
+
         try {
     const result = JSON.parse(data)
-        if(result.data.counts !== 0){
 
-
+        if(result.data.code== 1){
 uid=data.match(/"id":(.*?),/)[1]
 tid =data.match(/"a_id":(.*?),/)[1]
 name =data.match(/"content_url":"(.*?)",/)[1]
