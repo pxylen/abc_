@@ -258,7 +258,7 @@ let url = {
         if(result.errors == false){
 
         console.log('\n微客众智获取用户信息成功\n当前阅读次数: '+result.data.read_task_count+' '+'\n当前余额'+result.data.read_money+'开始获取任务')
-        await $.wait(5000);
+        await $.wait(8000);
         await wkzzlb();
 } else {
        console.log('\n微客众智获取用户信息失败 '+result.msg)
