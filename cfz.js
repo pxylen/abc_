@@ -300,8 +300,8 @@ let sj = Math.floor(Math.random() * 500); //生成随机数
             if (result.code == 200) {
               let list = (result.data && result.data.list) || []
               if (list.length > 0) {
-                ac.cfzid = list[0].id
-                console.log('\n春风转[阅读列表]回执:成功🌝  \n📄阅读ID:' + ac.cfzid + '\n📑开始阅读:' + list[0].title)
+                ac.cfzid = list[1].id
+                console.log('\n春风转[阅读列表]回执:成功🌝  \n📄阅读ID:' + ac.cfzid + '\n📑开始阅读:' + list[1].title)
                 await $.wait(500);
                 await cfzyd(ac);
               } else {
