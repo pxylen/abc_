@@ -129,6 +129,7 @@ let url = {
       $.get(url, async (err, resp, data) => {
 if(resp.statusCode == 301){
 $.log('\n微客众智访问失败，可能是Cookie过期或网络问题')
+$.msg('微客众智Cookie过期','','请重新抓包获取数据，建议保持微客众智的重写在开启状态')
 }
         try {
           //console.log(data)
