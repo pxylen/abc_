@@ -45,13 +45,6 @@ jobs:
           DSJ_DRAWAL: ${{ secrets.DSJ_DRAWAL }}
 
 
-      - name: '运行 【今日头条极速版】'
-        run: |
-          node ./workflow/jrtt.js
-        env:
-          TZ: Asia/shanghai
-
-
 #      - name: '运行 【步步宝】'
 #        run: |
 #          node ./workflow/bbb/BBB.js
@@ -66,8 +59,3 @@ jobs:
 #          TZ: Asia/shanghai
 
 
-      - name: '运行 【抖音火山版】'
-        run: |
-          node ./workflow/huoshan.js
-        env:
-          TZ: Asia/shanghai
