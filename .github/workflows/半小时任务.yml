@@ -11,7 +11,8 @@ on:
 jobs:
   build:
     env:
-      BARK_PUSH: ${{ secrets.BARK_PUSH }}
+      TG_USER_ID: ${{ secrets.TG_USER_ID }}
+      TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
