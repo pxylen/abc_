@@ -94,7 +94,7 @@ function timecheck() {
 function trainscheck() {
     return new Promise((resolve, reject) => {
         const myRequest = {
-            url: `https://kyfw.12306.cn/otn/leftTicket/queryT?leftTicketDTO.train_date=${leftdate}&leftTicketDTO.from_station=${statno}&leftTicketDTO.to_station=${tostat}&purpose_codes=${purpose}`,
+            url: `https://kyfw.12306.cn/otn/leftTicket/query?leftTicketDTO.train_date=${leftdate}&leftTicketDTO.from_station=${statno}&leftTicketDTO.to_station=${tostat}&purpose_codes=${purpose}`,
             headers: {
                 Cookie: 'JSESSIONID=E3CCA5C6ECC49AFFE24D4FE48C8A8949;',
                 'Referer': 'https://kyfw.12306.cn/otn/leftTicket/init'
