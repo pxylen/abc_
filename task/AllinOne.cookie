@@ -448,9 +448,9 @@ http-request #https://bububao.duoshoutuan.com/user/profile script-path=https://r
 #读文章弹出金币获取读文章cookie
 http-request \/score_task\/v1\/task\/(sign_in|get_read_bonus) script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js, requires-header=true, tag=读文章弹出金币获取读文章cookie
 http-request \/ttgame\/game_farm\/home_info script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js, requires-header=true, tag=读文章弹出金币获取读文章cookie
-#快看点（目前已下架）
-#获取一次时段奖励获得cookie
-http-request ^https:\/\/api\.yuncheapp\.cn\/pearl-incentive\/api\/v1\/task\/intervalAward\/receive script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kkd.js, requires-header=true, tag=获取一次时段奖励获得cookie
+#快看点
+http-request ^https:\/\/api\.yuncheapp\.cn\/pearl-incentive\/api\/v1\/task\/intervalAward\/receive script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kkd.js, requires-header=true, tag=快看点
+http-request ^https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/* script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kkd.js, requires-header=true, tag=快看点
 #抖音极速版
 #签到获取signheader and signcookie（已签到获取不到应该）
 #走路修改步数，提前之前需要重新获取ck，不然提交失败，进一次任务界面就可
