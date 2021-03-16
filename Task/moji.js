@@ -1,6 +1,6 @@
 /*
 支持boxjs手动修改位置，可直接输入中文地区名
-更新时间 2021-03-02 10:30
+更新时间 2021-03-16 10:30
 */
 const $ = new Env('墨迹天气');
 const notify = $.isNode() ? require('./sendNotify') : '';
