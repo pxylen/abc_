@@ -1,6 +1,6 @@
 /*
 支持boxjs手动修改位置，可直接输入中文地区名
-更新时间 2021-03-16 16:26
+更新时间 2021-03-02 10:30
 */
 const $ = new Env('墨迹天气');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -10,7 +10,7 @@ let reduction = $.getdata('cut') || 'false'; //日志
 let daylys = $.getdata('day_desc') || 'true', //每日天气
     hourlys = $.getdata('hour_desc') || 'false', //小时预报
     indexs = $.getdata('index_desc') || 'false'; //生活指数
-    fortys = $.getdata('forty_desc') || 'false'; //40天预告
+fortys = $.getdata('forty_desc') || 'false'; //40天预告
 let Alerts = "";
 
 !(async() => {
@@ -126,6 +126,10 @@ function mapSkycon(skycon) {
         ],
         "多云": [
             "⛅️ 多云",
+            "https://raw.githubusercontent.com/58xinian/icon/master/Weather/PARTLY_CLOUDY_DAY.gif",
+        ],
+        "少云": [
+            "🌤 少云",
             "https://raw.githubusercontent.com/58xinian/icon/master/Weather/PARTLY_CLOUDY_DAY.gif",
         ],
         "阴": [
