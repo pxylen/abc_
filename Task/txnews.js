@@ -1,6 +1,6 @@
 
 /*
-更新时间: 2021-02-18 11:15
+更新时间: 2021-03-17 12:30
 
 腾讯新闻签到修改版，可以自动阅读文章获取红包，该活动为瓜分百万现金挑战赛，针对幸运用户参与，本脚本已不能自动打开红包，需每天要打开腾讯新闻app一次，请须知
 
@@ -81,6 +81,7 @@ if (isGetCookie) {
             ID = signurlVal.match(/devid=[a-zA-Z0-9_-]+/g)[0]
             token = signurlVal.split("mac")[1]
             await getsign();
+            await open();
             await activity();
             await getTotal();
             await $.wait(1000);
@@ -159,6 +160,33 @@ function getsign() {
             resolve()
         })
     })
+}
+
+function open() {
+ return new Promise((resolve, reject) => {
+ let url = {
+     url: "https://api.prize.qq.com/v1/newsapp/chajianrp/sendprize?startarticletype=5&mac="+token,
+     headers: {
+      Cookie: cookieVal,
+      'Host': "api.prize.qq.com",
+      'Content-Type': 'application/x-www-form-urlencoded'
+     },
+     body: "actname=chajian_shouqi"
+ }
+ $.post(url, (error, resp, data) => {
+     if(resp.statusCode ==200){
+       obj = JSON.parse(data);
+       if(obj.code==0){
+         amount = obj.data.type=="rp" ? "天天领红包获得"+obj.data.amount/100+"元": "天天领红包获得"+obj.data.amount+"个金币"
+         $.log(amount)
+         $.msg($.name, amount,"")
+       }
+     } else {
+       $.log(JSON.stringify(resp,null,2))
+     }
+     resolve()
+    })
+  })
 }
 
 function activity() {
