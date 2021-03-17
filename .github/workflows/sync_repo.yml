@@ -36,6 +36,16 @@ jobs:
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
 
 
+      - name: sync sync-i-chenzhe
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/i-chenzhe/qx.git"
+          source_branch: "main"
+          destination_branch: "i-chenzhe"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
+
+
       - name: sync sync-hundun
         uses: repo-sync/github-sync@v2
         if: env.PAT
