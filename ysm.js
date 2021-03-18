@@ -339,7 +339,7 @@ let url = {
 function ysmxx(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : 'http://erd.zhangchaofan.xyz/yunonline/v1/gold?openid='+ysmtx.match(/openid=(.*?)ua/)[1]+'&time=1616003606000',
+        url : 'http://erd.zhangchaofan.xyz/yunonline/v1/gold?openid='+ysm2body.match(/openid=(.*?)&/)[1]+'&time=1616003606000',
         headers : JSON.parse(ysmhd),
        
 }      
@@ -367,7 +367,7 @@ let url = {
 function ysmyh(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : 'http://erd.zhangchaofan.xyz/yunonline/v1/gold?openid='+ysmtx.match(/openid=(.*?)ua/)[1]+'&time=1616003606000',
+        url : 'http://erd.zhangchaofan.xyz/yunonline/v1/gold?openid='+ysm2body.match(/openid=(.*?)&/)[1]+'&time=1616003606000',
         headers : JSON.parse(ysmhd),
        
 }      
