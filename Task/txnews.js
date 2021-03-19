@@ -1,6 +1,6 @@
 
 /*
-更新时间: 2021-03-18 15:03
+更新时间: 2021-03-19 08:00
 
 腾讯新闻签到修改版，可以自动阅读文章获取红包，该活动为瓜分百万现金挑战赛，针对幸运用户参与，本脚本已不能自动打开红包，需每天要打开腾讯新闻app一次，请须知
 
@@ -83,6 +83,7 @@ if (isGetCookie) {
             console.log(`-------------------------\n\n开始【腾讯新闻账号${$.index}】`)
             ID = signurlVal.match(/devid=[a-zA-Z0-9_-]+/g)[0]
             token = signurlVal.split("mac")[1]
+            taskurl = 'http://inews.qq.com/inews/iphone/';
             await getsign();
             prizeVal?await open():"";
             prizeVal?await treesign():"";
@@ -134,12 +135,12 @@ function Host(api, body, taskurl) {
             'Accept-Encoding': 'gzip, deflate, br',
             'Accept-Language': 'zh-Hans-CN;q=1, en-CN;q=0.9, zh-Hant-CN;q=0.8',
             'Connection': 'keep-alive',
-            'Cookie': cookieVal,
-            'Host': 'api.inews.qq.com',
+             'Cookie': cookieVal,
+            // 'Host': 'api.inews.qq.com',
             'Referer': taskurl,
             'store': '1',
             'devid': ID,
-            'User-Agent': 'QQNews/6.4.10 (iPhone; iOS 14.2; Scale/3.00)'
+            'User-Agent': 'QQNews/6.4.40 (iPhone; iOS 14.2; Scale/3.00)'
         },
         body: body
     }
@@ -175,11 +176,7 @@ function open() {
  return new Promise((resolve, reject) => {
  let url = {
      url: prizeVal,
-     headers: {
-      Cookie: cookieVal,
-      'Host': "api.prize.qq.com",
-      'Content-Type': 'application/x-www-form-urlencoded'
-     },
+     headers: Host().headers,
      body: "actname=chajian_shouqi"
  }
  $.post(url, async(error, resp, data) => {
@@ -203,11 +200,7 @@ function treesign() {
   treetoken = prizeVal.split("?")[1]
  let url = {
      url: 'https://api.prize.qq.com/v1/newsapp/tree/sign?'+treetoken,
-     headers: {
-      Cookie: cookieVal,
-      'Host': "api.prize.qq.com",
-      'Content-Type': 'application/x-www-form-urlencoded'
-     },
+     headers: Host().headers,
      body: "current_day="+Math.round(new Date(new Date().toLocaleDateString()).getTime()/1000).toString()
  }
  $.post(url, (error, resp, data) => {
