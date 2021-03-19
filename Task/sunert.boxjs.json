@@ -428,12 +428,11 @@
           "desc": "阅读篇数间隔通知开为1，常关为0(默认50篇)"
         }, 
         {
-          "id": "delay", 
-          "placeholder": "默认200 (点击以展开说明)", 
+          "id": "txnews_id", 
+          "placeholder": "stair_redpack_chajian", 
           "val": "", 
-          "name": "延迟时间(毫秒)", 
-          "type": "number", 
-          "desc": "接口延迟时间"
+          "name": "自定义活动ID", 
+          "type": "textarea"
         }
       ], 
       "name": "腾讯新闻", 
