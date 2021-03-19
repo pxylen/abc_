@@ -1,6 +1,6 @@
 
 /*
-更新时间: 2021-03-01 10:30
+更新时间: 2021-03-19 19:20
 赞赏:电视家邀请码`893988`,农妇山泉 -> 有点咸，万分感谢
 本脚本仅适用于电视家签到，支持Actions多账号运行，请用'#'或者换行隔开‼️
 */
@@ -180,7 +180,7 @@ function total() {
             subTitle = `待兑换金币: ${result.data.coin} `
             try {
                 if (result.data.tempCoin) {
-                    for (k = 0; k < result.data.tempCoin.length; i++) {
+                    for (k = 0; k < result.data.tempCoin.length; k++) {
                         coinid = result.data.tempCoin[k].id
                         $.get({
                             url: `http://api.gaoqingdianshi.com/api/coin/temp/exchange?id=` + coinid,
