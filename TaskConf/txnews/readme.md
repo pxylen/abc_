@@ -24,6 +24,8 @@ https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/txnews/surge.sg
 腾讯新闻 = type=cron,cronexp=0 8 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js,script-update-interval=0
 
 腾讯新闻 = type=http-request,pattern=https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\?,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, requires-body=true
+
+腾讯新闻 = type=http-request,pattern=https:\/\/api\.prize\.qq\.com\/v1\/newsapp\/chajianrp\/sendprize,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js
 ```
 #### Shadowrocket(Cron配置): 
 
@@ -44,6 +46,7 @@ https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/txnews/loon.plu
 [Script]
 cron "04 00 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, enabled=true, tag=腾讯新闻
 http-request https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\? script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, requires-body=true, enabled=true, tag=腾讯新闻
+腾讯新闻 = type=http-request,pattern=https:\/\/api\.prize\.qq\.com\/v1\/newsapp\/chajianrp\/sendprize,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js
 ```
 #### Quantumult X:
    * [远程重写配置](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/txnews/qx_rewite.txt)
@@ -57,6 +60,7 @@ https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/txnews/qx_rewit
 ```
 [rewrite_local]
 https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\? url script-request-body https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js
+https:\/\/api\.prize\.qq\.com\/v1\/newsapp\/chajianrp\/sendprize url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js
 ```
    * 本地任务配置
    
@@ -69,6 +73,8 @@ https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\? url script-reque
   1. 打开腾讯新闻app，阅读几篇文章，倒计时结束后即可获取阅读Cookie
   
   2. 看一次推荐视频，获取视频地址
+  
+  3. 打开链接"https://news.qq.com/FERD/cjRedDown.htm"或者点击腾讯新闻通知，获取天天领红包地址
 
  >>> [回到顶部](#IOS配置教程)
 

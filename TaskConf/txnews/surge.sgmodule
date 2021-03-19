@@ -7,5 +7,7 @@
 
 腾讯新闻 = type=http-request,pattern=https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\?,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, requires-body=true
 
+腾讯新闻 = type=http-request,pattern=https:\/\/api\.prize\.qq\.com\/v1\/newsapp\/chajianrp\/sendprize, script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js
+
 [MITM]
-hostname = api.inews.qq.com
+hostname = api.inews.qq.com, api.prize.qq.com
