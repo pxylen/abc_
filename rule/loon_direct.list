@@ -1,0 +1,17 @@
+# 直连规则
+
+DOMAIN-KEYWORD,apple
+DOMAIN-KEYWORD,itunes
+DOMAIN-KEYWORD,testflight
+DOMAIN-KEYWORD,oray
+DOMAIN-KEYWORD,51zhaoyou
+
+DOMAIN-KEYWORD,xiaohongshu
+DOMAIN-KEYWORD,xhscdn
+
+# 卧龙影视
+DOMAIN-KEYWORD,wolong
+DOMAIN-KEYWORD,tgmmvip
+
+DOMAIN,ib.snssdk.com
+DOMAIN,apapia-history.manmanbuy.com

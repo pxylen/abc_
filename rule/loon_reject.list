@@ -1,0 +1,231 @@
+# NAME: blockAd
+# GITHUB: https://github.com/blackmatrix7/ios_rule_script
+
+# 自定义
+DOMAIN,ios.bugly.qq.com
+DOMAIN,aexception.bugly.qq.com
+DOMAIN,tingyun.com
+DOMAIN,tingyunfenxi.com
+DOMAIN,abtest.alibaba.com
+DOMAIN,acookie.alibaba.com
+DOMAIN,acookie.alimama.com
+DOMAIN,logs.amap.com
+DOMAIN,mtrace.play.aiseet.atianqi.com
+DOMAIN,alog.umeng.co
+DOMAIN,alog.umeng.com
+DOMAIN,alog.umengcloud.com
+DOMAIN,alogs.umeng.com
+DOMAIN,alogs.umengcloud.com
+DOMAIN,umengcloud.com
+DOMAIN,ulogs.umeng.com
+DOMAIN,ulogs.umengcloud.com
+DOMAIN,uop.umeng.com
+DOMAIN,plbslog.umeng.com
+DOMAIN,w.m.taobao.com
+DOMAIN,m-adash.m.taobao.com
+DOMAIN,mclick.simba.taobao.com
+DOMAIN,nbsdk-baichuan.alicdn.com
+DOMAIN,nbsdk-baichuan.taobao.com
+DOMAIN,openjmacs.m.taobao.com
+DOMAIN,openkatalog.com
+DOMAIN,openmsf.3g.qq.com
+DOMAIN,openrcv.baidu.com
+DOMAIN,mtj.baidu.cn
+DOMAIN,mtj.baidu.com
+DOMAIN,nlog.baidu.com
+DOMAIN,pimlog.baidu.com
+DOMAIN,shouji.360.cn
+DOMAIN,shouji.sougou.com
+DOMAIN,ad.12306.cn
+DOMAIN,cm.baichuan.baidu.com
+DOMAIN,cm.baidu.com
+DOMAIN,cm.bilibili.com
+DOMAIN,ylog.huya.com
+DOMAIN,log.umsns.com
+DOMAIN,adsmind.ugdtimg.com
+DOMAIN,g1.tagtic.cn
+DOMAIN,img.adnyg.com
+DOMAIN,w.kunlungr.com
+DOMAIN,log.tagtic.cn
+DOMAIN,pgdt.ugdtimg.com
+DOMAIN,sdownload.stargame.com
+DOMAIN,unilog.wostore.cn
+DOMAIN,t7z.cupid.iqiyi.com
+DOMAIN,msg.71.am
+DOMAIN,agn.aty.sohu.com
+DOMAIN,ad.api.3g.tudou.com
+DOMAIN,ark.letv.com
+DOMAIN,dc.letv.com
+DOMAIN,g3.letv.cn
+DOMAIN,pic.fastapi.net
+DOMAIN,x.da.hunantv.com
+DOMAIN,y.da.hunantv.com
+DOMAIN,accscdn.m.taobao.com
+DOMAIN,acs.wapa.taobao.com
+DOMAIN,aeventlog.beacon.qq.com
+DOMAIN,log.tiktokv.com
+DOMAIN,wlog.kuaishou.com
+# 彩云天气
+DOMAIN,ad.caiyunapp.com
+# 度小满网贷广告
+DOMAIN,adsmis.duxiaoman.com
+
+DOMAIN,dm.toutiao.com
+DOMAIN,ad.data.lianjia.com
+DOMAIN-SUFFIX,log-hl.snssdk.com
+DOMAIN-SUFFIX,abtest-ch.snssdk.com
+DOMAIN-SUFFIX,smr.snssdk.com
+DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
+DOMAIN,api-access.pangolin-sdk-toutiao.com
+
+
+# (A)
+# > Apple
+DOMAIN-SUFFIX,iadsdk.apple.com
+DOMAIN-SUFFIX,ads.internal.unity3d.com
+DOMAIN-SUFFIX,ads.prd.ie.internal.unity3d.com
+DOMAIN-SUFFIX,unityads.unity3d.com
+# 绕过企业证书过期
+DOMAIN,ocsp.apple.com
+
+# --- (Alibaba) ---
+DOMAIN,tunion-api.m.taobao.com
+# > YOUKU
+DOMAIN-SUFFIX,atm.youku.com
+DOMAIN,ad.mobile.youku.com
+DOMAIN,iyes.youku.com
+DOMAIN,pl.cp31.ott.cibntv.net
+DOMAIN,ad.api.3g.youku.com
+# > AMap
+DOMAIN,optimus-ads.amap.com
+DOMAIN,optimus-ads.amap.com.w.alikunlun.com
+# (B)
+# --- (Baidu) ---
+DOMAIN-SUFFIX,cpro.baidu.com
+DOMAIN-SUFFIX,pos.baidu.com
+DOMAIN,afd.baidu.com
+DOMAIN,als.baidu.com
+DOMAIN,duclick.baidu.com
+DOMAIN,mobads.baidu.com
+DOMAIN,mobads-logs.baidu.com
+DOMAIN,nsclick.baidu.com
+# (G)
+# > Google
+DOMAIN-SUFFIX,doubleclick.net
+DOMAIN-SUFFIX,googleadservices.com
+DOMAIN-SUFFIX,googleadsserving.cn
+DOMAIN-SUFFIX,googlesyndication.com
+DOMAIN-SUFFIX,googletagservices.com
+DOMAIN,ads.youtube.com
+# (S)
+# > Sina
+DOMAIN-SUFFIX,beacon.sina.com.cn
+DOMAIN,adimg.uve.weibo.com
+DOMAIN,adimg.vue.weibo.com
+DOMAIN,u1.img.mobile.sina.cn
+DOMAIN,sax.sina.com.cn
+DOMAIN,saxs.sina.com.cn
+DOMAIN,saxn.sina.com.cn
+DOMAIN,ad.us.sinaimg.cn
+# > SOHU
+DOMAIN-SUFFIX,ad.sohu.com
+DOMAIN-SUFFIX,ads.sohu.com
+DOMAIN-SUFFIX,aty.sohu.com
+DOMAIN,imp.optaim.com
+DOMAIN,v2.reachmax.cn
+DOMAIN,hui.sohu.com
+
+# (T)
+# --- (Tencent) ---
+DOMAIN-SUFFIX,e.qq.com
+DOMAIN-SUFFIX,gdt.qq.com
+DOMAIN-SUFFIX,l.qq.com
+DOMAIN,adsmind.apdcdn.tc.qq.com
+DOMAIN,adsmind.gdtimg.com
+DOMAIN,adsmind.tc.qq.com
+DOMAIN,pgdt.gtimg.cn
+DOMAIN,pgdt.gtimg.com
+DOMAIN,pgdt.ugdtimg.com
+DOMAIN,splashqqlive.gtimg.com
+DOMAIN,wa.gtimg.com
+DOMAIN,wxsnsdy.wxs.qq.com
+DOMAIN,wxsnsdythumb.wxs.qq.com
+DOMAIN,c.l.qq.com
+DOMAIN,bs.l.qq.com
+DOMAIN,c2.l.qq.com
+DOMAIN,cb.l.qq.com
+DOMAIN,cm.l.qq.com
+DOMAIN,hm.l.qq.com
+DOMAIN,l.qq.com
+DOMAIN,l2.l.qq.com
+DOMAIN,lb.l.qq.com
+DOMAIN,livec.l.qq.com
+DOMAIN,livem.l.qq.com
+DOMAIN,livep.l.qq.com
+DOMAIN,lives.l.qq.com
+DOMAIN,ls.l.qq.com
+DOMAIN,p2.l.qq.com
+DOMAIN,p3.l.qq.com
+DOMAIN,t.l.qq.com
+DOMAIN,vd.l.qq.com
+DOMAIN,w.l.qq.com
+DOMAIN,news.l.qq.com
+DOMAIN,mcgi.v.qq.com
+DOMAIN,soup.v.qq.com
+DOMAIN,bksoup.v.qq.com
+
+# > Tencent Music (TME)
+DOMAIN,ad.tencentmusic.com
+DOMAIN,adserviceretry.kugou.com
+DOMAIN,ads.service.kugou.com
+DOMAIN,adsfile.bssdlbig.kugou.com
+DOMAIN,g.koowo.com
+DOMAIN,kgmobilestat.kugou.com
+DOMAIN,kgmobilestatbak.kugou.com
+DOMAIN,mobilelog.kugou.com
+DOMAIN,mobilead.kuwo.cn
+DOMAIN,rich.kuwo.cn
+# > 小红书
+DOMAIN,ads-img-qc.xhscdn.com
+DOMAIN,ads-video-qc.xhscdn.com
+DOMAIN,t-ads.xiaohongshu.com
+# (Z)
+# > ZOL
+DOMAIN,apppv.zol.com.cn
+DOMAIN,pvnapp.zol.com.cn
+
+# > 爱奇艺
+DOMAIN-SUFFIX,act.vip.iqiyi.com
+DOMAIN-SUFFIX,cupid.iqiyi.com
+DOMAIN-SUFFIX,yuedu.iqiyi.com
+DOMAIN-SUFFIX,c.uaa.iqiyi.com
+DOMAIN-SUFFIX,cards-css.iqiyi.com
+DOMAIN-SUFFIX,cloudpush.iqiyi.com
+DOMAIN-SUFFIX,cm.passport.iqiyi.com
+DOMAIN-SUFFIX,cs-feige.iqiyi.com
+DOMAIN-SUFFIX,dx-cards-css.iqiyi.com
+DOMAIN-SUFFIX,emoticon-sns.iqiyi.com
+DOMAIN-SUFFIX,emoticon.sns.iqiyi.com
+DOMAIN-SUFFIX,gamecenter.iqiyi.com
+DOMAIN-SUFFIX,hotchat-im.iqiyi.com
+DOMAIN-SUFFIX,ifacelog.iqiyi.com
+DOMAIN-SUFFIX,mbdlog.iqiyi.com
+DOMAIN-SUFFIX,msg.iqiyi.com
+DOMAIN-SUFFIX,nl-rcd.iqiyi.com
+DOMAIN-SUFFIX,nl.rcd.iqiyi.com
+DOMAIN-SUFFIX,notice.iqiyi.com
+DOMAIN-SUFFIX,paopao.iqiyi.com
+DOMAIN-SUFFIX,policy.video.iqiyi.com
+DOMAIN-SUFFIX,static.g.iqiyi.com
+DOMAIN-SUFFIX,tracker.sns.iqiyi.com
+DOMAIN-SUFFIX,ad.m.iqiyi.com
+DOMAIN-SUFFIX,afp.iqiyi.com
+DOMAIN-SUFFIX,baiducdncmn-gd.inter.iqiyi.com
+DOMAIN-SUFFIX,baiducdncmn.inter.iqiyi.com
+DOMAIN-SUFFIX,paopao-monitor.iqiyi.com
+DOMAIN-SUFFIX,puma-api.iqiyi.com
+DOMAIN-SUFFIX,puma.api.iqiyi.com
+DOMAIN-SUFFIX,store.iqiyi.com
+DOMAIN-SUFFIX,iqiyi.kim
+DOMAIN-SUFFIX,iqiyi.pub
+DOMAIN-SUFFIX,iqiyi.space
