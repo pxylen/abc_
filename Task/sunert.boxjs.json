@@ -432,7 +432,7 @@
           "placeholder": "stair_redpack_chajian", 
           "val": "", 
           "name": "自定义活动ID", 
-          "type": "textarea"
+          "type": "text"
         }
       ], 
       "name": "腾讯新闻", 
