@@ -505,6 +505,29 @@
             "repo": "https://github.com/age174/-/blob/main/wkzz.js",
             "icons": ["https://ae01.alicdn.com/kf/Uff0a0bb9e66a479591c9b02c176fd276A.jpg", "https://ae01.alicdn.com/kf/Uff0a0bb9e66a479591c9b02c176fd276A.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/wkzz.js"
+    } ,
+    {
+            "id": "llyd",
+            "name": "66阅读",
+            "keys": ["llydurl", "llydhd", "llydurl2", "llydhd2","llydurl3", "llydhd3","llydurl4", "llydhd4","llydurl5", "llydhd5","llydurl6", "llydhd6","llydurl7", "llydhd7","llydurl8", "llydhd8","llydurl9", "llydhd9","llydurl10", "llydhd10","llydurl11", "llydhd11"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "llydstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "llydcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/llyd.js",
+            "icons": ["https://ae01.alicdn.com/kf/Uaade4566dd3744299956aa883f225386u.jpg", "https://ae01.alicdn.com/kf/Uaade4566dd3744299956aa883f225386u.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/llyd.js"
     }
 ]
 }
