@@ -503,10 +503,12 @@ http-request ^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut script-path=htt
 http-request https:\/\/commontgw6\.reader\.qq\.com\/v7_5_2\/nativepage\/getAcctInfo script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/QQread.js, requires-header=true, tag=QQ阅读APP获取cookie
 #QQ阅读APP获取视频cookie
 http-request https:\/\/eventv36\.reader\.qq\.com\/activity\/pkg11955\/watchVideo script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/QQread.js, requires-header=true, tag=QQ阅读APP获取视频cookie
-#xp
-http-response https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/iboxpay.js,  tag=xp
-#xiaole
-http-request https:\/\/minapp\.xqrobot\.net\/* script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/xiaole.js, requires-header=true, tag=xiaole
+#笑谱获取更新TOKEN
+http-response https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/iboxpay.js,  tag=笑谱获取更新TOKEN
+#笑谱获取视频ck
+http-request https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf_customer_activity\/day_cash\/v1\/give_gold_coin_by_video.json script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/iboxpay.js, requires-body=true, tag=笑谱获取视频ck
+#小乐获取ck
+http-request https:\/\/minapp\.xqrobot\.net\/* script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/xiaole.js, requires-header=true, tag=小乐获取ck
 #duokandian
 http-request #http:\/\/dkd-api\.dysdk\.com\/* script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/duokandian.js, requires-body=true, tag=http:\/\/dkd-api\.dysdk\.com\/*
 #羊毛赚获取BODY
