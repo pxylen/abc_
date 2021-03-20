@@ -42,106 +42,106 @@ jobs:
           node jd_bean_sign.js
 
 
-#      - name: '运行 【京喜签到】'
-#        run: |
-#          cd ~/TaskAction
-#          node jx_sign.js
-#
-#
-#      - name: '运行 【京小超兑换奖品】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_blueCoin.js
+      - name: '运行 【京喜签到】'
+        run: |
+          cd ~/TaskAction
+          node jx_sign.js
 
 
-#      - name: '运行 【摇京豆】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_club_lottery.js
-#
-#
-#      - name: '运行 【领京豆额外奖励】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_bean_home.js
-#
-#
-#      - name: '运行 【京东全民开红包】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_redPacket.js
-#
-#
-#      - name: '运行 【进店领豆】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_shop.js
-#
-#
-#      - name: '运行 【签到领现金】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_cash.js
-#
-#
-#      - name: '运行 【京东汽车】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_car.js
-#
-#
-#      - name: '运行 【京东汽车】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_car_exchange.js
-#
-#
-#      - name: '运行 【东东小窝】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_small_home.js
-#
-#
-#      - name: '运行 【疯狂的joy】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_crazy_joy.js
-#
-#
-#      - name: '运行 【金融养猪】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_pigPet.js
-#
-#
-#      - name: '运行 【十元街】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_syj.js
-#
-#
-#      - name: '运行 【京东快递】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_kd.js
-#
-#
-#      - name: '运行 【京东赚赚】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_jdzz.js
-#
-#
-#      - name: '运行 【盲盒抽京豆】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_sgmh.js
-#
-#
-#      - name: '运行 【京东秒秒币】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_ms.js
+      - name: '运行 【京小超兑换奖品】'
+        run: |
+          cd ~/TaskAction
+          node jd_blueCoin.js
+
+
+      - name: '运行 【摇京豆】'
+        run: |
+          cd ~/TaskAction
+          node jd_club_lottery.js
+
+
+      - name: '运行 【领京豆额外奖励】'
+        run: |
+          cd ~/TaskAction
+          node jd_bean_home.js
+
+
+      - name: '运行 【京东全民开红包】'
+        run: |
+          cd ~/TaskAction
+          node jd_redPacket.js
+
+
+      - name: '运行 【进店领豆】'
+        run: |
+          cd ~/TaskAction
+          node jd_shop.js
+
+
+      - name: '运行 【签到领现金】'
+        run: |
+          cd ~/TaskAction
+          node jd_cash.js
+
+
+      - name: '运行 【京东汽车】'
+        run: |
+          cd ~/TaskAction
+          node jd_car.js
+
+
+      - name: '运行 【京东汽车】'
+        run: |
+          cd ~/TaskAction
+          node jd_car_exchange.js
+
+
+      - name: '运行 【东东小窝】'
+        run: |
+          cd ~/TaskAction
+          node jd_small_home.js
+
+
+      - name: '运行 【疯狂的joy】'
+        run: |
+          cd ~/TaskAction
+          node jd_crazy_joy.js
+
+
+      - name: '运行 【金融养猪】'
+        run: |
+          cd ~/TaskAction
+          node jd_pigPet.js
+
+
+      - name: '运行 【十元街】'
+        run: |
+          cd ~/TaskAction
+          node jd_syj.js
+
+
+      - name: '运行 【京东快递】'
+        run: |
+          cd ~/TaskAction
+          node jd_kd.js
+
+
+      - name: '运行 【京东赚赚】'
+        run: |
+          cd ~/TaskAction
+          node jd_jdzz.js
+
+
+      - name: '运行 【盲盒抽京豆】'
+        run: |
+          cd ~/TaskAction
+          node jd_sgmh.js
+
+
+      - name: '运行 【京东秒秒币】'
+        run: |
+          cd ~/TaskAction
+          node jd_ms.js
 
 
 
