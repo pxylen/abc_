@@ -1,6 +1,6 @@
 
 /*
-更新时间: 2021-03-19 22:30
+更新时间: 2021-03-20 08:40
 
 腾讯新闻签到修改版，可以自动阅读文章获取红包，该活动为瓜分百万现金挑战赛，针对幸运用户参与，本脚本已不能自动打开红包，需每天要打开腾讯新闻app一次，请须知
 
@@ -81,7 +81,7 @@ if (isGetCookie) {
             prizeVal = prizeArr[i] 
             $.index = i + 1;
             console.log(`-------------------------\n\n开始【腾讯新闻账号${$.index}】`)
-            ID = signurlVal.match(/devid=[a-zA-Z0-9_-]+/g)[0]
+            ID = signurlVal.match(/devid=([a-zA-Z0-9_-]+)/)[1]
             token = signurlVal.split("mac")[1]
             taskurl = 'http://inews.qq.com/inews/iphone/';
             await getsign();
@@ -129,14 +129,14 @@ function GetCookie() {
 
 function Host(api, body, taskurl) {
     return {
-        url: 'https://api.inews.qq.com/activity/v1/' + api + '&isJailbreak=0&' + ID,
+        url: 'https://api.inews.qq.com/activity/v1/' + api + '&isJailbreak=0&devid=' + ID,
         headers: {
             'Accept': '*/*',
             'Accept-Encoding': 'gzip, deflate, br',
             'Accept-Language': 'zh-Hans-CN;q=1, en-CN;q=0.9, zh-Hant-CN;q=0.8',
             'Connection': 'keep-alive',
-             'Cookie': cookieVal,
-            // 'Host': 'api.inews.qq.com',
+            'Cookie': cookieVal,
+            //'Host': 'api.inews.qq.com',
             'Referer': taskurl,
             'store': '1',
             'devid': ID,
@@ -155,7 +155,7 @@ function getsign() {
         };
         $.post(signUrl, (error, resp, data) => {
             let obj = JSON.parse(data)
-                //$.log(JSON.stringify(obj,null,2))
+                // $.log(JSON.stringify(obj,null,2))
             if (obj.info == "success") {
                 next = obj.data.next_points
                 tip = obj.data.tip_soup || obj.data.share_tip
@@ -187,7 +187,7 @@ function open() {
          $.log(amount)
          $.msg($.name, amount,"")
        }
-     } else if(resp.statusCode !== 403){
+     } else if(resp.statusCode == 403){
        $.log(JSON.stringify(resp,null,2))
      }
      resolve()
@@ -231,10 +231,8 @@ function activity() {
                     actid = taskres.data.award_notice.activity_id;
                     if (!actid) {
                         actid = $.getdata('txnews_id')
-                    } else {
-                    $.log(`\n您的活动ID为: ` + actid + "\n\n********* 开始阅读任务 ********\n");
-                    $.setdata(actid,"txnews_id")
                     }
+                    $.log(`\n您的活动ID为: ` + actid + "\n\n********* 开始阅读任务 ********\n");
                     $.desc = ""
                     for (tasks of taskres.data.list) {
                         taskname = tasks.task_title,
