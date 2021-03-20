@@ -93,7 +93,8 @@ function Host(api, body) {
             'Lottery-Access-Signature': Sign,
             'openId': openid,
             'LKYLToken': token,
-            'Cookie': cookieval
+            'Cookie': cookieval,
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.2(0x18000237) NetType/WIFI Language/zh_CN'
         },
         body: body
     }
@@ -101,7 +102,8 @@ function Host(api, body) {
 
 function getsign() {
     return new Promise((resolve, reject) => {
-        $.post(Host('turncard/sign?petSign=true&turnTableId=131&source=HOME&', '{"fp":"","eid":"86CFE351F55E0808B83745BEFC3FF26F5FF95FE8"}'), async(error, response, data) => {
+        $.post(Host('turncard/sign?petSign=true&turnTableId=131&source=HOME&', '{"fp":"","eid":""}'), async(error, response, data) => {
+
             let result = JSON.parse(data);
             $.log(JSON.stringify(result, null, 2))
             if (result.errorCode === null) {
