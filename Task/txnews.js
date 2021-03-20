@@ -231,8 +231,10 @@ function activity() {
                     actid = taskres.data.award_notice.activity_id;
                     if (!actid) {
                         actid = $.getdata('txnews_id')
-                    }
+                    } else {
                     $.log(`\n您的活动ID为: ` + actid + "\n\n********* 开始阅读任务 ********\n");
+                $.setdata(actid,"txnews_id")
+                    }
                     $.desc = ""
                     for (tasks of taskres.data.list) {
                         taskname = tasks.task_title,
