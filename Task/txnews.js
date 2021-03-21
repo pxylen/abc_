@@ -1,6 +1,6 @@
 
 /*
-更新时间: 2021-03-20 08:40
+更新时间: 2021-03-21 10:40
 
 腾讯新闻签到修改版，可以自动阅读文章获取红包，该活动为瓜分百万现金挑战赛，针对幸运用户参与，本脚本已不能自动打开红包，需每天要打开腾讯新闻app一次，请须知
 
@@ -83,7 +83,6 @@ if (isGetCookie) {
             console.log(`-------------------------\n\n开始【腾讯新闻账号${$.index}】`)
             ID = signurlVal.match(/devid=([a-zA-Z0-9_-]+)/)[1]
             token = signurlVal.split("mac")[1]
-            taskurl = 'http://inews.qq.com/inews/iphone/';
             await getsign();
             prizeVal?await open():"";
             prizeVal?await treesign():"";
@@ -136,7 +135,7 @@ function Host(api, body, taskurl) {
             'Accept-Language': 'zh-Hans-CN;q=1, en-CN;q=0.9, zh-Hant-CN;q=0.8',
             'Connection': 'keep-alive',
             'Cookie': cookieVal,
-            //'Host': 'api.inews.qq.com',
+            'Host': 'api.inews.qq.com',
             'Referer': taskurl,
             'store': '1',
             'devid': ID,
@@ -178,8 +177,10 @@ function open() {
      url: prizeVal,
      headers: Host().headers,
      body: "actname=chajian_shouqi"
- }
- $.post(url, async(error, resp, data) => {
+ };
+     url.headers['Referer'] = 'http://inews.qq.com/inews/iphone/';
+     url.headers['Host'] = 'api.prize.qq.com';
+ $.post(url, (error, resp, data) => {
      if(resp.statusCode ==200){
        obj = JSON.parse(data);
        if(obj.code==0){
@@ -187,7 +188,7 @@ function open() {
          $.log(amount)
          $.msg($.name, amount,"")
        }
-     } else if(resp.statusCode == 403){
+     } else if(resp.statusCode !== 403){
        $.log(JSON.stringify(resp,null,2))
      }
      resolve()
@@ -367,7 +368,7 @@ function StepsTotal() {
 //阶梯红包到账
 function Redpack(red_body) {
     return new Promise((resolve, reject) => {
-        $.post(Host('activity/redpack/get?', `redpack_type=${red_body}&activity_id=${actid}`), (error, resp, data) => {
+        $.post(Host('activity/redpack/get?', `redpack_type=${red_body}&activity_id=${actid}`,'http://inews.qq.com/inews/iphone/'), (error, resp, data) => {
             let rcash = JSON.parse(data);
             try {
                 if (rcash.data.award.length == 1) {
