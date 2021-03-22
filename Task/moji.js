@@ -51,7 +51,7 @@ function earthQuake() {
                 $.earthquake = JSON.parse(data);
       //$.log(JSON.stringify($.earthquake,null,1))
               if($.earthquake.code==0){
-               quake = "\n【地震预测】\n  "+$.earthquake.data.placeName+"在"+$.earthquake.data.interval+"，发生"+$.earthquake.data.magnitude+"级地震，震源深度"+$.earthquake.data.depth+"KM，震中距"+$.earthquake.data.distance+"KM，本地震感"+$.earthquake.data.eqFeel+"，发生时间"+$.time("yyyy-MM-dd HH:mm:ss",$.earthquake.data.shockTime)
+               quake = "【地震预测】\n  "+$.earthquake.data.placeName+"在"+$.earthquake.data.interval+"，发生"+$.earthquake.data.magnitude+"级地震，震源深度"+$.earthquake.data.depth+"KM，震中距"+$.earthquake.data.distance+"KM，本地震感"+$.earthquake.data.eqFeel+"，发生时间"+$.time("yyyy-MM-dd HH:mm:ss",$.earthquake.data.shockTime)
                //$.log("\n地震预测:\n"+$.earthquake.data.placeName+"在"+$.earthquake.data.interval+"，发生"+$.earthquake.data.magnitude+"级地震，震源深度"+$.earthquake.data.depth+"KM，震中距"+$.earthquake.data.distance+"KM，本地震感"+$.earthquake.data.eqFeel+"，发生时间"+$.time("yyyy-MM-dd HH:mm:ss",$.earthquake.data.shockTime))
              }
             } catch (e) {
