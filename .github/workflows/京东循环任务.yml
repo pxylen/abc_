@@ -41,126 +41,122 @@ jobs:
           cd ~/TaskAction
           node jd_plantBean.js
 
-
-      - name: '运行 【东东农场】'
+      - name: '运行 【签到领现金】'
         run: |
           cd ~/TaskAction
-          node jd_fruit.js
+          node jd_cash.js
 
 
-      - name: '运行 【东东工厂】'
-        run: |
-          cd ~/TaskAction
-          node jd_jdfactory.js
-
-
-#      - name: '运行 【京喜农场】'
+#      - name: '运行 【东东农场】'
 #        run: |
 #          cd ~/TaskAction
-#          node jd_jxnc.js
+#          node jd_fruit.js
+#
+#
+#      - name: '运行 【东东工厂】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_jdfactory.js
+#
+#
+#      - name: '运行 【京喜工厂】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_dreamFactory.js
+#
+#
+#      - name: '运行 【东东萌宠】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_pet.js
+#
+#
+#      - name: '运行 【东东超市】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_superMarket.js
+#
+#
+#      - name: '运行 【口袋书店】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_bookshop.js
+#
+#
+#      - name: '运行 【宠汪汪积分兑换奖品】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_joy_reward.js
+#
+#
+#      - name: '运行 【宠汪汪偷好友积分与狗】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_joy_steal.js
 #        env:
-#          JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
-#          JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
-
-
-      - name: '运行 【京喜工厂】'
-        run: |
-          cd ~/TaskAction
-          node jd_dreamFactory.js
-
-
-      - name: '运行 【东东萌宠】'
-        run: |
-          cd ~/TaskAction
-          node jd_pet.js
-
-
-      - name: '运行 【东东超市】'
-        run: |
-          cd ~/TaskAction
-          node jd_superMarket.js
-
-
-      - name: '运行 【口袋书店】'
-        run: |
-          cd ~/TaskAction
-          node jd_bookshop.js
-
-
-      - name: '运行 【宠汪汪积分兑换奖品】'
-        run: |
-          cd ~/TaskAction
-          node jd_joy_reward.js
-
-
-      - name: '运行 【宠汪汪偷好友积分与狗】'
-        run: |
-          cd ~/TaskAction
-          node jd_joy_steal.js
-        env:
-          JOY_HELP_FEED: ${{ secrets.JOY_HELP_FEED }}
-          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
-
-
-      - name: '运行 【点点券】'
-        run: |
-          cd ~/TaskAction
-          node jd_necklace.js
-
-
-      - name: '运行 【京东天天加速】'
-        run: |
-          cd ~/TaskAction
-          node jd_speed.js
-
-
-      - name: '运行 【天天提鹅】'
-        run: |
-          cd ~/TaskAction
-          node jd_daily_egg.js
-
-
-      - name: '运行 【crazyJoy任务】'
-        run: |
-          cd ~/TaskAction
-          node jd_crazy_joy.js
-        env:
-          JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }}
-
-
-      - name: '运行 【京东财富岛】'
-        run: |
-          cd ~/TaskAction
-          node jd_cfd.js
-
-
-      - name: '运行 【京东摇钱树】'
-        run: |
-          cd ~/TaskAction
-          node jd_moneyTree.js
-        env:
-          MONEY_TREE_SELL_FRUIT: ${{ secrets.MONEY_TREE_SELL_FRUIT }}
-
-
-
-      - name: '运行 【京东直播】'
-        run: |
-          cd ~/TaskAction
-          node jd_live.js
-
-
-      - name: '运行 【她的节享京豆】'
-        run: |
-          cd ~/TaskAction
-          node jd_firecrackers.js
-        env:
-          FIRECRACKERS_NOTITY_BEAN: ${{ secrets.FIRECRACKERS_NOTITY_BEAN }}
-
-
-      - name: '运行 【环球挑战赛】'
-        run: |
-          cd ~/TaskAction
-          node jd_global.js
+#          JOY_HELP_FEED: ${{ secrets.JOY_HELP_FEED }}
+#          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
+#
+#
+#      - name: '运行 【点点券】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_necklace.js
+#
+#
+#      - name: '运行 【京东天天加速】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_speed.js
+#
+#
+#      - name: '运行 【天天提鹅】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_daily_egg.js
+#
+#
+#      - name: '运行 【crazyJoy任务】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_crazy_joy.js
+#        env:
+#          JDJOY_APPLYJDBEAN: ${{ secrets.JDJOY_APPLYJDBEAN }}
+#
+#
+#      - name: '运行 【京东财富岛】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_cfd.js
+#
+#
+#      - name: '运行 【京东摇钱树】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_moneyTree.js
+#        env:
+#          MONEY_TREE_SELL_FRUIT: ${{ secrets.MONEY_TREE_SELL_FRUIT }}
+#
+#
+#
+#      - name: '运行 【京东直播】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_live.js
+#
+#
+#      - name: '运行 【她的节享京豆】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_firecrackers.js
+#        env:
+#          FIRECRACKERS_NOTITY_BEAN: ${{ secrets.FIRECRACKERS_NOTITY_BEAN }}
+#
+#
+#      - name: '运行 【环球挑战赛】'
+#        run: |
+#          cd ~/TaskAction
+#          node jd_global.js
 
 
 

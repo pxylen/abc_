@@ -77,14 +77,6 @@ jobs:
 #          cd ~/TaskAction
 #          node jd_shop.js
 #
-#
-#      - name: '运行 【签到领现金】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_cash.js
-#        env:
-#          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}
-#
 #      - name: '运行 【京东汽车】'
 #        run: |
 #          cd ~/TaskAction
