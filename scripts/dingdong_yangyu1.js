@@ -322,6 +322,7 @@ function fishpond() {
             $hammer.log(`当前饲料剩余:${amount}g,${data.seeds[0].msg}`);
             if(amount < 10){
                 $hammer.log("饲料不够，明天再喂吧。");
+                $done();
                 return resolve();
             }
             seedId = data.seeds[0].seedId;
