@@ -1,0 +1,5 @@
+hostname=yuedongzu.yichengw.cn,
+
+############## 圈x
+#悦动族获取TOKEN
+https:\/\/yuedongzu\.yichengw\.cn\/* url script-request-header https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/yuedongzu.js
