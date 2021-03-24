@@ -476,33 +476,33 @@ http-request ^https\:\/\/m\.jingxi\.com\/jxcfd\/consume\/CashOut script-path=htt
 
 #ziye
 #QQ阅读APP获取cookie
-http-request https:\/\/commontgw6\.reader\.qq\.com\/v7_5_2\/nativepage\/getAcctInfo script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/QQread.js, requires-header=true, tag=QQ阅读APP获取cookie
+http-request https:\/\/commontgw6\.reader\.qq\.com\/v7_5_2\/nativepage\/getAcctInfo script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/QQread.js, requires-header=true, tag=QQ阅读APP获取cookie
 #QQ阅读APP获取视频cookie
-http-request https:\/\/eventv36\.reader\.qq\.com\/activity\/pkg11955\/watchVideo script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/QQread.js, requires-header=true, tag=QQ阅读APP获取视频cookie
+http-request https:\/\/eventv36\.reader\.qq\.com\/activity\/pkg11955\/watchVideo script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/QQread.js, requires-header=true, tag=QQ阅读APP获取视频cookie
 #笑谱获取更新TOKEN
-http-response https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/iboxpay.js,  tag=笑谱获取更新TOKEN
+http-response https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/iboxpay.js,  tag=笑谱获取更新TOKEN
 #笑谱获取视频ck
-http-request https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf_customer_activity\/day_cash\/v1\/give_gold_coin_by_video.json script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/iboxpay.js, requires-body=true, tag=笑谱获取视频ck
+http-request https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf_customer_activity\/day_cash\/v1\/give_gold_coin_by_video.json script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/iboxpay.js, requires-body=true, tag=笑谱获取视频ck
 #小乐获取ck
-http-request https:\/\/minapp\.xqrobot\.net\/* script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/xiaole.js, requires-header=true, tag=小乐获取ck
+http-request https:\/\/minapp\.xqrobot\.net\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/xiaole.js, requires-header=true, tag=小乐获取ck
 #duokandian
-http-request #http:\/\/dkd-api\.dysdk\.com\/* script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/duokandian.js, requires-body=true, tag=http:\/\/dkd-api\.dysdk\.com\/*
+http-request #http:\/\/dkd-api\.dysdk\.com\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/duokandian.js, requires-body=true, tag=http:\/\/dkd-api\.dysdk\.com\/*
 #羊毛赚获取BODY
-http-request #http:\/\/ymz\.iphonezhuan\.com\/* script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/ymzhuan.js, requires-body=true, tag=http:\/\/ymz\.iphonezhuan\.com\/*
+http-request #http:\/\/ymz\.iphonezhuan\.com\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/ymzhuan.js, requires-body=true, tag=http:\/\/ymz\.iphonezhuan\.com\/*
 #羊毛赚模拟登录
-http-response #http:\/\/ymz\.iphonezhuan\.com\/* script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/ymzhuan.js,  tag=http:\/\/ymz\.iphonezhuan\.com\/*
+http-response #http:\/\/ymz\.iphonezhuan\.com\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/ymzhuan.js,  tag=http:\/\/ymz\.iphonezhuan\.com\/*
 #芝嫲视频获取body
-http-request https:\/\/api\.sxsjyzm\.com\/* script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/zhima.js, requires-body=true, tag=芝嫲视频获取body
+http-request https:\/\/api\.sxsjyzm\.com\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/zhima.js, requires-body=true, tag=芝嫲视频获取body
 #步步宝获取TOKEN
-http-request https:\/\/bububao\.duoshoutuan\.com\/user\/* script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/bububao.js, requires-header=true, tag=步步宝获取TOKEN
+http-request https:\/\/bububao\.duoshoutuan\.com\/user\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/bububao.js, requires-header=true, tag=步步宝获取TOKEN
 #全民悦动获取TOKEN
-http-request https:\/\/qmyd\.yichengw\.cn\/* script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/qmyd.js, requires-header=true, tag=全民悦动获取TOKEN
+http-request https:\/\/qmyd\.yichengw\.cn\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/qmyd.js, requires-header=true, tag=全民悦动获取TOKEN
 #悦动族
-http-request https:\/\/yuedongzu\.yichengw\.cn\/* script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/yuedongzu.js, requires-header=true, tag=悦动族
+http-request https:\/\/yuedongzu\.yichengw\.cn\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/yuedongzu.js, requires-header=true, tag=悦动族
 #返利网获取header
-http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/flw.js, requires-header=true, tag=返利网获取header
+http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/flw.js, requires-header=true, tag=返利网获取header
 #返利网获取body
-http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) script-path=https://raw.githubusercontent.com/sngxpro/actionjd/ZIYE/Task/flw.js, requires-body=true, tag=返利网获取body
+http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fanli\.com\/*) script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main//Task/flw.js, requires-body=true, tag=返利网获取body
 
 #age174
 #金钱豹
