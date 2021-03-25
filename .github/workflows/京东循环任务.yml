@@ -47,36 +47,36 @@ jobs:
           node jd_cash.js
 
 
-#      - name: '运行 【东东农场】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_fruit.js
-#
-#
-#      - name: '运行 【东东工厂】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_jdfactory.js
-#
-#
-#      - name: '运行 【京喜工厂】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_dreamFactory.js
-#
-#
-#      - name: '运行 【东东萌宠】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_pet.js
-#
-#
-#      - name: '运行 【东东超市】'
-#        run: |
-#          cd ~/TaskAction
-#          node jd_superMarket.js
-#
-#
+      - name: '运行 【东东农场】'
+        run: |
+          cd ~/TaskAction
+          node jd_fruit.js
+
+
+      - name: '运行 【东东工厂】'
+        run: |
+          cd ~/TaskAction
+          node jd_jdfactory.js
+
+
+      - name: '运行 【京喜工厂】'
+        run: |
+          cd ~/TaskAction
+          node jd_dreamFactory.js
+
+
+      - name: '运行 【东东萌宠】'
+        run: |
+          cd ~/TaskAction
+          node jd_pet.js
+
+
+      - name: '运行 【东东超市】'
+        run: |
+          cd ~/TaskAction
+          node jd_superMarket.js
+
+
 #      - name: '运行 【口袋书店】'
 #        run: |
 #          cd ~/TaskAction
