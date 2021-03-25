@@ -23,6 +23,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 3.8 替换为循环获取ck
 3.13 修复0.3提现
 3.23 设置CASH为1000以上时则在23.59分执行1秒的循环提现，以此类推
+3.25 替换为await形式
 
 ⚠️ 时间设置    0,30 0-23 * * *    每天 35次以上就行   
 
@@ -62,7 +63,7 @@ http-response https:\/\/bububao\.duoshoutuan\.com\/user\/* script-path=https://c
 #步步宝获取TOKEN
 步步宝获取TOKEN = type=http-response,pattern=https:\/\/bububao\.duoshoutuan\.com\/user\/*,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/bububao.js
 */
-GXRZ = '3.23 设置CASH为1000则在23.59分执行1秒的50元循环提现，以此类推'
+GXRZ = '3.25 替换为await形式'
 const $ = Env("步步宝");
 $.idx = ($.idx = ($.getval('bububaoSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -335,9 +336,9 @@ async function all() {
             B = Date.now() + CASH
             C= daytime()+86400000
             while (Date.now() <= B) {
-              if (Date.now() >= C&&Date.now() <= C+1) {
+              if (Date.now() >= C&&Date.now() <= C+3) {
                 CASH = 50
-                 tixian()
+                 await tixian()
              }
          }
 
