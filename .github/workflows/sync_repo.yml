@@ -16,14 +16,14 @@ jobs:
         with:
           persist-credentials: false
 
-#      - name: sync sync-ziye
-#        uses: repo-sync/github-sync@v2
-#        if: env.PAT
-#        with:
-#          source_repo: "https://github.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE.git"
-#          source_branch: "main"
-#          destination_branch: "ziye"
-#          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
+      - name: sync sync-ziye
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/ziye888/JavaScript.git"
+          source_branch: "main"
+          destination_branch: "ziye"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
 
 
       - name: sync sync-zhiyi
