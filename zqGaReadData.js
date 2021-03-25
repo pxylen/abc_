@@ -30,11 +30,21 @@ const myStatus = "HTTP/1.1 200 OK";
 const myHeaders = {"Connection": "Close"};
 const currDate = new Date();
 const utc8 = currDate.getTime() + (currDate.getTimezoneOffset() * 60 * 1000) + 8 * 60 * 60 * 1000;
-$.zqCount = ($.zqCount = ($.getval('zqCount') || '1') - 1) > 0 ? $.zqCount + 1 : 1; // 执行任务的账号个数
-$.log('', `======== 共${$.zqCount}个账号位，执行时间(UTC+8)：${new Date(utc8).toLocaleString()}  ========`, '');
+let zqAc = $.getval('zqExecAc') || '';
+if (/^(,?\d+)+$/.test(zqAc)) {
+  zqAc = zqAc.split(',').sort();
+} else {
+  zqAc = [];
+  // 兼容旧配置
+  $.zqCount = ($.zqCount = ($.getval('zqCount') || '1') - 1) > 0 ? $.zqCount + 1 : 1; // 执行任务的账号个数
+  for (let index = 1; index <= $.zqCount; index++) {
+    zqAc.push(index + '');
+  }
+}
+$.log('', `======== 共${zqAc.length}个账号位，执行时间(UTC+8)：${new Date(utc8).toLocaleString()}  ========`, '');
 let myData = [];
-for (let index = 0; index < $.zqCount; index++) {
-  $.idx = $.suffix(index);
+for (let acIdx of zqAc) {
+  $.idx = $.suffix(acIdx-1);
   $.acName = $.name + ($.idx || '1');
   const count = ($.getval(countKey + $.idx) || 0) - 0;
   let data = printReadDataToLog(count);
@@ -44,7 +54,7 @@ for (let index = 0; index < $.zqCount; index++) {
 const myResponse = {
     status: myStatus,
     headers: myHeaders,
-    body: myData.join('\n')
+    body: myData.join('\n\n')
 };
 $done(myResponse);
 
