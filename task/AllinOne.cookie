@@ -411,9 +411,6 @@ http-request https://youhui.95516.com/newsign/public/app/index.html script-path=
 #途虎养车
 http-request https://api.tuhu.cn/User/GetUserCurrentAndNextGradeInfo script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/tuhu/tuhu.Cookie.js, requires-header=true, tag=途虎养车
 
-#sheylocks
-#京东粉丝专享
-http-request https:\/\/wq\.jd\.com\/bases\/jssdk\/GetWxJsApiSign script-path=https://raw.githubusercontent.com/sngxpro/delete/main/s/jd_wechat_sign.js, requires-header=true, tag=京东粉丝专享
 
 #adwktt
 #一刻视频
