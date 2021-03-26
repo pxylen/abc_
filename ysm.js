@@ -81,7 +81,6 @@ concurrency = concurrency < 1 ? 1 : concurrency
 
 const execNo = [] // 允许执行的账号，为空时不限制，指定时，按照指定的来判断处理，例如：[1,3]
 
-const moveData = 0 // 是否迁移旧数据，0-不迁移、1-迁移
 
 const baseHeaders = {
   "Accept": "application/json, text/javascript, */*; q=0.01",
