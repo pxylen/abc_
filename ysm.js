@@ -81,6 +81,7 @@ concurrency = concurrency < 1 ? 1 : concurrency
 
 const execNo = [] // 允许执行的账号，为空时不限制，指定时，按照指定的来判断处理，例如：[1,3]
 
+const moveData = 0 
 
 const baseHeaders = {
   "Accept": "application/json, text/javascript, */*; q=0.01",
@@ -107,7 +108,7 @@ const baseHeaders = {
       msgInfo.push(rtList.map(ac => `【账号${ac.no}】\n当前余额：${ac.last_gold}币\n今日奖励：${ac.day_gold}\n已阅读数：${ac.day_read}\n待阅读数：${ac.remain_read}${ac.extMsg?'\n\t'+ac.extMsg:''}`).join('\n\n'))
     }
     if (msgInfo.length <= 0) {
-      msgInfo.push(`暂无账号数据，请重新扫码进入云扫码首页抓取数据或通过boxjs迁移之前抓取的账号数据`)
+      msgInfo.push(`暂无账号数据，请重新扫码进入云扫码首页抓取数据`)
     }
     if (needNotice) {
       $.msg($.name, '', msgInfo.join('\n\n'))
