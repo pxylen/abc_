@@ -141,7 +141,7 @@ function getsign() {
         $.get(signurl, async(error, resp, data) => {
             let result = JSON.parse(data)
             if (result.status == 10000) {
-                wbsign = `【微博签到】 ✅ 连续签到${result.data.continuous}天，收益: ${result.data.desc}💰\n`
+                wbsign = `【微博签到】 ✅ 连续签到${result.data.continuous}天，收益:${result.data.desc}\n`
             } else if (result.errno == 30000) {
                 wbsign = `【每日签到】 🔁 已签到\n`
                 if (cookie) {
@@ -215,7 +215,7 @@ function paysign() {
         $.post(payApi('aj/mobile/home/welfare/signin/do?_=' + $.startTime + 10), async(error, resp, data) => {
             let result = JSON.parse(data)
             if (result.status == 1) {
-                paybag = `【微博钱包】 ✅ +` + result.score + ' 分\n'
+                paybag = '【微博钱包】✅ 获得' + result.score + '积分\n'
             } else if (result.status == '2') {
                 paybag = `【微博钱包】 🔁 `
                 await payinfo()
