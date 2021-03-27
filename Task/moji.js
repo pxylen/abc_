@@ -1,6 +1,6 @@
 /*
 支持boxjs手动修改位置，可直接输入中文地区名，感谢@58xinian制作的天气动态图
-更新时间 2021-03-22 23:20
+更新时间 2021-03-27 14:20
 */
 const $ = new Env('墨迹天气');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -217,6 +217,10 @@ function mapSkycon(skycon) {
             "💨 浮尘",
             //"https://raw.githubusercontent.com/Sunert/Profiles/master/QuantumultX/Rules/Images/icon/RAIN_SNOW.png",
         ],
+        "霾": [
+            "🌫 霾",
+            //"https://raw.githubusercontent.com/Sunert/Profiles/master/QuantumultX/Rules/Images/icon/RAIN_SNOW.png",
+        ]
         //FOG: ["🌫️ 雾"],
         //DUST: ["💨 浮尘"],
         //SAND: ["💨 沙尘"],
@@ -329,8 +333,9 @@ async function showmsg() {
     if (fortys == 'true') {
         $.desc += "【40天预告】\n  " + forDay40 + "，"+ temp40
     }
-    $.sub = "【今日天气】" + (mapSkycon(nowweather)[0]?mapSkycon(nowweather)[0]:" "+nowweather)
-    $.msg($.weather.data.city + "天气预报 " + $.weather.data.forecast_day[0].predict_date + $.weather.data.forecast_day[0].predict_week + " " + Festival, $.sub, $.desc+(quake?quake:""), { "media-url": `${mapSkycon(nowweather)[1]}`})
+    Skycon = mapSkycon(nowweather)?mapSkycon(nowweather)[1]:"";
+    $.sub = "【今日天气】" + today_Skycon;
+    $.msg($.weather.data.city + "天气预报 " + $.weather.data.forecast_day[0].predict_date + $.weather.data.forecast_day[0].predict_week + " " + Festival, $.sub, $.desc+(quake?quake:""), { "media-url": `${Skycon}`})
     if($.isNode()){
      await notify.sendNotify($.weather.data.city + "天气预报 " + $.weather.data.forecast_day[0].predict_date + $.weather.data.forecast_day[0].predict_week + " " + Festival, $.sub+"\n"+$.desc+(quake?quake:""))
     }
