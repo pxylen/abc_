@@ -423,6 +423,9 @@ function ysm1(ac, count) {
               $.log(`🌝账号${ac.no}jump接口请求失败，重新执行阅读任务`)
               await $.wait(1500)
             }
+          } else if (data == '{"errcode":0,"msg":"success"}') {
+            $.logErr(`🚫账号${ac.no}：🧼来自肥皂的提示:当前没有任务啊,手动进云扫码看看是不是一直显示更新中,别问肥皂什么原因啦～`)
+            f = -3
           } else {
             $.logErr(`🚫账号${ac.no}：获取key回执失败：${(result.data && result.data.msg) || result.msg}`)
             if (((result.data && result.data.msg) || result.msg) == '请一个小时后再来') {

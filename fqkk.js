@@ -274,7 +274,9 @@ function fqkk3(ac, fqkey) {
             ac.rest = (result.data.infoView.rest || 0) - 0;
             ac.num = (result.data.infoView.num || 0) - 0;
             ac.score = (result.data.infoView.score || 0) - 0;
-            msg = ac.rest > 0 ? '-' : (result.data.infoView.msg || msg);
+            msg = ac.rest > 0 ? '-' : (result.data.infoView.msg || result.msg || msg);
+          } else {
+            msg = result.msg || msg;
           }
           if (fqkey) {
             if (result.code == 0) {
@@ -284,6 +286,9 @@ function fqkk3(ac, fqkey) {
               $.log(`🚫账号${ac.no}：${result.msg}`, `今日阅读次数: ${result.data.infoView.num}, 今日阅读奖励: ${result.data.infoView.score}`, `resp: ${JSON.stringify(resp||'', null, 2)}`);
             }
           }
+        }
+        if (msg == '未知问题') {
+          msg += `: ${data}`
         }
       } catch (e) {
         $.log(`======== 账号 ${ac.no} ========\nurl: ${opts.url}\ndata: ${resp && resp.body}`);
