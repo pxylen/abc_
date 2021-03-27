@@ -1,5 +1,5 @@
 /*
-更新时间: 2021-03-11 20:20
+更新时间: 2021-03-27 18:20
 
 本脚本仅适用于微博每日签到，支持多账号运行  
 
@@ -141,7 +141,7 @@ function getsign() {
         $.get(signurl, async(error, resp, data) => {
             let result = JSON.parse(data)
             if (result.status == 10000) {
-                wbsign = `【微博签到】✅ 连续签到${result.data.continuous}天，收益: ${result.data.desc}💰\n`
+                wbsign = `【微博签到】 ✅ 连续签到${result.data.continuous}天，收益: ${result.data.desc}💰\n`
             } else if (result.errno == 30000) {
                 wbsign = `【每日签到】 🔁 已签到\n`
                 if (cookie) {
