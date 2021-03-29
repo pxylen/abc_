@@ -562,7 +562,7 @@
             "id": "zfb",
             "name": "支付宝账号",
             "val": "",
-            "type": "number",
+            "type": "string",
             "desc": "填写支付宝提现账号"
     },
     {
@@ -571,6 +571,13 @@
             "val": "",
             "type": "string",
             "desc": "填写支付宝提现账号名"
+    },
+    {
+            "id": "txje",
+            "name": "提现金额",
+            "val": "0.1",
+            "type": "string",
+            "desc": "填写需要提现的金额，最低0.1"
     }],
             "repo": "https://github.com/age174/-/blob/main/wcyd.js",
             "icons": ["https://ae01.alicdn.com/kf/Ua6bd9417d492473f8ca0c3110b2176307.jpg", "https://ae01.alicdn.com/kf/Ua6bd9417d492473f8ca0c3110b2176307.jpg"],
