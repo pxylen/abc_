@@ -74,6 +74,7 @@ const $ = new Env('云扫码')
 let ysm = $.getjson('ysm', [])
 let needNotice = $.getval('ysmNotice') == 'true'
 let ysmBanfirstTask = $.getval('ysmBanfirstTask') == 'true' // 禁止脚本执行首个任务，避免每日脚本跑首次任务导致微信限制
+let ysmBanhalfTask = $.getval('ysmBanhalfTask') == 'true' // 脚本执行完第50个任务时退出任务，再手动阅读2篇避免出现微信限制
 let ysmtxAmt = ($.getval('ysmtxAmt') || '0') - 0  // 此处修改提现金额，0.3元等于3000币，默认不提现
 ysmtxAmt = ysmtxAmt > 3000 ? (parseInt(ysmtxAmt / 1000) * 1000) : ysmtxAmt > 0 ? 3000 : 0
 let concurrency = ($.getval('ysmConcurrency') || '1') - 0 // 并发执行任务的账号数，默单账号循环执行
@@ -347,6 +348,9 @@ function ysm3(ac, time) {
             if (ac.remain_read <= 0) {
               f = 0
               $.msg(`${$.name}: 账号${ac.no}`, '', `今日阅读已达上限，请明日继续`)
+            } else if (ysmBanhalfTask && ac.day_read == 50) {
+              f = 0
+              $.msg(`${$.name}: 账号${ac.no}`, '', `今日已阅读50篇，请手动阅读2篇再跑脚本`)
             } else {
               f = 1
             }
@@ -408,6 +412,9 @@ function ysm1(ac, count) {
       try {
         if (err) {
           $.logErr(`❌ 账号${ac.no} API请求失败，请检查网络后重试\n url: ${opts.url} \n data: ${JSON.stringify(err, null, 2)}`)
+        } else if (count > 55) {
+          f = -3
+          $.msg($.name, `账号${ac.no}`, `本阶段阅读循环次数过多，可能接口返回异常数据导致脚本死循环了，终止脚本运行`)
         } else {
           const result = JSON.parse(data)
           if (result.errcode == 0 && result.data && result.data.link) {
@@ -423,6 +430,9 @@ function ysm1(ac, count) {
               $.log(`🌝账号${ac.no}jump接口请求失败，重新执行阅读任务`)
               await $.wait(1500)
             }
+          } else if (data == '{"errcode":0,"msg":"success"}') {
+            $.logErr(`🚫账号${ac.no}：🧼来自肥皂的提示:当前没有任务啊,手动进云扫码看看是不是一直显示更新中,别问肥皂什么原因啦～`)
+            f = -3
           } else {
             $.logErr(`🚫账号${ac.no}：获取key回执失败：${(result.data && result.data.msg) || result.msg}`)
             if (((result.data && result.data.msg) || result.msg) == '请一个小时后再来') {
