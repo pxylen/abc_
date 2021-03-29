@@ -9,8 +9,8 @@
 重新下载登录小号
 
 
-扫码打开 https://ae01.alicdn.com/kf/U8c71c1ac1f47422788561b0be3d4ea2ah.jpg
-微信扫码打开可领红包
+扫码打开 https://ae01.alicdn.com/kf/Ua2eec7601e9e4afcbb4bf2e0b81fa917G.jpg
+微信扫码打开可领红包，然后去商店搜索下载西梅
 
 
 
