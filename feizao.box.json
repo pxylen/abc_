@@ -611,6 +611,29 @@
             "repo": "https://github.com/age174/-/blob/main/ximei.js",
             "icons": ["https://ae01.alicdn.com/kf/Ucd02ea79ef22473daf3576486d134509Q.jpg", "https://ae01.alicdn.com/kf/Ucd02ea79ef22473daf3576486d134509Q.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/ximei.js"
+    } ,
+    {
+            "id": "lgyy",
+            "name": "朗果英语",
+            "keys": ["lgyyurl", "lgyyhd", "lgyybody", "lgyyurl2", "lgyyhd2", "lgyybody2","lgyyurl3", "lgyyhd3", "lgyybody3","lgyyurl4", "lgyyhd4", "lgyybody4","lgyyurl5", "lgyyhd5", "lgyybody5","lgyyurl6", "lgyyhd6", "lgyybody6","lgyyurl7", "lgyyhd7", "lgyybody7","lgyyurl8", "lgyyhd8", "lgyybody8","lgyyurl9", "lgyyhd9", "lgyybody9","lgyyurl10", "lgyyhd10", "lgyybody10","lgyyurl11", "lgyyhd11", "lgyybody11"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "lgyystatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "lgyycount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/lgyy.js",
+            "icons": ["https://ae01.alicdn.com/kf/Uc3c35e1796624a7ca6a23c89c7f0dff2H.jpg", "https://ae01.alicdn.com/kf/Uc3c35e1796624a7ca6a23c89c7f0dff2H.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/lgyy.js"
     }
 ]
 }
