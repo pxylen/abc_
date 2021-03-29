@@ -582,6 +582,29 @@
             "repo": "https://github.com/age174/-/blob/main/wcyd.js",
             "icons": ["https://ae01.alicdn.com/kf/Ua6bd9417d492473f8ca0c3110b2176307.jpg", "https://ae01.alicdn.com/kf/Ua6bd9417d492473f8ca0c3110b2176307.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/wcyd.js"
-    } 
+    } ,
+    {
+            "id": "ximei",
+            "name": "西梅",
+            "keys": ["ximeiurl", "ximeihd", "ximeiurl2", "ximeihd2","ximeiurl3", "ximeihd3","ximeiurl4", "ximeihd4","ximeiurl5", "ximeihd5","ximeiurl6", "ximeihd6"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "ximeistatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "ximeicount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/ximei.js",
+            "icons": ["https://ae01.alicdn.com/kf/Ucd02ea79ef22473daf3576486d134509Q.jpg", "https://ae01.alicdn.com/kf/Ucd02ea79ef22473daf3576486d134509Q.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/ximei.js"
+    }
 ]
 }
