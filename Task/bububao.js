@@ -78,8 +78,8 @@ const bububaotokenArr = [];
 let bububaotokenVal = ``;
 let middlebububaoTOKEN = [];
 if ($.isNode()) {
-    // 没有设置 FL_DHCASH 则默认为 0 不兑换
-    CASH = process.env.BBB_CASH || 2000;
+    // 没有设置 BBB_DHCASH 则默认为 0 不兑换
+    CASH = process.env.BBB_CASH || 0;
 }
 if ($.isNode() && process.env.BBB_bububaoTOKEN) {
     COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
