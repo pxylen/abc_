@@ -10,14 +10,11 @@
 
 本脚本以学习为主！
 使用方法:复制上方链接进入，需填写邀请信息，点击阅读1开始阅读，获得阅读数据，自动提现请到boxjs中填写支付宝的提现信息
-
+3.29修复域名变化导致的无法抓包和跑脚本的问题，请更换重写和mitm
 TG电报群: https://t.me/hahaha8028
 
-
 boxjs地址 :  
-
 https://raw.githubusercontent.com/age174/-/main/feizao.box.json
-
 
 文创阅读
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
@@ -25,27 +22,18 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 #文创阅读
 5 9-22 * * * https://raw.githubusercontent.com/age174/-/main/wcyd.js, tag=文创阅读, img-url=https://ae01.alicdn.com/kf/Ua6bd9417d492473f8ca0c3110b2176307.jpg, enabled=true
 
-
 [rewrite_local]
 #文创阅读
-http://yd.hzstzs.com/hfTask/startRead url script-request-header https://raw.githubusercontent.com/age174/-/main/wcyd.js
-
-
+http://qcjesnfs.bar/hfTask/startRead url script-request-header https://raw.githubusercontent.com/age174/-/main/wcyd.js
 
 #loon
-http://yd.hzstzs.com/hfTask/startRead script-path=https://raw.githubusercontent.com/age174/-/main/wcyd.js, requires-header=true, timeout=10, tag=文创阅读
-
-
+http://qcjesnfs.bar/hfTask/startRead script-path=https://raw.githubusercontent.com/age174/-/main/wcyd.js, requires-header=true, timeout=10, tag=文创阅读
 
 #surge
-
-文创阅读 = type=http-request,pattern=http://yd.hzstzs.com/hfTask/startRead,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/wcyd.js,script-update-interval=0
-
-
-
+文创阅读 = type=http-request,pattern=http://qcjesnfs.bar/hfTask/startRead,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/wcyd.js,script-update-interval=0
 
 [MITM]
-hostname = yd.hzstzs.com
+hostname = qcjesnfs.bar
 
 */
 
@@ -114,7 +102,7 @@ function wcyd1(timeout = 0) {
       }
 
 let url = {
-        url : 'http://yd.hzstzs.com/hfTask/startRead',
+        url : 'http://qcjesnfs.bar/hfTask/startRead',
         headers : JSON.parse(wcydhd),
         body : 'isM6=2',
 }
@@ -148,7 +136,7 @@ function wcydlb(timeout = 0) {
   return new Promise((resolve) => {
 
 let url = {
-        url : "http://yd.hzstzs.com/hfTask/read",
+        url : "http://qcjesnfs.bar/hfTask/read",
         headers : JSON.parse(wcydhd),
         body : '',
        
@@ -181,7 +169,7 @@ let url = {
 function wcydyd(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://yd.hzstzs.com/hfTask/getUser",
+        url : "http://qcjesnfs.bar/hfTask/getUser",
         headers : JSON.parse(wcydhd),
         body :'',
 }
@@ -219,7 +207,7 @@ function wcydtx(timeout = 0) {
   return new Promise((resolve) => {
 
 let url = {
-        url : "http://yd.hzstzs.com/hfTask/cash",
+        url : "http://qcjesnfs.bar/hfTask/cash",
         headers : JSON.parse(wcydhd),
         body : `wx=&zfb=${zfb}&name=${name}`,
 }
