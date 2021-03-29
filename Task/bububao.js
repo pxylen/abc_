@@ -24,6 +24,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 3.13 修复0.3提现
 3.23 设置CASH为1000以上时则在23.59分执行1秒的循环提现，以此类推
 3.25 替换为await形式
+3.29 优化50提现 设置CASH为3000，则在23.59分执行3秒的循环-以此类推，且在0点后执行1次提现，请提前手动运行或者设置好定时
 
 ⚠️ 时间设置    0,30 0-23 * * *    每天 35次以上就行   
 
@@ -63,7 +64,7 @@ http-response https:\/\/bububao\.duoshoutuan\.com\/user\/* script-path=https://c
 #步步宝获取TOKEN
 步步宝获取TOKEN = type=http-response,pattern=https:\/\/bububao\.duoshoutuan\.com\/user\/*,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/bububao.js
 */
-GXRZ = '3.25 替换为await形式'
+GXRZ = '3.29 优化50提现 设置CASH为3000，则在23.59分执行3秒的循环-以此类推，且在0点后执行1次提现，请提前手动运行或者设置好定时'
 const $ = Env("步步宝");
 $.idx = ($.idx = ($.getval('bububaoSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -78,7 +79,7 @@ let bububaotokenVal = ``;
 let middlebububaoTOKEN = [];
 if ($.isNode()) {
     // 没有设置 FL_DHCASH 则默认为 0 不兑换
-    CASH = process.env.BBB_CASH || 0;
+    CASH = process.env.BBB_CASH || 2000;
 }
 if ($.isNode() && process.env.BBB_bububaoTOKEN) {
     COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
@@ -330,17 +331,19 @@ async function all() {
         };
         O = (`${$.name + (i + 1)}🔔`);
 
-
-        if (CASH >= 1000&&nowTimes.getHours() === 23&&nowTimes.getMinutes() == 59) {
+// 
+        if (CASH >= 1000 && nowTimes.getHours() === 23 && nowTimes.getMinutes() == 59) {
             A = Date.now()
             B = Date.now() + CASH
-            C= daytime()+86400000
+            C = daytime() + 86400000
+            D = 0
             while (Date.now() <= B) {
-              if (Date.now() >= C&&Date.now() <= C+3) {
-                CASH = 50
-                 await tixian()
-             }
-         }
+                if (Date.now() >= C && D < 1) {
+                    CASH = 50
+                    tixian()
+                    D++;
+                } 
+            } 
 
         } else {
             await console.log(`-------------------------\n\n🔔开始运行【${$.name+(i+1)}】`)
