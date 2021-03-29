@@ -586,7 +586,7 @@
     {
             "id": "ximei",
             "name": "西梅",
-            "keys": ["ximeiurl", "ximeihd", "ximeiurl2", "ximeihd2","ximeiurl3", "ximeihd3","ximeiurl4", "ximeihd4","ximeiurl5", "ximeihd5","ximeiurl6", "ximeihd6"],
+            "keys": ["ximeiurl", "ximeihd", "ximeiurl2", "ximeihd2","ximeiurl3", "ximeihd3","ximeiurl4", "ximeihd4","ximeiurl5", "ximeihd5","ximeiurl6", "ximeihd6","ximeiurl7", "ximeihd7","ximeiurl8", "ximeihd8","ximeiurl9", "ximeihd9","ximeiurl10", "ximeihd10","ximeiurl11", "ximeihd11","ximeiurl12", "ximeihd12"],
             "author": "@feizao",
             "settings": [{
             "id": "ximeistatus",
