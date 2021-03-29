@@ -22,6 +22,7 @@ let CookieArr = [],cashArr=[];
 const notify = $.isNode() ? require('./sendNotify') : '';
 const baiducks = $.getdata('bdspeed')
 let baiducash = $.getdata(`cash_baidu`);
+let shower = $.getdata('on_baidu')||"true";
 
 let taskON = $.getdata(`task_baidu`)||"true"//除提现和兑换外其他任务开关;
 let isblack = "false";
@@ -263,7 +264,7 @@ function TaskCenter() {
       } catch(e) {
         $.logErr(e, data);
       } finally {
-        $.msg($.name, $.sub, $.desc)
+        shower?$.msg($.name, $.sub, $.desc):""
         resolve()
       }
     })

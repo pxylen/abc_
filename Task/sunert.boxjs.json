@@ -386,6 +386,13 @@
           "desc": "自动提现金额"
         }, 
         {
+          "id": "on_baidu", 
+          "val": true, 
+          "name": "通知开关", 
+          "type": "boolean", 
+          "desc": "任务通知开关"
+        },
+        {
           "id": "task_baidu", 
           "val": true, 
           "name": "任务开关", 
