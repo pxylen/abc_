@@ -1,5 +1,5 @@
 /*
-更新时间:2021-02-27 23:30
+更新时间:2021-3-29 19:15
 百度极速版签到任务，使用脚本有黑号严重，请谨慎使用‼️
 
 赞赏:百度极速邀请码`RW9ZSW 点击链接立得红包，最高100元！https://dwz.cn/Oilv4CJ1`,农妇山泉 -> 有点咸，万分感谢，邀请码已失效
@@ -264,7 +264,7 @@ function TaskCenter() {
       } catch(e) {
         $.logErr(e, data);
       } finally {
-        shower?$.msg($.name, $.sub, $.desc):""
+        shower=="true"?$.msg($.name, $.sub, $.desc):""
         resolve()
       }
     })
