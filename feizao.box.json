@@ -561,7 +561,7 @@
     {
             "id": "zfb",
             "name": "支付宝账号",
-            "val": "1",
+            "val": "",
             "type": "number",
             "desc": "填写支付宝提现账号"
     },
@@ -569,7 +569,7 @@
             "id": "name",
             "name": "支付宝账户名",
             "val": "1",
-            "type": "number",
+            "type": "string",
             "desc": "填写支付宝提现账号名"
     }],
             "repo": "https://github.com/age174/-/blob/main/wcyd.js",
