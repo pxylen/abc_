@@ -83,9 +83,6 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 设置CK = 41👉 点击活动 - 全民猜天气 - 获取竞猜领取body，👉
 
 
-
-
-
 jdtquserbodyVal👉JDTQ_jdtquserBODY👉用户名body
  
 jdtqcoinbodyVal👉JDTQ_jdtqcoinBODY👉账户信息body
@@ -170,7 +167,6 @@ jdtqjclqbodyVal👉JDTQ_jdtqjclqBODY👉竞猜领取body
  
 	
 ⚠️主机名以及重写👇  一次只开一条重写
-
 
 //////////////////////////// 圈x
 hostname =zt.jiandantianqi.com,
