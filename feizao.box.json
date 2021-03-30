@@ -634,6 +634,29 @@
             "repo": "https://github.com/age174/-/blob/main/lgyy.js",
             "icons": ["https://ae01.alicdn.com/kf/Uc3c35e1796624a7ca6a23c89c7f0dff2H.jpg", "https://ae01.alicdn.com/kf/Uc3c35e1796624a7ca6a23c89c7f0dff2H.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/lgyy.js"
+    } ,
+    {
+            "id": "zqwn",
+            "name": "最强蜗牛",
+            "keys": ["zqwnurl", "zqwnhd", "zqwnbody", "zqwnurl2", "zqwnhd2", "zqwnbody2", "zqwnurl3", "zqwnhd3", "zqwnbody3", "zqwnurl4", "zqwnhd4", "zqwnbody4", "zqwnurl5", "zqwnhd5", "zqwnbody5", "zqwnurl6", "zqwnhd6", "zqwnbody6", "zqwnurl7", "zqwnhd7", "zqwnbody7", "zqwnurl8", "zqwnhd8", "zqwnbody8", "zqwnurl9", "zqwnhd9", "zqwnbody9", "zqwnurl10", "zqwnhd10", "zqwnbody10"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "zqwnstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "zqwncount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/zqwn.js",
+            "icons": ["https://ae01.alicdn.com/kf/U1748aeaa81a54cdf8797ed3fc54d76ef3.jpg", "https://ae01.alicdn.com/kf/U1748aeaa81a54cdf8797ed3fc54d76ef3.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/zqwn.js"
     }
 ]
 }
