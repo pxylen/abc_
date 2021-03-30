@@ -64,7 +64,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 第三步⚠️添加 hostname = event.jiandantianqi.com,添加event body重写 获取event body
 
 
-设置CK = 27 👉 点击活动 - 吃饭领福利-获取吃饭页body，
+设置CK = 27 👉 点击活动 - 吃饭领福利-获取吃饭页body，👉
 设置CK = 28 👉 点击活动 - 吃饭领福利 - 吃饭1， 获取吃饭1body，
 设置CK = 29👉 点击活动 - 吃饭领福利 - 吃饭1翻倍 - 获取吃饭1翻倍body，
 设置CK = 30 👉 点击活动 - 吃饭领福利 - 吃饭2， 获取吃饭2body，
@@ -78,9 +78,9 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 
 
 设置CK = 38👉 点击活动 - 全民猜天气 - 获取竞猜页body
-设置CK = 39👉 点击活动 - 全民猜天气 - 下雨， 获取竞猜abody，
+设置CK = 39👉 点击活动 - 全民猜天气 - 下雨， 获取竞猜abody，👉
 设置CK = 40👉 点击活动 - 全民猜天气 - 不下雨， 获取竞猜bbody，
-设置CK = 41👉 点击活动 - 全民猜天气 - 获取竞猜领取body，
+设置CK = 41👉 点击活动 - 全民猜天气 - 获取竞猜领取body，👉
 
 
 
@@ -2979,7 +2979,7 @@ async function all() {
                 await task()
             }
 
-            if (jdtqqp1bodyVal && jdtqqp1bodyVal != `` && $.qpinfo1.resttime == 0) {
+            if (jdtqqp1bodyVal && jdtqqp1bodyVal != `` && $.qpinfo1.resttime == 0&& $.qpinfo1.missionstatus== 0) {
                 jdtqurl = `https://zt.jiandantianqi.com/`
                 jdtqheader = {
                     "Host": "zt.jiandantianqi.com",
@@ -3009,7 +3009,7 @@ async function all() {
 
 
 
-            if (jdtqqp2bodyVal && jdtqqp2bodyVal != `` && $.qpinfo2.resttime == 0) {
+            if (jdtqqp2bodyVal && jdtqqp2bodyVal != `` && $.qpinfo2.resttime == 0 && $.qpinfo2.missionstatus == 0) {
                 jdtqurl = `https://zt.jiandantianqi.com/`
                 jdtqheader = {
                     "Host": "zt.jiandantianqi.com",
@@ -3037,7 +3037,7 @@ async function all() {
 
 
 
-            if (jdtqqp3bodyVal && jdtqqp3bodyVal != `` && $.qpinfo3.resttime == 0) {
+            if (jdtqqp3bodyVal && jdtqqp3bodyVal != `` && $.qpinfo3.resttime == 0 && $.qpinfo3.missionstatus == 0) {
                 jdtqurl = `https://zt.jiandantianqi.com/`
                 jdtqheader = {
                     "Host": "zt.jiandantianqi.com",
@@ -3065,7 +3065,7 @@ async function all() {
 
 
 
-            if (jdtqqp4bodyVal && jdtqqp4bodyVal != `` && $.qpinfo4.resttime == 0) {
+            if (jdtqqp4bodyVal && jdtqqp4bodyVal != `` && $.qpinfo4.resttime == 0 && $.qpinfo4.missionstatus== 0) {
                 jdtqurl = `https://zt.jiandantianqi.com/`
                 jdtqheader = {
                     "Host": "zt.jiandantianqi.com",
@@ -3095,6 +3095,9 @@ async function all() {
                 };
                 jdtqbody = jdtqcjbodyVal
                 K = `抽奖🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
             }
@@ -3134,7 +3137,11 @@ async function all() {
                 };
                 jdtqbody = jdtqspbodyVal
                 K = `视频🚩`;
+                DD = RT(20000, 30000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
+
             }
 
             if (jdtqspwcbodyVal && jdtqspwcbodyVal != `` && $.sprwinfo.missionstatus == 1) {
@@ -3145,6 +3152,9 @@ async function all() {
                 };
                 jdtqbody = jdtqspwcbodyVal
                 K = `视频完成🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
 
@@ -3165,7 +3175,7 @@ async function all() {
 
 
 
-            if (jdtqqdbodyVal && jdtqqdbodyVal != `` && $.qdrwinfo.missionstatus == 0) {
+            if (jdtqqdbodyVal && jdtqqdbodyVal != `` && $.tqrwinfo.missionstatus == 0) {
                 jdtqurl = `https://zt.jiandantianqi.com/`
                 jdtqheader = {
                     "Host": "zt.jiandantianqi.com",
@@ -3173,6 +3183,9 @@ async function all() {
                 };
                 jdtqbody = jdtqqdbodyVal
                 K = `签到🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
 
@@ -3201,6 +3214,9 @@ async function all() {
                 };
                 jdtqbody = jdtqqdwcbodyVal
                 K = `签到完成🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
 
@@ -3229,10 +3245,13 @@ async function all() {
                 };
                 jdtqbody = jdtqtqbodyVal
                 K = `天气🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
             }
 
-            if (jdtqtqwcbodyVal && jdtqtqwcbodyVal != `` && $.qdrwinfo.missionstatus == 1) {
+            if (jdtqtqwcbodyVal && jdtqtqwcbodyVal != `` && $.tqrwinfo.missionstatus == 1) {
                 jdtqurl = `https://zt.jiandantianqi.com/`
                 jdtqheader = {
                     "Host": "zt.jiandantianqi.com",
@@ -3240,6 +3259,9 @@ async function all() {
                 };
                 jdtqbody = jdtqtqwcbodyVal
                 K = `天气完成🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
 
@@ -3268,6 +3290,9 @@ async function all() {
                 };
                 jdtqbody = jdtqxfwcbodyVal
                 K = `悬浮完成🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
 
@@ -3307,6 +3332,9 @@ async function all() {
                 };
                 jdtqbody = jdtqcf1bodyVal
                 K = `吃饭1🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
 
@@ -3335,6 +3363,9 @@ async function all() {
                 };
                 jdtqbody = jdtqcf2bodyVal
                 K = `吃饭2🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
 
@@ -3363,6 +3394,9 @@ async function all() {
                 };
                 jdtqbody = jdtqcf3bodyVal
                 K = `吃饭3🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
 
@@ -3389,6 +3423,9 @@ async function all() {
                 };
                 jdtqbody = jdtqcf4bodyVal
                 K = `吃饭4🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
 
@@ -3416,6 +3453,9 @@ async function all() {
                 };
                 jdtqbody = jdtqcf5bodyVal
                 K = `吃饭5🚩`;
+                DD = RT(2000, 3000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task()
 
 
@@ -3481,6 +3521,9 @@ async function all() {
                     };
                     jdtqbody = jdtqjclqbodyVal
                     K = `竞猜领取🚩`;
+                    DD = RT(2000, 3000)
+                    console.log(`随机延迟${DD/1000}秒`)
+                    await $.wait(DD)
                     await task()
                 }
             }
