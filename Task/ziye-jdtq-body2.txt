@@ -1,0 +1,3 @@
+hostname = api.jiandantianqi.com, 
+//简单天气获取api body  抽奖
+https:\/\/api\.jiandantianqi\.com\/ url script-request-body https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/jdtq.js, tag=简单天气获取抽奖body
