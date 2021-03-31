@@ -254,7 +254,7 @@ let url = {
 function hlyysp(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${sp}&tl=100&ut=${ut}`,
+        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${sp}&tl=500&ut=${ut}`,
         headers : JSON.parse(hlyyhd),
 }
       $.post(url, async (err, resp, data) => {
@@ -317,7 +317,7 @@ let url = {
 function hlyytg(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${tg}&tl=100&ut=${ut}`,
+        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${tg}&tl=500&ut=${ut}`,
         headers : JSON.parse(hlyyhd),
 }
       $.post(url, async (err, resp, data) => {
@@ -379,7 +379,7 @@ wz = result.data.pagelist[0].code
 function hlyyzs(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&bc=${wz}&deviceId=${id}&os=ios&tc=${zs}&tl=100&ut=${ut}`,
+        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&bc=${wz}&deviceId=${id}&os=ios&tc=${zs}&tl=200&ut=${ut}`,
         headers : JSON.parse(hlyyhd),
 }
       $.post(url, async (err, resp, data) => {
