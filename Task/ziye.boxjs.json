@@ -395,7 +395,7 @@
                     "name": "CK获取控制",
                     "val": "0",
                     "type": "number",
-                    "desc": "0关闭 可设置0-41，具体使用查看js说明"
+                    "desc": `0关闭,1用户名,2账户信息,3首页气泡,4气泡1,5气泡1翻倍,,6气泡2,7气泡2翻倍,8气泡3,9气泡3翻倍,可设置0-41,具体使用查看js说明`
                 }
             ],
             "repo": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/jdtq.js",
