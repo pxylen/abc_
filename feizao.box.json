@@ -651,6 +651,29 @@
             "repo": "https://github.com/age174/-/blob/main/zqwn.js",
             "icons": ["https://ae01.alicdn.com/kf/U1748aeaa81a54cdf8797ed3fc54d76ef3.jpg", "https://ae01.alicdn.com/kf/U1748aeaa81a54cdf8797ed3fc54d76ef3.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/zqwn.js"
+    } ,
+    {
+            "id": "hlyy",
+            "name": "葫芦音乐",
+            "keys": ["hlyyurl", "hlyyhd", "hlyyurl2", "hlyyhd2","hlyyurl3", "hlyyhd3","hlyyurl4", "hlyyhd4","hlyyurl5", "hlyyhd5","hlyyurl6", "hlyyhd6","hlyyurl7", "hlyyhd7","hlyyurl8", "hlyyhd8","hlyyurl9", "hlyyhd9","hlyyurl10", "hlyyhd10"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "hlyystatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "hlyycount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/hlyy.js",
+            "icons": ["https://ae01.alicdn.com/kf/U49d941738c0c41569f7db55825943375f.jpg", "https://ae01.alicdn.com/kf/U49d941738c0c41569f7db55825943375f.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/hlyy.js"
     }
 ]
 }
