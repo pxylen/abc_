@@ -11,7 +11,7 @@
 
 [rewrite_local]
 #睡眠赚无限刷
-http://sleep.zouluzhuan.com/api/member/randCoin url script-request-header https://raw.githubusercontent.com/age174/-/main/smz.js
+http://sleep.zouluzhuan.com/api/member/randCoin url script-request-body https://raw.githubusercontent.com/age174/-/main/smz.js
 
 
 [MITM]
