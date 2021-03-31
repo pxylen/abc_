@@ -1,4 +1,4 @@
 # 肥皂的羊毛毛
 开发维护不易，请我喝杯奶茶吧
-<p align="center">
-  < img src="0683FF72-50B6-4973-86A5-F199FF1EE0A3.jpeg" alt="vx" width='80%' height='70%'/>
+![微信图片_20210331193553](https://user-images.githubusercontent.com/76593644/113138439-5bcef800-9258-11eb-8553-10a866e378f0.jpg)
+
