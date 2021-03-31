@@ -3638,8 +3638,8 @@ function task() {
                                 $.qpinfo4 = $.qp.data.data.data.find(item => item.appmissionid == 200000410);
 
 
-                                console.log(`${$.qpinfo1.missionname}冷却还需${$.qpinfo1.resttime/1000}秒，已领取${$.qpinfo1.finishtimes}次\n${$.qpinfo2.missionname}冷却还需${$.qpinfo2.resttime/1000}秒，已领取${$.qpinfo2.finishtimes}次\n${$.qpinfo3.missionname}冷却还需${$.qpinfo3.resttime/1000}秒，已领取${$.qpinfo3.finishtimes}次\n${$.qpinfo4.missionname}冷却还需${$.qpinfo4.resttime/1000}秒，已领取${$.qpinfo4.finishtimes}次\n`)
-                                $.message += `【${$.qpinfo1.missionname}】：冷却还需${$.qpinfo1.resttime/1000}秒，已领取${$.qpinfo1.finishtimes}次\n【${$.qpinfo2.missionname}】：冷却还需${$.qpinfo2.resttime/1000}秒，已领取${$.qpinfo2.finishtimes}次\n【${$.qpinfo3.missionname}】：冷却还需${$.qpinfo3.resttime/1000}秒，已领取${$.qpinfo3.finishtimes}次\n【${$.qpinfo4.missionname}】：冷却还需${$.qpinfo4.resttime/1000}秒，已领取${$.qpinfo4.finishtimes}次\n`;
+                                console.log(`${$.qpinfo1.missionname}冷却还需${$.qpinfo1.resttime/1000}秒，已领取${$.qpinfo1.finishtimes}次，已翻倍${$.qpinfo1.usedextratimes}次\n${$.qpinfo2.missionname}冷却还需${$.qpinfo2.resttime/1000}秒，已领取${$.qpinfo2.finishtimes}次，已翻倍${$.qpinfo2.usedextratimes}次\n${$.qpinfo3.missionname}冷却还需${$.qpinfo3.resttime/1000}秒，已领取${$.qpinfo3.finishtimes}次，已翻倍${$.qpinfo3.usedextratimes}次\n${$.qpinfo4.missionname}冷却还需${$.qpinfo4.resttime/1000}秒，已领取${$.qpinfo4.finishtimes}次\n`)
+                                $.message += `【${$.qpinfo1.missionname}】：冷却还需${$.qpinfo1.resttime/1000}秒，已领取${$.qpinfo1.finishtimes}次，已翻倍${$.qpinfo1.usedextratimes}次\n${$.qpinfo2.missionname}冷却还需${$.qpinfo2.resttime/1000}秒，已领取${$.qpinfo2.finishtimes}次，已翻倍${$.qpinfo2.usedextratimes}次\n${$.qpinfo3.missionname}冷却还需${$.qpinfo3.resttime/1000}秒，已领取${$.qpinfo3.finishtimes}次，已翻倍${$.qpinfo3.usedextratimes}次\n${$.qpinfo4.missionname}冷却还需${$.qpinfo4.resttime/1000}秒，已领取${$.qpinfo4.finishtimes}次\n`;
 
                             }
                         }
