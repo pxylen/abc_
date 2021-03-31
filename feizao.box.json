@@ -674,6 +674,31 @@
             "repo": "https://github.com/age174/-/blob/main/hlyy.js",
             "icons": ["https://ae01.alicdn.com/kf/U49d941738c0c41569f7db55825943375f.jpg", "https://ae01.alicdn.com/kf/U49d941738c0c41569f7db55825943375f.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/hlyy.js"
+    } ,
+    {
+            "id": "yqzh",
+            "name": "悦趣赚",
+            "keys": ["yqzh"],
+            "author": "@feizao",
+            "descs_html": [
+              "每轮任务跑之前请手动阅读鉴权一次。。否则当天就黑了，如果不小心没鉴权就跑了脚本可以等一个小时后再次鉴权（两次鉴权失败会黑一天）"
+            ],
+            "settings": [{
+                    "id": "yqzhNotice",
+                    "val": "",
+                    "name": "是否通知",
+                    "type": "boolean",
+                    "desc": "开启该选项时，脚本执行完会发通知，否则只打印日志"
+            }, {
+                    "id": "yqzhConcurrency",
+                    "val": "1",
+                    "name": "并发执行账号数",
+                    "type": "text",
+                    "desc": "默认单账号跑任务，指定大于1的数值时，将并发执行多个账号的任务，请勿设置过大，避免NE工具崩溃（太大估计会崩溃吧）"
+            }],
+            "repo": "https://github.com/age174/-/blob/main/yqzh.js",
+            "icons": ["https://ae01.alicdn.com/kf/U428ddcb68e304bc0822743cad88f5142n.jpg", "https://ae01.alicdn.com/kf/U428ddcb68e304bc0822743cad88f5142n.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/yqzh.js"
     }
 ]
 }
