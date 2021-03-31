@@ -11,7 +11,7 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/qixin.c
 
 饮水思源：
 
-[@ziye](https://github.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/tree/main) - ziye
+[@ziye](https://github.com/ziye888/JavaScript) - ziye
 
 [@ZhiYi-N](https://github.com/ZhiYi-N/Private-Script) - ZhiYi-N
 
