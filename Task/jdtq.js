@@ -13,11 +13,14 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 
 3.26 制作
 3.30 完成
+3.31 优化调整为10次翻倍
 
-⚠️ 时间设置   * /10 0-23 * * *    每10分钟 1次 
+⚠️ 时间设置   6 6 0-23 * * *    每小时 1次即可  运行一次执行10次翻倍，预计运行15分钟
 ⚠️一共  41个ck  👉 41条 Secrets
 
-获取多少ck就运行多少任务 (少ck不影响其他任务运行) jdtquserbodyVal 用户名body👉 这条ck必须获取
+获取多少ck就运行多少任务(少ck不影响其他任务运行) jdtquserbodyVal 用户名body👉 这条ck必须获取
+⚠️为主要ck，其他自行考虑是否获取
+
 
 手机端默认使用boxjs👉 node请复制boxjs会话粘贴至jdtqCOOKIE.js中 或者 填写环境变量(多账号请换行)
 
@@ -25,17 +28,17 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 
 第一步⚠️添加 hostname =zt.jiandantianqi.com,添加zt body重写 获取zt body
 
-设置CK = 1👉 点击我的 - 获取用户名body， 
-设置CK = 2👉 点击我的 - 获取账户信息body
+设置CK = 1👉 点击我的 - 获取用户名body， ⚠️
+设置CK = 2👉 点击我的 - 获取账户信息body⚠️
 
-设置CK = 3👉 点击天气 - 获取首页气泡body
-设置CK = 4👉 点击1号气泡， 获取气泡1body
-设置CK = 5👉 点击1号气泡翻倍，获取气泡1翻倍body
-设置CK = 6 👉 点击2号气泡， 获取气泡2body
-设置CK = 7👉 点击2号气泡翻倍， 获取气泡2翻倍body
-设置CK = 8 👉 点击3号气泡， 获取气泡3body 
-设置CK = 9👉 点击3号气泡翻倍， 获取气泡3翻倍body
-设置CK = 10 👉 点击4号气泡，获取气泡4body
+设置CK = 3👉 点击天气 - 获取首页气泡body⚠️
+设置CK = 4👉 点击1号气泡， 获取气泡1body⚠️
+设置CK = 5👉 点击1号气泡翻倍，获取气泡1翻倍body⚠️
+设置CK = 6 👉 点击2号气泡， 获取气泡2body⚠️
+设置CK = 7👉 点击2号气泡翻倍， 获取气泡2翻倍body⚠️
+设置CK = 8 👉 点击3号气泡， 获取气泡3body ⚠️
+设置CK = 9👉 点击3号气泡翻倍， 获取气泡3翻倍body⚠️
+设置CK = 10👉 点击4号气泡， 获取气泡4body
 
 设置CK = 11 👉 点击福利 - 获取任务body
 
@@ -210,7 +213,7 @@ hostname = event.jiandantianqi.com
 
 */
 
-GXRZ = '3.30 完成'
+GXRZ = '3.31 优化调整为10次翻倍'
 const $ = Env("简单天气");
 $.idx = ($.idx = ($.getval('jdtqSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -2975,20 +2978,22 @@ async function all() {
                 await task()
             }
 
-            if (jdtqqp1bodyVal && jdtqqp1bodyVal != `` && $.qpinfo1.resttime == 0&& $.qpinfo1.missionstatus== 0) {
-                jdtqurl = `https://zt.jiandantianqi.com/`
-                jdtqheader = {
-                    "Host": "zt.jiandantianqi.com",
-                    "content-type": "application/x-www-form-urlencoded",
-                };
-                jdtqbody = jdtqqp1bodyVal
-                K = `领取气泡1🚩`;
-                await task();
+            if (jdtqqp1bodyVal && jdtqqp1bodyVal != ``) {
+                if ($.qpinfo1.usedextratimes / 10 > $.qpinfo1.finishtimes && $.qpinfo1.resttime == 0 && $.qpinfo1.missionstatus == 0) {
+
+                    jdtqurl = `https://zt.jiandantianqi.com/`
+                    jdtqheader = {
+                        "Host": "zt.jiandantianqi.com",
+                        "content-type": "application/x-www-form-urlencoded",
+                    };
+                    jdtqbody = jdtqqp1bodyVal
+                    K = `领取气泡1🚩`;
+                    await task();
+
+                }
 
 
-
-
-                if (jdtqqp1fbbodyVal && jdtqqp1fbbodyVal != ``) {
+                if (jdtqqp1fbbodyVal && jdtqqp1fbbodyVal != `` && $.qpinfo1.usedextratimes < $.qpinfo1.extratimes) {
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
                         "Host": "zt.jiandantianqi.com",
@@ -2996,27 +3001,40 @@ async function all() {
                     };
                     jdtqbody = jdtqqp1fbbodyVal
                     K = `气泡1翻倍🚩`;
-                    DD = RT(20000, 30000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task()
+
+                    for (let i = 0; i < 10; i++) {
+                        DD = RT(20000, 30000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await task()
+
+                    }
+
                 }
+
+
             }
 
 
 
-            if (jdtqqp2bodyVal && jdtqqp2bodyVal != `` && $.qpinfo2.resttime == 0 && $.qpinfo2.missionstatus == 0) {
-                jdtqurl = `https://zt.jiandantianqi.com/`
-                jdtqheader = {
-                    "Host": "zt.jiandantianqi.com",
-                    "content-type": "application/x-www-form-urlencoded",
-                };
-                jdtqbody = jdtqqp2bodyVal
-                K = `领取气泡2🚩`;
-                await task()
 
 
-                if (jdtqqp2fbbodyVal && jdtqqp2fbbodyVal != ``) {
+            if (jdtqqp2bodyVal && jdtqqp2bodyVal != ``) {
+                if ($.qpinfo2.usedextratimes / 10 > $.qpinfo2.finishtimes && $.qpinfo2.resttime == 0 && $.qpinfo2.missionstatus == 0) {
+
+                    jdtqurl = `https://zt.jiandantianqi.com/`
+                    jdtqheader = {
+                        "Host": "zt.jiandantianqi.com",
+                        "content-type": "application/x-www-form-urlencoded",
+                    };
+                    jdtqbody = jdtqqp2bodyVal
+                    K = `领取气泡2🚩`;
+                    await task();
+
+                }
+
+
+                if (jdtqqp2fbbodyVal && jdtqqp2fbbodyVal != `` && $.qpinfo2.usedextratimes < $.qpinfo2.extratimes) {
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
                         "Host": "zt.jiandantianqi.com",
@@ -3024,27 +3042,38 @@ async function all() {
                     };
                     jdtqbody = jdtqqp2fbbodyVal
                     K = `气泡2翻倍🚩`;
-                    DD = RT(20000, 30000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task()
+
+                    for (let i = 0; i < 10; i++) {
+                        DD = RT(20000, 30000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await task()
+
+                    }
+
                 }
+
+
             }
 
 
 
-            if (jdtqqp3bodyVal && jdtqqp3bodyVal != `` && $.qpinfo3.resttime == 0 && $.qpinfo3.missionstatus == 0) {
-                jdtqurl = `https://zt.jiandantianqi.com/`
-                jdtqheader = {
-                    "Host": "zt.jiandantianqi.com",
-                    "content-type": "application/x-www-form-urlencoded",
-                };
-                jdtqbody = jdtqqp3bodyVal
-                K = `领取气泡3🚩`;
-                await task()
+            if (jdtqqp3bodyVal && jdtqqp3bodyVal != ``) {
+                if ($.qpinfo3.usedextratimes / 10 > $.qpinfo3.finishtimes && $.qpinfo3.resttime == 0 && $.qpinfo3.missionstatus == 0) {
+
+                    jdtqurl = `https://zt.jiandantianqi.com/`
+                    jdtqheader = {
+                        "Host": "zt.jiandantianqi.com",
+                        "content-type": "application/x-www-form-urlencoded",
+                    };
+                    jdtqbody = jdtqqp3bodyVal
+                    K = `领取气泡3🚩`;
+                    await task();
+
+                }
 
 
-                if (jdtqqp3fbbodyVal && jdtqqp3fbbodyVal != ``) {
+                if (jdtqqp3fbbodyVal && jdtqqp3fbbodyVal != `` && $.qpinfo3.usedextratimes < $.qpinfo3.extratimes) {
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
                         "Host": "zt.jiandantianqi.com",
@@ -3052,16 +3081,27 @@ async function all() {
                     };
                     jdtqbody = jdtqqp3fbbodyVal
                     K = `气泡3翻倍🚩`;
-                    DD = RT(20000, 30000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task()
+
+                    for (let i = 0; i < 10; i++) {
+                        DD = RT(20000, 30000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await task()
+
+                    }
+
                 }
+
+
             }
 
 
 
-            if (jdtqqp4bodyVal && jdtqqp4bodyVal != `` && $.qpinfo4.resttime == 0 && $.qpinfo4.missionstatus== 0) {
+
+
+
+
+            if (jdtqqp4bodyVal && jdtqqp4bodyVal != `` && $.qpinfo4.resttime == 0 && $.qpinfo4.missionstatus == 0) {
                 jdtqurl = `https://zt.jiandantianqi.com/`
                 jdtqheader = {
                     "Host": "zt.jiandantianqi.com",
@@ -3618,8 +3658,10 @@ function task() {
                             if (logs) $.log(`${O}, ${K}: ${decodeUnicode(data)}`);
                             $.qp1fb = JSON.parse(data);
                             if ($.qp1fb.data.code == 0) {
-                                console.log(`气泡1翻倍：第${$.qp1fb.data.data.data.finishtimes}次,${$.qp1fb.data.data.data.rewardnum}金币\n`);
-                                $.message += `【气泡1翻倍】：第${$.qp1fb.data.data.data.finishtimes}次,${$.qp1fb.data.data.data.rewardnum}金币\n`;
+                                console.log(`气泡1翻倍：第${$.qp1fb.data.data.data.usedextratimes}次,${$.qp1fb.data.data.data.rewardnum}金币\n`);
+                                if ($.qp1fb.data.data.data.usedextratimes == $.qp1fb.data.data.data.finishtimes * 10) {
+                                    $.message += `【气泡1翻倍】：本次运行10次，共获得${$.qp1fb.data.data.data.rewardnum*10}金币，今日已翻倍${$.qp1fb.data.data.data.usedextratimes}次,\n`;
+                                }
                             }
                         }
 
@@ -3636,8 +3678,10 @@ function task() {
                             if (logs) $.log(`${O}, ${K}: ${decodeUnicode(data)}`);
                             $.qp2fb = JSON.parse(data);
                             if ($.qp2fb.data.code == 0) {
-                                console.log(`气泡2翻倍：第${$.qp2fb.data.data.data.finishtimes}次,${$.qp2fb.data.data.data.rewardnum}金币\n`);
-                                $.message += `【气泡2翻倍】：第${$.qp2fb.data.data.data.finishtimes}次,${$.qp2fb.data.data.data.rewardnum}金币\n`;
+                                console.log(`气泡2翻倍：第${$.qp2fb.data.data.data.usedextratimes}次,${$.qp2fb.data.data.data.rewardnum}金币\n`);
+                                if ($.qp2fb.data.data.data.usedextratimes == $.qp2fb.data.data.data.finishtimes * 10) {
+                                    $.message += `【气泡2翻倍】：本次运行10次，共获得${$.qp2fb.data.data.data.rewardnum*10}金币，今日已翻倍${$.qp2fb.data.data.data.usedextratimes}次,\n`;
+                                }
                             }
                         }
 
@@ -3654,8 +3698,10 @@ function task() {
                             if (logs) $.log(`${O}, ${K}: ${decodeUnicode(data)}`);
                             $.qp3fb = JSON.parse(data);
                             if ($.qp3fb.data.code == 0) {
-                                console.log(`气泡3翻倍：第${$.qp3fb.data.data.data.finishtimes}次,${$.qp3fb.data.data.data.rewardnum}金币\n`);
-                                $.message += `【气泡3翻倍】：第${$.qp3fb.data.data.data.finishtimes}次,${$.qp3fb.data.data.data.rewardnum}金币\n`;
+                                console.log(`气泡3翻倍：第${$.qp3fb.data.data.data.usedextratimes}次,${$.qp3fb.data.data.data.rewardnum}金币\n`);
+                                if ($.qp3fb.data.data.data.usedextratimes == $.qp3fb.data.data.data.finishtimes * 10) {
+                                    $.message += `【气泡3翻倍】：本次运行10次，共获得${$.qp3fb.data.data.data.rewardnum*10}金币，今日已翻倍${$.qp3fb.data.data.data.usedextratimes}次,\n`;
+                                }
                             }
                         }
 
