@@ -1,6 +1,6 @@
 /*
 软件名称:文创阅读 复制链接到微信打开
-更新时间：2021-03-29 @肥皂
+更新时间：2021-04-01 @肥皂
 脚本说明：文创阅读自动阅读
 脚本为自动完成文创阅读的阅读任务
 每日收益暂时不清楚，阅读单价目前为1分，一毛就可提现，支付宝秒到，需每日手动阅读通过微信鉴权，防止黑号，不会与其他的阅读脚本产生冲突，如番茄看看，云扫码，微客众智，66阅读，可一起跑脚本
@@ -10,7 +10,10 @@
 
 本脚本以学习为主！
 使用方法:复制上方链接进入，需填写邀请信息，点击阅读1开始阅读，获得阅读数据，自动提现请到boxjs中填写支付宝的提现信息
-3.29修复域名变化导致的无法抓包和跑脚本的问题，请更换重写和mitm
+
+4.1更新，cron表达更改为一分钟一次，可以避免cookie过期,就是每分钟运行一次脚本，但是这样可能导致文创的服务器承受不住,可能几天就薅死了。哈哈哈可以修改cron为 0-59 9-22 * * *
+意思就是每天的早上九点到晚上十点每分钟运行一次脚本，如果想一直不过期就把9-22改为0-23。。。不过风险很大。更改运行模式为运行一次脚本执行一次任务，而不是一直循环到没有任务可做
+
 TG电报群: https://t.me/hahaha8028
 
 boxjs地址 :  
@@ -20,7 +23,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
 [task_local]
 #文创阅读
-5 9-22 * * * https://raw.githubusercontent.com/age174/-/main/wcyd.js, tag=文创阅读, img-url=https://ae01.alicdn.com/kf/Ua6bd9417d492473f8ca0c3110b2176307.jpg, enabled=true
+0-59 9-22 * * * https://raw.githubusercontent.com/age174/-/main/wcyd.js, tag=文创阅读, img-url=https://ae01.alicdn.com/kf/Ua6bd9417d492473f8ca0c3110b2176307.jpg, enabled=true
 
 [rewrite_local]
 #文创阅读
@@ -118,7 +121,7 @@ await wcydlb();
         
 } else {
 console.log('文创阅读获取任务信息失败'+result.msg)
-
+await wcydyd();
 }
         } catch (e) {
           //$.logErr(e, resp);
@@ -185,8 +188,8 @@ $.log('\n文创阅读检测到当前余额可提现，前去提现')
 await wcydtx();
 
 }
-       await $.wait(1000);
-       await wcyd1();
+       //await $.wait(1000);
+       //await wcyd1();
 } else {
        console.log('\n文创阅读用户信息获取失败 '+data)
 
