@@ -9,7 +9,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 
 ⚠️简单天气    需要 手机号和微信号    共0.8-1元 无早起打卡挑战活动，无福利发放活动
   
->>点击  http://jdtq.sdms.mobi/1D6AHElb  下载APP  邀请码 576005088  谢谢支持
+>>点击  http://jdtq.erxiao.mobi/1D6BX7Ed  下载APP  邀请码 577571032  谢谢支持
 
 3.26 制作
 3.30 完成
@@ -213,7 +213,7 @@ hostname = event.jiandantianqi.com
 
 */
 
-GXRZ = '3.31 优化调整为10次翻倍'
+GXRZ = '4.1 修复错误'
 const $ = Env("简单天气");
 $.idx = ($.idx = ($.getval('jdtqSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -2841,9 +2841,9 @@ async function all() {
     if (!jdtquserbodyArr || jdtquserbodyArr == '') {
         $.msg(
             $.name,
-            '提示：⚠️请>>点击前往获取cookie http://jdtq.sdms.mobi/1D6AHElb\n',
-            'http://jdtq.sdms.mobi/1D6AHElb', {
-                "open-url": "http://jdtq.sdms.mobi/1D6AHElb"
+            '提示：⚠️请>>点击前往获取cookie http://jdtq.erxiao.mobi/1D6BX7Ed\n',
+            'http://jdtq.erxiao.mobi/1D6BX7Ed', {
+                "open-url": "http://jdtq.erxiao.mobi/1D6BX7Ed"
             }
         );
         return;
@@ -2946,11 +2946,11 @@ async function all() {
                 K = `用户名🚩`;
                 await task()
                 if (!$.isLogin) {
-                    $.msg(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://jdtq.sdms.mobi/1D6AHElb`, {
-                        "open-url": "http://jdtq.sdms.mobi/1D6AHElb"
+                    $.msg(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://jdtq.erxiao.mobi/1D6BX7Ed`, {
+                        "open-url": "http://jdtq.erxiao.mobi/1D6BX7Ed"
                     });
                     if ($.isNode()) {
-                        await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://jdtq.sdms.mobi/1D6AHElb`);
+                        await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://jdtq.erxiao.mobi/1D6BX7Ed`);
                     }
                     continue
                 }
@@ -2978,8 +2978,8 @@ async function all() {
                 await task()
             }
 
-            if (jdtqqp1bodyVal && jdtqqp1bodyVal != ``) {
-                if ($.qpinfo1.usedextratimes / 10 > $.qpinfo1.finishtimes && $.qpinfo1.resttime == 0 && $.qpinfo1.missionstatus == 0) {
+            if (jdtqqp1bodyVal && jdtqqp1bodyVal != ``&& $.qpinfo1.resttime == 0 && $.qpinfo1.missionstatus == 0) {
+                if ($.qpinfo1.usedextratimes / 10 > $.qpinfo1.finishtimes ) {
 
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
@@ -2993,7 +2993,7 @@ async function all() {
                 }
 
 
-                if (jdtqqp1fbbodyVal && jdtqqp1fbbodyVal != `` && $.qpinfo1.usedextratimes < $.qpinfo1.extratimes) {
+                if (jdtqqp1fbbodyVal && jdtqqp1fbbodyVal != `` && $.qpinfo1.usedextratimes/10 <= $.qpinfo1.extratimes) {
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
                         "Host": "zt.jiandantianqi.com",
@@ -3019,8 +3019,8 @@ async function all() {
 
 
 
-            if (jdtqqp2bodyVal && jdtqqp2bodyVal != ``) {
-                if ($.qpinfo2.usedextratimes / 10 > $.qpinfo2.finishtimes && $.qpinfo2.resttime == 0 && $.qpinfo2.missionstatus == 0) {
+            if (jdtqqp2bodyVal && jdtqqp2bodyVal != ``&& $.qpinfo2.resttime == 0 && $.qpinfo2.missionstatus == 0) {
+                if ($.qpinfo2.usedextratimes / 10 > $.qpinfo2.finishtimes ) {
 
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
@@ -3034,7 +3034,7 @@ async function all() {
                 }
 
 
-                if (jdtqqp2fbbodyVal && jdtqqp2fbbodyVal != `` && $.qpinfo2.usedextratimes < $.qpinfo2.extratimes) {
+                if (jdtqqp2fbbodyVal && jdtqqp2fbbodyVal != `` && $.qpinfo2.usedextratimes/10 <= $.qpinfo2.extratimes) {
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
                         "Host": "zt.jiandantianqi.com",
@@ -3058,8 +3058,8 @@ async function all() {
 
 
 
-            if (jdtqqp3bodyVal && jdtqqp3bodyVal != ``) {
-                if ($.qpinfo3.usedextratimes / 10 > $.qpinfo3.finishtimes && $.qpinfo3.resttime == 0 && $.qpinfo3.missionstatus == 0) {
+            if (jdtqqp3bodyVal && jdtqqp3bodyVal != ``&& $.qpinfo3.resttime == 0 && $.qpinfo3.missionstatus == 0) {
+                if ($.qpinfo3.usedextratimes / 10 > $.qpinfo3.finishtimes ) {
 
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
@@ -3073,7 +3073,7 @@ async function all() {
                 }
 
 
-                if (jdtqqp3fbbodyVal && jdtqqp3fbbodyVal != `` && $.qpinfo3.usedextratimes < $.qpinfo3.extratimes) {
+                if (jdtqqp3fbbodyVal && jdtqqp3fbbodyVal != `` && $.qpinfo3.usedextratimes/10 <= $.qpinfo3.extratimes) {
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
                         "Host": "zt.jiandantianqi.com",
