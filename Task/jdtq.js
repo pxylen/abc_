@@ -14,6 +14,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 3.26 制作
 3.30 完成
 3.31 优化调整为10次翻倍
+4.1 修复错误
 
 ⚠️ 时间设置   6 6 0-23 * * *    每小时 1次即可  运行一次执行10次翻倍，预计运行15分钟
 ⚠️一共  41个ck  👉 41条 Secrets
@@ -2993,7 +2994,7 @@ async function all() {
                 }
 
 
-                if (jdtqqp1fbbodyVal && jdtqqp1fbbodyVal != `` && $.qpinfo1.usedextratimes/10 <= $.qpinfo1.extratimes) {
+                if (jdtqqp1fbbodyVal && jdtqqp1fbbodyVal != `` && $.qpinfo1.usedextratimes < $.qpinfo1.extratimes) {
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
                         "Host": "zt.jiandantianqi.com",
@@ -3034,7 +3035,7 @@ async function all() {
                 }
 
 
-                if (jdtqqp2fbbodyVal && jdtqqp2fbbodyVal != `` && $.qpinfo2.usedextratimes/10 <= $.qpinfo2.extratimes) {
+                if (jdtqqp2fbbodyVal && jdtqqp2fbbodyVal != `` && $.qpinfo2.usedextratimes < $.qpinfo2.extratimes) {
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
                         "Host": "zt.jiandantianqi.com",
@@ -3073,7 +3074,7 @@ async function all() {
                 }
 
 
-                if (jdtqqp3fbbodyVal && jdtqqp3fbbodyVal != `` && $.qpinfo3.usedextratimes/10 <= $.qpinfo3.extratimes) {
+                if (jdtqqp3fbbodyVal && jdtqqp3fbbodyVal != `` && $.qpinfo3.usedextratimes < $.qpinfo3.extratimes) {
                     jdtqurl = `https://zt.jiandantianqi.com/`
                     jdtqheader = {
                         "Host": "zt.jiandantianqi.com",
