@@ -1,6 +1,6 @@
 /*
 软件名称:葫芦音乐 商店搜索下载
-更新时间：2021-03-31 @肥皂
+更新时间：2021-04-02 @肥皂
 脚本说明：葫芦音乐自动任务
 脚本为自动完成葫芦音乐的日常任务
 每日固定收益0.5元左右，1元提现，可多号撸。
@@ -14,6 +14,8 @@ TG电报群: https://t.me/hahaha8028
 boxjs地址 :  
 
 https://raw.githubusercontent.com/age174/-/main/feizao.box.json
+
+4.2更新,破解学知识任务,创意视频任务和分享任务的收益上限,学知识可以领取两次1500金币,创意视频可以领取两次2000金币,分享任务可领取两次68金币,自动提现好像还有点问题,到时候再看看
 
 葫芦音乐
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
@@ -79,6 +81,8 @@ let ut = '',id = '',qd='',qdfb='',gg='',sp='',fx='',zs='',tg='',wz=''
           await $.wait(3000);
           await hlyyfx()
           await $.wait(3000);
+          await hlyyfxpj()
+          await $.wait(3000);
           await hlyytg()
           await $.wait(3000);
           await hlyyzslb()
@@ -86,6 +90,7 @@ let ut = '',id = '',qd='',qdfb='',gg='',sp='',fx='',zs='',tg='',wz=''
           await hlyyzs()
           await $.wait(3000);
           await hlyyxx()
+          await hlyyme()
           await hlyytx()
   }
 }}
@@ -124,7 +129,6 @@ function hlyylb(timeout = 0) {
 
 ut = hlyyurl.match(/ut=(.*)/)[1]
 id = hlyyurl.match(/deviceId=(.+?)&/)[1]
-
 let url = {
         url : `https://play.gxhuancai.com/hlplay/task/getTaskList?av=1.1.3&ut=${ut}`,
         headers : JSON.parse(hlyyhd),
@@ -142,6 +146,7 @@ sp = result.data.pagelist[3].taskCode
 fx = result.data.pagelist[4].taskCode
 zs = result.data.pagelist[1].taskCode
 tg = result.data.pagelist[5].taskCode      
+                  
 } else {
 $.log(data)
 console.log('葫芦音乐获取用户信息失败 已停止当前账号运行!')
@@ -173,7 +178,6 @@ let url = {
         if(result.errCode == 00){
 
         console.log(`\n〔葫芦音乐〕${result.data.pagelist[0].taskTitle}获得${result.data.pagelist[0].taskGoldCoin}💰`)
-
         
 } else {
        console.log('\n葫芦音乐错误'+data)
@@ -224,6 +228,41 @@ let url = {
 function hlyygg(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
+        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${gg}&tl=10000&ut=${ut}`,
+        headers : JSON.parse(hlyyhd),
+}
+      $.post(url, async (err, resp, data) => {
+
+        try {
+    const result = JSON.parse(data)
+
+        if(result.errCode == 00){
+
+        console.log(`\n〔葫芦音乐〕${result.data.pagelist[0].taskTitle}获得${result.data.pagelist[0].taskGoldCoin}💰`)
+if (result.data.pagelist[0].taskGoldCoin == 0){
+$.log('\n〔葫芦音乐〕检测到创意视频任务已完成,尝试破解收益上限')
+await $.wait(3000);
+await hlyyggpj()
+}        
+        
+} else {
+       console.log('\n葫芦音乐错误'+data)
+
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+//葫芦音乐创意视频破解
+function hlyyggpj(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
         url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${gg}&ut=${ut}`,
         headers : JSON.parse(hlyyhd),
 }
@@ -254,7 +293,7 @@ let url = {
 function hlyysp(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${sp}&tl=500&ut=${ut}`,
+        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${sp}&tl=10000&ut=${ut}`,
         headers : JSON.parse(hlyyhd),
 }
       $.post(url, async (err, resp, data) => {
@@ -313,11 +352,41 @@ let url = {
   })
 }
 
+//葫芦音乐分享破解
+function hlyyfxpj(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${fx}&ut=${ut}`,
+        headers : JSON.parse(hlyyhd),
+}
+      $.post(url, async (err, resp, data) => {
+
+        try {
+    const result = JSON.parse(data)
+
+        if(result.errCode == 00){
+
+        console.log(`\n〔葫芦音乐破解〕${result.data.pagelist[0].taskTitle}获得${result.data.pagelist[0].taskGoldCoin}💰`)
+
+        
+} else {
+       console.log('\n葫芦音乐错误'+data)
+
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
 //葫芦音乐听歌
 function hlyytg(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${tg}&tl=500&ut=${ut}`,
+        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&deviceId=${id}&os=ios&tc=${tg}&tl=10000&ut=${ut}`,
         headers : JSON.parse(hlyyhd),
 }
       $.post(url, async (err, resp, data) => {
@@ -374,12 +443,75 @@ wz = result.data.pagelist[0].code
     },timeout)
   })
 }
+//葫芦音乐学知识列表破解
+function hlyyzslbpj(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : `https://play.gxhuancai.com/hlplay/rumor/getRumorList?page=1&size=10&ut=${ut}`,
+        headers : JSON.parse(hlyyhd),
+}
+      $.get(url, async (err, resp, data) => {
+
+        try {
+    const result = JSON.parse(data)
+
+        if(result.errCode == 00){
+
+        console.log(`\n〔葫芦音乐学知识〕获取列表成功🚬\n 文章code:${result.data.pagelist[0].code}\n 文章标题:${result.data.pagelist[0].rumorTitle}`)
+wz = result.data.pagelist[0].code
+        await $.wait(3000);
+        await hlyyzspj()
+} else {
+       console.log('\n葫芦音乐错误'+data)
+
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
 
 //葫芦音乐知识
 function hlyyzs(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&bc=${wz}&deviceId=${id}&os=ios&tc=${zs}&tl=200&ut=${ut}`,
+        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&bc=${wz}&deviceId=${id}&os=ios&tc=${zs}&tl=10000&ut=${ut}`,
+        headers : JSON.parse(hlyyhd),
+}
+      $.post(url, async (err, resp, data) => {
+
+        try {
+    const result = JSON.parse(data)
+
+        if(result.errCode == 00){
+        console.log(`\n〔葫芦音乐〕${result.data.pagelist[0].taskTitle}获得${result.data.pagelist[0].taskGoldCoin}💰`)
+   if (result.data.pagelist[0].taskGoldCoin == 0){
+$.log('\n〔葫芦音乐〕检测到学知识任务已完成,尝试破解收益上限')
+await $.wait(3000);
+await hlyyzslbpj()
+}        
+} else {
+       console.log('\n葫芦音乐错误'+data)
+
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+//葫芦音乐知识破解
+function hlyyzspj(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : `https://play.gxhuancai.com/hlplay/task/doTasks?appVersion=1.1.3&bc=${wz}&deviceId=${id}&os=ios&tc=${zs}&ut=${ut}`,
         headers : JSON.parse(hlyyhd),
 }
       $.post(url, async (err, resp, data) => {
@@ -389,7 +521,7 @@ let url = {
 
         if(result.errCode == 00){
 
-        console.log(`\n〔葫芦音乐〕${result.data.pagelist[0].taskTitle}获得${result.data.pagelist[0].taskGoldCoin}💰`)
+        console.log(`\n〔葫芦音乐破解〕${result.data.pagelist[0].taskTitle}获得${result.data.pagelist[0].taskGoldCoin}💰`)
 
         
 } else {
@@ -436,6 +568,37 @@ let url = {
     },timeout)
   })
 }
+//葫芦音乐tx名额
+function hlyyme(timeout = 0) {
+  return new Promise((resolve) => {
+let url = {
+        url : `https://play.gxhuancai.com/hlplay/withdrawal/checkWithDrawal?av=1.1.3&ut=${ut}&wdiCode=BsjB-5WE54sKKCP0kIMORs1WbWzmM5gRg`,
+        headers : JSON.parse(hlyyhd),
+}
+      $.post(url, async (err, resp, data) => {
+
+        try {
+    const result = JSON.parse(data)
+
+        if(result.data == false){
+
+        console.log(`\n〔葫芦音乐提现名额领取成功〕`)
+
+        
+} else {
+       console.log('\n葫芦音乐提现名额领取失败')
+
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
 //葫芦音乐tx
 function hlyytx(timeout = 0) {
   return new Promise((resolve) => {
