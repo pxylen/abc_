@@ -1,4 +1,4 @@
-hostname=huodong.fanli.com,passport.fanli.com,gw.fanli.com,
+hostname=*.fanli.com,
 
 ############## 圈x
 
