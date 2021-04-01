@@ -49,24 +49,18 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #云扫码
-^http://.+?/yunonline/v\d+/redirect/(?!undefined) url script-request-header https://raw.githubusercontent.com/age174/-/main/ysm.js
+^http://.+?[^/]/yunonline/v\d+/redirect/(?!undefined) url script-request-header https://raw.githubusercontent.com/age174/-/main/ysm.js
 
 
 
 #loon
-^http://.+?/yunonline/v\d+/redirect/(?!undefined) script-path=https://raw.githubusercontent.com/age174/-/main/ysm.js, requires-body=true, timeout=10, tag=云扫码
+^http://.+?[^/]/yunonline/v\d+/redirect/(?!undefined) script-path=https://raw.githubusercontent.com/age174/-/main/ysm.js, requires-body=true, timeout=10, tag=云扫码
 
 
 
 #surge
 
-云扫码 = type=http-request,pattern=^http://.+?/yunonline/v\d+/redirect/(?!undefined),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/ysm.js,script-update-interval=0
-
-
-
-
-[MITM]
-hostname = .*.top
+云扫码 = type=http-request,pattern=^http://.+?[^/]/yunonline/v\d+/redirect/(?!undefined),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/ysm.js,script-update-interval=0
 
 
 */
@@ -127,7 +121,7 @@ function execTask(ac, i) {
     try {
       await $.wait(i * 50)
       await ysm4(ac)
-      if ((!execNo || (execNo.length == 0 || execNo.includes(ac.no))) && ac.remain_read && !(ac.day_read < 2 && ysmBanfirstTask)) {
+      if ((!execNo || (execNo.length == 0 || execNo.includes(ac.no))) && ac.remain_read && !(ac.day_read < 2 && ysmBanfirstTask) && !(ysmBanhalfTask && ac.day_read == 50)) {
         $.log(`😄账号${ac.no}今日已读${ac.day_read}次，今日待读${ac.remain_read}次，即将阅读`)
         await $.wait((i + 1) * 600)
         let flag = 0
@@ -203,9 +197,11 @@ function getExecAcList() {
 async function ysmck() {
   const url = $request.url
   let newAc = ''
-  if (url.match(/https?:\/\/.+\/yunonline\/v\d+\/redirect\/(?!undefined)/)) {
+  if (url.match(/https?:\/\/.+?[^/]\/yunonline\/v\d+\/redirect\/(?!undefined)/) || url.match(/https?:\/\/.+?[^/]\/yunonline\/v\d+\/exchange\?/)) {
+    let hd = {...$request.headers}
+    let data = (hd['Referer'] || hd['referer'] || '').match(/^https?:\/\/.+?[^/]\/yunonline\/v\d+\/redirect\/(?!undefined).+$/)
     let no = ysm.length
-    newAc = await updateAndGetCk(no + 1, url, $request.headers)
+    newAc = await updateAndGetCk(no + 1, data && data[0] || url, hd)
     if (newAc) {
       let status = 1
       for (let i = 0, len = no; i < len; i++) {
@@ -267,18 +263,13 @@ async function ysmckMove() {
   let ysmcount = ($.getval('ysmcount') || '1') - 0
   for (let i = 1; i <= ysmcount; i++) {
     let hd = $.getjson(`ysmhd${i>1?i:''}`)
-    let tx = $.getdata(`ysmtx${i>1?i:''}`)
     if (hd) {
-      let data = (hd['Referer'] || hd['referer'] || '').match(/^(https?:\/\/.+?\/)redirect\/(.+?)\?openid=([^&]*)(&|$)/)
-      let openid = data && data[3]
-      if (openid) {
-        ysmArr.push({
-          openid: openid,
-          domain: data[1],
-          secret: data[2],
-          ua: hd['User-Agent'] || hd['user-agent'],
-          txbody: tx || ''
-        })
+      let data = (hd['Referer'] || hd['referer'] || '').match(/^https?:\/\/.+?[^/]\/yunonline\/v\d+\/redirect\/(?!undefined).+$/)
+      if (data) {
+        let newAc = await updateAndGetCk(i, data[0], hd)
+        if (newAc) {
+          ysmArr.push(newAc)
+        }
       }
     }
   }
@@ -386,10 +377,6 @@ function ysm2(ac, jumpLink, flag = 0) {
           $.logErr(`❌ 账号${ac.no} API请求失败，请检查网络后重试\n url: ${opts.url} \n data: ${JSON.stringify(err, null, 2)}`)
         } else {
           rtObj = $.toObj(data, {})
-          if (flag && rtObj && rtObj.url) {
-            // 尝试访问需要重定向的第三方接口地址
-            await ysm2(ac, rtObj.url)
-          }
         }
       } catch (e) {
         $.logErr(`======== 账号 ${ac.no} ========\nurl: ${opts.url}\nerror:${e}\ndata: ${resp && resp.body}`)
