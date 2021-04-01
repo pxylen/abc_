@@ -121,7 +121,7 @@ function execTask(ac, i) {
     try {
       await $.wait(i * 50)
       await ysm4(ac)
-      if ((!execNo || (execNo.length == 0 || execNo.includes(ac.no))) && ac.remain_read && !(ac.day_read < 2 && ysmBanfirstTask)) {
+      if ((!execNo || (execNo.length == 0 || execNo.includes(ac.no))) && ac.remain_read && !(ac.day_read < 2 && ysmBanfirstTask) && !(ysmBanhalfTask && ac.day_read == 50)) {
         $.log(`😄账号${ac.no}今日已读${ac.day_read}次，今日待读${ac.remain_read}次，即将阅读`)
         await $.wait((i + 1) * 600)
         let flag = 0
