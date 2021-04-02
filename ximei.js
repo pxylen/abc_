@@ -19,7 +19,7 @@
 
 TG电报群: https://t.me/hahaha8028
 
-4.3更新加入自动提现
+4.3更新西梅加入自动提现功能,不用再去微信提现了,请确保自己的账号已绑定微信
 
 boxjs地址 :  
 
@@ -87,7 +87,7 @@ let ximeikey = '',id = '',uid='',tid='',name=''
           console.log(`\n开始【西梅${$.index}】`)
           await ximei1();
           await ximeixx();
-          await ximeitx();
+          
 
   }
 }}
@@ -338,6 +338,10 @@ let url = {
         if(result.code == 0){
 
         console.log('\n西梅用户信息获取成功\n当前梅子:'+result.data.point+'\n当前金币:'+result.data.coin)
+if(result.data.point >=100){
+$.log('西梅-检测到当前梅子可提现,执行提现任务')
+await ximeitx();
+}
         
 } else {
        console.log('\n西梅用户信息获取失败  '+result.msg)
