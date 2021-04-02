@@ -78,6 +78,7 @@ let wkzzurl = '', wkzzhd = '',id = '',uid='',tid='',name=''
       if (id) {
         $.log('\n微客众智获取用户信息成功\n当前用户名:' + userInfo.nickname + ' 用户ID:' + id + '\n开始查询任务信息')
         await wkzzlb();
+        await wkzzxj();
       } else if (userInfo) {
         $.log(userInfo)
       }
