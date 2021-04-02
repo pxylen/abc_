@@ -1,6 +1,6 @@
 /*
 软件名称:西梅 微信扫码下载
-更新时间：2021-03-29 @肥皂
+更新时间：2021-04-03 @肥皂
 脚本说明：西梅自动任务
 脚本为自动完成西梅的阅读任务
 每日收益0.45元，可多号撸。
@@ -10,16 +10,16 @@
 
 
 扫码打开 https://ae01.alicdn.com/kf/U8c71c1ac1f47422788561b0be3d4ea2ah.jpg
-微信扫码打开可领红包，然后去商店搜索下载西梅
+微信扫码打开可领红包
 
 
 
 本脚本以学习为主！
-使用方法: 打开西梅，首页推荐下拉刷新获得数据
-
+使用方法:打开西梅，首页推荐下拉刷新获得数据
 
 TG电报群: https://t.me/hahaha8028
 
+4.3更新加入自动提现
 
 boxjs地址 :  
 
@@ -87,6 +87,7 @@ let ximeikey = '',id = '',uid='',tid='',name=''
           console.log(`\n开始【西梅${$.index}】`)
           await ximei1();
           await ximeixx();
+          await ximeitx();
 
   }
 }}
@@ -350,6 +351,40 @@ let url = {
     },timeout)
   })
 }
+
+//西梅任务提现
+function ximeitx(timeout = 0) {
+  return new Promise((resolve) => {
+
+let url = {
+        url : "https://app.hubonews.com/v1/credit/cashout/apply",
+        headers : JSON.parse(ximeihd),
+        body : `{"cashout_credits":100,"assets_type":0}`,
+}
+      $.post(url, async (err, resp, data) => {
+
+        try {
+    const result = JSON.parse(data)
+
+        if(result.code == 0){
+
+        console.log('\n西梅提现成功:'+result.data.order_status)
+
+        
+} else {
+       console.log('\n西梅提现失败  '+result.msg)
+
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
 
 //封装md5
 function md5(a) {
