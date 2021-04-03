@@ -1,10 +1,13 @@
 /*
 软件名称:阳光果园 企业版
-更新时间：2021-03-06 @肥皂
+更新时间：2021-04-03 @肥皂
 脚本说明：阳光果园自动签到和收取果实
 
 零撸版，一天可以收取三个果实，一个果实1.5元
-20元提现，六天可撸二十
+20元提现，六天可撸二十,提现规则更改为100提现,
+注册送的果树到期后用收取的果实去首页兑换新手专享果树
+兑换之后可继续撸,二十天左右可提现一百,已有多人到账
+零撸结束可撸400+
 
 果实出售方法，点击市场  选择官方回收或者我要出售都可以
 建议官方回收
@@ -23,7 +26,7 @@
 使用方法:
 打开阳光果园，找到首页 任务 签到，获得阳光果园的数据
 或者点收取果实也能获取数据
-
+4.3更新,修复官方域名更换导致无法获取数据的问题,请更换新的重写,如果开启代理无法进入的可以开启直连抓包,或者添加一个分流规则走直连
 
 TG电报群: https://t.me/hahaha802
 
@@ -38,29 +41,29 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试
 [task_local]
 #阳光果园
-50 12 * * * https://raw.githubusercontent.com/age174/-/main/yggy.js, tag=阳光果园, img-url= https://ae01.alicdn.com/kf/Ubf3bd5e9c2414c18a96a3a2b20a9d2c5C.jpg, enabled=true
+50 12 * * * https://raw.githubusercontent.com/age174/-/main/yggy.js, tag=阳光果园, img-url=https://s3.ax1x.com/2021/02/06/yYzeWn.png, enabled=true
 
 
 [rewrite_local]
 #阳光果园
-https://sdk.121827.com/index/guoyuan url script-request-body https://raw.githubusercontent.com/age174/-/main/yggy.js
+https://sdk.985827.com/index/guoyuan url script-request-body https://raw.githubusercontent.com/age174/-/main/yggy.js
 
 
 
 #loon
-https://sdk.121827.com/index/guoyuan/ script-path=https://raw.githubusercontent.com/age174/-/main/yggy.js, requires-body=true, timeout=10, tag=阳光果园
+https://sdk.985827.com/index/guoyuan/ script-path=https://raw.githubusercontent.com/age174/-/main/yggy.js, requires-body=true, timeout=10, tag=阳光果园
 
 
 
 #surge
 
-阳光果园 = type=http-request,pattern=https://sdk.121827.com/index/guoyuan/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/yggy.js,script-update-interval=0
+阳光果园 = type=http-request,pattern=https://sdk.985827.com/index/guoyuan/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/yggy.js,script-update-interval=0
 
 
 
 
 [MITM]
-hostname = sdk.121827.com
+hostname = sdk.985827.com
 
 */
 
@@ -120,7 +123,7 @@ $.log(yggyhd)
 function yggysq(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : 'https://sdk.121827.com/index/guoyuan/collectFruit',
+        url : 'https://sdk.985827.com//index/guoyuan/collectFruit',
         headers : JSON.parse(yggyhd),
         body : yggybody,}
       $.post(url, async (err, resp, data) => {
@@ -153,7 +156,7 @@ function yggyqd(timeout = 0) {
         $.done()
       }
 let url = {
-        url : 'https://sdk.121827.com/index/guoyuan/signIn',
+        url : 'https://sdk.985827.com/index/guoyuan/signIn',
         headers : JSON.parse(yggyhd),
         body : yggybody,}
       $.post(url, async (err, resp, data) => {
