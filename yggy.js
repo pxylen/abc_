@@ -46,24 +46,24 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #阳光果园
-https://sdk.985827.com/index/guoyuan url script-request-body https://raw.githubusercontent.com/age174/-/main/yggy.js
+^https://.+?[^/]/index/guoyuan url script-request-body https://raw.githubusercontent.com/age174/-/main/yggy.js
 
 
 
 #loon
-https://sdk.985827.com/index/guoyuan/ script-path=https://raw.githubusercontent.com/age174/-/main/yggy.js, requires-body=true, timeout=10, tag=阳光果园
+^https://.+?[^/]/index/guoyuan script-path=https://raw.githubusercontent.com/age174/-/main/yggy.js, requires-body=true, timeout=10, tag=阳光果园
 
 
 
 #surge
 
-阳光果园 = type=http-request,pattern=https://sdk.985827.com/index/guoyuan/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/yggy.js,script-update-interval=0
+阳光果园 = type=http-request,pattern=^https://.+?[^/]/index/guoyuan,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/yggy.js,script-update-interval=0
 
 
 
 
 [MITM]
-hostname = sdk.985827.com
+hostname = sdk.*.com
 
 */
 
