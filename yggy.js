@@ -71,18 +71,22 @@ hostname = sdk.*.com
 const $ = new Env('阳光果园');
 let status;
 status = (status = ($.getval("yggystatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const yggybodyArr = [], yggyhdArr = [],yggycount = ''
+const yggybodyArr = [], yggyhdArr = [],yggyurlArr = [],yggycount = ''
 let yggybody = $.getdata('yggybody')
 let yggyhd = $.getdata('yggyhd')
+let yggyurl = $.getdata('yggyurl')
+let sdk = '';
 !(async () => {
   if (typeof $request !== "undefined") {
     await yggyck()
    
   } else {yggybodyArr.push($.getdata('yggybody'))
     yggyhdArr.push($.getdata('yggyhd'))
+    yggyurlArr.push($.getdata('yggyurl'))
     let yggycount = ($.getval('yggycount') || '1');
   for (let i = 2; i <= yggycount; i++) {
     yggybodyArr.push($.getdata(`yggybody${i}`))
+    yggyurlArr.push($.getdata(`yggyurl${i}`))
     yggyhdArr.push($.getdata(`yggyhd${i}`))
   }
     console.log(`------------- 共${yggyhdArr.length}个账号-------------\n`)
@@ -90,6 +94,7 @@ let yggyhd = $.getdata('yggyhd')
         if (yggyhdArr[i]) {
          
           yggybody = yggybodyArr[i];
+          yggyhd = yggyhdArr[i];
           yggyhd = yggyhdArr[i];
           $.index = i + 1;
           console.log(`\n开始【阳光果园${$.index}】`)
@@ -111,6 +116,9 @@ function yggyck() {
  const yggybody = $request.body
   if(yggybody)     $.setdata(yggybody,`yggybody${status}`)
     $.log(yggybody)
+const yggyurl = $request.url
+  if(yggyurl)     $.setdata(yggyurl,`yggyurl${status}`)
+    $.log(yggyurl)
   const yggyhd = JSON.stringify($request.headers)
         if(yggyhd)    $.setdata(yggyhd,`yggyhd${status}`)
 $.log(yggyhd)
@@ -123,7 +131,7 @@ $.log(yggyhd)
 function yggysq(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : 'https://sdk.985827.com//index/guoyuan/collectFruit',
+        url : `https://sdk.${sdk}.com/index/guoyuan/collectFruit`,
         headers : JSON.parse(yggyhd),
         body : yggybody,}
       $.post(url, async (err, resp, data) => {
@@ -155,8 +163,9 @@ function yggyqd(timeout = 0) {
         $.msg($.name,"",'请先获取阳光果园数据!😓',)
         $.done()
       }
+sdk = yggyurl.match(/sdk.(\w+).com/)[1]
 let url = {
-        url : 'https://sdk.985827.com/index/guoyuan/signIn',
+        url : `https://sdk.${sdk}.com/index/guoyuan/signIn`,
         headers : JSON.parse(yggyhd),
         body : yggybody,}
       $.post(url, async (err, resp, data) => {
