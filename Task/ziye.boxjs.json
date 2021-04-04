@@ -69,7 +69,7 @@
         {
             "id": "iboxpay",
             "name": "笑谱",
-            "keys": ["refreshtoken", "iboxpayvideoheader", "iboxpayvideobody", "refreshtoken2", "iboxpayvideoheader2", "iboxpayvideobody2", "refreshtoken3", "iboxpayvideoheader3", "iboxpayvideobody3", "refreshtoken4", "iboxpayvideoheader4", "iboxpayvideobody4", "refreshtoken5", "iboxpayvideoheader5", "iboxpayvideobody5", "refreshtoken6", "iboxpayvideoheader6", "iboxpayvideobody6", "refreshtoken7", "iboxpayvideoheader7", "iboxpayvideobody7", "refreshtoken8", "iboxpayvideoheader8", "iboxpayvideobody8", "refreshtoken9", "iboxpayvideoheader9", "iboxpayvideobody9", "refreshtoken10", "iboxpayvideoheader10", "iboxpayvideobody10", "refreshtoken11", "iboxpayvideoheader11", "iboxpayvideobody11", "refreshtoken12", "iboxpayvideoheader12", "iboxpayvideobody12", "refreshtoken13", "iboxpayvideoheader13", "iboxpayvideobody13", "refreshtoken14", "iboxpayvideoheader14", "iboxpayvideobody14", "refreshtoken15", "iboxpayvideoheader15", "iboxpayvideobody15", "refreshtoken16", "iboxpayvideoheader16", "iboxpayvideobody16", "refreshtoken17", "iboxpayvideoheader17", "iboxpayvideobody17", "refreshtoken18", "iboxpayvideoheader18", "iboxpayvideobody18", "refreshtoken19", "iboxpayvideoheader19", "iboxpayvideobody19", "refreshtoken20", "iboxpayvideoheader20", "iboxpayvideobody20"],
+            "keys": ["refreshck", "iboxpayvideoheader", "iboxpayvideobody", "refreshck2", "iboxpayvideoheader2", "iboxpayvideobody2", "refreshck3", "iboxpayvideoheader3", "iboxpayvideobody3", "refreshck4", "iboxpayvideoheader4", "iboxpayvideobody4", "refreshck5", "iboxpayvideoheader5", "iboxpayvideobody5", "refreshck6", "iboxpayvideoheader6", "iboxpayvideobody6", "refreshck7", "iboxpayvideoheader7", "iboxpayvideobody7", "refreshck8", "iboxpayvideoheader8", "iboxpayvideobody8", "refreshck9", "iboxpayvideoheader9", "iboxpayvideobody9", "refreshck10", "iboxpayvideoheader10", "iboxpayvideobody10", "refreshck11", "iboxpayvideoheader11", "iboxpayvideobody11", "refreshck12", "iboxpayvideoheader12", "iboxpayvideobody12", "refreshck13", "iboxpayvideoheader13", "iboxpayvideobody13", "refreshck14", "iboxpayvideoheader14", "iboxpayvideobody14", "refreshck15", "iboxpayvideoheader15", "iboxpayvideobody15", "refreshck16", "iboxpayvideoheader16", "iboxpayvideobody16", "refreshck17", "iboxpayvideoheader17", "iboxpayvideobody17", "refreshck18", "iboxpayvideoheader18", "iboxpayvideobody18", "refreshck19", "iboxpayvideoheader19", "iboxpayvideobody19", "refreshck20", "iboxpayvideoheader20", "iboxpayvideobody20"],
             "author": "@ziye",
             "settings": [{
                     "id": "iboxpaySuffix",
@@ -111,7 +111,7 @@
                     "name": "验证码",
                     "val": "0",
                     "type": "number",
-                    "desc": "输入短信验证码，默认为0，不启动获取token功能"
+                    "desc": "输入短信验证码，默认为0，不启动获取ck功能"
                 }
             ],
             "repo": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/iboxpay.js",
@@ -245,7 +245,7 @@
         {
             "id": "bububao",
             "name": "步步宝APP",
-            "keys": ["bububaotoken", "bububaotoken2", "bububaotoken3", "bububaotoken4", "bububaotoken5", "bububaotoken6", "bububaotoken7", "bububaotoken8", "bububaotoken9", "bububaotoken10", "bububaotoken11", "bububaotoken12", "bububaotoken13", "bububaotoken14", "bububaotoken15", "bububaotoken16", "bububaotoken17", "bububaotoken18", "bububaotoken19", "bububaotoken20"],
+            "keys": ["bububaock", "bububaock2", "bububaock3", "bububaock4", "bububaock5", "bububaock6", "bububaock7", "bububaock8", "bububaock9", "bububaock10", "bububaock11", "bububaock12", "bububaock13", "bububaock14", "bububaock15", "bububaock16", "bububaock17", "bububaock18", "bububaock19", "bububaock20"],
             "author": "@ziye",
             "settings": [{
                     "id": "bububaoSuffix",
@@ -276,7 +276,7 @@
         {
             "id": "yuedongzu",
             "name": "悦动族APP",
-            "keys": ["yuedongzutoken", "yuedongzutoken2", "yuedongzutoken3", "yuedongzutoken4", "yuedongzutoken5", "yuedongzutoken6", "yuedongzutoken7", "yuedongzutoken8", "yuedongzutoken9", "yuedongzutoken10", "yuedongzutoken11", "yuedongzutoken12", "yuedongzutoken13", "yuedongzutoken14", "yuedongzutoken15", "yuedongzutoken16", "yuedongzutoken17", "yuedongzutoken18", "yuedongzutoken19", "yuedongzutoken20"],
+            "keys": ["yuedongzuck", "yuedongzuck2", "yuedongzuck3", "yuedongzuck4", "yuedongzuck5", "yuedongzuck6", "yuedongzuck7", "yuedongzuck8", "yuedongzuck9", "yuedongzuck10", "yuedongzuck11", "yuedongzuck12", "yuedongzuck13", "yuedongzuck14", "yuedongzuck15", "yuedongzuck16", "yuedongzuck17", "yuedongzuck18", "yuedongzuck19", "yuedongzuck20"],
             "author": "@ziye",
             "settings": [{
                     "id": "yuedongzuSuffix",
@@ -307,7 +307,7 @@
         {
             "id": "qmyd",
             "name": "全民悦动APP",
-            "keys": ["qmydtoken", "qmydtoken2", "qmydtoken3", "qmydtoken4", "qmydtoken5", "qmydtoken6", "qmydtoken7", "qmydtoken8", "qmydtoken9", "qmydtoken10", "qmydtoken11", "qmydtoken12", "qmydtoken13", "qmydtoken14", "qmydtoken15", "qmydtoken16", "qmydtoken17", "qmydtoken18", "qmydtoken19", "qmydtoken20"],
+            "keys": ["qmydck", "qmydck2", "qmydck3", "qmydck4", "qmydck5", "qmydck6", "qmydck7", "qmydck8", "qmydck9", "qmydck10", "qmydck11", "qmydck12", "qmydck13", "qmydck14", "qmydck15", "qmydck16", "qmydck17", "qmydck18", "qmydck19", "qmydck20"],
             "author": "@ziye",
             "settings": [{
                     "id": "qmydSuffix",
@@ -363,6 +363,24 @@
             ],
             "repo": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js",
             "icons": ["https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.png", "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.png"],
+            "script": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/yuedongzu.js"
+        },
+        {
+            "id": "ddayd",
+            "name": "多多爱运动APP",
+            "keys": ["ddaydck", "ddaydck2", "ddaydck3", "ddaydck4", "ddaydck5", "ddaydck6", "ddaydck7", "ddaydck8", "ddaydck9", "ddaydck10", "ddaydck11", "ddaydck12", "ddaydck13", "ddaydck14", "ddaydck15", "ddaydck16", "ddaydck17", "ddaydck18", "ddaydck19", "ddaydck20"],
+            "author": "@ziye",
+            "settings": [
+                {
+                    "id": "ddaydCount",
+                    "name": "账号个数",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+                }
+            ],
+            "repo": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ddayd.js",
+            "icons": ["https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ddayd.png", "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ddayd.png"],
             "script": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/yuedongzu.js"
         }
     ]
