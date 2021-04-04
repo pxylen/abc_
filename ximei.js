@@ -35,18 +35,18 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #西梅
-https://app.hubonews.com/v3/articles/list url script-request-body https://raw.githubusercontent.com/age174/-/main/ximei.js
+https://app.hubonews.com/.+/articles/list url script-request-body https://raw.githubusercontent.com/age174/-/main/ximei.js
 
 
 
 #loon
-https://app.hubonews.com/v3/articles/list script-path=https://raw.githubusercontent.com/age174/-/main/ximei.js, requires-body=true, timeout=10, tag=西梅
+https://app.hubonews.com/.+/articles/list script-path=https://raw.githubusercontent.com/age174/-/main/ximei.js, requires-body=true, timeout=10, tag=西梅
 
 
 
 #surge
 
-西梅 = type=http-request,pattern=https://app.hubonews.com/v3/articles/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/ximei.js,script-update-interval=0
+西梅 = type=http-request,pattern=https://app.hubonews.com/.+/articles/list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/ximei.js,script-update-interval=0
 
 
 
