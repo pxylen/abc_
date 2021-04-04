@@ -724,6 +724,13 @@
             "val": "1",
             "type": "number",
             "desc": "需要几个账号，数字为几"
+    },
+    {
+            "id": "nr",
+            "name": "自定义评论内容",
+            "val": "",
+            "type": "string",
+            "desc": "填写自定义评论内容后,脚本评论内容为文章标题加上自定义的内容"
     }],
             "repo": "https://github.com/age174/-/blob/main/shq.js",
             "icons": ["https://ftp.bmp.ovh/imgs/2021/04/e2b32e2eb2ad0cd3.png", "https://ftp.bmp.ovh/imgs/2021/04/e2b32e2eb2ad0cd3.png"],
