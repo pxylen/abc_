@@ -131,7 +131,12 @@
         }, {
             "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-body3.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/shuqi.png, tag=书旗小说获取时长body, enabled=false",
             "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-body3.txt, tag=书旗小说获取时长body, update-interval=86400, opt-parser=false, enabled=false",
-        }
+        },
+		
+		
+		{
+            "config": "6 9 * * * * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ddayd.js, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/ddayd.png, tag=多多爱运动, enabled=false",
+        },
 		
 		
 		
