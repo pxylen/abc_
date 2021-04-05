@@ -24,13 +24,13 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #文创阅读小程序
-^https://yd\.wcyd168\.com/hfTask/getUserByToken url script-request-header https://raw.githubusercontent.com/age174/-/main/wcxcx.js
+^https://yd\.wcyd168\.com/hfTask/getUserByToken url script-request-body https://raw.githubusercontent.com/age174/-/main/wcxcx.js
 
 #loon
-^https://yd\.wcyd168\.com/hfTask/getUserByToken script-path=https://raw.githubusercontent.com/age174/-/main/wcxcx.js, requires-header=true, timeout=10, tag=文创阅读小程序
+^https://yd\.wcyd168\.com/hfTask/getUserByToken script-path=https://raw.githubusercontent.com/age174/-/main/wcxcx.js, requires-body=true, timeout=10, tag=文创阅读小程序
 
 #surge
-文创阅读小程序 = type=http-request,pattern=^https://yd\.wcyd168\.com/hfTask/getUserByToken,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/wcxcx.js,script-update-interval=0
+文创阅读小程序 = type=http-request,pattern=^https://yd\.wcyd168\.com/hfTask/getUserByToken,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/wcxcx.js,script-update-interval=0
 
 [MITM]
 hostname = yd.wcyd168.com
