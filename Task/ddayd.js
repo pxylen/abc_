@@ -13,6 +13,7 @@ boxjs链接 https: //cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 
 4.3 制作
 4.5 完成
+4.5.10 修复错误
 
 ⚠️ 时间设置   30 * * * *    每小时 1次 
 ⚠️一共  1个ck  👉 1条 Secrets
@@ -31,7 +32,7 @@ v2p 进手机boxjs----复制会话，再导入，或者直接填写
 
 */
 
-GXRZ = '4.5 完成'
+GXRZ = '4.5.10 修复错误'
 const $ = Env("多多爱运动");
 $.idx = ($.idx = ($.getval('ddaydSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -336,7 +337,7 @@ async function all() {
                 K = `打卡页🚩`;
                 ddaydurl = `https://ddaydshuibaojk.tiantianzf.cn/task/getUserClockTaskInfo`
                 await task()
-                if ($.energy && $.energy.data.energyBalance >= 2000) {
+                if ($.energy && $.energy.data.energyBalance >= 2000 && $.dky&& $.dky.data.clockTaskInfo[0].completeCount == 0) {
 
                     K = `打卡🚩`;
                     ddaydurl = `https://ddaydshuibaojk.tiantianzf.cn/task/completeWxTask`
@@ -403,7 +404,7 @@ async function all() {
                     await task()
 
                 } else {
-                    if ($.fky && $.fky.data.blessBallInfo[5] == 0) {
+                    if ($.fky && $.fky.data.blessBallInfo[5].blessBallStatus == 0) {
                         K = `抽福卡🚩`;
                         ddaydurl = `https://ddaydshuibaojk.tiantianzf.cn/blessCard/openBall`
                         for (let i = 1; i < 7; i++) {
