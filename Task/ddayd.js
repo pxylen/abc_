@@ -73,7 +73,7 @@ if ($.isNode() && process.env.DDAYD_ddaydCK) {
     console.log(
         `============ cookie方式为：boxjs复制会话 =============\n`
     );
-    XH = (COOKIE.settings.find(item => item.id === `ddaydXH`)).val;
+    
     ddaydCount = (COOKIE.settings.find(item => item.id === `ddaydCount`)).val || '1';
     for (let i = 1; i <= ddaydCount; i++) {
         if (i == 1) {
@@ -88,9 +88,7 @@ if ($.isNode() && process.env.DDAYD_ddaydCK) {
         }
     }
 } else {
-    if ("ddaydXH") {
-        XH = $.getval("ddaydXH") || '0';
-    }
+   
     let ddaydCount = ($.getval('ddaydCount') || '1') - 0;
     for (let i = 1; i <= ddaydCount; i++) {
         if (i == 1) {
