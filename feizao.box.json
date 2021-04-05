@@ -590,6 +590,29 @@
             "script": "https://raw.githubusercontent.com/age174/-/main/wcyd.js"
     } ,
     {
+            "id": "wcxcx",
+            "name": "文创小程序",
+            "keys": ["wcxcx"],
+            "author": "@feizao",
+            "settings": [{
+                    "id": "wcxcxConcurrency",
+                    "val": "1",
+                    "name": "并发执行账号数",
+                    "type": "text",
+                    "desc": "默认单账号跑任务，指定大于1的数值时，将并发执行多个账号的任务，请勿设置过大，避免NE工具崩溃（太大估计会崩溃吧）"
+            }, {
+                    "id": "wcxcx",
+                    "name": "CK 集合",
+                    "val": "",
+                    "type": "textarea",
+                    "rows": 8,
+                    "desc": "json格式的ck数据"
+            }],
+            "repo": "https://github.com/age174/-/blob/main/wcxcx.js",
+            "icons": ["https://ae01.alicdn.com/kf/Ua6bd9417d492473f8ca0c3110b2176307.jpg", "https://ae01.alicdn.com/kf/Ua6bd9417d492473f8ca0c3110b2176307.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/wcxcx.js"
+    },
+    {
             "id": "ximei",
             "name": "西梅",
             "keys": ["ximeiurl", "ximeihd", "ximeiurl2", "ximeihd2","ximeiurl3", "ximeihd3","ximeiurl4", "ximeihd4","ximeiurl5", "ximeihd5","ximeiurl6", "ximeihd6","ximeiurl7", "ximeihd7","ximeiurl8", "ximeihd8","ximeiurl9", "ximeihd9","ximeiurl10", "ximeihd10","ximeiurl11", "ximeihd11","ximeiurl12", "ximeihd12"],

@@ -38,40 +38,25 @@ hostname = yd.wcyd168.com
 */
 
 const $ = new Env('文创小程序')
-let wcxcx = $.getjson('wcxcx', {})
+let wcxcx = $.getjson('wcxcx', [])
 let needNotice = $.getval('wcxcxNotice') == 'true'
+let concurrency = ($.getval('wcxcxConcurrency') || '1') - 0 // 并发执行任务的账号数，默单账号循环执行
+concurrency = concurrency < 1 ? 1 : concurrency
 
 !(async () => {
   if (typeof $request !== "undefined") {
     await getck()
   } else {
+    // 获取分组执行账号数据
+    let execAcList = getExecAcList()
     let msgInfo = []
-    if (wcxcx && wcxcx.url) {
-      let userInfo = await postApi(wcxcx.url, {headers: wcxcx.headers, body: wcxcx.body})
-      $.log(`当前用户：${userInfo.weixin}`, `当前余额：${userInfo.amount}`, '获取小程序任务列表。。。')
-      msgInfo.push(`当前用户：${userInfo.weixin}`)
-      msgInfo.push(`当前余额：${userInfo.amount}`)
-      let taskList = await postApi(wcxcx.url.replace('getUserByToken', 'getWxMini'), {headers: wcxcx.headers, body: wcxcx.body})
-      if (taskList && taskList.length > 0) {
-        $.log(`获得${taskList.length}个小程序任务`)
-        let count = 0
-        for (let task of taskList) {
-          // 打开小程序
-          $.log(`😄开始打开第${++count}个小程序：${task.id}`)
-          let openRt = await postApi(wcxcx.url.replace('getUserByToken', 'openWxMini'), {headers: wcxcx.headers, body: wcxcx.body}, `&id=${task.id}`)
-          if (openRt && openRt.code == 0) {
-            let time = parseInt(Math.random() * (9 - 6 + 1) + 6, 10)
-            $.log(`🌝等待${time}秒后提交第${count}个小程序任务`)
-            await $.wait(time * 1000)
-            openRt = await postApi(wcxcx.url.replace('getUserByToken', 'openedWxMini'), {headers: wcxcx.headers, body: wcxcx.body})
-          } else {
-            $.log(`😂打开第${count}个小程序失败：\n${JSON.stringify(openRt, null, 2)}`)
-          }
-        }
-        userInfo = await postApi(wcxcx.url, {headers: wcxcx.headers,body: wcxcx.body})
-        msgInfo.push(`任务后余额：${userInfo.amount}`)
-      }
-    } else {
+    for (let arr of execAcList) {
+      let allAc = arr.map(ac => ac.no).join(', ')
+      $.log(`\n=======================================\n开始【${$.name}账号：${allAc}】`)
+      let rtList = await Promise.all(arr.map((ac, i) => execTask(ac, i)))
+      msgInfo.push(rtList.map(ac => `【账号${ac.no}】\n执行次数：${ac.execNum||0}\n当前余额：${ac.amount}`).join('\n\n'))
+    }
+    if (msgInfo.length <= 0) {
       msgInfo.push(`暂无账号数据，请进入任务列表页面抓取数据`)
     }
     if (needNotice) {
@@ -84,15 +69,110 @@ let needNotice = $.getval('wcxcxNotice') == 'true'
 .catch((e) => $.logErr(e))
   .finally(() => $.done())
 
+function execTask(ac, i) {
+  return new Promise(async resolve => {
+    try {
+      await $.wait(i * 50)
+      let userInfo = await postApi(ac.url, {headers: ac.headers, body: ac.body})
+      if (userInfo && userInfo.id) {
+        await $.wait((i + 1) * 600)
+        ac.weixin = userInfo.weixin
+        let taskList = await postApi(ac.url.replace('getUserByToken', 'getWxMini'), {headers: ac.headers, body: ac.body})
+        $.log(`😄账号${ac.no}：本次共${taskList && taskList.length}个小程序任务待处理`)
+        if (taskList && taskList.length >= 0) {
+          let count = 0
+          for (let task of taskList) {
+            // 打开小程序
+            $.log(`😄账号${ac.no}开始打开第${++count}个小程序：${task.id}`)
+            ac.execNum = count
+            let openRt = await postApi(ac.url.replace('getUserByToken', 'openWxMini'), {headers: ac.headers, body: ac.body}, `&id=${task.id}`)
+            if (openRt && openRt.code == 0) {
+              let time = parseInt(Math.random() * (9 - 6 + 1) + 6, 10)
+              $.log(`🌝账号${ac.no}等待${time}秒后提交第${count}个小程序任务`)
+              await $.wait(time * 1000)
+              openRt = await postApi(ac.url.replace('getUserByToken', 'openedWxMini'), {headers: ac.headers, body: ac.body})
+            } else {
+              $.log(`😂账号${ac.no}打开第${count}个小程序失败：\n${JSON.stringify(openRt, null, 2)}`)
+            }
+          }
+          if (count > 0) {
+            userInfo = await postApi(ac.url, {headers: ac.headers,body: ac.body})
+          }
+        }
+        if (userInfo && userInfo.id) {
+          ac.amount = userInfo.amount
+        } else {
+          ac.amount = '获取失败'
+        }
+      } else {
+        $.logErr(`🚫账号${ac.no}：token无效，请重新抓包后再试`)
+      }
+    } catch (e) {
+      $.logErr(`账号${ac.no} 循环执行任务出现异常: ${e}`)
+    } finally {
+      resolve(ac)
+    }
+  })
+}
 
+function getExecAcList() {
+  let acList = ((Array.isArray(wcxcx) && wcxcx) || []).filter(o => o.id).map((o, i) => {
+    return {
+      no: i + 1,
+      id: o.id,
+      url: o.url,
+      weixin: o.weixin,
+      headers: o.headers,
+      body: o.body
+    }
+  })
+  let execAcList = []
+  let len = acList.length
+  // 计算分组后每组账号个数
+  let slot = len % concurrency == 0 ? len / concurrency : parseInt(len / concurrency) + 1
+  slot = Math.ceil(len / (slot || 1))
+  let idx = -1
+  acList.forEach((o, i) => {
+    if (i % slot == 0) {
+      idx++
+    }
+    if (execAcList[idx]) {
+      execAcList[idx].push(o)
+    } else {
+      execAcList[idx] = [o]
+    }
+  })
+  $.log(`----------- 共${len}个账号分${execAcList.length}组去执行 -----------`)
+  return execAcList
+}
 
 // 数据获取
 async function getck() {
   const url = $request.url
   if (url.indexOf("/hfTask/getUserByToken") > -1) {
-    wcxcx = {url, headers: $request.headers, body: $request.body}
-    $.setdata(JSON.stringify(wcxcx, null, 2), 'wcxcx')
-    $.msg($.name, '', `文创小程序阅读数据获取成功！`)
+    let newAc = await postApi(url, {headers: $request.headers, body: $request.body})
+    if (newAc) {
+      wcxcx = (Array.isArray(wcxcx) && wcxcx) || []
+      let status = 1
+      let no = wcxcx.length
+      for (let i = 0, len = no; i < len; i++) {
+        let ac = wcxcx[i] || {}
+        if (ac.id) {
+          if (ac.id == newAc.id) {
+            no = i
+            status = 0
+            break
+          }
+        } else if (no == len) {
+          no = i
+        }
+      }
+      wcxcx[no] = {
+        id: newAc.id, weixin: newAc.weixin, url, headers: $request.headers, body: $request.body
+      }
+      $.setdata(JSON.stringify(wcxcx, null, 2), 'wcxcx')
+      $.msg($.name, "", `文创小程序[账号${no+1}] ${status?'新增':'更新'}数据成功！`)
+    }
   } else {
     $.log('不满足条件的请求匹配路径，跳过处理')
   }
