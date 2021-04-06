@@ -9,7 +9,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 
 ⚠️简单天气    需要 手机号和微信号    共0.8-1元 无早起打卡挑战活动，无福利发放活动
   
->>点击  http://jdtq.erxiao.mobi/1D6BX7Ed  下载APP  邀请码 577571032  谢谢支持
+>>点击  http://jdtq.sdms.mobi/1D6BcClY  下载APP  邀请码 578773156  谢谢支持
 
 3.26 制作
 3.30 完成
@@ -2862,9 +2862,9 @@ async function all() {
     if (!jdtquserbodyArr || jdtquserbodyArr == '') {
         $.msg(
             $.name,
-            '提示：⚠️请>>点击前往获取cookie http://jdtq.erxiao.mobi/1D6BX7Ed\n',
-            'http://jdtq.erxiao.mobi/1D6BX7Ed', {
-                "open-url": "http://jdtq.erxiao.mobi/1D6BX7Ed"
+            '提示：⚠️请>>点击前往获取cookie http://jdtq.sdms.mobi/1D6BcClY\n',
+            'http://jdtq.sdms.mobi/1D6BcClY', {
+                "open-url": "http://jdtq.sdms.mobi/1D6BcClY"
             }
         );
         return;
@@ -2967,11 +2967,11 @@ async function all() {
                 K = `用户名🚩`;
                 await task()
                 if (!$.isLogin) {
-                    $.msg(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://jdtq.erxiao.mobi/1D6BX7Ed`, {
-                        "open-url": "http://jdtq.erxiao.mobi/1D6BX7Ed"
+                    $.msg(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://jdtq.sdms.mobi/1D6BcClY`, {
+                        "open-url": "http://jdtq.sdms.mobi/1D6BcClY"
                     });
                     if ($.isNode()) {
-                        await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://jdtq.erxiao.mobi/1D6BX7Ed`);
+                        await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://jdtq.sdms.mobi/1D6BcClY`);
                     }
                     continue
                 }
