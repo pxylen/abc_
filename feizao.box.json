@@ -762,7 +762,7 @@
     {
             "id": "vsh",
             "name": "V生活",
-            "keys": ["vshurl", "vshhd", "vshbody", "vsh1bodu","vsh2body", "vshdspbody","vshspbody", "vshqdbody"],
+            "keys": ["vshurl", "vshhd", "vshbody", "vsh1body","vsh2body", "vshdspbody","vshspbody", "vshqdbody"],
             "author": "@feizao",
             "settings": [{
             "id": "vshstatus",
