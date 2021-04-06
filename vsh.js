@@ -33,13 +33,13 @@ V生活
 
 [rewrite_local]
 #V生活
-http://iosvsh.zwzanwm.cn/ url script-request-header https://raw.githubusercontent.com/age174/-/main/vsh.js
+http://iosvsh.zwzanwm.cn/ url script-request-body https://raw.githubusercontent.com/age174/-/main/vsh.js
 
 #loon
-http://iosvsh.zwzanwm.cn/ script-path=https://raw.githubusercontent.com/age174/-/main/vsh.js, requires-header=true, timeout=10, tag=V生活
+http://iosvsh.zwzanwm.cn/ script-path=https://raw.githubusercontent.com/age174/-/main/vsh.js, requires-body=true, timeout=10, tag=V生活
 
 #surge
-V生活 = type=http-request,pattern=http://iosvsh.zwzanwm.cn/,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/vsh.js,script-update-interval=0
+V生活 = type=http-request,pattern=http://iosvsh.zwzanwm.cn/,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/vsh.js,script-update-interval=0
 
 [MITM]
 hostname = iosvsh.zwzanwm.cn
