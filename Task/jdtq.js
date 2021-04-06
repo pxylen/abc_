@@ -70,7 +70,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 第三步⚠️添加 hostname = event.jiandantianqi.com,添加event body重写 获取event body
 
 
-设置CK = 27 👉 点击活动 - 吃饭领福利-获取吃饭页body，👉
+设置CK = 27 👉 点击活动 - 吃饭领福利-获取吃饭页body，
 设置CK = 28 👉 点击活动 - 吃饭领福利 - 吃饭1， 获取吃饭1body，
 设置CK = 29👉 点击活动 - 吃饭领福利 - 吃饭1翻倍 - 获取吃饭1翻倍body，
 设置CK = 30 👉 点击活动 - 吃饭领福利 - 吃饭2， 获取吃饭2body，
@@ -84,9 +84,9 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 
 
 设置CK = 38👉 点击活动 - 全民猜天气 - 获取竞猜页body
-设置CK = 39👉 点击活动 - 全民猜天气 - 下雨， 获取竞猜abody，👉
+设置CK = 39👉 点击活动 - 全民猜天气 - 下雨， 获取竞猜abody，
 设置CK = 40👉 点击活动 - 全民猜天气 - 不下雨， 获取竞猜bbody，
-设置CK = 41👉 点击活动 - 全民猜天气 - 获取竞猜领取body，👉
+设置CK = 41👉 点击活动 - 全民猜天气 - 获取竞猜领取body，
 
 
 jdtquserbodyVal👉JDTQ_jdtquserBODY👉用户名body
