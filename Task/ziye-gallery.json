@@ -135,6 +135,23 @@
 		
 		
 		{
+            "config": "6 6 0-23 * * * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/jdtq.js, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/jdtq.png, tag=简单天气, enabled=false",
+        }, {
+            "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-jdtq-body1.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/jdtq.png, tag=简单天气获取日常任务body, enabled=false",
+            "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-jdtq-body1.txt, tag=简单天气获取日常任务body, update-interval=86400, opt-parser=false, enabled=false",
+        },{
+            "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-jdtq-body2.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/jdtq.png, tag=简单天气获取抽奖body, enabled=false",
+            "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-jdtq-body2.txt, tag=简单天气获取抽奖body, update-interval=86400, opt-parser=false, enabled=false",
+        },{
+            "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-jdtq-body3.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/jdtq.png, tag=简单天气获取吃饭-竞猜body, enabled=false",
+            "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-jdtq-body3.txt, tag=简单天气获取吃饭-竞猜body, update-interval=86400, opt-parser=false, enabled=false",
+        },
+		
+		
+		
+		
+		
+		{
             "config": "6 9 * * * * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ddayd.js, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/ddayd.png, tag=多多爱运动, enabled=false",
         },
 		
