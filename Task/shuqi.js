@@ -22,6 +22,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 3.15 修复收益获取ck显示
 3.18 独立COOKIE增加boxjs复制会话模式
 3.193.19 修复ac报错
+4.6.11 单刷时长请设置SC为1，增加通知以及推送控制
 
 ⚠️ 时间设置    7 0-23 * * *    每小时 1次就行 
 ⚠️一共2个软件  普通版15条 极速版11条  共      26个ck  👉 26条 Secrets 
@@ -118,15 +119,16 @@ http-request https:\/\/jcollection\.shuqireader\.com\/* url script-request-body 
 
 
 */
-GXRZ = '3.19 修复ac报错'
+GXRZ = '4.6.11 单刷时长请设置SC为1，增加通知以及推送控制'
 const $ = Env("书旗小说");
 $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
 const COOKIE = $.isNode() ? require("./shuqiCOOKIE") : ``;
 const logs = 0; // 0为关闭日志，1为开启
-const notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
-const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
-$.message = '', COOKIES_SPLIT = '', CASH = '', XH = 0, ddtime = '';
+notifyttt = 1; // 0为关闭外部推送，1为12 23 点外部推送
+notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
+Minutes = 10; // 通知 默认控制在0-10分内
+$.message = '', COOKIES_SPLIT = '', CASH = '', XH = 0, SC = 0, ddtime = '';
 CZ = 10
 Length = 0
 let shuqiuserurlArr = [];
@@ -224,6 +226,12 @@ if ($.isNode() && COOKIE.shuqiuserurlVal && COOKIE.shuqiuserurlVal != '') {
 }
 
 if ($.isNode() && process.env.SQ_shuqiuserURL) {
+
+SC = process.env.SQ_SC || "0";
+notifyttt = process.env.SQ_notifyttt || "1";
+notifyInterval = process.env.SQ_notifyInterval || "2";
+Minutes = process.env.SQ_Minutes || "10";
+
     COOKIES_SPLIT = process.env.COOKIES_SPLIT || "\n";
     console.log(
         `============ cookies分隔符为：${JSON.stringify(
@@ -498,6 +506,12 @@ if (COOKIE && COOKIE.shuqiuserurlVal) {
 }
 if (COOKIE.datas && COOKIE.datas[0].val != '') {
 
+
+notifyttt = (COOKIE.settings.find(item => item.id === `shuqinotifyttt`)).val || '1';
+notifyInterval = (COOKIE.settings.find(item => item.id === `shuqinotifyInterval`)).val || '2';
+Minutes = (COOKIE.settings.find(item => item.id === `shuqiMinutes`)).val || '10';
+SC = (COOKIE.settings.find(item => item.id === `shuqiSC`)).val || '0';
+
     shuqiCount = COOKIE.settings.find(item => item.id === `shuqiCount`);
     Length = shuqiCount.val
 }
@@ -506,7 +520,7 @@ if (COOKIE.shuqiuserurl) {
     COOKIEstringify = JSON.stringify(COOKIE);
     Length = COOKIEstringify.match(/getBindinfo/g).length
 }
-if (!COOKIE.datas && !COOKIE.shuqiuserurlVal&& !COOKIE.shuqiuserurl) {
+if (!COOKIE.datas && !COOKIE.shuqiuserurlVal && !COOKIE.shuqiuserurl) {
     if ($.isNode()) {
         Object.keys(middleshuqiuserURL).forEach((item) => {
             if (middleshuqiuserURL[item]) {
@@ -668,6 +682,18 @@ if (!COOKIE.datas && !COOKIE.shuqiuserurlVal&& !COOKIE.shuqiuserurl) {
         // 根据boxjs中设置的额外账号数，添加存在的账号数据进行任务处理
         if ("shuqiXH") {
             XH = $.getval("shuqiXH") || '0';
+        }
+        if ("shuqinotifyttt") {
+            notifyttt = $.getval("shuqinotifyttt") || '1';
+        }
+        if ("shuqinotifyInterval") {
+            notifyInterval = $.getval("shuqinotifyInterval") || '2';
+        }
+        if ("shuqiMinutes") {
+           Minutes = $.getval("shuqiMinutes") || '10';
+        }
+        if ("shuqiSC") {
+            SC = $.getval("shuqiSC") || '0';
         }
         let shuqiCount = ($.getval('shuqiCount') || '1') - 0;
         for (let i = 2; i <= shuqiCount; i++) {
@@ -1698,6 +1724,12 @@ function decodeUnicode(str) {
     str = str.replace(/\\/g, "%");
     return unescape(str);
 }
+//随机延迟
+function RT(X, Y) {
+    do rt = Math.floor(Math.random() * Y);
+    while (rt < X)
+    return rt;
+}
 let isGetCookie = typeof $request !== 'undefined'
 if (isGetCookie) {
     GetCookie()
@@ -1854,7 +1886,7 @@ async function all() {
             shuqijsbookbodyVal = COOKIE[Object.keys(COOKIE)[iv + 25]];
             shuqijssprwurlVal = COOKIE[Object.keys(COOKIE)[iv + 26]];
         }
-        if (!COOKIE.datas && !COOKIE.shuqiuserurlVal&& !COOKIE.shuqiuserurl) {
+        if (!COOKIE.datas && !COOKIE.shuqiuserurlVal && !COOKIE.shuqiuserurl) {
             shuqiuserurlVal = shuqiuserurlArr[i];
             shuqisyurlVal = shuqisyurlArr[i];
             shuqisybodyVal = shuqisybodyArr[i];
@@ -1895,26 +1927,30 @@ async function all() {
             await coin() //用户收益
         }
         await readlist(); //阅读时长
-        if (shuqirwbodyVal && shuqirwbodyVal != '') {
-            await resource() //任务列表
-        }
-        if (shuqisprwurlVal && shuqisprwurlVal != '') {
-            await videolist(); //视频任务
-        }
-        if (shuqicjyurlVal && shuqicjyurlVal != '') {
-            await lotteryinfo(); //抽奖页面
-        }
-        if (shuqijsrwbodyVal && shuqijsrwbodyVal != '') {
-            await jsresource() //极速版任务列表
-        }
-        if (shuqijssprwurlVal && shuqijssprwurlVal != '') {
-            await jsvideolist() //极速版视频任务
-        }
-        if (shuqijsqdspyurlVal && shuqijsqdspyurlVal != '') {
-            await jsqdvideolist(); //极速版签到视频任务
-        }
-        if (shuqijlbodyVal && shuqijlbodyVal != '') {
-            await bubble(); //奖励页面
+
+        if (SC == 0) {
+            if (shuqirwbodyVal && shuqirwbodyVal != '') {
+                await resource() //任务列表
+            }
+            if (shuqisprwurlVal && shuqisprwurlVal != '') {
+                await videolist(); //视频任务
+            }
+            if (shuqicjyurlVal && shuqicjyurlVal != '') {
+                await lotteryinfo(); //抽奖页面
+            }
+            if (shuqijsrwbodyVal && shuqijsrwbodyVal != '') {
+                await jsresource() //极速版任务列表
+            }
+            if (shuqijssprwurlVal && shuqijssprwurlVal != '') {
+                await jsvideolist() //极速版视频任务
+            }
+            if (shuqijsqdspyurlVal && shuqijsqdspyurlVal != '') {
+                await jsqdvideolist(); //极速版签到视频任务
+            }
+            if (shuqijlbodyVal && shuqijlbodyVal != '') {
+                await bubble(); //奖励页面
+            }
+
         }
         console.log(`${GXRZ}\n`);
         $.message += `${GXRZ}\n`
@@ -1923,10 +1959,12 @@ async function all() {
 //通知
 function msgShow() {
     return new Promise(async resolve => {
+
+
         if (notifyInterval != 1) {
             console.log($.name + '\n' + $.message);
         }
-        if (notifyInterval == 1) {
+        if (notifyInterval == 1 ) {
             $.msg($.name, ``, $.message);
         }
         if (notifyInterval == 2 && (nowTimes.getHours() === 12 || nowTimes.getHours() === 23) && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 10)) {
@@ -2342,12 +2380,22 @@ function readlist(timeout = 0) {
                         if (shuqiscbodyVal && shuqiscbodyVal != '') {
                             timestamp = shuqiscbodyVal.split('timestamp=')[1].split('&user_id')[0] * 1000
                             sqsc = shuqiscbodyVal.split('readingLen%22%3A')[1].split('%7D')[0]
-                            if (timestamp >= daytime() && $.readlist.data.readTime < 180) {
+                            if (timestamp >= daytime() && $.readlist.data.readTime < 10) {
+                                DD = RT(1000, 10000)
+                                console.log(`随机延迟${DD/1000}秒`)
+                                await $.wait(DD)
                                 await upload() //上传时长
-                                await $.wait(10000)
+                                DD = RT(1000, 10000)
+                                console.log(`随机延迟${DD/1000}秒`)
+                                await $.wait(DD)
                                 await upload() //上传时长
-                                await $.wait(10000)
+                                DD = RT(1000, 10000)
+                                console.log(`随机延迟${DD/1000}秒`)
+                                await $.wait(DD)
                                 await upload() //上传时长
+                            } else if (timestamp >= daytime()) {
+                                console.log(`上传时长：今日时长已达到10分钟\n`);
+                                $.message += `【上传时长】：今日时长已达到10分钟\n`;
                             } else {
                                 console.log(`上传时长：请获取今日时长CK\n`);
                                 $.message += `【上传时长】：请获取今日时长CK\n`;
