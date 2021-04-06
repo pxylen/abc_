@@ -23,6 +23,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 3.18 独立COOKIE增加boxjs复制会话模式
 3.193.19 修复ac报错
 4.6.11 单刷时长请设置SC为1，增加通知以及推送控制
+4.6.19 精确时长ck判定，10秒以上才获取
 
 ⚠️ 时间设置    7 0-23 * * *    每小时 1次就行 
 ⚠️一共2个软件  普通版15条 极速版11条  共      26个ck  👉 26条 Secrets 
@@ -119,7 +120,7 @@ http-request https:\/\/jcollection\.shuqireader\.com\/* url script-request-body 
 
 
 */
-GXRZ = '4.6.11 单刷时长请设置SC为1，增加通知以及推送控制'
+GXRZ = '4.6.19 精确时长ck判定，10秒以上才获取'
 const $ = Env("书旗小说");
 $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -1072,7 +1073,9 @@ function GetCookie() {
     //获取时长
     if ($request && $request.url.indexOf("reading") >= 0 && $request.url.indexOf("upload") >= 0 && $request.body.indexOf("_public=skinId") >= 0) {
         const shuqiscbodyVal = $request.body;
-        if (shuqiscbodyVal) {
+        sqsc = shuqiscbodyVal.split('readingLen%22%3A')[1].split('%7D')[0]
+
+if (shuqiscbodyVal&&sqsc>=10) {
             if (XH == 1) {
                 cookie()
 
@@ -1089,18 +1092,18 @@ function GetCookie() {
                     } else {
                         $.setdata(shuqiscbodyVal, "shuqiscbody" + $.idx);
                         $.log(
-                            `[${$.name + $.idx}] 获取时长shuqiscbodyVal✅: 成功,shuqiscbodyVal: ${shuqiscbodyVal}`
+                            `[${$.name + $.idx}] 获取${sqsc}秒时长shuqiscbodyVal✅: 成功,shuqiscbodyVal: ${shuqiscbodyVal}`
                         );
-                        $.msg($.name + $.idx, `获取时长shuqiscbodyVal: 成功🎉`, ``);
+                        $.msg($.name + $.idx, `获取${sqsc}秒时长shuqiscbodyVal: 成功🎉`, ``);
                         $.done();
                     };
                 }
             } else {
                 $.setdata(shuqiscbodyVal, "shuqiscbody" + $.idx);
                 $.log(
-                    `[${$.name + $.idx}] 获取时长shuqiscbodyVal✅: 成功,shuqiscbodyVal: ${shuqiscbodyVal}`
+                    `[${$.name + $.idx}] 获取${sqsc}秒时长shuqiscbodyVal✅: 成功,shuqiscbodyVal: ${shuqiscbodyVal}`
                 );
-                $.msg($.name + $.idx, `获取时长shuqiscbodyVal: 成功🎉`, ``);
+                $.msg($.name + $.idx, `获取${sqsc}秒时长shuqiscbodyVal: 成功🎉`, ``);
                 $.done();
             };
         }
