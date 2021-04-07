@@ -705,7 +705,7 @@
             "name": "提现金额",
             "val": "1",
             "type": "number",
-            "desc": "填入1为提现1元,2为2元,5为5元,50为50元,100为100元,默认提现一元"
+            "desc": "填入1为提现1元,2为2元,3为5元,4为50元,5为100元,默认提现一元"
     }],
             "repo": "https://github.com/age174/-/blob/main/hlyy.js",
             "icons": ["https://ae01.alicdn.com/kf/U49d941738c0c41569f7db55825943375f.jpg", "https://ae01.alicdn.com/kf/U49d941738c0c41569f7db55825943375f.jpg"],
