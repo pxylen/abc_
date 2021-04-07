@@ -378,7 +378,7 @@ let url = {
         if(result.code == 0){
         console.log(`\n〔V生活短视频〕获得:${result.integral}金币奖励`)
        await $.wait(15000);
-       await vsh5()
+       await vsh6()
        
 } else {
        console.log('\nV生活短视频:'+result.msg)
