@@ -795,6 +795,29 @@
             "repo": "https://github.com/age174/-/blob/main/vsh.js",
             "icons": ["https://ae01.alicdn.com/kf/Uf0da879c7acd4c7bad91f0e5a97667e1O.jpg", "https://ae01.alicdn.com/kf/Uf0da879c7acd4c7bad91f0e5a97667e1O.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/vsh.js"
+    } ,
+    {
+            "id": "lhws",
+            "name": "落花无生",
+            "keys": ["lhwsurl", "lhwshd", "lhwsbody", "lhwsurl2", "lhwshd2", "lhwsbody2","lhwsurl3", "lhwshd3", "lhwsbody3","lhwsurl4", "lhwshd4", "lhwsbody4","lhwsurl5", "lhwshd5", "lhwsbody6","lhwsurl7", "lhwshd7", "lhwsbody7","lhwsurl8", "lhwshd8", "lhwsbody8","lhwsurl9", "lhwshd9", "lhwsbody9"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "lhwsstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "lhwscount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/lhws.js",
+            "icons": ["https://ae01.alicdn.com/kf/U7f67ec3bd2d848a59d72a1807dc9e324r.jpg", "https://ae01.alicdn.com/kf/U7f67ec3bd2d848a59d72a1807dc9e324r.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/lhws.js"
     } 
 ]
 }
