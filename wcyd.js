@@ -1,6 +1,6 @@
 /*
 软件名称:文创阅读 复制链接到微信打开
-更新时间：2021-04-01 @肥皂
+更新时间：2021-04-07 @肥皂
 脚本说明：文创阅读自动阅读
 脚本为自动完成文创阅读的阅读任务
 每日收益暂时不清楚，阅读单价目前为1分，一毛就可提现，支付宝秒到，需每日手动阅读通过微信鉴权，防止黑号，不会与其他的阅读脚本产生冲突，如番茄看看，云扫码，微客众智，66阅读，可一起跑脚本
@@ -13,6 +13,8 @@
 
 4.1更新，cron表达更改为一分钟一次，可以避免cookie过期,就是每分钟运行一次脚本，但是这样可能导致文创的服务器承受不住,可能几天就薅死了。哈哈哈可以修改cron为 0-59 9-22 * * *
 意思就是每天的早上九点到晚上十点每分钟运行一次脚本，如果想一直不过期就把9-22改为0-23。。。不过风险很大。更改运行模式为运行一次脚本执行一次任务，而不是一直循环到没有任务可做
+
+4.7更新,修复文创阅读域名变化导致的无法抓包的问题。请更换重写和mitm,加入2.5高额文章任务。需要做一个关注任务才可以做高额任务。部分人可能不能做
 
 TG电报群: https://t.me/hahaha8028
 
@@ -27,16 +29,16 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #文创阅读
-http://qcjesnfs.bar/hfTask/startRead url script-request-header https://raw.githubusercontent.com/age174/-/main/wcyd.js
+http://mbeysxap.bar/hfTask/startRead url script-request-header https://raw.githubusercontent.com/age174/-/main/wcyd.js
 
 #loon
-http://qcjesnfs.bar/hfTask/startRead script-path=https://raw.githubusercontent.com/age174/-/main/wcyd.js, requires-header=true, timeout=10, tag=文创阅读
+http://mbeysxap.bar/hfTask/startRead script-path=https://raw.githubusercontent.com/age174/-/main/wcyd.js, requires-header=true, timeout=10, tag=文创阅读
 
 #surge
-文创阅读 = type=http-request,pattern=http://qcjesnfs.bar/hfTask/startRead,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/wcyd.js,script-update-interval=0
+文创阅读 = type=http-request,pattern=http://mbeysxap.bar/hfTask/startRead,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/wcyd.js,script-update-interval=0
 
 [MITM]
-hostname = qcjesnfs.bar
+hostname = mbeysxap.bar
 
 */
 
@@ -47,6 +49,7 @@ status = (status = ($.getval("wcydstatus") || "1") ) > 1 ? `${status}` : ""; // 
 const wcydurlArr = [], wcydhdArr = [],wcydcount = ''
 let wcydurl = $.getdata('wcydurl')
 let wcydhd = $.getdata('wcydhd')
+let toke = ''
 let zfb = ($.getval('zfb') || '');//提现支付宝账号
 let name = ($.getval('name') || '');//提现支付宝用户名
 let txje = ($.getval('txje') || '0.1');//自定义提现金额
@@ -105,7 +108,7 @@ function wcyd1(timeout = 0) {
       }
 
 let url = {
-        url : 'http://qcjesnfs.bar/hfTask/startRead',
+        url : 'http://mbeysxap.bar/hfTask/startRead',
         headers : JSON.parse(wcydhd),
         body : 'isM6=2',
 }
@@ -115,13 +118,52 @@ let url = {
           //console.log(data)
     const result = JSON.parse(data)
         if(result.code == 0){
+token = JSON.parse(wcydhd)
+token = token.Referer
 console.log('\n文创阅读获取任务信息成功,阅读任务链接:\n'+result.msg)
 await $.wait(9000); 
 await wcydlb();      
-        
+await wcydyd();
 } else {
 console.log('文创阅读获取任务信息失败'+result.msg)
-await wcydyd();
+await wcyd2();
+}
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+      })
+    },timeout)
+  })
+}
+
+function wcyd2(timeout = 0) {
+  return new Promise((resolve) => {
+    setTimeout( ()=>{
+      if (typeof $.getdata('wcydhd') === "undefined") {
+        $.msg($.name,"",'请先获取文创阅读数据!😓',)
+        $.done()
+      }
+
+let url = {
+        url : 'http://mbeysxap.bar/hfTask/startRead',
+        headers : JSON.parse(wcydhd),
+        body : 'isM6=1',
+}
+      $.post(url, async (err, resp, data) => {
+
+        try {
+          //console.log(data)
+    const result = JSON.parse(data)
+        if(result.code == 0){
+console.log('\n文创阅读高额任务获取信息成功,阅读任务链接:\n'+result.msg)
+await $.wait(9000); 
+await wcydlb();
+await wcydyd();      
+        
+} else {
+console.log('\n文创阅读高额任务获取信息失败'+result.msg)
 }
         } catch (e) {
           //$.logErr(e, resp);
@@ -139,7 +181,7 @@ function wcydlb(timeout = 0) {
   return new Promise((resolve) => {
 
 let url = {
-        url : "http://qcjesnfs.bar/hfTask/read",
+        url : "http://mbeysxap.bar/hfTask/read",
         headers : JSON.parse(wcydhd),
         body : '',
        
@@ -152,7 +194,6 @@ let url = {
         if(result.code == 0){
 
         console.log('\n文创阅读提交任务:'+result.msg)
-        await wcydyd();
 
 } else {
        console.log('\n文创阅读提交任务失败'+result.msg)
@@ -172,9 +213,9 @@ let url = {
 function wcydyd(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://qcjesnfs.bar/hfTask/getUser",
+        url : "http://mbeysxap.bar/hfTask/getUser",
         headers : JSON.parse(wcydhd),
-        body :'',
+        body : 'token=',
 }
       $.post(url, async (err, resp, data) => {
 
@@ -210,7 +251,7 @@ function wcydtx(timeout = 0) {
   return new Promise((resolve) => {
 
 let url = {
-        url : "http://qcjesnfs.bar/hfTask/cash",
+        url : "http://mbeysxap.bar/hfTask/cash",
         headers : JSON.parse(wcydhd),
         body : `wx=&zfb=${zfb}&name=${name}`,
 }
