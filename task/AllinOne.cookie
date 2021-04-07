@@ -416,7 +416,7 @@ http-request https://xzd.hswchangdu.com/activityTreeMoney/watering script-path=h
 http-request https://ftoy-api.58.com/wapi/zf_points_mall/api_sign_in? script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, requires-header=true, tag=58同城自动脚本
 http-request https://xzd.hswchangdu.com/lotteryMachine/drawGoods? script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, requires-header=true, tag=58同城自动脚本
 #作业帮
-http-request https://napi.zuoyebang.com/napi/signin/signinpage script-path=https://gitee.com/photonmang/quantumultX/raw/master/zyb.js, requires-body=true, tag=作业帮
+http-request https://napi.zuoyebang.com/napi/signin/signinpage script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js, requires-body=true, tag=作业帮
 
 
 
