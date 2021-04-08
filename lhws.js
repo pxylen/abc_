@@ -33,7 +33,7 @@ https://api.lhws.info/lhws/api/member/list/ad/new script-path=https://raw.github
 落花无生 = type=http-request,pattern=https://api.lhws.info/lhws/api/member/list/ad/new,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/lhws.js,script-update-interval=0
 
 [MITM]
-hostname = qcjesnfs.bar
+hostname = api.lhws.info
 
 */
 
