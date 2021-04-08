@@ -684,7 +684,7 @@
     {
             "id": "hlyy",
             "name": "葫芦音乐",
-            "keys": ["hlyyurl", "hlyyhd", "hlyybody","hlyyurl2", "hlyyhd2","hlyybody2","hlyyurl3", "hlyyhd3","hlyybody3","hlyyurl4", "hlyyhd4","hlyybody4","hlyyurl5", "hlyyhd5","hlyybody5","hlyyurl6", "hlyyhd6","hlyybody6","hlyyurl7", "hlyyhd7","hlyybody7","hlyyurl8", "hlyyhd8","hlyybody8","hlyyurl9", "hlyyhd9","hlyybody9","hlyyurl10", "hlyyhd10","hlyybody10"],
+            "keys": ["hlyyurl", "hlyyhd", "hlyyurl2", "hlyyhd2","hlyyurl3", "hlyyhd3","hlyyurl4", "hlyyhd4","hlyyurl5", "hlyyhd5","hlyyurl6", "hlyyhd6","hlyyurl7", "hlyyhd7","hlyyurl8", "hlyyhd8","hlyyurl9", "hlyyhd9","hlyyurl10", "hlyyhd10"],
             "author": "@feizao",
             "settings": [{
             "id": "hlyystatus",
