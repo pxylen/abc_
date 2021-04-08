@@ -138,7 +138,7 @@ const $hammer = (() => {
     return { isRequest, isSurge, isQuanX, log, alert, read, write, request, done };
 })();
 
-const Protagonist = '叮咚农场2',
+const Protagonist = '叮咚农场1',
     CookieKey = "CookieDDXQfarm",
     StationIdCookieKey = "CookieDDXQfarmStationId",
     DD_API_HOST = 'https://farm.api.ddxq.mobi';

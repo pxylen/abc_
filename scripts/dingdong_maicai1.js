@@ -1,5 +1,5 @@
 const chavy = init()
-const cookieName = '叮咚买菜2'
+const cookieName = '叮咚买菜1'
 const KEY_homeurl = 'chavy_home_url_mcdd'
 const KEY_homeheader = 'chavy_home_header_mcdd'
 
