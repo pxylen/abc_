@@ -41,3 +41,4 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/qixin.c
 
 [@adwktt](https://github.com/adwktt/adwktt) - 步步宝、一刻
 
+[@hlfixer](https://github.com/hlfixer/Lean) - 科学上网
