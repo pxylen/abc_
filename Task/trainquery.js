@@ -50,10 +50,10 @@ let K = $.getdata('setrain') || "1";
 
 !(async() => {
     await namecheck();
-    await timecheck();
-    await $.wait(800);
+    //await timecheck();
+    await $.wait(500);
     await trainscheck();
-    await $.wait(800);
+    //await $.wait(500);
     await prize();
     //await traintime()
 })()
