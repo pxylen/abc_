@@ -594,7 +594,7 @@ http-request http://iosvsh.zwzanwm.cn/ script-path=https://raw.githubusercontent
 #落花无生
 http-request https://api.lhws.info/lhws/api/member/list/ad/new script-path=https://raw.githubusercontent.com/age174/-/main/lhws.js, requires-body=true, tag=落花无生
 #生活圈
-http-request https://ex.jwshq.cn/app/commentator/getActivityItemPage script-path=https://raw.githubusercontent.com/sngxpro2/delete/main/shq.js, requires-header=true, tag=生活圈
+http-request https://ex.jwshq.cn/app/commentator/getActivityItemPage script-path=https://raw.githubusercontent.com/age174/-/main/shq.js, requires-header=true, tag=生活圈
 
 
 #cuttlefish(墨鱼手记)
