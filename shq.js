@@ -140,7 +140,7 @@ $.log('\n生活圈没有匹配到任务列表')
 name = result.data.data[0].title
 name = encodeURI(sjpl[sjs]+nr)
 key = result.data.data[0].articleId
-        console.log('\n生活圈获取任务ID成功\n当前任务ID: '+key+'\n文章标题:'+result.data.data[0].title+'\n开始提交随机评论:'+name)
+        console.log('\n生活圈获取任务ID成功\n当前任务ID: '+key+'\n文章标题:'+result.data.data[0].title+'\n开始提交随机评论:'+ sjpl[sjs]+nr)
   //$.log(name)
         await $.wait(1000);
         await shqtj()
