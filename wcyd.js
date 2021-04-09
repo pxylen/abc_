@@ -119,7 +119,7 @@ urlwc = wcydurl.match(/http:\/\/(.*?)\//)[1]
 let url = {
         url : `http://${urlwc}/hfTask/startRead`,
         headers : JSON.parse(wcydhd),
-        body : 'isM6=2',
+        body : 'isM6=0',
 }
       $.post(url, async (err, resp, data) => {
 
