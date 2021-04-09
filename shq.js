@@ -125,7 +125,7 @@ function shqlb(timeout = 0) {
   return new Promise((resolve) => {
 
 let url = {
-        url : `https://ex.jwshq.cn/app/commentator/getActivityItemPage?start=0&limit=1`,
+        url : `https://ex.jwshq.cn/app/commentator/getActivityItemPage?start=1&limit=1`,
         headers : JSON.parse(shqhd),
        
 }
