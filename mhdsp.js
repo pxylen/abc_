@@ -36,7 +36,7 @@ https://apk.hemayoudao.cn/mohai.apk
 https://apk.hemayoudao.cn/mhks104.apk（如无法打开请复制链接到uc浏览器后点击回车或搜索后安装）
 
 Ⓜ️陌嗨苹果置换中心下载:
-MHToken https://tf.yxtgq.com/app/1557083430
+MHToken https://app.serenlife.com/tf/gfr4bv8XwJ
 直接点击链接打开按提示操作
 
 脚本每天运行一次即可，不用管他。反正挂机，不薅白不薅，哈哈😄
