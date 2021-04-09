@@ -198,12 +198,13 @@ function prize() {
                 for (arr in obj) {
                     if (obj[arr].indexOf("¥") > -1) {
                        seatinfo += mapSeat(arr)[0] + ": " + (mapSeat(arr)[1] ? mapSeat(arr)[1] : "") + "(" + obj[arr] + ")  ";
-                    }; 
                     if (seatinfo.indexOf("[]")>-1){
                         continue
-                   } else if (seatinfo.split("¥").length % 3 == 0 && data.split("¥").length != 3) {
+                   }   
+                    if ((seatinfo.split("¥").length-1) % 2 == 0 && data.split("¥").length !== seatinfo.split("¥").length) {
                         seatinfo += "\n"
                     } 
+                  }
                 }
                 await traintime(seatinfo)
             } catch (e) {
