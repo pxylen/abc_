@@ -119,8 +119,10 @@ function trainscheck() {
                             yideng = yupiaoinfo[31] ? ' 一等座:' + yupiaoinfo[31] : "",
                             erdeng = yupiaoinfo[30] ? ' 二等座:' + yupiaoinfo[30] : "",
                             wuzuo = yupiaoinfo[26] ? ' 无座:' + yupiaoinfo[26] : ""
+                            dongwo = yupiaoinfo[33] ? ' 动卧:' + yupiaoinfo[33] : ""
+                            ruanwopro = yupiaoinfo[21] ? ' 豪华软卧:' + yupiaoinfo[21] : ""
                     }
-                    trainlist = '[' + (i + 1) + '] 车次:' + train + " " + starttime + "--" + arrivetime + " 总计时间:" + total + ' 出发站:'+ ress.data.map[`${yupiaoinfo[6]}`]+ yideng + erdeng + yingwo + ruanwo + yingzuo + wuzuo + '\n'
+                    trainlist = '[' + (i + 1) + '] 车次:' + train + " " + starttime + "--" + arrivetime + " 总计时间:" + total + ' 出发站:'+ ress.data.map[`${yupiaoinfo[6]}`]+ yideng + erdeng + yingwo + ruanwo + yingzuo + wuzuo + dongwo +ruanwopro+ '\n'
                         //trainno = ress.data.result[i].split("|")[2]
                     $.log(trainlist);
                     if (reg.test(K) && K == ress.data.result[i].split("|")[3]) {
@@ -196,14 +198,16 @@ function prize() {
                 for (arr in obj) {
                     if (obj[arr].indexOf("¥") > -1) {
                         seatinfo += mapSeat(arr)[0] + ": " + (mapSeat(arr)[1] ? mapSeat(arr)[1] : "") + "(" + obj[arr] + ")  ";
-                    }
-                    if (seatinfo.split("¥").length % 3 == 0) {
+                    }; 
+                    if (seatinfo.indexOf("[]")>-1){
+                        continue
+                   } else if (seatinfo.split("¥").length % 3 == 0) {
                         seatinfo += "\n"
-                    }
+                    } 
                 }
                 await traintime(seatinfo)
             } catch (e) {
-                $.logErr(e, data);
+                $.logErr(e);
             } finally {
                 resolve()
             }
@@ -229,7 +233,6 @@ function mapSeat(seat) {
     }
     return map[seat]
 }
-
 
 function traintime(seatinfo) {
     return new Promise((resolve, reject) => {
