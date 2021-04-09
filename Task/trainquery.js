@@ -197,11 +197,11 @@ function prize() {
                 var seatinfo = "";
                 for (arr in obj) {
                     if (obj[arr].indexOf("¥") > -1) {
-                        seatinfo += mapSeat(arr)[0] + ": " + (mapSeat(arr)[1] ? mapSeat(arr)[1] : "") + "(" + obj[arr] + ")  ";
+                       seatinfo += mapSeat(arr)[0] + ": " + (mapSeat(arr)[1] ? mapSeat(arr)[1] : "") + "(" + obj[arr] + ")  ";
                     }; 
                     if (seatinfo.indexOf("[]")>-1){
                         continue
-                   } else if (seatinfo.split("¥").length % 3 == 0) {
+                   } else if (seatinfo.split("¥").length % 3 == 0 && data.split("¥").length != 3) {
                         seatinfo += "\n"
                     } 
                 }
