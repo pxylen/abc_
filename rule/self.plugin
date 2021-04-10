@@ -1,0 +1,120 @@
+
+[Rule]
+
+
+[Script]
+
+# ----------------------------------------------------------常用系列------------------------------------------------------------------------------
+
+# > BoxJs
+http-request ^https?://boxjs.com script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120, tag=BoxJs
+
+# 订阅解析器
+http-request https?:\/\/sub\.store script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js, requires-body=true, timeout=120, tag=订阅解析器
+
+# testflight下载
+http-request ^https?:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*/builds/\d*/install ,requires-body=true, timeout=10, tag=TF软件更新,script-path=https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js,enabled=true, tag=testflight下载
+
+#-京东比价 (api.m.jd.com)
+# http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js, requires-body=true, timeout=10, tag=京东比价
+
+#-淘宝比价 (trade-acs.m.taobao.com)
+# http-request ^http://.+/amdc/mobileDispatch script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js, requires-body=true, timeout=10, tag=淘宝比价
+# http-response ^https?://trade-acs\.m\.taobao\.com/gw/mtop\.taobao\.detail\.getdetail script-path=https://raw.githubusercontent.com/yichahucha/surge/master/tb_price.js, requires-body=true, timeout=10, tag=淘宝比价
+
+# picsew专业版
+http-response https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/picsew.js, requires-body=true, timeout=10, tag=picsew专业版
+
+# 中青看点获取body ,ios.baertt.com
+# http-request https://ios.baertt.com/v5/article/complete.json script-path=https://raw.githubusercontent.com/songyangzz/QuantumultX/master/zqgetbody.js, requires-body=true, timeout=10, enable=false, tag=中青看点获取body
+
+#彩云天气解锁vip
+http-response https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) script-path=https://gitee.com/pjxy_len/loon/raw/main/scripts/caiyun_svip.js, requires-body=true, timeout=10, tag=彩云天气解锁vip
+
+# 虎牙直播
+http-response ^http?:\/\/business\.msstatic\.com\/advertiser\/material script-path=https://raw.githubusercontent.com/whyour/hundun/master/quanx/fold-ad.js, requires-body=true, timeout=10, tag=虎牙直播
+
+# 百度云盘解锁视频在线播放和倍速(by nobyda)
+http-response https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, requires-body=true, timeout=10, tag=百度云盘解锁视频在线播放和倍速
+
+# 小小影视解锁无限观影无限下载特权
+http-response https:\/\/.*\.(xiaoxiaoapps|xiaoxiaoimg)\.com\/(ssp-svr\/ssp\/list3|ucp/index|getGlobalData) script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/xxys.js, requires-body=true, timeout=10, tag=小小影视解锁无限观影无限下载特权
+
+
+
+# ----------------------------------------------------------容易失效的cookie 实时获取------------------------------------------------------------------------------
+
+
+# 爱奇艺签到获取Cookie
+http-request ^https?:\/\/iface(\d)?\.iqiyi\.com\/ script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, tag=爱奇艺签到获取Cookie
+
+# > 滴滴出行 (By @zZPiglet)
+http-request ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi.js, timeout=10, tag=滴滴出行cookie
+http-request ^https:\/\/bosp-api\.xiaojukeji\.com\/wechat\/benefit\/public\/index\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_ticket.js,tag=滴滴出行cookie
+
+
+[URL Rewrite]
+
+
+# Tikto解锁区域
+# (?<=_region=)CN(?=&) US 307
+
+# 卧龙影视去广告
+^https?+:\/\/(api|app)\.(wolong|tgmmvip)\.(tv|com)\/wolong\/ad\/(splash|banner|play) _ reject-dict
+# ^https?+:\/\/(api|app)\.(wolong|tgmmvip)\.(tv|com)\/wolong\/app\/banner\/home\/list _ reject-dict
+^https?+:\/\/(api|app)\.(wolong|tgmmvip)\.(tv|com)\/wolong\/app\/notice\/list _ reject
+^https?+:\/\/(api|app)\.(wolong|tgmmvip)\.(tv|com)\/wolong\/(app|user|gae)\/(ad|favorites|video)\/(config|status|suggest) _ reject
+
+
+# 云闪付
+^https?+:\/\/(analytics|tysdk|ads)\.95516\.com _ reject-dict
+
+# 向日葵去广告
+^https?+:\/\/slapi\.oray\.net\/adver _ reject-dict
+^https?+:\/\/slapi\.oray\.net\/adver\/promotion _ reject-dict
+
+# 12306
+^https?+:\/\/mobile\.12306\.cn\/otsmobile\/app\/mas\/loggw\/(logUpload.do|logConfig.do) _ reject
+
+# 淘宝
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject-200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.exposure\.get\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources\/ - reject
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get\/ - reject
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.tmall\.wireless - reject-200
+
+# 京东
+^https?:\/\/api\.m\.jd.com\/client\.action\?functionId=(start|queryMaterialAdverts) - reject
+^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/(aladdin\/na\/m\/getLoadingPicture|aladdin\/na\/m\/getLoadingPicture) - reject
+^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/aladdin\/na\/m\/getLoadingPicture - reject
+^https?:\/\/ms\.jr\.jd\.com\/gw\/generic\/base\/na\/m\/adInfo - reject
+
+# >> 百度贴吧
+^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/splashSchedule url reject-200
+^https?:\/\/c\.tieba\.baidu\.com\/c\/f\/forum\/getAdInfo url reject-200
+^https?:\/\/c\.tieba\.baidu\.com\/\w+\/\w+\/(sync|newRnSync|mlog) url reject-200
+# >> 百度地图
+# ^https?:\/\/.+\/client\/phpui2\/ url reject-200
+^https?:\/\/ss0\.bdstatic\.com/.+_\d{3}_\d{4}\.jpg url reject-200
+
+# > 电视家
+^https?:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/ad\/ url reject-200
+
+# > 花生地铁
+^https?:\/\/cmsapi\.wifi8\.com\/v\d\/(emptyAd|adNew)\/ url reject-200
+
+# 爱思助手
+^https?+:\/\/list-app-m\.i4\.cn\/getopfstadinfo.xhtml _ reject-dict
+
+# github域名重定向  raw.githubusercontent.com
+https:\/\/raw.githubusercontent.com https://gayhub.lensu.workers.dev 302
+
+
+
+[MITM]
+hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,testflight.apple.com,buy.itunes.apple.com,api.gaoqingdianshi.com,cmsapi.wifi8.com,list-app-m.i4.cn,app.wolong.tv,api.wolong.tv,app.tgmmvip.com,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,jd.com,bdsp-x.jd.com,biz.caiyunapp.com,business.msstatic.com,pan.baidu.com,ifac*.iqiyi.com,as.xiaojukeji.com,bosp-api.xiaojukeji.com,*.xxjjappss.com,*.huaerdadi.com,*.xiaoxiaoapps.com,*.xiaoxiaoimg.com,
+
