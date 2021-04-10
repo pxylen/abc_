@@ -96,6 +96,23 @@
       "script": "https://raw.githubusercontent.com/pxylen/abc_/master/scripts/kuaishou.js"
     },
     {
+      "id": "58tc",
+      "name": "58同城",
+      "keys": [
+        "wbtc",
+        "zsheader",
+        "zjheader",
+        "dzpheader"
+      ],
+      "author": "@lensu",
+      "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/kuaishou.png",
+        "https://raw.githubusercontent.com/Orz-3/task/master/kuaishou.png"
+      ],
+      "script": "https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js"
+    },
+    {
       "id": "zhifubao—sign",
       "name": "支付宝天天挖矿",
       "keys": [
