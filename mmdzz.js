@@ -102,7 +102,7 @@ let url = {
         try {
     const result = JSON.parse(data)
         if(result.code == 200){
-  $.log(`\n萌喵大作战无限刷红包券:${result.msg}\n当前红包券:${result.data.roll_num}约等于`+result.data.roll_num/ 1000+'元')
+  $.log(`\n萌喵大作战无限刷红包券:${result.msg}\n当前红包券:${result.data.roll_num}约等于`+result.data.roll_num/ 10000+'元')
      
 $.wait(10);
         await wxs()
