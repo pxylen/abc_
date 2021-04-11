@@ -25,7 +25,7 @@
 钢镚赚使用方法:
 1-点击右上角签到,获得签到数据。
 2-点击任务5,进入视频广告任务界面,点击看广告任务,获得看广告数据
-3-点击看视频任务,获得看视频任务数据。
+3-点击看视频任务,获得看视频任务数据。有插屏广告的可以继续获取插屏广告
 4-运行脚本。跑完之后去手动领取每日任务奖励的25金币。获得领取数据
 
 TG通知群:https://t.me/Ariszy_Scripts
@@ -84,7 +84,7 @@ const head1 = {
 };
 let status;
 status = (status = ($.getval("ehystatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const lbbodyqdArr = [],lbbody1Arr = [],lbbody2Arr = [],lbbody3Arr = [],lbbody4Arr = [],lbbody5Arr = [],lbbody6Arr = [],lbbody7Arr = [],gbbody1Arr = [],gbbody2Arr = [],gbbody3Arr = [],gbbody4Arr = [],ehycount = ''
+const lbbodyqdArr = [],lbbody1Arr = [],lbbody2Arr = [],lbbody3Arr = [],lbbody4Arr = [],lbbody5Arr = [],lbbody6Arr = [],lbbody7Arr = [],gbbody1Arr = [],gbbody2Arr = [],gbbody3Arr = [],gbbody4Arr = [],gbbody5Arr = [],ehycount = ''
 let lbbodyqd = $.getdata('lbbodyqd')
 let lbbody1 = $.getdata('lbbody1')
 let lbbody2 = $.getdata('lbbody2')
@@ -97,6 +97,7 @@ let gbbody1 = $.getdata('gbbody1')
 let gbbody2 = $.getdata('gbbody2')
 let gbbody3 = $.getdata('gbbody3')
 let gbbody4 = $.getdata('gbbody4')
+let gbbody5 = $.getdata('gbbody5')
 !(async () => {
   if (typeof $request !== "undefined") {
     await ehyck()
@@ -114,6 +115,7 @@ let gbbody4 = $.getdata('gbbody4')
     gbbody2Arr.push($.getdata('gbbody2'))
     gbbody3Arr.push($.getdata('gbbody3'))
     gbbody4Arr.push($.getdata('gbbody4'))
+    gbbody5Arr.push($.getdata('gbbody5'))
     let ehycount = ($.getval('ehycount') || '1');
   for (let i = 2; i <= ehycount; i++) {
     lbbodyqdArr.push($.getdata(`lbbodyqd${i}`))
@@ -128,10 +130,11 @@ let gbbody4 = $.getdata('gbbody4')
     gbbody2Arr.push($.getdata(`gbbody2${i}`))
     gbbody3Arr.push($.getdata(`gbbody3${i}`))
     gbbody4Arr.push($.getdata(`gbbody4${i}`))
+    gbbody5Arr.push($.getdata(`gbbody5${i}`))
   }
-    console.log(`------------- 共1个账号-------------\n`)
-      for (let i = 0; i < 1; i++) {
-        if (1) {
+    console.log(`------------- 共${gbbody1Arr.length}个账号-------------\n`)
+      for (let i = 0; i < gbbody1Arr.length; i++) {
+        if (gbbody1Arr[i]) {
          lbbodyqd = lbbodyqdArr[i];
          lbbody1 = lbbody1Arr[i];
          lbbody2 = lbbody2Arr[i];
@@ -144,6 +147,7 @@ let gbbody4 = $.getdata('gbbody4')
          gbbody2 = gbbody2Arr[i];
          gbbody3 = gbbody3Arr[i];
          gbbody4 = gbbody4Arr[i];
+         gbbody5 = gbbody5Arr[i];
           $.index = i + 1;
           console.log(`\n开始【钢镚赚乐步达人二合一${$.index}】`)
           await lbqd();
@@ -218,6 +222,11 @@ const gbbody4 = $request.body
   if(gbbody4)     $.setdata(gbbody4,`gbbody4${status}`)
     $.log(gbbody4)
    $.msg($.name,"",'钢镚赚'+`${status}` +'签到数据获取成功！')
+  }else if ($request.url.indexOf("gainintegral") > -1  && $request.body.indexOf("type=3") > -1) {
+const gbbody5 = $request.body
+  if(gbbody5)     $.setdata(gbbody5,`gbbody5${status}`)
+    $.log(gbbody5)
+   $.msg($.name,"",'钢镚赚'+`${status}` +'插屏广告数据获取成功！')
   }
 }
 
@@ -544,7 +553,7 @@ let url = {
   })
 }
 
-function gbz4(timeout = 0) {
+function gbz5(timeout = 0) {
   return new Promise((resolve) => {
 
 let url = {
@@ -559,7 +568,7 @@ let url = {
 
         $.log('\n钢镚赚:领奖励领取成功获得:'+result.result.nowintegrals+' 余额:'+result.result.allintegrals)
        await $.wait(1000)
-       await gbz2()
+       await gbz5()
         
 } else {
        console.log('\n钢镚赚:领奖励领取失败:'+result.msg)
@@ -597,6 +606,38 @@ let url = {
        console.log('\n钢镚赚:签到奖励领取失败:'+result.msg)
        await $.wait(1000)
        await gbz2();
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+function gbz4(timeout = 0) {
+  return new Promise((resolve) => {
+
+let url = {
+        url : "https://api.zhuangangbeng.com/gainintegral",
+        headers : head1,
+        body : gbbody5,
+}
+      $.post(url, async (err, resp, data) => {
+        try {
+    const result = JSON.parse(data)
+        if(result.statuscode == 200){
+
+        $.log('\n钢镚赚:插屏广告领取成功获得:'+result.result.nowintegrals)
+       await $.wait(1000)
+       await gbz4()
+        
+} else {
+       console.log('\n钢镚赚:插屏广告领取失败:'+result.msg)
+       await $.wait(1000)
+       await gbz5()
 }
    
         } catch (e) {
