@@ -5,7 +5,7 @@
 脚本为自动完成最强蜗牛的日常任务
 每日固定收益0.5元，十元提现
 
-注册下载链接 邀请码: 0c9bd6  下载地址：http://wn.xingguozuliao.com/app/index/qudao.html?uid=NzA0
+注册下载链接 邀请码: 0c9bd6  下载地址：http://wn.xingguozuliao.com/app/index/qudao.html?uid=MzAwMjIy
 
 或扫码下载 https://ae01.alicdn.com/kf/U3db2f09c03ec438cba2b89deb9c1b53f8.jpg
 
