@@ -129,9 +129,9 @@ let gbbody4 = $.getdata('gbbody4')
     gbbody3Arr.push($.getdata(`gbbody3${i}`))
     gbbody4Arr.push($.getdata(`gbbody4${i}`))
   }
-    console.log(`------------- 共${lbbodyqdArr.length}个账号-------------\n`)
-      for (let i = 0; i < lbbodyqdArr.length; i++) {
-        if (lbbodyqdArr[i]) {
+    console.log(`------------- 共1个账号-------------\n`)
+      for (let i = 0; i < 1; i++) {
+        if (1) {
          lbbodyqd = lbbodyqdArr[i];
          lbbody1 = lbbody1Arr[i];
          lbbody2 = lbbody2Arr[i];
