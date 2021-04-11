@@ -821,8 +821,8 @@
     } ,
     {
             "id": "ehy",
-            "name": "乐步达人钢镚赚二合一",
-            "keys": [lbbodyqd,lbbody1,lbbody2,lbbody3,lbbody4,lbbody5,gbbody1,gbbody2,gbbody3,gbbody4],
+            "name": "(需越狱)乐步达人钢镚赚二合一",
+            "keys": ["lbbodyqd","lbbody1","lbbody2","lbbody3","lbbody4","lbbody5","gbbody1","gbbody2","gbbody3","gbbody4"],
             "author": "@feizao",
             "settings": [{
             "id": "ehystatus",
