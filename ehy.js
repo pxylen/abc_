@@ -13,9 +13,11 @@
 扫码下载:
 乐步达人下载地址:https://ae01.alicdn.com/kf/Ud29f5ffc670840b6a112ec1b136de7bbN.jpg
 
+乐步邀请码:15797164
+
 钢镚赚下载地址:https://ae01.alicdn.com/kf/Uba083d50f9e24a84ba42baaf8fc31ae6k.jpg
 
-邀请ID: 128338807
+钢镚赚邀请ID: 128338807
 
 乐步达人使用方法:
 1-点击中间赚赚,签到,获得签到数据
