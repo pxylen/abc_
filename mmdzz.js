@@ -30,7 +30,7 @@ https://xxlapi.higaoyao.com:553/game/v1/index/addRedRoll script-path=https://raw
 萌喵大作战无限刷红包券 = type=http-request,pattern=https://xxlapi.higaoyao.com:553/game/v1/index/addRedRoll,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/blnc.js,script-update-interval=0
 
 [MITM]
-hostname = xxlapi.higaoyao.com:553
+hostname = xxlapi.higaoyao.com
 
 
  */
