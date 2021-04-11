@@ -12,17 +12,16 @@
 
 扫码下载:
 乐步达人下载地址:https://ae01.alicdn.com/kf/Ud29f5ffc670840b6a112ec1b136de7bbN.jpg
-
-乐步邀请码:15797164
-
+下载需要在扫码结果那里跳转打开,否则没任务界面
+乐步达人邀请码:15797164
 钢镚赚下载地址:https://ae01.alicdn.com/kf/Uba083d50f9e24a84ba42baaf8fc31ae6k.jpg
-
-钢镚赚邀请ID: 128338807
+钢镚赚邀请码ID: 128338807
+不建议多开,请关闭去广告功能
 
 乐步达人使用方法:
 1-点击中间赚赚,签到,获得签到数据
 2-点击浏览静态广告,等完成获得静态广告数据
-3-点击浏览视频广告,进入之后有五个视频任务，第一个不用点,看不了。从第二个视频任务开始依次点击观看视频,分别获得视频1.2.3.4的数据
+3-点击浏览视频广告,进入之后有五个视频任务，第一个不用点,看不了。从第二个视频任务开始依次点击观看视频,分别获得视频1.2.3.4.5.6的数据,运行脚本报错不用管。能抓包哪个视频就跑哪个。
 钢镚赚使用方法:
 1-点击右上角签到,获得签到数据。
 2-点击任务5,进入视频广告任务界面,点击看广告任务,获得看广告数据
@@ -85,13 +84,15 @@ const head1 = {
 };
 let status;
 status = (status = ($.getval("ehystatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const lbbodyqdArr = [],lbbody1Arr = [],lbbody2Arr = [],lbbody3Arr = [],lbbody4Arr = [],lbbody5Arr = [],gbbody1Arr = [],gbbody2Arr = [],gbbody3Arr = [],gbbody4Arr = [],ehycount = ''
+const lbbodyqdArr = [],lbbody1Arr = [],lbbody2Arr = [],lbbody3Arr = [],lbbody4Arr = [],lbbody5Arr = [],lbbody6Arr = [],lbbody7Arr = [],gbbody1Arr = [],gbbody2Arr = [],gbbody3Arr = [],gbbody4Arr = [],ehycount = ''
 let lbbodyqd = $.getdata('lbbodyqd')
 let lbbody1 = $.getdata('lbbody1')
 let lbbody2 = $.getdata('lbbody2')
 let lbbody3 = $.getdata('lbbody3')
 let lbbody4 = $.getdata('lbbody4')
 let lbbody5 = $.getdata('lbbody5')
+let lbbody6 = $.getdata('lbbody6')
+let lbbody7 = $.getdata('lbbody7')
 let gbbody1 = $.getdata('gbbody1') 
 let gbbody2 = $.getdata('gbbody2')
 let gbbody3 = $.getdata('gbbody3')
@@ -107,6 +108,8 @@ let gbbody4 = $.getdata('gbbody4')
     lbbody3Arr.push($.getdata('lbbody3'))
     lbbody4Arr.push($.getdata('lbbody4'))
     lbbody5Arr.push($.getdata('lbbody5'))
+    lbbody6Arr.push($.getdata('lbbody6'))
+    lbbody7Arr.push($.getdata('lbbody7'))
     gbbody1Arr.push($.getdata('gbbody1'))
     gbbody2Arr.push($.getdata('gbbody2'))
     gbbody3Arr.push($.getdata('gbbody3'))
@@ -119,6 +122,8 @@ let gbbody4 = $.getdata('gbbody4')
     lbbody3Arr.push($.getdata(`lbbody3${i}`))
     lbbody4Arr.push($.getdata(`lbbody4${i}`))
     lbbody5Arr.push($.getdata(`lbbody5${i}`))
+    lbbody6Arr.push($.getdata(`lbbody6${i}`))
+    lbbody7Arr.push($.getdata(`lbbody7${i}`))
     gbbody1Arr.push($.getdata(`gbbody1${i}`))
     gbbody2Arr.push($.getdata(`gbbody2${i}`))
     gbbody3Arr.push($.getdata(`gbbody3${i}`))
@@ -133,6 +138,8 @@ let gbbody4 = $.getdata('gbbody4')
          lbbody3 = lbbody3Arr[i];
          lbbody4 = lbbody4Arr[i];
          lbbody5 = lbbody5Arr[i];
+         lbbody6 = lbbody6Arr[i];
+         lbbody7 = lbbody7Arr[i];
          gbbody1 = gbbody1Arr[i];
          gbbody2 = gbbody2Arr[i];
          gbbody3 = gbbody3Arr[i];
@@ -151,7 +158,7 @@ let gbbody4 = $.getdata('gbbody4')
 //钢镚赚乐步达人二合一数据获取
 
 function ehyck() {
-   if ($request.url.indexOf("zlgainintegral") > -1 && $request.body.indexOf("nt=1") > -1) {
+   if ($request.url.indexOf("zlgainintegral") > -1 && $request.body.indexOf("it=58") > -1) {
 const lbbodyqd = $request.body
   if(lbbodyqd)     $.setdata(lbbodyqd,`lbbodyqd${status}`)
     $.log(lbbodyqd)
@@ -171,6 +178,16 @@ const lbbody3 = $request.body
   if(lbbody3)     $.setdata(lbbody3,`lbbody3${status}`)
     $.log(lbbody3)
    $.msg($.name,"",'乐步达人'+`${status}` +'视频二数据获取成功！')
+  }else if ($request.url.indexOf("zlgainintegral") > -1 &&  $request.body.indexOf("vid=1") > -1) {
+const lbbody7 = $request.body
+  if(lbbody7)     $.setdata(lbbody7,`lbbody7${status}`)
+    $.log(lbbody7)
+   $.msg($.name,"",'乐步达人'+`${status}` +'视频五数据获取成功！')
+  }else if ($request.url.indexOf("zlgainintegral") > -1 &&  $request.body.indexOf("vid=5") > -1) {
+const lbbody6 = $request.body
+  if(lbbody6)     $.setdata(lbbody6,`lbbody6${status}`)
+    $.log(lbbod6)
+   $.msg($.name,"",'乐步达人'+`${status}` +'视频六数据获取成功！')
   }else if ($request.url.indexOf("zlgainintegral") > -1 &&  $request.body.indexOf("vid=4") > -1) {
 const lbbody4 = $request.body
   if(lbbody4)     $.setdata(lbbody4,`lbbody4${status}`)
@@ -384,6 +401,72 @@ let url = {
 } else {
        console.log('\n乐步达人:视频四领取失败:'+result.msg)
        await $.wait(1000)
+
+       await lb6()
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+function lb6(timeout = 0) {
+  return new Promise((resolve) => {
+
+let url = {
+        url : "https://lebudaren.zhuangangbeng.com/zlgainintegral",
+        headers : headlb,
+        body : lbbody6,
+}
+      $.post(url, async (err, resp, data) => {
+        try {
+    const result = JSON.parse(data)
+        if(result.statuscode == 200){
+
+        $.log('\n乐步达人:视频五领取成功获得:'+result.result.nowintegral)
+       await $.wait(1000)
+       await lb6()
+        
+} else {
+       console.log('\n乐步达人:视频五领取失败:'+result.msg)
+       await $.wait(1000)
+
+       await lb7()
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
+
+function lb7(timeout = 0) {
+  return new Promise((resolve) => {
+
+let url = {
+        url : "https://lebudaren.zhuangangbeng.com/zlgainintegral",
+        headers : headlb,
+        body : lbbody7,
+}
+      $.post(url, async (err, resp, data) => {
+        try {
+    const result = JSON.parse(data)
+        if(result.statuscode == 200){
+
+        $.log('\n乐步达人:视频六领取成功获得:'+result.result.nowintegral)
+       await $.wait(1000)
+       await lb7()
+        
+} else {
+       console.log('\n乐步达人:视频六领取失败:'+result.msg)
+       await $.wait(1000)
 console.log(`\n\n开始【钢镚赚】\n`)
        await gbz1()
 }
@@ -396,7 +479,6 @@ console.log(`\n\n开始【钢镚赚】\n`)
     },timeout)
   })
 }
-
 //钢镚赚
 function gbz2(timeout = 0) {
   return new Promise((resolve) => {
