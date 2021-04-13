@@ -28,22 +28,22 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
 [task_local]
 #千禾阅读
-35 9-22 * * * https://raw.githubusercontent.com/age174/-/main/66yd.js, tag=千禾阅读, img-url=https://ae01.alicdn.com/kf/U413ab7460abb4a28b11deac3c5034243N.jpg, enabled=true
+35 9-22 * * * https://raw.githubusercontent.com/age174/-/main/qhyd.js, tag=千禾阅读, img-url=https://ae01.alicdn.com/kf/U413ab7460abb4a28b11deac3c5034243N.jpg, enabled=true
 
 
 [rewrite_local]
 #千禾阅读个人信息和领取重写
-https://www.qianhe5.com/ url script-request-header https://raw.githubusercontent.com/age174/-/main/66yd.js
+https://www.qianhe5.com/ url script-request-header https://raw.githubusercontent.com/age174/-/main/qhyd.js
 #千禾阅读任务重写
-https://www.qianhe5.com/read/v1/get_time_list url script-request-body https://raw.githubusercontent.com/age174/-/main/66yd.js
+https://www.qianhe5.com/read/v1/get_time_list url script-request-body https://raw.githubusercontent.com/age174/-/main/qhyd.js
 
 #loon
-https://www.qianhe5.com/ script-path=https://raw.githubusercontent.com/age174/-/main/66yd.js, requires-header=true, timeout=10, tag=千禾阅读个人信息和领取重写
-https://www.qianhe5.com/read/v1/get_time_list script-path=https://raw.githubusercontent.com/age174/-/main/66yd.js, requires-body=true, timeout=10, tag=千禾阅读任务重写
+https://www.qianhe5.com/ script-path=https://raw.githubusercontent.com/age174/-/main/qhyd.js, requires-header=true, timeout=10, tag=千禾阅读个人信息和领取重写
+https://www.qianhe5.com/read/v1/get_time_list script-path=https://raw.githubusercontent.com/age174/-/main/qhyd.js, requires-body=true, timeout=10, tag=千禾阅读任务重写
 
 #surge
-千禾阅读个人信息和领取重写 = type=http-request,pattern=https://www.qianhe5.com/,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/66yd.js,script-update-interval=0
-千禾阅读任务重写 = type=http-request,pattern=https://www.qianhe5.com/read/v1/get_time_list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/66yd.js,script-update-interval=0
+千禾阅读个人信息和领取重写 = type=http-request,pattern=https://www.qianhe5.com/,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/qhyd.js,script-update-interval=0
+千禾阅读任务重写 = type=http-request,pattern=https://www.qianhe5.com/read/v1/get_time_list,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/qhyd.js,script-update-interval=0
 
 [MITM]
 hostname = www.qianhe5.com
