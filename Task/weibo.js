@@ -1,5 +1,5 @@
 /*
-更新时间: 2021-03-28 09:02
+更新时间: 2021-04-13 10:32
 
 本脚本仅适用于微博每日签到，支持多账号运行  
 
@@ -151,10 +151,11 @@ function getsign() {
                 wbsign = `【每日签到】‼️` + result.msg + '\n'
             } else {
                 wbsign = `【每日签到】 ❌ 签到失败 ` + result.errmsg;
-                $.msg($.name, wbsign, `请检查微博Token`)
+                $.msg($.name, wbsign, `请检查微博Token是否失效`)
                 if ($.isNode()) {
                     await notify.sendNotify($.name, wbsign)
                 }
+                $done()
             }
             resolve()
         })
