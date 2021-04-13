@@ -887,6 +887,29 @@
             "repo": "https://github.com/age174/-/blob/main/mmdzz.js",
             "icons": ["https://ae01.alicdn.com/kf/U13a7be18e87942118e4402e22652fd70H.jpg", "https://ae01.alicdn.com/kf/U13a7be18e87942118e4402e22652fd70H.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/mmdzz.js"
+    } ,
+    {
+            "id": "qhyd",
+            "name": "千禾阅读",
+            "keys": ["qhydurl","qhydhd","qhydlqhd","qhydbody","qhydurl2","qhydhd2","qhydlqhd2","qhydbody2","qhydurl3","qhydhd3","qhydlqhd3","qhydbody3","qhydurl4","qhydhd4","qhydlqhd4","qhydbody4","qhydurl5","qhydhd5","qhydlqhd5","qhydbody5","qhydurl6","qhydhd6","qhydlqhd6","qhydbody6","qhydurl7","qhydhd7","qhydlqhd7","qhydbody7","qhydurl8","qhydhd8","qhydlqhd8","qhydbody8","qhydurl9","qhydhd9","qhydlqhd9","qhydbody9","qhydurl10","qhydhd10","qhydlqhd10","qhydbody10"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "qhydstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "qhydcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/qhyd.js",
+            "icons": ["https://ae01.alicdn.com/kf/U413ab7460abb4a28b11deac3c5034243N.jpg", "https://ae01.alicdn.com/kf/U413ab7460abb4a28b11deac3c5034243N.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/qhyd.js"
     } 
 ]
 }
