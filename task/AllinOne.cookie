@@ -2,13 +2,13 @@ hostname = api.m.jd.com, farming.blnc888.com, marketing.xsyxsc.com, lebudaren.zh
 
 #tom
 #拼夕夕
-http-request http://apipx.jc8s.com:4022/Index/MianFeiPT script-path=https://raw.githubusercontent.com/xl2101200/-/main/pxx.js, requires-body=true, tag=拼夕夕
+http-request #http://apipx.jc8s.com:4022/Index/MianFeiPT script-path=https://raw.githubusercontent.com/xl2101200/-/main/pxx.js, requires-body=true, tag=http://apipx.jc8s.com:4022/Index/MianFeiPT
 #打卡偷能量
 http-request https://www.xiaeke.com/benmao/index.php/Home/MorningTree/gainEnergy? script-path=https://raw.githubusercontent.com/xl2101200/-/main/keepdk.js, requires-header=true, tag=打卡偷能量
 #浇水
 http-request https://www.xiaeke.com/benmao/index.php/Home/MorningTree/gainEnergy? script-path=https://raw.githubusercontent.com/xl2101200/-/main/keepjs.js, requires-header=true, tag=浇水
 #趣客有礼
-http-request https://choujiang-server.deering.cn script-path=https://raw.githubusercontent.com/xl2101200/-/main/qkyl.js, requires-body=true, tag=趣客有礼
+http-request #https://choujiang-server.deering.cn script-path=https://raw.githubusercontent.com/xl2101200/-/main/qkyl.js, requires-body=true, tag=https://choujiang-server.deering.cn
 
 #ichenzhe
 #京东直播每日抓红包雨变量
