@@ -679,10 +679,6 @@ function task() {
         })
     })
 }
-if ($.time('yyyy-MM-dd') === '2023-05-01') {
-    $.msg($.name, '活动已结束', `请禁用或删除脚本`);
-    return
-}
 
 // prettier-ignore
 function Env(name, opts) {
