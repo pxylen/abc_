@@ -452,7 +452,7 @@ async function all() {
                     'Content-Type': `application/x-www-form-urlencoded`,
                     'Host': `nb.ioxing.com`,
                 };
-                yqnbbody = `apid=32&uid=${yqnbbodyVal}`
+                yqnbbody = `adid=32&uid=${yqnbbodyVal}`
 
                 DD = RT(20000, 30000)
                 console.log(`随机延迟${DD/1000}秒`)
