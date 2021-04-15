@@ -41,5 +41,8 @@ jobs:
           cd ~/abc_/Task
           node yqnb.js
 
-
+        env:
+          TZ: Asia/shanghai
+          YQNB_yqnbHEADER: ${{ secrets.YQNB_yqnbHEADER }}
+          YQNB_yqnbBODY: ${{ secrets.YQNB_yqnbBODY }}
 
