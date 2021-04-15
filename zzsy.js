@@ -11,7 +11,7 @@
 
 扫描二维码打开注册:https://ae01.alicdn.com/kf/Ud97088a019124ae68656e7c33e9d521fb.jpg
 或者直接商店搜索招招下载。随便大佬们。。。
-
+推荐码 : 163566
 本脚本以学习为主！
 
 TG通知群:https://t.me/Ariszy_Scripts
