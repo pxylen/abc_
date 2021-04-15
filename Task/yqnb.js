@@ -12,6 +12,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 >>点击  http://nb.ioxing.com/index.php/Home/Public/login1/newpid/8369  下载APP    谢谢支持
 
 4.14 制作
+4.15.11 修复签到列表报错
 
 ⚠️ 时间设置   7 7,27 7-20 * * *    每天 20次 
 ⚠️一共  2个ck  👉 2条 Secrets
@@ -50,7 +51,7 @@ http-request http:\/\/nb\.ioxing\.com\/* script-path=https://cdn.jsdelivr.net/gh
 
 
 
-GXRZ = '4.14 制作'
+GXRZ = '4.15.11 修复签到列表报错'
 const $ = Env("易趣牛帮");
 $.idx = ($.idx = ($.getval('yqnbSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -576,8 +577,10 @@ function task() {
                             $.signlist = JSON.parse(data);
                             if ($.signlist.code == 1) {
                                 signlistinfo = $.signlist.data.find(item => item.id == $.signlist.sign.day);
+				    if (signlistinfo.titlle) {
                                 console.log(`签到列表：今日${signlistinfo.titlle},${signlistinfo.price}积分\n`)
                                 $.message += `【签到列表】：今日${signlistinfo.titlle},${signlistinfo.price}积分\n`;
+				    }
                             }
                         }
 
