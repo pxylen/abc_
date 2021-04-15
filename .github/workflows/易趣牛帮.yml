@@ -38,7 +38,7 @@ jobs:
 
       - name: '运行 【易趣牛帮】'
         run: |
-          cd ~/abc_
+          cd ~/abc_/Task
           node yqnb.js
 
 
