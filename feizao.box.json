@@ -891,7 +891,7 @@
     {
             "id": "qhyd",
             "name": "千禾阅读",
-            "keys": ["qhydurl","qhydhd","qhydlqhd","qhydbody","qhydurl2","qhydhd2","qhydlqhd2","qhydbody2","qhydurl3","qhydhd3","qhydlqhd3","qhydbody3","qhydurl4","qhydhd4","qhydlqhd4","qhydbody4","qhydurl5","qhydhd5","qhydlqhd5","qhydbody5","qhydurl6","qhydhd6","qhydlqhd6","qhydbody6","qhydurl7","qhydhd7","qhydlqhd7","qhydbody7","qhydurl8","qhydhd8","qhydlqhd8","qhydbody8","qhydurl9","qhydhd9","qhydlqhd9","qhydbody9","qhydurl10","qhydhd10","qhydlqhd10","qhydbody10"],
+            "keys": ["qhydurl","qhydhd","qhydlqhd","qhydbody"],
             "author": "@feizao",
             "settings": [{
             "id": "qhydstatus",
