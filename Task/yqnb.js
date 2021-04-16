@@ -13,6 +13,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 
 4.14 制作
 4.15.11 修复签到列表报错
+4.16.21 刷新异常，先移除判定
 
 ⚠️ 时间设置   7 7,27 7-20 * * *    每天 20次 
 ⚠️一共  2个ck  👉 2条 Secrets
@@ -51,7 +52,7 @@ http-request http:\/\/nb\.ioxing\.com\/* script-path=https://cdn.jsdelivr.net/gh
 
 
 
-GXRZ = '4.15.11 修复签到列表报错'
+GXRZ = '4.16.21 刷新异常，先移除判定'
 const $ = Env("易趣牛帮");
 $.idx = ($.idx = ($.getval('yqnbSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -445,7 +446,7 @@ async function all() {
                 await $.wait(DD)
                 await task();
             }
-            if (taskvideo.countnum != taskvideo.allcount) {
+           
                 K = `视频🚩`;
                 yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/viodeqd`
                 yqnbheader = {
@@ -459,7 +460,7 @@ async function all() {
                 console.log(`随机延迟${DD/1000}秒`)
                 await $.wait(DD)
                 await task();
-            }
+            
             K = `报名页🚩`;
             yqnburl = `http://nb.ioxing.com/index.php/Home/AppActiv/activyinfo`
             yqnbheader = {
