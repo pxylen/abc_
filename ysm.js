@@ -6,7 +6,7 @@
 每日收益1.5元左右，可多号撸。提现秒到
 可以多个阅读平台同时跑脚本，如番茄看看和微客众智
 
-任务打开二维码地址 https://ae01.alicdn.com/kf/U1f724e1a9fff4d5b8501e7637dea2e25H.jpg
+任务打开二维码地址 https://ae01.alicdn.com/kf/Ufc6bb87a11db40af80dfcece47ffc3494.jpg
 微信扫描打开
 
 可以先点阅读任务旁边的关注任务,关注三个公众号先提现三毛再说
