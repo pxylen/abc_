@@ -933,6 +933,29 @@
             "repo": "https://github.com/age174/-/blob/main/zzsy.js",
             "icons": ["https://ae01.alicdn.com/kf/Ub0056a0721e94c9a85a8bbeb2f2aed6fn.jpg", "https://ae01.alicdn.com/kf/Ub0056a0721e94c9a85a8bbeb2f2aed6fn.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/zzsy.js"
+    } ,
+    {
+            "id": "jjrm",
+            "name": "久金人脉",
+            "keys": ["jjrmurl","jjrmhd", "jjrmurl2","jjrmhd2","jjrmurl3","jjrmhd3","jjrmurl4","jjrmhd4","jjrmurl5","jjrmhd5","jjrmurl6","jjrmhd6","jjrmurl7","jjrmhd7","jjrmurl8","jjrmhd8","jjrmurl9","jjrmhd9","jjrmurl10","jjrmhd10","jjrmurl11","jjrmhd11","jjrmurl12","jjrmhd12","jjrmurl13","jjrmhd13","jjrmurl14","jjrmhd14","jjrmurl15","jjrmhd15"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "jjrmstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "jjrmcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/jjrm.js",
+            "icons": ["https://ae01.alicdn.com/kf/Uf3f262fb6d81492a8e350a0bb97a04a0g.jpg", "https://ae01.alicdn.com/kf/Uf3f262fb6d81492a8e350a0bb97a04a0g.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/jjrm.js"
     } 
 ]
 }
