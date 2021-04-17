@@ -614,7 +614,7 @@ function task() {
                             $.signlist = JSON.parse(data);
                             if ($.signlist.code == 1) {
                                 signlistinfo = $.signlist.data.find(item => item.id == $.signlist.sign.day);
-                                if (signlistinfo.titlle) {
+                                if (signlistinfo && signlistinfo.titlle) {
                                     console.log(`签到列表：今日${signlistinfo.titlle},${signlistinfo.price}积分\n`)
                                     $.message += `【签到列表】：今日${signlistinfo.titlle},${signlistinfo.price}积分\n`;
                                 }
