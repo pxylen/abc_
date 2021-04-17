@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试，定时可以多设置几次，没任务会停止运行的
 [task_local]
 #久金人脉
-20 9-22 * * * https://raw.githubusercontent.com/age174/-/main/jjrm.js, tag=久金人脉, img-url=https://ae01.alicdn.com/kf/Uf3f262fb6d81492a8e350a0bb97a04a0g.jpg, enabled=true
+20,50 9-22 * * * https://raw.githubusercontent.com/age174/-/main/jjrm.js, tag=久金人脉, img-url=https://ae01.alicdn.com/kf/Uf3f262fb6d81492a8e350a0bb97a04a0g.jpg, enabled=true
 
 
 [rewrite_local]
