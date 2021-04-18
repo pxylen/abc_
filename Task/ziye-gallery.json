@@ -152,12 +152,6 @@
 		
 		
 		{
-            "config": "6 9 * * * * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ddayd.js, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/ddayd.png, tag=多多爱运动, enabled=false",
-        },
-		
-		
-		
-		{
             "config": "7 7,27 7-20 * * * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/yqnb.js, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/yqnb.png, tag=易趣牛帮, enabled=false",
         }, {
             "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-yqnb-body.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/yqnb.png, tag=易趣牛帮获取header body, enabled=false",
