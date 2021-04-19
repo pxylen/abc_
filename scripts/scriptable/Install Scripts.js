@@ -26,10 +26,6 @@ const scripts = [
    {
     moduleName: "京豆收支",
     url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/JDDou.js",
-   },
-   {
-    moduleName: "中国联通",
-    url:"https://raw.githubusercontent.com/dompling/Scriptable/master/Scripts/ChinaUnicom.js",
    }
 ];
 class YaYaInstall {
