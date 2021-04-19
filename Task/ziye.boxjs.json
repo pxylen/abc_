@@ -454,7 +454,7 @@
         {
             "id": "yqnb",
             "name": "易趣牛帮APP",
-            "keys": ["yqnbheader", "yqnbbody", "yqnbsjheader", "yqnbsjbody","yqnbheader2", "yqnbbody2","yqnbsjheader2", "yqnbsjbody2", "yqnbheader3", "yqnbbody3", "yqnbsjheader3", "yqnbsjbody3", "yqnbheader4", "yqnbbody4", "yqnbsjheader4", "yqnbsjbody4", "yqnbheader5", "yqnbbody5", "yqnbsjheader5", "yqnbsjbody5", "yqnbheader6", "yqnbbody6","yqnbsjheader6", "yqnbsjbody6", "yqnbheader7", "yqnbbody7","yqnbsjheader7", "yqnbsjbody7", "yqnbheader8", "yqnbbody8", "yqnbsjheader8", "yqnbsjbody8", "yqnbheader9", "yqnbbody9", "yqnbsjheader9", "yqnbsjbody9", "yqnbheader10", "yqnbbody10","yqnbsjheader10", "yqnbsjbody10", "yqnbheader11", "yqnbbody11", "yqnbsjheader11", "yqnbsjbody11", "yqnbheader12", "yqnbbody12", "yqnbsjheader12", "yqnbsjbody12", "yqnbheader13", "yqnbbody13","yqnbsjheader13", "yqnbsjbody13",  "yqnbheader14", "yqnbbody14",  "yqnbsjheader14", "yqnbsjbody14", "yqnbheader15", "yqnbbody15", "yqnbsjheader15", "yqnbsjbody15", "yqnbheader16", "yqnbbody16","yqnbsjheader16", "yqnbsjbody16", "yqnbheader17", "yqnbbody17", "yqnbsjheader17", "yqnbsjbody17", "yqnbheader18", "yqnbbody18", "yqnbsjheader18", "yqnbsjbody18", "yqnbheader19", "yqnbbody19",  "yqnbsjheader19", "yqnbsjbody19", "yqnbheader20", "yqnbbody20", "yqnbsjheader20", "yqnbsjbody20"],
+            "keys": ["yqnbheader", "yqnbbody", "yqnbheader2", "yqnbbody2", "yqnbheader3", "yqnbbody3",  "yqnbheader4", "yqnbbody4",   "yqnbheader5", "yqnbbody5", "yqnbheader6", "yqnbbody6","yqnbheader7", "yqnbbody7", "yqnbheader8", "yqnbbody8", "yqnbheader9", "yqnbbody9", "yqnbheader10", "yqnbbody10", "yqnbheader11", "yqnbbody11", "yqnbheader12", "yqnbbody12",  "yqnbheader13", "yqnbbody13", "yqnbheader14", "yqnbbody14", "yqnbheader15", "yqnbbody15", "yqnbheader16", "yqnbbody16","yqnbheader17", "yqnbbody17", "yqnbheader18", "yqnbbody18",  "yqnbheader19", "yqnbbody19", "yqnbheader20", "yqnbbody20"],
             "author": "@ziye",
             "settings": [{
         "id": "yqnbSuffix",
@@ -474,6 +474,12 @@
         "val": "0",
         "type": "number",
         "desc": "0关闭 1开启,默认关闭"
+    }, {
+        "id": "yqnbXYZ",
+        "name": "运行概率",
+        "val": "100",
+        "type": "number",
+        "desc": "0不运行 可设置0-100,默认百分百"
     }, {
         "id": "yqnbCASH",
         "name": "提现金额",
