@@ -20,6 +20,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 4.16.21 刷新异常，先移除判定
 4.17.0.3 修复视频刷新问题
 4.17.17 增加赏金帮,增加易趣牛帮提现
+4.19 赏金榜已废
 
 ⚠️ 时间设置   7 7,27 7-20 * * *    每天 20次 
 ⚠️一共  4个ck  👉 4条 Secrets
@@ -746,7 +747,7 @@ async function all() {
 
 
 
-            if (yqnbsjheaderVal && yqnbsjheaderVal != '') {
+            if (yqnbsjheaderVal && yqnbsjheaderVal != ''&& yqnbsjheaderVal == '') {
                 O = (`赏金帮${$.index}🔔`);
                 JSJS=2
                 console.log(`-----------------\n\n🔔开始运行【赏金帮${$.index}】`)
