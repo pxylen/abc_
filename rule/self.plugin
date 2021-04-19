@@ -52,8 +52,6 @@ http-request ^https?:\/\/iface(\d)?\.iqiyi\.com\/ script-path=https://raw.github
 http-request ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi.js, timeout=10, tag=滴滴出行cookie
 http-request ^https:\/\/bosp-api\.xiaojukeji\.com\/wechat\/benefit\/public\/index\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_ticket.js,tag=滴滴出行cookie
 
-# scriptable 联通查流量Cookie
-http-request ^https:\/\/m\.client\.10010\.com\/mobileserviceimportant\/smart\/smartwisdomCommon script-path=https://raw.githubusercontent.com/dompling/Script/master/10010/index.js, tag=联通查流量Cookie
 
 
 [URL Rewrite]
@@ -119,5 +117,5 @@ https:\/\/raw.githubusercontent.com https://gayhub.lensu.workers.dev 302
 
 
 [MITM]
-hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,testflight.apple.com,buy.itunes.apple.com,api.gaoqingdianshi.com,cmsapi.wifi8.com,list-app-m.i4.cn,app.wolong.tv,api.wolong.tv,app.tgmmvip.com,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,jd.com,bdsp-x.jd.com,biz.caiyunapp.com,business.msstatic.com,pan.baidu.com,ifac*.iqiyi.com,as.xiaojukeji.com,bosp-api.xiaojukeji.com,*.xxjjappss.com,*.huaerdadi.com,*.xiaoxiaoapps.com,*.xiaoxiaoimg.com,m.client.10010.com,
+hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,testflight.apple.com,buy.itunes.apple.com,api.gaoqingdianshi.com,cmsapi.wifi8.com,list-app-m.i4.cn,app.wolong.tv,api.wolong.tv,app.tgmmvip.com,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,jd.com,bdsp-x.jd.com,biz.caiyunapp.com,business.msstatic.com,pan.baidu.com,ifac*.iqiyi.com,as.xiaojukeji.com,bosp-api.xiaojukeji.com,*.xxjjappss.com,*.huaerdadi.com,*.xiaoxiaoapps.com,*.xiaoxiaoimg.com,
 
