@@ -21,6 +21,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 4.17.0.3 修复视频刷新问题
 4.17.17 增加赏金帮,增加易趣牛帮提现
 4.19 赏金帮已废
+4.19.19 增加概率运行机制，实现随机运行 
 
 ⚠️ 时间设置   7 7,27 7-20 * * *    每天 20次 
 ⚠️一共  2个ck  👉 2条 Secrets
@@ -37,11 +38,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 yqnbheaderVal👉YQNB_yqnbHEADER👉header
 yqnbbodyVal👉YQNB_yqnbBODY👉body
 
-⚠️赏金帮已废
-👉打开赏金帮-点我的-签到-获取header，body
 
-yqnbsjheaderVal👉 YQNB_yqnbsjHEADER👉 header
-yqnbsjbodyVal👉 YQNB_yqnbsjBODY👉 body
  
 	
 ⚠️主机名以及重写👇  
@@ -65,7 +62,7 @@ http-request http:\/\/nb\.ioxing\.com\/* script-path=https://cdn.jsdelivr.net/gh
 
 
 
-GXRZ = '4.19 赏金帮已废'
+GXRZ = '4.19.19 增加执行概率机制，实现随机运行'
 const $ = Env("易趣牛帮");
 $.idx = ($.idx = ($.getval('yqnbSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -74,7 +71,7 @@ const logs = 0; // 0关闭日志，1原始日志，2格式化，3格式化且解
 notifyttt = 1; // 0为关闭外部推送，1为12 23 点外部推送
 notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 Minutes = 10; // 通知 默认控制在0-10分内
-$.message = '', COOKIES_SPLIT = '', CASH = '', goodsid = 0, Name = '', Alipay = '', XH = 0, Length = 0, ddtime = '';
+$.message = '', COOKIES_SPLIT = '', CASH = '', XYZ = 100, goodsid = 0, Name = '', Alipay = '', XH = 0, Length = 0, ddtime = '';
 
 let yqnbheaderArr = [];
 let yqnbheaderVal = ``;
@@ -85,19 +82,12 @@ let yqnbbodyArr = [];
 let yqnbbodyVal = ``;
 let middleyqnbBODY = [];
 
-let yqnbsjheaderArr = [];
-let yqnbsjheaderVal = ``;
-let middleyqnbsjHEADER = [];
-
-
-let yqnbsjbodyArr = [];
-let yqnbsjbodyVal = ``;
-let middleyqnbsjBODY = [];
 
 
 
 if ($.isNode() && process.env.YQNB_yqnbHEADER) {
     CASH = process.env.YQNB_CASH || "0";
+    XYZ = process.env.YQNB_XYZ || "100";
     Name = process.env.YQNB_Name || "";
     Alipay = process.env.YQNB_Alipay || "";
     notifyttt = process.env.YQNB_notifyttt || "1";
@@ -139,43 +129,14 @@ if ($.isNode() && process.env.YQNB_yqnbHEADER) {
         }
     });
 
-    if (process.env.YQNB_yqnbsjHEADER) {
 
-        if (
-            process.env.YQNB_yqnbsjHEADER &&
-            process.env.YQNB_yqnbsjHEADER.indexOf(COOKIES_SPLIT) > -1
-        ) {
-            middleyqnbsjHEADER = process.env.YQNB_yqnbsjHEADER.split(COOKIES_SPLIT);
-        } else {
-            middleyqnbsjHEADER = process.env.YQNB_yqnbsjHEADER.split();
-        }
-        Object.keys(middleyqnbsjHEADER).forEach((item) => {
-            if (middleyqnbsjHEADER[item]) {
-                yqnbsjheaderArr.push(middleyqnbsjHEADER[item]);
-            }
-        });
-
-        if (
-            process.env.YQNB_yqnbsjBODY &&
-            process.env.YQNB_yqnbsjBODY.indexOf(COOKIES_SPLIT) > -1
-        ) {
-            middleyqnbsjBODY = process.env.YQNB_yqnbsjBODY.split(COOKIES_SPLIT);
-        } else {
-            middleyqnbsjBODY = process.env.YQNB_yqnbsjBODY.split();
-        }
-        Object.keys(middleyqnbsjBODY).forEach((item) => {
-            if (middleyqnbsjBODY[item]) {
-                yqnbsjbodyArr.push(middleyqnbsjBODY[item]);
-            }
-        });
-
-    }
 
 } else if ($.isNode() && COOKIE.datas && COOKIE.datas[0].val != '') {
     console.log(
         `============ cookie方式为：boxjs复制会话 =============\n`
     );
     CASH = (COOKIE.settings.find(item => item.id === `yqnbCASH`)).val;
+    XYZ = (COOKIE.settings.find(item => item.id === `yqnbXYZ`)).val;
     Name = (COOKIE.settings.find(item => item.id === `yqnbName`)).val;
     Alipay = (COOKIE.settings.find(item => item.id === `yqnbAlipay`)).val;
     notifyttt = (COOKIE.settings.find(item => item.id === `yqnbnotifyttt`)).val;
@@ -194,16 +155,15 @@ if ($.isNode() && process.env.YQNB_yqnbHEADER) {
 
             yqnbbodyArr.push(COOKIE.datas.find(item => item.key === `yqnbbody${op}`).val);
 
-            if (COOKIE.datas.find(item => item.key === `yqnbsjheader${op}`)) {
-                yqnbsjheaderArr.push(COOKIE.datas.find(item => item.key === `yqnbsjheader${op}`).val);
 
-                yqnbsjbodyArr.push(COOKIE.datas.find(item => item.key === `yqnbsjbody${op}`).val);
-            }
         }
     }
 } else {
     if ("yqnbXH") {
         XH = $.getval("yqnbXH") || '0';
+    }
+    if ("yqnbXYZ") {
+        XYZ = $.getval("yqnbXYZ") || '100';
     }
     if ("yqnbCASH") {
         XH = $.getval("yqnbCASH") || '0';
@@ -237,12 +197,7 @@ if ($.isNode() && process.env.YQNB_yqnbHEADER) {
 
             yqnbbodyArr.push($.getdata(`yqnbbody${op}`));
 
-            if ($.getdata(`yqnbsjheader${op}`)) {
 
-                yqnbsjheaderArr.push($.getdata(`yqnbsjheader${op}`));
-
-                yqnbsjbodyArr.push($.getdata(`yqnbsjbody${op}`));
-            }
         }
     }
 }
@@ -292,57 +247,6 @@ function GetCookie() {
                     `[${$.name + $.idx}] 获取yqnbbodyVal✅: 成功,yqnbbodyVal: ${yqnbbodyVal}`
                 );
                 $.msg($.name + $.idx, `获取yqnbbodyVal: 成功🎉`, ``);
-                $.done();
-            }
-        }
-    }
-
-
-
-
-    //获取赏金帮
-    if ($request && $request.url.indexOf("index.php") >= 0 && $request.url.indexOf("signList") >= 0&& $request.url.indexOf("Appmanage") >= 0) {
-        const yqnbsjheaderVal = $request.headers.Cookie;
-        const yqnbsjbodyVal = $request.body.split(`\n`)[3];
-        if (yqnbsjheaderVal && yqnbsjbodyVal) {
-            if (XH == 1) {
-                cookie()
-
-                function cookie() {
-                    headers = $.getdata('yqnbsjheader' + $.idx);
-                    if (headers) {
-                        if ($.idx == '') {
-                            $.idx = 2
-                            cookie()
-                        } else {
-                            $.idx = $.idx + 1
-                            cookie()
-                        }
-                    } else {
-                        $.setdata(yqnbsjheaderVal, "yqnbsjheader" + $.idx);
-                        $.log(
-                            `[赏金帮${$.idx}] 获取yqnbsjheaderVal✅: 成功,yqnbsjheaderVal: ${yqnbsjheaderVal}`
-                        );
-                        $.msg(`赏金帮`+$.idx, `获取yqnbsjheaderVal: 成功🎉`, ``);
-                        $.setdata(yqnbsjbodyVal, "yqnbsjbody" + $.idx);
-                        $.log(
-                            `[赏金帮${$.idx}] 获取yqnbsjbodyVal✅: 成功,yqnbsjbodyVal: ${yqnbsjbodyVal}`
-                        );
-                        $.msg(`赏金帮` + $.idx, `获取yqnbsjbodyVal: 成功🎉`, ``);
-                        $.done();
-                    };
-                }
-            } else {
-                $.setdata(yqnbsjheaderVal, "yqnbsjheader" + $.idx);
-                $.log(
-                    `[赏金帮${$.idx}] 获取yqnbsjheaderVal✅: 成功,yqnbsjheaderVal: ${yqnbsjheaderVal}`
-                );
-                $.msg(`赏金帮` + $.idx, `获取yqnbsjheaderVal: 成功🎉`, ``);
-                $.setdata(yqnbsjbodyVal, "yqnbsjbody" + $.idx);
-                $.log(
-                    `[赏金帮${$.idx}] 获取yqnbsjbodyVal✅: 成功,yqnbsjbodyVal: ${yqnbsjbodyVal}`
-                );
-                $.msg(`赏金帮` + $.idx, `获取yqnbsjbodyVal: 成功🎉`, ``);
                 $.done();
             }
         }
@@ -461,7 +365,7 @@ function format(str) {
 }
 //随机延迟
 function RT(X, Y) {
-    do rt = Math.floor(Math.random() * Y);
+    do rt = Math.ceil(Math.random() * Y);
     while (rt < X)
     return rt;
 }
@@ -498,156 +402,163 @@ async function all() {
 
             yqnbbodyVal = yqnbbodyArr[i];
 
-            yqnbsjheaderVal = yqnbsjheaderArr[i];
 
-            yqnbsjbodyVal = yqnbsjbodyArr[i];
 
             $.index = i + 1;
             O = (`${$.name + $.index}🔔`);
             $.isLogin = true;
+
+
             if (yqnbheaderVal && yqnbheaderVal != '') {
-                JSJS = 1
-                console.log(`-----------------\n\n🔔开始运行【${$.name + $.index}】`)
-                K = `用户名🚩`;
-                yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/userInfo`
-                yqnbheader = {
-                    'Cookie': `${yqnbheaderVal}`,
-                    'Content-Type': `application/x-www-form-urlencoded`,
-                    'Host': `nb.ioxing.com`,
-                };
-                yqnbbody = `aid=niubang1234&uid=${yqnbbodyVal}`
 
 
-                await task();
-                if (!$.isLogin) {
-                    $.msg(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://nb.ioxing.com/index.php/Home/Public/login1/newpid/8369`, {
-                        "open-url": "http://nb.ioxing.com/index.php/Home/Public/login1/newpid/8369"
-                    });
-                    if ($.isNode()) {
-                        await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://nb.ioxing.com/index.php/Home/Public/login1/newpid/8369`);
+                if (RT(1, 100) <= XYZ) {
+
+
+                    console.log(`-----------------\n\n🔔开始运行【${$.name + $.index}】`)
+                    K = `用户名🚩`;
+                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/userInfo`
+                    yqnbheader = {
+                        'Cookie': `${yqnbheaderVal}`,
+                        'Content-Type': `application/x-www-form-urlencoded`,
+                        'Host': `nb.ioxing.com`,
+                    };
+                    yqnbbody = `aid=niubang1234&uid=${yqnbbodyVal}`
+
+
+                    await task();
+                    if (!$.isLogin) {
+                        $.msg(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://nb.ioxing.com/index.php/Home/Public/login1/newpid/8369`, {
+                            "open-url": "http://nb.ioxing.com/index.php/Home/Public/login1/newpid/8369"
+                        });
+                        if ($.isNode()) {
+                            await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取http://nb.ioxing.com/index.php/Home/Public/login1/newpid/8369`);
+                        }
+                        continue
                     }
-                    continue
-                }
 
 
 
 
-                K = `今日收益🚩`;
-                yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/jifenList`
-                yqnbheader = {
-                    'Cookie': `${yqnbheaderVal}`,
-                    'Content-Type': `application/x-www-form-urlencoded`,
-                    'Host': `nb.ioxing.com`,
-                };
-                yqnbbody = `page=1&uid=${yqnbbodyVal}`
-
-                await task();
-
-                K = `签到列表🚩`;
-                yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/signList`
-                yqnbheader = {
-                    'Cookie': `${yqnbheaderVal}`,
-                    'Content-Type': `application/x-www-form-urlencoded`,
-                    'Host': `nb.ioxing.com`,
-                };
-                yqnbbody = `uid=${yqnbbodyVal}`
-
-                await task();
-
-                if ($.signlist.sign.dayqd == 0) {
-                    K = `签到🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/sign`
+                    K = `今日收益🚩`;
+                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/jifenList`
                     yqnbheader = {
                         'Cookie': `${yqnbheaderVal}`,
                         'Content-Type': `application/x-www-form-urlencoded`,
                         'Host': `nb.ioxing.com`,
                     };
-                    yqnbbody = `boud=0&uid=${yqnbbodyVal}`
+                    yqnbbody = `page=1&uid=${yqnbbodyVal}`
 
-                    DD = RT(2000, 3000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
                     await task();
-                }
 
-                if ($.signlist.sign.isdouble == 0) {
-                    K = `签到加倍🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/sign`
+                    K = `签到列表🚩`;
+                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/signList`
                     yqnbheader = {
                         'Cookie': `${yqnbheaderVal}`,
                         'Content-Type': `application/x-www-form-urlencoded`,
                         'Host': `nb.ioxing.com`,
                     };
-                    yqnbbody = `boud=1&uid=${yqnbbodyVal}`
-                    DD = RT(20000, 30000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
+                    yqnbbody = `uid=${yqnbbodyVal}`
+
                     await task();
-                }
+
+                    if ($.signlist.sign.dayqd == 0) {
+                        K = `签到🚩`;
+                        yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/sign`
+                        yqnbheader = {
+                            'Cookie': `${yqnbheaderVal}`,
+                            'Content-Type': `application/x-www-form-urlencoded`,
+                            'Host': `nb.ioxing.com`,
+                        };
+                        yqnbbody = `boud=0&uid=${yqnbbodyVal}`
+
+                        DD = RT(2000, 3000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await task();
+                    }
+
+                    if ($.signlist.sign.isdouble == 0) {
+                        K = `签到加倍🚩`;
+                        yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/sign`
+                        yqnbheader = {
+                            'Cookie': `${yqnbheaderVal}`,
+                            'Content-Type': `application/x-www-form-urlencoded`,
+                            'Host': `nb.ioxing.com`,
+                        };
+                        yqnbbody = `boud=1&uid=${yqnbbodyVal}`
+                        DD = RT(20000, 30000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await task();
+                    }
 
 
 
-                K = `任务页🚩`;
-                yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/V2qiandaoList`
-                yqnbheader = {
-                    'Cookie': `${yqnbheaderVal}`,
-                    'Content-Type': `application/x-www-form-urlencoded`,
-                    'Host': `nb.ioxing.com`,
-                };
-                yqnbbody = `aid=niubang1234&uid=${yqnbbodyVal}`
-                await task();
-
-
-                if ($.signlist.sign.isdouble == 0) {
-
-                    K = `视频🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/viodeqd`
+                    K = `任务页🚩`;
+                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/V2qiandaoList`
                     yqnbheader = {
                         'Cookie': `${yqnbheaderVal}`,
                         'Content-Type': `application/x-www-form-urlencoded`,
                         'Host': `nb.ioxing.com`,
                     };
-                    yqnbbody = `adid=32&uid=${yqnbbodyVal}`
-
-                    DD = RT(20000, 30000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
+                    yqnbbody = `aid=niubang1234&uid=${yqnbbodyVal}`
                     await task();
-                }
-
-                if ($.signlist.sign.isdouble == 0) {
-                    K = `分享🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/obtainJifen`
-                    yqnbheader = {
-                        'Cookie': `${yqnbheaderVal}`,
-                        'Content-Type': `application/x-www-form-urlencoded`,
-                        'Host': `nb.ioxing.com`,
-                    };
-                    yqnbbody = `banid=31&type=4&uid=${yqnbbodyVal}`
-
-                    DD = RT(2000, 3000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-                }
 
 
-                if (taskvideo.countnum != taskvideo.allcount) {
+                    if ($.signlist.sign.isdouble == 0) {
 
-                    K = `视频🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/viodeqd`
-                    yqnbheader = {
-                        'Cookie': `${yqnbheaderVal}`,
-                        'Content-Type': `application/x-www-form-urlencoded`,
-                        'Host': `nb.ioxing.com`,
-                    };
-                    yqnbbody = `adid=32&uid=${yqnbbodyVal}`
+                        K = `视频🚩`;
+                        yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/viodeqd`
+                        yqnbheader = {
+                            'Cookie': `${yqnbheaderVal}`,
+                            'Content-Type': `application/x-www-form-urlencoded`,
+                            'Host': `nb.ioxing.com`,
+                        };
+                        yqnbbody = `adid=32&uid=${yqnbbodyVal}`
 
-                    DD = RT(20000, 30000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-                }
+                        DD = RT(20000, 30000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await task();
+                    }
+
+                    if ($.signlist.sign.isdouble == 0) {
+                        K = `分享🚩`;
+                        yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/obtainJifen`
+                        yqnbheader = {
+                            'Cookie': `${yqnbheaderVal}`,
+                            'Content-Type': `application/x-www-form-urlencoded`,
+                            'Host': `nb.ioxing.com`,
+                        };
+                        yqnbbody = `banid=31&type=4&uid=${yqnbbodyVal}`
+
+                        DD = RT(2000, 3000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await task();
+                    }
+
+
+                    if (taskvideo.countnum != taskvideo.allcount) {
+
+                        K = `视频🚩`;
+                        yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/viodeqd`
+                        yqnbheader = {
+                            'Cookie': `${yqnbheaderVal}`,
+                            'Content-Type': `application/x-www-form-urlencoded`,
+                            'Host': `nb.ioxing.com`,
+                        };
+                        yqnbbody = `adid=32&uid=${yqnbbodyVal}`
+
+                        DD = RT(20000, 30000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await task();
+                    }
+
+
+                    /*
 
 
                 K = `报名页🚩`;
@@ -690,271 +601,70 @@ async function all() {
                     await $.wait(DD)
                     await task();
                 }
-                K = `提现列表🚩`;
-                yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/goodsList`
-                yqnbheader = {
-                    'Cookie': `${yqnbheaderVal}`,
-                    'Content-Type': `application/x-www-form-urlencoded`,
-                    'Host': `nb.ioxing.com`,
-                };
-                yqnbbody = `aid=niubang1234`
-                await task();
+				
+				
+				*/
 
-
-                if (CASH >= 6) {
-                    K = `提现🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/duihuan`
+                    K = `提现列表🚩`;
+                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/goodsList`
                     yqnbheader = {
                         'Cookie': `${yqnbheaderVal}`,
                         'Content-Type': `application/x-www-form-urlencoded`,
                         'Host': `nb.ioxing.com`,
                     };
-                    Name = encodeURI(Name)
+                    yqnbbody = `aid=niubang1234`
+                    await task();
 
-                    if ($.user.user.price / 1250 >= CASH) {
 
-                        if (CASH == 20) {
-                            goodsid = 13
-                        } else if (CASH == 10) {
-                            goodsid = 11
-                        } else if (CASH == 6) {
-                            goodsid = 10
+                    if (CASH >= 6) {
+                        K = `提现🚩`;
+                        yqnburl = `http://nb.ioxing.com/index.php/Home/Appapi/duihuan`
+                        yqnbheader = {
+                            'Cookie': `${yqnbheaderVal}`,
+                            'Content-Type': `application/x-www-form-urlencoded`,
+                            'Host': `nb.ioxing.com`,
+                        };
+                        Name = encodeURI(Name)
+
+                        if ($.user.user.price / 1250 >= CASH) {
+
+                            if (CASH == 20) {
+                                goodsid = 13
+                            } else if (CASH == 10) {
+                                goodsid = 11
+                            } else if (CASH == 6) {
+                                goodsid = 10
+                            }
+
+                        }
+
+                        if (CASH == 888) {
+
+                            if ($.user.user.price / 1250 >= 20) {
+                                goodsid = 13
+                            } else if ($.user.user.price / 1250 >= 10) {
+                                goodsid = 11
+                            } else if ($.user.user.price / 1250 >= 6) {
+                                goodsid = 10
+                            }
+
+                        }
+
+                        if (goodsid >= 10) {
+                            yqnbbody = `goodsid=${goodsid}&one=${Name}&two=${Alipay}&uid=${yqnbbodyVal}`
+                            await task();
                         }
 
                     }
 
-                    if (CASH == 888) {
-
-                        if ($.user.user.price / 1250 >= 20) {
-                            goodsid = 13
-                        } else if ($.user.user.price / 1250 >= 10) {
-                            goodsid = 11
-                        } else if ($.user.user.price / 1250 >= 6) {
-                            goodsid = 10
-                        }
-
-                    }
-
-                    if (goodsid >= 10) {
-                        yqnbbody = `goodsid=${goodsid}&one=${Name}&two=${Alipay}&uid=${yqnbbodyVal}`
-                        await task();
-                    }
+                } else {
+                    console.log(`-----------------\n\n🔔停止运行【${$.name + $.index}】`)
 
                 }
+
 
 
             }
-
-
-
-            if (yqnbsjheaderVal && yqnbsjheaderVal != ''&& yqnbsjheaderVal == '') {
-                O = (`赏金帮${$.index}🔔`);
-                JSJS=2
-                console.log(`-----------------\n\n🔔开始运行【赏金帮${$.index}】`)
-                K = `用户名🚩`;
-                yqnburl = `http://nb.ioxing.com/index.php/Home/Appmanage/manageinfo`
-                yqnbheader = {
-                    'Cookie': `${yqnbheaderVal}`,
-                    'Content-Type': `multipart/form-data; boundary=`,
-                    'Host': `nb.ioxing.com`,
-                };
-                yqnbbody = `--
-Content-Disposition: form-data; name="uid"
-
-${yqnbsjbodyVal}
-----`
-                await task();
-
-
-                K = `今日收益🚩`;
-                yqnburl = `http://nb.ioxing.com/index.php/Home/Appmanage/jifenList`
-                yqnbheader = {
-                    'Cookie': `${yqnbheaderVal}`,
-                    'Content-Type': `multipart/form-data; boundary=`,
-                    'Host': `nb.ioxing.com`,
-                };
-                yqnbbody = `--
-Content-Disposition: form-data; name="page"
-
-1
---
-Content-Disposition: form-data; name="uid"
-
-${yqnbsjbodyVal}
-----`
-
-                await task();
-
-                K = `签到列表🚩`;
-                yqnburl = `http://nb.ioxing.com/index.php/Home/Appmanage/signList`
-                yqnbheader = {
-                    'Cookie': `${yqnbheaderVal}`,
-                    'Content-Type': `multipart/form-data; boundary=`,
-                    'Host': `nb.ioxing.com`,
-                };
-                yqnbbody = `--
-Content-Disposition: form-data; name="uid"
-
-${yqnbsjbodyVal}
-----`
-
-                await task();
-
-                if ($.signlist.sign.dayqd == 0) {
-                    K = `签到🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appmanage/sign`
-                    yqnbheader = {
-                        'Cookie': `${yqnbheaderVal}`,
-                        'Content-Type': `multipart/form-data; boundary=`,
-                        'Host': `nb.ioxing.com`,
-                    };
-                    yqnbbody = `--
-Content-Disposition: form-data; name="boud"
-
-0
---
-Content-Disposition: form-data; name="uid"
-
-${yqnbsjbodyVal}
-----`
-
-                    DD = RT(2000, 3000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-                }
-
-                if ($.signlist.sign.isdouble == 0) {
-                    K = `签到加倍🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appmanage/sign`
-                    yqnbheader = {
-                        'Cookie': `${yqnbheaderVal}`,
-                        'Content-Type': `multipart/form-data; boundary=`,
-                        'Host': `nb.ioxing.com`,
-                    };
-                    yqnbbody = `--
-Content-Disposition: form-data; name="boud"
-
-1
---
-Content-Disposition: form-data; name="uid"
-
-${yqnbsjbodyVal}
-----`
-                    DD = RT(20000, 30000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-                }
-
-
-
-                K = `任务页🚩`;
-                yqnburl = `http://nb.ioxing.com/index.php/Home/Appmanage/V2qiandaoList`
-                yqnbheader = {
-                    'Cookie': `${yqnbheaderVal}`,
-                    'Content-Type': `multipart/form-data; boundary=`,
-                    'Host': `nb.ioxing.com`,
-                };
-                yqnbbody = `--
-Content-Disposition: form-data; name="aid"
-
-niubangpro
---
-Content-Disposition: form-data; name="uid"
-
-${yqnbsjbodyVal}
-----`
-                await task();
-
-
-                if ($.signlist.sign.isdouble == 0) {
-
-                    K = `视频🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appmanage/viodeqd`
-                    yqnbheader = {
-                        'Cookie': `${yqnbheaderVal}`,
-                        'Content-Type': `multipart/form-data; boundary=`,
-                        'Host': `nb.ioxing.com`,
-                    };
-                    yqnbbody = `--
-Content-Disposition: form-data; name="adid"
-
-38
---
-Content-Disposition: form-data; name="uid"
-
-${yqnbsjbodyVal}
-----`
-
-                    DD = RT(20000, 30000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-                }
-
-                if ($.signlist.sign.isdouble == 0) {
-                    K = `分享🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appmanage/obtainJifen`
-                    yqnbheader = {
-                        'Cookie': `${yqnbheaderVal}`,
-                        'Content-Type': `multipart/form-data; boundary=`,
-                        'Host': `nb.ioxing.com`,
-                    };
-                    yqnbbody = `--Boundary+9BFEE5B4D226FDC
-Content-Disposition: form-data; name="banid"
-
-37
---Boundary+9BFEE5B4D226FDC
-Content-Disposition: form-data; name="type"
-
-4
---Boundary+9BFEE5B4D226FDC
-Content-Disposition: form-data; name="uid"
-
-${yqnbsjbodyVal}
---Boundary+9BFEE5B4D226FDC9--`
-
-                    DD = RT(2000, 3000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-                }
-
-
-                if (taskvideo.countnum != taskvideo.allcount) {
-
-                    K = `视频🚩`;
-                    yqnburl = `http://nb.ioxing.com/index.php/Home/Appmanage/viodeqd`
-                    yqnbheader = {
-                        'Cookie': `${yqnbheaderVal}`,
-                        'Content-Type': `multipart/form-data; boundary=`,
-                        'Host': `nb.ioxing.com`,
-                    };
-                    yqnbbody = `--
-Content-Disposition: form-data; name="adid"
-
-38
---
-Content-Disposition: form-data; name="uid"
-
-${yqnbsjbodyVal}
-----`
-
-                    DD = RT(20000, 30000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-                }
-
-
-            }
-
-
-
-
-
-
 
 
             console.log(`${GXRZ}\n`);
@@ -1001,18 +711,11 @@ function task() {
                             if (logs) $.log(`${O}, ${K}: ${format(data)}`);
                             $.user = JSON.parse(data);
                             if ($.user.code == 1) {
-                                if (JSJS == 1) {
 
                                 console.log(`\n${O}\n========== ${$.user.user.nickname} ==========\n注册时间：${time($.user.user.create_time*1000)}\n账户信息：当前收益${$.user.user.price/1250}元，收益总计${$.user.user.total_price/1250}元\n`)
                                 $.message += `\n${O}\n========== 【${$.user.user.nickname}】 ==========\n【注册时间】：${time($.user.user.create_time*1000)}\n【账户信息】：当前收益${$.user.user.price/1250}元，收益总计${$.user.user.total_price/1250}元\n`;
-                              } else {
 
-                                  console.log(`\n${O}\n========== ${$.user.data.nickname} ==========\n注册时间：${time($.user.data.create_time*1000)}\n账户信息：当前收益${$.user.data.price/1250}元，收益总计${$.user.data.total_price/1250}元\n`)
-                                  $.message += `\n${O}\n========== 【${$.user.data.nickname}】 ==========\n【注册时间】：${time($.user.data.create_time*1000)}\n【账户信息】：当前收益${$.user.data.price/1250}元，收益总计${$.user.data.total_price/1250}元\n`;
-                              }
-                             
-                            
-                            
+
                             } else {
                                 $.isLogin = false; //cookie过期
                                 return
@@ -1067,21 +770,14 @@ function task() {
 
                             if ($.task.code == 1) {
 
-                                if ($.task.shenhe.id == 3) {
-                                    taskfx = $.task.data.find(item => item.id === "31");
-                                    taskvideo = $.task.data.find(item => item.id === "32");
-                                } else {
-                                    taskfx = $.task.data.find(item => item.id === "37");
-                                    taskvideo = $.task.data.find(item => item.id === "38");
-                                }
 
+                                taskfx = $.task.data.find(item => item.id === "31");
+                                taskvideo = $.task.data.find(item => item.id === "32");
 
                                 if ($.signlist.sign.isdouble == 1) {
                                     console.log(`任务页：${taskfx.title},${taskfx.point}积分，${taskvideo.title},${taskvideo.point}积分,进度：${taskvideo.countnum}/${taskvideo.allcount}\n`)
                                     $.message += `【任务页】：${taskfx.title},${taskfx.point}积分，${taskvideo.title},${taskvideo.point}积分,进度：${taskvideo.countnum}/${taskvideo.allcount}\n`;
                                 }
-
-
                             }
                         }
 
