@@ -20,10 +20,10 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 4.16.21 刷新异常，先移除判定
 4.17.0.3 修复视频刷新问题
 4.17.17 增加赏金帮,增加易趣牛帮提现
-4.19 赏金榜已废
+4.19 赏金帮已废
 
 ⚠️ 时间设置   7 7,27 7-20 * * *    每天 20次 
-⚠️一共  4个ck  👉 4条 Secrets
+⚠️一共  2个ck  👉 2条 Secrets
 
 手机端默认使用boxjs👉 node请复制boxjs会话粘贴至yqnbCOOKIE.js中 或者 填写环境变量(多账号请换行)
 
@@ -37,7 +37,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 yqnbheaderVal👉YQNB_yqnbHEADER👉header
 yqnbbodyVal👉YQNB_yqnbBODY👉body
 
-
+⚠️赏金帮已废
 👉打开赏金帮-点我的-签到-获取header，body
 
 yqnbsjheaderVal👉 YQNB_yqnbsjHEADER👉 header
@@ -65,7 +65,7 @@ http-request http:\/\/nb\.ioxing\.com\/* script-path=https://cdn.jsdelivr.net/gh
 
 
 
-GXRZ = '4.17.17 增加赏金帮,增加易趣牛帮提现'
+GXRZ = '4.19 赏金帮已废'
 const $ = Env("易趣牛帮");
 $.idx = ($.idx = ($.getval('yqnbSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
