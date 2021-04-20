@@ -1,5 +1,5 @@
 # File: .github/workflows/repo-sync.yml
-name: sync_repo
+name: 仓库同步
 on:
   workflow_dispatch:
   schedule:
