@@ -956,6 +956,29 @@
             "repo": "https://github.com/age174/-/blob/main/jjrm.js",
             "icons": ["https://ae01.alicdn.com/kf/Uf3f262fb6d81492a8e350a0bb97a04a0g.jpg", "https://ae01.alicdn.com/kf/Uf3f262fb6d81492a8e350a0bb97a04a0g.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/jjrm.js"
+    } ,
+    {
+            "id": "sphz",
+            "name": "视频号互助",
+            "keys": ["sphzhd","sphzbody", "sphzhd2","sphzbody2","sphzhd3","sphzbody3","sphzhd4","sphzbody4","sphzhd5","sphzbody5","sphzhd6","sphzbody6","sphzhd7","sphzbody7","sphzhd8","sphzbody8","sphzhd9","sphzbody9","sphzhd10","sphzbody10"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "sphzstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "sphzcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/sphz.js",
+            "icons": ["https://ae01.alicdn.com/kf/U6fe8c098a65740039ac7767867746c4aK.jpg", "https://ae01.alicdn.com/kf/U6fe8c098a65740039ac7767867746c4aK.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/sphz.js"
     } 
 ]
 }
