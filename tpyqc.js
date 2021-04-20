@@ -39,7 +39,7 @@ https://ea.pangku01.com/activities/.+?/task/complete script-path=https://raw.git
 太平洋汽车网 = type=http-request,pattern=https://ea.pangku01.com/activities/.+?/task/complete,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/tpyqc.js,script-update-interval=0
 
 [MITM]
-hostname = yaowu360.com
+hostname = ea.pangku01.com
 
 */
 
