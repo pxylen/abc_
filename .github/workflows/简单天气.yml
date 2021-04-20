@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: 半小时任务
+name: 简单天气
 
 on:
   workflow_dispatch:
@@ -28,30 +28,13 @@ jobs:
 
 
 
-      - name: '运行 【百度极速版】'
+      - name: '运行 【简单天气】'
         run: |
-          node ./workflow/sunert/baidu_speed.js
+          node ./workflow/ziye/jdtq.js
         env:
           TZ: Asia/shanghai
-          BAIDU_COOKIE: ${{ secrets.BAIDU_COOKIE }}
-          BAIDU_CASH: ${{ secrets.BAIDU_CASH }}
 
 
-      - name: '运行 【电视家】'
-        run: |
-          node ./workflow/sunert/dianshijia.js
-        env:
-          TZ: Asia/shanghai
-          DSJ_HEADERS: ${{ secrets.DSJ_HEADERS }}
-          DSJ_DRAWAL: ${{ secrets.DSJ_DRAWAL }}
 
-
-#
-#
-#      - name: '运行 【步步宝1】'
-#        run: |
-#          node ./workflow/bbb/BBB2.js
-#        env:
-#          TZ: Asia/shanghai
 
 
