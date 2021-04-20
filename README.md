@@ -1,8 +1,8 @@
 脚本大集合（loon专用）
 
-订阅集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/qixin.conf
+订阅集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOne.conf
 
-cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/qixin.cookie
+cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOne.cookie
 
 京东订阅：https://jdsharedresourcescdn.azureedge.net/jdresource/lxk0301_LoonTask.conf
 
@@ -19,7 +19,7 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/qixin.c
 
 [@age174](https://github.com/age174/-) - age174
 
-[@whyour](https://github.com/whyour/hundun) - 中青py...
+[@whyour](https://github.com/whyour/hundun) - 混沌
 
 [@Sunert](https://github.com/Sunert/Scripts) - Sunert
 
@@ -35,10 +35,5 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/qixin.c
 
 [@zZPiglet](https://github.com/zZPiglet/Task/tree/master) - zZPiglet
 
-[@Zero-S1](https://github.com/Zero-S1/xmly_speed) - 喜马拉雅极速版
-
 [@moposmall](https://github.com/moposmall/Script) - moposmall
 
-[@adwktt](https://github.com/adwktt/adwktt) - 步步宝、一刻
-
-[@renyanle](https://github.com/renyanle/0401-1) - 科学上网
