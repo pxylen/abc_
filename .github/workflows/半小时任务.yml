@@ -46,11 +46,11 @@ jobs:
           DSJ_DRAWAL: ${{ secrets.DSJ_DRAWAL }}
 
 
-#      - name: '运行 【步步宝】'
-#        run: |
-#          node ./workflow/bbb/BBB.js
-#        env:
-#          TZ: Asia/shanghai
+      - name: '运行 【简单天气】'
+        run: |
+          node ./workflow/ziye/jdtq.js
+        env:
+          TZ: Asia/shanghai
 #
 #
 #      - name: '运行 【步步宝1】'
