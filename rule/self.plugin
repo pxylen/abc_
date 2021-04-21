@@ -12,8 +12,6 @@ http-request ^https?://boxjs.com script-path=https://raw.githubusercontent.com/c
 # 订阅解析器
 http-request https?:\/\/sub\.store script-path=https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/backend/sub-store.min.js, requires-body=true, timeout=120, tag=订阅解析器
 
-# testflight下载
-http-request ^https?:\/\/testflight\.apple\.com\/v2\/accounts\/.*\/apps\/\d*/builds/\d*/install ,requires-body=true, timeout=10, tag=TF软件更新,script-path=https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js,enabled=true, tag=testflight下载
 
 #-京东比价 (api.m.jd.com)
 # http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://raw.githubusercontent.com/yichahucha/surge/master/jd_price.js, requires-body=true, timeout=10, tag=京东比价
@@ -98,5 +96,5 @@ https:\/\/raw.githubusercontent.com https://gayhub.lensu.workers.dev 302
 
 
 [MITM]
-hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,testflight.apple.com,buy.itunes.apple.com,api.gaoqingdianshi.com,cmsapi.wifi8.com,list-app-m.i4.cn,app.wolong.tv,api.wolong.tv,app.tgmmvip.com,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,jd.com,bdsp-x.jd.com,biz.caiyunapp.com,pan.baidu.com,
+hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,api.gaoqingdianshi.com,cmsapi.wifi8.com,list-app-m.i4.cn,app.wolong.tv,api.wolong.tv,app.tgmmvip.com,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,jd.com,bdsp-x.jd.com,biz.caiyunapp.com,pan.baidu.com,
 
