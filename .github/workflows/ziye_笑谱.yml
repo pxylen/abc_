@@ -33,7 +33,8 @@ jobs:
           node ./workflow/ziye/iboxpay.js
         env:
           TZ: Asia/shanghai
-
+          XP_CASH: ${{ secrets.XP_CASH }}
+          XP_live: ${{ secrets.XP_live }}
 
 
 
