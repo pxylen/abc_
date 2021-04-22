@@ -25,7 +25,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试
 [task_local]
 #讯播广告
-35 9 * * * https://raw.githubusercontent.com/age174/-/main/xbgg.js, tag=讯播广告, img-url=https://ae01.alicdn.com/kf/U466ffce93b584c5babd1127f32f5ddebX.jpg, enabled=true
+35 9,18 * * * https://raw.githubusercontent.com/age174/-/main/xbgg.js, tag=讯播广告, img-url=https://ae01.alicdn.com/kf/U466ffce93b584c5babd1127f32f5ddebX.jpg, enabled=true
 
 
 [rewrite_local]
