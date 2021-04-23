@@ -5,24 +5,46 @@
 
 使用方法:添加下面的重写去点击开始阅读就可以了。
 
-注意事项:每天手动鉴权的时候需要关闭重写。否则鉴权会不通过。
+注意事项:重写不需要关闭，鉴权文章阅读不会被重写，若跳转了微信文章页面，那这个阅读应该是鉴权文章；对于之前脚本跑28、29、30等篇数就被限制的情况，用重写辅助脚本时可留意下是否这些篇数就会进入微信文章页面
 
 [rewrite_local]
 http://.+/task/read\? url script-analyze-echo-response https://raw.githubusercontent.com/age174/-/main/fqkk_auto_read.js
 
+Loon：
+http-request ^http://.+/task/read\? script-path=https://raw.githubusercontent.com/age174/-/main/fqkk_auto_read.js, requires-body=true, timeout=10, tag=前台自动阅读
+
 */
 
 
-const $ = new Env(`番茄看看前台自动阅读`);
+const $ = new Env(`前台自动阅读`);
 !(async () => {
   if (typeof $request !== "undefined") {
     let body = `
-    <h1 id='tips'></h1>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <style>
+        div {position:absolute; top:50%; left:50%; margin:0 0 0 -234px; width:auto; height:auto; border:0px solid #008800; font-size: 7vw}
+    </style>
+    <body><div id="timer"></div></body>
     <script>
-    let times = parseInt(Math.random() * (11 - 9 + 1) + 9, 10);
-    (document.getElementById('tips') || {}).innerHTML = times+'秒后自动返回完成阅读';
-    setTimeout(()=>window.history.back(),times*1000);
-    </script>`
+        var oBox= document.getElementById('timer');
+        var maxtime = parseInt(Math.random() * (10 - 9 + 1) + 9, 10);
+        setTimeout(()=>window.history.back(),maxtime*1000);
+        function CountDown() {
+            if (maxtime >= 0) {
+                oBox.innerHTML = '返回倒计时'+maxtime+'秒';
+                --maxtime;
+            } else{
+                clearInterval(timer);
+                window.history.back();
+            }
+        }
+        timer = setInterval("CountDown()", 1000);
+      </script>
+    </html>
+    `
     setTimeout(()=>window.history.back(),8000);
     const headers = {
       "Connection": "Close",
