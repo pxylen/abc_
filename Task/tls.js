@@ -48,7 +48,7 @@ http-request https:\/\/xw\.mengniu\.cn\/grass\/Api\/TelunsuHandler\.ashx\?method
 
 */
 
-GXRZ = '4.24 完成'
+GXRZ = '4.24.21 去除ck触发机制'
 const $ = Env("特仑苏");
 $.idx = ($.idx = ($.getval('tlsSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
