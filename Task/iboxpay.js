@@ -49,6 +49,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 3.19 修复ac运行报错
 3.20 视频ck有效期目前未知，增加失效判定，直播上限为5000，已适配
 4.15 视频ck有效期预计15天，直播上限为3000，已适配
+4.24 视频上限为1000，直播上限为3000，已适配
 
 
 ⚠️一共1个位置 3个ck  👉 7条 Secrets 
@@ -128,7 +129,7 @@ http-requires https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf_customer_activity\
 
 
 */
-GXRZ = '4.15 视频ck有效期预计15天，直播上限为3000，已适配'
+GXRZ = '4.24 视频上限为1000，直播上限为3000，已适配'
 const $ = Env("笑谱");
 $.idx = ($.idx = ($.getval('iboxpaySuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -614,7 +615,7 @@ async function all() {
             }
         }
 
-        if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < 6) {
+        if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < 60) {
             await liveslist(); //直播节目表
             if (liveIdcd >= 1) {
                 dd = liveIdcd * 35 - 34
@@ -1172,8 +1173,8 @@ function lives(timeout = 0) {
 
             }
             setTimeout(() => {
-                console.log(`直播奖励：共领取${ins/500}次直播奖励，共${ins}金币\n`);
-                $.message += `【直播奖励】：共领取${ins/500}次直播奖励，共${ins}金币\n`
+                console.log(`直播奖励：共领取${ins/50}次直播奖励，共${ins}金币\n`);
+                $.message += `【直播奖励】：共领取${ins/50}次直播奖励，共${ins}金币\n`
             }, liveIdcd * 35000 - 34000)
         }, timeout)
     })
@@ -1223,13 +1224,13 @@ function sylist(timeout = 0) {
                         videoscs = videos.length;
                     } else videoscs = 0;
 
-                    spsy = $.goldcoin.data.coinSum - livecs * 500
+                    spsy = $.goldcoin.data.coinSum - livecs * 50
                     //console.log('已获得红包雨奖励 ' + hbycs + ' 次\n')
                     //$.message +=
                     //'【红包雨收益】：已获得红包雨奖励 ' + hbycs + ' 次\n'
-                    console.log('已获得直播奖励 ' + livecs + ' 次，共' + livecs * 500 + '金币\n')
+                    console.log('已获得直播奖励 ' + livecs + ' 次，共' + livecs * 50 + '金币\n')
                     $.message +=
-                        '【直播收益】：已获得直播奖励 ' + livecs + ' 次，共' + livecs * 500 + '金币\n'
+                        '【直播收益】：已获得直播奖励 ' + livecs + ' 次，共' + livecs * 50 + '金币\n'
                     console.log('已获得视频奖励 ' + videoscs + ' 次，共' + spsy + '金币\n')
                     $.message +=
                         '【视频收益】：已获得视频奖励 ' + videoscs + ' 次，共' + spsy + '金币\n'
