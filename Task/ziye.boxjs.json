@@ -521,6 +521,101 @@
             "repo": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/yqnb.js",
             "icons": ["https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/yqnb.png", "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/yqnb.png"],
             "script": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/yqnb.js"
+        },
+        {
+            "id": "tls",
+            "name": "特仑苏APP",
+            "keys": ["tlsurl", "tlsheader", "tlsurl2", "tlsheader2", "tlsurl3", "tlsheader3",  "tlsurl4", "tlsheader4",   "tlsurl5", "tlsheader5", "tlsurl6", "tlsheader6","tlsurl7", "tlsheader7", "tlsurl8", "tlsheader8", "tlsurl9", "tlsheader9", "tlsurl10", "tlsheader10", "tlsurl11", "tlsheader11", "tlsurl12", "tlsheader12",  "tlsurl13", "tlsheader13", "tlsurl14", "tlsheader14", "tlsurl15", "tlsheader15", "tlsurl16", "tlsheader16","tlsurl17", "tlsheader17", "tlsurl18", "tlsheader18",  "tlsurl19", "tlsheader19", "tlsurl20", "tlsheader20"],
+            "author": "@ziye",
+            "settings": [{
+        "id": "tlsSuffix",
+        "name": "当前账号",
+        "val": "1",
+        "type": "number",
+        "desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+    }, {
+        "id": "tlsCount",
+        "name": "账号个数",
+        "val": "1",
+        "type": "number",
+        "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+    }, {
+        "id": "tlshyidA",
+        "name": "好友A",
+        "val": "64926",
+        "type": "number",
+        "desc": "默认作者，自行修改"
+    }, {
+        "id": "tlshyidB",
+        "name": "好友B",
+        "val": "70405",
+        "type": "number",
+        "desc": "默认作者，自行修改"
+    }, {
+        "id": "tlshyidC",
+        "name": "好友C",
+        "val": "73261",
+        "type": "number",
+        "desc": "默认作者，自行修改"
+    }, {
+        "id": "tlshyidD",
+        "name": "好友D",
+        "val": "98692",
+        "type": "number",
+        "desc": "默认作者，自行修改"
+    }, {
+        "id": "tlshyidE",
+        "name": "好友E",
+        "val": "98825",
+        "type": "number",
+        "desc": "默认作者，自行修改"
+    }, {
+        "id": "tlshyidF",
+        "name": "好友F",
+        "val": "98860",
+        "type": "number",
+        "desc": "默认作者，自行修改"
+    }, {
+        "id": "tlshyidG",
+        "name": "好友G",
+        "val": "98910",
+        "type": "number",
+        "desc": "默认作者，自行修改"
+    }, {
+        "id": "tlsXH",
+        "name": "循环获取CK",
+        "val": "0",
+        "type": "number",
+        "desc": "0关闭 1开启,默认关闭"
+    }, {
+        "id": "tlsXYZ",
+        "name": "执行概率",
+        "val": "100",
+        "type": "number",
+        "desc": "0不执行 可设置0-100,默认百分百"
+    }, {
+        "id": "tlsnotifyttt",
+        "name": "推送控制",
+        "val": "1",
+        "type": "number",
+        "desc": "0关闭，1推送,默认12点以及23点推送"
+    }, {
+        "id": "tlsnotifyInterval",
+        "name": "通知控制",
+        "val": "1",
+        "type": "number",
+        "desc": "0关闭，1为 所有通知，2为 12，23 点通知，3为 6，12，18，23 点通知 "
+    }, {
+        "id": "tlsMinutes",
+        "name": "推送-通知 分钟控制",
+        "val": "10",
+        "type": "number",
+        "desc": "推送以及通知控制在什么分钟段，可设置0-59,默认0到10"
+    }
+            ],
+            "repo": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.js",
+            "icons": ["https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png", "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png"],
+            "script": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.js"
         }
     ]
 }
