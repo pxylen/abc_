@@ -1,70 +1,50 @@
 /*
-番茄看看先使用ztxtop大佬写的前台脚本吧
 番茄看看整了加密。每次阅读调用了微信接口。无法解决。只能前台单账号玩玩了。跟悦趣阅读差不多的玩法了。区别是悦趣手动鉴权需要运行脚本。番茄看看则需要手动点击开始阅读，跑完一轮再次点击。并保持在前台运行。
-脚本为前台脚本。单账号使用，需保持番茄看看在前台，实现自动跳转阅读。但是也屏蔽了阅读微信文章。应该不会产生真实阅读量。
+脚本为前台脚本。单账号使用，需保持番茄看看在前台，实现自动跳转阅读。
 
-使用方法:添加下面的重写去点击开始阅读就可以了。
+使用方法:添加下面的重写去点击开始阅读就可以了,会增加微信文章阅读数
 
-注意事项:重写不需要关闭，鉴权文章阅读不会被重写，若跳转了微信文章页面，那这个阅读应该是鉴权文章；对于之前脚本跑28、29、30等篇数就被限制的情况，用重写辅助脚本时可留意下是否这些篇数就会进入微信文章页面
+注意事项: 都跳转到微信文章页面了，应该没鉴权一说了，0、1、2篇就黑的，那基本是微信账号被微信限制了；返回代码注入到微信文章中，所以需要配置mitm
 
+======== qx ========
 [rewrite_local]
-^http://.+/task/read\? url script-response-header https://raw.githubusercontent.com/age174/-/main/fqkk_auto_read.js
-^http://.+/mock/read\? url script-analyze-echo-response https://raw.githubusercontent.com/age174/-/main/fqkk_auto_read.js
+^http://.+/(task/read|jump)\? url script-response-header https://raw.githubusercontent.com/age174/-/main/fqkk_auto_read.js
+^https?://mp\.weixin\.qq\.com/s.+?k=feizao url response-body var ua = navigator.userAgent; response-body var ua = navigator.userAgent; setTimeout(()=>window.history.back(),9000);
 
-Loon：自测不行，不知道是Loon的问题还是写法与qx有不同之处；有使用Loon的，自行试试吧
-http-response ^http://.+/task/read\? script-path=https://raw.githubusercontent.com/age174/-/main/fqkk_auto_read.js, requires-body=false, timeout=10, tag=阅读文章重写
-http-request ^http://.+/mock/read\? script-path=https://raw.githubusercontent.com/age174/-/main/fqkk_auto_read.js, requires-body=true, timeout=10, tag=阅读返回重写
+======== surge for mac ========
+[Script]
+阅读文章标注 = type=http-response,pattern=^http://.+/(task/read|jump)\?,requires-body=1,max-size=0,timeout=10,script-path=https://raw.githubusercontent.com/age174/-/main/fqkk_auto_read.js
+阅读自动返回 = type=http-request,pattern=^https?://mp\.weixin\.qq\.com/s.+?k=feizao,requires-body=1,max-size=0,timeout=10,script-path=https://raw.githubusercontent.com/age174/-/main/fqkk_auto_read.js
 
+[MITM]
+hostname = mp.weixin.qq.com
 */
 
 
 const $ = new Env(`前台自动阅读`);
 !(async () => {
-  if (typeof $request !== "undefined") {
-    if ($request.url.indexOf('/mock/read') > 0) {
-      let body = `
-      <html>
-      <head>
-          <meta charset="UTF-8">
-      </head>
-      <style>
-          div {position:absolute; top:50%; left:50%; margin:0 0 0 -234px; width:auto; height:auto; border:0px solid #008800; font-size: 7vw}
-      </style>
-      <body><div id="timer"></div></body>
-      <script>
-          var oBox= document.getElementById('timer');
-          var maxtime = parseInt(Math.random() * (10 - 9 + 1) + 9, 10);
-          setTimeout(()=>window.history.back(),maxtime*1000);
-          function CountDown() {
-              if (maxtime >= 0) {
-                  oBox.innerHTML = '返回倒计时'+maxtime+'秒';
-                  --maxtime;
-              } else{
-                  clearInterval(timer);
-                  window.history.back();
-              }
-          }
-          timer = setInterval("CountDown()", 1000);
-        </script>
-      </html>
-      `
-      const headers = {
-        "Connection": "Close",
-        'Content-Type': 'text/html; charset=utf-8'
-      };
-      if ($.isSurge() || $.isLoon()) {
-        $.done({response: {status: 200, headers, body}})
-      } else if ($.isQuanX()) {
-        $.done({status: 'HTTP/1.1 200 OK', headers, body})
+  if (typeof $response !== "undefined") {
+    if ($request.url.match(/https?:\/\/mp\.weixin\.qq\.com\/s.+?&k=feizao/)) {
+      // 响应数据较大，QX会白屏，所以此重写操作不使用脚本处理；Surge for mac可设置响应体大小，自测可用就保留此方式重写脚本了
+      let body = $response.body
+      if (body.indexOf('var ua = navigator.userAgent;') > 0) {
+        body = body.replace('var ua = navigator.userAgent;', 'var ua = navigator.userAgent; setTimeout(()=>window.history.back(),9000);')
+        $.done({body})
+      } else {
+        $.log(`注入失败：未找到替换数据`)
       }
-    } else if (typeof $response !== "undefined") {
+    } else {
       // 如果重定向的是微信文章，改写重定向地址
       let url302 = ($response.headers && $response.headers['Location']) || ''
-      if (url302.match(/https?:\/\/mp.weixin.qq.com\/s/)) {
-        $response.headers['Location'] = $request.url.replace('/task/read', '/mock/read')
+      if (url302.match(/https?:\/\/mp\.weixin\.qq\.com\/s/)) {
+        if (!url302.indexOf('?')) {
+          $response.headers['Location'] = url302 + '?k=feizao'
+        } else if (url302.indexOf('?') && url302.indexOf('&')) {
+          $response.headers['Location'] = url302.replace('&', `&k=feizao&`)
+        } else {
+          $response.headers['Location'] = url302.replace('?', `?k=feizao&`)
+        }
         $.done({headers: $response.headers})
-      } else {
-        $.log(`未检查到待跳转的微信文章url：\n${JSON.stringify($response.headers, null, 2)}`)
       }
     }
   }
