@@ -13,10 +13,10 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 
 4.23 制作
 4.24 完成
+4.24.21 去除ck触发机制
 
-⚠️获取ck后会立刻执行js,不要关闭ck重写
-
-⚠️   ck只有几个小时的有效期     建议每天12点进入小程序触发  或者手动点击 我的奖品 触发
+⚠️   ck只有几个小时的有效期，不要关闭ck重写    
+建议每天12点进入小程序获取ck，点击我的奖品也可以获取ck， 手动运行一次或者定时 7 27,47 12 * * *
 
 ⚠️一共  2个ck  👉 2条 Secrets
 
@@ -211,7 +211,7 @@ function GetCookie() {
         const tlsurlVal = $request.headers.Referer;
         const tlsheaderVal =  $request.headers.Cookie;
         if (tlsheaderVal && tlsurlVal) {
-            CKCK = 1
+            
             $.setdata(tlsurlVal, "tlsurl" + $.idx);
             $.log(
                 `[${$.name + $.idx}] 获取url tlsurlVal✅: 成功,tlsurlVal: ${tlsurlVal}`
@@ -222,6 +222,7 @@ function GetCookie() {
                 `[${$.name + $.idx}] 获取header tlsheaderVal✅: 成功,tlsheaderVal: ${tlsheaderVal}`
             );
             $.msg($.name + $.idx, `获取header tlsheaderVal: 成功🎉`, ``);
+          $.done();
         }
     }
 
@@ -340,19 +341,7 @@ function RT(X, Y) {
 let isGetCookie = typeof $request !== 'undefined'
 if (isGetCookie) {
     GetCookie()
-    if (CKCK == 1) {
-        !(async () => {
-            await all();
-            await msgShow();
-        })()
-        .catch((e) => {
-                $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
-            })
-            .finally(() => {
-                $.done();
-            })
-
-    }
+    $.done();
 } else {
     !(async () => {
         await all();
@@ -364,7 +353,6 @@ if (isGetCookie) {
         .finally(() => {
             $.done();
         })
-
 }
 
 async function all() {
