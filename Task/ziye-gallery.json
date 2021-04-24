@@ -157,6 +157,14 @@
             "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-yqnb-body.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/yqnb.png, tag=易趣牛帮获取header body, enabled=false",
             "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-yqnb-body.txt, tag=易趣牛帮获取header body, update-interval=86400, opt-parser=false, enabled=false",
         },
+		
+		
+		{
+            "config": "7 17,27 12 * * * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/tls.js, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/tls.png, tag=特仑苏, enabled=false",
+        }, {
+            "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-tls-ck.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/tls.png, tag=特仑苏获取ck, enabled=false",
+            "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-tls-ck.txt, tag=特仑苏获取ck, update-interval=86400, opt-parser=false, enabled=false",
+        },
         
 		
 		
