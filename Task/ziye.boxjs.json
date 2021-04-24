@@ -524,7 +524,7 @@
         },
         {
             "id": "tls",
-            "name": "特仑苏APP",
+            "name": "特仑苏小程序",
             "keys": ["tlsurl", "tlsheader", "tlsurl2", "tlsheader2", "tlsurl3", "tlsheader3",  "tlsurl4", "tlsheader4",   "tlsurl5", "tlsheader5", "tlsurl6", "tlsheader6","tlsurl7", "tlsheader7", "tlsurl8", "tlsheader8", "tlsurl9", "tlsheader9", "tlsurl10", "tlsheader10", "tlsurl11", "tlsheader11", "tlsurl12", "tlsheader12",  "tlsurl13", "tlsheader13", "tlsurl14", "tlsheader14", "tlsurl15", "tlsheader15", "tlsurl16", "tlsheader16","tlsurl17", "tlsheader17", "tlsurl18", "tlsheader18",  "tlsurl19", "tlsheader19", "tlsurl20", "tlsheader20"],
             "author": "@ziye",
             "settings": [{
