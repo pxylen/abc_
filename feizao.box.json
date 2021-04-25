@@ -1025,6 +1025,29 @@
             "repo": "https://github.com/age174/-/blob/main/xbgg.js",
             "icons": ["https://ae01.alicdn.com/kf/U466ffce93b584c5babd1127f32f5ddebX.jpg", "https://ae01.alicdn.com/kf/U466ffce93b584c5babd1127f32f5ddebX.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/xbgg.js"
+    } ,
+    {
+            "id": "qlp",
+            "name": "考状元娶老婆二合一",
+            "keys": ["qlphd","kzyhd", "qlphd2","kzyhd2", "qlphd3","kzyhd3", "qlphd4","kzyhd4", "qlphd5","kzyhd5", "qlphd6","kzyhd6", "qlphd7","kzyhd7", "qlphd8","kzyhd8", "qlphd9","kzyhd9", "qlphd10","kzyhd10"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "qlpstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "qlpcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/qlp.js",
+            "icons": ["https://ae01.alicdn.com/kf/Uc2775b8f4abf41788ba89df0317e58050.jpg", "https://ae01.alicdn.com/kf/Uc2775b8f4abf41788ba89df0317e58050.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/qlp.js"
     } 
 ]
 }
