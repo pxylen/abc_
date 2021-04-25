@@ -1,0 +1,33 @@
+
+hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,as.xiaojukeji.com,bosp-api.xiaojukeji.com,ios.baertt.com, kd.youth.cn,operation-api.jimistore.com,
+
+
+# 58同城
+http-request https://magicisland.58.com/web/share/getShareUserInfo script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, requires-body=true, timeout=10, tag=58同城ck
+http-request https://xzd.hswchangdu.com/activityTreeMoney/watering script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, requires-body=true, timeout=10, tag=58同城ck
+http-request https://ftoy-api.58.com/wapi/zf_points_mall/api_sign_in? script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, requires-body=true, timeout=10, tag=58同城ck
+http-request https://xzd.hswchangdu.com/lotteryMachine/drawGoods? script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, requires-body=true, timeout=10, tag=58同城ck
+
+
+
+# 爱奇艺签到获取Cookie
+http-request ^https?:\/\/iface(\d)?\.iqiyi\.com\/ script-path=https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, tag=爱奇艺签到获取Cookie
+
+
+# > 滴滴出行 (By @zZPiglet)
+http-request ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi.js, timeout=10, tag=滴滴出行cookie
+http-request ^https:\/\/bosp-api\.xiaojukeji\.com\/wechat\/benefit\/public\/index\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_ticket.js,tag=滴滴出行cookie
+
+
+#获取挖矿Cookie
+http-request ^https:\/\/operation-api\.jimistore\.com\/* script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js, tag=支付宝获取挖矿Cookie
+
+
+# 浏览赚：任务中心-》看看赚-》顶部的浏览赚-》点任务开始抓到任务数据包即可
+http-request ^https?://ios\.baertt\.com\/v5\/task/browse_start\.json script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, requires-body=1, tag=中青浏览赚
+# 看看赚：任务中心-》看看赚-》点看看赚任务抓到任务数据包即可
+http-request ^https?://ios\.baertt\.com/v5/Nameless/adlickstart\.json script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, requires-body=1, tag=中青看看赚
+# 任务中心尝试添加看看赚入口
+http-response ^https://kd\.youth\.cn/WebApi/NewTaskIos/getTaskList script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, requires-body=1, tag=中青转发、看看赚入口
+# 已有阅读时长数据时，只保存大于1分钟的时长数据
+http-request ^https?://ios\.baertt\.com/v5/user/app_stay\.json script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, requires-body=1, tag=中青iOS时长数据
