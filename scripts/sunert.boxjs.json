@@ -132,8 +132,9 @@
       "id": "weibo",
       "name": "新浪微博",
       "keys": [
-        "sy_payheader_wb",
-        "sy_token_wb"
+        "sy_token_wb",
+        "wb_cookie",
+        "wb_nick"
       ],
       "author": "@lensu",
       "repo": "https://github.com/Sunert/Scripts",
