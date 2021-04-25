@@ -347,7 +347,9 @@ if (isGetCookie) {
 } else {
     !(async () => {
         await all();
+if($.isLogin == true){
         await msgShow();
+}
     })()
     .catch((e) => {
             $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -361,8 +363,8 @@ if (isGetCookie) {
 async function all() {
     if (!tlsheaderArr || tlsheaderArr == '') {
         $.msg(
-            $.name,
-            '提示：⚠️请>>点击前往获取cookie https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png\n',
+            O,time(Number(Date.now())) + 
+            `⚠️未获取COOKIE\n请点击前往获取https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png`,
             'https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png', {
                 "open-url": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png"
             }
@@ -393,15 +395,18 @@ async function all() {
                 tlsbody = `Scene=defualt&SceneValue=${SceneValue}`
                 await task();
                 if (!$.isLogin) {
-                    $.msg(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png`, {
-                        "open-url": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png"
-                    });
+                   $.msg(
+            O,time(Number(Date.now())) + 
+            `⚠️COOKIE失效\n请点击前往获取https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png`,
+            'https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png', {
+                "open-url": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png"
+            }
+        );
                     if ($.isNode()) {
-                        await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效,\n请>>点击前往获取https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png`);
+                        await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效\n请点击前往获取https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png`);
                     }
                     continue
                 }
-
 
 
                 K = `执行操作🚩`;
