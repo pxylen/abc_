@@ -49,7 +49,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 3.19 修复ac运行报错
 3.20 视频ck有效期目前未知，增加失效判定，直播上限为5000，已适配
 4.15 视频ck有效期预计15天，直播上限为3000，已适配
-4.24 视频上限为1000，直播上限为3000，已适配
+4.24 视频上限为1000，直播上限为500，已适配
 
 
 ⚠️一共1个位置 3个ck  👉 7条 Secrets 
@@ -129,7 +129,7 @@ http-requires https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf_customer_activity\
 
 
 */
-GXRZ = '4.24 视频上限为1000，直播上限为3000，已适配'
+GXRZ = '4.24 视频上限为1000，直播上限为500，已适配'
 const $ = Env("笑谱");
 $.idx = ($.idx = ($.getval('iboxpaySuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -615,7 +615,7 @@ async function all() {
             }
         }
 
-        if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < 60) {
+        if (LIVE >= 1 && nowTimes.getHours() >= 8 && nowTimes.getHours() <= 23 && $.sylist.resultCode && livecs < 10) {
             await liveslist(); //直播节目表
             if (liveIdcd >= 1) {
                 dd = liveIdcd * 35 - 34
