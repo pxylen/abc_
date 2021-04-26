@@ -429,6 +429,11 @@ async function all() {
                 await task();
 
                 if (signinfo.isaccomplish == 0) {
+
+                    DD = RT(300, 1000)
+                    console.log(`随机延迟${DD/1000}秒`)
+                    await $.wait(DD)
+
                     K = `执行操作🚩`;
                     tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
                     tlsbody = `ClickInfo=%E6%94%B6%E9%9B%86%E8%8D%89%E7%A7%8D-%E6%AF%8F%E6%97%A5%E7%AD%BE%E5%88%B0&ClickType=7&OpenType=2`
@@ -439,6 +444,10 @@ async function all() {
                     tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetTaskList`
                     tlsbody = ``
                     await task();
+
+                    DD = RT(300, 1000)
+                    console.log(`随机延迟${DD/1000}秒`)
+                    await $.wait(DD)
 
 
 
@@ -459,6 +468,10 @@ async function all() {
                     tlsbody = `ClickInfo=%E7%89%A7%E5%9C%BA%E9%A1%B5-%E8%8B%8F%E8%8B%8F%E4%B9%90%E5%9B%AD&ClickType=7&OpenType=2`
                     await task();
 
+                    DD = RT(300, 1000)
+                    console.log(`随机延迟${DD/1000}秒`)
+                    await $.wait(DD)
+
 
                     K = `执行操作🚩`;
                     tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
@@ -470,6 +483,10 @@ async function all() {
                     tlsbody = `InterName=susuMeijia`
                     await task();
 
+                    DD = RT(300, 1000)
+                    console.log(`随机延迟${DD/1000}秒`)
+                    await $.wait(DD)
+
 
                     K = `执行操作🚩`;
                     tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
@@ -480,6 +497,10 @@ async function all() {
                     tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddInteraction`
                     tlsbody = `InterName=susuRiguangyu`
                     await task();
+
+                    DD = RT(300, 1000)
+                    console.log(`随机延迟${DD/1000}秒`)
+                    await $.wait(DD)
 
 
                     K = `执行操作🚩`;
@@ -496,6 +517,9 @@ async function all() {
 
 
                 if (Lunchinfo.isaccomplish == 1) {
+                    DD = RT(300, 1000)
+                    console.log(`随机延迟${DD/1000}秒`)
+                    await $.wait(DD)
 
                     K = `执行操作🚩`;
                     tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
@@ -505,8 +529,13 @@ async function all() {
                     K = `加餐奖励🚩`;
                     tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetLunchAward`
                     tlsbody = ``
+
                     await task();
                 }
+
+                DD = RT(300, 1000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
 
 
                 K = `执行操作🚩`;
@@ -539,7 +568,9 @@ async function all() {
                 await task();
 
 
-
+                DD = RT(300, 1000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
 
                 K = `执行操作🚩`;
                 tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
@@ -558,6 +589,9 @@ async function all() {
                 K = `好友信息🚩`;
                 tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserFriendInfo`
                 tlsbody = `userid=${HYID[0]}`
+                DD = RT(300, 1000)
+                console.log(`随机延迟${DD/1000}秒`)
+                await $.wait(DD)
                 await task();
 
                 K = `添加好友🚩`;
@@ -589,6 +623,9 @@ async function all() {
                         K = `好友信息🚩`;
                         tlsbody = `userid=${HYID[i]}`
                         tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserFriendInfo`
+                        DD = RT(300, 1000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
                         await task();
 
                         K = `添加好友🚩`;
