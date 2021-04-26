@@ -6,7 +6,7 @@ name: ziye_笑谱
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0,30 * * * *'
+    - cron: '5 16 * * *'
 
 jobs:
   build:
