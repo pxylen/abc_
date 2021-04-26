@@ -12,7 +12,7 @@ qx：
 ^https?://mp\.weixin\.qq\.com/s.+?k=feizao url response-body </script> response-body setTimeout(()=>window.history.back(),10000); </script>
 
 注意：如果微信文章不自动返回，自查是否为ios12的系统，可试试以下重写
-^https?://mp\.weixin\.qq\.com/s.+?k= url response-body </script> response-body setTimeout(()=>window.history.back(),10000); </script>
+^https?://mp\.weixin\.qq\.com/s.+? url response-body </script> response-body setTimeout(()=>window.history.back(),10000); </script>
 
 Loon: 最新tf自测不通过，还导致云扫码黑了😓
 
