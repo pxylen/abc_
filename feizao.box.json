@@ -1021,6 +1021,27 @@
             "val": "1",
             "type": "number",
             "desc": "需要几个账号，数字为几"
+    },
+    {
+            "id": "xbzh",
+            "name": "支付宝账号",
+            "val": "",
+            "type": "number",
+            "desc": "支付宝提现账号"
+    },
+    {
+            "id": "xbname",
+            "name": "提现姓名",
+            "val": "",
+            "type": "number",
+            "desc": "支付宝提现姓名"
+    },
+    {
+            "id": "xbje",
+            "name": "提现金额",
+            "val": "1",
+            "type": "number",
+            "desc": "需要提现的金额，请填写，默认1元。"
     }],
             "repo": "https://github.com/age174/-/blob/main/xbgg.js",
             "icons": ["https://ae01.alicdn.com/kf/U466ffce93b584c5babd1127f32f5ddebX.jpg", "https://ae01.alicdn.com/kf/U466ffce93b584c5babd1127f32f5ddebX.jpg"],
