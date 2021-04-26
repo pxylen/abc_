@@ -15,7 +15,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 4.24 完成
 4.24.21 去除ck触发机制
 4.25.15 修复加餐判定，优化逻辑
-4.26.12 修复答题判定
+4.26.13 修复答题判定，调整为8个助力位
 
 ⚠️   ck只有几个小时的有效期，不要关闭ck重写    
 建议每天12点进入小程序获取ck，点击我的奖品也可以获取ck， 手动运行一次或者定时 7 27,47 12 * * *
@@ -50,7 +50,7 @@ http-request https:\/\/xw\.mengniu\.cn\/grass\/Api\/TelunsuHandler\.ashx\?method
 
 */
 
-GXRZ = '4.26.12 修复答题判定'
+GXRZ = '4.26.13 修复答题判定，调整为8个助力位'
 const $ = Env("特仑苏");
 $.idx = ($.idx = ($.getval('tlsSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -59,7 +59,7 @@ const logs = 0; // 0关闭日志，1原始日志，2格式化，3格式化且解
 notifyttt = 1; // 0为关闭外部推送，1为12 23 点外部推送
 notifyInterval = 1; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 Minutes = 10; // 通知 默认控制在0-10分内
-$.message = '', COOKIES_SPLIT = '', CASH = '', hyidA = 0, hyidB = 0, hyidC = 0, hyidD = 0, hyidE = 0, hyidF = 0, hyidG = 0, XH = 0, XYZ = 100, Length = 0, ddtime = '';
+$.message = '', COOKIES_SPLIT = '', CASH = '', hyidA = 0, hyidB = 0, hyidC = 0, hyidD = 0, hyidE = 0, hyidF = 0, hyidG = 0, hyidH = 0, XH = 0, XYZ = 100, Length = 0, ddtime = '';
 
 tlsbodys = ``;
 let tlsurlArr = [];
@@ -81,6 +81,7 @@ if ($.isNode() && process.env.TLS_tlsHEADER) {
     hyidE = process.env.TLS_hyidE || "98825";
     hyidF = process.env.TLS_hyidF || "98860";
     hyidG = process.env.TLS_hyidG || "98910";
+    hyidH = process.env.TLS_hyidH || "114043";
     notifyttt = process.env.TLS_notifyttt || "1";
     notifyInterval = process.env.TLS_notifyInterval || "1";
     Minutes = process.env.TLS_Minutes || "10";
@@ -135,6 +136,7 @@ if ($.isNode() && process.env.TLS_tlsHEADER) {
     hyidE = (COOKIE.settings.find(item => item.id === `tlshyidE`)).val;
     hyidF = (COOKIE.settings.find(item => item.id === `tlshyidF`)).val;
     hyidG = (COOKIE.settings.find(item => item.id === `tlshyidG`)).val;
+    hyidH = (COOKIE.settings.find(item => item.id === `tlshyidH`)).val;
     notifyInterval = (COOKIE.settings.find(item => item.id === `tlsnotifyInterval`)).val;
     Minutes = (COOKIE.settings.find(item => item.id === `tlsMinutes`)).val;
     tlsCount = (COOKIE.settings.find(item => item.id === `tlsCount`)).val || '1';
@@ -176,6 +178,9 @@ if ($.isNode() && process.env.TLS_tlsHEADER) {
     if ("tlshyidG") {
         hyidG = $.getval("tlshyidG") || '98910';
     }
+    if ("tlshyidH") {
+        hyidG = $.getval("tlshyidH") || '114043';
+    }
 
     if ("tlsnotifyttt") {
         notifyttt = $.getval("tlsnotifyttt") || '1';
@@ -213,7 +218,7 @@ function GetCookie() {
         const tlsurlVal = $request.headers.Referer;
         const tlsheaderVal = $request.headers.Cookie;
         if (tlsheaderVal && tlsurlVal) {
-            
+
             $.setdata(tlsurlVal, "tlsurl" + $.idx);
             $.log(
                 `[${$.name + $.idx}] 获取url tlsurlVal✅: 成功,tlsurlVal: ${tlsurlVal}`
@@ -224,7 +229,7 @@ function GetCookie() {
                 `[${$.name + $.idx}] 获取header tlsheaderVal✅: 成功,tlsheaderVal: ${tlsheaderVal}`
             );
             $.msg($.name + $.idx, `获取header tlsheaderVal: 成功🎉`, ``);
- $.done();
+            $.done();
 
         }
     }
@@ -348,9 +353,9 @@ if (isGetCookie) {
 } else {
     !(async () => {
         await all();
-if($.isLogin == true){
-        await msgShow();
-}
+        if ($.isLogin == true) {
+            await msgShow();
+        }
     })()
     .catch((e) => {
             $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -364,7 +369,7 @@ if($.isLogin == true){
 async function all() {
     if (!tlsheaderArr || tlsheaderArr == '') {
         $.msg(
-            O,time(Number(Date.now())) + 
+            O, time(Number(Date.now())) +
             `⚠️未获取COOKIE\n请点击前往获取https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png`,
             'https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png', {
                 "open-url": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png"
@@ -396,13 +401,13 @@ async function all() {
                 tlsbody = `Scene=defualt&SceneValue=${SceneValue}`
                 await task();
                 if (!$.isLogin) {
-                   $.msg(
-            O,time(Number(Date.now())) + 
-            `⚠️COOKIE失效\n请点击前往获取https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png`,
-            'https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png', {
-                "open-url": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png"
-            }
-        );
+                    $.msg(
+                        O, time(Number(Date.now())) +
+                        `⚠️COOKIE失效\n请点击前往获取https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png`,
+                        'https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png', {
+                            "open-url": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png"
+                        }
+                    );
                     if ($.isNode()) {
                         await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效\n请点击前往获取https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.png`);
                     }
@@ -515,7 +520,7 @@ async function all() {
                 tlsbody = ``
                 await task();
 
-                if ($.Getanswer.result.ispaly == 0&&$.Getanswer.result.isopen == 1) {
+                if ($.Getanswer.result.ispaly == 0 && $.Getanswer.result.isopen == 1) {
 
                     K = `提交答题🚩`;
                     tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddanswerOrder`
@@ -549,15 +554,15 @@ async function all() {
                 await task();
 
 
-
+                HYID = [hyidA, hyidB, hyidC, hyidD, hyidE, hyidF, hyidG, hyidH]
                 K = `好友信息🚩`;
                 tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserFriendInfo`
+                tlsbody = `userid=${HYID[0]}`
                 await task();
 
                 K = `添加好友🚩`;
                 tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddFriend`
-                tlsbody = `userid=${hyidA}`
-                DD = RT(100, 1000)
+                DD = RT(300, 1000)
                 console.log(`随机延迟${DD/1000}秒`)
                 await $.wait(DD)
                 await task();
@@ -569,196 +574,51 @@ async function all() {
 
                 K = `助力好友🚩`;
                 tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddShare`
-                tlsbody = `userid=${hyidA}`
-                DD = RT(100, 1000)
+                tlsbody = `userid=${HYID[0]}`
+                DD = RT(300, 1000)
                 console.log(`随机延迟${DD/1000}秒`)
                 await $.wait(DD)
                 await task();
 
-                if ($.AddShare.errcode == 1 && $.AddShare.errmsg.indexOf("每天只能助力一次") < 0) {
-
-                    K = `好友信息🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserFriendInfo`
-                    await task();
-
-                    K = `添加好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddFriend`
-                    tlsbody = `userid=${hyidB}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-
-                    K = `执行操作🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
-                    tlsbody = `ClickInfo=%E5%A5%BD%E5%8F%8B%E7%89%A7%E5%9C%BA%E9%A1%B5-%E5%B8%AE%E4%BB%96%E5%8A%A9%E5%8A%9B&ClickType=4&OpenType=2`
-                    await task();
-
-                    K = `助力好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddShare`
-                    tlsbody = `userid=${hyidB}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-                }
 
 
-                if ($.AddShare.errcode == 1 && $.AddShare.errmsg.indexOf("每天只能助力一次") < 0) {
+                for (let i = 1; i < 8; i++) {
 
-                    K = `好友信息🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserFriendInfo`
-                    await task();
+                    if ($.AddShare.errcode == 1 && $.AddShare.errmsg.indexOf("每天只能助力一次") < 0) {
 
-                    K = `添加好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddFriend`
-                    tlsbody = `userid=${hyidC}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
+                        K = `好友信息🚩`;
+                        tlsbody = `userid=${HYID[i]}`
+                        tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserFriendInfo`
+                        await task();
 
-                    K = `执行操作🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
-                    tlsbody = `ClickInfo=%E5%A5%BD%E5%8F%8B%E7%89%A7%E5%9C%BA%E9%A1%B5-%E5%B8%AE%E4%BB%96%E5%8A%A9%E5%8A%9B&ClickType=4&OpenType=2`
-                    await task();
+                        K = `添加好友🚩`;
+                        tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddFriend`
+                        //console.log(tlsbody)
+                        DD = RT(300, 1000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await task();
 
-                    K = `助力好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddShare`
-                    tlsbody = `userid=${hyidC}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
+                        K = `执行操作🚩`;
+                        tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
+                        tlsbody = `ClickInfo=%E5%A5%BD%E5%8F%8B%E7%89%A7%E5%9C%BA%E9%A1%B5-%E5%B8%AE%E4%BB%96%E5%8A%A9%E5%8A%9B&ClickType=4&OpenType=2`
+                        await task();
 
+                        K = `助力好友🚩`;
+                        tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddShare`
+                        tlsbody = `userid=${HYID[i]}`
+                        DD = RT(300, 1000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await task();
+                    }
 
-                }
-
-
-                if ($.AddShare.errcode == 1 && $.AddShare.errmsg.indexOf("每天只能助力一次") < 0) {
-
-                    K = `好友信息🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserFriendInfo`
-                    await task();
-
-                    K = `添加好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddFriend`
-                    tlsbody = `userid=${hyidD}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-
-                    K = `执行操作🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
-                    tlsbody = `ClickInfo=%E5%A5%BD%E5%8F%8B%E7%89%A7%E5%9C%BA%E9%A1%B5-%E5%B8%AE%E4%BB%96%E5%8A%A9%E5%8A%9B&ClickType=4&OpenType=2`
-                    await task();
-
-                    K = `助力好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddShare`
-                    tlsbody = `userid=${hyidD}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-
-
-                }
-                if ($.AddShare.errcode == 1 && $.AddShare.errmsg.indexOf("每天只能助力一次") < 0) {
-
-                    K = `好友信息🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserFriendInfo`
-                    await task();
-
-                    K = `添加好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddFriend`
-                    tlsbody = `userid=${hyidE}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-
-                    K = `执行操作🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
-                    tlsbody = `ClickInfo=%E5%A5%BD%E5%8F%8B%E7%89%A7%E5%9C%BA%E9%A1%B5-%E5%B8%AE%E4%BB%96%E5%8A%A9%E5%8A%9B&ClickType=4&OpenType=2`
-                    await task();
-
-                    K = `助力好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddShare`
-                    tlsbody = `userid=${hyidE}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-
-
-                }
-                if ($.AddShare.errcode == 1 && $.AddShare.errmsg.indexOf("每天只能助力一次") < 0) {
-
-                    K = `好友信息🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserFriendInfo`
-                    await task();
-
-                    K = `添加好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddFriend`
-                    tlsbody = `userid=${hyidF}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-
-                    K = `执行操作🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
-                    tlsbody = `ClickInfo=%E5%A5%BD%E5%8F%8B%E7%89%A7%E5%9C%BA%E9%A1%B5-%E5%B8%AE%E4%BB%96%E5%8A%A9%E5%8A%9B&ClickType=4&OpenType=2`
-                    await task();
-
-                    K = `助力好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddShare`
-                    tlsbody = `userid=${hyidF}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-
-
-                }
-                if ($.AddShare.errcode == 1 && $.AddShare.errmsg.indexOf("每天只能助力一次") < 0) {
-
-                    K = `好友信息🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserFriendInfo`
-                    await task();
-
-                    K = `添加好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddFriend`
-                    tlsbody = `userid=${hyidG}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
-
-                    K = `执行操作🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
-                    tlsbody = `ClickInfo=%E5%A5%BD%E5%8F%8B%E7%89%A7%E5%9C%BA%E9%A1%B5-%E5%B8%AE%E4%BB%96%E5%8A%A9%E5%8A%9B&ClickType=4&OpenType=2`
-                    await task();
-
-                    K = `助力好友🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddShare`
-                    tlsbody = `userid=${hyidG}`
-                    DD = RT(100, 1000)
-                    console.log(`随机延迟${DD/1000}秒`)
-                    await $.wait(DD)
-                    await task();
 
                 }
 
 
                 K = `查询信息🚩`;
                 tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserValues`
-                tlsheader = {
-                    "Host": "xw.mengniu.cn",
-                    "Content-Type": "application/x-www-form-urlencoded",
-                    "Cookie": `${tlsheaderVal}`,
-                };
                 tlsbody = ``
                 await task();
 
@@ -774,7 +634,7 @@ async function all() {
                     if ($.GetUserValues.result.grass_seed >= 100) {
 
                         CZCS = i
-                        DD = RT(100, 1000)
+                        DD = RT(300, 1000)
                         console.log(`随机延迟${DD/1000}秒`)
                         await $.wait(DD)
 
@@ -799,9 +659,6 @@ async function all() {
                         await task();
                     }
                 }
-
-
-
 
                 K = `总结信息🚩`;
                 tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=GetUserValues`
