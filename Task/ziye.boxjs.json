@@ -582,6 +582,12 @@
         "type": "number",
         "desc": "默认作者，自行修改"
     }, {
+        "id": "tlshyidH",
+        "name": "好友H",
+        "val": "114043",
+        "type": "number",
+        "desc": "默认作者，自行修改"
+    }, {
         "id": "tlsXH",
         "name": "循环获取CK",
         "val": "0",
