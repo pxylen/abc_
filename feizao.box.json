@@ -1026,14 +1026,14 @@
             "id": "xbzh",
             "name": "支付宝账号",
             "val": "",
-            "type": "number",
+            "type": "string",
             "desc": "支付宝提现账号"
     },
     {
             "id": "xbname",
             "name": "提现姓名",
             "val": "",
-            "type": "number",
+            "type": " string",
             "desc": "支付宝提现姓名"
     },
     {
