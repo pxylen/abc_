@@ -15,6 +15,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 4.24 完成
 4.24.21 去除ck触发机制
 4.25.15 修复加餐判定，优化逻辑
+4.26.12 修复答题判定
 
 ⚠️   ck只有几个小时的有效期，不要关闭ck重写    
 建议每天12点进入小程序获取ck，点击我的奖品也可以获取ck， 手动运行一次或者定时 7 27,47 12 * * *
@@ -49,7 +50,7 @@ http-request https:\/\/xw\.mengniu\.cn\/grass\/Api\/TelunsuHandler\.ashx\?method
 
 */
 
-GXRZ = '4.25.15 修复加餐判定,优化逻辑'
+GXRZ = '4.26.12 修复答题判定'
 const $ = Env("特仑苏");
 $.idx = ($.idx = ($.getval('tlsSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -514,7 +515,7 @@ async function all() {
                 tlsbody = ``
                 await task();
 
-                if ($.Getanswer.result.ispaly == 0) {
+                if ($.Getanswer.result.ispaly == 0&&$.Getanswer.result.isopen == 1) {
 
                     K = `提交答题🚩`;
                     tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddanswerOrder`
