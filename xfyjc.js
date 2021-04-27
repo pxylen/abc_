@@ -602,7 +602,7 @@ function xfyjctx(timeout = 0) {
   return new Promise((resolve) => {
 
 let url = {
-        url : 'https://bp-api.coohua.com/bubuduo-xfyjc/mall/fruit?subType=71&payChannel=1&wechatId=240&fruitIndex=16&common=false',
+        url : 'https://bp-api.coohua.com/bubuduo-xfyjc/mall/fruit?subType=74&payChannel=1&wechatId=240&fruitIndex=19&common=false',
         headers : JSON.parse(xfyjchd),
        
 }
