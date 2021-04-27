@@ -3,11 +3,11 @@
 更新时间：2021-04-27 @肥皂
 脚本说明：差不多涵盖了游戏内的所有任务了
 气泡领取,每日任务。宝箱开启。打卡签到。每日领取。幸运转盘。喂养。自动提现。红心任务。
-越狱用户自己做好屏蔽。。。
+越狱请做好屏蔽。
 每天收益按照蛋来说有一两块吧。十分钟一次吧。cron自己改。
 
 幸福养鸡场使用方法:
-进入游戏看一个气泡视频获取数据。
+进入游戏点击领饲料获得数据。
 
 邀请码 : 204678455
 
@@ -29,13 +29,13 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #幸福养鸡场
-https://bp-api.coohua.com/bubuduo-xfyjc/game/bubble/reward? url script-request-header https://raw.githubusercontent.com/age174/-/main/xfyjc.js
+https://bp-api.coohua.com/bubuduo-xfyjc/task/getHomePageTask url script-request-header https://raw.githubusercontent.com/age174/-/main/xfyjc.js
 
 #loon
-https://bp-api.coohua.com/bubuduo-xfyjc/game/bubble/reward? script-path=https://raw.githubusercontent.com/age174/-/main/xfyjc.js, requires-header=true, timeout=10, tag=幸福养鸡场
+https://bp-api.coohua.com/bubuduo-xfyjc/task/getHomePageTask script-path=https://raw.githubusercontent.com/age174/-/main/xfyjc.js, requires-header=true, timeout=10, tag=幸福养鸡场
 
 #surge
-幸福养鸡场 = type=http-request,pattern=https://bp-api.coohua.com/bubuduo-xfyjc/game/bubble/reward?,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/xfyjc.js,script-update-interval=0
+幸福养鸡场 = type=http-request,pattern=https://bp-api.coohua.com/bubuduo-xfyjc/task/getHomePageTask,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/xfyjc.js,script-update-interval=0
 
 [MITM]
 hostname = bp-api.coohua.com
@@ -85,7 +85,7 @@ let id = '',name =''
 
 
 function xfyjcck() {
-   if ($request.url.indexOf("reward?") > -1) {
+   if ($request.url.indexOf("getHomePageTask") > -1) {
  
   const xfyjchd = JSON.stringify($request.headers)
         if(xfyjchd)    $.setdata(xfyjchd,`xfyjchd${status}`)
