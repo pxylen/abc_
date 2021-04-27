@@ -77,4 +77,13 @@ jobs:
 
 
 
+      - name: sync sync-freefq
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/freefq/free.git"
+          source_branch: "master"
+          destination_branch: "freefq"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
+
 
