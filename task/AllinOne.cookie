@@ -487,7 +487,8 @@ http-request https://ranlv.lvfacn.com/api.php/Common/pvlog script-path=https://r
 http-request https://pingyouquan.com/tp5/public/index.php/app/gold/adv script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/pyq.js, requires-body=true, tag=pingyouquan
 #fanqiexiaoshuo
 http-request luckycat/novel/v1/task/sign_in/* script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/fqxs.js, requires-header=true, tag=fanqiexiaoshuo
-
+#开心花园
+http-request https://bp-api.coohua.com/bubuduo-kxhy/game/plant script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/kxhy.js, requires-header=true, tag=开心花园
 
 
 #hundun
