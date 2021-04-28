@@ -27,17 +27,17 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #锦鲤看看阅读
-http://m.*.top/read_channel/do_read&pageshow url script-request-header https://raw.githubusercontent.com/age174/-/main/jlkk.js
+http://m.*/read_channel/do_read&pageshow url script-request-header https://raw.githubusercontent.com/age174/-/main/jlkk.js
 
 http://h5.qdwlfn.bar/withdrawal/submit_withdraw url script-request-header https://raw.githubusercontent.com/age174/-/main/jlkk.js
 
 #loon
-http://m.*.top/read_channel/do_read&pageshow script-path=https://raw.githubusercontent.com/age174/-/main/jlkk.js, requires-header=true, timeout=10, tag=锦鲤看看
+http://m.*/read_channel/do_read&pageshow script-path=https://raw.githubusercontent.com/age174/-/main/jlkk.js, requires-header=true, timeout=10, tag=锦鲤看看
 
 http://h5.qdwlfn.bar/withdrawal/submit_withdraw script-path=https://raw.githubusercontent.com/age174/-/main/jlkk.js, requires-header=true, timeout=10, tag=锦鲤看看提现
 
 #surge
-锦鲤看看 = type=http-request,pattern=http://m.*.top/read_channel/do_read&pageshow,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/jlkk.js,script-update-interval=0
+锦鲤看看 = type=http-request,pattern=http://m.*/read_channel/do_read&pageshow,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/jlkk.js,script-update-interval=0
 
 锦鲤看看提现 = type=http-request,pattern=http://h5.qdwlfn.bar/withdrawal/submit_withdraw,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/jlkk.js,script-update-interval=0
 [MITM]
