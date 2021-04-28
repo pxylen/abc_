@@ -6,7 +6,7 @@ name: 中青阅读
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 */4 * * *'
 
 jobs:
   build:
