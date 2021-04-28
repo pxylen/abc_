@@ -46,7 +46,7 @@ let status;
 status = (status = ($.getval("xfyjcstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
 const xfyjchdArr = [],xfyjccount = ''
 let xfyjchd = $.getdata('xfyjchd')
-let id = '',name =''
+let id = '',name ='',txid = '',idex = '',type=''
 !(async () => {
   if (typeof $request !== "undefined") {
     await xfyjcck()
@@ -74,7 +74,7 @@ let id = '',name =''
     await xfyjclq()
     await xfyjcbx()
     await xfyjchxrw()
-    await xfyjctx()
+    await xfyjctxid()
   }
 }}
 
@@ -595,14 +595,46 @@ let url = {
     },timeout)
   })
 }
+//提现id
+function xfyjctxid(timeout = 0) {
+  return new Promise((resolve) => {
 
+let url = {
+        url : 'https://bp-api.coohua.com/bubuduo-xfyjc/mall/game/index/cash',
+        headers : JSON.parse(xfyjchd),
+       
+}
+      $.post(url, async (err, resp, data) => {
+
+        try {
+    const result = JSON.parse(data)
+        if(result.code == 0){
+idex = result.result.list[0].index
+type = result.result.list[0].subType
+  $.log(`\n幸福养鸡场提现id:获取成功`)
+     
+await xfyjctx()
+} else {
+
+        $.log(`\n幸福养鸡场提现id:${result.message}`)
+ 
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
 
 //提现
 function xfyjctx(timeout = 0) {
   return new Promise((resolve) => {
 
 let url = {
-        url : 'https://bp-api.coohua.com/bubuduo-xfyjc/mall/fruit?subType=74&payChannel=1&wechatId=240&fruitIndex=19&common=false',
+        url : `https://bp-api.coohua.com/bubuduo-xfyjc/mall/fruit?subType=${type}&payChannel=1&wechatId=240&fruitIndex=${idex}&common=false`,
         headers : JSON.parse(xfyjchd),
        
 }
