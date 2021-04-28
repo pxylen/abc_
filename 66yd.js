@@ -1,17 +1,16 @@
 /*
 软件名称:66阅读 微信扫描二维码打开
-更新时间：2021-03-18 @肥皂
+更新时间：2021-04-29 @肥皂
 脚本说明：66阅读自动阅读
 脚本为自动完成66阅读的阅读任务
 
 👏👏👏66阅读
 
 
-复制链接到微信打开 http://pmlyd.cn//user/tasks?mid=3R6QKMRXU
+复制链接到微信打开 http://efkablr.cn//user/te2ka?mid=3R6QKMRXU  如果链接打不开。放收藏里面打开就行了
 
-或者扫码打开 https://raw.githubusercontent.com/age174/-/main/515B51D0-2B22-4886-9291-FDCB1A8822B1.jpeg
-微信扫描打开
-
+4.29修复重写。好像需要每天手动阅读两三篇文章鉴权。目前单价很舒服 0.02一篇。脚本加了每日阅读限制。手动读了三篇才会运行。
+不知道中途要不要鉴权。待测。。几篇黑的是微信问题。
 
 本脚本以学习为主！
 使用方法:扫码进去，点击任务大厅的阅读文章
@@ -34,24 +33,24 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #66阅读
-http://v1uxnzj.cn/v4/user/get_user_task? url script-request-header https://raw.githubusercontent.com/age174/-/main/66yd.js
+http://.*v4/user/get_user_task? url script-request-header https://raw.githubusercontent.com/age174/-/main/66yd.js
 
 
 
 #loon
-http://v1uxnzj.cn/v4/user/get_user_task? script-path=https://raw.githubusercontent.com/age174/-/main/66yd.js, requires-header=true, timeout=10, tag=66阅读
+http://.*v4/user/get_user_task? script-path=https://raw.githubusercontent.com/age174/-/main/66yd.js, requires-header=true, timeout=10, tag=66阅读
 
 
 
 #surge
 
-66阅读 = type=http-request,pattern=http://v1uxnzj.cn/v4/user/get_user_task?,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/66yd.js,script-update-interval=0
+66阅读 = type=http-request,pattern=http://.*v4/user/get_user_task?,requires-header=1,max-size=0,script-path=https://raw.githubusercontent.com/age174/-/main/66yd.js,script-update-interval=0
 
 
 
 
 [MITM]
-hostname = v1uxnzj.cn
+hostname = 
 
 
 */
@@ -84,7 +83,8 @@ let llydkey = '',id = '',uid='',tid='',name=''
           llydhd = llydhdArr[i];
           $.index = i + 1;
           console.log(`\n开始【66阅读${$.index}】`)
-          await llydlb();
+          await llydxx();
+          //await llydlb();
           
 
   }
@@ -109,20 +109,59 @@ $.log(llydhd)
 }
 
 
+//66阅读信息
+function llydxx(timeout = 0) {
+  return new Promise((resolve) => {
+id = llydurl.match(/http:\/\/(.*?)\//)[1]
+uid=llydurl.match(/uid=(.*?)&/)[1]
+tid =llydurl.match(/token=(.*?)&/)[1]
+//$.log(id)
 
+let url = {
+        url : `http://${id}/v4/user/curr_art_res`,
+        headers : JSON.parse(llydhd),
+        body : `uid=${uid}&login_token=${tid}`
+}
+      $.post(url, async (err, resp, data) => {
+
+        try {
+    const result = JSON.parse(data)
+
+        if(result.code== 100000){
+        console.log('\n66阅读信息获取成功\n当前已阅读: '+result.data.check)
+if(result.data.check <= 3){
+$.msg('66阅读','','66阅读今日手动阅读小于三次,跳过该账号。 ')
+} else {
+await $.wait(1000);
+ await llydlb();
+
+}
+        
+} else {
+       console.log('\n66阅读获取任务ID失败  '+result.msg)
+}
+   
+        } catch (e) {
+          //$.logErr(e, resp);
+        } finally {
+          resolve()
+        }
+    },timeout)
+  })
+}
 
 
 
 //66阅读任务列表
 function llydlb(timeout = 0) {
   return new Promise((resolve) => {
+id = llydurl.match(/http:\/\/(.*?)\//)[1]
 uid=llydurl.match(/uid=(.*?)&/)[1]
 tid =llydurl.match(/token=(.*?)&/)[1]
-
-//$.log(tid)
+//$.log(id)
 
 let url = {
-        url : `http://v1uxnzj.cn/v4/user/get_user_task?uid=${uid}&login_token=${tid}&t=${times}`,
+        url : `http://${id}/v4/user/get_user_task?uid=${uid}&login_token=${tid}&t=${times}`,
         headers : JSON.parse(llydhd),
        
 }
@@ -157,11 +196,12 @@ await llydwz();
 function llydyd(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://v1uxnzj.cn/v4/user/startTask",
+        url : `http://${id}/v4/user/startTask`,
         headers : JSON.parse(llydhd),
         body : `uid=${uid}&login_token=${tid}&tid=${key}&time=${times}&url=${name}`,
 }
       $.post(url, async (err, resp, data) => {
+$.log(data)
         try {
            
     const result = JSON.parse(data)
@@ -188,15 +228,15 @@ let url = {
 function llydtj(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://v1uxnzj.cn/v4/msg/task_type_statistics_count",
+        url : `http://${id}/v4/msg/task_type_statistics_count`,
         headers : JSON.parse(llydhd),
         body : `uid=${uid}&login_token=${tid}&type=11&tid=${key}`,
 }
       $.post(url, async (err, resp, data) => {
         try {
            
-    const result = JSON.parse(data)
-        if(result.code == 100000){
+    //const result = JSON.parse(data)
+        if(resp.statusCode == 200){
         await $.wait(8000)
        await llydrw()
        
@@ -218,11 +258,12 @@ let url = {
 function llydrw(timeout = 0) {
   return new Promise((resolve) => {
 let url = {
-        url : "http://v1uxnzj.cn/v4/user/wxfinishTask",
+        url : `http://${id}/v4/user/wxfinishTask`,
         headers : JSON.parse(llydhd),
         body : `uid=${uid}&login_token=${tid}&tid=${key}&time=${times}&url=${name}`,
 }
       $.post(url, async (err, resp, data) => {
+$.log(data)
         try {
            
     const result = JSON.parse(data)
