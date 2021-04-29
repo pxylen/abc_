@@ -1168,6 +1168,29 @@
             "repo": "https://github.com/age174/-/blob/main/xbyd.js",
             "icons": ["https://ae01.alicdn.com/kf/Ubc6bbe61f9f64be78d2b89ec88557fa4f.jpg", "https://ae01.alicdn.com/kf/Ubc6bbe61f9f64be78d2b89ec88557fa4f.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/xbyd.js"
+    } ,
+    {
+            "id": "skjh",
+            "name": "食客江湖",
+            "keys": ["skjhhd"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "skjhstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "skjhcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/skjh.js",
+            "icons": ["https://ae01.alicdn.com/kf/Ue353b658a4424a1e873d0b66620d06a41.jpg", "https://ae01.alicdn.com/kf/Ue353b658a4424a1e873d0b66620d06a41.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/skjh.js"
     }
 ]
 }
