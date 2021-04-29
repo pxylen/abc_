@@ -87,3 +87,11 @@ jobs:
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
 
 
+      - name: sync sync-tom
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/xl2101200/-.git"
+          source_branch: "main"
+          destination_branch: "tom"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
