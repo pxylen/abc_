@@ -3,12 +3,12 @@
   "author": "@Sunert", 
   "icon": "https://avatars2.githubusercontent.com/u/47924389?s=460&u=5152f048a9e8aaa45102763a578172407c40fcc8&v=4", 
   "name": "Sunert 签到应用订阅", 
-  "repo": "https://github.com/Sunert/Scripts/tree/master", 
+  "repo": "https://github.com/Sunert/Script/tree/master", 
   "apps": [
     {
       "author": "@sunert", 
       "descs_html": [
-        "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://github.com/Sunert/Scripts/raw/master/TaskConf/sina/readme.md\">配置说明</a></h4>", 
+        "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://github.com/Sunert/Script/raw/master/TaskConf/sina/readme.md\">配置说明</a></h4>", 
         "<br />", 
         "<p>其中<font color='#FF0000',font-weight: bold>wb_nick</font>为账号昵称，无需另外获取，脚本运行可自动生成，wb_cookie为任务红包余额，获取后方可显示，可选，sy_token_wb为微博签到token，必选</p>"
       ], 
@@ -17,9 +17,9 @@
         "wb_cookie", 
         "wb_nick"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/weibo.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/weibo.js", 
       "id": "weibo", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js", 
       "name": "新浪微博", 
       "icons": [
         "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/weibo.png", 
@@ -29,7 +29,7 @@
     {
       "author": "@sunert", 
       "descs_html": [
-        "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://github.com/Sunert/Scripts/raw/master/TaskConf/youth/readme.md\">配置说明</a></h4>", 
+        "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://github.com/Sunert/Script/raw/master/TaskConf/youth/readme.md\">配置说明</a></h4>", 
         "<br />", 
         "<p>其中<font color='#FF0000',font-weight: bold>zq_nick、zqcash</font>和<font color='#FF0000',font-weight: bold>zqcard</font>为昵称、提现金额和早起打卡开关，无需另外获取，相关项设置后自动生成，cashurl_zq和cashbody_zq为提现请求，获取后方可自动提现，可选</p>"
       ], 
@@ -43,9 +43,9 @@
         "zqcash", 
         "zqcard"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/youth.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/youth.js", 
       "id": "youth", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/youth.js", 
       "settings": [
         {
           "id": "zqcard", 
@@ -109,9 +109,9 @@
         "youth_start", 
         "youth_look"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/youth_gain.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/youth_gain.js", 
       "id": "youthGain", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth_gain.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/youth_gain.js", 
       "name": "中青浏览赚&看看赚", 
       "icons": [
         "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/youth.png", 
@@ -133,9 +133,9 @@
           "desc": "自动删除收益为0或者错误的阅读请求，使用完后请立即关闭，避免清空阅读请求"
         }
       ],
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/Youth_Read.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/Youth_Read.js", 
       "id": "youthRead", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/Youth_Read.js", 
       "name": "中青自动阅读", 
       "icons": [
         "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/youth.png", 
@@ -148,9 +148,9 @@
         "sy_signheader_dsj", 
         "drawal_dsj"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/dianshijia.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/dianshijia.js", 
       "id": "dianshijia", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js", 
       "settings": [
         {
           "items": [
@@ -211,9 +211,9 @@
           "desc": "极速版提现金额，默认30，前提是绑定支付方式"
         }
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/kuaishou.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/kuaishou.js", 
       "id": "kuaishou", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/kuaishou.js", 
       "name": "快手极速版", 
       "icons": [
         "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/kuaishou.png", 
@@ -228,9 +228,9 @@
         "telecom_sign",
         "telecom_act"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/telecomSky.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/telecomSky.js", 
       "id": "chinatelecomEnquiry", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomSky.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/telecomSky.js", 
       "settings": [
         {
           "id": "Mon", 
@@ -251,9 +251,9 @@
       "keys": [
         "sy_cookie_dj"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/jddj.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/jddj.js", 
       "id": "jddj", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/jddj.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/jddj.js", 
       "name": "京东到家", 
       "icons": [
         "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/jddj.png", 
@@ -267,9 +267,9 @@
         "signature_lkyl",
         "cookie_lkyl"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/lkyl.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/lkyl.js", 
       "id": "lkyl", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/lkyl.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/lkyl.js", 
       "name": "来客有礼", 
       "icons": [
         "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/lkyl.png", 
@@ -282,9 +282,9 @@
         "jukan_body", 
         "jukan_name"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/jukan.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/jukan.js", 
       "id": "jukan", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/jukan.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/jukan.js", 
       "settings": [
         {
           "id": "jukan_out", 
@@ -340,9 +340,9 @@
       "keys": [
         "sign_mydigit"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/mydigit.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/mydigit.js", 
       "id": "mydigit", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/mydigit.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/mydigit.js", 
       "name": "数码之家", 
       "icons": [
         "https://cdn.jsdelivr.net/gh/Orz-3/mini@master/Alpha/mydigit.png", 
@@ -356,9 +356,9 @@
         "bdspeed",
         "cash_baidu"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/baiduspeed.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/baiduspeed.js", 
       "id": "baidu_speed", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/baiduspeed.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/baiduspeed.js", 
       "settings": [
         {
           "items": [
@@ -422,9 +422,9 @@
         "prize_txnews",
         "txnews_id"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/txnews.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/txnews.js", 
       "id": "txnews", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js", 
       "settings": [
         {
           "id": "notifynum", 
@@ -451,9 +451,9 @@
     {
       "author": "@sunert", 
       "keys": [ ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/tvpreview.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/tvpreview.js", 
       "id": "translate", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/translate.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/translate.js", 
       "settings": [
         {
           "id": "word", 
@@ -475,9 +475,9 @@
       "keys": [
         "c"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/tvpreview.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/tvpreview.js", 
       "id": "TVlist", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/tvpreview.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/tvpreview.js", 
       "settings": [
         {
           "id": "c", 
@@ -503,9 +503,9 @@
         "hour_desc", 
         "index_desc"
       ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/moji.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/moji.js", 
       "id": "moji", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/moji.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/moji.js", 
       "settings": [
         {
           "id": "city", 
@@ -567,9 +567,9 @@
     {
       "author": "@sunert", 
       "keys": [ ], 
-      "repo": "https://github.com/Sunert/Scripts/blob/master/Task/trainquery.js", 
+      "repo": "https://github.com/Sunert/Script/blob/master/Task/trainquery.js", 
       "id": "trainquery", 
-      "script": "https://raw.githubusercontent.com/Sunert/Scripts/master/Task/trainquery.js", 
+      "script": "https://raw.githubusercontent.com/Sunert/Script/master/Task/trainquery.js", 
       "settings": [
         {
           "items": [
