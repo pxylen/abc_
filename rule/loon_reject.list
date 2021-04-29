@@ -229,3 +229,25 @@ DOMAIN-SUFFIX,store.iqiyi.com
 DOMAIN-SUFFIX,iqiyi.kim
 DOMAIN-SUFFIX,iqiyi.pub
 DOMAIN-SUFFIX,iqiyi.space
+
+
+# > 新浪微博
+DOMAIN-suffix, wbpctips.mobile.sina.cn
+DOMAIN-suffix, wbclick.mobile.sina.cn
+DOMAIN-suffix, wbapp.mobile.sina.cn
+DOMAIN-suffix, wb.gtimg.com
+DOMAIN-suffix, wapwbclick.mobile.sina.cn
+DOMAIN-suffix, weibocdn.com, DIRECT
+DOMAIN-suffix, weibo.com, DIRECT
+DOMAIN-suffix, zymo.mps.weibo.com
+DOMAIN-suffix, weibomingzi.com
+DOMAIN-suffix, sdkapp.uve.weibo.com
+DOMAIN-suffix, s.alitui.weibo.com
+DOMAIN-suffix, promote.biz.weibo.cn
+DOMAIN-suffix, gw6.push.mcp.weibo.cn
+DOMAIN-suffix, gw5.push.mcp.weibo.cn
+DOMAIN-suffix, game.weibo.com
+DOMAIN-suffix, game.weibo.cn
+DOMAIN-suffix, biz.weibo.com
+DOMAIN-suffix, alitui.weibo.com
+DOMAIN-suffix, adimg.uve.weibo.com
