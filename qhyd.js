@@ -1,6 +1,6 @@
 /*
 软件名称:千禾阅读 微信扫描二维码打开
-更新时间：2021-04-28 @肥皂
+更新时间：2021-04-29 @肥皂
 脚本说明：千禾阅读自动阅读
 脚本为自动完成千禾阅读的阅读任务
 
@@ -15,7 +15,8 @@
 4.15修复个人信息显示不全
 4.17修复千禾官方加密导致阅读任务无法领取的问题
 阅读任务重写无法抓包的问题。自己更换一下新的重写和mitm
-
+4.28修复千禾的加密
+4.29千禾再次修改了加密方式，并更改了域名。mitm请换新的
 扫描二维码打开:https://ae01.alicdn.com/kf/U0c6b7cea29354290b97a747f1133c1cfm.jpg
 
 或复制链接到微信打开 https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx6048923d456554e8&redirect_uri=https%3A%2F%2Fwww.qliang2.com%2F%23%2Fauthorize&response_type=code&scope=snsapi_userinfo&state=eyJudW0iOiA0NjgsICJhcHBfaWQiOiBudWxsLCAidXNlcl9pZCI6IDMxMTE5OTI4fQ%3D%3D%23wechat_redirect
