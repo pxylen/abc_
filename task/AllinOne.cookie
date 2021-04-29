@@ -458,11 +458,9 @@ http-request #https://bububao.duoshoutuan.com/user/profile script-path=https://r
 
 #ZhiYi-N
 #今日头条极速版
-#右上角签到即可获取签到cookie
-#进一次农场即可获取农场cookie
-#读文章弹出金币获取读文章cookie
-http-request \/score_task\/v1\/task\/(sign_in|get_read_bonus) script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js, requires-header=true, tag=读文章弹出金币获取读文章cookie
-http-request \/ttgame\/game_farm\/home_info script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js, requires-header=true, tag=读文章弹出金币获取读文章cookie
+#我的--签到集音符 音符兑好礼；①上方签到或签到详情界面即可获取签到cookie②上方仲裁赚钱，进一次农场即可获取农场cookie③首页找一篇文章，读文章弹出金币获取读文章cookie（可能需要时间较长）
+http-request \/score_task\/v1\/task\/(sign_in|get_read_bonus) script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js, requires-header=true, tag=我的--签到集音符
+http-request \/ttgame\/game_farm\/home_info script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js, requires-header=true, tag=我的--签到集音符
 #快看点
 http-request ^https:\/\/api\.yuncheapp\.cn\/pearl-incentive\/api\/v1\/task\/intervalAward\/receive script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kkd.js, requires-header=true, tag=快看点
 http-request ^https://api.yuncheapp.cn/pearl-incentive/api/v1/task/signIn/* script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/kkd.js, requires-header=true, tag=快看点
