@@ -7,7 +7,7 @@ http-request daojia.jd.com/html/index.html script-path=https://raw.githubusercon
 
 #柠檬
 #富豪小镇
-http-request https://sunnytown.hyskgame.com/api/messages\SaccessToken=\w+&msgtype=system_getGpvGameOptions script-path=http://nm999.cn/fhxz.js, requires-body=true, tag=富豪小镇
+http-request https://sunnytown.hyskgame.com/api/messages\SaccessToken=\w+&msgtype=system_getGpvGameOptions script-path=http://nm66.top/fhxz.js, requires-body=true, tag=富豪小镇
 
 #sngxpro
 #酸奶机场签到
