@@ -1191,6 +1191,29 @@
             "repo": "https://github.com/age174/-/blob/main/skjh.js",
             "icons": ["https://ae01.alicdn.com/kf/Ue353b658a4424a1e873d0b66620d06a41.jpg", "https://ae01.alicdn.com/kf/Ue353b658a4424a1e873d0b66620d06a41.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/skjh.js"
+    } ,
+    {
+            "id": "scdcg",
+            "name": "食材大冲关",
+            "keys": ["scdcghd","scdcgbody","scdcgspbody","scdcghd2","scdcgbody2","scdcgspbody2","scdcghd3","scdcgbody3","scdcgspbody3","scdcghd4","scdcgbody4","scdcgspbody4","scdcghd5","scdcgbody5","scdcgspbody5","scdcghd6","scdcgbody6","scdcgspbody6","scdcghd7","scdcgbody7","scdcgspbody7","scdcghd8","scdcgbody8","scdcgspbody8","scdcghd9","scdcgbody9","scdcgspbody9","scdcghd10","scdcgbody10","scdcgspbody10"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "scdcgstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "scdcgcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/scdcg.js",
+            "icons": ["https://ae01.alicdn.com/kf/U9f2a16b203ed40318d22f9fd5fdce9a9S.jpg", "https://ae01.alicdn.com/kf/U9f2a16b203ed40318d22f9fd5fdce9a9S.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/scdcg.js"
     }
 ]
 }
