@@ -11,8 +11,6 @@
 1-扫码微信登录，注册后点击【我的】点击右上角【我的江湖】进入,账号管理填入支付宝账号，返回点击悬赏任务，赏金任务，领取初入江湖任务包。
 2-观看视频。倒计时结束获得数据。
 
-邀请码: 1048173
-
 下载地址:https://www.shikeshijie.com/index/share/index/code/1048173
 二维码地址:https://ae01.alicdn.com/kf/Ucd1b90e4cf794252874d023a7c7318a37.jpg
 
@@ -30,7 +28,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 圈X配置如下，其他软件自行测试
 [task_local]
 #食客江湖
-10 0 * * * https://raw.githubusercontent.com/age174/-/main/skjh.js, tag=食客江湖, img-url=https://ae01.alicdn.com/kf/Ue353b658a4424a1e873d0b66620d06a41.jpg, enabled=true
+10 9-23 * * * https://raw.githubusercontent.com/age174/-/main/skjh.js, tag=食客江湖, img-url=https://ae01.alicdn.com/kf/Ue353b658a4424a1e873d0b66620d06a41.jpg, enabled=true
 
 [rewrite_local]
 #食客江湖阅读
@@ -68,7 +66,7 @@ let jltx = ($.getval('jltx') || '0.3');//提现金额
           skjhhd = skjhhdArr[i];
           $.index = i + 1;
           console.log(`\n开始【食客江湖${$.index}】`)
-    for(i=0;i<5;i++){
+    for(let y=0;y<5;y++){
     await skjhqp();
     await skjhxx();
     await $.wait(3000)
