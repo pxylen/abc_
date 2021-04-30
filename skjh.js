@@ -11,8 +11,9 @@
 1-扫码微信登录，注册后点击【我的】点击右上角【我的江湖】进入,账号管理填入支付宝账号，返回点击悬赏任务，赏金任务，领取初入江湖任务包。
 2-观看视频。倒计时结束获得数据。
 
-下载地址:https://www.shikeshijie.com/index/share/index/code/1048173
-二维码地址:https://ae01.alicdn.com/kf/Ucd1b90e4cf794252874d023a7c7318a37.jpg
+下载地址:https://www.shikeshijie.com/index/share/index/code/1048977
+
+邀请码: 1048977
 
 
 本脚本以学习为主
