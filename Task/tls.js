@@ -16,6 +16,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 4.24.21 去除ck触发机制
 4.25.15 修复加餐判定，优化逻辑
 4.26.13 修复答题判定，调整为8个助力位
+5.1.15 修复自动答题
 
 ⚠️   ck只有几个小时的有效期，不要关闭ck重写    
 建议每天12点进入小程序获取ck，点击我的奖品也可以获取ck， 手动运行一次或者定时 7 27,47 12 * * *
@@ -50,7 +51,7 @@ http-request https:\/\/xw\.mengniu\.cn\/grass\/Api\/TelunsuHandler\.ashx\?method
 
 */
 
-GXRZ = '4.26.13 修复答题判定，调整为8个助力位'
+GXRZ = '5.1.15 修复自动答题'
 const $ = Env("特仑苏");
 $.idx = ($.idx = ($.getval('tlsSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -549,15 +550,30 @@ async function all() {
                 tlsbody = ``
                 await task();
 
+
+
+
+
                 if ($.Getanswer.result.ispaly == 0 && $.Getanswer.result.isopen == 1) {
 
-                    K = `提交答题🚩`;
-                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddanswerOrder`
-                    tlsbody = encodeURIComponent(tlsbodys).replace(/%3D/g, '=').replace(/%26/g, '&')
+
+                    K = `执行操作🚩`;
+                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
+                    tlsbody = `ClickInfo=%E9%99%90%E6%97%B6%E9%97%AF%E5%85%B3%E5%BC%80%E5%90%AF%E9%A1%B5-%E5%87%86%E5%A4%87%E5%A5%BD%E4%BA%86&ClickType=2&OpenType=2`
+                    await task();
+
 
                     DD = RT(35000, 40000)
                     console.log(`随机延迟${DD/1000}秒`)
                     await $.wait(DD)
+                    K = `执行操作🚩`;
+                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddClick`
+                    tlsbody = `ClickInfo=%E9%99%90%E6%97%B6%E9%97%AF%E5%85%B3%E7%AD%94%E9%A2%98%E9%A1%B5-%E6%8F%90%E4%BA%A4&ClickType=2&OpenType=2`
+                    await task();
+
+                    K = `提交答题🚩`;
+                    tlsurl = `https://xw.mengniu.cn/grass/Api/TelunsuHandler.ashx?method=AddanswerOrder`
+                    tlsbody = encodeURIComponent(tlsbodys).replace(/%3D/g, '=').replace(/%26/g, '&')
                     await task();
 
                 }
@@ -897,19 +913,21 @@ function task() {
                                     $.message += `【周末答题】：未开始\n`;
 
                                 } else if ($.Getanswer.result.ispaly == 0) {
-                                    DTA = $.Getanswer.result.answerlist.find(item => item.id == 1).answer_right;
-                                    DTB = $.Getanswer.result.answerlist.find(item => item.id == 2).answer_right;
-                                    DTC = $.Getanswer.result.answerlist.find(item => item.id == 3).answer_right;
-                                    DTD = $.Getanswer.result.answerlist.find(item => item.id == 4).answer_right;
-                                    DTE = $.Getanswer.result.answerlist.find(item => item.id == 5).answer_right;
-                                    DTF = $.Getanswer.result.answerlist.find(item => item.id == 6).answer_right;
-                                    DTG = $.Getanswer.result.answerlist.find(item => item.id == 7).answer_right;
-                                    DTH = $.Getanswer.result.answerlist.find(item => item.id == 8).answer_right;
-                                    DTI = $.Getanswer.result.answerlist.find(item => item.id == 9).answer_right;
-                                    DTJ = $.Getanswer.result.answerlist.find(item => item.id == 10).answer_right;
+                                    DT = ($.Getanswer.result.times[0].id - 1) * 10
+
+                                    DTA = $.Getanswer.result.answerlist.find(item => item.id == DT + 1);
+                                    DTB = $.Getanswer.result.answerlist.find(item => item.id == DT + 2);
+                                    DTC = $.Getanswer.result.answerlist.find(item => item.id == DT + 3);
+                                    DTD = $.Getanswer.result.answerlist.find(item => item.id == DT + 4);
+                                    DTE = $.Getanswer.result.answerlist.find(item => item.id == DT + 5);
+                                    DTF = $.Getanswer.result.answerlist.find(item => item.id == DT + 6);
+                                    DTG = $.Getanswer.result.answerlist.find(item => item.id == DT + 7);
+                                    DTH = $.Getanswer.result.answerlist.find(item => item.id == DT + 8);
+                                    DTI = $.Getanswer.result.answerlist.find(item => item.id == DT + 9);
+                                    DTJ = $.Getanswer.result.answerlist.find(item => item.id == DT + 10);
                                     FF = RT(25, 35)
 
-                                    tlsbodys = `answerList=[{"question_id":1,"question_answer":"${DTA}","time_interval":""},{"question_id":2,"question_answer":"${DTB}","time_interval":""},{"question_id":3,"question_answer":"${DTC}","time_interval":""},{"question_id":4,"question_answer":"${DTD}","time_interval":""},{"question_id":5,"question_answer":"${DTE}","time_interval":""},{"question_id":6,"question_answer":"${DTF}","time_interval":""},{"question_id":7,"question_answer":"${DTG}","time_interval":""},{"question_id":8,"question_answer":"${DTH}","time_interval":""},{"question_id":9,"question_answer":"${DTI}","time_interval":""},{"question_id":10,"question_answer":"${DTJ}","time_interval":""}]&alltime=${FF}`
+                                    tlsbodys = `answerList=[{"question_id":${DTA.id},"question_answer":"${DTA.answer_right}","time_interval":""},{"question_id":${DTB.id},"question_answer":"${DTB.answer_right}","time_interval":""},{"question_id":${DTC.id},"question_answer":"${DTC.answer_right}","time_interval":""},{"question_id":${DTD.id},"question_answer":"${DTD.answer_right}","time_interval":""},{"question_id":${DTE.id},"question_answer":"${DTE.answer_right}","time_interval":""},{"question_id":${DTF.id},"question_answer":"${DTF.answer_right}","time_interval":""},{"question_id":${DTG.id},"question_answer":"${DTG.answer_right}","time_interval":""},{"question_id":${DTH.id},"question_answer":"${DTH.answer_right}","time_interval":""},{"question_id":${DTI.id},"question_answer":"${DTI.answer_right}","time_interval":""},{"question_id":${DTJ.id},"question_answer":"${DTJ.answer_right}","time_interval":""}]&alltime=${FF}`
 
                                     console.log(`周末答题：开始进行答题\n`)
                                     $.message += `【周末答题】：开始进行答题\n`;
