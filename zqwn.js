@@ -1,13 +1,13 @@
 /*
 软件名称:最强蜗牛 复制链接下载
-更新时间：2021-03-30 @肥皂
+更新时间：2021-04-30 @肥皂
 脚本说明：最强蜗牛自动任务
 脚本为自动完成最强蜗牛的日常任务
-每日固定收益0.5元，十元提现
+每日固定收益0.5元，十元提现(已改为50提现。挂着就行。够了有弹窗提示)
 
 注册下载链接 邀请码: 0c9bd6  下载地址：http://wn.xingguozuliao.com/app/index/qudao.html?uid=MzAwMjIy
 
-或扫码下载 https://ae01.alicdn.com/kf/U3db2f09c03ec438cba2b89deb9c1b53f8.jpg
+或扫码下载 https://ae01.alicdn.com/kf/Uc89f978c775b4461a930d6ab9300c23f3.jpg
 
 本脚本以学习为主！
 使用方法:打开最强蜗牛，首页我的获取用户数据
@@ -118,7 +118,7 @@ let url = {
         if(result.code == 1){
 uid=zqwnbody.match(/uid=(.*?)&/)[1]
 tid=zqwnbody.match(/yhtk=(.*?)&/)[1]
-if(result.msg.jifenbl >= 1000){
+if(result.msg.jifenbl >= 5000){
 $.msg('最强蜗牛','','最强蜗牛当前积分已满足提现要求，请去手动提现')
 }
         console.log(`\n【最强蜗牛】获取用户信息成功\n当前用户名:${result.msg.usernc}\n当前余额:${result.msg.yuebl}\n当前积分:${result.msg.jifenbl}`)
