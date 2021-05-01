@@ -35,7 +35,7 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 10 9 * * * https://raw.githubusercontent.com/age174/-/main/tyg.js, tag=淘优购, img-url=https://ae01.alicdn.com/kf/Ud9336913fc5140ae886b06fccf9b90a3y.jpg, enabled=true
 
 [rewrite_local]
-#淘优购阅读
+#淘优购
 https://shop.taoyougou.cc/api/ url script-request-header https://raw.githubusercontent.com/age174/-/main/tyg.js
 
 #loon
