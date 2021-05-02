@@ -2,8 +2,8 @@
 
 hostname = daojia.jd.com, draw.jdfcloud.com, me-api.jd.com
 
-https:\/\/daojia\.jd\.com\/client\?_jdrandom=\d{13}&functionId=%2Fsignin url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/jddj.js
+https:\/\/daojia\.jd\.com\/client\?_jdrandom=\d{13}&functionId=%2Fsignin url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/jddj.js
 
-https:\/\/draw\.jdfcloud\.com\/\/api\/bean\/square\/silverBean\/task\/get\? url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/lkyl.js
+https:\/\/draw\.jdfcloud\.com\/\/api\/bean\/square\/silverBean\/task\/get\? url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/lkyl.js
 
 ^https:\/\/me-api\.jd\.com\/user_new\/info\/GetJDUserInfoUnion url script-request-header https://jdsharedresourcescdn.azureedge.net/jdresource/JD_extra_cookie.js  

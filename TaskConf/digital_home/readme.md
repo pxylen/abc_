@@ -11,24 +11,24 @@ by Macsuny
 ~~~~~~~~~~~~~~~~
 Surge 4.0 :
 [Script]
-数码之家 = type=cron,cronexp=35 5 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/mydigit.js,script-update-interval=0
+数码之家 = type=cron,cronexp=35 5 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/mydigit.js,script-update-interval=0
 
 # 数码之家 Cookie.
-数码之家 = type=http-request,pattern=https:\/\/www\.mydigit\.cn\/plugin\.php\?id=k_misign:sign&operation=qiandao,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/mydigit.js
+数码之家 = type=http-request,pattern=https:\/\/www\.mydigit\.cn\/plugin\.php\?id=k_misign:sign&operation=qiandao,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/mydigit.js
 ~~~~~~~~~~~~~~~~
 Loon 2.1.0+
 [Script]
-cron "04 00 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/mydigit.js, enabled=true, tag=数码之家
+cron "04 00 * * *" script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/mydigit.js, enabled=true, tag=数码之家
 
-http-request https:\/\/www\.mydigit\.cn\/plugin\.php\?id=k_misign:sign&operation=qiandao script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/mydigit.js
+http-request https:\/\/www\.mydigit\.cn\/plugin\.php\?id=k_misign:sign&operation=qiandao script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/mydigit.js
 -----------------
 
 QX 1.0. 7+ :
 [task_local]
-0 9 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/mydigit.js
+0 9 * * * https://raw.githubusercontent.com/Sunert/Script/master/Task/mydigit.js
 
 [rewrite_local]
-https:\/\/www\.mydigit\.cn\/plugin\.php\?id=k_misign:sign&operation=qiandao url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/mydigit.js
+https:\/\/www\.mydigit\.cn\/plugin\.php\?id=k_misign:sign&operation=qiandao url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/mydigit.js
 ~~~~~~~~~~~~~~~~
 [MITM]
 hostname = www.mydigit.cn

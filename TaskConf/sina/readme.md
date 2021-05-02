@@ -11,62 +11,62 @@
 hostname = api.weibo.cn, m.weibo.cn
  ```
 #### Surge:
-* [模块地址](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/sina/surge.sgmodule)
+* [模块地址](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/sina/surge.sgmodule)
 
  ```
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/sina/surge.sgmodule
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/sina/surge.sgmodule
  ```
  * 本地重写
  
  ```
 [Script]
-微博&钱包签到 = type=cron,cronexp=35 5 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js,script-update-interval=0
+微博&钱包签到 = type=cron,cronexp=35 5 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js,script-update-interval=0
 
 # 获取微博 Cookie.
-微博签到 = type=http-request,pattern=https:\/\/api\.weibo\.cn\/\d\/users\/show,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js
-微博签到 = type=http-request,pattern=https:\/\/api\.weibo\.cn\/2\/logservice\/service,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js
+微博签到 = type=http-request,pattern=https:\/\/api\.weibo\.cn\/\d\/users\/show,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js
+微博签到 = type=http-request,pattern=https:\/\/api\.weibo\.cn\/2\/logservice\/service,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js
 ```
 #### Shadowrocket(Cron配置): 
 
 ```
 [Script]
-新浪微博 = type=cron,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js,cronexpr="35 5 0 * * *",timeout=20,enable=true
+新浪微博 = type=cron,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js,cronexpr="35 5 0 * * *",timeout=20,enable=true
 ```
 ####  Loon:
 
-* [插件地址](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/sina/loon.plugin)
+* [插件地址](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/sina/loon.plugin)
 
  ```
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/sina/loon.plugin
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/sina/loon.plugin
  ```
 * 本地重写
   
  ```
 [Script]
-cron "4 0 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js, enabled=true, tag=新浪微博
+cron "4 0 * * *" script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js, enabled=true, tag=新浪微博
 
-http-request https:\/\/api\.weibo\.cn\/\d\/users\/show script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js, enabled=true, tag=新浪微博
-http-request https:\/\/api\.weibo\.cn\/2\/logservice\/service script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js, enabled=true, tag=新浪微博
+http-request https:\/\/api\.weibo\.cn\/\d\/users\/show script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js, enabled=true, tag=新浪微博
+http-request https:\/\/api\.weibo\.cn\/2\/logservice\/service script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js, enabled=true, tag=新浪微博
 ```
 #### Quantumult X:
-   * [远程重写配置](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/sina/qx_rewite.txt)
+   * [远程重写配置](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/sina/qx_rewite.txt)
    
 ```
 [rewrite_remote]
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/sina/qx_rewite.txt
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/sina/qx_rewite.txt
 ```
    * 本地重写配置
    
 ```
 [rewrite_local]
-https:\/\/api\.weibo\.cn\/\d\/users\/show url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js
-https:\/\/api\.weibo\.cn\/2\/logservice\/service url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js
+https:\/\/api\.weibo\.cn\/\d\/users\/show url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js
+https:\/\/api\.weibo\.cn\/2\/logservice\/service url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js
 ```
    * 本地任务配置
    
 ```
 [task_local]
-1 0 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js, tag=新浪微博
+1 0 * * * https://raw.githubusercontent.com/Sunert/Script/master/Task/weibo.js, tag=新浪微博
 ```
 ###  获取Cookie方法
  1. 打开微博App，获取签到Cookie，获取后请注释或禁用Cookie

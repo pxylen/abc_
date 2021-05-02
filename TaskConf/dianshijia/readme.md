@@ -9,65 +9,65 @@
 ### IOS配置教程
  
 #### Surge:
-* [模块地址](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/dianshijia/surge.sgmodule)
+* [模块地址](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/dianshijia/surge.sgmodule)
 
  ```
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/dianshijia/surge.sgmodule
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/dianshijia/surge.sgmodule
  ```
  * 本地重写
  
  ```
 [Script]
 
-电视家 = type=cron,cronexp=1 7,12,20 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js,script-update-interval=0
+电视家 = type=cron,cronexp=1 7,12,20 * * *,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js,script-update-interval=0
 
-电视家 = type=http-request,pattern=http:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/sign\/signin,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js
+电视家 = type=http-request,pattern=http:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/sign\/signin,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js
 
-电视家 = type=http-request,pattern=http:\/\/api\.gaoqingdianshi\.com\/api\/v2\/cash\/withdrawal,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js
+电视家 = type=http-request,pattern=http:\/\/api\.gaoqingdianshi\.com\/api\/v2\/cash\/withdrawal,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js
 ```
 #### Shadowrocket(Cron配置): 
 
 ```
 [Script]
-电视家 = type=cron,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js,cronexpr="1 7,12,20 * * *",timeout=20,enable=true
+电视家 = type=cron,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js,cronexpr="1 7,12,20 * * *",timeout=20,enable=true
 ```
 ####  Loon:
 
-* [插件地址](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/dianshijia/loon.plugin)
+* [插件地址](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/dianshijia/loon.plugin)
 
  ```
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/dianshijia/loon.plugin
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/dianshijia/loon.plugin
  ```
 * 本地重写
   
  ```
 [Script]
-cron "1 7,12,20 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js, tag=电视家
+cron "1 7,12,20 * * *" script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js, tag=电视家
 
-http-request http:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/sign\/signin script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js, timeout=10, tag=电视家
+http-request http:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/sign\/signin script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js, timeout=10, tag=电视家
 
-http-request http:\/\/api\.gaoqingdianshi\.com\/api\/v2\/cash\/withdrawal script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js, timeout=10, tag=电视家
+http-request http:\/\/api\.gaoqingdianshi\.com\/api\/v2\/cash\/withdrawal script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js, timeout=10, tag=电视家
 ```
 #### Quantumult X:
-   * [远程重写配置](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/dianshijia/qx_rewite.txt)
+   * [远程重写配置](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/dianshijia/qx_rewite.txt)
    
 ```
 [rewrite_remote]
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/dianshijia/qx_rewite.txt
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/dianshijia/qx_rewite.txt
 ```
    * 本地重写配置
    
 ```
 [rewrite_local]
-http:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/sign\/signin url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js
+http:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/sign\/signin url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js
 
-http:\/\/api\.gaoqingdianshi\.com\/api\/v2\/cash\/withdrawal url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js
+http:\/\/api\.gaoqingdianshi\.com\/api\/v2\/cash\/withdrawal url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js
 ```
    * 本地任务配置
    
 ```
 [task_local]
-1 7,12,20 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/dianshijia.js
+1 7,12,20 * * * https://raw.githubusercontent.com/Sunert/Script/master/Task/dianshijia.js
 ```
 ###  获取Cookie方法
 

@@ -4,7 +4,7 @@
 
  # <center> 快手视频签到使用说明 </center>
 
- [跳转至底部](#注意事项)  ----  [回到主页](https://github.com/Sunert/Scripts)
+ [跳转至底部](#注意事项)  ----  [回到主页](https://github.com/Sunert/Script)
 
 ### IOS配置教程
  ```
@@ -12,62 +12,62 @@
 hostname = nebula.kuaishou.com, activity.m.kuaishou.com
  ```
 #### Surge:
-* [模块地址](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/kuaishou/surge.sgmodule)
+* [模块地址](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/kuaishou/surge.sgmodule)
 
  ```
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/kuaishou/surge.sgmodule
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/kuaishou/surge.sgmodule
  ```
  * 本地重写
  
  ```
 [Script]
-快手视频 = type=cron,cronexp=35 5 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js,script-update-interval=0
+快手视频 = type=cron,cronexp=35 5 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/kuaishou.js,script-update-interval=0
 
 # 获取快手视频 Cookie.
 快手正式版 = type=http-request,pattern=https:\/\/activity\.m\.kuaishou\.com\/rest\/wd\/taskCenter\/\w+\/module\/list,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js
-快手极速版 = type=http-request,pattern=https:\/\/nebula\.kuaishou\.com\/nebula\/task\/earning\?,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js
+快手极速版 = type=http-request,pattern=https:\/\/nebula\.kuaishou\.com\/nebula\/task\/earning\?,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/kuaishou.js
 ```
 #### Shadowrocket(Cron配置): 
 
 ```
 [Script]
-快手视频 = type=cron,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js,cronexpr="35 5 0 * * *",timeout=20,enable=true
+快手视频 = type=cron,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/kuaishou.js,cronexpr="35 5 0 * * *",timeout=20,enable=true
 ```
 ####  Loon:
 
-* [插件地址](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/kuaishou/loon.plugin)
+* [插件地址](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/kuaishou/loon.plugin)
 
  ```
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/kuaishou/loon.plugin
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/kuaishou/loon.plugin
  ```
 * 本地重写
   
  ```
 [Script]
-cron "4 0 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js, enabled=true, tag=快手视频
+cron "4 0 * * *" script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/kuaishou.js, enabled=true, tag=快手视频
 
-http-request https:\/\/activity\.m\.kuaishou\.com\/rest\/wd\/taskCenter\/\w+\/module\/list script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js, enabled=true, tag=快手视频正式版
-http-request https:\/\/nebula\.kuaishou\.com\/nebula\/task\/earning\? script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js, enabled=true, tag=快手视频极速版
+http-request https:\/\/activity\.m\.kuaishou\.com\/rest\/wd\/taskCenter\/\w+\/module\/list script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/kuaishou.js, enabled=true, tag=快手视频正式版
+http-request https:\/\/nebula\.kuaishou\.com\/nebula\/task\/earning\? script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/kuaishou.js, enabled=true, tag=快手视频极速版
 ```
 #### Quantumult X:
-   * [远程重写配置](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/kuaishou/qx_rewite.txt)
+   * [远程重写配置](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/kuaishou/qx_rewite.txt)
    
 ```
 [rewrite_remote]
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/kuaishou/qx_rewite.txt
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/kuaishou/qx_rewite.txt
 ```
    * 本地重写配置
    
 ```
 [rewrite_local]
-https:\/\/activity\.m\.kuaishou\.com\/rest\/wd\/taskCenter\/\w+\/module\/list url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js
-https:\/\/nebula\.kuaishou\.com\/nebula\/task\/earning\? url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js
+https:\/\/activity\.m\.kuaishou\.com\/rest\/wd\/taskCenter\/\w+\/module\/list url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/kuaishou.js
+https:\/\/nebula\.kuaishou\.com\/nebula\/task\/earning\? url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/kuaishou.js
 ```
    * 本地任务配置
    
 ```
 [task_local]
-1 0 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/kuaishou.js, tag=快手视频
+1 0 * * * https://raw.githubusercontent.com/Sunert/Script/master/Task/kuaishou.js, tag=快手视频
 ```
 ###  获取Cookie方法
   1. 点击视频页悬浮红包，或者进入设置，点击"积分兑好礼"即可

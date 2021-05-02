@@ -1,11 +1,11 @@
 # 电信重写配置
 
 [Script]
-cron "1 20 3 * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomSky.js, tag=电信天翼套餐
+cron "1 20 3 * *" script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/telecomSky.js, tag=电信天翼套餐
 
-http-request https:\/\/mkt\.21cn\.com\/mkt\/api\/user\/queryActivityInfo\.do\?activityId=\d+ script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomSky.js, timeout=10, tag=电信天翼套餐
+http-request https:\/\/mkt\.21cn\.com\/mkt\/api\/user\/queryActivityInfo\.do\?activityId=\d+ script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/telecomSky.js, timeout=10, tag=电信天翼套餐
 
-http-request ^https?:\/\/e\.189\.cn\/store\/user\/package_detail\.do script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomSky.js, timeout=10, tag=电信天翼套餐
+http-request ^https?:\/\/e\.189\.cn\/store\/user\/package_detail\.do script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/telecomSky.js, timeout=10, tag=电信天翼套餐
 
 [MITM]
 hostname = mkt.21cn.com, e.189.cn

@@ -12,61 +12,61 @@
 hostname = api.inews.qq.com
  ```
 #### Surge:
-* [模块地址](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/txnews/surge.sgmodule)
+* [模块地址](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/txnews/surge.sgmodule)
 
  ```
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/txnews/surge.sgmodule
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/txnews/surge.sgmodule
  ```
  * 本地重写
  
  ```
 [Script]
-腾讯新闻 = type=cron,cronexp=0 8 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js,script-update-interval=0
+腾讯新闻 = type=cron,cronexp=0 8 0 * * *,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js,script-update-interval=0
 
-腾讯新闻 = type=http-request,pattern=https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\?,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, requires-body=true
+腾讯新闻 = type=http-request,pattern=https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\?,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js, requires-body=true
 
-腾讯新闻 = type=http-request,pattern=https:\/\/api\.prize\.qq\.com\/v1\/newsapp\/chajianrp\/sendprize,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js
+腾讯新闻 = type=http-request,pattern=https:\/\/api\.prize\.qq\.com\/v1\/newsapp\/chajianrp\/sendprize,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js
 ```
 #### Shadowrocket(Cron配置): 
 
 ```
 [Script]
-腾讯新闻 = type=cron,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js,cronexpr="1 */6 * * *",timeout=20,enable=true
+腾讯新闻 = type=cron,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js,cronexpr="1 */6 * * *",timeout=20,enable=true
 ```
 ####  Loon:
 
-* [插件地址](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/txnews/loon.plugin)
+* [插件地址](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/txnews/loon.plugin)
 
  ```
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/txnews/loon.plugin
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/txnews/loon.plugin
  ```
 * 本地重写
   
  ```
 [Script]
-cron "04 00 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, enabled=true, tag=腾讯新闻
-http-request https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\? script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, requires-body=true, enabled=true, tag=腾讯新闻
-腾讯新闻 = type=http-request,pattern=https:\/\/api\.prize\.qq\.com\/v1\/newsapp\/chajianrp\/sendprize,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js
+cron "04 00 * * *" script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js, enabled=true, tag=腾讯新闻
+http-request https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\? script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js, requires-body=true, enabled=true, tag=腾讯新闻
+腾讯新闻 = type=http-request,pattern=https:\/\/api\.prize\.qq\.com\/v1\/newsapp\/chajianrp\/sendprize,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js
 ```
 #### Quantumult X:
-   * [远程重写配置](https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/txnews/qx_rewite.txt)
+   * [远程重写配置](https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/txnews/qx_rewite.txt)
    
 ```
 [rewrite_remote]
-https://raw.githubusercontent.com/Sunert/Scripts/master/TaskConf/txnews/qx_rewite.txt
+https://raw.githubusercontent.com/Sunert/Script/master/TaskConf/txnews/qx_rewite.txt
 ```
    * 本地重写配置
    
 ```
 [rewrite_local]
-https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\? url script-request-body https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js
-https:\/\/api\.prize\.qq\.com\/v1\/newsapp\/chajianrp\/sendprize url script-request-header https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js
+https:\/\/api\.inews\.qq\.com\/event\/v1\/user\/event\/report\? url script-request-body https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js
+https:\/\/api\.prize\.qq\.com\/v1\/newsapp\/chajianrp\/sendprize url script-request-header https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js
 ```
    * 本地任务配置
    
 ```
 [task_local]
-1 */5 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, tag=腾讯新闻
+1 */5 * * * https://raw.githubusercontent.com/Sunert/Script/master/Task/txnews.js, tag=腾讯新闻
 ```
 ###  获取Cookie方法
 

@@ -1,27 +1,27 @@
 # 中青看点获取Cookie，自动阅读已注释需单独添加
 
 [Script]
-cron "04 00 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, timeout=180, enabled=true, tag=中青看点
+cron "04 00 * * *" script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth.js, timeout=180, enabled=true, tag=中青看点
 
-cron "20 00 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth_gain.js, timeout=1800, enabled=true, tag=中青看点看看赚
+cron "20 00 * * *" script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth_gain.js, timeout=1800, enabled=true, tag=中青看点看看赚
 
-#cron "20 0-12/3 * * *" script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js, timeout=3600, enabled=true, tag=中青看点阅读
+#cron "20 0-12/3 * * *" script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/Youth_Read.js, timeout=3600, enabled=true, tag=中青看点阅读
 
-http-request https:\/\/kd\.youth\.cn\/WebApi\/NewTaskIos\/getTaskList script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, enabled=true, tag=中青看点
+http-request https:\/\/kd\.youth\.cn\/WebApi\/NewTaskIos\/getTaskList script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth.js, enabled=true, tag=中青看点
 
-http-request https:\/\/ios\.baertt\.com\/v5\/article\/info\/get\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js,  enabled=true, tag=中青看点
+http-request https:\/\/ios\.baertt\.com\/v5\/article\/info\/get\.json script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth.js,  enabled=true, tag=中青看点
 
-http-request https:\/\/ios\.baertt\.com\/v5\/user\/stay\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, requires-body=true, enabled=true, tag=中青看点
+http-request https:\/\/ios\.baertt\.com\/v5\/user\/stay\.json script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth.js, requires-body=true, enabled=true, tag=中青看点
 
-http-request https:\/\/ios\.baertt\.com\/v5\/\w+\/withdraw\d?\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, requires-body=true, enabled=true, tag=中青看点
+http-request https:\/\/ios\.baertt\.com\/v5\/\w+\/withdraw\d?\.json script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth.js, requires-body=true, enabled=true, tag=中青看点
 
-http-request https:\/\/ios\.baertt\.com\/v5\/task\/browse_start\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth_gain.js, requires-body=true, enabled=true, tag=中青看点浏览赚
+http-request https:\/\/ios\.baertt\.com\/v5\/task\/browse_start\.json script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth_gain.js, requires-body=true, enabled=true, tag=中青看点浏览赚
 
-http-request https:\/\/ios\.baertt\.com\/v5\/Nameless\/adlickstart\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth_gain.js, requires-body=true, enabled=true, tag=中青看点看看赚
+http-request https:\/\/ios\.baertt\.com\/v5\/Nameless\/adlickstart\.json script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/youth_gain.js, requires-body=true, enabled=true, tag=中青看点看看赚
 
-# http-request https:\/\/ios\.baertt\.com\/v5\/article\/info\/get\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js,  enabled=true, tag=中青看点阅读
+# http-request https:\/\/ios\.baertt\.com\/v5\/article\/info\/get\.json script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/Youth_Read.js,  enabled=true, tag=中青看点阅读
 
-# http-request https:\/\/ios\.baertt\.com\/v5\/user\/stay\.json script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js, requires-body=true, enabled=true, tag=中青看点阅读
+# http-request https:\/\/ios\.baertt\.com\/v5\/user\/stay\.json script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/Youth_Read.js, requires-body=true, enabled=true, tag=中青看点阅读
 
 [MITM]
 hostname = ios.baertt.com, kd.youth.cn

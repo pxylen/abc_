@@ -3,10 +3,10 @@
 #!system=ios
 
 [Script]
-电信天翼套餐 = type=cron,cronexp=5 10 3 * *,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomSky.js,script-update-interval=0
+电信天翼套餐 = type=cron,cronexp=5 10 3 * *,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/telecomSky.js,script-update-interval=0
 
-电信天翼套餐 = type=http-request,pattern=https:\/\/mkt\.21cn\.com\/mkt\/api\/user\/queryActivityInfo\.do\?activityId=\d+,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomSky.js
-电信天翼套餐 = type=http-request,pattern=^https?:\/\/e\.189\.cn\/store\/user\/package_detail\.do,script-path=https://raw.githubusercontent.com/Sunert/Scripts/master/Task/telecomSky.js
+电信天翼套餐 = type=http-request,pattern=https:\/\/mkt\.21cn\.com\/mkt\/api\/user\/queryActivityInfo\.do\?activityId=\d+,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/telecomSky.js
+电信天翼套餐 = type=http-request,pattern=^https?:\/\/e\.189\.cn\/store\/user\/package_detail\.do,script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/telecomSky.js
 
 [MITM]
 hostname = %APPEND% e.189.cn, mkt.21cn.com
