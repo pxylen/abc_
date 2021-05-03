@@ -12,7 +12,9 @@
 回来再点一次红包~领取能量珠，不用做任务，不用看广告。
 
 
-注册下载链接:https://h5.dgh666.xyz/register?p=41490466
+注册链接:https://h5.dgh666.xyz/register?p=41490466
+
+大公会下载地址:https://tap.dierna.com/iMJn
 
 兑换中心下载地址:https://tap.dierna.com/ENvy(交易变现)
 
