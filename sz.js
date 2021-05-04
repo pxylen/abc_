@@ -113,7 +113,7 @@ let url = {
 }
 if(result.code == 400){
         console.log('闪挣小视频回执:失败🚫 '+result.message)}
-await $.wait(3000);
+await $.wait(60000);
 await szyx()
         } catch (e) {
           //$.logErr(e, resp);
@@ -138,6 +138,7 @@ let url = {
     const result = JSON.parse(data)
         if(result.code == 0){
         console.log('闪挣小游戏回执:成功🌝 '+result.message)
+        await $.wait(60000);
 }
 if(result.code == 400){
         console.log('闪挣小游戏回执:失败🚫 '+result.mesaage)}
