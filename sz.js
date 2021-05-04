@@ -103,7 +103,7 @@ function szsp(timeout = 0) {
 let url = {
         url : 'https://api-9f9d25.sz365.cn/api/virtual_currency_v2/reward',
         headers : JSON.parse($.getdata('szhd')),
-        body : `type=203`,}
+        body : `type=205`,}
       $.post(url, async (err, resp, data) => {
         try {
            
@@ -131,7 +131,7 @@ function szyx(timeout = 0) {
 let url = {
         url : 'https://api-9f9d25.sz365.cn/api/virtual_currency_v2/reward',
         headers : JSON.parse($.getdata('szhd')),
-        body :  `type=205`,}
+        body :  `type=203`,}
       $.post(url, async (err, resp, data) => {
         try {
            
