@@ -227,68 +227,68 @@ if ($.isNode() && process.env.TLS_tlsHEADER) {
         hyidG = $.getval("tlshyidG") || '98910';
     }
     if ("tlshyidH") {
-        hyidG = $.getval("tlshyidH") || '114043';
+        hyidH = $.getval("tlshyidH") || '114043';
     }
 
     if ("tlshyidI") {
-        hyidA = $.getval("tlshyidI") || '114736';
+        hyidI = $.getval("tlshyidI") || '114736';
     }
     if ("tlshyidJ") {
-        hyidB = $.getval("tlshyidJ") || '112833';
+        hyidJ = $.getval("tlshyidJ") || '112833';
     }
     if ("tlshyidK") {
-        hyidC = $.getval("tlshyidK") || '113329';
+        hyidK = $.getval("tlshyidK") || '113329';
     }
 
 
 
     if ("tlshyidL") {
-        hyidD = $.getval("tlshyidL") || '109172';
+        hyidL = $.getval("tlshyidL") || '109172';
     }
     if ("tlshyidM") {
-        hyidE = $.getval("tlshyidM") || '364156';
+        hyidM = $.getval("tlshyidM") || '364156';
     }
     if ("tlshyidN") {
-        hyidF = $.getval("tlshyidN") || '147562';
+        hyidN = $.getval("tlshyidN") || '147562';
     }
     if ("tlshyidO") {
-        hyidG = $.getval("tlshyidO") || '161866';
+        hyidO = $.getval("tlshyidO") || '161866';
     }
     if ("tlshyidP") {
-        hyidG = $.getval("tlshyidP") || '109012';
+        hyidP = $.getval("tlshyidP") || '109012';
     }
 
     if ("tlshyidQ") {
-        hyidA = $.getval("tlshyidQ") || '109377';
+        hyidQ = $.getval("tlshyidQ") || '109377';
     }
     if ("tlshyidR") {
-        hyidB = $.getval("tlshyidR") || '397595';
+        hyidR = $.getval("tlshyidR") || '397595';
     }
     if ("tlshyidS") {
-        hyidC = $.getval("tlshyidS") || '114992';
+        hyidS = $.getval("tlshyidS") || '114992';
     }
     if ("tlshyidT") {
-        hyidD = $.getval("tlshyidT") || '117104';
+        hyidT = $.getval("tlshyidT") || '117104';
     }
     if ("tlshyidU") {
-        hyidE = $.getval("tlshyidU") || '122263';
+        hyidU = $.getval("tlshyidU") || '122263';
     }
 
 
     if ("tlshyidV") {
-        hyidF = $.getval("tlshyidV") || '141969';
+        hyidV = $.getval("tlshyidV") || '141969';
     }
     if ("tlshyidW") {
-        hyidG = $.getval("tlshyidW") || '110059';
+        hyidW = $.getval("tlshyidW") || '110059';
     }
     if ("tlshyidX") {
-        hyidG = $.getval("tlshyidX") || '117972';
+        hyidX = $.getval("tlshyidX") || '117972';
     }
     if ("tlshyidY") {
-        hyidG = $.getval("tlshyidY") || '206817';
+        hyidY = $.getval("tlshyidY") || '206817';
     }
     if ("tlshyidZ") {
-        hyidG = $.getval("tlshyidZ") || '109566';
+        hyidZ = $.getval("tlshyidZ") || '109566';
     }
 
 
@@ -742,7 +742,7 @@ async function all() {
 
 
                 for (let i = 1; i < HYID.length; i++) {
-                     HYIDS = i + 1
+                    HYIDS = i + 1
 
                     if ($.AddShare.errcode == 1 && $.AddShare.errmsg.indexOf("每天只能助力一次") < 0) {
 
