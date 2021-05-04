@@ -586,54 +586,6 @@
                     "val": "114043",
                     "type": "number",
                     "desc": "默认内置，自行修改"
-                }, {
-                    "id": "tlshyidA",
-                    "name": "好友A",
-                    "val": "64926",
-                    "type": "number",
-                    "desc": "默认内置，自行修改"
-                }, {
-                    "id": "tlshyidB",
-                    "name": "好友B",
-                    "val": "70405",
-                    "type": "number",
-                    "desc": "默认内置，自行修改"
-                }, {
-                    "id": "tlshyidC",
-                    "name": "好友C",
-                    "val": "73261",
-                    "type": "number",
-                    "desc": "默认内置，自行修改"
-                }, {
-                    "id": "tlshyidD",
-                    "name": "好友D",
-                    "val": "98692",
-                    "type": "number",
-                    "desc": "默认内置，自行修改"
-                }, {
-                    "id": "tlshyidE",
-                    "name": "好友E",
-                    "val": "98825",
-                    "type": "number",
-                    "desc": "默认内置，自行修改"
-                }, {
-                    "id": "tlshyidF",
-                    "name": "好友F",
-                    "val": "98860",
-                    "type": "number",
-                    "desc": "默认内置，自行修改"
-                }, {
-                    "id": "tlshyidG",
-                    "name": "好友G",
-                    "val": "98910",
-                    "type": "number",
-                    "desc": "默认内置，自行修改"
-                }, {
-                    "id": "tlshyidH",
-                    "name": "好友H",
-                    "val": "114043",
-                    "type": "number",
-                    "desc": "默认内置，自行修改"
                 },
                 {
                     "id": "tlshyidI",
