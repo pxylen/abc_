@@ -1174,7 +1174,7 @@ function GetCookie() {
         }
     }
     //获取时长
-    if ($request && $request.url.indexOf("reading") >= 0 && $request.url.indexOf("upload") >= 0 && $request.body.indexOf("_public=skinId") >= 0) {
+    if ($request && $request.url.indexOf("reading") >= 0 && $request.url.indexOf("upload") >= 0 ) {
         const shuqiscbodyVal = $request.body;
         sqsc = shuqiscbodyVal.split('readingLen%22%3A')[1].split('%7D')[0]
         userid = shuqiscbodyVal.split('user_id=')[1]
