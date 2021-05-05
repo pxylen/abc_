@@ -120,17 +120,8 @@
             "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-header1.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/shuqi.png, tag=书旗小说获取header, enabled=false",
             "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-header1.txt, tag=书旗小说获取header, update-interval=86400, opt-parser=false, enabled=false",
         }, {
-            "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-header2.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/shuqi.png, tag=书旗小说获取极速版书城header, enabled=false",
-            "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-header2.txt, tag=书旗小说获取极速版书城header, update-interval=86400, opt-parser=false, enabled=false",
-        }, {
             "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-body1.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/shuqi.png, tag=书旗小说获取body, enabled=false",
             "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-body1.txt, tag=书旗小说获取body, update-interval=86400, opt-parser=false, enabled=false",
-        }, {
-            "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-body2.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/shuqi.png, tag=书旗小说获取任务-收益body, enabled=false",
-            "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-body2.txt, tag=书旗小说获取任务-收益body, update-interval=86400, opt-parser=false, enabled=false",
-        }, {
-            "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-body3.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/shuqi.png, tag=书旗小说获取时长body, enabled=false",
-            "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shuqi-body3.txt, tag=书旗小说获取时长body, update-interval=86400, opt-parser=false, enabled=false",
         },
 		
 		
