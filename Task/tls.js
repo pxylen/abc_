@@ -18,6 +18,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 4.26.13 修复答题判定，调整为8个助力位
 5.1.15 修复自动答题
 5.4.12 调整为26个助力位
+5.5.13 添加助力详情
 
 ⚠️   ck只有几个小时的有效期，不要关闭ck重写    
 建议每天12点进入小程序获取ck，点击我的奖品也可以获取ck， 手动运行一次或者定时 7 27,47 12 * * *
@@ -52,7 +53,7 @@ http-request https:\/\/xw\.mengniu\.cn\/grass\/Api\/TelunsuHandler\.ashx\?method
 
 */
 
-GXRZ = '5.4.12 调整为26个助力位'
+GXRZ = '5.5.13 添加助力详情'
 const $ = Env("特仑苏");
 $.idx = ($.idx = ($.getval('tlsSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -61,7 +62,7 @@ const logs = 0; // 0关闭日志，1原始日志，2格式化，3格式化且解
 notifyttt = 1; // 0为关闭外部推送，1为12 23 点外部推送
 notifyInterval = 1; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 Minutes = 10; // 通知 默认控制在0-10分内
-$.message = '', COOKIES_SPLIT = '', CASH = '', HYIDS = '', hyidA = 0, hyidB = 0, hyidC = 0, hyidD = 0, hyidE = 0, hyidF = 0, hyidG = 0, hyidH = 0, hyidI = 0, hyidJ = 0, hyidK = 0, hyidL = 0, hyidM = 0, hyidN = 0, hyidO = 0, hyidP = 0, hyidQ = 0, hyidR = 0, hyidS = 0, hyidT = 0, hyidU = 0, hyidV = 0, hyidW = 0, hyidX = 0, hyidY = 0, hyidZ = 0, XH = 0, XYZ = 100, Length = 0, ddtime = '';
+$.message = '', COOKIES_SPLIT = '', CASH = '', HYIDS = 1, hyidA = 0, hyidB = 0, hyidC = 0, hyidD = 0, hyidE = 0, hyidF = 0, hyidG = 0, hyidH = 0, hyidI = 0, hyidJ = 0, hyidK = 0, hyidL = 0, hyidM = 0, hyidN = 0, hyidO = 0, hyidP = 0, hyidQ = 0, hyidR = 0, hyidS = 0, hyidT = 0, hyidU = 0, hyidV = 0, hyidW = 0, hyidX = 0, hyidY = 0, hyidZ = 0, XH = 0, XYZ = 100, Length = 0, ddtime = '';
 
 tlsbodys = ``;
 let tlsurlArr = [];
@@ -966,8 +967,8 @@ function task() {
                             if (logs) $.log(`${O}, ${K}: ${format(data)}`);
                             $.AddShare = JSON.parse(data);
                             if ($.AddShare.errcode == 0) {
-                                console.log(`助力好友：助力成功\n`)
-                                $.message += `【助力好友】：助力成功\n`;
+                                console.log(`助力好友：助力成功 ${HYIDS} ${$.FriendInfo.result.nickname} id ${$.FriendInfo.result.id}\n`)
+                                $.message += `【助力好友】：助力成功 ${HYIDS} ${$.FriendInfo.result.nickname} id ${$.FriendInfo.result.id}\n`;
                             } else {
                                 console.log(`助力好友：${$.AddShare.errmsg}\n`)
 
