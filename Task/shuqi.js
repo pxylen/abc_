@@ -25,6 +25,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 4.6.11 单刷时长请设置SC为1，增加通知以及推送控制
 4.6.19 精确时长ck判定，10秒以上才获取
 5.5.21 修复循环获取ck，优化重写
+5.6.21 优化循环获取ck，增加账号数显示且自动修改
 
 ⚠️ 时间设置    7 0-23 * * *    每小时 1次就行 
 ⚠️一共2个软件  普通版15条 极速版11条  共      26个ck  👉 26条 Secrets 
@@ -110,7 +111,7 @@ hostname =*.shuqireader.com,
 书旗小说获取header = type=https:\/\/.+\.shuqireader\.com\/*,requires-body=1,max-size=0,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js
 
 */
-GXRZ = '5.5.21 修复循环获取ck，优化重写'
+GXRZ = '5.6.21 优化循环获取ck，增加账号数显示且自动修改'
 const $ = Env("书旗小说");
 $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -723,7 +724,32 @@ if (!COOKIE.datas && !COOKIE.shuqiuserurlVal && !COOKIE.shuqiuserurl) {
     } else Length = shuqiuserurlArr.length
 }
 
+
+function RedCookie() {
+
+    if (XH == 1 && $request && $request.url.indexOf("config") >= 0) {
+        op = 1
+        while (true) {
+            op++;
+            if ($.getdata(`shuqiuserurl${op}`) == '') {
+                $.setdata(`${op-1}`, `shuqiSuffix`);
+
+                $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : '';
+
+                $.log(
+                    `[${$.name + $.idx}] 当前书旗账号数量为${op-1}✅: 成功🎉`
+                );
+                $.msg($.name + $.idx, `当前书旗账号数量为${op-1}: 成功🎉`, ``);
+                break;
+            }
+        }
+    }
+}
+
 function GetCookie() {
+
+
+
     //获取极速版书城
     if ($request && $request.url.indexOf("activity-center-web") >= 0 && $request.url.indexOf("reward") >= 0) {
         const shuqijsbookurlVal = $request.url;
@@ -1174,7 +1200,7 @@ function GetCookie() {
         }
     }
     //获取时长
-    if ($request && $request.url.indexOf("reading") >= 0 && $request.url.indexOf("upload") >= 0 ) {
+    if ($request && $request.url.indexOf("reading") >= 0 && $request.url.indexOf("upload") >= 0 && $request.body.indexOf("_public=skinId") >= 0) {
         const shuqiscbodyVal = $request.body;
         sqsc = shuqiscbodyVal.split('readingLen%22%3A')[1].split('%7D')[0]
         userid = shuqiscbodyVal.split('user_id=')[1]
@@ -2023,6 +2049,7 @@ function RT(X, Y) {
 }
 let isGetCookie = typeof $request !== 'undefined'
 if (isGetCookie) {
+    RedCookie()
     GetCookie()
     $.done();
 } else {
@@ -2206,6 +2233,8 @@ async function all() {
             shuqijssprwurlVal = shuqijssprwurlArr[i];
         }
         O = (`${$.name + (i + 1)}🔔`);
+
+
         if (shuqiuserurlVal && shuqiuserurlVal != '') {
             await console.log(`-------------------------\n\n🔔开始运行【${$.name+(i+1)}】`)
             let cookie_is_live = await user(); //用户名
