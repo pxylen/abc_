@@ -26,6 +26,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 4.6.19 精确时长ck判定，10秒以上才获取
 5.5.21 修复循环获取ck，优化重写
 5.6.21 优化循环获取ck，增加账号数显示且自动修改
+5.7.16 适配新版本收益ck获取，新版本收益只需要body即可
 
 ⚠️ 时间设置    7 0-23 * * *    每小时 1次就行 
 ⚠️一共2个软件  普通版15条 极速版11条  共      26个ck  👉 26条 Secrets 
@@ -111,7 +112,7 @@ hostname =*.shuqireader.com,
 书旗小说获取header = type=https:\/\/.+\.shuqireader\.com\/*,requires-body=1,max-size=0,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js
 
 */
-GXRZ = '5.6.21 优化循环获取ck，增加账号数显示且自动修改'
+GXRZ = '5.7.16 适配新版本收益ck获取，新版本收益只需要body即可'
 const $ = Env("书旗小说");
 $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -1093,6 +1094,55 @@ function GetCookie() {
                     `[${$.name + $.idx}] 获取收益shuqisyurlVal✅: 成功,shuqisyurlVal: ${shuqisyurlVal}`
                 );
                 $.msg($.name + $.idx, `获取收益shuqisyurlVal: 成功🎉`, ``);
+                $.setdata(shuqisybodyVal, "shuqisybody" + $.idx);
+                $.log(
+                    `[${$.name + $.idx}] 获取收益shuqisybodyVal✅: 成功,shuqisybodyVal: ${shuqisybodyVal}`
+                );
+                $.msg($.name + $.idx, `获取收益shuqisybodyVal: 成功🎉`, ``);
+                $.done();
+            };
+        }
+    }
+
+    //获取收益
+    if ($request && $request.url.indexOf("load") >= 0 && $request.url.indexOf("resource") >= 0 && $request.body.indexOf("skinColor=") >= 0 && $request.body.indexOf("appVer=4") >= 0 && $request.body.indexOf("isNewUser") >= 0 && $request.body.indexOf("ShuqiVipEntry") >= 0 && $request.body.indexOf("ShuqiTab") < 0 && $request.body.indexOf("caid=") < 0 && $request.body.indexOf("ShuqiShelfCard") < 0 && $request.body.indexOf("ShuqiIOSUpdateInfo") < 0) {
+        const shuqisybodyVal = $request.body
+        userid = shuqisybodyVal.split('user_id=')[1].split('&')[0]
+        if (shuqisybodyVal) {
+            if (XH == 1) {
+                cookie()
+
+                function cookie() {
+                    bodys = $.getdata('shuqisybody' + $.idx);
+
+                    if (bodys) {
+                        userids = bodys.split('user_id=')[1].split('&')[0]
+                        if (userids != userid) {
+                            if ($.idx == '') {
+                                $.idx = 2
+                                cookie()
+                            } else {
+                                $.idx = Number($.idx) + 1
+                                cookie()
+                            }
+                        } else {
+                            $.setdata(shuqisybodyVal, "shuqisybody" + $.idx);
+                            $.log(
+                                `[${$.name + $.idx}] 获取收益shuqisybodyVal✅: 成功,shuqisybodyVal: ${shuqisybodyVal}`
+                            );
+                            $.msg($.name + $.idx, `获取收益shuqisybodyVal: 成功🎉`, ``);
+                            $.done();
+                        };
+                    } else {
+                        $.setdata(shuqisybodyVal, "shuqisybody" + $.idx);
+                        $.log(
+                            `[${$.name + $.idx}] 获取收益shuqisybodyVal✅: 成功,shuqisybodyVal: ${shuqisybodyVal}`
+                        );
+                        $.msg($.name + $.idx, `获取收益shuqisybodyVal: 成功🎉`, ``);
+                        $.done();
+                    };
+                }
+            } else {
                 $.setdata(shuqisybodyVal, "shuqisybody" + $.idx);
                 $.log(
                     `[${$.name + $.idx}] 获取收益shuqisybodyVal✅: 成功,shuqisybodyVal: ${shuqisybodyVal}`
@@ -2245,7 +2295,11 @@ async function all() {
         //await $.wait(1000)
         if (shuqisyurlVal && shuqisybodyVal && shuqisyurlVal != '' && shuqisybodyVal != '') {
             await coin() //用户收益
+        } else if (shuqisybodyVal && shuqisybodyVal != '') {
+            await coins() //用户收益
         }
+
+
         await readlist(); //阅读时长
 
         if (SC == 0) {
@@ -2383,6 +2437,35 @@ function coin(timeout = 0) {
                     if ($.coin.status == 200) {
                         console.log(`用户收益：今日${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`);
                         $.message += `【用户收益】：今日${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`;
+                    }
+                } catch (e) {
+                    $.logErr(e, resp);
+                } finally {
+                    resolve()
+                }
+            })
+        }, timeout)
+    })
+}
+//用户收益
+function coins(timeout = 0) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            let url = {
+                url: `https://ocean.shuqireader.com/api/render/load/resource`,
+                headers: {
+                    'Content-Type': `application/x-www-form-urlencoded`,
+                    'Host': `ocean.shuqireader.com`,
+                },
+               body: shuqisybodyVal,
+            }
+            $.post(url, async (err, resp, data) => {
+                try {
+                    if (logs) $.log(`${O}, 用户收益🚩: ${decodeUnicode(data)}`);
+                    $.coins = JSON.parse(data);
+                    if ($.coins.status == 200) {
+                        console.log(`用户收益：今日${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`);
+                        $.message += `【用户收益】：今日${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`;
                     }
                 } catch (e) {
                     $.logErr(e, resp);
