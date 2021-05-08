@@ -27,6 +27,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 5.5.21 修复循环获取ck，优化重写
 5.6.21 优化循环获取ck，增加账号数显示且自动修改
 5.7.16 适配新版本收益ck获取，新版本收益只需要body即可
+5.8.22 增加提现提醒，默认关闭，自行打开
 
 ⚠️ 时间设置    7 0-23 * * *    每小时 1次就行 
 ⚠️一共2个软件  普通版15条 极速版11条  共      26个ck  👉 26条 Secrets 
@@ -112,7 +113,7 @@ hostname =*.shuqireader.com,
 书旗小说获取header = type=https:\/\/.+\.shuqireader\.com\/*,requires-body=1,max-size=0,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js
 
 */
-GXRZ = '5.7.16 适配新版本收益ck获取，新版本收益只需要body即可'
+GXRZ = '5.8.22 增加提现提醒，默认关闭，自行打开'
 const $ = Env("书旗小说");
 $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -121,7 +122,7 @@ const logs = 0; // 0为关闭日志，1为开启
 notifyttt = 1; // 0为关闭外部推送，1为12 23 点外部推送
 notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 Minutes = 10; // 通知 默认控制在0-10分内
-$.message = '', COOKIES_SPLIT = '', CASH = '', XH = 0, SC = 0, ddtime = '';
+$.message = '', COOKIES_SPLIT = '', CASH = '', XH = 0, TXTX = 0, SC = 0, ddtime = '';
 CZ = 10
 Length = 0
 let shuqiuserurlArr = [];
@@ -219,7 +220,7 @@ if ($.isNode() && COOKIE.shuqiuserurlVal && COOKIE.shuqiuserurlVal != '') {
 }
 
 if ($.isNode() && process.env.SQ_shuqiuserURL) {
-
+    TXTX = process.env.SQ_TXTX || "0";
     SC = process.env.SQ_SC || "0";
     notifyttt = process.env.SQ_notifyttt || "1";
     notifyInterval = process.env.SQ_notifyInterval || "2";
@@ -499,7 +500,7 @@ if (COOKIE && COOKIE.shuqiuserurlVal) {
 }
 if (COOKIE.datas && COOKIE.datas[0].val != '') {
 
-
+    TXTX = (COOKIE.settings.find(item => item.id === `shuqiTXTX`)).val || '0';
     notifyttt = (COOKIE.settings.find(item => item.id === `shuqinotifyttt`)).val || '1';
     notifyInterval = (COOKIE.settings.find(item => item.id === `shuqinotifyInterval`)).val || '2';
     Minutes = (COOKIE.settings.find(item => item.id === `shuqiMinutes`)).val || '10';
@@ -687,6 +688,9 @@ if (!COOKIE.datas && !COOKIE.shuqiuserurlVal && !COOKIE.shuqiuserurl) {
         }
         if ("shuqiSC") {
             SC = $.getval("shuqiSC") || '0';
+        }
+        if ("shuqiTXTX") {
+            TXTX = $.getval("shuqiTXTX") || '0';
         }
         let shuqiCount = ($.getval('shuqiCount') || '1') - 0;
         for (let i = 2; i <= shuqiCount; i++) {
@@ -2299,6 +2303,18 @@ async function all() {
             await coins() //用户收益
         }
 
+        if (TXTX > 0 && nowTimes.getHours() >= 8 && $.coin && DQYE >= TXTX) {
+            
+            console.log(O, `当前余额为${DQYE}元，速度提现，否则清0`)
+            $.msg(O, `当前余额为${DQYE}元，速度提现，否则清0`);
+
+            if ($.isNode()) {
+                notify.sendNotify(O, `当前余额为${DQYE}元，速度提现，否则清0`);
+
+            }
+
+        }
+
 
         await readlist(); //阅读时长
 
@@ -2435,6 +2451,7 @@ function coin(timeout = 0) {
                     if (logs) $.log(`${O}, 用户收益🚩: ${decodeUnicode(data)}`);
                     $.coin = JSON.parse(data);
                     if ($.coin.status == 200) {
+                        DQYE=$.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney
                         console.log(`用户收益：今日${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`);
                         $.message += `【用户收益】：今日${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`;
                     }
@@ -2457,7 +2474,7 @@ function coins(timeout = 0) {
                     'Content-Type': `application/x-www-form-urlencoded`,
                     'Host': `ocean.shuqireader.com`,
                 },
-               body: shuqisybodyVal,
+                body: shuqisybodyVal,
             }
             $.post(url, async (err, resp, data) => {
                 try {
