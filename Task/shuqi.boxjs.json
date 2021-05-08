@@ -108,7 +108,7 @@
             "shuqiuserurl98", "shuqisyurl98", "shuqisybody98", "shuqispbody98", "shuqiscbody98", "shuqiydbody98", "shuqiqdbody98", "shuqirwbody98", "shuqifxbody98", "shuqisprwurl98", "shuqijlbody98", "shuqisqjlbody98", "shuqicjyurl98", "shuqicjcsbody98", "shuqicjbody98", "shuqijsspbody98", "shuqijsydurl98", "shuqijsydbody98", "shuqijsqdbody98", "shuqijsqdspyurl98", "shuqijsqdspbody98", "shuqijsrwbody98", "shuqijsfxbody98", "shuqijsbookurl98", "shuqijsbookbody98", "shuqijssprwurl98",
             "shuqiuserurl99", "shuqisyurl99", "shuqisybody99", "shuqispbody99", "shuqiscbody99", "shuqiydbody99", "shuqiqdbody99", "shuqirwbody99", "shuqifxbody99", "shuqisprwurl99", "shuqijlbody99", "shuqisqjlbody99", "shuqicjyurl99", "shuqicjcsbody99", "shuqicjbody99", "shuqijsspbody99", "shuqijsydurl99", "shuqijsydbody99", "shuqijsqdbody99", "shuqijsqdspyurl99", "shuqijsqdspbody99", "shuqijsrwbody99", "shuqijsfxbody99", "shuqijsbookurl99", "shuqijsbookbody99", "shuqijssprwurl99",
             "shuqiuserurl100", "shuqisyurl100", "shuqisybody100", "shuqispbody100", "shuqiscbody100", "shuqiydbody100", "shuqiqdbody100", "shuqirwbody100", "shuqifxbody100", "shuqisprwurl100", "shuqijlbody100", "shuqisqjlbody100", "shuqicjyurl100", "shuqicjcsbody100", "shuqicjbody100", "shuqijsspbody100", "shuqijsydurl100", "shuqijsydbody100", "shuqijsqdbody100", "shuqijsqdspyurl100", "shuqijsqdspbody100", "shuqijsrwbody100", "shuqijsfxbody100", "shuqijsbookurl100", "shuqijsbookbody100", "shuqijssprwurl100"
-],
+        ],
         "author": "@ziye",
         "settings": [{
             "id": "shuqiSuffix",
@@ -134,6 +134,12 @@
             "val": "0",
             "type": "number",
             "desc": "0关闭 1开启,默认关闭"
+        }, {
+            "id": "shuqiTXTX",
+            "name": "提现提醒",
+            "val": "0",
+            "type": "number",
+            "desc": "0关闭 设置余额大于多少提醒"
         }, {
             "id": "shuqinotifyttt",
             "name": "推送控制",
