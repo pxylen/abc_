@@ -708,6 +708,12 @@
                     "type": "number",
                     "desc": "0不执行 可设置0-100,默认百分百"
                 }, {
+                    "id": "shuqiTXTX",
+                    "name": "提现提醒",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "0关闭 设置余额大于多少提醒"
+                }, {
                     "id": "tlsnotifyttt",
                     "name": "推送控制",
                     "val": "1",
