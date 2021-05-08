@@ -2304,12 +2304,13 @@ async function all() {
         }
 
         if (TXTX > 0 && nowTimes.getHours() >= 8 && $.coin && DQYE >= TXTX) {
-            
-            console.log(O, `当前余额为${DQYE}元，速度提现，否则清0`)
-            $.msg(O, `当前余额为${DQYE}元，速度提现，否则清0`);
+
+            console.log(O, `\n========== ${$.user.data.nickname} ==========\n当前余额为${DQYE}元，速度提现，否则清0`)
+            $.msg(O, `========== 【${$.user.data.nickname}】 ==========\n当前余额为${DQYE}元，速度提现，否则清0`);
+
 
             if ($.isNode()) {
-                notify.sendNotify(O, `当前余额为${DQYE}元，速度提现，否则清0`);
+                notify.sendNotify(O, `========== 【${$.user.data.nickname}】 ==========\n当前余额为${DQYE}元，速度提现，否则清0`);
 
             }
 
@@ -2451,7 +2452,7 @@ function coin(timeout = 0) {
                     if (logs) $.log(`${O}, 用户收益🚩: ${decodeUnicode(data)}`);
                     $.coin = JSON.parse(data);
                     if ($.coin.status == 200) {
-                        DQYE=$.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney
+                        DQYE = $.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney
                         console.log(`用户收益：今日${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`);
                         $.message += `【用户收益】：今日${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coin.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`;
                     }
