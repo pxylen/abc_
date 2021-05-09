@@ -28,6 +28,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 5.6.21 优化循环获取ck，增加账号数显示且自动修改
 5.7.16 适配新版本收益ck获取，新版本收益只需要body即可
 5.8.22 增加提现提醒，默认关闭，自行打开
+5.9.15 增加适配新版本时长
 
 ⚠️ 时间设置    7 0-23 * * *    每小时 1次就行 
 ⚠️一共2个软件  普通版15条 极速版11条  共      26个ck  👉 26条 Secrets 
@@ -113,7 +114,7 @@ hostname =*.shuqireader.com,
 书旗小说获取header = type=https:\/\/.+\.shuqireader\.com\/*,requires-body=1,max-size=0,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js
 
 */
-GXRZ = '5.8.22 增加提现提醒，默认关闭，自行打开'
+GXRZ = '5.9.15 增加适配新版本时长'
 const $ = Env("书旗小说");
 $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -1254,7 +1255,7 @@ function GetCookie() {
         }
     }
     //获取时长
-    if ($request && $request.url.indexOf("reading") >= 0 && $request.url.indexOf("upload") >= 0 ) {
+    if ($request && $request.url.indexOf("jcollection") >= 0 && $request.url.indexOf("reading") >= 0 && $request.url.indexOf("upload") >= 0) {
         const shuqiscbodyVal = $request.body;
         sqsc = shuqiscbodyVal.split('readingLen%22%3A')[1].split('%7D')[0]
         userid = shuqiscbodyVal.split('user_id=')[1]
@@ -2297,10 +2298,20 @@ async function all() {
             }
         }
         //await $.wait(1000)
-        if (shuqisyurlVal && shuqisybodyVal && shuqisyurlVal != '' && shuqisybodyVal != '') {
+
+
+
+        if (shuqisybodyVal && shuqisybodyVal != '') {
+
+            if (shuqisybodyVal.indexOf("appVer=4.4") >= 0) {
+                shuqisyurlVal=`https://ocean.shuqireader.com/api/render/load/resource`
+                shuqisyhost=`ocean.shuqireader.com`
+            } else {
+               
+                shuqisyhost = `render.shuqireader.com`
+            }
             await coin() //用户收益
-        } else if (shuqisybodyVal && shuqisybodyVal != '') {
-            await coins() //用户收益
+
         }
 
         if (TXTX > 0 && nowTimes.getHours() >= 8 && $.coin && DQYE >= TXTX) {
@@ -2443,7 +2454,7 @@ function coin(timeout = 0) {
                 url: shuqisyurlVal,
                 headers: {
                     'Content-Type': `application/x-www-form-urlencoded`,
-                    'Host': `render.shuqireader.com`,
+                    'Host': shuqisyhost,
                 },
                 body: shuqisybodyVal,
             }
@@ -2465,44 +2476,16 @@ function coin(timeout = 0) {
         }, timeout)
     })
 }
-//用户收益
-function coins(timeout = 0) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            let url = {
-                url: `https://ocean.shuqireader.com/api/render/load/resource`,
-                headers: {
-                    'Content-Type': `application/x-www-form-urlencoded`,
-                    'Host': `ocean.shuqireader.com`,
-                },
-                body: shuqisybodyVal,
-            }
-            $.post(url, async (err, resp, data) => {
-                try {
-                    if (logs) $.log(`${O}, 用户收益🚩: ${decodeUnicode(data)}`);
-                    $.coins = JSON.parse(data);
-                    if ($.coins.status == 200) {
-                        console.log(`用户收益：今日${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`);
-                        $.message += `【用户收益】：今日${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.todayWorthMoney}元，余额${$.coins.data.ShuqiVipEntry.userinfo.coinInfo.balanceWorthMoney}元\n`;
-                    }
-                } catch (e) {
-                    $.logErr(e, resp);
-                } finally {
-                    resolve()
-                }
-            })
-        }, timeout)
-    })
-}
+
 //上传时长
 function upload(timeout = 0) {
     return new Promise((resolve) => {
         setTimeout(() => {
             let url = {
-                url: `https://jcollection.shuqireader.com/collection/iosapi/reading/upload`,
+                url: shuqiscurl,
                 headers: {
                     'Content-Type': `application/x-www-form-urlencoded`,
-                    'Host': `jcollection.shuqireader.com`,
+                    'Host': shuqischost,
                 },
                 body: shuqiscbodyVal,
             }
@@ -2523,6 +2506,10 @@ function upload(timeout = 0) {
         }, timeout)
     })
 }
+
+
+
+
 //阅读奖励
 function reads(timeout = 0) {
     return new Promise((resolve) => {
@@ -2802,6 +2789,16 @@ function readlist(timeout = 0) {
                             timestamp = shuqiscbodyVal.split('timestamp=')[1].split('&user_id')[0] * 1000
                             sqsc = shuqiscbodyVal.split('readingLen%22%3A')[1].split('%7D')[0]
                             if (timestamp >= daytime() && $.readlist.data.readTime < 10) {
+                                if (shuqiscbodyVal.indexOf("appVer%253D4.3") >= 0) {
+                                    shuqiscurl = `https://jcollection.shuqireader.com/collection/iosapi/reading/upload`
+                                    shuqischost = `jcollection.shuqireader.com`
+
+                                } else {
+                                    shuqiscurl = `https://ocean.shuqireader.com/api/jcollection/collection/iosapi/reading/upload`
+                                    shuqischost = `ocean.shuqireader.com`
+
+                                }
+
                                 DD = RT(1000, 10000)
                                 console.log(`随机延迟${DD/1000}秒`)
                                 await $.wait(DD)
