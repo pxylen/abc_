@@ -1283,6 +1283,29 @@
             "repo": "https://github.com/age174/-/blob/main/fksl.js",
             "icons": ["https://ae01.alicdn.com/kf/U1d2f24494aa1460286360f8bb0e10210Y.jpg", "https://ae01.alicdn.com/kf/U1d2f24494aa1460286360f8bb0e10210Y.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/fksl.js"
+    } ,
+    {
+            "id": "csxdr",
+            "name": "超市小达人",
+            "keys": ["csxdrhd","csxdrbody","csxdrspbody", "csxdrhd2","csxdrbody2","csxdrspbody2","csxdrhd3","csxdrbody3","csxdrspbody3","csxdrhd4","csxdrbody4","csxdrspbody4","csxdrhd5","csxdrbody5","csxdrspbody5","csxdrhd6","csxdrbody6","csxdrspbody6","csxdrhd7","csxdrbody7","csxdrspbody7","csxdrhd8","csxdrbody8","csxdrspbody8","csxdrhd9","csxdrbody9","csxdrspbody9","csxdrhd10","csxdrbody10","csxdrspbody10"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "csxdrstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "csxdrcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/csxdr.js",
+            "icons": ["https://ae01.alicdn.com/kf/Udd9cb36174cf41a7a69e28a643a360a9a.jpg", "https://ae01.alicdn.com/kf/Udd9cb36174cf41a7a69e28a643a360a9a.jpg"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/csxdr.js"
     } 
 ]
 }
