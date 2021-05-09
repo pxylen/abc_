@@ -156,6 +156,16 @@
             "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-tls-ck.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/tls.png, tag=特仑苏获取ck, enabled=false",
             "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-tls-ck.txt, tag=特仑苏获取ck, update-interval=86400, opt-parser=false, enabled=false",
         },
+		
+		
+		
+		
+		{
+            "config": "11 11 * * * * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/shzx.js, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/shzx.png, tag=搜狐资讯, enabled=false",
+        }, {
+            "config": "0 0 0 1 1 * https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shzx-body.txt, img-url=https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@master\/Task\/shzx.png, tag=搜狐资讯获取body, enabled=false",
+            "addons": "https:\/\/cdn.jsdelivr.net\/gh\/ziye888\/JavaScript@main\/Task\/ziye-shzx-body.txt, tag=搜狐资讯获取body, update-interval=86400, opt-parser=false, enabled=false",
+        },
         
 		
 		
