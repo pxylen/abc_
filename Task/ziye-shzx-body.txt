@@ -1,0 +1,4 @@
+hostname =ss.sohu.com,
+//////////////////////////// 圈x
+//搜狐资讯获取ck
+https:\/\/ss\.sohu\.com\/api\/sign\/everyday\/get url script-request-body https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shzx.js
