@@ -1,0 +1,5 @@
+hostname =mgesq.api.mgtv.com,
+
+//////////////////////////// 圈x
+//小芒获取ck
+https:\/\/mgesq\.api\.mgtv\.com\/user\/center? url script-request-header https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/xm.js
