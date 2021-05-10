@@ -6,7 +6,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 圈X task订阅 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye-gallery.json
 转载请备注个名字，谢谢
 
-⚠️小芒    需要 微信 手机号   每天3次许愿
+⚠️小芒    需要 微信 手机号   无毛  每天3次许愿商品
 
 商店搜索 小芒
 或者点击 https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980  下载app
