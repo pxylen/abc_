@@ -15,13 +15,15 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 [@ZhiYi-N](https://github.com/ZhiYi-N/Private-Script) - ZhiYi-N
 
-[@CenBoMin](https://github.com/CenBoMin/GithubSync) - CenBoMin
-
 [@age174](https://github.com/age174/-) - age174
+
+[@CenBoMin](https://github.com/CenBoMin/GithubSync) - CenBoMin
 
 [@whyour](https://github.com/whyour/hundun) - 混沌
 
 [@Sunert](https://github.com/Sunert/Scripts) - Sunert
+
+[@monk-coder](https://github.com/monk-coder/dust) - monk-coder
 
 [@lxk0301](https://gitee.com/lxk0301/projects) - 狗东系列
 
