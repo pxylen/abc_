@@ -40,7 +40,7 @@ jobs:
       - name: '运行 【整点红包雨🧧】'
         run: |
           cd ~/TaskAction
-          node jd_live_redrain.js
+          node jd_super_redrain.js
 
 
 
