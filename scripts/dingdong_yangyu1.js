@@ -140,7 +140,6 @@ function fetchMyTask(){
     });
 }
 
-
 // 做任务
 function taskAchieve(taskCode){
     const options = {
@@ -196,6 +195,30 @@ function taskReward(userTaskLogId){
     })
 }
 
+function FreshCray(data){
+    if(!Object.keys(data).includes("crayResponseVo")){
+        return false;
+    }
+    const crv = data.crayResponseVo;
+    if(typeof(crv) != "object"){
+        return false;
+    }
+    const fields = ["crayGuide", "crayVo", "receiveStartTime", "feedStartTime", "feedEndTime", "feedToExchange"];
+    for (const field of fields) {
+        if(!Object.keys(crv).includes(field)){
+            return false;
+        }
+    }
+    if(crv.feedToExchange){
+        // 可能是兑换时间之类
+        return false;
+    }
+    const nowTs = (new Date()).getTime();
+    if(nowTs > crv.receiveStartTime && nowTs > crv.feedStartTime && nowTs < crv.feedEndTime){
+        return crv.crayGuide.isCompleted ? (Object.keys(crv.crayVo).includes("seedId") ? crv.crayVo : false) : false;
+    }
+    return false;
+}
 
 function fishpond() {
     $.log('正在获取鱼池信息…');
@@ -216,19 +239,25 @@ function fishpond() {
                 return resolve();
             }
             const data = response.data;
-            if(data.seeds[0].expPercent >= 100){
-                $.alert("去看看,鱼应该已经养活了", "userguide/detail");
-                return resolve();
+            const cray = FreshCray(data);
+            const pet = cray ? cray : data.seeds[0];
+            const petName = cray ? "小龙虾" : "鱼";
+            if(pet.expPercent >= 100){
+                $.alert(`去看看,${petName}应该已经养活了`, "userguide/detail");
+                if(!cray){
+                    return resolve();
+                }
+                // 龙虾完事继续养鱼
             }
             propsId = data.props[0].propsId;
             const amount = data.props[0].amount;
-            $.log(`当前饲料剩余:${amount}g,${data.seeds[0].msg}`);
+            $.log(`当前饲料剩余:${amount}g,${pet.msg}`);
             if(amount < 10){
                 $.log("饲料不够，明天再喂吧。");
                 return resolve();
             }
-            seedId = data.seeds[0].seedId;
-            $.log("准备开始喂鱼啦");
+            seedId = pet.seedId;
+            $.log(`准备开始喂${petName}啦`);
             resolve();
         })
     })
@@ -240,7 +269,7 @@ function propsFeed(i){
             url: `${DD_API_HOST}/props/feed?api_version=9.1.0&app_client_id=3&station_id=${station_id}&native_version=&latitude=30.272356&longitude=120.022035&gameId=1&propsId=${propsId}&seedId=${seedId}`,
             headers: initRequestHeaders()
         };
-        $.log(`第${i}次喂鱼`);
+        $.log(`第${i}次喂食`);
         $.request("GET", options, (error, response) => {
             if(error){
                 $.log(error);
