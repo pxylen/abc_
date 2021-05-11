@@ -713,10 +713,7 @@ http-request https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward
 http-request https://redbag.renyouwangluo.cn/api/redbag/normal script-path=https://raw.githubusercontent.com/age174/-/main/scdcg.js, requires-body=true, tag=食材大冲关红包
 #疯狂森林
 http-request ^http://yunshu.haoshi.co/index.php/index/wallet/index script-path=https://raw.githubusercontent.com/age174/-/main/fksl.js, requires-header=true, tag=疯狂森林
-#超市小达人视频
-http-request https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward_video/reward/ script-path=https://raw.githubusercontent.com/age174/-/main/csxdr.js, requires-body=true, tag=超市小达人视频
-#超市小达人红包
-http-request https://market.renyouwangluo.cn/api/redbag/normal script-path=https://raw.githubusercontent.com/age174/-/main/csxdr.js, requires-body=true, tag=超市小达人红包
+
 
 
 #cuttlefish(墨鱼手记)
