@@ -1,0 +1,31 @@
+{
+    "id": "ziye.jymapp.sub",
+    "name": "ziye 剪羊毛专用订阅",
+    "author": "@ZIYE",
+    "icon": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/ziye.png",
+    "repo": "https://github.com/ziye888",
+    "apps": [{
+        "id": "jymappsss",
+        "name": "剪羊毛APP",
+        "keys": [
+"jymhd", "jymbody", "jymjlhd", "jymjlbody","jymhd2", "jymbody2", "jymjlhd2", "jymjlbody2","jymhd3", "jymbody3","jymjlhd3", "jymjlbody3","jymhd4", "jymbody4", "jymjlhd4", "jymjlbody4","jymhd5", "jymbody5", "jymjlhd5", "jymjlbody5","jymhd6", "jymbody6", "jymjlhd6", "jymjlbody6","jymhd7", "jymbody7", "jymjlhd7", "jymjlbody7","jymhd8", "jymbody8", "jymjlhd8", "jymjlbody8","jymhd9", "jymbody9", "jymjlhd9", "jymjlbody9","jymhd10", "jymbody10","jymjlhd10", "jymjlbody10","jymhd11", "jymbody11", "jymjlhd11", "jymjlbody11","jymhd12", "jymbody12", "jymjlhd12", "jymjlbody12","jymhd13", "jymbody13", "jymjlhd13", "jymjlbody13","jymhd14", "jymbody14", "jymjlhd14", "jymjlbody14","jymhd15", "jymbody15", "jymjlhd15", "jymjlbody15","jymhd16", "jymbody16", "jymjlhd16", "jymjlbody16","jymhd17", "jymbody17", "jymjlhd17", "jymjlbody17","jymhd18", "jymbody18", "jymjlhd18", "jymjlbody18","jymhd19", "jymbody19", "jymjlhd19", "jymjlbody19","jymhd20", "jymbody20", "jymjlhd20", "jymjlbody20",
+        ],
+        "author": "@ziye",
+        "settings": [{
+            "id": "jymSuffix",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+        }, {
+            "id": "jymCount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+        }],
+        "repo": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/jym.js",
+        "icons": ["https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/jym.png", "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/jym.png"],
+        "script": "https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/jym.js"
+    }]
+}
