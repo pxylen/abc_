@@ -9,7 +9,7 @@
   ^https?://un\.m\.jd\.com/cgi-bin/app/appjmp url script-request-header NE.cookie.js
 
   复制 https://bean.m.jd.com/bean/signIndex.action 或 https://home.m.jd.com/myJd/newhome.action 地址到浏览器打开，登录后可自动获取Cookie，没成功就登录后再次访问下之前复制的地址
-  ^https?://api\.m\.jd\.com/client\.action\?functionId=(signBeanIndex|signBeanGroupStageIndex|trade_config) url script-request-header NE.cookie.js
+  ^https?://api\.m\.jd\.com/client\.action\?functionId=(signBean|trade_config) url script-request-header NE.cookie.js
 
 快手Cookie：
   hostname = nebula.kuaishou.com, *.gifshow.com, *.ksapisrv.com
@@ -90,11 +90,15 @@ function GetJDCookie(appName) {
   // 京东
   return new Promise(resolve => {
     try {
-      if ($request.headers) {
+      let ck = ''
+      if ($.isResponse && $response.headers) {
+        ck = $response.headers['Set-Cookie'] || ''
+      } else if ($request.headers) {
+        ck = $request.headers['Cookie'] || $request.headers['cookie'] || ''
+      }
+      if (ck) {
         let acObj = {};
-        // 提取ck数据
-        let ck = ($request.headers['Cookie'] || $request.headers['cookie'] || '').replace(/ /g, '');
-        let ckItems = ck.split(';').filter(s => /^(pt_key|pt_pin)=.+/.test(s)).sort();
+        let ckItems = ck.replace(/ /g, '').split(/[,;]/).filter(s => /^(pt_key|pt_pin)=.+/.test(s)).sort();
         if (ckItems.length == 2) {
           acObj.cookie = ckItems.join(';') + ';';
           acObj.userName = decodeURIComponent(acObj.cookie.match(/pt_pin=(.+?);/)[1]);
@@ -102,6 +106,8 @@ function GetJDCookie(appName) {
         // 无cookie数据进行提示，有ck数据，找到账号位进行存储
         if (!acObj.cookie) {
           $.msg($.name, appName, '获取失败，请检查命中的请求url是否正确');
+        } else if (acObj.userName.match(/^\*+$/)) {
+          // 未登录用户ck，跳过处理
         } else {
           const ckArr = [$.getdata('CookieJD'), $.getdata('CookieJD2')];
           const oldCks = $.getjson('CookiesJD', []);
