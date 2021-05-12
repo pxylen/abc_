@@ -6,7 +6,7 @@ name: jd_整点红包雨🧧
 on:
   workflow_dispatch:
   schedule:
-    - cron: '55,5 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   build:
