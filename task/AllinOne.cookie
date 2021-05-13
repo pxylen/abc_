@@ -6,7 +6,7 @@ http-request daojia.jd.com/html/index.html script-path=https://raw.githubusercon
 
 #ichenzhe
 #粉丝互动
-http-response ^https://lzkjdz\-isv\.isvjcloud\.com\/wxFansInterActionActivity\/activityContent script-path=https://share.r2ray.com/dust/i-chenzhe/jd_getFanslove.js,  tag=粉丝互动
+http-response ^https://lzkjdz\-isv\.isvjcloud\.com\/wxFansInterActionActivity\/activityContent script-path=https://ghproxy.com/https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_fanslove.js,  tag=粉丝互动
 
 #柠檬
 #富豪小镇
