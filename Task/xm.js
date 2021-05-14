@@ -280,8 +280,20 @@ if (isGetCookie) {
     $.done();
 } else {
     !(async () => {
-        await all();
-        await msgShow();
+
+        if (!xmurlArr || xmurlArr == '') {
+            $.msg(
+                $.name, time(Number(Date.now())) +
+                `⚠️未获取COOKIE\n请点击前往获取 https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980`,
+                'https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980', {
+                    "open-url": "https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980"
+                }
+            );
+            return;
+        } else {
+            await all();
+            await msgShow();
+        }
     })()
     .catch((e) => {
             $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -291,168 +303,124 @@ if (isGetCookie) {
         })
 }
 async function all() {
-    if (!xmurlArr || xmurlArr == '') {
-        $.msg(
-            O, time(Number(Date.now())) +
-            `⚠️未获取COOKIE\n请点击前往获取 https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980`,
-            'https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980', {
-                "open-url": "https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980"
+
+    for (let i = 0; i < xmurlArr.length; i++) {
+        xmurlVal = xmurlArr[i];
+        uuid = xmurlVal.split('uuid=')[1]
+        did = xmurlVal.split('did=')[1].split('&')[0]
+        ticket = xmurlVal.split('ticket=')[1].split('&')[0]
+        $.index = i + 1;
+        O = (`${$.name + $.index}🔔`);
+        $.isLogin = true;
+        if (xmurlVal && xmurlVal != '' && RT(1, 100) <= XYZ) {
+            console.log(`-----------------\n\n🔔开始运行【${$.name + $.index}】`)
+            K = `用户信息🚩`;
+            if (K == `用户信息🚩`) {
+                xmurl = xmurlVal
+                xmheader = {}
+                await taskget();
+                $.GetUserInfo = DATA
+                if ($.GetUserInfo.code == 200) {
+                    console.log(`\n${O}\n========== ${$.GetUserInfo.data.user_info.nickName} ==========\n用户ID：${$.GetUserInfo.data.user_info.uuid}\n`)
+                    $.message += `\n${O}\n========== 【${$.GetUserInfo.data.user_info.nickName}】 ==========\n【用户ID】：${$.GetUserInfo.data.user_info.uuid}\n`;
+                } else {
+                    $.isLogin = false; //cookie过期
+                    return
+                }
+                if (!$.isLogin) {
+                    $.msg(
+                        O, time(Number(Date.now())) +
+                        `⚠️COOKIE失效\n请点击前往获取 https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980`,
+                        'https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980', {
+                            "open-url": "https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980"
+                        }
+                    );
+                    if ($.isNode()) {
+                        await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效\n请点击前往获取https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980`);
+                    }
+                    continue
+                }
             }
-        );
-        return;
-    } else {
-        for (let i = 0; i < xmurlArr.length; i++) {
-            xmurlVal = xmurlArr[i];
-            uuid = xmurlVal.split('uuid=')[1]
-            did = xmurlVal.split('did=')[1].split('&')[0]
-            ticket = xmurlVal.split('ticket=')[1].split('&')[0]
-            $.index = i + 1;
-            O = (`${$.name + $.index}🔔`);
-            $.isLogin = true;
-            if (xmurlVal && xmurlVal != '' && RT(1, 100) <= XYZ) {
-                console.log(`-----------------\n\n🔔开始运行【${$.name + $.index}】`)
-                K = `用户信息🚩`;
-                if (K == `用户信息🚩`) {
-                    xmurl = xmurlVal
-                    xmheader = {}
-                    await taskget();
-                    $.GetUserInfo = DATA
-                    if ($.GetUserInfo.code == 200) {
-                        console.log(`\n${O}\n========== ${$.GetUserInfo.data.user_info.nickName} ==========\n用户ID：${$.GetUserInfo.data.user_info.uuid}\n`)
-                        $.message += `\n${O}\n========== 【${$.GetUserInfo.data.user_info.nickName}】 ==========\n【用户ID】：${$.GetUserInfo.data.user_info.uuid}\n`;
-                    } else {
-                        $.isLogin = false; //cookie过期
-                        return
-                    }
-                    if (!$.isLogin) {
-                        $.msg(
-                            O, time(Number(Date.now())) +
-                            `⚠️COOKIE失效\n请点击前往获取 https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980`,
-                            'https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980', {
-                                "open-url": "https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980"
-                            }
-                        );
+            K = `中奖列表🚩`;
+            if (K == `中奖列表🚩`) {
+                xmurl = `https://mgrank.api.mgtv.com/wish/success/list?wish_id=1&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
+                await taskget();
+                $.GetzjList = DATA
+                if ($.GetzjList.code == 200) {
+                    zjinfo = $.GetzjList.data.list.find(item => item.uuid == uuid);
+                    if (zjinfo) {
+                        console.log(`中奖列表：第${$.GetzjList.data.round}期-${zjinfo.record}\n`)
+                        $.message += `【中奖列表】：第${$.GetzjList.data.round}期-${zjinfo.record}\n`;
+                        console.log(O, `\n========== ${$.GetUserInfo.data.user_info.nickName} ==========\n第${$.GetzjList.data.round}期-${zjinfo.record}`)
+                        $.msg(O, `========== 【${$.GetUserInfo.data.user_info.nickName}】 ==========\n第${$.GetzjList.data.round}期-${zjinfo.record}`);
                         if ($.isNode()) {
-                            await notify.sendNotify(O, time(Number(Date.now())) + `⚠️COOKIE失效\n请点击前往获取https://apps.apple.com/cn/app/%E5%B0%8F%E8%8A%92/id1540247980`);
+                            notify.sendNotify(O, `========== 【${$.GetUserInfo.data.user_info.nickName}】 ==========\n第${$.GetzjList.data.round}期-${zjinfo.record}`);
                         }
-                        continue
+                    } else {
+                        console.log(`中奖列表：第${$.GetzjList.data.round}期-许愿失败，继续努力\n`)
+                        $.message += `【中奖列表】：第${$.GetzjList.data.round}期-许愿失败，继续努力\n`;
                     }
                 }
-                K = `中奖列表🚩`;
-                if (K == `中奖列表🚩`) {
-                    xmurl = `https://mgrank.api.mgtv.com/wish/success/list?wish_id=1&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
-                    await taskget();
-                    $.GetzjList = DATA
-                    if ($.GetzjList.code == 200) {
-                        zjinfo = $.GetzjList.data.list.find(item => item.uuid == uuid);
-                        if (zjinfo) {
-                            console.log(`中奖列表：第${$.GetzjList.data.round}期-${zjinfo.record}\n`)
-                            $.message += `【中奖列表】：第${$.GetzjList.data.round}期-${zjinfo.record}\n`;
-                            console.log(O, `\n========== ${$.GetUserInfo.data.user_info.nickName} ==========\n第${$.GetzjList.data.round}期-${zjinfo.record}`)
-                            $.msg(O, `========== 【${$.GetUserInfo.data.user_info.nickName}】 ==========\n第${$.GetzjList.data.round}期-${zjinfo.record}`);
-                            if ($.isNode()) {
-                                notify.sendNotify(O, `========== 【${$.GetUserInfo.data.user_info.nickName}】 ==========\n第${$.GetzjList.data.round}期-${zjinfo.record}`);
-                            }
-                        } else {
-                            console.log(`中奖列表：第${$.GetzjList.data.round}期-许愿失败，继续努力\n`)
-                            $.message += `【中奖列表】：第${$.GetzjList.data.round}期-许愿失败，继续努力\n`;
-                        }
+            }
+            K = `许愿中心🚩`;
+            if (K == `许愿中心🚩`) {
+                xmurl = `https://mgrank.api.mgtv.com/wish/info?wish_id=1&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
+                await taskget();
+                $.xyzxList = DATA
+                if ($.xyzxList.code == 200) {
+                    round = $.xyzxList.data.round_info.round
+                    console.log(`许愿中心：${$.xyzxList.data.round_info.remark}-${$.xyzxList.data.round_info.startTime}\n`)
+                    $.message += `【许愿中心】：${$.xyzxList.data.round_info.remark}-${$.xyzxList.data.round_info.startTime}\n`;
+                }
+            }
+            K = `任务列表🚩`;
+            if (K == `任务列表🚩`) {
+                xmurl = `https://mgrank.api.mgtv.com/wish/task/list?wish_id=1&pageNum=1&pageSize=10&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
+                await taskget();
+                $.rwList = DATA
+                if ($.rwList.code == 200) {
+                    for (let i = 0; i < $.rwList.data.list.length; i++) {
+                        console.log(`任务列表：${$.rwList.data.list[i].title}-${$.rwList.data.list[i].done_times}/${$.rwList.data.list[i].limit_times}\n`)
+                        $.message += `【任务列表】：${$.rwList.data.list[i].title}-${$.rwList.data.list[i].done_times}/${$.rwList.data.list[i].limit_times}\n`;
                     }
                 }
-                K = `许愿中心🚩`;
-                if (K == `许愿中心🚩`) {
-                    xmurl = `https://mgrank.api.mgtv.com/wish/info?wish_id=1&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
-                    await taskget();
-                    $.xyzxList = DATA
-                    if ($.xyzxList.code == 200) {
-                        round = $.xyzxList.data.round_info.round
-                        console.log(`许愿中心：${$.xyzxList.data.round_info.remark}-${$.xyzxList.data.round_info.startTime}\n`)
-                        $.message += `【许愿中心】：${$.xyzxList.data.round_info.remark}-${$.xyzxList.data.round_info.startTime}\n`;
+            }
+            if ($.rwList && $.rwList.data.list[0].done_times == 0 || $.rwList.data.list[1].done_times == 0) {
+                K = `执行任务🚩`;
+                if (K == `执行任务🚩`) {
+                    xmurl = `https://mgrank.api.mgtv.com/wish/task/report`
+                    xmbody = `wish_id=1&task_id=1&task_typ=0&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
+                    await taskpost();
+                    DD = RT(1000, 2000)
+                    console.log(`随机延迟${DD/1000}秒`)
+                    await $.wait(DD)
+                    xmbody = `wish_id=1&task_id=1&task_typ=0&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
+                    await taskpost();
+                    DD = RT(1000, 2000)
+                    console.log(`随机延迟${DD/1000}秒`)
+                    xmbody = `wish_id=1&task_id=3&task_typ=1&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
+                    await taskpost();
+                    $.zxrw = DATA
+                    if ($.zxrw.code == 200) {
+                        console.log(`执行任务：${$.zxrw.msg}\n`)
+                        $.message += `【执行任务】：${$.zxrw.msg}\n`;
                     }
                 }
-                K = `任务列表🚩`;
-                if (K == `任务列表🚩`) {
-                    xmurl = `https://mgrank.api.mgtv.com/wish/task/list?wish_id=1&pageNum=1&pageSize=10&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
-                    await taskget();
-                    $.rwList = DATA
-                    if ($.rwList.code == 200) {
-                        for (let i = 0; i < $.rwList.data.list.length; i++) {
-                            console.log(`任务列表：${$.rwList.data.list[i].title}-${$.rwList.data.list[i].done_times}/${$.rwList.data.list[i].limit_times}\n`)
-                            $.message += `【任务列表】：${$.rwList.data.list[i].title}-${$.rwList.data.list[i].done_times}/${$.rwList.data.list[i].limit_times}\n`;
-                        }
+            }
+            K = `许愿列表🚩`;
+            if (K == `许愿列表🚩`) {
+                xmurl = `https://mgrank.api.mgtv.com/wish/goods/list?wish_id=1&pageNum=1&pageSize=99&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
+                await taskget();
+                $.xylist = DATA
+                if ($.xylist.code == 200) {
+                    o = $.xylist.data.length - 1
+                    for (let i = 0; i < $.xylist.data.length; i++) {
+                        console.log(`许愿列表：价值${$.xylist.data[i].goods_price/100}元-共${$.xylist.data[i].goods_num}份-${$.xylist.data[i].goods_title}\n`)
+                        $.message += `【许愿列表】：价值${$.xylist.data[i].goods_price/100}元-共${$.xylist.data[i].goods_num}份-${$.xylist.data[i].goods_title}\n`;
                     }
                 }
-                if ($.rwList && $.rwList.data.list[0].done_times == 0 || $.rwList.data.list[1].done_times == 0) {
-                    K = `执行任务🚩`;
-                    if (K == `执行任务🚩`) {
-                        xmurl = `https://mgrank.api.mgtv.com/wish/task/report`
-                        xmbody = `wish_id=1&task_id=1&task_typ=0&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
-                        await taskpost();
-                        DD = RT(1000, 2000)
-                        console.log(`随机延迟${DD/1000}秒`)
-                        await $.wait(DD)
-                        xmbody = `wish_id=1&task_id=1&task_typ=0&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
-                        await taskpost();
-                        DD = RT(1000, 2000)
-                        console.log(`随机延迟${DD/1000}秒`)
-                        xmbody = `wish_id=1&task_id=3&task_typ=1&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
-                        await taskpost();
-                        $.zxrw = DATA
-                        if ($.zxrw.code == 200) {
-                            console.log(`执行任务：${$.zxrw.msg}\n`)
-                            $.message += `【执行任务】：${$.zxrw.msg}\n`;
-                        }
-                    }
-                }
-                K = `许愿列表🚩`;
-                if (K == `许愿列表🚩`) {
-                    xmurl = `https://mgrank.api.mgtv.com/wish/goods/list?wish_id=1&pageNum=1&pageSize=99&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
-                    await taskget();
-                    $.xylist = DATA
-                    if ($.xylist.code == 200) {
-                        o = $.xylist.data.length - 1
-                        for (let i = 0; i < $.xylist.data.length; i++) {
-                            console.log(`许愿列表：价值${$.xylist.data[i].goods_price/100}元-共${$.xylist.data[i].goods_num}份-${$.xylist.data[i].goods_title}\n`)
-                            $.message += `【许愿列表】：价值${$.xylist.data[i].goods_price/100}元-共${$.xylist.data[i].goods_num}份-${$.xylist.data[i].goods_title}\n`;
-                        }
-                    }
-                }
-                if ($.xylist.data[o].is_wished == 0) {
-                    K = `许愿币查询🚩`;
-                    if (K == `许愿币查询🚩`) {
-                        xmurl = `https://mgrank.api.mgtv.com/wish/coin?wish_id=1&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
-                        await taskget();
-                        $.xybcx = DATA
-                        if ($.xybcx.code == 200) {
-                            console.log(`许愿币查询：${$.xybcx.data.coin_num}个\n`)
-                            $.message += `【许愿币查询】：${$.xybcx.data.coin_num}个\n`;
-                        }
-                    }
-                    for (let i = 0; i < $.xybcx.data.coin_num; i++) {
-                        if (i == 0) {
-                            goods_id = $.xylist.data[o].goods_id
-                        } else {
-                            goods_id = $.xylist.data[i - 1].goods_id
-                        }
-                        if (goods_id) {
-                            goods_idinfo = $.xylist.data.find(item => item.goods_id == goods_id);
-                            K = `许愿🚩`;
-                            if (K == `许愿🚩`) {
-                                xmurl = `https://mgrank.api.mgtv.com/wish/submit`
-                                xmbody = `wish_id=1&round=${round}&goods_id=${goods_id}&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
-                                DD = RT(1000, 2000)
-                                console.log(`随机延迟${DD/1000}秒`)
-                                await $.wait(DD)
-                                await taskpost();
-                                $.xy = DATA
-                                if ($.xy.data.status == 1) {
-                                    console.log(`许愿：${goods_idinfo.goods_title}-成功\n`)
-                                    $.message += `【许愿】：${goods_idinfo.goods_title}-成功\n`;
-                                }
-                            }
-                        }
-                    }
-                }
+            }
+            if ($.xylist.data[o].is_wished == 0) {
                 K = `许愿币查询🚩`;
                 if (K == `许愿币查询🚩`) {
                     xmurl = `https://mgrank.api.mgtv.com/wish/coin?wish_id=1&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
@@ -464,15 +432,13 @@ async function all() {
                     }
                 }
                 for (let i = 0; i < $.xybcx.data.coin_num; i++) {
-                    K = `许愿列表🚩`;
-                    if (K == `许愿列表🚩`) {
-                        xmurl = `https://mgrank.api.mgtv.com/wish/goods/list?wish_id=1&pageNum=1&pageSize=99&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
-                        await taskget();
-                        $.xylist = DATA
-                        if ($.xylist.code == 200) {
-                            xylistinfo = $.xylist.data.find(item => item.is_wished == 0);
-                        }
-                        goods_id = xylistinfo.goods_id
+                    if (i == 0) {
+                        goods_id = $.xylist.data[o].goods_id
+                    } else {
+                        goods_id = $.xylist.data[i - 1].goods_id
+                    }
+                    if (goods_id) {
+                        goods_idinfo = $.xylist.data.find(item => item.goods_id == goods_id);
                         K = `许愿🚩`;
                         if (K == `许愿🚩`) {
                             xmurl = `https://mgrank.api.mgtv.com/wish/submit`
@@ -483,17 +449,54 @@ async function all() {
                             await taskpost();
                             $.xy = DATA
                             if ($.xy.data.status == 1) {
-                                console.log(`许愿：${xylistinfo.goods_title}-成功\n`)
-                                $.message += `【许愿】：${xylistinfo.goods_title}-成功\n`;
+                                console.log(`许愿：${goods_idinfo.goods_title}-成功\n`)
+                                $.message += `【许愿】：${goods_idinfo.goods_title}-成功\n`;
                             }
                         }
                     }
                 }
             }
-            console.log(`${GXRZ}\n`);
-            $.message += `${GXRZ}\n`
+            K = `许愿币查询🚩`;
+            if (K == `许愿币查询🚩`) {
+                xmurl = `https://mgrank.api.mgtv.com/wish/coin?wish_id=1&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
+                await taskget();
+                $.xybcx = DATA
+                if ($.xybcx.code == 200) {
+                    console.log(`许愿币查询：${$.xybcx.data.coin_num}个\n`)
+                    $.message += `【许愿币查询】：${$.xybcx.data.coin_num}个\n`;
+                }
+            }
+            for (let i = 0; i < $.xybcx.data.coin_num; i++) {
+                K = `许愿列表🚩`;
+                if (K == `许愿列表🚩`) {
+                    xmurl = `https://mgrank.api.mgtv.com/wish/goods/list?wish_id=1&pageNum=1&pageSize=99&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
+                    await taskget();
+                    $.xylist = DATA
+                    if ($.xylist.code == 200) {
+                        xylistinfo = $.xylist.data.find(item => item.is_wished == 0);
+                    }
+                    goods_id = xylistinfo.goods_id
+                    K = `许愿🚩`;
+                    if (K == `许愿🚩`) {
+                        xmurl = `https://mgrank.api.mgtv.com/wish/submit`
+                        xmbody = `wish_id=1&round=${round}&goods_id=${goods_id}&device=iPhone&osVersion=14.2&appVersion=4.1.9&did=${did}&_support=&uuid=${uuid}&ticket=${ticket}`
+                        DD = RT(1000, 2000)
+                        console.log(`随机延迟${DD/1000}秒`)
+                        await $.wait(DD)
+                        await taskpost();
+                        $.xy = DATA
+                        if ($.xy.data.status == 1) {
+                            console.log(`许愿：${xylistinfo.goods_title}-成功\n`)
+                            $.message += `【许愿】：${xylistinfo.goods_title}-成功\n`;
+                        }
+                    }
+                }
+            }
         }
+        console.log(`${GXRZ}\n`);
+        $.message += `${GXRZ}\n`
     }
+
 }
 //通知
 function msgShow() {
