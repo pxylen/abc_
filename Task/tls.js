@@ -19,6 +19,7 @@ boxjs链接 https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs.
 5.1.15 修复自动答题
 5.4.12 调整为26个助力位
 5.5.13 添加助力详情
+5.15.13 修复加餐任务判定
 
 ⚠️   ck只有几个小时的有效期，不要关闭ck重写    
 建议每天12点进入小程序获取ck，点击我的奖品也可以获取ck， 手动运行一次或者定时 7 27,47 12 * * *
@@ -627,7 +628,7 @@ async function all() {
                 }
 
 
-                if (Lunchinfo.isaccomplish == 1) {
+                if (nowTimes.getHours() == 12) {
                     DD = RT(500, 1000)
                     console.log(`随机延迟${DD/1000}秒`)
                     await $.wait(DD)
