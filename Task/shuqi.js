@@ -29,7 +29,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 5.7.16 适配新版本收益ck获取，新版本收益只需要body即可
 5.8.22 增加提现提醒，默认关闭，自行打开
 5.9.15 增加适配新版本时长
-
+5.15.19 修复极速签到视频判定
 ⚠️ 时间设置    7 0-23 * * *    每小时 1次就行 
 ⚠️一共2个软件  普通版15条 极速版11条  共      26个ck  👉 26条 Secrets 
 有多少ck就运行多少任务   shuqiuserurlVal 用户名url 👉 这个ck必须获取
@@ -114,7 +114,7 @@ hostname =*.shuqireader.com,
 书旗小说获取header = type=https:\/\/.+\.shuqireader\.com\/*,requires-body=1,max-size=0,script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js
 
 */
-GXRZ = '5.9.15 增加适配新版本时长'
+GXRZ = '5.15.19 修复极速签到视频判定'
 const $ = Env("书旗小说");
 $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
@@ -1737,7 +1737,7 @@ function GetCookie() {
         }
     }
     //获取极速版签到视频
-    if ($request && $request.url.indexOf("prize") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("deliveryId=894") >= 0) {
+    if ($request && $request.url.indexOf("prize") >= 0 && $request.url.indexOf("lottery") >= 0 && $request.body.indexOf("resourceId=717") >= 0) {
         const shuqijsqdspbodyVal = $request.body;
         userid = shuqijsqdspbodyVal.split('userId=')[1].split('&')[0]
         if (shuqijsqdspbodyVal) {
