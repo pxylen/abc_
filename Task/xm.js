@@ -122,7 +122,7 @@ if ($.isNode() && process.env.XM_xmURL) {
 }
 
 function GetCookie() {
-    if ($request && $request.url.indexOf("dysign") >= 0) {
+    if ($request && $request.url.indexOf("center?dysign=") >= 0) {
         const xmurlVal = $request.url
         userid = xmurlVal.split('uuid=')[1]
         if (xmurlVal) {
