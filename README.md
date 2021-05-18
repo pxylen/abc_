@@ -27,8 +27,6 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 [@lxk0301](https://gitee.com/lxk0301/projects) - 狗东系列
 
-[@sngxpro](https://github.com/sngxpro/QuanX) - 藏经阁
-
 [@NobyDa](https://github.com/NobyDa/Script/tree/master) - NobyDa
 
 [@chavyleung](https://github.com/chavyleung/scripts) - chavyleung
@@ -37,5 +35,4 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 [@zZPiglet](https://github.com/zZPiglet/Task/tree/master) - zZPiglet
 
-[@moposmall](https://github.com/moposmall/Script) - moposmall
 
