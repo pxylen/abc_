@@ -12,26 +12,29 @@ import os
 from util import send, requests_session
 from datetime import datetime, timezone, timedelta
 
-# YOUTH_HEADER 为对象, 其他参数为字符串，自动提现需要自己抓包
-# 选择微信提现30元，立即兑换，在请求包中找到withdraw2的请求，拷贝请求body类型 p=****** 的字符串，放入下面对应参数即可
-# 分享一篇文章，找到 put.json 的请求，拷贝请求体，放入对应参数
+# YOUTH_HEADER 为对象, 其他参数为字符串
+# 选择微信提现30元，立即兑换，在请求包中找到withdraw2的请求，拷贝请求body类型 p=****** 的字符串，放入下面对应参数即可 YOUTH_WITHDRAWBODY
+# 分享一篇文章，找到 put.json 的请求，拷贝请求体，放入对应参数 YOUTH_SHAREBODY
+# 清除App后台，重新启动App，找到 start.json 的请求，拷贝请求体，放入对应参数 YOUTH_STARTBODY
+
 cookies1 = {
   'YOUTH_HEADER': {"Cookie":"sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2251588723%22%2C%22%24device_id%22%3A%221762cb7bac231c-00cda555c687f5-754c1551-370944-1762cb7bac361a%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%221762cb7bac231c-00cda555c687f5-754c1551-370944-1762cb7bac361a%22%7D; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1607829925,1607829938,1607830056,1607830065; Hm_lvt_6c30047a5b80400b0fd3f410638b8f0c=1607829255,1607829607,1607829666,1607829923; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%2251588723%22%2C%22%24device_id%22%3A%221764a9c379985-022856cfe98f5a8-754c1551-370944-1764a9c379aff0%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%221764a9c379985-022856cfe98f5a8-754c1551-370944-1764a9c379aff0%22%7D; Hm_lvt_b161e73c7240a915db9a5c171d7fd6c5=1606753583,1607790495","Accept":"*/*","Accept-Encoding":"gzip, deflate, br","Connection":"keep-alive","Host":"kd.youth.cn","Accept-Language":"zh-cn","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Referer":"https://kd.youth.cn/html/taskCenter/index.html?uuid=d7c11d0afc94bf0193702a2d2d37e455&sign=9e1ca75e5521b04ff913c158b2347572&channel_code=80000000&uid=51588723&channel=80000000&access=WIfI&app_version=1.8.0&device_platform=iphone&cookie_id=cf0ac89b18d33b5ded619b901fb978ba&openudid=d7c11d0afc94bf0193702a2d2d37e455&device_type=1&device_brand=iphone&sm_device_id=202011191042385c2a0dc85220a736e6501f9d2baf385901e71d1d26c0b271&device_id=48555420&version_code=180&os_version=14.3&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwt4lthnyY367eqmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFonaZsKmqaIKvebKEY2Ft&device_model=iPhone_6_Plus&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwt4lthnyY367eqmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFonaZsKmqaIKvebKEY2Ft&cookie_id=cf0ac89b18d33b5ded619b901fb978ba","X-Requested-With":"XMLHttpRequest"},
   'YOUTH_READBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_lgXXENBlMWjgdt2eFsJi4FV71nWDXdXT6C5gioHBTSn7rK0dXFkhDeJIZ5oDXpx9Vt3jnAJ4AwMkOK-OCcx0IflI9Z3ixeEvV284ONFvvktkFa9VEcsPdQR1YwXfcKpDcqzkFTEBdQU2fWKjy0TxL49mKLwT7nCeEWEOqXtxP4qi3Cym3GipOxTBuaEHzPmbUAMPV02OnBqN78U8vXAQPqNLx9aByHOR2C4nZfgjmbeOERXE4nu90uzDhQCTOphXLmJGCdfeuudW3brb6zKb3MRdv-sxvgeqbHq_KZf3SeGOIB7oL6I1WedlfWHpL40H697gehUdPalFCSzBwpvDlsCiJlHBZW05OPNjmb58R8d7uNLCzpwApF_Qe1FWJlQW6WowSlfa4bZoDtgphvC9p0_7SwhXwvDaEMCP3zynFrhf3CKgVX2-y0GptIVeC-IJiVVkB47z3K3gKZEg65EOv3oHLVuhc30jRKXNOIEZ64WAUsvVkrwt9CPLmL7RJRdZ_FvBaObVJTbdtBEmPNXcbyuVVeE6v91mWCOxTs5Kzm7n3at-_-Xarmhmf0erm8sClIgIXw6caqoxN-3pqGvELUsV7Nw5vlCOr6gaV4ZkAW1rQcv44FNEvHs_XcUKbTqMNNcNGChtLOs58QLtDeDem5KTwcqj7ROR3P4msE6t6lvFTQp8ba-ZIhQDQbkQ5lcyazfIOVnZBacJ1eMCfcw0PSIafWxg-okh_U9lCBXbVPc-ww8kDCNHho0k53PAi7-74s5Prbv6whhasDGzMBe8EnQQWcoq6gddR7b_4BJxoqM%3D',
   'YOUTH_REDBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjazbBlBp4-3VBqIE6FTR2KhfyLVi7Pl1_m0wwPJgXu-Fmh7S-5HqV6oWj7JJ4qWtBJt0fh-qv29p69GkFSZXyiVpfk2fLyJ64mS6psDlfOAi5bst2-zG2GXOelpGEJGIBg-CpPfjVwRzWA7TQsOs3s2Ui7VRWxMyWShEQDVHFFJf7i293v1ez48s6k0YKoAy2yMCXgJFa_g6mLuM0NseSqQsm32hQ9cHwtqn8wRQTSod6BWMbTM1GEofoiKvVrZfHHMIBN5e07blCC81mhqm8nMVLnywBw38yFgt1_S81NbveEN4gt0cfNUumXLYBPmboxdugRWQ4jn7Ry5mt9KrpENOXp9qrocI5uGlm8gALOGSLs2dcP0fjWehBq_pgr5O933JFVltb3pzTU6OuyWryCLYM3DFljf79jVfv3NIb1NU9laLCnWJxD7iZUZRtv9RXNyI-Fs7sivU6Upfk0snvfnqdtWTS6vnNT2r1owZ1M2ZE2fdkiQbJf5M5E1n1dnbOknk6lOZ_PZTZg6xNjrU67bTV5cXeCtLxCBQBpilrCw5FUsxms4-98zOXvIqGgGxRCMHln4_5SmQzEzl8SywGmdfHcQXOJHufbiyIdAmZWRFk3_YY1BZ3i8hiDVMdEJucDkiUMj5bEP0aLKc4Aihk0atLyXxHspEwcxBhdpwyK-Cwyo3_4p_m4zrJ-f05L1uftD1fpvbt-JijJ2Iia99a8k4HYlYeX-SsmCddFqt-Xsaazz1OjxrP9aveGbEVG6Xv2e5ToeXsb3zGkpKYj1I6t_umENtxAdt2-yTl5AFatJaMR0us0_Y3PIu0G1ypjx5EU%3D',
   'YOUTH_READTIMEBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_nHSVk1s5Pk1lOQlYKzDUPU9y0FiOH2nIRqKp1NEljKT7rNHR8sm-zNM1uYF037ZLhJ3Xl0xswFUmY-cQ_hr0wixkQsFjVI3HBBKV9Vi7Arv9ucr9IYetIj9Zqs0mPLwQax27ryeUONmpOJjDtMyvEfm8Ff7eywmwYmEn9dK65rauEP6rRuWvqGPKyAmuhEUJwanXW31_m3gIPmW2bKSwt-Fdw-wmSMpy2hkQTONg9aXmHZTi_uhHCAuPIccyOaxuBl6ZZGoc-HvB7vTkRXQQeg-xDL59BrNxbbmj4uOQ7_iPLRCrAxV1yrBVMWrg-1h8zNpIQmCuTs1Aq764wGAhljouGGy-FHgRRQa0qoKGzQfnC265wDeQlPnSK7u5V_BnoDFIeikxDZNbtlh4BTdisZPogG8nsakg1m4crNA-_HJFluB-Ak9Xvf_lwGxKlXxZvhYP1e5uKFsZRINjZyKqKFhWFTHcXc4iLNSsfBP7isNT5TJlHdjL98vLTS8dlU2UvsF1dv4QfLggrHPyqfgtuoRP2x9JXDAkE77PWzGocQUrFsQxwN7BcrVIo5pIRjwt0Gh6InDlQ5PwZGcGTQY2yX2rIE3RFBKlVawygy1KAhCrJt_8wM16t4_RqdwrkQ-XQLLSZhyiZoG4Gqk0JO8gpEbK5kmsgQsZzXHcacVzFEJUZaUC1u7GFPF_b4nA_oSmymWybCFRMES90oMNlFCwY_z42qtuoAx8LkTfMI_ljEQ5mtYNTGHxco6ym0ywP50X1MGD0IZ1NIqDwrO1dgYF-2NqMMevfoesYA4JIoltYWw%3D',
-  'YOUTH_WITHDRAWBODY': 'p=9NwGV8Ov71o%3DGvDnjwMsu_ld4qx0YVkhCGSN79Nz9uYVRT2FlKyzzeRQkfNpi91m1uMr6_-349OB-6aJlP8QT1ZdQPfuBKAN73038JxG2PDvPLwzRpKLSOsodHj_5p2KvGLJLTxe6lfbK5_TBTkHhXvca5GLmeMMIM2me3E4Xk0LlYXICZPYUVQJ4kWWRguSoEJrQxVAwqrLlKhCoM3a93pqwujHPVQL3rSMJ6dRMC7GOB2icXubhNv0q3A4rmwPV5G2Wq-I8bSNWJpg4ySmiAZ75pnAIfh5FGzCJZiGJJHU-muv6pM6amTXVNaUw_aWcZQIp3WB8elcmvAlOpPCq3BfViiBFF6Rd7jjBZ4z1MlmqpuDk6WlWz5S9FWsXJi-vqnZPVuUCwe9H1-6k3UuTD_dn5lpHb7gpki5rZ0vuOQdpsESN1wufoVj0Cwcn8tG5KqwY17wil3fdjn7PinP8ikxcltBBPXpIf9-POgr5EUaCW9cKCe4pKMeJ5wsEj5t9v2HyuZtCC1UuCtQ5wlRdqdtYziqHyBhor-RX6NhIMXwrlKj2958CyrYw4LM-Wc99aLjeo3w_nBBJCDuFDefJTlOrg9XV3Ij8C7UkU-HVFQlkGipsjKdjijGM1hNbHLVmtOiELQB7qQf7kC79zQJ-1F3oHwS3MQzdRvofmBHbQzV-_ebGu9GxEpFIv3bP3kKWzioylto8o1Hl3VlthvZCdw9sLZWtbO4yNLT4pHagcMcKCMXvRE9T2bEWHckt2_pR63FriIP2mFka77-LcLm-J2zxrv8fsePvKkBRk02e4WqcJ9YyMz8usqBwtnyMUItXnp9JqJh_uXxqmd95fPtfYg%3D',
-  'YOUTH_SHAREBODY': 'access=WIFI&app_version=2.0.0&article_id=36228401&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.0&device_brand=iphone&device_id=48555420&device_model=iPhone&device_platform=iphone&device_type=iphone&from=0&is_hot=0&isnew=1&mobile_type=2&net_type=1&openudid=d7c11d0afc94bf0193702a2d2d37e455&os_version=14.4&phone_code=d7c11d0afc94bf0193702a2d2d37e455&phone_network=WIFI&platform=3&request_time=1613207449&resolution=828x1792&sign=e694d3dd492d9049888134eb89f8b1c2&sm_device_id=202011191042385c2a0dc85220a736e6501f9d2baf385901e71d1d26c0b271&stype=WEIXIN&szlm_ddid=D2qeYlHbw8gsQ0wdf3jMSEhmak4qTkFhm5t6UZzFTN47wX41&time=1613207449&uid=51588723&uuid=d7c11d0afc94bf0193702a2d2d37e455'
+  'YOUTH_WITHDRAWBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_mEtDEGsOrBruuZzIpWlevTEf2n4e6SDtwtHI8jh7tGLFm1iscPtbZwlhO1--2rPMqEVay5SHQZ0Xa5om9y_QnFioIoDSg-ArtrfwznZt1IhRAOspLNm4F1Z4mRILDUTDM9AS-u45jBAHpRMEOlwzc5JqpcKjMMGbYB0wYiHVu-G8zkefV4u_eZ1bkZ-Q_nMw-obs5BUBKxO8xSwMxf_WbjfTaMFdjTnYfT2eOlJnrJxTxsO8dvmRn9YYFcXsHc9LcNCs5lIQnTifo1qRei2gcLfoh5G-R_CrmzRjXzF03J624ZZTwrg3qsau6QfyP25pknAxxeJ7WiMAwyS-0P9nxGtTIjkb9TZQ-jPvHneVVwTtofa2RYLfXvmC6CiX-cypZ6byinGtN_fC8tNqc5j39hTbcrweWQ7pfb5dmhUefswNG-f9H2erOlIDzkMilzai2iyde6o8ovoVji6T0D_qPPsKV86qA0Gqufkvy6RDk3w1HlpLEqtzLBoYqUhaHRi8rutp7G8g4HhiT9de1XlDp9XxJdV8ZJm7JgkUsLBF_TOOtUtJihWIW6IMVBM2ljwTUYDI_gD7AaILCiESd0YRxrDiPc1vhfDYPmJ3BBunqy7__zSBtTe07kvbNhj0UuHVYkm-V-oAN_VtuVkvXrY9AAjeO9lH1vnnT4LcNYDGPyqDNS2c5gNYfy8EPrqMjV4Vjv-3po98lUKAOrdC-hwgtpSWDUa2Zb0J0JU4gTLsttXAM-FgEhyEIGx2Pg3s468ynBoYgFEOdrybKNvv_DKPecjSTOS1di-LgBEjSXyAjSI%3D',
+  'YOUTH_SHAREBODY': 'access=WIFI&app_version=2.0.0&article_id=36228401&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.0&device_brand=iphone&device_id=48555420&device_model=iPhone&device_platform=iphone&device_type=iphone&from=0&is_hot=0&isnew=1&mobile_type=2&net_type=1&openudid=d7c11d0afc94bf0193702a2d2d37e455&os_version=14.4&phone_code=d7c11d0afc94bf0193702a2d2d37e455&phone_network=WIFI&platform=3&request_time=1613207449&resolution=828x1792&sign=e694d3dd492d9049888134eb89f8b1c2&sm_device_id=202011191042385c2a0dc85220a736e6501f9d2baf385901e71d1d26c0b271&stype=WEIXIN&szlm_ddid=D2qeYlHbw8gsQ0wdf3jMSEhmak4qTkFhm5t6UZzFTN47wX41&time=1613207449&uid=51588723&uuid=d7c11d0afc94bf0193702a2d2d37e455',
+  'YOUTH_STARTBODY': 'access=WIFI&app_version=2.0.0&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.0&device_brand=iphone&device_id=48555420&device_model=iPhone&device_platform=iphone&device_type=iphone&isnew=1&mobile_type=2&net_type=1&openudid=d7c11d0afc94bf0193702a2d2d37e455&os_version=14.5&phone_code=d7c11d0afc94bf0193702a2d2d37e455&phone_network=WIFI&platform=3&request_time=1613737438&resolution=828x1792&sm_device_id=202011191042385c2a0dc85220a736e6501f9d2baf385901e71d1d26c0b271&szlm_ddid=D2qeYlHbw8gsQ0wdf3jMSEhmak4qTkFhm5t6UZzFTN47wX41&time=1613737438&token=171efe18fdcb17456aef307e3e1d06aa&uid=51588723&uuid=d7c11d0afc94bf0193702a2d2d37e455'
 }
 cookies2 = {
   'YOUTH_HEADER': {"Cookie":"sensorsdata2019jssdkcross=%7B%22distinct_id%22%3A%2217152179%22%2C%22%24device_id%22%3A%221768933821e302-0abdd14277f3dd8-734c1551-250125-1768933821f68e%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%2C%22first_id%22%3A%221768933821e302-0abdd14277f3dd8-734c1551-250125-1768933821f68e%22%7D; Hm_lvt_268f0a31fc0d047e5253dd69ad3a4775=1608619623; sajssdk_2019_cross_new_user=1","Accept":"*/*","Accept-Encoding":"br, gzip, deflate","Connection":"keep-alive","Host":"kd.youth.cn","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148","Accept-Language":"zh-cn","Referer":"https://kd.youth.cn/html/taskCenter/index.html?uuid=44f19eacae46b39caf09d6a4b2a027db&sign=8bd06b5add5c814a97699f3e5f680433&channel_code=80000000&uid=17152179&channel=80000000&access=WIfI&app_version=1.8.0&device_platform=iphone&cookie_id=afbba847690a9908e74c699bd93c9bf0&openudid=44f19eacae46b39caf09d6a4b2a027db&device_type=1&device_brand=iphone&sm_device_id=20200318135918cdbb215496a5e7f64e46535ab982b00601b60f98950f17e9&device_id=49128135&version_code=180&os_version=12.2&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualIej3q-rqWOwzXlshoyp4LDPyGl9onqkj3ZqYJa8Y898najWsJupZLCnm2uEjKCar6mmapqGcXY&device_model=iPhone_6&subv=1.5.1&&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualIej3q-rqWOwzXlshoyp4LDPyGl9onqkj3ZqYJa8Y898najWsJupZLCnm2uEjKCar6mmapqGcXY&cookie_id=afbba847690a9908e74c699bd93c9bf0","X-Requested-With":"XMLHttpRequest"},
   'YOUTH_READBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjazbBlBp4-3VBqIE6FTR2KhfyLVi7Pl1_m0wwPJgXu-Fmh7S-5HqV6o2kNNfxbTBdHNeGGUACeILyWR3zMN6Iw3IXfZs4Lu-yb9ynQmQje6lCx_IwxRVvI2SNym5MJ3oH5lFqmbtpdkJfwhB1sUJEdEgJ5iEwGnEtnWJDQPgSUh_43T95feCdA6znUBf7UdpUNuu05JsguiVgA3zNG_8zQwE0LU-bf-hzxqL8KQzdrABkZ5U--QVWM6cOzDEnPQ7O65GzEiVOXu-V2m1VcWaWlwui8nwIgMz2XDikj0OhbEgXVsx8zq19tuFciPTfVsWQT8z2aq-qwtbYKEW05VZHqir9tn1MmzGg9xn_RyBvqVLQGinkiuLa8Ygkj_RFcxp3co8KKLMlOamuFRlY9h1Wkjn1RHH-MwBNbBstlJH6_sE7rLqwH7CxYnF1XZH2J9LXMfLw1k-G8MgwUxNSyVXswnox0x_Rt8FRGd19WqtDRDIrWoBHnQ6au2Jx13O5lUo6aJIsgNTihoh-Ny7uZ5lVLXj-Z7aVizpoGOnschBkSlul8vLnhMqB4ISDDYA5gExYZju96ukdJ-DIYA3vwTEJx21cljZQsc7KrQpxw06u-qDv0UwVTLI2L9bIir5yU_bLysz36vaFkI573lGA6aVS_Pq8Y169LNnFKDuag6eZDsiUoRuSK0_dIIRWEEeccn2Iwo5CPC4bQb4kKFeE60GkNAfqWkhUNS10UdVHCH53zBcmVWaXCNGiIHgaVrIfb01jGgIqdsLoa-xcbirjrHS6ROmAFGHmDrS9HUr8Q_WtkjK8gBZ5xAWnTbYDgaz532IKnnNMUGCkrtOw%3D%3D',
   'YOUTH_REDBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_lgXXENBlMWjgdt2eFsJi4FV71nWDXdXT6C5gioHBTSn7rK0dXFkhDeJIZ5oDXpx9Vt3jnAJ4AwMkOK-OCcx0IflI9Z3ixeEvV284ONFvvktkFa9VEcsPdQR1YwXfcKpDcqzkFTEBdQU2fWKjy0TxL49mKLwT7nCeEWEOqXtxP4qi3Cym3GipOxTBuaEHzPmbUAMPV02OnBqN78U8vXAQPqNLx9aByHOR2C4nZfgjmbeOERXE4nu90uzDhQCTOphXLmJGCdfeuudW3brb6zKb3MRdv-sxvgeqbHq_KZf3SeGOIB7oL6I1WedlfWHpL40H697gehUdPalFCSzBwpvDlsCiJlHBZW05OPNjmb58R8d7uNLCzpwApF_Qe1FWJlQW6WowSlfa4bZoDtgphvC9p0_7SwhXwvDaEMCP3zynFrhf3CKgVX2-y0GptIVeC-IJiVVkB47z3K3gKZEg65EOv3oHLVuhc30jRKXNOIEZ64WAUsvVkrwt9CPLmL7RJRdZ_FvBaObVJTbdtBEmPNXcbyuVVeE6v91mWCOxTs5Kzm7n3at-_-Xarmhmf0erm8sClIgIXw6caqoxN-3pqGvELUsV7Nw5vlCOr6gaV4ZkAW1rQcv44FNEvHs_XcUKbTqMNNcNGChtLOs58QLtDeDem5KTwcqj7ROR3P4msE6t6lvFTQp8ba-ZIhQDQbkQ5lcyazfIOVnZBacJ1eMCfcw0PSIafWxg-okh_U9lCBXbVPc-ww8kDCNHho0k53PAi7-74s5Prbv6whhasDGzMBe8EnQQWcoq6gddR7b_4BJxoqM%3D',
   'YOUTH_READTIMEBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_nHSVk1s5Pk1lOQlYKzDUPU9y0FiOH2nIRqKp1NEljKT7rNHR8sm-zNM1uYF037ZLhJ3Xl0xswFUmY-cQ_hr0wixkQsFjVI3HBBKV9Vi7Arv9ucr9IYetIj9Zqs0mPLwQax27ryeUONn6pEl5i6NGO5ubbgrzkkMy9OkI0hGY1IMO3QlFKKkzb9NOMYRih9kQeEwlBOjsRWPtA7ouAE8YHVy0D1Jfr4kSxBvuvtLlvTx3o4caBz1Rzvojmb2ATpZkHzAZtA2q-pPVjNcsOsbfTv5WWxjUf4pcZ-j0C7vljluycFiZ0oL8PiTA_RXpso-LNg-2ea5U3zgG8TTwI5Tt2W8YX4X3sRcaT6ws_NwPFO5H5Np6rWCOCcI3MuoX5lP67qPHSPuoCpnpHLsBSR2EQYcE1hw9Pm2ZtsmaMEpR6RzihlHJBtkLzn9enMUAwdVQvF3AD1CpmSknp5Agwg7lyl_f2fQDeCndxpDHAXpLtZXljWYxzNOfzeZfeisq3pKjWXegP75x5Al94uozVLnj7iamT15w9ZpmL25DyGoW1ZIksD3CxhAK-mCbx6Tr-XPcuKe6NGhwXd7wK-CeqryKH3Fs7PyrUf6rft1aYe4fMZk1rHhr2bhL9VMUrheMNyQ1cC3Aa8VeY3GuIzjVkcbYsaZe9Y9uUldffOR3tfYCXPRH-gdkigXWqbv4ooPI6bpvk8VAlnCSDZRjLVfGSW3EmJ-zmusXq-crSlgtYWnpy_wJIg9PpP1RS7Vd7gYuMHvku8V5WhxfEgTfBZGJt55R1exy4zExGg2M4okJO3i6cpk%3D',
-  'YOUTH_WITHDRAWBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_pYgxM135XoUfaIpfBqAxRGnFAl1k71C_zMPfUdFlHJTcuxYW9LgBCdTzuda7fnA8r2K-D8AqSYWzt-6LIEcC8SPkaeAgjjv1iCeYI_yckjGbVxJEy1xSQc4qp-_g8cJecymP34l6mTdqYe06k684hiEqzhnFnHRXWC0EsvOIzXuVqOAxqf50lpxd8jqids1yGORuKpwhpJu62CE7-m-IAujCPddOBQ36zXKByRoRhnzjaPhevdeJo_5HoC2e1Q-53JyLtiRWL9fXujh0OFwBDQ8oE-zCrnueDkj070yu0LQL9zgpcLHzBYoDL6PpIidmqCB3Iacekpkme7DRj2gYFUMeFbRz_2q_BtDTo90M8uXgvH0tXPRnfNZViMuHulJ_Td4bploW4JOMuZyC-zl69R9-Fvbc-UPEh6bUDJCXCaOHcc9IyWVJv8azRsdn2hIXH1LzO21fgemEa63s6UKYuTuGU2uglDLolMIauBEzASFc47y7d0cIr7t1v0JqT6ejqfPPDAU86gbjCVxNLRn54yVh_ZvrsglvgqEhmSQKoASCIx660Ilefhd8eKroEaIb9rKxX79LOySU2HKP5Ou-Ell8pQ806ZYXyIjPj5UXDApXSGZd8jg4htqBCjv8317G7e0uLo6pSWeLuEM2-8JsQ87p_fBygNVa--pqX4jDANm-pWZ69gM55FXwvIbhUIwH5kfLb8Fb4ucGWeFfqZXPR6efrr1QOoTnGA1arBGRTe4mgGmBPTz0g3lbEgw4D0Q0UmJz7n4MsiDtARZUbLm25jdp7PhSPPRUCNmSEO3TkTU%3D',
-  'YOUTH_SHAREBODY': 'access=WIFI&app_version=2.0.0&article_id=36294792&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.0&device_brand=iphone&device_id=50154457&device_model=iPhone&device_platform=iphone&device_type=iphone&from=0&is_hot=0&isnew=1&mobile_type=2&net_type=1&openudid=184b31a359a71321d6c75ae8b537702d&os_version=14.4&phone_code=184b31a359a71321d6c75ae8b537702d&phone_network=WIFI&platform=3&request_time=1613207644&resolution=750x1334&sign=646c6d9da892ac04e5e2f38bb143b13b&sm_device_id=202101311306559fee8a0fd6fb33e54789d2a45b50c8d801885ba9ee925e9f&stype=WEIXIN&szlm_ddid=D29J0P1UdWH0oUooU/OdD7B0DFC4RMth2/ECXmh7wlq7AX54&time=1613207644&uid=17152179&uuid=184b31a359a71321d6c75ae8b537702d'
+  'YOUTH_WITHDRAWBODY': 'p=9NwGV8Ov71o%3DgW5NEpb6rjb84bkaCQyOq-myT0C-Ktb_mEtDEGsOrBruuZzIpWlevTEf2n4e6SDtwtHI8jh7tGLFm1iscPtbZwlhO1--2rPMqEVay5SHQZ0Xa5om9y_QnFioIoDSg-ArtrfwznZt1IhRAOspLNm4F1Z4mRILDUTDM9AS-u45jBBoO9KsrIJlso1jfH8ltz0a3B_UWDULPHsqIPi2q4tvX_0Xp2WV7uDPVTv5oLngKa0W7-tEkvsC9AkyHVexk912yJo_zAGYRZvAH7m71bwKOtwq0vhaDucJl_kY3Kr-MRlGYsQq1piqrTG3gBGGExqEx6smGrsdalVjS0WEf4ng4lz-xaJbmY7VQb7CV3-qdPeFSQF2pY49vCgynhh80JW6uYj_etKXVfSDCIBgAdtr1-vtgSohBBpiik-S291gpnavMlnkvuC31t3VyWmeQCnYYGVTBqyxl45B7dzZMqofgeD_9gtEpWeQeG7d-HaQJGLogRWJIP_bggbbw22aP3Gpq-rRGBRq-WoPvWKuUXWZaJRfCQLGu0nh9DWMgIccIzHAI7eVLPOw3FJsa9I2UHmM89AGCSd_g9lteMcBb-Y1hu8lZO7daZKaCU6kiBji4ZR6R9YYwYao5W4ll7aeJlK57jhQTeBcLqplH1E0wpZnrJyiZbvt64vJlzJW53gcAVHMExhVkG4q5m4rF5XB-mGEs2Ns8noccBk3jkoN8-tdBEMdFCI-h-FCWekD144zyD4UAZFpL4qxMqppmUS-qOnzUMQZbe97tLl1i_50PgWl9xL1j02vRaHMMHMX3zOywdN2FMiYPQVTQQ4_X9f-bjiygjrKVqlDWYw%3D',
+  'YOUTH_SHAREBODY': 'access=WIFI&app_version=2.0.0&article_id=36294792&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.0&device_brand=iphone&device_id=50154457&device_model=iPhone&device_platform=iphone&device_type=iphone&from=0&is_hot=0&isnew=1&mobile_type=2&net_type=1&openudid=184b31a359a71321d6c75ae8b537702d&os_version=14.4&phone_code=184b31a359a71321d6c75ae8b537702d&phone_network=WIFI&platform=3&request_time=1613207644&resolution=750x1334&sign=646c6d9da892ac04e5e2f38bb143b13b&sm_device_id=202101311306559fee8a0fd6fb33e54789d2a45b50c8d801885ba9ee925e9f&stype=WEIXIN&szlm_ddid=D29J0P1UdWH0oUooU/OdD7B0DFC4RMth2/ECXmh7wlq7AX54&time=1613207644&uid=17152179&uuid=184b31a359a71321d6c75ae8b537702d',
+  'YOUTH_STARTBODY': 'access=WIFI&app_version=2.0.0&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.0&device_brand=iphone&device_id=50154457&device_model=iPhone&device_platform=iphone&device_type=iphone&isnew=1&mobile_type=2&net_type=1&openudid=184b31a359a71321d6c75ae8b537702d&os_version=14.4&phone_code=184b31a359a71321d6c75ae8b537702d&phone_network=WIFI&platform=3&request_time=1613737590&resolution=750x1334&sm_device_id=202101311306559fee8a0fd6fb33e54789d2a45b50c8d801885ba9ee925e9f&szlm_ddid=D29J0P1UdWH0oUooU/OdD7B0DFC4RMth2/ECXmh7wlq7AX54&time=1613737590&token=32baea450f7763541c494104900e2d74&uid=17152179&uuid=184b31a359a71321d6c75ae8b537702d'
 }
-
 
 COOKIELIST = [cookies1,cookies2]  # 多账号准备
 
@@ -41,19 +44,19 @@ if "YOUTH_HEADER1" in os.environ:
   for i in range(5):
     headerVar = f'YOUTH_HEADER{str(i+1)}'
     readBodyVar = f'YOUTH_READBODY{str(i+1)}'
-    redBodyVar = f'YOUTH_REDBODY{str(i+1)}'
     readTimeBodyVar = f'YOUTH_READTIMEBODY{str(i+1)}'
     withdrawBodyVar = f'YOUTH_WITHDRAWBODY{str(i+1)}'
     shareBodyVar = f'YOUTH_SHAREBODY{str(i+1)}'
-    if headerVar in os.environ and os.environ[headerVar] and readBodyVar in os.environ and os.environ[readBodyVar] and redBodyVar in os.environ and os.environ[redBodyVar] and readTimeBodyVar in os.environ and os.environ[readTimeBodyVar]:
+    startBodyVar = f'YOUTH_STARTBODY{str(i+1)}'
+    if headerVar in os.environ and os.environ[headerVar] and readBodyVar in os.environ and os.environ[readBodyVar] and readTimeBodyVar in os.environ and os.environ[readTimeBodyVar]:
       globals()['cookies'+str(i + 1)]["YOUTH_HEADER"] = json.loads(os.environ[headerVar])
       globals()['cookies'+str(i + 1)]["YOUTH_READBODY"] = os.environ[readBodyVar]
-      globals()['cookies'+str(i + 1)]["YOUTH_REDBODY"] = os.environ[redBodyVar]
       globals()['cookies' + str(i + 1)]["YOUTH_READTIMEBODY"] = os.environ[readTimeBodyVar]
       globals()['cookies' + str(i + 1)]["YOUTH_WITHDRAWBODY"] = os.environ[withdrawBodyVar]
       globals()['cookies' + str(i + 1)]["YOUTH_SHAREBODY"] = os.environ[shareBodyVar]
+      globals()['cookies' + str(i + 1)]["YOUTH_STARTBODY"] = os.environ[startBodyVar]
       COOKIELIST.append(globals()['cookies'+str(i + 1)])
-  # print(COOKIELIST)
+  print(COOKIELIST)
 
 cur_path = os.path.abspath(os.path.dirname(__file__))
 root_path = os.path.split(cur_path)[0]
@@ -89,7 +92,7 @@ def sign(headers):
   try:
     response = requests_session().post(url=url, headers=headers, timeout=30).json()
     print('签到')
-    # print(response)
+    print(response)
     if response['status'] == 1:
       return response
     else:
@@ -109,7 +112,7 @@ def signInfo(headers):
   try:
     response = requests_session().post(url=url, headers=headers, timeout=30).json()
     print('签到详情')
-    # print(response)
+    print(response)
     if response['status'] == 1:
       return response['data']
     else:
@@ -129,7 +132,7 @@ def punchCard(headers):
   try:
     response = requests_session().post(url=url, headers=headers, timeout=30).json()
     print('打卡报名')
-    # print(response)
+    print(response)
     if response['code'] == 1:
       return response
     else:
@@ -149,7 +152,7 @@ def doCard(headers):
   try:
     response = requests_session().post(url=url, headers=headers, timeout=30).json()
     print('早起打卡')
-    # print(response)
+    print(response)
     if response['code'] == 1:
       shareCard(headers=headers)
       return response['data']
@@ -171,7 +174,7 @@ def shareCard(headers):
   try:
     response = requests_session().post(url=startUrl, headers=headers, timeout=30).json()
     print('打卡分享')
-    # print(response)
+    print(response)
     if response['code'] == 1:
       time.sleep(0.3)
       responseEnd = requests_session().post(url=endUrl, headers=headers, timeout=30).json()
@@ -194,7 +197,7 @@ def luckDraw(headers):
   try:
     response = requests_session().post(url=url, headers=headers, timeout=30).json()
     print('七日签到')
-    # print(response)
+    print(response)
     if response['code'] == 1:
       return response['data']
     else:
@@ -214,7 +217,7 @@ def timePacket(headers):
   try:
     response = requests_session().post(url=url, data=f'{headers["Referer"].split("?")[1]}', headers=headers, timeout=30).json()
     print('计时红包')
-    # print(response)
+    print(response)
     return
   except:
     print(traceback.format_exc())
@@ -231,7 +234,7 @@ def watchWelfareVideo(headers):
   try:
     response = requests_session().get(url=url, headers=headers, timeout=30).json()
     print('观看福利视频')
-    # print(response)
+    print(response)
     return
   except:
     print(traceback.format_exc())
@@ -248,7 +251,7 @@ def shareArticle(headers, body):
   try:
     response = requests_session().post(url=url, data=body, headers=headers, timeout=30).json()
     print('分享文章')
-    # print(response)
+    print(response)
     return
   except:
     print(traceback.format_exc())
@@ -267,7 +270,7 @@ def threeShare(headers, action):
   try:
     response = requests_session().post(url=url, data=body, headers=headers, timeout=30).json()
     print('三餐分享')
-    # print(response)
+    print(response)
     return
   except:
     print(traceback.format_exc())
@@ -284,7 +287,7 @@ def openBox(headers):
   try:
     response = requests_session().post(url=url, headers=headers, timeout=30).json()
     print('开启宝箱')
-    # print(response)
+    print(response)
     if response['code'] == 1:
       share_box_res = shareBox(headers=headers)
       return response['data']
@@ -305,7 +308,7 @@ def shareBox(headers):
   try:
     response = requests_session().post(url=url, headers=headers, timeout=30).json()
     print('宝箱分享')
-    # print(response)
+    print(response)
     if response['code'] == 1:
       return response['data']
     else:
@@ -325,7 +328,7 @@ def friendList(headers):
   try:
     response = requests_session().get(url=url, headers=headers, timeout=30).json()
     print('好友列表')
-    # print(response)
+    print(response)
     if response['error_code'] == '0':
       if len(response['data']['active_list']) > 0:
         for friend in response['data']['active_list']:
@@ -350,7 +353,7 @@ def friendSign(headers, uid):
   try:
     response = requests_session().get(url=url, headers=headers, timeout=30).json()
     print('好友签到')
-    # print(response)
+    print(response)
     if response['error_code'] == '0':
       return response['data']
     else:
@@ -370,7 +373,7 @@ def sendTwentyScore(headers, action):
   try:
     response = requests_session().get(url=url, headers=headers, timeout=30).json()
     print(f'每日任务 {action}')
-    # print(response)
+    print(response)
     if response['status'] == 1:
       return response
     else:
@@ -391,7 +394,7 @@ def watchAdVideo(headers):
   try:
     response = requests_session().post(url=url, data="type=taskCenter", headers=headers, timeout=30).json()
     print('看广告视频')
-    # print(response)
+    print(response)
     if response['status'] == 1:
       return response
     else:
@@ -412,7 +415,7 @@ def watchGameVideo(body):
   try:
     response = requests_session().post(url=url, headers=headers, data=body, timeout=30).json()
     print('激励视频')
-    # print(response)
+    print(response)
     if response['success'] == True:
       return response['items']
     else:
@@ -436,7 +439,7 @@ def visitReward(body):
   try:
     response = requests_session().post(url=url, data=body, headers=headers, timeout=30).json()
     print('回访奖励')
-    # print(response)
+    print(response)
     if response['success'] == True:
       return response['items']
     else:
@@ -460,7 +463,7 @@ def articleRed(body):
   try:
     response = requests_session().post(url=url, data=body, headers=headers, timeout=30).json()
     print('惊喜红包')
-    # print(response)
+    print(response)
     if response['success'] == True:
       return response['items']
     else:
@@ -484,7 +487,7 @@ def readTime(body):
   try:
     response = requests_session().post(url=url, data=body, headers=headers, timeout=30).json()
     print('阅读时长')
-    # print(response)
+    print(response)
     if response['error_code'] == '0':
       return response
     else:
@@ -505,7 +508,7 @@ def rotary(headers, body):
   try:
     response = requests_session().post(url=url, data=body, headers=headers, timeout=30).json()
     print('转盘任务')
-    # print(response)
+    print(response)
     return response
   except:
     print(traceback.format_exc())
@@ -523,7 +526,7 @@ def rotaryChestReward(headers, body):
   try:
     response = requests_session().post(url=url, data=body, headers=headers, timeout=30).json()
     print('转盘宝箱')
-    # print(response)
+    print(response)
     if response['status'] == 1:
       i = 0
       while (i <= 3):
@@ -551,7 +554,7 @@ def runRotary(headers, body):
   try:
     response = requests_session().post(url=url, data=body, headers=headers, timeout=30).json()
     print('领取宝箱')
-    # print(response)
+    print(response)
     if response['status'] == 1:
       return response['data']
     else:
@@ -572,7 +575,7 @@ def doubleRotary(headers, body):
   try:
     response = requests_session().post(url=url, data=body, headers=headers, timeout=30).json()
     print('转盘双倍')
-    # print(response)
+    print(response)
     if response['status'] == 1:
       return response['data']
     else:
@@ -592,7 +595,7 @@ def incomeStat(headers):
   try:
     response = requests_session().get(url=url, headers=headers, timeout=50).json()
     print('收益统计')
-    # print(response)
+    print(response)
     if response['status'] == 0:
       return response
     else:
@@ -616,7 +619,7 @@ def withdraw(body):
   try:
     response = requests_session().post(url=url, headers=headers, data=body, timeout=30).json()
     print('自动提现')
-    # print(response)
+    print(response)
     if response['success'] == True:
       return response['items']
     else:
@@ -636,9 +639,33 @@ def bereadRed(headers):
   try:
     response = requests_session().post(url=url, headers=headers, timeout=30).json()
     print('时段红包')
-    # print(response)
+    print(response)
     if response['code'] == 1:
       return response['data']
+    else:
+      return
+  except:
+    print(traceback.format_exc())
+    return
+
+def startApp(headers, body):
+  """
+  启动App
+  :param headers:
+  :return:
+  """
+  time.sleep(0.3)
+  url = 'https://ios.baertt.com/v6/count/start.json'
+  headers = {
+    'User-Agent': 'KDApp/1.8.0 (iPhone; iOS 14.2; Scale/3.00)',
+    'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
+  }
+  try:
+    response = requests_session().post(url=url, headers=headers, data=body, timeout=30).json()
+    print('启动App')
+    print(response)
+    if response['success'] == True:
+      return response
     else:
       return
   except:
@@ -653,13 +680,16 @@ def run():
   print(f'\n【中青看点】{beijing_datetime.strftime("%Y-%m-%d %H:%M:%S")}')
   hour = beijing_datetime.hour
   for i, account in enumerate(COOKIELIST):
-    headers = account['YOUTH_HEADER']
-    readBody = account['YOUTH_READBODY']
-    redBody = account['YOUTH_REDBODY']
-    readTimeBody = account['YOUTH_READTIMEBODY']
-    withdrawBody = account['YOUTH_WITHDRAWBODY']
-    shareBody = account['YOUTH_SHAREBODY']
+    headers = account.get('YOUTH_HEADER')
+    readBody = account.get('YOUTH_READBODY')
+    readTimeBody = account.get('YOUTH_READTIMEBODY')
+    withdrawBody = account.get('YOUTH_WITHDRAWBODY')
+    shareBody = account.get('YOUTH_SHAREBODY')
+    startBody = account.get('YOUTH_STARTBODY')
     rotaryBody = f'{headers["Referer"].split("&")[15]}&{headers["Referer"].split("&")[8]}'
+
+    if startBody:
+      startApp(headers=headers, body=startBody)
     sign_res = sign(headers=headers)
     if sign_res and sign_res['status'] == 1:
       content += f'【签到结果】：成功 🎉 明日+{sign_res["nextScore"]}青豆'
@@ -687,10 +717,11 @@ def run():
     visit_reward_res = visitReward(body=readBody)
     if visit_reward_res:
       content += f'\n【回访奖励】：+{visit_reward_res["score"]}青豆'
-    shareArticle(headers=headers, body=shareBody)
-    for action in ['beread_extra_reward_one', 'beread_extra_reward_two', 'beread_extra_reward_three']:
-      time.sleep(5)
-      threeShare(headers=headers, action=action)
+    if shareBody:
+      shareArticle(headers=headers, body=shareBody)
+      for action in ['beread_extra_reward_one', 'beread_extra_reward_two', 'beread_extra_reward_three']:
+        time.sleep(5)
+        threeShare(headers=headers, action=action)
     open_box_res = openBox(headers=headers)
     if open_box_res:
       content += f'\n【开启宝箱】：+{open_box_res["score"]}青豆 下次奖励{open_box_res["time"] / 60}分钟'
@@ -700,9 +731,6 @@ def run():
     watch_game_video_res = watchGameVideo(body=readBody)
     if watch_game_video_res:
       content += f'\n【激励视频】：{watch_game_video_res["score"]}个青豆'
-    # article_red_res = articleRed(body=redBody)
-    # if article_red_res:
-    #   content += f'\n【惊喜红包】：+{article_red_res["score"]}个青豆'
     read_time_res = readTime(body=readTimeBody)
     if read_time_res:
       content += f'\n【阅读时长】：共计{int(read_time_res["time"]) // 60}分钟'
