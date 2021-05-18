@@ -27,7 +27,7 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 [@lxk0301](https://gitee.com/lxk0301/projects) - 狗东系列
 
-[@i-chenzhe](https://github.com/i-chenzhe/qx) - 狗东系列2
+[@sngxpro](https://github.com/sngxpro/QuanX) - 藏经阁
 
 [@NobyDa](https://github.com/NobyDa/Script/tree/master) - NobyDa
 
