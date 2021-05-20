@@ -95,3 +95,13 @@ jobs:
           source_branch: "main"
           destination_branch: "tom"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
+
+
+      - name: sync sync-sunner
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/Sunert/Script.git"
+          source_branch: "master"
+          destination_branch: "sunert"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
