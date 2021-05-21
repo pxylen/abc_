@@ -12,13 +12,13 @@ Rewrite: youth_reward = type=http-request,pattern=^https://kandian\.youth\.cn/v5
 Rewrite: youth_newtask = type=http-request,pattern=^https://kandian\.youth\.cn/v17/NewTask/getTaskList\.json,script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, requires-body=false, timeout=120
 
 #==== ios端浏览赚
-Rewrite: youth_llz = type=http-request,pattern=^https://ios\.baertt\.com\/v5\/task/browse_start\.json,script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, requires-body=true, timeout=120
+Rewrite: youth_llz = type=http-request,pattern=^https://kandian\.wkandian\.com\/v5\/task/browse_start\.json,script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, requires-body=true, timeout=120
 #==== ios端看看赚
-Rewrite: youth_kkz = type=http-request,pattern=^https://ios\.baertt\.com/v5/Nameless/adlickstart\.json,script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, requires-body=true, timeout=120
+Rewrite: youth_kkz = type=http-request,pattern=^https://kandian\.wkandian\.com/v5/Nameless/adlickstart\.json,script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, requires-body=true, timeout=120
 #==== ios端转发、看看赚入口
 Rewrite: youth_entrance = type=http-response,pattern=^https://kd\.youth\.cn/WebApi/NewTaskIos/getTaskList,script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, requires-body=true, timeout=120
 
 ## cron "40 2 * * *" script-path=https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js,timeout=530, wake-system=1, tag=中青看看赚
 
 [MITM]
-hostname = %APPEND% kandian.youth.cn, ios.baertt.com, kd.youth.cn
+hostname = %APPEND% kandian.youth.cn, kandian.wkandian.com, kd.youth.cn
