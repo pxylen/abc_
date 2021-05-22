@@ -224,12 +224,12 @@ function readTime() {
 }
 
 function Getbody() {
-    if ($request && $request.method != `OPTIONS` && ($request.url.match(/\/article\/info/)|| $request.url.match(/\/article\/complete/))) {
-       if($request.url.match(/complete/){
+    if ($request && ($request.url.match(/\/article\/info/)|| $request.url.match(/\/article\/complete/))) {
+       if($request.url.match(/complete/)){
           bodyVal = $request.body
        } else {
-        bodyVal = $request.url.split("?")[1];
-        }
+        bodyVal = $request.url.split("?")[1]
+        };
         if (YouthBody) {
             if (YouthBody.indexOf(bodyVal) > -1) {
                 $.log("此阅读请求已存在，本次跳过")
