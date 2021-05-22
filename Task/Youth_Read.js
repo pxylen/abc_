@@ -1,5 +1,5 @@
 /*
-更新时间: 2021-05-22 21:50
+更新时间: 2021-05-22 22:10
 
 点击几篇文章和视频，自动获取阅读请求，在Github Actions中的Secrets新建name为'YOUTH_READ'的一个值，拷贝抓包的请求体到下面Value的文本框中，添加的请求体越多，获得青豆次数越多，本脚本不包含任何推送通知
 
@@ -202,8 +202,8 @@ function batHost(api, body) {
     return {
         url: 'https://kandian.wkandian.com/v5/' + api,
         headers: {
-            'User-Agent': 'KDApp/2.0.2 (iPhone; iOS 14.5; Scale/3.00)',
-            'Host': 'ios.baertt.com',
+            'User-Agent': 'KDApp/2.1.1 (iPhone; iOS 14.6; Scale/3.00)',
+            'Host': 'kandian.wkandian.com',
             'Content-Type': 'application/x-www-form-urlencoded'
         },
         body: body
