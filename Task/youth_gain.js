@@ -7,6 +7,10 @@ https:\/\/kandian\.wkandian\.com\/v5\/task\/browse_start\.json url script-reques
 
 https:\/\/kandian\.wkandian\.com\/v5\/Nameless\/adlickstart\.json url script-request-body youth_gain.js
 
+  强制增加中青看点看看赚入口，和签到Cookie有冲突，请使用时添加，不用时请禁用
+  https:\/\/kd\.youth\.cn\/WebApi\/NewTaskIos\/getTaskList url script-response-body youdata.js
+*/
+
 
 多个请求体时用'&'号或者换行隔开"，本脚本可自动删除失效请求，请须知 ‼️
 
