@@ -30,7 +30,7 @@ http-request https://api.yundongfu.mobi/v1/user/dailyData script-path=https://cd
 #柠檬咕咚
 http-request https://mini-club.codoon.com/v1/home\Sclub_id=\d+ script-path=https://ghproxy.com/https://raw.githubusercontent.com/panghu999/ningmeng/main/gd.js, requires-header=true, tag=柠檬咕咚
 #柠檬看看集
-http-request http://\S+/t555/index.html\St=\S+ script-path=https://ghproxy.com/https://raw.githubusercontent.com/panghu999/ningmeng/main/kkj.js, requires-header=true, tag=柠檬看看集
+http-request http://\S+/t555/index.html\St=\S+ script-path=https://ghproxy.com/https://raw.githubusercontent.com/panghu999/ningmeng/main/kjj.js, requires-header=true, tag=柠檬看看集
 #彩虹消消消
 http-response https://xxx2.67mob.com/v2/auth/login-by-wx script-path=http://nm66.top/chxx.js,  tag=彩虹消消消
 
@@ -68,8 +68,8 @@ http-request https://ttcj.dashengtec.com/api/v2/sign script-path=https://raw.git
 http-request http://api.zsbrcc.com/api/extra/finishTask script-path=https://raw.githubusercontent.com/xl2101200/-/main/zsb.js, requires-body=true, tag=再生贝
 #WGC
 http-request http://stc.enjoyha.com/api/miner/mining script-path=https://raw.githubusercontent.com/xl2101200/-/main/wgc.js, requires-header=true, tag=WGC
-薪时光
-http-request http://www.hbwsnl.cn/index.php? script-path=https://raw.githubusercontent.com/xl2101200/-/main/xsg.js, requires-body=true, tag=WGC
+#薪时光
+http-request http://www.hbwsnl.cn/index.php? script-path=https://raw.githubusercontent.com/xl2101200/-/main/xsg.js, requires-body=true, tag=薪时光
 
 #炎兔
 http-request https://www.tupinh.com/index.php/api/user script-path=https://raw.githubusercontent.com/xl2101200/-/main/yt.js, requires-body=true, tag=炎兔
