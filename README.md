@@ -21,7 +21,7 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 [@whyour](https://github.com/whyour/hundun) - 混沌
 
-[@Sunert](https://github.com/Sunert/Scripts) - Sunert
+[@Sunert](https://github.com/Sunert/Script/tree/master) - Sunert
 
 [@monk-coder](https://github.com/monk-coder/dust) - monk-coder
 
