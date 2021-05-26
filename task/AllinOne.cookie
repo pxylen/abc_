@@ -179,7 +179,6 @@ http-request ^https:\/\/api\.kkmh\.com\/v\d\/passport\/user script-path=https://
 #lxk0301
 # 获取多账号京东Cookie
 http-request https:\/\/me-api\.jd\.com\/user_new\/info\/GetJDUserInfoUnion script-path=https://ghproxy.com/https://raw.githubusercontent.com/chinnkarahoi/jd_scripts/master/JD_extra_cookie.js, requires-header=true, tag=
-http-request https:\/\/wq\.jd\.com\/user_new\/info\/GetJDUserInfoUnion  script-path=https://ghproxy.com/https://raw.githubusercontent.com/wuzhi03/MyActions/main/JD_extra_cookie.js, requires-header=true, tag=
 # 宠汪汪强制为别人助力
 http-request ^https:\/\/draw\.jdfcloud\.com\/\/common\/pet\/enterRoom\/h5\?invitePin=.*(&inviteSource=task_invite&shareSource=\w+&inviteTimeStamp=\d+&openId=\w+)?&reqSource=weapp|^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/pet\/helpFriend\?friendPin script-path=https://jdsharedresourcescdn.azureedge.net/jdresource/jd_joy_help.js, requires-header=true, tag=
 # 宠汪汪赛跑
