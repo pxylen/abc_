@@ -6,7 +6,7 @@ name: jd_极速版签到
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 17 * * *'
 
 jobs:
   build:
