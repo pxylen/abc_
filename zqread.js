@@ -108,7 +108,7 @@ function getRequestData() {
         let tips = `新增第${count}条阅读数据，下次阅读第${currNum}条数据`;
         $.msg($.acName, subt, tips);
         $.setval(count + '', countKey + $.idx);
-      } else if ($request.method != 'OPTIONS' && $request.url.match(/\/article\/info\/get\.json/)) {
+      } else if ($request.method != 'OPTIONS' && $request.url.match(/\/article\/(info\/get|info|detail)\.json\?p=/)) {
         subt = '新增阅读数据new';
         let count = ($.getval(countKey + $.idx) || 0) - 0 + 1;
         $.setval($request.url.match(/\?(p=.+$)/)[1], mainKey + $.idx + '_' + count);
