@@ -101,6 +101,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
    $.done()
 };
 !(async () => {
+  $.msg($.name, '【提示】此脚本副本已停止更新',"因源脚本加密无法同步更新了，点击前往Sunert大佬的库获取使用最新脚本",{'open-url': "https://github.com/Sunert/Script/tree/master/TaskConf/youth"})
   if (!cookieArr[0]) {
     $.msg($.name, '【提示】请先获取中青看点一cookie',"",{'open-url': "https://kandian.youth.cn/u/mhkjN"})
     return;
