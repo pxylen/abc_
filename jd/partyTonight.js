@@ -76,9 +76,13 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
            // await getinvitecode();
             // console.log(codeList)
               await lottery()
+              await $.wait(5000);
               await lottery()
+              await $.wait(5000);
               await lottery()
+              await $.wait(5000);
               await lottery()
+              await $.wait(5000);
               await lottery()
         }
     }
@@ -124,9 +128,28 @@ function lottery(timeout = 0) {
             //if (appId === "1EFRTxQ") url.body += "&appid=golden-egg"
             $.post(url, async (err, resp, data) => {
                 try {
-                    data = JSON.parse(data);
-                  console.log(data)  
-                } catch (e) {
+                                      data = JSON.parse(data);
+                    if (data.code == 0 && data.data.bizCode) {
+                         if (data.data.bizCode == "-404"||data.data.bizCode == "-4001"||data.data.bizCode == "-401") {
+                            console.log(data.data.bizMsg)
+                        } else if (data.data.bizCode == 0&&data.data.result) {
+                            console.log("抽中啦")
+                            let result = data.data.result
+                            if(result.type==1){
+                            console.log("恭喜你抽中"+result.hongbaoValue +"红包")                            
+                            }else if(result.type==2){
+                            console.log("恭喜您抽中"+result.couponValue+"优惠券")
+                            }else if(result.type==3){
+                            console.log("恭喜您抽中"+result.beanCount+"京豆")
+                            }else {
+                            console.log(result)}
+                        } else {
+                            console.log(data.data)
+                        }
+                    } else {
+                        console.log(data)
+                    }       
+                     } catch (e) {
                     $.logErr(e, resp);
                 } finally {
                     resolve()
