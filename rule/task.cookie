@@ -15,8 +15,8 @@ http-request ^https?:\/\/iface(\d)?\.iqiyi\.com\/ script-path=https://raw.github
 
 
 # > 滴滴出行 (By @zZPiglet)
-http-request ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi.js, timeout=10, tag=滴滴出行cookie
-http-request ^https:\/\/bosp-api\.xiaojukeji\.com\/wechat\/benefit\/public\/index\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_ticket.js,tag=滴滴出行cookie
+http-request ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js, timeout=10, tag=滴滴出行cookie
+http-request ^https:\/\/bosp-api\.xiaojukeji\.com\/wechat\/benefit\/public\/index\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js,tag=滴滴出行cookie
 
 
 #获取挖矿Cookie
