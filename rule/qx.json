@@ -1,5 +1,5 @@
 {
-  "name": "張彡个人脚本",
+  "name": "个人脚本",
   "description": "張彡个人脚本，自用",
   "task": [
     "*/30 * * * * https://raw.githubusercontent.com/pxylen/abc_/sunert/Task/baidu_speed.js, tag=百度极速, img-url=https://qxzy.top/rules/QuantumultX/img/baidu_speed.png, enabled=true",
