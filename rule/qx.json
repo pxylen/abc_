@@ -1,0 +1,19 @@
+{
+  "name": "張彡个人脚本",
+  "description": "張彡个人脚本，自用",
+  "task": [
+    "*/30 * * * * https://raw.githubusercontent.com/pxylen/abc_/sunert/Task/baidu_speed.js, tag=百度极速, img-url=https://qxzy.top/rules/QuantumultX/img/baidu_speed.png, enabled=true",
+    "0 0 * * * https://raw.githubusercontent.com/pxylen/dog_jd/master/jx_cfdtx.js, tag=京喜财富岛提现, img-url=https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Gallery/API-Icon/jx_cfd_exchange.png, enabled=true",
+    "0 0 * * * https://raw.githubusercontent.com/pxylen/dog_jd/master/jd_blueCoin.js, tag=京小超领蓝币, img-url=https://raw.githubusercontent.com/Xirou/Script/master/jxc.PNG, enable=false",
+    "4 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.js, tag=腾讯视频, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/videoqq.png",
+    "5 0 * * * https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js, tag=滴滴出行, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png",
+    "6 0 * * * https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js, tag=支付宝天天挖矿, img-url=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png",
+    "7 0 * * * https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, tag=爱奇艺, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/iQIYI.png",
+    "8 0 * * * https://raw.githubusercontent.com/pxylen/abc_/sunert/Task/weibo.js, tag=微博&钱包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weibo.png, enable=false",
+    "9 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.js, tag=网易新闻, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/neteasenews.png, enabled=true",
+    "10 0 * * * https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png, tag=中青看看赚",
+    "10 9-22 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, tag=58同城, img-url=https://raw.githubusercontent.com/sngxpro/icons/main/genshin/anbo.png, enable=false",
+    "1 8,12,17 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/dingdong_yangyu1.js, tag=叮咚农场养鱼1, enable=false",
+    "1 8,12,17 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/dingdong_yangyu2.js, tag=叮咚农场养鱼2, enable=false"
+  ]
+}
