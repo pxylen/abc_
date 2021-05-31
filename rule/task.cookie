@@ -1,5 +1,5 @@
 
-hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,as.xiaojukeji.com,bosp-api.xiaojukeji.com,kandian.wkandian.com,kd.youth.cn,operation-api.jimistore.com,
+hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,as.xiaojukeji.com,bosp-api.xiaojukeji.com,kandian.wkandian.com,kd.youth.cn,operation-api.jimistore.com,*.m.163.com,
 
 
 # 58同城
@@ -21,6 +21,15 @@ http-request ^https:\/\/bosp-api\.xiaojukeji\.com\/wechat\/benefit\/public\/inde
 
 #获取挖矿Cookie
 http-request ^https:\/\/operation-api\.jimistore\.com\/* script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js, tag=支付宝获取挖矿Cookie
+
+
+# 网易新闻
+# 189及以前版本
+# ^https:\/\/user\.m\.163.com\/api\/v1\/commons\/fav\/topic\/allList url script-response-body chavyleung/neteasenews/neteasenews.cookie.js
+# 190~194版本
+# ^https:\/\/user\.m\.163.com\/api\/v1\/commons\/fav\/topic\/allList url script-request-header chavyleung/neteasenews/neteasenews.cookie.js
+# 195及以后版本
+http-request ^https:\/\/c\.m\.163\.com\/uc\/api\/sign\/v2\/commit script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.js, tag=网易新闻
 
 
 # 浏览赚：任务中心-》看看赚-》顶部的浏览赚-》点任务开始抓到任务数据包即可
