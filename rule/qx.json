@@ -3,6 +3,7 @@
   "description": "張彡个人脚本，自用",
   "task": [
     "*/30 * * * * https://raw.githubusercontent.com/pxylen/abc_/sunert/Task/baidu_speed.js, tag=百度极速, img-url=https://qxzy.top/rules/QuantumultX/img/baidu_speed.png, enabled=true",
+    "*/10 0-1 6 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/baidu_speed_cash.js, tag=百度极速提现, img-url=https://qxzy.top/rules/QuantumultX/img/baidu_speed.png, enabled=false",
     "0 0 * * * https://raw.githubusercontent.com/pxylen/dog_jd/master/jx_cfdtx.js, tag=京喜财富岛提现, img-url=https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Gallery/API-Icon/jx_cfd_exchange.png, enabled=true",
     "0 0 * * * https://raw.githubusercontent.com/pxylen/dog_jd/master/jd_blueCoin.js, tag=京小超领蓝币, img-url=https://raw.githubusercontent.com/Xirou/Script/master/jxc.PNG, enable=false",
     "4 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.js, tag=腾讯视频, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/videoqq.png",
