@@ -1,27 +1,28 @@
 /*
-618沸腾之夜抽奖@wenmoux
+总裁送好礼@wenmoux
+没加判断 凑合用吧 或者等大佬发脚本
 抄自 @yangtingxiao 抽奖机脚本
-活动入口：京东APP首页-瓜分18亿
+活动入口：
 更新地址：https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/partyTonight.js
 已支持IOS双京东账号, Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
 ============Quantumultx===============
 [task_local]
 #沸腾之夜抽奖
-0 20,21,22,23 31 5 * https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/partyTonight.js, tag=618沸腾之夜红包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+30 9,10 * * * https://cdn.jsdelivr.net/gh/Wenmoux/scripts/babelDiy.js, tag=总裁送好礼, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "0 20,21,22,23 31 5 *" script-path=https://g/jd_scripts/raw/ tag=沸腾之夜抽奖
+cron "0 20,21,22,23 31 5 *" script-path=https://g/jd_scripts/raw/ tag=总裁送好礼
 
 ===============Surge=================
-沸腾之夜抽奖 = type=cron,cronexp="0 20,21,22,23 31 5 *",wake-system=1,timeout=3600,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/partyTonight.js
+总裁送好礼 = type=cron,cronexp="0 20,21,22,23 31 5 *",wake-system=1,timeout=3600,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/babelDiy.js
 
 ============小火箭=========
-沸腾之夜抽奖 = type=cron,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/partyTonight.js, cronexpr="20 8 * * *", timeout=3600, enable=true
+总裁送好礼 = type=cron,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/babelDiy.js, cronexpr="20 8 * * *", timeout=3600, enable=true
 
  */
-const $ = new Env('沸腾之夜抽奖');
+const $ = new Env('总裁送好礼');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 
@@ -73,29 +74,28 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
                 continue
             }
 
-           // await getinvitecode();
-            // console.log(codeList)
-              await lottery()
-              await $.wait(5000);
-              await lottery()
-              await $.wait(5000);
-              await lottery()
-              await $.wait(5000);
-              await lottery()
-              await $.wait(5000);
-              await lottery()
-        }
-    }
-   /* for (let i = 0; i < cookiesArr.length; i++) {
-        cookie = cookiesArr[i];
-        if (cookie) {
-            for (k = 0; k < codeList.length; k++) {
-                console.log(`账号${i} 为${codeList[k]}助力中`)
-                await helpme(codeList[k], k)
+            let headers = {
+                //    'Origin': `https://h5static.m.jd.com`,
+                'cookie': cookie,
+                Host: "api.m.jd.com",
+                'Referer': "https://h5.m.jd.com/babelDiy/Zeus/BryCkeWYJm4YwzVhpTo9RSqzCFz/index.html?ad_od=1&inviteId=jd_68997b52ea865&lng=107.147022&lat=33.255229&sid=e5150a3fdd017952350b4b41294b145w&un_area=27_2442_2444_31912"
             }
+
+            for (let k = 0; k < cookiesArr.length; k++) {
+                let pin = cookiesArr[k].match(/pt_pin=(.+?);/)[1]
+                console.log("为"+pin+"助力中")
+                let code = await help(pin)
+                
+                if (code != 0) {
+                    console.log("助力次数已满/账号火爆")
+                    k= 9999
+                }
+                await $.wait(500);
+            }
+            await geTaskList()
+
         }
     }
-    */
 
 })()
 .catch((e) => $.logErr(e))
@@ -107,153 +107,151 @@ function shareCodesFormat() {
         //     resolve();
     })
 }
-function lottery(timeout = 0) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            let url = {
-                url: "https://api.m.jd.com/",
-                headers: {
-                    'Origin': `https://h5static.m.jd.com`,
-                    'Cookie': cookie,
-                    'Connection': `keep-alive`,
-                    'Accept': `application/json, text/plain, */*`,
-                    'Referer': "https://h5static.m.jd.com/babelDiy/Zeus/qEfNdq9oRsJfhYJ7XR1EahyLt9L/index.html?inviteCode=oMZeXOVB9tgEBOVjY7Bwqg&lng=107.147022&lat=33.255229&un_area=8_573_6627_52446",
-                    'Host': `api.m.jd.com`,
-                    'Accept-Encoding': `gzip, deflate, br`,
-                    'Accept-Language': `zh-cn`
-                },
-                body: `functionId=partyTonight_lottery&body={}&client=wh5&clientVersion=1.0.0&uuid=`
-            }
-            //console.log(url.body)
-            //if (appId === "1EFRTxQ") url.body += "&appid=golden-egg"
-            $.post(url, async (err, resp, data) => {
-                try {
-                                      data = JSON.parse(data);
-                    if (data.code == 0 && data.data.bizCode) {
-                         if (data.data.bizCode == "-404"||data.data.bizCode == "-4001"||data.data.bizCode == "-401") {
-                            console.log(data.data.bizMsg)
-                        } else if (data.data.bizCode == 0&&data.data.result) {
-                            console.log("抽中啦")
-                            let result = data.data.result
-                            if(result.type==1){
-                            console.log("恭喜你抽中"+result.hongbaoValue +"红包")                            
-                            }else if(result.type==2){
-                            console.log("恭喜您抽中"+result.couponValue+"优惠券")
-                            }else if(result.type==3){
-                            console.log("恭喜您抽中"+result.beanCount+"京豆")
-                            }else {
-                            console.log(result)}
-                        } else {
-                            console.log(data.data)
+
+function geTaskList() {
+    return new Promise(async (resolve) => {
+        const options = taskPostUrl(`functionId=superbrand_getHomePageData&body={}&client=wh5&clientVersion=1.0.0&appid=content_ecology&uuid=2393039353533623-7383235613364343&t=1622583423563`)
+        $.post(options, async (err, resp, data) => {
+            try {
+                if (err) {
+                    console.log(`${JSON.stringify(err)}`);
+                    console.log(`${$.name} API请求失败，请检查网路重试`);
+                } else {
+                    data = JSON.parse(data);
+                    if (data && data.code === 0) {
+                        let taskList = data.data.result.taskPresidentVoList
+                              console.log("开始执行品牌会场任务")
+                               for (task of  taskList[1].taskVoList ){
+                               type = taskList[1].taskType
+                               await dotask(type,task.taskId) 
+                                 await $.wait(500);       
+                               }
+                            console.log("开始执行超级会场任务")   
+                           for (task of  taskList[2].taskVoList ){
+                               type = taskList[2].taskType
+                               await dotask(type,task.taskId)   
+                                  await $.wait(500);    
+                               }   
+                        console.log("开始翻牌")
+                        for (card of data.data.result.giftCardVoList) {
+                            await filpCard(card.cardId)
+                            await $.wait(500);
                         }
-                    } else {
-                        console.log(data)
-                    }       
-                     } catch (e) {
-                    $.logErr(e, resp);
-                } finally {
-                    resolve()
-                }
-            })
-        }, timeout)
-    })
-}
-//助力
-function getinvitecode(timeout = 0) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            let url = {
-                url: "https://api.m.jd.com/",
-                headers: {
-                    'Origin': `https://h5static.m.jd.com`,
-                    'Cookie': cookie,
-                    'Connection': `keep-alive`,
-                    'Accept': `application/json, text/plain, */*`,
-                    'Referer': "https://h5static.m.jd.com/babelDiy/Zeus/qEfNdq9oRsJfhYJ7XR1EahyLt9L/index.html?inviteCode=oMZeXOVB9tgEBOVjY7Bwqg&lng=107.147022&lat=33.255229&un_area=8_573_6627_52446",
-                    'Host': `api.m.jd.com`,
-                    'Accept-Encoding': `gzip, deflate, br`,
-                    'Accept-Language': `zh-cn`
-                },
-                body: `functionId=partyTonight_init&body={}&client=wh5&clientVersion=1.0.0&uuid=`
-            }
-            //console.log(url.body)
-            //if (appId === "1EFRTxQ") url.body += "&appid=golden-egg"
-            $.post(url, async (err, resp, data) => {
-                try {
-                    data = JSON.parse(data);
-                    //     console.log(data)
-                    if (data.data && data.data.bizCode == 0 && data.data.result.inviteCode) {
-                        console.log("助力码：" + data.data.result.inviteCode)
-                        codeList[codeList.length] = data.data.result.inviteCode
-                    } else {
-                        console.log(data)
                     }
-                } catch (e) {
-                    $.logErr(e, resp);
-                } finally {
-                    resolve()
+                    console.log(`获取任务列表成功\n`);
                 }
-            })
-        }, timeout)
-    })
+            } catch (e) {
+                $.logErr(e, resp);
+            } finally {
+                resolve();
+            }
+        });
+    });
 }
 
-
-//助力
-function helpme(id, k, timeout = 0) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            let url = {
-                url: "https://api.m.jd.com/",
-                headers: {
-                    'Origin': `https://h5static.m.jd.com`,
-                    'Cookie': cookie,
-                    'Connection': `keep-alive`,
-                    'Accept': `application/json, text/plain, */*`,
-                    'Referer': `https://h5static.m.jd.com/babelDiy/Zeus/qEfNdq9oRsJfhYJ7XR1EahyLt9L/index.html?inviteCode=${id}&lng=107.147022&lat=33.255229&un_area=8_573_6627_52446`,
-                    'Host': `api.m.jd.com`,
-                    'Accept-Encoding': `gzip, deflate, br`,
-                    'Accept-Language': `zh-cn`
-                },
-                body: `functionId=partyTonight_assist&body={"inviteCode":"${id}"}&client=wh5&clientVersion=1.0.0&uuid=`
-            }
-            //if (appId === "1EFRTxQ") url.body += "&appid=golden-egg"
-            $.post(url, async (err, resp, data) => {
-                //  console.log(url.body)
-                try {
+function help(pin) {
+    return new Promise(async (resolve) => {
+        const options = taskPostUrl(`functionId=superbrand_doTask&body={"taskType":"4","inviteId":"${pin}"}&client=wh5&clientVersion=1.0.0&appid=content_ecology&uuid=2393039353533623-7383235613364343&t=1622582583791`)
+        $.post(options, async (err, resp, data) => {
+            try {
+                if (err) {
+                    console.log(`${JSON.stringify(err)}`);
+                    console.log(`${$.name} API请求失败，请检查网路重试`);
+                } else {
+                    console.log(data)
                     data = JSON.parse(data);
-                    if (data.code == 0 && data.data.bizCode) {
-                        if (data.data.bizMsg == "已经有很多人帮过TA啦") {
-                            console.log("他已经被塞满啦！！")
-                            codeList.splice(k, 1)
-                        } else if (data.data.bizCode == "0") {
-                            console.log("助力成功")
-                        } else if (data.data.bizCode == "-303") {
-                            console.log("助力次数已耗尽...")
-                        } else if (data.data.bizCode == "-1001") {
-                            console.log("你个黑鬼...玩蛇皮")
-                        } else if (data.data.bizCode == "-302") {
-                            console.log("自己不能干自己的呀...")
+                    if (data && data.code === 0) {
+                        if (data.data.bizCode === 0) {
+                            console.log("助力成功啦~")
+                        }
+                        resolve(data.data.bizCode)
+                    }
+
+                }
+            } catch (e) {
+                $.logErr(e, resp);
+            } finally {
+                resolve();
+            }
+        });
+    });
+}
+
+function filpCard(id) {
+    return new Promise(async (resolve) => {
+        const options = taskPostUrl(`functionId=superbrand_filpCard&body={"cardId":${id}}&client=wh5&clientVersion=1.0.0&appid=content_ecology&uuid=2393039353533623-7383235613364343&t=1622584839698`)
+        $.post(options, async (err, resp, data) => {
+            try {
+                if (err) {
+                    console.log(`${JSON.stringify(err)}`);
+                    console.log(`${$.name} API请求失败，请检查网路重试`);
+                } else {
+                    data = JSON.parse(data);
+                    if (data && data.code === 0) {
+                        if (data.data.bizCode === 0) {
+                            console.log(`获得${data.data.result.jpeasList[0].prizeName}`)
                         } else {
                             console.log(data.data.bizMsg)
                         }
-                    } else {
-                        console.log(data)
                     }
-
-
-                } catch (e) {
-                    $.logErr(e, resp);
-                } finally {
-                    resolve()
                 }
-            })
-        }, timeout)
-    })
+            } catch (e) {
+                $.logErr(e, resp);
+            } finally {
+                resolve();
+            }
+        });
+    });
 }
 
+function dotask(type, id) {
+    return new Promise(async (resolve) => {
+        const options = taskPostUrl(`functionId=superbrand_doTask&body={"taskType":${type},"taskId":${id}}&client=wh5&clientVersion=1.0.0&appid=content_ecology&uuid=2393039353533623-7383235613364343&t=1622583266816`)
+        $.post(options, (err, resp, data) => {
+            try {
+                if (err) {
+                    console.log(`${JSON.stringify(err)}`);
+                    console.log(`${$.name} API请求失败，请检查网路重试`);
+                } else {
+                    data = JSON.parse(data);
+                    if (data && data.code === 0) {
+                        console.log(`任务已完成,获得330总裁力\n`);
+                    }
 
+                }
+            } catch (e) {
+                $.logErr(e, resp);
+            } finally {
+                resolve();
+            }
+        });
+    });
+}
 
+function taskPostUrl(body) {
+    let o = '',
+        r = '';
+    const time = Date.now();
+    o = "07035cabb557f096" + time;
+    r = time.toString();
+    // let t = "/khc/task/doQuestion";
+    // let a = "brandId=555555&questionId=2&result=1"
+    return {
+        url: "https://api.m.jd.com/client.action",
+        body,
+        headers: {
+            Accept: "application/json,text/plain, */*",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Accept-Language": "zh-cn",
+            Connection: "keep-alive",
+            Cookie: cookie,
+            Host: "api.m.jd.com",
+            Referer: "https://h5.m.jd.com/babelDiy/Zeus/BryCkeWYJm4YwzVhpTo9RSqzCFz/index.html?ad_od=1&inviteId=jd_68997b52ea865&lng=107.147022&lat=33.255229&sid=e5150a3fdd017952350b4b41294b145w&un_area=27_2442_2444_31912",
+            "User-Agent": "jdapp;android;9.4.4;10;3b78ecc3f490c7ba;network/UNKNOWN;model/M2006J10C;addressid/138543439;aid/3b78ecc3f490c7ba;oaid/7d5870c5a1696881;osVer/29;appBuild/85576;psn/3b78ecc3f490c7ba|541;psq/2;uid/3b78ecc3f490c7ba;adk/;ads/;pap/JA2015_311210|9.2.4|ANDROID 10;osv/10;pv/548.2;jdv/0|iosapp|t_335139774|appshare|CopyURL|1606277982178|1606277986;ref/com.jd.lib.personal.view.fragment.JDPersonalFragment;partner/xiaomi001;apprpd/MyJD_Main;Mozilla/5.0 (Linux; Android 10; M2006J10C Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36",
+        }
+    }
+}
 
 
 function jsonParse(str) {
