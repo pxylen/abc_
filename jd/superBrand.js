@@ -1,29 +1,30 @@
 /*
-总裁送好礼@wenmoux
-跑两次就行 日志骗人的
+特物ZX联想@wenmoux
 没加判断 凑合用吧 或者等大佬发脚本
+不知道谁的口令
+2.0复制整段话 https://JoQYw1jIiA8FsS国创IP好礼随心抽#29vBY8N3ja@qu达開↖綡東↗
 抄自 @yangtingxiao 抽奖机脚本
 活动入口：
-更新地址：https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/babelDiy.js
+更新地址：https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/superBrand.js
 已支持IOS双京东账号, Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
 ============Quantumultx===============
 [task_local]
-#沸腾之夜抽奖
-30 9,10 * * * https://cdn.jsdelivr.net/gh/Wenmoux/scripts/babelDiy.js, tag=总裁送好礼, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+#特物ZX联想
+30 11 * * * https://cdn.jsdelivr.net/gh/Wenmoux/scripts/superBrand.js, tag=特物ZX联想, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "30 9,10 * * *" script-path=https://g/jd_scripts/raw/ tag=总裁送好礼
+cron "30 11 * * *" script-path=https://g/jd_scripts/raw/ tag=特物ZX联想
 
 ===============Surge=================
-总裁送好礼 = type=cron,cronexp="30 9,10 * * *",wake-system=1,timeout=3600,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/babelDiy.js
+特物ZX联想 = type=cron,cronexp="30 11 * * *",wake-system=1,timeout=3600,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/superBrand.js
 
 ============小火箭=========
-总裁送好礼 = type=cron,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/babelDiy.js, cronexpr="30 9,10 * * *", timeout=3600, enable=true
+特物ZX联想 = type=cron,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/superBrand.js, cronexpr="30 11 * * *", timeout=3600, enable=true
 
  */
-const $ = new Env('总裁送好礼');
+const $ = new Env('特物ZX联想');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 
@@ -44,6 +45,8 @@ if ($.isNode()) {
 }
 
 const JD_API_HOST = `https://api.m.jd.com/client.action`;
+
+
 !(async () => {
     if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {
@@ -61,7 +64,6 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
             $.nickName = '';
             $.beans = 0
             message = ''
-
             //   await shareCodesFormat();
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
             if (!$.isLogin) {
@@ -75,42 +77,65 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
                 continue
             }
 
-            let headers = {
-                //    'Origin': `https://h5static.m.jd.com`,
-                'cookie': cookie,
-                Host: "api.m.jd.com",
-                'Referer': "https://h5.m.jd.com/babelDiy/Zeus/BryCkeWYJm4YwzVhpTo9RSqzCFz/index.html?ad_od=1&inviteId=jd_68997b52ea865&lng=107.147022&lat=33.255229&sid=e5150a3fdd017952350b4b41294b145w&un_area=27_2442_2444_31912"
-            }
-
-            for (let k = 0; k < cookiesArr.length; k++) {
-                let pin = cookiesArr[k].match(/pt_pin=(.+?);/)[1]
-                console.log("为"+pin+"助力中")
-                let code = await help(pin)                
-                if (code ===207 || code ===400) {
-                    console.log("助力次数已满/账号火爆")
-                    k= 9999
-                }
-                await $.wait(500);
-            }
-            await geTaskList()
+                                          await doTask("44spR7W6XFhQXzMvPva99WYLTscr", "1000000157", "3") //关注
+            await superBrandTaskLottery()
+            await getCode()
+            console.log("开始抽奖")
+                await superBrandTaskLottery()
+                await superBrandTaskLottery()
+                await superBrandTaskLottery()   
 
         }
     }
+    for (let i = 0; i < cookiesArr.length; i++) {
+        cookie = cookiesArr[i];
+        if (cookie) {
+           $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
+            $.index = i + 1;
+            $.isLogin = true;
+            $.nickName = '';
+            $.beans = 0
+            message = ''
 
+            //   await shareCodesFormat();
+            console.log(`\n******开始【京东账号${$.index}】\n`);
+     
+       for (l = 0; l < codeList.length; l++) {
+       console.log(`为 ${codeList[l]}助力中`)
+                await doTask("2jpJFvC9MBNC7Qsqrt8WzEEcVoiT", codeList[l], 2)
+            }
+        }
+    }
+for (let i = 0; i < cookiesArr.length; i++) {
+        cookie = cookiesArr[i];
+        if (cookie) {
+           $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
+            $.index = i + 1;
+            $.isLogin = true;
+            $.nickName = '';
+            $.beans = 0
+            message = ''
+
+            //   await shareCodesFormat();
+            console.log(`\n******开始【京东账号${$.index}】抽奖\n`);
+                await superBrandTaskLottery()
+                await superBrandTaskLottery()
+                await superBrandTaskLottery()   
+
+
+        }
+    }
 })()
 .catch((e) => $.logErr(e))
     .finally(() => $.done())
 //获取活动信息
-function shareCodesFormat() {
-    return new Promise(async resolve => {
 
-        //     resolve();
-    })
-}
 
-function geTaskList() {
+
+function getCode() {
     return new Promise(async (resolve) => {
-        const options = taskPostUrl(`functionId=superbrand_getHomePageData&body={}&client=wh5&clientVersion=1.0.0&appid=content_ecology&uuid=2393039353533623-7383235613364343&t=1622583423563`)
+        const options = taskPostUrl("superBrandTaskList", `%7B%22source%22:%22secondfloor%22,%22activityId%22:1000007,%22assistInfoFlag%22:1%7D`)
+        //  console.log(options)
         $.post(options, async (err, resp, data) => {
             try {
                 if (err) {
@@ -118,53 +143,17 @@ function geTaskList() {
                     console.log(`${$.name} API请求失败，请检查网路重试`);
                 } else {
                     data = JSON.parse(data);
-                    if (data && data.code === 0) {
-                        let taskList = data.data.result.taskPresidentVoList
-                              console.log("开始执行品牌会场任务")
-                               for (task of  taskList[1].taskVoList ){
-                               type = taskList[1].taskType
-                               await dotask(type,task.taskId) 
-                                 await $.wait(500);       
-                               }
-                            console.log("开始执行超级会场任务")   
-                           for (task of  taskList[2].taskVoList ){
-                               type = taskList[2].taskType
-                               await dotask(type,task.taskId)   
-                                  await $.wait(500);    
-                               }   
-                        console.log("开始翻牌")
-                        for (card of data.data.result.giftCardVoList) {
-                            await filpCard(card.cardId)
-                            await $.wait(500);
+                    //     console.log(data)
+                    if (data && data.data && data.code === "0") {
+                        if (data.data.result && data.data.result.taskList && data.data.result.taskList[3]) {
+                            let result = data.data.result.taskList[3]
+                            let encryptAssignmentId = result.encryptAssignmentId
+                            let itemid = result.ext.assistTaskDetail.itemId
+                            codeList[codeList.length] = itemid
+                            console.log(`获取邀请码成功 ${itemid}`);
+                        } else {
+                            console.log(data)
                         }
-                    }
-                    console.log(`获取任务列表成功\n`);
-                }
-            } catch (e) {
-                $.logErr(e, resp);
-            } finally {
-                resolve();
-            }
-        });
-    });
-}
-
-function help(pin) {
-    return new Promise(async (resolve) => {
-        const options = taskPostUrl(`functionId=superbrand_doTask&body={"taskType":"4","inviteId":"${pin}"}&client=wh5&clientVersion=1.0.0&appid=content_ecology&uuid=2393039353533623-7383235613364343&t=1622582583791`)
-        $.post(options, async (err, resp, data) => {
-            try {
-                if (err) {
-                    console.log(`${JSON.stringify(err)}`);
-                    console.log(`${$.name} API请求失败，请检查网路重试`);
-                } else {
-                    console.log(data)
-                    data = JSON.parse(data);
-                    if (data && data.code === 0) {
-                        if (data.data.bizCode === 0) {
-                            console.log("助力成功啦~")
-                        }
-                        resolve(data.data.bizCode)
                     }
 
                 }
@@ -177,22 +166,26 @@ function help(pin) {
     });
 }
 
-function filpCard(id) {
+function doTask(encryptAssignmentId, id, type) {
     return new Promise(async (resolve) => {
-        const options = taskPostUrl(`functionId=superbrand_filpCard&body={"cardId":${id}}&client=wh5&clientVersion=1.0.0&appid=content_ecology&uuid=2393039353533623-7383235613364343&t=1622584839698`)
+        const options = taskPostUrl(`superBrandDoTask`, `{"source":"secondfloor","activityId":1000007,"encryptProjectId":"cUNnf3E6aMLQcEQbTVxn8AyhjXb","encryptAssignmentId":"${encryptAssignmentId}","assignmentType":2,"itemId":"${id}","actionType":0}`)
         $.post(options, async (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${JSON.stringify(err)}`);
                     console.log(`${$.name} API请求失败，请检查网路重试`);
                 } else {
+                    //      console.log(data)
                     data = JSON.parse(data);
-                    if (data && data.code === 0) {
-                        if (data.data.bizCode === 0) {
-                            console.log(`获得${data.data.result.jpeasList[0].prizeName}`)
+                    if (data && data.code === "0") {
+                        if (data.data.bizCode === "0") {
+                            console.log("任务成功啦~")
                         } else {
                             console.log(data.data.bizMsg)
                         }
+                        resolve(data.data.bizCode)
+                    } else {
+                        console.log(data)
                     }
                 }
             } catch (e) {
@@ -204,20 +197,26 @@ function filpCard(id) {
     });
 }
 
-function dotask(type, id) {
+function superBrandTaskLottery() {
     return new Promise(async (resolve) => {
-        const options = taskPostUrl(`functionId=superbrand_doTask&body={"taskType":${type},"taskId":${id}}&client=wh5&clientVersion=1.0.0&appid=content_ecology&uuid=2393039353533623-7383235613364343&t=1622583266816`)
-        $.post(options, (err, resp, data) => {
+        const options = taskPostUrl("superBrandTaskLottery", '{"source":"secondfloor","activityId":1000007}')
+        $.post(options, async (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${JSON.stringify(err)}`);
                     console.log(`${$.name} API请求失败，请检查网路重试`);
                 } else {
                     data = JSON.parse(data);
-                    if (data && data.code === 0) {
-                        console.log(`任务完成`);
+                 //   console.log(data)
+                    if (data && data.code === "0") {
+                        if (data.data.bizCode === "TK000") {
+                            console.log(`获得 你猜获得了啥🐶`)
+                        } else {
+                            console.log(data.data.bizMsg)
+                        }
+                    } else {
+                        console.log(data)
                     }
-
                 }
             } catch (e) {
                 $.logErr(e, resp);
@@ -228,17 +227,13 @@ function dotask(type, id) {
     });
 }
 
-function taskPostUrl(body) {
-    let o = '',
-        r = '';
+
+
+function taskPostUrl(functionid, body) {
     const time = Date.now();
-    o = "07035cabb557f096" + time;
-    r = time.toString();
-    // let t = "/khc/task/doQuestion";
-    // let a = "brandId=555555&questionId=2&result=1"
     return {
-        url: "https://api.m.jd.com/client.action",
-        body,
+        url: `https://api.m.jd.com/api?functionId=${functionid}&appid=ProductZ4Brand&client=wh5&t=${time}&body=${body}`,
+        body: "",
         headers: {
             Accept: "application/json,text/plain, */*",
             "Content-Type": "application/x-www-form-urlencoded",
@@ -247,7 +242,7 @@ function taskPostUrl(body) {
             Connection: "keep-alive",
             Cookie: cookie,
             Host: "api.m.jd.com",
-            Referer: "https://h5.m.jd.com/babelDiy/Zeus/BryCkeWYJm4YwzVhpTo9RSqzCFz/index.html?ad_od=1&inviteId=jd_68997b52ea865&lng=107.147022&lat=33.255229&sid=e5150a3fdd017952350b4b41294b145w&un_area=27_2442_2444_31912",
+            Referer: "https://prodev.m.jd.com/mall/active/NrHM6Egy96gxeG4eb7vFX7fYXf3/index.html?activityId=1000007&encryptProjectId=cUNnf3E6aMLQcEQbTVxn8AyhjXb&assistEncryptAssignmentId=2jpJFvC9MBNC7Qsqrt8WzEEcVoiT&assistItemId=S5ijz_8ukVww&tttparams=GgS7lUeyJnTGF0IjoiMzMuMjUyNzYyIiwiZ0xuZyI6IjEwNy4xNjA1MDcifQ6%3D%3D&lng=107.147022&lat=33.255229&sid=e5150a3fdd017952350b4b41294b145w&un_area=27_2442_2444_31912",
             "User-Agent": "jdapp;android;9.4.4;10;3b78ecc3f490c7ba;network/UNKNOWN;model/M2006J10C;addressid/138543439;aid/3b78ecc3f490c7ba;oaid/7d5870c5a1696881;osVer/29;appBuild/85576;psn/3b78ecc3f490c7ba|541;psq/2;uid/3b78ecc3f490c7ba;adk/;ads/;pap/JA2015_311210|9.2.4|ANDROID 10;osv/10;pv/548.2;jdv/0|iosapp|t_335139774|appshare|CopyURL|1606277982178|1606277986;ref/com.jd.lib.personal.view.fragment.JDPersonalFragment;partner/xiaomi001;apprpd/MyJD_Main;Mozilla/5.0 (Linux; Android 10; M2006J10C Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36",
         }
     }
