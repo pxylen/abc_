@@ -52,17 +52,15 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
         });
         return;
     }
-
+            message = ''
     for (let i = 0; i < cookiesArr.length; i++) {
         cookie = cookiesArr[i];
         if (cookie) {
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
             $.index = i + 1;
             $.isLogin = true;
-            $.nickName = '';
-            $.beans = 0
+
             //       $.taskList=[]
-            message = ''
             //   await shareCodesFormat();
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
             if (!$.isLogin) {
@@ -104,9 +102,8 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
     for (let i = 0; i < cookiesArr.length; i++) {
         cookie = cookiesArr[i];
         if (cookie) {
-            //   await shareCodesFormat();
+                    $.index = i + 1;
             console.log(`\n******开始【京东账号${$.index}】\n`);
-
             for (l = 0; l < codeList.length; l++) {
                 console.log(`为 ${codeList[l]}助力中`)
                 await doTask("mcxhd_brandcity_doTask",`{"itemToken":"${codeList[l]}","token":"jd17919499fb7031e5"}`)
@@ -118,8 +115,12 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
     for (let i = 0; i < cookiesArr.length; i++) {
         cookie = cookiesArr[i];
         if (cookie) {
+            $.beans = 0
+            $.index = i + 1;
+            $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
+          
             //   await shareCodesFormat();
-            console.log(`\n******开始【京东账号${$.index}】\n`);
+            console.log(`\n******开始【京东账号${$.index}】${   $.UserName}\n`);
 
             console.log("开始抽奖")
             for (g=0;g<5;g++){
@@ -127,7 +128,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
             await $.wait(1000);
             }            
             console.log(`共获得${$.beans} 京豆`)
-            message += `【京东账号${$.index}】\n共获得${$.beans} 京豆\n`
+            message += `【京东账号${$.index}】${ $.UserName}\n共获得${$.beans} 京豆\n`
 
         }
     }
