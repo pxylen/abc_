@@ -88,7 +88,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
                         if (taskType === "9") {
                             taskToken = $.taskList[j].subItem[k].taskToken
                        //     console.log( $.taskList[j])
-                            await $.wait(5000);
+                            await $.wait(5500);
                             await doTask("qryViewkitCallbackResult",  `{"dataSource":"newshortAward","method":"getTaskAward","reqParams":"{\\"taskToken\\":\\"${taskToken}\\"}","sdkVersion":"1.0.0","clientLanguage":"zh"}`)                         
                             await doTask("mcxhd_brandcity_checkTaskStatus", `{"itemToken":"${$.taskList[j].subItem[k].itemToken}","token":"jd17919499fb7031e5"}`)
                         }
