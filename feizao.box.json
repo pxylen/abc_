@@ -1352,6 +1352,29 @@
             "repo": "https://github.com/age174/-/blob/main/wdwhd.js",
             "icons": ["https://ae01.alicdn.com/kf/Uc5a0618d6a404079af9216e1012e35efs.jpg", "https://ae01.alicdn.com/kf/Uc5a0618d6a404079af9216e1012e35efs.jpg"],
             "script": "https://raw.githubusercontent.com/age174/-/main/wdwhd.js"
+    } ,
+    {
+            "id": "qmxx",
+            "name": "全免小说",
+            "keys": ["qmxxhd","qmxxurl","qmxxzpurl","qmxxspurl","qmxxtxurl","qmxxydurl","qmxxhd2","qmxxurl2","qmxxzpurl2","qmxxspurl2","qmxxtxurl2","qmxxydurl2","qmxxhd3","qmxxurl3","qmxxzpurl3","qmxxspurl3","qmxxtxurl3","qmxxydurl3","qmxxhd4","qmxxurl4","qmxxzpurl4","qmxxspurl4","qmxxtxurl4","qmxxydurl4","qmxxhd5","qmxxurl5","qmxxzpurl5","qmxxspurl5","qmxxtxurl5","qmxxydurl5","qmxxhd6","qmxxurl6","qmxxzpurl6","qmxxspurl6","qmxxtxurl6","qmxxydurl6","qmxxhd7","qmxxurl7","qmxxzpurl7","qmxxspurl7","qmxxtxurl7","qmxxydurl7","qmxxhd8","qmxxurl8","qmxxzpurl8","qmxxspurl8","qmxxtxurl8","qmxxydurl8","qmxxhd9","qmxxurl9","qmxxzpurl9","qmxxspurl9","qmxxtxurl9","qmxxydurl9","qmxxhd10","qmxxurl10","qmxxzpurl10","qmxxspurl10","qmxxtxurl10","qmxxydurl10","qmxxhd10","qmxxurl10","qmxxzpurl10","qmxxspurl10","qmxxtxurl10","qmxxydurl10"],
+            "author": "@feizao",
+            "settings": [{
+            "id": "qmxxstatus",
+            "name": "当前账号",
+            "val": "1",
+            "type": "number",
+            "desc": "当前账号对应"
+    },
+    {
+            "id": "qmxxcount",
+            "name": "账号个数",
+            "val": "1",
+            "type": "number",
+            "desc": "需要几个账号，数字为几"
+    }],
+            "repo": "https://github.com/age174/-/blob/main/qmxx.js",
+            "icons": ["https://i0.hdslb.com/bfs/album/5d117c3f2a1a15fe692e50282b3e7beeebf96422.png", "https://i0.hdslb.com/bfs/album/5d117c3f2a1a15fe692e50282b3e7beeebf96422.png"],
+            "script": "https://raw.githubusercontent.com/age174/-/main/qmxx.js"
     } 
 ]
 }
