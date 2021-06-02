@@ -109,7 +109,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
 
             for (l = 0; l < codeList.length; l++) {
                 console.log(`为 ${codeList[l]}助力中`)
-                await doTask("mcxhd_brandcity_doTask",codeList[l])
+                await doTask("mcxhd_brandcity_doTask",`{"itemToken":"${codeList[l]}","token":"jd17919499fb7031e5"}`)
                 await $.wait(500);
             }
         }
@@ -211,7 +211,6 @@ function doTask(functionid,body) {
                 } else {
                //     console.log(data)
                     data = JSON.parse(data);
-
                     if (data.retCode === "200") {
                         console.log("任务成功啦~")
                     } else {
