@@ -33,9 +33,9 @@ https://raw.githubusercontent.com/age174/-/main/feizao.box.json
 
 [rewrite_local]
 #全免小说签到转盘
-http://ap.taoyuewenhua.com/ajax/ url script-request-headers https://raw.githubusercontent.com/age174/-/main/qmxx.js
+http://ap.taoyuewenhua.com/ajax/ url script-request-header https://raw.githubusercontent.com/age174/-/main/qmxx.js
 #全免小说视频时段
-https://.*itaoxiaoshuo.com/auth/ url script-request-headers https://raw.githubusercontent.com/age174/-/main/qmxx.js
+https://.*itaoxiaoshuo.com/auth/ url script-request-header https://raw.githubusercontent.com/age174/-/main/qmxx.js
 
 [MITM]
 hostname = tfbook.ios.itaoxiaoshuo.com,appwall.itaoxiaoshuo.com
