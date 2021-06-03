@@ -5,23 +5,23 @@
 2.0复制整段话 https://JoQYw1jIiA8FsS国创IP好礼随心抽#29vBY8N3ja@qu达開↖綡東↗
 抄自 @yangtingxiao 抽奖机脚本
 活动入口：
-更新地址：https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/superBrand.js
+更新地址：https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_superBrand.js
 已支持IOS双京东账号, Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
 ============Quantumultx===============
 [task_local]
 #特物ZX联想
-30 11 * * * https://cdn.jsdelivr.net/gh/Wenmoux/scripts/superBrand.js, tag=特物ZX联想, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+30 11 * * * https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_superBrand.js, tag=特物ZX联想, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "30 11 * * *" script-path=https://g/jd_scripts/raw/ tag=特物ZX联想
+cron "30 11 * * *" script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_superBrand.js tag=特物ZX联想
 
 ===============Surge=================
-特物ZX联想 = type=cron,cronexp="30 11 * * *",wake-system=1,timeout=3600,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/superBrand.js
+特物ZX联想 = type=cron,cronexp="30 11 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_superBrand.js
 
 ============小火箭=========
-特物ZX联想 = type=cron,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/superBrand.js, cronexpr="30 11 * * *", timeout=3600, enable=true
+特物ZX联想 = type=cron,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_superBrand.js, cronexpr="30 11 * * *", timeout=3600, enable=true
 
  */
 const $ = new Env('特物ZX联想');

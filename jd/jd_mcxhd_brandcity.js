@@ -3,23 +3,23 @@
 https://t.me/wenmouxx
 抄自 @yangtingxiao 抽奖机脚本
 活动入口：
-更新地址：https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/jd_mcxhd_brandcity.js
+更新地址：https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_mcxhd_brandcity.js
 已支持IOS双京东账号, Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
 ============Quantumultx===============
 [task_local]
 #新潮品牌狂欢
-30 9,10 1-18 6 * https://cdn.jsdelivr.net/gh/Wenmoux/scripts/jd_mcxhd_brandcity.js, tag=新潮品牌狂欢, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+30 9,10 1-18 6 * https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_mcxhd_brandcity.js, tag=新潮品牌狂欢, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "30 9,10 1-18 6 *" script-path=https://g/jd_scripts/raw/ tag=新潮品牌狂欢
+cron "30 9,10 1-18 6 *" script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_mcxhd_brandcity.js tag=新潮品牌狂欢
 
 ===============Surge=================
-新潮品牌狂欢 = type=cron,cronexp="30 9,10 1-18 6 *",wake-system=1,timeout=3600,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/jd_mcxhd_brandcity.js
+新潮品牌狂欢 = type=cron,cronexp="30 9,10 1-18 6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_mcxhd_brandcity.js
 
 ============小火箭=========
-新潮品牌狂欢 = type=cron,script-path=https://cdn.jsdelivr.net/gh/Wenmoux/scripts/js/jd_mcxhd_brandcity.js, cronexpr="30 9,10 1-18 6 *", timeout=3600, enable=true
+新潮品牌狂欢 = type=cron,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_mcxhd_brandcity.js, cronexpr="30 9,10 1-18 6 *", timeout=3600, enable=true
 
  */
 const $ = new Env('新潮品牌狂欢');
