@@ -16,5 +16,5 @@ DOMAIN-KEYWORD,tgmmvip
 DOMAIN,ib.snssdk.com
 DOMAIN,apapia-history.manmanbuy.com
 DOMAIN,miaogouguanggaotest.haimiaogou.com
-# 云流量
-DOMAIN,ml.mxbok.com
+# github代理
+DOMAIN-SUFFIX,ghproxy.com
