@@ -99,15 +99,19 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
         }
     }
 
-    for (let i = 0; i < cookiesArr.length; i++) {
+    for (let i = cookiesArr.length-1; i >=0; i--) {
         cookie = cookiesArr[i];
         if (cookie) {
                     $.index = i + 1;
             console.log(`\n******开始【京东账号${$.index}】\n`);
             for (l = 0; l < codeList.length; l++) {
                 console.log(`为 ${codeList[l]}助力中`)
-                await doTask("mcxhd_brandcity_doTask",`{"itemToken":"${codeList[l]}","token":"jd17919499fb7031e5"}`)
+               let status=  await doTask("mcxhd_brandcity_doTask",`{"itemToken":"${codeList[l]}","token":"jd17919499fb7031e5"}`)
                 await $.wait(500);
+                if(status === "108"){
+                l=999
+                console.log("助力次数已满")  
+                }
             }
         }
     }
@@ -218,6 +222,7 @@ function doTask(functionid,body) {
                     
                         console.log(data)
                     }
+                    resolve(data.retCode)
                 }
             } catch (e) {
                 $.logErr(e, resp);
