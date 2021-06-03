@@ -141,7 +141,7 @@ dl.l.google.com = server:119.29.29.29
 
 [MITM]
 enable = true
-hostname = *.googlevideo.com,www.youtube.com,s.youtube.com,api.m.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,app.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,slapi.oray.net,analytics.95516.com,tysdk.95516.com,ads.95516.com,mobile.12306.cn,list-app-m.i4.cn,testflight.apple.com,*.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com,mi.gdt.qq.com,w.gdt.qq.com,buy.itunes.apple.com,account.wps.cn,*.amemv.com,
+hostname = *.googlevideo.com,www.youtube.com,s.youtube.com,api.m.jd.com,me-api.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,app.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,slapi.oray.net,analytics.95516.com,tysdk.95516.com,ads.95516.com,mobile.12306.cn,list-app-m.i4.cn,testflight.apple.com,*.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com,mi.gdt.qq.com,w.gdt.qq.com,buy.itunes.apple.com,account.wps.cn,*.amemv.com,
 skip-server-cert-verify = true
 ca-p12 =
 ca-passphrase =
