@@ -33,7 +33,7 @@ cron "1 0-23/1 * 6 *" script-path=https://raw.githubusercontent.com/Wenmoux/scri
 const $ = new Env('翻翻乐');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const openum = 5  //翻牌次数 可以自己改
+const openum = process.env.Openum? process.env.Openum:5//翻牌次数 可以自己改
 const randomCount = $.isNode() ? 20 : 5;
 const notify = $.isNode() ? require('./sendNotify') : '';
 let merge = {}
@@ -100,7 +100,7 @@ message = ""
                     }
                     
                 }
-                message += $.message + `累计获得：￥${$.prize}  \n`
+                message += $.message + `\n累计获得：￥${$.prize}  \n`
             }
         }
 
@@ -195,7 +195,7 @@ function open(functionid, type) {
                         console.log("当前红包：" + data.data.rewardValue + "翻倍次数：" + data.data.changeTimes)
                     } else {
                         $.canDraw = false
-                        console.log(res.data)
+                        console.log(data)
                         $.message += "  翻倍失败😅\n"
                     }
                 }
