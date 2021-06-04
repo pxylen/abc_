@@ -33,7 +33,7 @@ cron "1 0-23/1 * 6 *" script-path=https://raw.githubusercontent.com/Wenmoux/scri
 const $ = new Env('翻翻乐');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const openum =$.isNode()?( process.env.Openum? process.env.Openum:5):5//翻牌次数 可以自己改
+const openum =$.isNode()?( process.env.Openum? process.env.Openum:3):3//翻牌次数 可以自己改
 const randomCount = $.isNode() ? 20 : 5;
 const notify = $.isNode() ? require('./sendNotify') : '';
 let merge = {}
@@ -88,9 +88,9 @@ message = ""
                 } else {
                     console.log("时间已到,开始开红包")
                     await open("gambleOpenReward")
-                    for (k = 0; k < 5&& $.canDraw; k++) {
+                    for (k = 0; k < openum&& $.canDraw; k++) {
                         await open("gambleChangeReward")
-                        await $.wait(500);
+                        await $.wait(1000);
                     }
                     if ($.canDraw) {
                         $.message += "当前：" + $.reward.rewardValue + "\n"
@@ -129,7 +129,7 @@ function check() {
 
                     if (data.code === 0) {
                         resolve(data.data.leftTime)
-                        let time = (parseInt(data.data.leftTime / 60000))
+                        let time = (parseInt(data.data.leftTime / 60000))               
                         console.log("查询成功 剩余时间：" + time + "min")
                     } else {
                         console.log(data)
