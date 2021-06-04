@@ -104,8 +104,9 @@ message = ""
                 message += $.message + `\n累计获得：￥${$.prize}  \n\n`
             }
         }
-
-        await notify.sendNotify(`翻翻乐提现`, `${message}\n\n吹水群：https://t.me/wenmou_car`);
+if ($.isNode() ){ 
+ await notify.sendNotify("翻翻乐提现", `${message}\n\n吹水群：https://t.me/wenmou_car`);
+}
 
     })()
     .catch((e) => $.logErr(e))
@@ -116,7 +117,7 @@ message = ""
 
 function check() {
     return new Promise(async (resolve) => {
-        let options = taskUrl("gambleHomePage", `{"linkId":"YhCkrVusBVa_O2K-7xE6hA"}`)
+        let options = taskUrl("gambleHomePage", `{"linkId":"${$.linkid}"}`)
         $.get(options, async (err, resp, data) => {
             try {
                 if (err) {
@@ -243,7 +244,7 @@ function Draw(id, poolBaseId, prizeGroupId, prizeBaseId, prizeType) {
 
 function taskUrl(function_id, body) {
     return {
-        url: `${JD_API_HOST}/?functionId=${function_id}&body=${body}&t=${Date.now()}&appid=activities_platform&clientVersion=3.5.0`,
+        url: `${JD_API_HOST}/?functionId=${function_id}&body=${encodeURIComponent(body)}&t=${Date.now()}&appid=activities_platform&clientVersion=3.5.0`,
         headers: {
             "Accept": "*/*",
             "Accept-Encoding": "gzip, deflate, br",
@@ -262,7 +263,7 @@ function taskUrl(function_id, body) {
 function taskPostUrl(functionid, body) {
     return {
         url: `${JD_API_HOST}/`,
-        body: `functionId=${functionid}&body=${body}&t=${Date.now()}&appid=activities_platform&clientVersion=3.5.0`,
+        body: `functionId=${functionid}&body=${encodeURIComponent(body)}&t=${Date.now()}&appid=activities_platform&clientVersion=3.5.0`,
         headers: {
             "Accept": "*/*",
             "Accept-Encoding": "gzip, deflate, br",

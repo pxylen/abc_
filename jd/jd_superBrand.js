@@ -270,7 +270,7 @@ function superBrandTaskLottery() {
 function taskPostUrl(functionid, body) {
     const time = Date.now();
     return {
-        url: `https://api.m.jd.com/api?functionId=${functionid}&appid=ProductZ4Brand&client=wh5&t=${time}&body=${body}`,
+        url: `https://api.m.jd.com/api?functionId=${functionid}&appid=ProductZ4Brand&client=wh5&t=${time}&body=${encodeURIComponent(body)}`,
         body: "",
         headers: {
             Accept: "application/json,text/plain, */*",

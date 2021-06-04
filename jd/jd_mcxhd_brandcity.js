@@ -136,7 +136,9 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
 
         }
     }
+    if ($.isNode() ){
     await notify.sendNotify(`新潮品牌狂欢`, `${message}`);
+    }
 })()
 .catch((e) => $.logErr(e))
     .finally(() => $.done())
@@ -239,7 +241,7 @@ function doTask(functionid,body) {
 
 function taskPostUrl(functionid, body) {
     return {
-        url: `https://api.m.jd.com/?client=wh5&clientVersion=1.0.0&functionId=${functionid}&body=${body}&appid=${functionid==="qryViewkitCallbackResult"?"":"publicUseApi"}&_t=${Date.now()}`,
+        url: `https://api.m.jd.com/?client=wh5&clientVersion=1.0.0&functionId=${functionid}&body=${encodeURIComponent(body)}&appid=${functionid==="qryViewkitCallbackResult"?"":"publicUseApi"}&_t=${Date.now()}`,
         body: "",
         headers: {
             Accept: "application/json,text/plain, */*",
