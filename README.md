@@ -23,8 +23,6 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 [@Sunert](https://github.com/Sunert/Script/tree/master) - Sunert
 
-[@monk-coder](https://github.com/monk-coder/dust) - monk-coder
-
 [@lxk0301](https://gitee.com/lxk0301/projects) - 狗东系列
 
 [@NobyDa](https://github.com/NobyDa/Script/tree/master) - NobyDa
