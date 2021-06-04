@@ -100,7 +100,8 @@ message = ""
                     }
                     
                 }
-                message += $.message + `\n累计获得：￥${$.prize}  \n`
+                await totalPrize()
+                message += $.message + `\n累计获得：￥${$.prize}  \n\n`
             }
         }
 
@@ -195,7 +196,7 @@ function open(functionid, type) {
                         console.log("当前红包：" + data.data.rewardValue + "翻倍次数：" + data.data.changeTimes)
                     } else {
                         $.canDraw = false
-                        console.log(data)
+                        console.log(data.errMsg)
                         $.message += "  翻倍失败😅\n"
                     }
                 }
