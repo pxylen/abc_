@@ -2,23 +2,23 @@
 618限时盲盒@wenmoux
 活动入口：签到领豆 618盲盒
 优先助力前面的号,如满了依次往后
-更新地址：https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js
+更新地址：https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitBox.js
 已支持IOS双京东账号, Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
 ============Quantumultx===============
 [task_local]
 #618限时盲盒
-30 7,19 1-18 6 * https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js, tag=618限时盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+30 7,19 1-18 6 * https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitBox.js, tag=618限时盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "30 7,19 1-18 6 *" script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js tag=618限时盲盒
+cron "30 7,19 1-18 6 *" script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitBox.js tag=618限时盲盒
 
 ===============Surge=================
-618限时盲盒 = type=cron,cronexp="30 7,19 1-18 6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js
+618限时盲盒 = type=cron,cronexp="30 7,19 1-18 6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitBox.js
 
 ============小火箭=========
-618限时盲盒 = type=cron,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js, cronexpr="30 7,19 1-18 6 *", timeout=3600, enable=true
+618限时盲盒 = type=cron,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitBox.js, cronexpr="30 7,19 1-18 6 *", timeout=3600, enable=true
 
  */
 const $ = new Env('618限时盲盒');
