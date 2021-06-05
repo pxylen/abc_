@@ -53,14 +53,17 @@ message = ""
             return;
         }
         message = ''
-        for (let i = 0; i < cookiesArr.length; i++) {
+        for (let i = 0; i < cookiesArr.length ; i++) {
             cookie = cookiesArr[i];
             if (cookie) {
                 $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
                 $.index = i + 1;
                 $.isLogin = true;
+                $.isCash = false;
+                $.isHb = false;
                 $.canDraw = true;
                 $.prize =0;
+                $.Hb = 0;
                 $.linkid = "YhCkrVusBVa_O2K-7xE6hA"
                 $.message = `【京东账号${$.index}】${$.UserName}\n`
                 console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
@@ -77,28 +80,31 @@ message = ""
                 let leftTime = await check()
                 if (leftTime != 0) {
                     console.log("时间未到,请继续等待哦！")
-                    $.message += `还没到开红包时间哦~剩余时间${parseInt(leftTime / 60000)}min~\n`
+                    $.message += `还没到开红包时间哦~剩余时间${parseInt(leftTime / 60000)}min~`
                 } else {
                     console.log("时间已到,开始开红包")
-                    await open("gambleOpenReward")
+                   await open("gambleOpenReward")               
                     for (k = 0; k < openum&& $.canDraw; k++) {
                         await open("gambleChangeReward")
-                        await $.wait(1000);
+                        await $.wait(500);
                     }
                     if ($.canDraw) {
-                        $.message += "当前：" + $.reward.rewardValue + "\n"
-                        await open("gambleObtainReward", $.reward.rewardType)
+                     let dd =   await open("gambleObtainReward", $.reward.rewardType)
+                     let type = dd.prizeType ===4 ?"  ￥  ":"  🧧  "
+                   //   $.message += "当前获得：" +type+ $.reward.rewardValue + "\n"
+                     if(dd.prizeType != 4){
+                     console.log("当前奖励类型不是￥,不进行提现")  
+                     }else{
                         await Draw($.reward.id, $.reward.poolBaseId, $.reward.prizeGroupId, $.reward.prizeBaseId, $.reward.prizeType)
-                        //    await notify.sendNotify(`京东极速版大赢家翻倍红包提现`, `${$.message}`); 
-                    }
-                    
+                }        //    await notify.sendNotify(`京东极速版大赢家翻倍红包提现`, `${$.message}`); 
+                    }                    
                 }
                 await totalPrize()
-                message += $.message + `\n累计获得：￥${$.prize}  \n\n`
+                message += $.message + `\n累计获得：￥${$.prize} 🧧${$.Hb} \n\n`
             }
         }
 if ($.isNode() ){ 
- await notify.sendNotify("翻翻乐提现", `${message}\n\n吹水群：https://t.me/wenmou_car`);
+  await notify.sendNotify("翻翻乐提现", `${message}\n\n吹水群：https://t.me/wenmou_car`);
 }
 
     })()
@@ -145,6 +151,7 @@ function check() {
         });
     });
 }
+
 function totalPrize() {
     return new Promise(async (resolve) => {
         let options = taskUrl("gamblePrizeList", `{"linkId":"${$.linkid}","pageNum":1,"pageSize":999999}`)
@@ -154,21 +161,24 @@ function totalPrize() {
                     console.log(`${JSON.stringify(err)}`);
                     console.log(`${$.name} API请求失败，请检查网路重试`);
                 } else {
-                    //     console.log(data)
+                  //      console.log(data)
                     data = JSON.parse(data);
-                    if (data.code === 0 && data.data&&data.data.items) {
-                        for (item in data.data.items){
-                        reward = data.data.items[item]
-                       if(reward.prizeType === 4){
-                       $.prize =parseFloat($.prize)+ parseFloat(reward.amount)
-                       if(reward.state === 0){   
-                       console.log(`检测到有${reward.amount}未提现,尝试提现ing...`)    
-                       await Draw(reward.id, reward.poolBaseId, reward.prizeGroupId, reward.prizeBaseId, reward.prizeType)
-                       }
-                    } 
-                       await $.wait(500);
-                           }                        
-                        console.log("查询成功 共提现：￥" + $.prize)
+                    if (data.code === 0 && data.data && data.data.items) {
+                        for (item in data.data.items) {
+                            reward = data.data.items[item]
+                            if (reward.prizeType === 4) {
+                                $.prize = $.prize+parseFloat(reward.amount)
+                                if (reward.state === 0) {
+                                    console.log(`检测到有${reward.amount}未提现,尝试提现ing...`)
+                                    await Draw(reward.id, reward.poolBaseId, reward.prizeGroupId, reward.prizeBaseId, reward.prizeType)
+                                    await $.wait(500);
+                                }
+                            } else if (reward.prizeType === 2) {
+                                $.Hb = $.Hb+Number(reward.amount)
+                            }
+                          //  
+                        }
+                        console.log("查询成功 共提现：￥" + $.prize + "  🧧  " + $.Hb)
                     } else {
                         $essage += data.errMsg
                     }
@@ -184,8 +194,6 @@ function totalPrize() {
 
 
 
-
-
 function open(functionid, type) {
     return new Promise(async (resolve) => {
         let options = taskPostUrl(functionid, `{"linkId":"${$.linkid}"}`)
@@ -198,30 +206,33 @@ function open(functionid, type) {
                     console.log(`${JSON.stringify(err)}`);
                     console.log(`${$.name} API请求失败，请检查网路重试`);
                 } else {
-                    //console.log(data)
                     data = JSON.parse(data);
                     if (data.code === 0 && data.data) {
-                      if(functionid!="gambleObtainReward"){
+              if(functionid!="gambleObtainReward"){
+              $.reward = data.data
                         console.log("当前红包：" + data.data.rewardValue + "翻倍次数：" + data.data.changeTimes)
                         if(data.data.rewardState===3){
                         $.canDraw=false
                         console.log("翻倍失败啦...")
-                        $.message += `当前：￥${data.data.rewardValue} 翻倍失败啦`
+                        $.message += `当前：${data.data.rewardValue} 翻倍失败啦`
                         }else if(data.data.rewardState===1){
-                        console.log("翻倍成功啦")                        }else{
+                        console.log("翻倍成功啦")                       
+                         }else{
                         console.log(data.data)
                      console.log(`状态 ${data.data.rewardState} 还不知道是什么原因嗷`) 
                         }
                        } else{
                //     console.log(data)                             
                        }
-                      $.reward = data.data
-                    } else {
+                      
+                  
+                      } else {
                         $.canDraw = false
                         console.log(data.errMsg)
                         $.message += data.errMsg+"\n"
                     }
                 }
+                resolve(data.data)
             } catch (e) {
                 $.logErr(e, resp);
             } finally {

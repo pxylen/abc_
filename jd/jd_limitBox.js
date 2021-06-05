@@ -1,30 +1,27 @@
 /*
-特物Z|万物皆可国创@wenmoux
-没加判断 凑合用吧 或者等大佬发脚本
-不知道谁的口令
-2.0复制整段话 https://JoQYw1jIiA8FsS国创IP好礼随心抽#29vBY8N3ja@qu达開↖綡東↗
-抄自 @yangtingxiao 抽奖机脚本
-活动入口：
-更新地址：https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_superBrand.js
+618限时盲盒@wenmoux
+活动入口：签到领豆 618盲盒
+优先助力前面的号,如满了依次往后
+更新地址：https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js
 已支持IOS双京东账号, Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
 ============Quantumultx===============
 [task_local]
-#特物Z|万物皆可国创
-30 11 * * * https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_superBrand.js, tag=特物Z|万物皆可国创, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+#618限时盲盒
+30 7,9 1-18 6 * https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js, tag=618限时盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "30 11 * * *" script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_superBrand.js tag=特物Z|万物皆可国创
+cron "30 7,9 1-18 6 *" script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js tag=618限时盲盒
 
 ===============Surge=================
-特物Z|万物皆可国创 = type=cron,cronexp="30 11 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_superBrand.js
+618限时盲盒 = type=cron,cronexp="30 7,9 1-18 6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js
 
 ============小火箭=========
-特物Z|万物皆可国创 = type=cron,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_superBrand.js, cronexpr="30 11 * * *", timeout=3600, enable=true
+618限时盲盒 = type=cron,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js, cronexpr="30 7,9 1-18 6 *", timeout=3600, enable=true
 
  */
-const $ = new Env('特物Z|万物皆可国创');
+const $ = new Env('618限时盲盒');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 
@@ -63,6 +60,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
             $.nickName = '';
             $.beans = 0
             message = ''
+            $.availableOpenBoxNum = 0
             $.cando = true
             //   await shareCodesFormat();
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
@@ -76,168 +74,66 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
                 }
                 continue
             }
-        let actdata=   await getid("superBrandSecondFloorMainPage","secondfloor")       
-        if($.cando){
-        $.actid = actdata.actid
-        $.enpid = actdata.enpid
-      //{actid,actname,enpid}
-         //     await doTask("44spR7W6XFhQXzMvPva99WYLTscr", "1000000157", "3") //关注
-         //   await superBrandTaskLottery()
-            await getCode()
-            
-            await doTask("secondfloor",$.enpid,$.taskList[0].encryptAssignmentId,$.taskList[0].ext.followShop[0].itemId,$.taskList[0].assignmentType)            
-            await doTask("secondfloor",$.enpid,$.taskList[2].encryptAssignmentId,$.taskList[2].ext.brandMemberList[0].itemId,$.taskList[2].assignmentType)            
-            let signdata=   await getid("showSecondFloorSignInfo","sign")
-            await doTask("sign",signdata.enpid,signdata.eid,1,5)
-            console.log("开始抽奖")
-                await superBrandTaskLottery()
-                await superBrandTaskLottery()
-                await superBrandTaskLottery()   
-}
+            let actdata = await getcode()
+            for (k = 0; k < $.availableOpenBoxNum; k++) {
+                await limitBoxDraw()
+            }
+            await $.wait(1000);
         }
     }
     for (let i = 0; i < cookiesArr.length; i++) {
         cookie = cookiesArr[i];
         if (cookie) {
-           $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
             $.index = i + 1;
-            $.isLogin = true;
-            $.nickName = '';
-        //    $.beans = 0
-     //       message = ''
-
-            //   await shareCodesFormat();
             console.log(`\n******开始【京东账号${$.index}】\n`);
-     
-       for (l = 0; l < codeList.length; l++) {
-       console.log(`为 ${codeList[l]}助力中`)
-                await doTask("secondfloor",$.enpid,$.inviteenaid, codeList[l], 2)
+            for (l = 0; l < codeList.length; l++) {
+                console.log(`为 ${codeList[l].masterPin}助力中`)
+                //   console.log(codeList[l])
+                let status = await help(codeList[l].masterPin, codeList[l].shareDate)
+                await $.wait(500);
+                if (status === "LB604" || status === "LB204") {
+                    l = 999
+
+                } else if (status === "LB704") {
+                    codeList.splice(l, 1)
+                }
+
             }
         }
     }
-for (let i = 0; i < cookiesArr.length; i++) {
-        cookie = cookiesArr[i];
-        if (cookie) {
-           $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-            $.index = i + 1;
-            $.isLogin = true;
-            $.nickName = '';
-         //   $.beans = 0
-          //  message = ''
 
-            //   await shareCodesFormat();
-            console.log(`\n******开始【京东账号${$.index}】抽奖\n`);
-                await superBrandTaskLottery()
-                await superBrandTaskLottery()
-                await superBrandTaskLottery()   
-         //     console.log(`共获得${$.beans} 京豆`)
-         //   message += `【京东账号${$.index}】\n共获得${$.beans} 京豆\n`
-
-        }
-    }
-    
-    
-  //  await notify.sendNotify(`特物Z|万物皆可国创`, `${message}`);
 })()
 .catch((e) => $.logErr(e))
     .finally(() => $.done())
 //获取活动信息
 
-function getid(functionid,source) {
+function getcode() {
     return new Promise(async (resolve) => {
-        const options = taskPostUrl(functionid, `{"source":"${source}"}`)
+        const options = taskUrl("limitBoxHome", `{"source":"source","rnVersion":"3.9","rnClient":"1"}`)
         //  console.log(options)
-        $.post(options, async (err, resp, data) => {
+        $.get(options, async (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${JSON.stringify(err)}`);
                     console.log(`${$.name} API请求失败，请检查网路重试`);
                 } else {
                     data = JSON.parse(data);
-              //      console.log(data)
-                   if ( data.data && data.code === "0"&&data.data.result) {
-                        let json = {}
-                        let result =data.data.result
-                        json.actid = result.activityBaseInfo.activityId
-                        json.actname= result.activityBaseInfo.activityName
-                        json.enpid = result.activityBaseInfo.encryptProjectId
-                        if(source === "sign"){json.eid=result.activitySign1Info.encryptAssignmentId}
-                       resolve(json)
-                       console.log(`当前活动：${json.actname}  ${json.actid}`)
-                    }else{
-                    console.log("获取失败")
-                    $.cando = false
-                    resolve()
-                    }
-
-                }
-            } catch (e) {
-                $.logErr(e, resp);
-            } finally {
-                resolve();
-            }
-        });
-    });
-}
-
-
-function getCode() {
-    return new Promise(async (resolve) => {
-        const options = taskPostUrl("superBrandTaskList", `{"source":"secondfloor","activityId":${$.actid},"assistInfoFlag":1}`)
-        //  console.log(options)
-        $.post(options, async (err, resp, data) => {
-            try {
-                if (err) {
-                    console.log(`${JSON.stringify(err)}`);
-                    console.log(`${$.name} API请求失败，请检查网路重试`);
-                } else {
-                    data = JSON.parse(data);
-                    //    console.log(data.data.result)
-                    if (data && data.data && data.code === "0") {
-                        if (data.data.result && data.data.result.taskList && data.data.result.taskList[3]) {
-                           $.taskList = data.data.result.taskList
-                            let result = data.data.result.taskList[3]
-                           let encryptAssignmentId = result.encryptAssignmentId
-                            let itemid = result.ext.assistTaskDetail.itemId
-                            $.inviteenaid=result.encryptAssignmentId
-                            codeList[codeList.length] = itemid
-                            console.log(`获取邀请码成功 ${itemid}`);
-                        } else {
-                            console.log(data)
-                        }
-                    }
-
-                }
-            } catch (e) {
-                $.logErr(e, resp);
-            } finally {
-                resolve();
-            }
-        });
-    });
-}
-
-function doTask(source,pid,encryptAssignmentId, id, type) {
-    return new Promise(async (resolve) => {
-        const options = taskPostUrl(`superBrandDoTask`, `{"source":"${source}","activityId":${$.actid},"encryptProjectId":"${pid}","encryptAssignmentId":"${encryptAssignmentId}","assignmentType":${type},"itemId":"${id}","actionType":0}`)
-   //    console.log(options)
-          $.post(options, async (err, resp, data) => {
-            try {
-                if (err) {
-                    console.log(`${JSON.stringify(err)}`);
-                    console.log(`${$.name} API请求失败，请检查网路重试`);
-                } else {
                     //      console.log(data)
-                    data = JSON.parse(data);
-                    if (data && data.code === "0") {
-                        if (data.data.bizCode === "0") {
-                            console.log("任务成功啦~")
-                        } else {
-                            console.log(data.data.bizMsg)
+                    if (data.code === "0" && data.data && data.data.masterPin) {
+                    if(data.data.taskList[2].taskStatus ===0){
+                        codeList[codeList.length] = {
+                            masterPin: data.data.masterPin,
+                            shareDate: data.data.shareDate
                         }
-                        resolve(data.data.bizCode)
-                    } else {
-                        console.log(data)
+                     console.log(`获取成功 邀请码：${data.data.masterPin}`)        
+                     }else{  console.log("已完成邀请任务")}                       
+                        let boxShowInfo = data.data.boxShowInfo
+                        $.availableOpenBoxNum = boxShowInfo.availableOpenBoxNum
+                        boxList = boxShowInfo.boxList
+                        for (i = 0; i < boxList.length; i++) {
+                            console.log(`盲盒 ${boxList[i].boxName} : ${boxList[i].boxNum}`)
+                        }
+                        console.log("可开盲盒次数: " + $.availableOpenBoxNum)
                     }
                 }
             } catch (e) {
@@ -249,23 +145,59 @@ function doTask(source,pid,encryptAssignmentId, id, type) {
     });
 }
 
-function superBrandTaskLottery() {
+
+function help(masterPin, shareDate) {
     return new Promise(async (resolve) => {
-        const options = taskPostUrl("superBrandTaskLottery", `{"source":"secondfloor","activityId":${$.actid}}`)
-        $.post(options, async (err, resp, data) => {
+        const options = taskUrl("limitBoxHelp", `{"masterPin":"${masterPin}","shareDate":"${shareDate}"}`)
+        //  console.log(options)
+        $.get(options, async (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${JSON.stringify(err)}`);
                     console.log(`${$.name} API请求失败，请检查网路重试`);
                 } else {
                     data = JSON.parse(data);
-                 //   console.log(data)
-                    if (data && data.code === "0") {
-                        if (data.data.bizCode === "TK000") {
-                            console.log(`获得 你猜获得了啥🐶`)
+                    console.log(data)
+                    if (data.errorCode) {
+                        resolve(data.errorCode)
+                        console.log(data.errorMessage)
+                    } else if (data.data) {
+                        if (data.data.helpResult) {
+                            console.log(data.data.remindMsg)
                         } else {
-                            console.log(data.data.bizMsg)
+                            console.log(data.data.errorMessage)
                         }
+                        resolve(1)
+                    } else {
+                        console.log(data.errorMessage)
+                        resolve(0)
+                    }
+
+                }
+            } catch (e) {
+                $.logErr(e, resp);
+            } finally {
+                resolve();
+            }
+        });
+    });
+}
+
+
+
+function limitBoxDraw() {
+    return new Promise(async (resolve) => {
+        const options = taskUrl("limitBoxDraw", `{}`)
+        $.get(options, async (err, resp, data) => {
+            try {
+                if (err) {
+                    console.log(`${JSON.stringify(err)}`);
+                    console.log(`${$.name} API请求失败，请检查网路重试`);
+                } else {
+                    data = JSON.parse(data);
+                    //   console.log(data)
+                    if (data.data.beanNum) {
+                        console.log(`获得盲盒[${data.data.boxId}] ${data.data.beanNum}京豆`)
                     } else {
                         console.log(data)
                     }
@@ -281,11 +213,10 @@ function superBrandTaskLottery() {
 
 
 
-function taskPostUrl(functionid, body) {
+function taskUrl(functionId, body) {
     const time = Date.now();
     return {
-        url: `https://api.m.jd.com/api?functionId=${functionid}&appid=ProductZ4Brand&client=wh5&t=${time}&body=${encodeURIComponent(body)}`,
-        body: "",
+        url: `https://api.m.jd.com/client.action?functionId=${functionId}&body=${encodeURIComponent(body)}&appid=ld&client=m&clientVersion=10.0.1&networkType=wifi&osVersion=11&uuid=2393039353533623-7383235613364343&openudid=2393039353533623-7383235613364343&eu=2393039353533623&fv=7383235613364343&jsonp=`,
         headers: {
             Accept: "application/json,text/plain, */*",
             "Content-Type": "application/x-www-form-urlencoded",
@@ -294,13 +225,11 @@ function taskPostUrl(functionid, body) {
             Connection: "keep-alive",
             Cookie: cookie,
             Host: "api.m.jd.com",
-            Referer: "https://prodev.m.jd.com/mall/active/NrHM6Egy96gxeG4eb7vFX7fYXf3/index.html?activityId=1000007&encryptProjectId=cUNnf3E6aMLQcEQbTVxn8AyhjXb&assistEncryptAssignmentId=2jpJFvC9MBNC7Qsqrt8WzEEcVoiT&assistItemId=S5ijz_8ukVww&tttparams=GgS7lUeyJnTGF0IjoiMzMuMjUyNzYyIiwiZ0xuZyI6IjEwNy4xNjA1MDcifQ6%3D%3D&lng=107.147022&lat=33.255229&sid=e5150a3fdd017952350b4b41294b145w&un_area=27_2442_2444_31912",
+            Referer: "https://h5.m.jd.com/rn/42yjy8na6pFsq1cx9MJQ5aTgu3kX/index.html?has_native=0&source=jkllimitbox&masterPin=vfugm3ft3prsqf4n4t7b46reqe5ac3f4ijdgqji&shareDate=2021-06-05&tttparams=mVO8qeyJnTGF0IjoiMzMuMjUyNzYyIiwiZ0xuZyI6IjEwNy4xNjA1MDcifQ5%3D%3D&sid=e5150a3fdd017952350b4b41294b145w&un_area=27_2442_2444_31912",
             "User-Agent": "jdapp;android;9.4.4;10;3b78ecc3f490c7ba;network/UNKNOWN;model/M2006J10C;addressid/138543439;aid/3b78ecc3f490c7ba;oaid/7d5870c5a1696881;osVer/29;appBuild/85576;psn/3b78ecc3f490c7ba|541;psq/2;uid/3b78ecc3f490c7ba;adk/;ads/;pap/JA2015_311210|9.2.4|ANDROID 10;osv/10;pv/548.2;jdv/0|iosapp|t_335139774|appshare|CopyURL|1606277982178|1606277986;ref/com.jd.lib.personal.view.fragment.JDPersonalFragment;partner/xiaomi001;apprpd/MyJD_Main;Mozilla/5.0 (Linux; Android 10; M2006J10C Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36",
         }
     }
 }
-
-
 function jsonParse(str) {
     if (typeof str == "string") {
         try {
