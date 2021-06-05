@@ -8,17 +8,17 @@
 ============Quantumultx===============
 [task_local]
 #618限时盲盒
-30 7,9 1-18 6 * https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js, tag=618限时盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+30 7,19 1-18 6 * https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js, tag=618限时盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "30 7,9 1-18 6 *" script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js tag=618限时盲盒
+cron "30 7,19 1-18 6 *" script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js tag=618限时盲盒
 
 ===============Surge=================
-618限时盲盒 = type=cron,cronexp="30 7,9 1-18 6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js
+618限时盲盒 = type=cron,cronexp="30 7,19 1-18 6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js
 
 ============小火箭=========
-618限时盲盒 = type=cron,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js, cronexpr="30 7,9 1-18 6 *", timeout=3600, enable=true
+618限时盲盒 = type=cron,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/master/jd/jd_limitbox.js, cronexpr="30 7,19 1-18 6 *", timeout=3600, enable=true
 
  */
 const $ = new Env('618限时盲盒');
