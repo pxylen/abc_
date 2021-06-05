@@ -95,6 +95,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
                     l = 999
 
                 } else if (status === "LB704") {
+                    l = 999
                     codeList.splice(l, 1)
                 }
 
@@ -120,7 +121,7 @@ function getcode() {
                     data = JSON.parse(data);
                     //      console.log(data)
                     if (data.code === "0" && data.data && data.data.masterPin) {
-                    if(data.data.taskList[2].taskStatus ===0){
+                    if(data.data.taskList[2].taskStatus === "0"){
                         codeList[codeList.length] = {
                             masterPin: data.data.masterPin,
                             shareDate: data.data.shareDate
