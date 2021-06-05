@@ -93,10 +93,8 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
                 await $.wait(500);
                 if (status === "LB604" || status === "LB204") {
                     l = 999
-
                 } else if (status === "LB704") {
-                    l = 999
-                    codeList.splice(l, 1)
+               //     codeList.splice(l--, 1)  //删除已满助力码             
                 }
 
             }
