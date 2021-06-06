@@ -13,6 +13,9 @@
 【Surge Rewrite】
   宠汪汪key = type=http-request,pattern=^https://jdjoy\.jd\.com/common/gift/getBeanConfigs\?,requires-body=0,max-size=0,script-path=jd_joy_reward.js
 
+[MITM]
+hostname = jdjoy.jd.com
+
  */
 // prettier-ignore
 !function (t, r) { "object" == typeof exports ? module.exports = exports = r() : "function" == typeof define && define.amd ? define([], r) : t.CryptoJS = r() }(this, function () {
@@ -242,7 +245,7 @@ function getExchangeRewards(ac) {
   }
   return new Promise((resolve) => {
     const option = {
-      url: "https:"+ taroRequest(opt)['url'] + `${$.getval('jdjoyInvokeKey') || ''}`,
+      url: "https:"+ taroRequest(opt)['url'] + `${$.getval('jdjoyInvokeKey') || '&invokeKey=Oex5GmEuqGep1WLC'}`,
       headers: {
         "Host": "jdjoy.jd.com",
         "Content-Type": "application/json",
@@ -284,7 +287,7 @@ function exchange(ac, saleInfoId, orderSource) {
   }
   return new Promise(async (resolve) => {
     const option = {
-      url: "https:"+ taroRequest(opt)['url'] + `${$.getval('jdjoyInvokeKey') || ''}`,
+      url: "https:"+ taroRequest(opt)['url'] + `${$.getval('jdjoyInvokeKey') || '&invokeKey=Oex5GmEuqGep1WLC'}`,
       body: `${JSON.stringify(body)}`,
       headers: {
         "Host": "jdjoy.jd.com",
