@@ -84,7 +84,8 @@ http-request http://ecmine.csnfcp.cn/api/onomastion script-path=https://ghproxy.
 http-request https://gate.wanou1.com/miniprogram3/modelArticle script-path=https://ghproxy.com/https://raw.githubusercontent.com/xl2101200/-/main/ipxz.js, requires-body=true, tag=ip小站
 #湘创生活
 http-request https://api.csxcsh.com/api/sign script-path=https://ghproxy.com/https://raw.githubusercontent.com/xl2101200/-/main/xcsh.js, requires-body=true, tag=湘创生活
-
+#左边
+http-request https://app.zaaap.cn/group script-path=https://ghproxy.com/https://raw.githubusercontent.com/xl2101200/-/main/zb.js, requires-body=true, tag=左边
 #blackmatrix7
 # 饿了么每日自动领取任务及吃货豆
 http-request ^https?:\/\/h5\.ele\.me\/restapi\/svip_biz\/v1\/supervip\/queryMissionCollect\??longitude=([^&]*).*latitude=([^&]*) script-path=https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/eleme/eleme_daily.js, requires-header=true, tag=
@@ -324,26 +325,8 @@ http-request ^https:\/\/my\.ruanmei\.com\/api\/usersign\/getsigninfo? script-pat
 http-request ^http:\/\/api\.infzm\.com\/mobile\/pumpkin_task\/complete? script-path=https://ghproxy.com/https://raw.githubusercontent.com/chavyleung/scripts/master/nfzm/nfzm.cookie.js, requires-header=true, tag=nfzm
 
 #zZPiglet
-#115
-http-request ^https?:\/\/proapi\.115\.com\/ios\/user\/takespc\? script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/115/115.js, requires-header=true, tag=115
-#Blibee
-http-request ^https:\/\/h5\.bianlifeng\.com\/meepo\/taskCenter\/home\/v\d script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/Blibee/Blibee.js, requires-header=true, tag=Blibee
-#DiDi
-http-request ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js, requires-header=true, tag=DiDi
-http-request ^https:\/\/common\.diditaxi\.com\.cn\/webapp\/config\/sidebar\? script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js, requires-header=true, tag=DiDi
-#Haidilao
-http-request ^https:\/\/superapp\.kiwa-tech\.com\/app\/coupon\/customerLevelShow script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/Haidilao/Haidilao.js, requires-body=true, tag=Haidilao
-http-request ^https:\/\/activity-1\.m\.duiba\.com\.cn\/signactivity\/getSignInfo script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/Haidilao/Haidilao.js, requires-header=true, tag=Haidilao
-#Naixue
-http-request ^https:\/\/webapi\.qmai\.cn\/web\/cy\/v\d\/store\/template-scene script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/Naixue/Naixue.js, requires-header=true, tag=Naixue
-#ZMTeacher
-http-request ^https:\/\/teacherapi\.zmlearn\.com\/v1\/teacherApp\/app\/points\/taskCenter script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/ZMTeacher/ZMTeacher.js, requires-header=true, tag=ZMTeacher
 #Oclean
 http-request ^https:\/\/mall\.oclean\.com\/API\/VshopProcess\.ashx$ script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/Oclean/Oclean.js, requires-header=true, tag=Oclean
-#heybox
-http-request ^https:\/\/api\.xiaoheihe\.cn\/account\/home_v2\/\? script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/heybox/heybox.js, requires-header=true, tag=heybox
-#Domino
-http-request ^https?:\/\/dominos0724\.shjimang\.com\/Ajax\/GetSmsCode script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/Domino/Domino_getSMS.js, requires-body=true, tag=Domino
 #MovieCalendar
 http-request ^https:\/\/frodo\.douban\.com\/api\/v\d\/calendar\/today script-path=https://ghproxy.com/https://raw.githubusercontent.com/zZPiglet/Task/master/MovieCalendar/MovieCalendar.js, requires-header=true, tag=MovieCalendar
 #umetrip
@@ -620,8 +603,6 @@ http-request https:\/\/.+\.fanli\.com\/* script-path=https://cdn.jsdelivr.net/gh
 http-request https:\/\/.+\.fanli\.com\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/flw.js, requires-body=true, tag=返利网获取body
 #易趣牛帮获取header body  
 http-request http:\/\/nb\.ioxing\.com\/* script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/yqnb.js, requires-body=true, tag=易趣牛帮获取header
-#左边
-http-request https://app.zaaap.cn/points/home/openbox script-path=https://ghproxy.com/https://raw.githubusercontent.com/xl2101200/-/main/zb.js, requires-body=true, tag=左边
 #特仑苏获取ck
 http-request https:\/\/xw\.mengniu\.cn\/grass\/Api\/TelunsuHandler\.ashx\?method\=GetMyPrize script-path=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/tls.js, requires-header=true, tag=特仑苏获取ck
 #搜狐资讯获取ck
