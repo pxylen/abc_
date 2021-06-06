@@ -26,11 +26,10 @@ cron "1 0-23/1 * 6 *" script-path=https://raw.githubusercontent.com/Wenmoux/scri
 const $ = new Env('翻翻乐');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const openum =$.isNode()?( process.env.Openum? process.env.Openum:3):3//翻牌次数 可以自己改
+const money = $.isNode() ? (process.env.Openmoney ? process.env.Openmoney : 0.6) : 0.6
 const randomCount = $.isNode() ? 20 : 5;
 const notify = $.isNode() ? require('./sendNotify') : '';
 let merge = {}
-let codeList = []
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [],
     cookie = '';
@@ -45,25 +44,26 @@ if ($.isNode()) {
 
 const JD_API_HOST = `https://api.m.jd.com`;
 message = ""
-    !(async () => {
+!(async () => {
         if (!cookiesArr[0]) {
             $.msg($.name, '【提示】请先获取cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {
                 "open-url": "https://bean.m.jd.com/"
             });
             return;
         }
-        message = ''
-        for (let i = 0; i < cookiesArr.length ; i++) {
+        message = ""
+        for (let i = 0; i < cookiesArr.length; i++) {
             cookie = cookiesArr[i];
             if (cookie) {
                 $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
                 $.index = i + 1;
                 $.isLogin = true;
-                $.isCash = false;
-                $.isHb = false;
                 $.canDraw = true;
-                $.prize =0;
-                $.Hb = 0;
+                $.canOpen = true;
+                $.cash = 0
+                $.prize = 0
+                $.Hb = 0
+                $.drawresult = "";
                 $.linkid = "YhCkrVusBVa_O2K-7xE6hA"
                 $.message = `【京东账号${$.index}】${$.UserName}\n`
                 console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
@@ -79,33 +79,31 @@ message = ""
                 }
                 let leftTime = await check()
                 if (leftTime != 0) {
-                    console.log("时间未到,请继续等待哦！")
-                    $.message += `还没到开红包时间哦~剩余时间${parseInt(leftTime / 60000)}min~`
+                  console.log( `还没到开红包时间哦~剩余时间${parseInt(leftTime / 60000)}min~`)
                 } else {
                     console.log("时间已到,开始开红包")
-                   await open("gambleOpenReward")               
-                    for (k = 0; k < openum&& $.canDraw; k++) {
+                    await open("gambleOpenReward")
+                    while ($.canOpen && $.canDraw) {
                         await open("gambleChangeReward")
                         await $.wait(500);
                     }
                     if ($.canDraw) {
-                     let dd =   await open("gambleObtainReward", $.reward.rewardType)
-                     let type = dd.prizeType ===4 ?"  ￥  ":"  🧧  "
-                   //   $.message += "当前获得：" +type+ $.reward.rewardValue + "\n"
-                     if(dd.prizeType != 4){
-                     console.log("当前奖励类型不是￥,不进行提现")  
-                     }else{
+                        console.log("金额已可提现,开始提现...")
+                        $.message += `当前金额 ${$.reward.rewardValue}\n`
+                        await open("gambleObtainReward", $.reward.rewardType)
                         await Draw($.reward.id, $.reward.poolBaseId, $.reward.prizeGroupId, $.reward.prizeBaseId, $.reward.prizeType)
-                }        //    await notify.sendNotify(`京东极速版大赢家翻倍红包提现`, `${$.message}`); 
-                    }                    
+                        await totalPrize()
+                        message += $.message + `${$.drawresult}累计获得：￥${$.prize} 🧧${$.Hb} \n\n`
+                        //    await notify.sendNotify(`京东极速版大赢家翻倍红包提现`, `${$.message}`); 
+                    }
                 }
-                await totalPrize()
-                message += $.message + `\n累计获得：￥${$.prize} 🧧${$.Hb} \n\n`
             }
         }
-if ($.isNode() ){ 
-  await notify.sendNotify("翻翻乐提现", `${message}\n\n吹水群：https://t.me/wenmou_car`);
-}
+        if ($.isNode()) {
+            if (message.length!=0) {
+                await notify.sendNotify("翻翻乐提现", `${message}\n\n吹水群：https://t.me/wenmou_car`);
+            }
+        }
 
     })()
     .catch((e) => $.logErr(e))
@@ -125,18 +123,17 @@ function check() {
                 } else {
                     //     console.log(data)
                     data = JSON.parse(data);
-
                     if (data.code === 0) {
-                    //    resolve(data.data.leftTime)
-                        let time = (parseInt(data.data.leftTime / 60000)) 
-                        if(  data.data.leftTime<1000*100){
-                        await $.wait(data.data.leftTime+600);
-                        console.log("马上就好")
-                        resolve(0)
-                        }else{                        
-                        console.log("等你🐎呢")
-                        resolve(data.data.leftTime)
-                        }            
+                        //    resolve(data.data.leftTime)
+                        let time = (parseInt(data.data.leftTime / 60000))
+                        if (data.data.leftTime < 1000 * 100) {
+                            await $.wait(data.data.leftTime + 600);
+                            console.log("马上就好")
+                            resolve(0)
+                        } else {
+                            console.log("等你🐎呢")
+                            resolve(data.data.leftTime)
+                        }
                         console.log("查询成功 剩余时间：" + time + "min")
                     } else {
                         console.log(data)
@@ -161,22 +158,22 @@ function totalPrize() {
                     console.log(`${JSON.stringify(err)}`);
                     console.log(`${$.name} API请求失败，请检查网路重试`);
                 } else {
-                  //      console.log(data)
+                    //      console.log(data)
                     data = JSON.parse(data);
                     if (data.code === 0 && data.data && data.data.items) {
                         for (item in data.data.items) {
                             reward = data.data.items[item]
                             if (reward.prizeType === 4) {
-                                $.prize = $.prize+parseFloat(reward.amount)
+                                $.prize = $.prize + parseFloat(reward.amount)
                                 if (reward.state === 0) {
                                     console.log(`检测到有${reward.amount}未提现,尝试提现ing...`)
                                     await Draw(reward.id, reward.poolBaseId, reward.prizeGroupId, reward.prizeBaseId, reward.prizeType)
                                     await $.wait(500);
                                 }
                             } else if (reward.prizeType === 2) {
-                                $.Hb = $.Hb+Number(reward.amount)
+                                $.Hb = $.Hb + Number(reward.amount)
                             }
-                          //  
+                            //  
                         }
                         console.log("查询成功 共提现：￥" + $.prize + "  🧧  " + $.Hb)
                     } else {
@@ -208,28 +205,29 @@ function open(functionid, type) {
                 } else {
                     data = JSON.parse(data);
                     if (data.code === 0 && data.data) {
-              if(functionid!="gambleObtainReward"){
-              $.reward = data.data
-                        console.log("当前红包：" + data.data.rewardValue + "翻倍次数：" + data.data.changeTimes)
-                        if(data.data.rewardState===3){
-                        $.canDraw=false
-                        console.log("翻倍失败啦...")
-                        $.message += `当前：${data.data.rewardValue} 翻倍失败啦`
-                        }else if(data.data.rewardState===1){
-                        console.log("翻倍成功啦")                       
-                         }else{
-                        console.log(data.data)
-                     console.log(`状态 ${data.data.rewardState} 还不知道是什么原因嗷`) 
+                        if (functionid != "gambleObtainReward") {
+                            $.reward = data.data
+                            if(data.data.rewardValue>money){$.canOpen=false}
+                            if (data.data.rewardState === 3) {
+                                console.log("翻倍失败啦...")
+                                $.message += `当前：${data.data.rewardValue} 翻倍失败啦`
+                                $.canDraw = false
+                            } else if (data.data.rewardState === 1) {
+                                console.log("翻倍成功啦")
+                                console.log("当前红包：" + data.data.rewardValue + "翻倍次数：" + data.data.changeTimes)
+                            } else {
+                                console.log(data.data)
+                                console.log(`状态 ${data.data.rewardState} 还不知道是什么原因嗷`)
+                            }
+                        } else {
+                            console.log(data)
                         }
-                       } else{
-               //     console.log(data)                             
-                       }
-                      
-                  
-                      } else {
+
+
+                    } else {
                         $.canDraw = false
                         console.log(data.errMsg)
-                        $.message += data.errMsg+"\n"
+                        $.message += data.errMsg + "\n"
                     }
                 }
                 resolve(data.data)
@@ -257,10 +255,10 @@ function Draw(id, poolBaseId, prizeGroupId, prizeBaseId, prizeType) {
                     data = JSON.parse(data);
                     if (data.code === 0 && data.data && data.data.message) {
                         console.log("提现结果：" + data.data.message)
-                        $.message += "提现结果：" + data.data.message+"\n"
+                        $.drawresult = "提现结果：" + data.data.message + "\n"
                     } else {
                         console.log(data)
-                        $.message += "提现结果：" + JSON.stringify(data)+"\n"
+                        $.drawresult = "提现结果：" + JSON.stringify(data) + "\n"
                     }
                 }
             } catch (e) {
@@ -309,7 +307,6 @@ function taskPostUrl(functionid, body) {
         }
     }
 }
-
 function jsonParse(str) {
     if (typeof str == "string") {
         try {

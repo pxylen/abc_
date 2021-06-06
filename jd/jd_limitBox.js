@@ -74,6 +74,8 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
                 }
                 continue
             }
+            await dotask(1)
+            await dotask(2)
             let actdata = await getcode()
             for (k = 0; k < $.availableOpenBoxNum; k++) {
                 await limitBoxDraw()
@@ -94,7 +96,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
                 if (status === "LB604" || status === "LB204") {
                     l = 999
                 } else if (status === "LB704") {
-               //     codeList.splice(l--, 1)  //删除已满助力码             
+                    //     codeList.splice(l--, 1)  //删除已满助力码             
                 }
 
             }
@@ -108,127 +110,165 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
 
 function getcode() {
     return new Promise(async (resolve) => {
-        const options = taskUrl("limitBoxHome", `{"source":"source","rnVersion":"3.9","rnClient":"1"}`)
-        //  console.log(options)
-        $.get(options, async (err, resp, data) => {
-            try {
-                if (err) {
-                    console.log(`${JSON.stringify(err)}`);
-                    console.log(`${$.name} API请求失败，请检查网路重试`);
-                } else {
-                    data = JSON.parse(data);
-                    //      console.log(data)
-                    if (data.code === "0" && data.data && data.data.masterPin) {
-                    if(data.data.taskList[2].taskStatus === "0"){
-                        codeList[codeList.length] = {
-                            masterPin: data.data.masterPin,
-                            shareDate: data.data.shareDate
+            const options = taskUrl("limitBoxHome", `{"source":"source","rnVersion":"3.9","rnClient":"1"}`)
+            //  console.log(options)
+            $.get(options, async (err, resp, data) => {
+                    try {
+                        if (err) {
+                            console.log(`${JSON.stringify(err)}`);
+                            console.log(`${$.name} API请求失败，请检查网路重试`);
+                        } else {
+                            data = JSON.parse(data);
+                            //      console.log(data)
+                            if (data.code === "0" && data.data && data.data.masterPin) {
+                                for (list of data.data.taskList) {
+                                    status = list.taskStatus == 1 ? "已完成" : "未完成"
+                                    console.log(list.taskTitle + " : " + status
+                                    }
+                                    if (data.data.taskList[2].taskStatus === "0") {
+                                        codeList[codeList.length] = {
+                                            masterPin: data.data.masterPin,
+                                            shareDate: data.data.shareDate
+                                        }
+
+                                        console.log(`获取成功 邀请码：${data.data.masterPin}`)
+                                    } else {
+                                        console.log("已完成邀请任务")
+                                    }
+                                    let boxShowInfo = data.data.boxShowInfo
+                                    $.availableOpenBoxNum = boxShowInfo.availableOpenBoxNum
+                                    boxList = boxShowInfo.boxList
+                                    for (i = 0; i < boxList.length; i++) {
+                                        console.log(`盲盒 ${boxList[i].boxName} : ${boxList[i].boxNum}`)
+                                    }
+                                    console.log("可开盲盒次数: " + $.availableOpenBoxNum)
+                                }
+                            }
+                        } catch (e) {
+                            $.logErr(e, resp);
+                        } finally {
+                            resolve();
                         }
-                     console.log(`获取成功 邀请码：${data.data.masterPin}`)        
-                     }else{  console.log("已完成邀请任务")}                       
-                        let boxShowInfo = data.data.boxShowInfo
-                        $.availableOpenBoxNum = boxShowInfo.availableOpenBoxNum
-                        boxList = boxShowInfo.boxList
-                        for (i = 0; i < boxList.length; i++) {
-                            console.log(`盲盒 ${boxList[i].boxName} : ${boxList[i].boxNum}`)
+                    });
+            });
+    }
+
+
+    function help(masterPin, shareDate) {
+        return new Promise(async (resolve) => {
+            const options = taskUrl("limitBoxHelp", `{"masterPin":"${masterPin}","shareDate":"${shareDate}"}`)
+            //  console.log(options)
+            $.get(options, async (err, resp, data) => {
+                try {
+                    if (err) {
+                        console.log(`${JSON.stringify(err)}`);
+                        console.log(`${$.name} API请求失败，请检查网路重试`);
+                    } else {
+                        data = JSON.parse(data);
+                        console.log(data)
+                        if (data.errorCode) {
+                            resolve(data.errorCode)
+                            console.log(data.errorMessage)
+                        } else if (data.data) {
+                            if (data.data.helpResult) {
+                                console.log(data.data.remindMsg)
+                            } else {
+                                console.log(data.data.errorMessage)
+                            }
+                            resolve(1)
+                        } else {
+                            console.log(data.errorMessage)
+                            resolve(0)
                         }
-                        console.log("可开盲盒次数: " + $.availableOpenBoxNum)
+
                     }
+                } catch (e) {
+                    $.logErr(e, resp);
+                } finally {
+                    resolve();
                 }
-            } catch (e) {
-                $.logErr(e, resp);
-            } finally {
-                resolve();
-            }
+            });
         });
-    });
-}
+    }
 
-
-function help(masterPin, shareDate) {
-    return new Promise(async (resolve) => {
-        const options = taskUrl("limitBoxHelp", `{"masterPin":"${masterPin}","shareDate":"${shareDate}"}`)
-        //  console.log(options)
-        $.get(options, async (err, resp, data) => {
-            try {
-                if (err) {
-                    console.log(`${JSON.stringify(err)}`);
-                    console.log(`${$.name} API请求失败，请检查网路重试`);
-                } else {
-                    data = JSON.parse(data);
-                    console.log(data)
-                    if (data.errorCode) {
-                        resolve(data.errorCode)
-                        console.log(data.errorMessage)
-                    } else if (data.data) {
-                        if (data.data.helpResult) {
+    function dotask(type) {
+        return new Promise(async (resolve) => {
+            const options = taskUrl("limitBoxDoTask", `{"type":"${type}"}`)
+            $.get(options, async (err, resp, data) => {
+                try {
+                    if (err) {
+                        console.log(`${JSON.stringify(err)}`);
+                        console.log(`${$.name} API请求失败，请检查网路重试`);
+                    } else {
+                        data = JSON.parse(data);
+                        //   console.log(data)
+                        if (data.errorCode) {
+                            resolve(data.errorCode)
+                            console.log(data.errorMessage)
+                        } else if (data.data) {
                             console.log(data.data.remindMsg)
                         } else {
-                            console.log(data.data.errorMessage)
+                            console.log(data.errorMessage)
+                            resolve(0)
                         }
-                        resolve(1)
-                    } else {
-                        console.log(data.errorMessage)
-                        resolve(0)
+
                     }
-
+                } catch (e) {
+                    $.logErr(e, resp);
+                } finally {
+                    resolve();
                 }
-            } catch (e) {
-                $.logErr(e, resp);
-            } finally {
-                resolve();
-            }
+            });
         });
-    });
-}
+    }
 
 
-
-function limitBoxDraw() {
-    return new Promise(async (resolve) => {
-        const options = taskUrl("limitBoxDraw", `{}`)
-        $.get(options, async (err, resp, data) => {
-            try {
-                if (err) {
-                    console.log(`${JSON.stringify(err)}`);
-                    console.log(`${$.name} API请求失败，请检查网路重试`);
-                } else {
-                    data = JSON.parse(data);
-                    //   console.log(data)
-                    if (data.data.beanNum) {
-                        console.log(`获得盲盒[${data.data.boxId}] ${data.data.beanNum}京豆`)
+    function limitBoxDraw() {
+        return new Promise(async (resolve) => {
+            const options = taskUrl("limitBoxDraw", `{}`)
+            $.get(options, async (err, resp, data) => {
+                try {
+                    if (err) {
+                        console.log(`${JSON.stringify(err)}`);
+                        console.log(`${$.name} API请求失败，请检查网路重试`);
                     } else {
-                        console.log(data)
+                        data = JSON.parse(data);
+                        //   console.log(data)
+                        if (data.data.beanNum) {
+                            console.log(`获得盲盒[${data.data.boxId}] ${data.data.beanNum}京豆`)
+                        } else {
+                            console.log(data)
+                        }
                     }
+                } catch (e) {
+                    $.logErr(e, resp);
+                } finally {
+                    resolve();
                 }
-            } catch (e) {
-                $.logErr(e, resp);
-            } finally {
-                resolve();
-            }
+            });
         });
-    });
-}
+    }
 
 
 
-function taskUrl(functionId, body) {
-    const time = Date.now();
-    return {
-        url: `https://api.m.jd.com/client.action?functionId=${functionId}&body=${encodeURIComponent(body)}&appid=ld&client=m&clientVersion=10.0.1&networkType=wifi&osVersion=11&uuid=2393039353533623-7383235613364343&openudid=2393039353533623-7383235613364343&eu=2393039353533623&fv=7383235613364343&jsonp=`,
-        headers: {
-            Accept: "application/json,text/plain, */*",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept-Language": "zh-cn",
-            Connection: "keep-alive",
-            Cookie: cookie,
-            Host: "api.m.jd.com",
-            Referer: "https://h5.m.jd.com/rn/42yjy8na6pFsq1cx9MJQ5aTgu3kX/index.html?has_native=0&source=jkllimitbox&masterPin=vfugm3ft3prsqf4n4t7b46reqe5ac3f4ijdgqji&shareDate=2021-06-05&tttparams=mVO8qeyJnTGF0IjoiMzMuMjUyNzYyIiwiZ0xuZyI6IjEwNy4xNjA1MDcifQ5%3D%3D&sid=e5150a3fdd017952350b4b41294b145w&un_area=27_2442_2444_31912",
-            "User-Agent": "jdapp;android;9.4.4;10;3b78ecc3f490c7ba;network/UNKNOWN;model/M2006J10C;addressid/138543439;aid/3b78ecc3f490c7ba;oaid/7d5870c5a1696881;osVer/29;appBuild/85576;psn/3b78ecc3f490c7ba|541;psq/2;uid/3b78ecc3f490c7ba;adk/;ads/;pap/JA2015_311210|9.2.4|ANDROID 10;osv/10;pv/548.2;jdv/0|iosapp|t_335139774|appshare|CopyURL|1606277982178|1606277986;ref/com.jd.lib.personal.view.fragment.JDPersonalFragment;partner/xiaomi001;apprpd/MyJD_Main;Mozilla/5.0 (Linux; Android 10; M2006J10C Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36",
+    function taskUrl(functionId, body) {
+        const time = Date.now();
+        return {
+            url: `https://api.m.jd.com/client.action?functionId=${functionId}&body=${encodeURIComponent(body)}&appid=ld&client=m&clientVersion=10.0.1&networkType=wifi&osVersion=11&uuid=2393039353533623-7383235613364343&openudid=2393039353533623-7383235613364343&eu=2393039353533623&fv=7383235613364343&jsonp=`,
+            headers: {
+                Accept: "application/json,text/plain, */*",
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Accept-Language": "zh-cn",
+                Connection: "keep-alive",
+                Cookie: cookie,
+                Host: "api.m.jd.com",
+                Referer: "https://h5.m.jd.com/rn/42yjy8na6pFsq1cx9MJQ5aTgu3kX/index.html?has_native=0&source=jkllimitbox&masterPin=vfugm3ft3prsqf4n4t7b46reqe5ac3f4ijdgqji&shareDate=2021-06-05&tttparams=mVO8qeyJnTGF0IjoiMzMuMjUyNzYyIiwiZ0xuZyI6IjEwNy4xNjA1MDcifQ5%3D%3D&sid=e5150a3fdd017952350b4b41294b145w&un_area=27_2442_2444_31912",
+                "User-Agent": "jdapp;android;9.4.4;10;3b78ecc3f490c7ba;network/UNKNOWN;model/M2006J10C;addressid/138543439;aid/3b78ecc3f490c7ba;oaid/7d5870c5a1696881;osVer/29;appBuild/85576;psn/3b78ecc3f490c7ba|541;psq/2;uid/3b78ecc3f490c7ba;adk/;ads/;pap/JA2015_311210|9.2.4|ANDROID 10;osv/10;pv/548.2;jdv/0|iosapp|t_335139774|appshare|CopyURL|1606277982178|1606277986;ref/com.jd.lib.personal.view.fragment.JDPersonalFragment;partner/xiaomi001;apprpd/MyJD_Main;Mozilla/5.0 (Linux; Android 10; M2006J10C Build/QP1A.190711.020; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36",
+            }
         }
     }
-}
+
 function jsonParse(str) {
     if (typeof str == "string") {
         try {
