@@ -123,7 +123,7 @@ function getcode() {
                             if (data.code === "0" && data.data && data.data.masterPin) {
                                 for (list of data.data.taskList) {
                                     status = list.taskStatus == 1 ? "已完成" : "未完成"
-                                    console.log(list.taskTitle + " : " + status
+                                    console.log(list.taskTitle + " : " + status)
                                     }
                                     if (data.data.taskList[2].taskStatus === "0") {
                                         codeList[codeList.length] = {
