@@ -1,5 +1,5 @@
 
-hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,as.xiaojukeji.com,bosp-api.xiaojukeji.com,operation-api.jimistore.com,*.m.163.com,
+hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,as.xiaojukeji.com, common.diditaxi.com.cn,operation-api.jimistore.com,*.m.163.com,
 
 
 # 58同城
@@ -15,8 +15,10 @@ http-request ^https?:\/\/iface(\d)?\.iqiyi\.com\/ script-path=https://raw.github
 
 
 # > 滴滴出行 (By @zZPiglet)
-http-request ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? script-path=https://raw.githubusercontent.com/pxylen/abc_/master/workflow/zZPiglet/DiDi_new.js, timeout=10, tag=滴滴出行cookie
-http-request ^https:\/\/bosp-api\.xiaojukeji\.com\/wechat\/benefit\/public\/index\? script-path=https://raw.githubusercontent.com/pxylen/abc_/master/workflow/zZPiglet/DiDi_new.js,tag=滴滴出行cookie
+# APP
+http-request ^https:\/\/as\.xiaojukeji\.com\/ep\/as\/toggles\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js, timeout=10, tag=滴滴出行cookie
+# WeChat-MiniApp
+http-request ^https:\/\/common\.diditaxi\.com\.cn\/webapp\/config\/sidebar\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/DiDi/DiDi_new.js, timeout=10, tag=滴滴出行cookie
 
 
 #获取挖矿Cookie
