@@ -48,7 +48,7 @@ hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m
 
 
 #picsew(by zhiyi)
-https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/picsew.js
+https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/pxylen/abc_/master/scripts/picsew.js
 
 
 #解锁百度云盘会员（byddgksf2013）
