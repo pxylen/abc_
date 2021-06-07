@@ -1,0 +1,99 @@
+
+
+
+hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,api.gaoqingdianshi.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,buy.itunes.apple.com,pan.baidu.com,*.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,*.amemv.com,biz.caiyunapp.com,
+
+
+# 云闪付
+^https?+:\/\/(analytics|tysdk|ads)\.95516\.com _ reject-dict
+
+# 向日葵去广告
+^https?+:\/\/slapi\.oray\.net\/adver _ reject-dict
+^https?+:\/\/slapi\.oray\.net\/adver\/promotion _ reject-dict
+
+# 12306
+^https?+:\/\/mobile\.12306\.cn\/otsmobile\/app\/mas\/loggw\/(logUpload.do|logConfig.do) _ reject
+
+# 淘宝
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject-200
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.exposure\.get\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome\/ - reject
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources\/ - reject
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.wireless\.home\.splash\.awesome\.get\/ - reject
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.tmall\.wireless - reject-200
+
+
+# >> 百度贴吧
+^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/splashSchedule url reject-200
+^https?:\/\/c\.tieba\.baidu\.com\/c\/f\/forum\/getAdInfo url reject-200
+^https?:\/\/c\.tieba\.baidu\.com\/\w+\/\w+\/(sync|newRnSync|mlog) url reject-200
+# >> 百度地图
+# ^https?:\/\/.+\/client\/phpui2\/ url reject-200
+^https?:\/\/ss0\.bdstatic\.com/.+_\d{3}_\d{4}\.jpg url reject-200
+
+# > 电视家
+^https?:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/ad\/ url reject-200
+
+# > 花生地铁
+^https?:\/\/cmsapi\.wifi8\.com\/v\d\/(emptyAd|adNew)\/ url reject-200
+
+# 爱思助手
+^https?+:\/\/list-app-m\.i4\.cn\/getopfstadinfo.xhtml _ reject-dict
+
+# github域名重定向  raw.githubusercontent.com
+# https:\/\/raw.githubusercontent.com https://gayhub.lensu.workers.dev 302
+
+
+#picsew(by zhiyi)
+https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/picsew.js
+
+
+#解锁百度云盘会员（byddgksf2013）
+https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Crack/bdcloud.js
+#百度云盘解锁视频在线播放和倍速(by nobyda)
+https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js
+
+
+#bilibili优化（bm7）
+# 去除动态中的话题
+^https?:\/\/api\.vc\.bilibili\.com\/topic_svr\/v1\/topic_svr url reject-dict
+# 去除动态中的最常访问
+^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist url reject-dict
+# 可能的一些推广(beta)
+^https?:\/\/api\.bilibili\.com\/pgc\/season\/app\/related\/recommend\? url reject-dict
+# 推荐去广告
+^https?:\/\/app\.bilibili\.com\/x\/v2\/feed\/index url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.js
+# 追番去广告
+^https?:\/\/api\.bilibili\.com\/pgc\/page\/bangumi url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.js
+# 直播去广告
+^https?:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.js
+# 动态去广告
+^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/dynamic_(history|new)\? url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.js
+# 开屏去广告
+^https?:\/\/app\.bilibili\.com\/x\/v2\/splash\/list url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.js
+# 标签页处理
+^https?:\/\/app\.bilibili\.com\/x\/resource\/show\/tab url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.js
+# 我的页面处理
+^https?:\/\/app\.bilibili\.com\/x\/v2\/account\/mine url script-response-body https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/bilibili/bilibili_plus.js
+# 漫画去广告
+^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash url reject-dict
+^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash url reject-dict
+
+
+# ---(By yichahucha)---
+# > Weibo - api.weibo.cn,mapi.weibo.com
+^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js
+^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/(photos/pic_recommend_status|live/media_homelist)|video/tiny_stream_video_list|photo/info|remind/unread_count) url script-response-body https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
+
+
+# ---(By Choler)---
+# > Douyin
+^https?:\/\/.*\.amemv\.com\/aweme\/v2\/(follow\/)?feed\/ url request-header ^GET \/aweme\/v\d\/(follow\/)?feed\/(.+\r\n) request-header GET /aweme/v1/$1feed/$2
+^https?:\/\/.*\.amemv\.com\/aweme\/v\d\/(feed|mix\/aweme|aweme\/post|(multi\/)?aweme\/detail|follow\/feed|nearby\/feed|search\/item|general\/search\/single|hot\/search\/video\/list)\/ url script-response-body https://raw.githubusercontent.com/Choler/Surge/master/Script/douyin.js
+
+# 彩云天气解锁vip
+https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response-body https://raw.githubusercontent.com/pxylen/abc_/master/scripts/caiyun_svip.js
+
