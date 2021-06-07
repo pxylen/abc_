@@ -115,3 +115,14 @@ jobs:
           source_branch: "master"
           destination_branch: "Wenmoux"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
+
+
+
+      - name: sync sync-sunner
+        uses: repo-sync/github-sync@v2
+        if: env.PAT
+        with:
+          source_repo: "https://github.com/sngxpro/QuanX.git"
+          source_branch: "master"
+          destination_branch: "sngx"
+          github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
