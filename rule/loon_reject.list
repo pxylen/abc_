@@ -78,8 +78,6 @@ DOMAIN-SUFFIX,smr.snssdk.com
 DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
 DOMAIN,api-access.pangolin-sdk-toutiao.com
 
-# 淘宝统计
-DOMAIN-SUFFIX,mmstat.com
 
 # (A)
 # > Apple
@@ -98,6 +96,8 @@ DOMAIN,ad.mobile.youku.com
 DOMAIN,iyes.youku.com
 DOMAIN,pl.cp31.ott.cibntv.net
 DOMAIN,ad.api.3g.youku.com
+# 淘宝统计
+DOMAIN-SUFFIX,mmstat.com
 # > AMap
 DOMAIN,optimus-ads.amap.com
 DOMAIN,optimus-ads.amap.com.w.alikunlun.com
