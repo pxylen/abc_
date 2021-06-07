@@ -78,6 +78,8 @@ DOMAIN-SUFFIX,smr.snssdk.com
 DOMAIN,sf3-fe-tos.pglstatp-toutiao.com
 DOMAIN,api-access.pangolin-sdk-toutiao.com
 
+# 淘宝统计
+DOMAIN-SUFFIX,mmstat.com
 
 # (A)
 # > Apple
