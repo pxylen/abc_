@@ -16,7 +16,7 @@
     "8 0 * * * https://raw.githubusercontent.com/pxylen/abc_/sunert/Task/weibo.js, tag=微博&钱包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weibo.png",
     "9 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.js, tag=网易新闻, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/neteasenews.png",
     "10 0 * * * https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png, tag=中青看看赚",
-    "11 0 0 * * * https://ghproxy.com/https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkin_env.js, tag=机场签到（配合boxjs使用）, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Orz-3/mini/master/Color/airport.png",
+    "11 0 * * * https://ghproxy.com/https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkin_env.js, tag=机场签到（配合boxjs使用）, img-url=https://ghproxy.com/https://raw.githubusercontent.com/Orz-3/mini/master/Color/airport.png",
     "10 9-22 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, tag=58同城, img-url=https://raw.githubusercontent.com/sngxpro/icons/main/genshin/anbo.png",
     "1 8,12,17 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/dingdong_yangyu1.js, tag=叮咚农场养鱼1",
     "1 8,12,17 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/dingdong_yangyu2.js, tag=叮咚农场养鱼2"
