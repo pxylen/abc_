@@ -133,7 +133,7 @@ dl.l.google.com = server:119.29.29.29
 
 [MITM]
 enable = true
-hostname = *.googlevideo.com,www.youtube.com,s.youtube.com,api.m.jd.com,me-api.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,app.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,slapi.oray.net,analytics.95516.com,tysdk.95516.com,ads.95516.com,mobile.12306.cn,list-app-m.i4.cn,testflight.apple.com,*.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com,mi.gdt.qq.com,w.gdt.qq.com,buy.itunes.apple.com,
+hostname = *.googlevideo.com,www.youtube.com,s.youtube.com,api.m.jd.com,me-api.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,app.bilibili.com,api.live.bilibili.com,api.vc.bilibili.com,slapi.oray.net,analytics.95516.com,tysdk.95516.com,ads.95516.com,mobile.12306.cn,list-app-m.i4.cn,testflight.apple.com,*.tiktokv.com,*.byteoversea.com,*.tik-tokapi.com,mi.gdt.qq.com,w.gdt.qq.com,buy.itunes.apple.com,biz.caiyunapp.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,
 skip-server-cert-verify = true
 ca-p12 =
 ca-passphrase =
@@ -166,6 +166,16 @@ BiliBili_我的页面处理 = type=http-response,script-path=https://raw.githubu
 
 # picsew专业版
 picsew专业版 = type=http-response,script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/picsew.js,pattern=https:\/\/buy\.itunes\.apple\.com\/verifyReceipt,max-size=524288,requires-body=true,timeout=600,script-update-interval=43200,enable=true
+
+
+# 彩云天气解锁vip
+彩云天气解锁vip = type=http-response,script-path=https://raw.githubusercontent.com/pxylen/abc_/master/scripts/caiyun_svip.js,pattern=https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user),max-size=524288,requires-body=true,timeout=600,script-update-interval=43200,enable=true
+
+
+# ---(By yichahucha)---
+# > Weibo - api.weibo.cn,mapi.weibo.com
+微博启动广告 = type=http-response,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js,pattern=^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua),max-size=524288,requires-body=true,timeout=600,script-update-interval=43200,enable=true
+微博去广告 = type=http-response,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js,pattern=^https?://m?api\.weibo\.c(n|om)/2/(statuses/(unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/(photos/pic_recommend_status|live/media_homelist)|video/tiny_stream_video_list|photo/info|remind/unread_count),max-size=524288,requires-body=true,timeout=600,script-update-interval=43200,enable=true
 
 
 BoxJs = type=http-request,script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js,pattern=^https?://boxjs.com,max-size=524288,requires-body=true,timeout=600,script-update-interval=43200,enable=true
