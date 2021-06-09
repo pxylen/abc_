@@ -11,6 +11,8 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 饮水思源：
 
+[@sngxpro](https://github.com/sngxpro/QuanX) - 少年歌行
+
 [@ziye](https://github.com/ziye888/JavaScript) - ziye
 
 [@ZhiYi-N](https://github.com/ZhiYi-N/Private-Script) - ZhiYi-N
@@ -32,5 +34,12 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 [@iepngs](https://github.com/iepngs/Script) - iepngs
 
 [@zZPiglet](https://github.com/zZPiglet/Task/tree/master) - zZPiglet
+
+[@ztxtop](https://github.com/ztxtop/x) - ztxtop
+
+[@Tom](https://github.com/xl2101200/-) - Tom
+
+[@Wenmoux](https://github.com/Wenmoux/scripts) - Wenmoux
+
 
 
