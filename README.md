@@ -4,10 +4,6 @@
 
 cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOne.cookie
 
-京东订阅：https://jdsharedresourcescdn.azureedge.net/jdresource/lxk0301_LoonTask.conf
-
-
-
 
 饮水思源：
 
@@ -38,8 +34,6 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 [@ztxtop](https://github.com/ztxtop/x) - ztxtop
 
 [@Tom](https://github.com/xl2101200/-) - Tom
-
-[@Wenmoux](https://github.com/Wenmoux/scripts) - Wenmoux
 
 
 
