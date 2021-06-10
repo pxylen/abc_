@@ -20,7 +20,7 @@ proxy-providers:
   BP:
     type: http
     path: ./Proxy/bp.yml
-    url: https://gitee.com/pjxy_len/loon/raw/main/node/bp.yml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/pxylen/abc_/master/node/bp.yml
     interval: 3600
     health-check:
       enable: true

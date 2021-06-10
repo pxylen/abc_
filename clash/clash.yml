@@ -22,7 +22,7 @@ proxy-providers:
   HK:
     type: http
     path: ./Proxy/hk.yml
-    url: https://gitee.com/pjxy_len/loon/raw/main/node/hk.yml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/pxylen/abc_/master/node/hk.yml
     interval: 3600
     health-check:
       enable: true
@@ -32,7 +32,7 @@ proxy-providers:
   JP:
     type: http
     path: ./Proxy/jp.yml
-    url: https://gitee.com/pjxy_len/loon/raw/main/node/jp.yml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/pxylen/abc_/master/node/jp.yml
     interval: 3600
     health-check:
       enable: true
@@ -42,7 +42,7 @@ proxy-providers:
   BP:
     type: http
     path: ./Proxy/bp.yml
-    url: https://gitee.com/pjxy_len/loon/raw/main/node/bp.yml
+    url: https://ghproxy.com/https://raw.githubusercontent.com/pxylen/abc_/master/node/bp.yml
     interval: 3600
     health-check:
       enable: true
