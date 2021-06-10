@@ -1,0 +1,207 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: silent
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  listen: 127.0.0.1:53
+  nameserver:
+    - 223.6.6.6
+    - 180.76.76.76
+    - 114.114.114.114
+    - 1.2.4.8
+
+proxies:
+  - {name: 🇸🇬 新加坡1(白嫖机)-只能翻墙不能添加host-用上你的大屌去嫖-嫖不挂说明屌不行-0.1x, server: qj.jklist.ga, port: 80, type: vmess, uuid: 5cf2ecb0-9165-4760-8e8a-381ce547a6ef, alterId: 1, cipher: auto, tls: false, skip-cert-verify: false, network: ws, ws-path: /, ws-headers: {Host: qj.jklist.ga}}
+
+proxy-providers:
+  HK:
+    type: http
+    path: ./Proxy/hk.yml
+    url: https://gitee.com/pjxy_len/loon/raw/main/node/hk.yml
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+
+  JP:
+    type: http
+    path: ./Proxy/jp.yml
+    url: https://gitee.com/pjxy_len/loon/raw/main/node/jp.yml
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+
+  BP:
+    type: http
+    path: ./Proxy/bp.yml
+    url: https://gitee.com/pjxy_len/loon/raw/main/node/bp.yml
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+
+
+proxy-groups:
+
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - 🔯 故障转移
+      - 🚀 手动切换
+      - 🇸🇬 新加坡1(白嫖机)-只能翻墙不能添加host-用上你的大屌去嫖-嫖不挂说明屌不行-0.1x
+
+
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+
+  - name: 🔯 故障转移
+    type: fallback
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies:
+      - 🇯🇵 日本节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 白嫖节点
+
+
+
+  - name: 🚀 手动切换
+    type: select
+    proxies:
+      - 🇯🇵 日本节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 白嫖节点
+
+
+
+  - name: 🇭🇰 香港节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+      - HK
+
+  - name: 🇯🇵 日本节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+      - JP
+
+  - name: 🇨🇳 白嫖节点
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    use:
+      - BP
+
+
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+
+rule-providers:
+
+  anti-ad-clash:
+    type: http
+    behavior: domain
+    url: "https://anti-ad.net/clash.yaml"
+    path: ./ruleset/anti-ad-clash.yaml
+    interval: 86400
+
+  icloud:
+    type: http
+    behavior: domain
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/icloud.txt"
+    path: ./ruleset/icloud.yaml
+    interval: 86400
+
+  apple:
+    type: http
+    behavior: domain
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/apple.txt"
+    path: ./ruleset/apple.yaml
+    interval: 86400
+
+  google:
+    type: http
+    behavior: domain
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/google.txt"
+    path: ./ruleset/google.yaml
+    interval: 86400
+
+  proxy:
+    type: http
+    behavior: domain
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
+    path: ./ruleset/proxy.yaml
+    interval: 86400
+
+  direct:
+    type: http
+    behavior: domain
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/direct.txt"
+    path: ./ruleset/direct.yaml
+    interval: 86400
+
+  cncidr:
+    type: http
+    behavior: ipcidr
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/cncidr.txt"
+    path: ./ruleset/cncidr.yaml
+    interval: 86400
+
+  lancidr:
+    type: http
+    behavior: ipcidr
+    url: "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/lancidr.txt"
+    path: ./ruleset/lancidr.yaml
+    interval: 86400
+
+rules:
+  - DOMAIN-KEYWORD,ip138,🚀 节点选择
+  - DOMAIN-SUFFIX,ipchaxun.com,🚀 节点选择
+  - DOMAIN,jdsharedresourcescdn.azureedge.net,🚀 节点选择
+  - DOMAIN-KEYWORD,github,🚀 节点选择
+  - DOMAIN-SUFFIX,ghproxy.com,🎯 全球直连
+  - DOMAIN-KEYWORD,lanhuapp,🎯 全球直连
+  - DOMAIN-KEYWORD,51zhaoyou,🎯 全球直连
+  - DOMAIN-KEYWORD,jiguang,🎯 全球直连
+  - DOMAIN-KEYWORD,jpush,🎯 全球直连
+  - DOMAIN-KEYWORD,wolong,🎯 全球直连
+  - DOMAIN-KEYWORD,kkkk,🎯 全球直连
+  - DOMAIN-KEYWORD,oray,🎯 全球直连
+  - DOMAIN,api.tgmmvip.com,🎯 全球直连
+  - DOMAIN,profile.se.360.cn,🎯 全球直连
+  - DOMAIN,ml.mxbok.com,🎯 全球直连
+  - RULE-SET,anti-ad-clash,🍃 应用净化
+  - RULE-SET,proxy,🚀 节点选择
+  - RULE-SET,icloud,🎯 全球直连
+  - RULE-SET,apple,🎯 全球直连
+  - RULE-SET,google,🎯 全球直连
+  - RULE-SET,direct,🎯 全球直连
+  - RULE-SET,lancidr,🎯 全球直连,no-resolve
+  - RULE-SET,cncidr,🎯 全球直连,no-resolve
+  - MATCH,🐟 漏网之鱼
