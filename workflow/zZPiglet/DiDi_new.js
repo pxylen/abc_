@@ -107,7 +107,8 @@ if ($.isRequest) {
 	$.done({});
 } else {
 	!(async () => {
-		$.Ticket = $.read("#DiDi");
+//		$.Ticket = $.read("#DiDi");
+        $.Ticket = "EwDc7urZlBssbgpW2jcVDqn3EeQLRSQv54zfWK_kHP8kzDmOAkEMQNG7_Nhq2eVanU4-d5iBZkkKCUTU4u6oIX96G1MJfNFFEaYRJsxEmKqqMJ2wVkZqNXvuPQ1hZsKqm2W1VoRZCH5-Ef4IEP6J1C23omrVtHoTjkRyYSU2Hrfn_bAS-hJO-5Xca_5cZwJz7WajWRkIl-953fk7AAD__w==";
 		$.city = $.read("#DiDi_city");
 		$.now = new Date().getTime();
 		if (!$.Ticket || !$.city) {
