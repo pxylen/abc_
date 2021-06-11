@@ -18,3 +18,5 @@ DOMAIN,apapia-history.manmanbuy.com
 DOMAIN,miaogouguanggaotest.haimiaogou.com
 # github代理
 DOMAIN-SUFFIX,ghproxy.com
+
+DOMAIN-SUFFIX,jklist.ml
