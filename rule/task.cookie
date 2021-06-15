@@ -1,5 +1,5 @@
 
-hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,as.xiaojukeji.com, common.diditaxi.com.cn,operation-api.jimistore.com,*.m.163.com,
+hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,as.xiaojukeji.com, common.diditaxi.com.cn,operation-api.jimistore.com,*.m.163.com,49.234.36.200:9091,
 
 
 # 58同城
@@ -32,3 +32,6 @@ http-request ^https:\/\/operation-api\.jimistore\.com\/* script-path=https://raw
 # ^https:\/\/user\.m\.163.com\/api\/v1\/commons\/fav\/topic\/allList url script-request-header chavyleung/neteasenews/neteasenews.cookie.js
 # 195及以后版本
 http-request ^https:\/\/c\.m\.163\.com\/uc\/api\/sign\/v2\/commit script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.js, tag=网易新闻
+
+# 威锋网 (APP)
+http-request ^http:\/\/49.234.36.200:9091\/v1\/auth\/signin script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/feng/feng.cookie.js, requires-body=true, tag=威锋网 (APP)
