@@ -1,5 +1,5 @@
 
-hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,as.xiaojukeji.com, common.diditaxi.com.cn,operation-api.jimistore.com,*.m.163.com,49.234.36.200:9091,
+hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,as.xiaojukeji.com, common.diditaxi.com.cn,operation-api.jimistore.com,*.m.163.com,49.234.36.200:9091,api.weibo.cn, pay.sc.weibo.com,
 
 
 # 58同城
@@ -35,3 +35,7 @@ http-request ^https:\/\/c\.m\.163\.com\/uc\/api\/sign\/v2\/commit script-path=ht
 
 # 威锋网 (APP)
 http-request ^http:\/\/49.234.36.200:9091\/v1\/auth\/signin script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/feng/feng.cookie.js, requires-body=true, tag=威锋网 (APP)
+
+# 微博
+http-request https:\/\/api\.weibo\.cn\/\d\/users\/show script-path=https://ghproxy.com/https://raw.githubusercontent.com/GoodHolidays/Scripts/master/Task/weibo.js, requires-header=true, tag=微博
+http-request https:\/\/m\.weibo\.cn\/c\/checkin\/ug\/v2\/signin\/module\?module script-path=https://ghproxy.com/https://raw.githubusercontent.com/GoodHolidays/Scripts/master/Task/weibo.js, requires-header=true, tag=微博
