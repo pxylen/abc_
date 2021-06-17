@@ -1,7 +1,7 @@
 
 
 
-hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,api.gaoqingdianshi.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,buy.itunes.apple.com,pan.baidu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,biz.caiyunapp.com,account.wps.cn,business.msstatic.com,
+hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,api.gaoqingdianshi.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,buy.itunes.apple.com,pan.baidu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,biz.caiyunapp.com,account.wps.cn,business.msstatic.com,api.bjxkhc.com,
 
 
 # 云闪付
@@ -72,4 +72,10 @@ https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response
 
 # 虎牙直播
 ^http?:\/\/business\.msstatic\.com\/advertiser\/material url script-response-body https://raw.githubusercontent.com/whyour/hundun/master/quanx/fold-ad.js
+
+
+#爱美剧解锁vip（by nobyda）
+#app下载地址：xmj1.app，推荐选择下载旧版本
+^https?:\/\/api.bjxkhc.com\/index\.php\/app\/ios\/(vod\/show|(user|vod|topic|type)\/index) url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/aimeiju.js
+
 
