@@ -111,8 +111,9 @@ function GetCookie() {
                 }
             } else {
                 $.setdata(token, 'sy_token_wb');
-                $.log(`tokens: ${token}`)
-                $.msg($.name, `获取微博签到Cookie: 成功`, ``)
+//                $.log(`tokens: ${token}`)
+//                $.msg($.name, `获取微博签到Cookie: 成功`, ``)
+                $.log("微博签到Cookie更新成功")
             }
         } else if ($request && $request.method != 'OPTIONS' && $request.headers.Cookie.indexOf("SUB=") > -1) {
             const cookieval = $request.headers.Cookie.match(/SUB=[\w\-]+/)[0];
@@ -132,8 +133,8 @@ function GetCookie() {
                 }
             } else {
                 $.setdata(cookieval, 'wb_cookie');
-                $.log(`cookies: ${cookieval}`);
-                $.msg($.name, `获取微博用户Cookie: 成功`, ``)
+//                $.log(`cookies: ${cookieval}`);
+//                $.msg($.name, `获取微博用户Cookie: 成功`, ``)
             }
         }
     }
