@@ -16,6 +16,8 @@ let signcash = "";
   
 
 if (isGetCookie = typeof $request !== `undefined`) {
+   $.setdata('', 'sy_token_wb');
+   $.setdata('', 'wb_cookie');
     GetCookie();
     $.done()
 } else {
