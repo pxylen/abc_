@@ -10,14 +10,14 @@
 const $ = new Env('新浪微博')
 const notify = $.isNode() ? require('./sendNotify') : '';
 let tokenArr = [],  cookieArr = [];
-let wbtoken = $.getdata('sy_token_wb');
-let cookies = $.getdata('wb_cookie');
+//let wbtoken = $.getdata('sy_token_wb');
+//let cookies = $.getdata('wb_cookie');
+let wbtoken = '';
+let cookies = '';
 let signcash = "";
   
 
 if (isGetCookie = typeof $request !== `undefined`) {
-   $.setdata('', 'sy_token_wb');
-   $.setdata('', 'wb_cookie');
     GetCookie();
     $.done()
 } else {
