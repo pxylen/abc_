@@ -21,7 +21,7 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 [@Sunert](https://github.com/Sunert/Script/tree/master) - Sunert
 
-[@lxk0301](https://gitee.com/lxk0301/projects) - 狗东系列
+[@panghu999](https://github.com/panghu999/panghu) - 柠檬
 
 [@NobyDa](https://github.com/NobyDa/Script/tree/master) - NobyDa
 
