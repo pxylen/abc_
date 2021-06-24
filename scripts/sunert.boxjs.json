@@ -239,6 +239,20 @@
       ]
     },
     {
+      "id": "blackmatrix7.tieba",
+      "name": "百度贴吧签到",
+      "keys": [
+        "tieba_checkin_cookie"
+      ],
+      "author": "@blackmatrix7",
+      "repo": "https://github.com/blackmatrix7/ios_rule_script/tree/master/script/tieba",
+      "icons": [
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/tieba.png",
+        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/tieba.png"
+      ],
+      "script": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_checkin.js"
+    },
+    {
       "id": "zZ.DiDi",
       "name": "滴滴出行",
       "descs_html": [
@@ -485,6 +499,27 @@
       "icons": [
         "https://raw.githubusercontent.com/NobyDa/mini/master/Alpha/iQIYI.png",
         "https://raw.githubusercontent.com/NobyDa/mini/master/Color/iQIYI.png"
+      ]
+    },
+    {
+      "id": "blackmatrix7.zhihu",
+      "name": "知乎助手",
+      "keys": [
+        "zhihu_blocked_users",
+        "zhihu_current_userinfo",
+        "zhihu_keyword_block"
+      ],
+      "author": "@blackmatrix7",
+      "repo": "https://github.com/blackmatrix7/ios_rule_script/tree/master/script/zhihu",
+      "icons": [
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.png",
+        "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu.png"
+      ],
+      "scripts": [
+        {
+          "name": "知乎助手数据清理",
+          "script": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/zhihu/zhihu_plus.js"
+        }
       ]
     }
   ]
