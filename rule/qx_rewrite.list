@@ -1,18 +1,21 @@
 
 
 
-hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,api.gaoqingdianshi.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,buy.itunes.apple.com,pan.baidu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,biz.caiyunapp.com,account.wps.cn,business.msstatic.com,api.bjxkhc.com,
+hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,pan.baidu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,biz.caiyunapp.com,account.wps.cn,business.msstatic.com,api.bjxkhc.com,
 
 
 # 云闪付
 ^https?+:\/\/(analytics|tysdk|ads)\.95516\.com _ reject-dict
 
+
 # 向日葵去广告
 ^https?+:\/\/slapi\.oray\.net\/adver _ reject-dict
 ^https?+:\/\/slapi\.oray\.net\/adver\/promotion _ reject-dict
 
+
 # 12306
 ^https?+:\/\/mobile\.12306\.cn\/otsmobile\/app\/mas\/loggw\/(logUpload.do|logConfig.do) _ reject
+
 
 # 淘宝
 ^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv - reject-200
@@ -34,17 +37,13 @@ hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m
 # ^https?:\/\/.+\/client\/phpui2\/ url reject-200
 ^https?:\/\/ss0\.bdstatic\.com/.+_\d{3}_\d{4}\.jpg url reject-200
 
-# > 电视家
-^https?:\/\/api\.gaoqingdianshi\.com\/api\/v\d\/ad\/ url reject-200
 
 # > 花生地铁
 ^https?:\/\/cmsapi\.wifi8\.com\/v\d\/(emptyAd|adNew)\/ url reject-200
 
+
 # 爱思助手
 ^https?+:\/\/list-app-m\.i4\.cn\/getopfstadinfo.xhtml _ reject-dict
-
-# github域名重定向  raw.githubusercontent.com
-# https:\/\/raw.githubusercontent.com https://gayhub.lensu.workers.dev 302
 
 
 #picsew(by zhiyi)
@@ -69,6 +68,7 @@ https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response
 
 #WPS解锁  超级会员、wps会员、稻壳会员 (By eHpo)
 ^https://account.wps.*/api/users/ url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Wps.js
+
 
 # 虎牙直播
 ^http?:\/\/business\.msstatic\.com\/advertiser\/material url script-response-body https://raw.githubusercontent.com/whyour/hundun/master/quanx/fold-ad.js
