@@ -7,6 +7,10 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 饮水思源：
 
+[@blackmatrix7](https://github.com/blackmatrix7/ios_rule_script) - blackmatrix7
+
+[@Tartarus2014](https://github.com/Tartarus2014/Loon-Script) - 烧烤哥
+
 [@sngxpro](https://github.com/sngxpro/QuanX) - 少年歌行
 
 [@ziye](https://github.com/ziye888/JavaScript) - ziye
