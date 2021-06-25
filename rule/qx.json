@@ -45,6 +45,6 @@
 
     "2 1-6/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/youth/youth_Read1.js, tag=中青阅读1, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png",
     "4 1-6/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/youth/youth_Read2.js, tag=中青阅读2, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png",
-    "6 1-6/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/youth/youth_Read_mix.js, tag=中青阅读2, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png"
+    "6 1-6/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/youth/youth_Read_mix.js, tag=中青阅读混合, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png"
   ]
 }
