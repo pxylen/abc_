@@ -39,5 +39,7 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 [@Tom](https://github.com/xl2101200/-) - Tom
 
+[@gxggxl](https://github.com/gxggxl/QuantumultX) - gxggxl
+
 
 
