@@ -11,6 +11,7 @@
     "5 0 * * *  https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_checkin.js, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba.png, tag=贴吧_每日签到",
     "40 8,20,9-21/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/zZPiglet/DiDi_drink.js, tag=滴滴喝水, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png",
     "1 6,22 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/zZPiglet/DiDi_sleep.js, tag=滴滴睡觉, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png",
+    "10 0,8,12,18 * * * https://raw.githubusercontent.com/passerby-b/didi_fruit/main/dd_fruit.js, tag=滴滴橙心果园, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png",
 
     "0 0 * * * https://raw.githubusercontent.com/pxylen/dog_jd/master/jx_cfdtx.js, tag=京喜财富岛提现, img-url=https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Gallery/API-Icon/jx_cfd_exchange.png",
     "2 0 * * * https://raw.githubusercontent.com/pxylen/dog_jd/master/xmSports.js, tag=小米运动, img-url=https://raw.githubusercontent.com/58xinian/icon/master/xmyd.png",
