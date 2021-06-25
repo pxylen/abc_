@@ -13,6 +13,7 @@
     "1 6,22 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/zZPiglet/DiDi_sleep.js, tag=滴滴睡觉, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png",
 
     "0 0 * * * https://raw.githubusercontent.com/pxylen/dog_jd/master/jx_cfdtx.js, tag=京喜财富岛提现, img-url=https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Gallery/API-Icon/jx_cfd_exchange.png",
+    "2 0 * * * https://raw.githubusercontent.com/pxylen/dog_jd/master/xmSports.js, tag=小米运动, img-url=https://raw.githubusercontent.com/58xinian/icon/master/xmyd.png",
     "6 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.js, tag=腾讯视频, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/videoqq.png",
     "7 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js, tag=美团签到领现金, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/meituan.png",
     "8 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.js, tag=IT之家, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/ithome.png",
@@ -31,6 +32,8 @@
     "0 6,9,10,22 * * * https://raw.githubusercontent.com/ziye888/JavaScript/main/Task/flw.js, tag=返利网, img-url=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/flw.png",
 
     "5,35 8-23 * * * https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/jrtt.js, tag=今日头条极速版, img-url=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/img/jrtt.png",
+    "30 16,22 * * * https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txstockqx.js, tag=自选股, img-url=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png",
+    "3,30 0 * * * https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txstockcow.js, tag=自选股长牛来了（看脚本手动加cookie订阅）, img-url=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png",
 
     "18 0 * * * https://raw.githubusercontent.com/gxggxl/QuantumultX/master/Script/ximei.js, tag=西梅, img-url=https://ae01.alicdn.com/kf/Ucd02ea79ef22473daf3576486d134509Q.jpg",
     "19-24 0 * * * https://raw.githubusercontent.com/age174/-/main/lgyy.js, tag=朗果英语, img-url=https://ae01.alicdn.com/kf/Uc3c35e1796624a7ca6a23c89c7f0dff2H.jpg",
