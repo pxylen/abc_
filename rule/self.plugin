@@ -27,7 +27,7 @@ http-response https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https
 # 百度云盘解锁视频在线播放和倍速(by nobyda)
 http-response https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, requires-body=true, timeout=10, tag=百度云盘解锁视频在线播放和倍速
 
-
+http-request https:\/\/kandian\.wkandian\.com\/v5\/article\/info\.json script-path=https://raw.githubusercontent.com/Sunert/Script/master/Task/Youth_Read.js,  enabled=true, tag=中青看点阅读
 
 [URL Rewrite]
 
