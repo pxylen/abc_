@@ -15,7 +15,7 @@ http-request daojia.jd.com/html/index.html script-path=https://ghproxy.com/https
 
 #ichenzhe
 #粉丝互动
-http-response ^https://lzkjdz\-isv\.isvjcloud\.com\/wxFansInterActionActivity\/activityContent script-path=https://ghproxy.com/https://raw.githubusercontent.com/sngxpro2/AutoSyncScript/monk/i-chenzhe/z_fanslove.js,  tag=粉丝互动
+http-response ^https://lzkjdz\-isv\.isvjcloud\.com\/wxFansInterActionActivity\/activityContent script-path=https://ghproxy.com/https://raw.githubusercontent.com/yuthpoetry/AutoSyncScript/monk/i-chenzhe/z_fanslove.js,  tag=粉丝互动
 
 #柠檬
 #富豪小镇
@@ -39,12 +39,6 @@ http-request http://\S+/t555/index.html\St=\S+ script-path=https://ghproxy.com/h
 http-response https://xxx2.67mob.com/v2/auth/login-by-wx script-path=http://nm66.top/chxx.js,  tag=彩虹消消消
 #签到三天得汽水
 http-request https://platconf.api.mgtv.com/mccapi/api/get\S+ script-path=https://ghproxy.com/https://raw.githubusercontent.com/panghu999/ningmeng/main/mgtv.js, requires-header=true, tag=签到三天得汽水
-
-
-#sngxpro
-#酸奶机场签到
-http-request ^https://shyni.xyz/user/checkin script-path=https://ghproxy.com/https://raw.githubusercontent.com/sngxpro/scripts/main/snjc/jc.cookie.js, requires-header=true, tag=酸奶机场签到
-
 
 
 #tom
@@ -689,7 +683,7 @@ http-request http://cf-api.douzhuanapi.cn:10002/api/ script-path=https://cdn.jsd
 #微客众智
 http-request ^http://wx.tiantianaiyuedu.site/ script-path=https://cdn.jsdelivr.net/gh/age174/-@main/wkzz.js, requires-body=true, tag=微客众智
 #阳光矿场
-http-request https://k009.taoyuoo.top/app/index.php? script-path=https://ghproxy.com/https://raw.githubusercontent.com/sngxpro/QuanX/master/scripts/ygkc.js, requires-header=true, tag=阳光矿场
+http-request https://k009.taoyuoo.top/app/index.php? script-path=https://ghproxy.com/https://raw.githubusercontent.com/Youthsongs/QuanX/master/scripts/ygkc.js, requires-header=true, tag=阳光矿场
 #66阅读
 http-request http://.*v4/user/get_user_task? script-path=https://cdn.jsdelivr.net/gh/age174/-@main/66yd.js, requires-header=true, tag=66阅读
 #文创阅读
@@ -739,7 +733,7 @@ http-request http://huzhu.ssjann.com/task/participate script-path=https://cdn.js
 #讯播广告
 http-request https://miaogouguanggaotest.haimiaogou.com/api/Order/add script-path=https://cdn.jsdelivr.net/gh/age174/-@main/xbgg.js, requires-header=true, tag=讯播广告
 #猜歌王者改进度
-http-request https://api.litemob.com/caigewangzhe_ios/song/info? script-path=https://ghproxy.com/https://raw.githubusercontent.com/sngxpro/QuanX/master/scripts/cgwz.js, requires-header=true, tag=猜歌王者改进度
+http-request https://api.litemob.com/caigewangzhe_ios/song/info? script-path=https://ghproxy.com/https://raw.githubusercontent.com/Youthsongs/QuanX/master/scripts/cgwz.js, requires-header=true, tag=猜歌王者改进度
 #百事乐元
 http-request https://pepcoin.pepsico.com.cn/api/wxapp/doGetUserInfo script-path=https://cdn.jsdelivr.net/gh/age174/-@main/bsly.js, requires-body=true, tag=百事乐元
 #幸福养鸡场
@@ -747,7 +741,7 @@ http-request https://bp-api.coohua.com/bubuduo-xfyjc/task/getHomePageTask script
 #食客江湖阅读
 http-request https://www.shikeshijie.com/api/task/done script-path=https://cdn.jsdelivr.net/gh/age174/-@main/skjh.js, requires-header=true, tag=食客江湖阅读
 #小宝阅读
-http-request https://app.b4tg3gc.top/wxread/indexinfo? script-path=https://ghproxy.com/https://raw.githubusercontent.com/sngxpro/QuanX/master/scripts/xbyd.js, requires-header=true, tag=小宝阅读
+http-request https://app.b4tg3gc.top/wxread/indexinfo? script-path=https://ghproxy.com/https://raw.githubusercontent.com/Youthsongs/QuanX/master/scripts/xbyd.js, requires-header=true, tag=小宝阅读
 #更改等待时长(小宝阅读进入需要等待一分多钟才能点击，添加该重写可以把等待时长改为5秒。)
 https:\/\/app\.b4tg3gc\.top\/wxread\/indexinfo\? url response-body limit_time = \d+ response-body limit_time = 5
 #淘优购
