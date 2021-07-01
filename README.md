@@ -11,7 +11,7 @@ cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOn
 
 [@Tartarus2014](https://github.com/Tartarus2014/Loon-Script) - 烧烤哥
 
-[@sngxpro](https://github.com/sngxpro/QuanX) - 少年歌行
+[@Youthsongs](https://github.com/Youthsongs/QuanX) - 少年歌行
 
 [@ziye](https://github.com/ziye888/JavaScript) - ziye
 
