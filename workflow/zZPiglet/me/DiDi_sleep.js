@@ -1,8 +1,8 @@
 /*
 cron 参考：
-https://dpubstatic.udache.com/static/dpubimg/2820888c93bcb3a3d07e054b1ca1e35d/index.html
+https://dpubstatic.udache.com/static/dpubimg/aa88e9ba6b8a95abec85ad62661afd98/index.html
 
-40 8,20,9-19/2 * * *
+1 6,22 * * *
 */
 const $ = API("Didi");
 $.debug = [true, "true"].includes($.read("debug"));
@@ -10,28 +10,19 @@ const ERR = MYERR();
 $.subTitle = "";
 $.detail = "";
 $.tail = "";
-const drinkURL = "https://sigma.xiaojukeji.com/api/drink";
-
-const wsgsig = [
-	"dd03-WziVdQy4iGgitH6QYwu5IonNqWzQXTOhZOz958WIqWzRsP5ZRLfFHop1hf8Rs1ejzHvIKynNrjowrHqroLzg5yWJ%2Fj%2BQsHIRpwQCIy4BUGfuq12nv2QDHoQL",
-	"dd03-a2ifIDDRQV6xRJBL%2B3upd0JyYFlVppkgNNztBm4ZYFlUQRA85Qfme0bOPleUQ3IeHovufgfRSBLTzuTg1pRXgg%2BuwlVwRJxM2JiiAgDZRl6qQz2a2%2BtqdnCQPq",
-	"dd03-B%2FyO1X2wla9z7PYK8jmaFt9PXhYX3LM97Xj69bBoXhYW8HZ1LD3HEtHzmB1W8Z%2Fb10nE0jLwjlBpJ2eCHtNaEDHZmaHWKSkc5fW9Gt1ZtBAWJwScIWv3Et5Xk9",
-	"dd03-pF2DcL%2Fh%2BnQFIXeVhGauNHZU6gC6MCqy%2Fbdm4ZOt6gC5HGdmsmxt%2BHriLXs5Hn6wmi9pL1VhIcve6gYRWjLn%2BOrlL0cM6nEOjGLhM6hi2gjIIb2Zjj6XMHxlLA",
-	"dd03-Qur1lMz%2BMJ3bmguTkZPrOIm38QiJii%2BmlTSTxYX68QiKnmvyXIFYPIoLN3bKn0ikjMOkQ2Q%2BKoKCsXfkkPeyxSn7L%2BbNn0DXsP9POPuML3bJsgDXnwwPP27JN9",
-	"dd03-%2B7P%2BwqiIHSaFXWn4a6rmrUv53LZ6tDCA9IUukeQ43LZ5W0mHCTMpqUtJKw25WmzCfPqttkXINHAejf39GTUyrdnIKL27Wmubc61xkhnb8522Wfog0Y%2FvqdtL7q",
-	"dd03-2s%2Fs%2Fe6KDvHN09bZ0rY4Tad7a4qfDlXsGlxgYqF2a4qgGhcQdadCSaLHARAgGA3qAeZNpBHKF827cqyt9kSDYBH9ByLgGVGZEhkESE1Le41aEecnaETgTaF3AA",
-	"dd03-eolT%2Bs3JdEhpXFT0KTxdbWc8GU2ntq15JZY10gC1GU2mWUSd16aMcWKIgdZmWeV7L2wB9m%2BJbqqzjlB7HHrJ0fzJgkZnWqYLIHVNbtcHDExpU9T25OP%2BGW09eA",
-	"dd03-2B5viFB%2FBRwM2%2FWq0CdCpBHVcKde6ecvGfaNu%2F2scKdd1aXjdiY4oB9jCvkd1qoZAmegTad%2F0%2BT6MAJxECFHvdBVfKOaM9mZaXe%2Burarf4qcLA7y0C52pheVDq",
-];
+const sleepURL = "https://sigma.xiaojukeji.com/api/sleep";
+const wsgsig =
+	"dd03-WziVdQy4iGgitH6QYwu5IonNqWzQXTOhZOz958WIqWzRsP5ZRLfFHop1hf8Rs1ejzHvIKynNrjowrHqroLzg5yWJ%2Fj%2BQsHIRpwQCIy4BUGfuq12nv2QDHoQL";
 
 !(async () => {
-	$.Ticket = $.read("#DiDi");
+//	$.Ticket = $.read("#DiDi");
+    $.Ticket = "EwDc7urZlBssbgpW2jcVDqn3EeQLRSQv54zfWK_kHP8kzDmOAkEMQNG7_Nhq2eVanU4-d5iBZkkKCUTU4u6oIX96G1MJfNFFEaYRJsxEmKqqMJ2wVkZqNXvuPQ1hZsKqm2W1VoRZCH5-Ef4IEP6J1C23omrVtHoTjkRyYSU2Hrfn_bAS-hJO-5Xca_5cZwJz7WajWRkIl-953fk7AAD__w==";
 	if (!$.Ticket) {
 		throw new ERR.TokenError("❌ 未获取或填写 Token");
 	} else {
-		await drink();
-		await $.info("滴滴喝水\n" + $.subTitle + "\n" + $.detail + "\n" + $.tail);
-		await $.notify("滴滴喝水 🥃", $.subTitle, $.detail + "\n" + $.tail);
+		await sleep();
+		await $.info("滴滴睡觉\n" + $.subTitle + "\n" + $.detail + "\n" + $.tail);
+		await $.notify("滴滴睡觉 🥟", $.subTitle, $.detail + "\n" + $.tail);
 	}
 })()
 	.catch((err) => {
@@ -50,20 +41,26 @@ const wsgsig = [
 	})
 	.finally(() => $.done());
 
-async function drink() {
-	await drinkInfo();
-	if ($.turn_id) {
-		await drinkBonus();
+async function sleep() {
+	await sleepInfo();
+	if ($.button_type == 2) {
+		await goSleep();
+	} else if ($.button_type == 3) {
+		await wake();
+	} else if ($.button_type == 1) {
+		$.detail += $.button_text;
 	} else {
-		$.detail +=
-			"现在没水喝，下一杯水 ⬇️ 在" +
-			($.drinkts == 0 ? "明天。" : " " + timeFormat($.drinkts) + "后。");
+		/*
+		$.wait(3000).then(() => {
+			sleep();
+		});
+		*/
 	}
 }
 
-function drinkInfo() {
+function sleepInfo() {
 	return $.post({
-		url: drinkURL + "/info?wsgsig=" + wsgsig[0],
+		url: sleepURL + "/info?wsgsig=" + wsgsig,
 		headers: {
 			"Content-Type": "application/json",
 			ticket: $.Ticket,
@@ -71,66 +68,80 @@ function drinkInfo() {
 		body: "{}",
 	})
 		.then((resp) => {
-			$.log("drinkInfo: " + JSON.stringify(resp.body));
+			$.log("sleepInfo: " + JSON.stringify(resp.body));
 			let obj = JSON.parse(resp.body);
 			if (obj.errno == 0) {
-				$.tail += obj.data.button_title.replace(/_/g, " ") + ": " + obj.data.text;
-				let turn = obj.data.cups.filter((vo) => vo.staus == 3)[0];
-				if (turn) $.turn_id = turn.turn_id;
-				$.drinkts = obj.data.time_stamp;
+				$.button_type = obj.data.button_type;
+				$.button_text = obj.data.button_text;
+				$.tips_text = obj.data.tips_text;
+				$.tail = obj.data.text;
 			} else {
-				$.info("drinkInfo: " + JSON.stringify(resp.body) + "\n请检查是否有喝水赚钱活动。");
-				throw new ERR.BodyError("请检查是否有喝水赚钱活动\n" + JSON.stringify(resp.body));
+				$.info("sleepInfo: " + JSON.stringify(resp.body) + "\n请检查是否有睡觉赚钱活动。");
+				throw new ERR.BodyError("请检查是否有睡觉赚钱活动\n" + JSON.stringify(resp.body));
 			}
 		})
 		.catch((err) => {
-			$.error("drinkInfo: \n");
+			$.error("sleepInfo: \n");
 			$.error(err);
-			throw new ERR.BodyError("喝水赚钱查询信息接口错误\n" + JSON.stringify(err));
+			throw new ERR.BodyError("睡觉赚钱查询信息接口错误\n" + JSON.stringify(err));
 		});
 }
 
-function drinkBonus() {
+function goSleep() {
 	return $.post({
-		url: drinkURL + "/getBonus?wsgsig=" + wsgsig[$.turn_id],
+		url: sleepURL + "/sleep?wsgsig=" + wsgsig,
 		headers: {
 			"Content-Type": "application/json",
 			ticket: $.Ticket,
 		},
-		body: '{"turn_id":' + $.turn_id + "}",
+		body: "{}",
 	})
 		.then((resp) => {
-			$.log("drinkBonus: " + JSON.stringify(resp.body));
+			$.log("sleepBonus: " + JSON.stringify(resp.body));
 			let obj = JSON.parse(resp.body);
 			if (obj.errno == 0) {
-				if (obj.data.bonus_amount) {
-					let drinkBonus = obj.data.bonus_amount;
-					$.detail += "记得喝水，已领取 " + drinkBonus + " 福利金。";
-				} else {
-					$.detail += "喝水福利金: " + obj.data.message_text + "。";
-				}
+				$.subTitle = "晚安 🌃";
+				$.detail += "睡觉了，" + $.tips_text;
 			} else {
-				$.info("drinkBonus: " + JSON.stringify(resp.body));
+				$.info("sleepBonus: " + JSON.stringify(resp.body));
 			}
 		})
 		.catch((err) => {
-			$.error("drinkBonus: \n");
+			$.error("sleepBonus: \n");
 			$.error(err);
-			throw new ERR.BodyError("喝水赚钱领取奖励接口错误\n" + JSON.stringify(err));
+			throw new ERR.BodyError("睡觉赚钱领取奖励接口错误\n" + JSON.stringify(err));
 		});
 }
 
-function timeFormat(time) {
-	let s = Math.floor(time % 60);
-	let h = Math.floor((time / 3600) % 24);
-	let m = Math.floor((time / 60) % 60);
-	if (m < 1) {
-		return s + " 秒";
-	} else if (h < 1) {
-		return m + " 分 " + s + " 秒";
-	} else {
-		return h + " 时 " + m + " 分 " + s + " 秒";
-	}
+function wake() {
+	return $.post({
+		url: sleepURL + "/wake?wsgsig=" + wsgsig,
+		headers: {
+			"Content-Type": "application/json",
+			ticket: $.Ticket,
+		},
+		body: "{}",
+	})
+		.then((resp) => {
+			$.log("sleepBonus: " + JSON.stringify(resp.body));
+			let obj = JSON.parse(resp.body);
+			if (obj.errno == 0) {
+				if (obj.data.bonus_amount) {
+					$.subTitle = "早安 🌆";
+					let sleepBonus = obj.data.bonus_amount;
+					$.detail += "该起床了，已领取 " + sleepBonus + " 福利金。";
+				} else {
+					$.detail += "睡觉福利金: " + obj.data.message_text + "。";
+				}
+			} else {
+				$.info("sleepBonus: " + JSON.stringify(resp.body));
+			}
+		})
+		.catch((err) => {
+			$.error("sleepBonus: \n");
+			$.error(err);
+			throw new ERR.BodyError("睡觉赚钱领取奖励接口错误\n" + JSON.stringify(err));
+		});
 }
 
 function MYERR() {
