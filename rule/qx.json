@@ -32,7 +32,7 @@
     "12 0 * * * https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, tag=爱奇艺, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/iQIYI.png",
     "13 0 * * * https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png, tag=中青看看赚",
     "14 0 * * * https://raw.githubusercontent.com/ziye888/JavaScript/main/Task/qczjspeed.js, tag= 汽车之家极速版, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/qczj.png",
-    "16 0,22 * * * https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkin_env.js, tag=机场签到（配合boxjs使用）, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/airport.png",
+    "16 0 * * * https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/glados/checkin_env.js, tag=机场签到（配合boxjs使用）, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/airport.png",
     "17 9-22 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, tag=58同城, img-url=https://raw.githubusercontent.com/sngxpro/icons/main/genshin/anbo.png",
 
     "7 0-23 * * * https://raw.githubusercontent.com/ziye888/JavaScript/main/Task/shuqi.js, tag=书旗小说ziye版, img-url=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/SHUQI/shuqi.png",
