@@ -4,6 +4,9 @@
 
 cookie集合：https://raw.githubusercontent.com/pxylen/abc_/master/task/AllinOne.cookie
 
+自用QX订阅(京东)：https://raw.githubusercontent.com/pxylen/abc_/master/rule/qx.json
+
+自用QX订阅：https://raw.githubusercontent.com/pxylen/abc_/master/rule/qx_jd.json
 
 饮水思源：
 
