@@ -6,7 +6,7 @@
     "*/10 0-1 6 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/baidu_speed_cash.js, tag=百度极速提现, img-url=https://qxzy.top/rules/QuantumultX/img/baidu_speed.png",
     "1 0 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/zZPiglet/elemCheckIn.js, tag=饿了么-打卡领红包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/elem.png",
     "3 0 * * * https://raw.githubusercontent.com/pxylen/abc_/sunert/Task/weibo.js, tag=微博&钱包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weibo.png",
-    "4 0 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/kuaishou.js, tag=快手极速版签到, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/kuaishou.png",
+    "4 0 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/kuaishou.js, tag=快手极速版签到(自用), img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/kuaishou.png",
     "5 0 * * *  https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_checkin.js, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba.png, tag=贴吧_每日签到",
 
     "2 0 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/zZPiglet/me/DiDi_new.js, tag=滴滴出行(自用), img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png",
@@ -45,11 +45,11 @@
     "18 0 * * * https://raw.githubusercontent.com/gxggxl/QuantumultX/master/Script/ximei.js, tag=西梅, img-url=https://ae01.alicdn.com/kf/Ucd02ea79ef22473daf3576486d134509Q.jpg",
     "19-24 0 * * * https://raw.githubusercontent.com/age174/-/main/lgyy.js, tag=朗果英语, img-url=https://ae01.alicdn.com/kf/Uc3c35e1796624a7ca6a23c89c7f0dff2H.jpg",
 
-    "1 8,12,17 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/dingdong_yangyu1.js, tag=叮咚农场养鱼1, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/mcdd.png",
-    "1 8,12,17 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/dingdong_yangyu2.js, tag=叮咚农场养鱼2, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/mcdd.png",
+    "1 8,12,17 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/dingdong_yangyu1.js, tag=叮咚农场养鱼1(自用), img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/mcdd.png",
+    "1 8,12,17 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/dingdong_yangyu2.js, tag=叮咚农场养鱼2(自用), img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/mcdd.png",
 
-    "2 1-6/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/youth/youth_Read1.js, tag=中青阅读1, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png",
-    "4 1-6/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/youth/youth_Read2.js, tag=中青阅读2, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png",
-    "6 1-6/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/youth/youth_Read_mix.js, tag=中青阅读混合, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png"
+    "2 1-6/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/youth/youth_Read1.js, tag=中青阅读1(自用), img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png",
+    "4 1-6/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/youth/youth_Read2.js, tag=中青阅读2(自用), img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png",
+    "6 1-6/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/youth/youth_Read_mix.js, tag=中青阅读混合(自用), img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png"
   ]
 }
