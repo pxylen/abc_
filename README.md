@@ -17,6 +17,8 @@ cookie集合：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/task/AllinOne.cook
 
 [@Youthsongs](https://github.com/Youthsongs/QuanX) - 少年歌行
 
+[@zwf234](https://github.com/zwf234/rules) - 奇心
+
 [@ziye](https://github.com/ziye888/JavaScript) - ziye
 
 [@ZhiYi-N](https://github.com/ZhiYi-N/Private-Script) - ZhiYi-N
