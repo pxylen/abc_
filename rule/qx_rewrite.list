@@ -1,7 +1,7 @@
 
 
 
-hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,pan.baidu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,biz.caiyunapp.com,account.wps.cn,business.msstatic.com,api.bjxkhc.com,
+hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,pan.baidu.com,api.weibo.cn,mapi.weibo.com,*.uve.weibo.com,biz.caiyunapp.com,account.wps.cn,business.msstatic.com,api.bjxkhc.com,vipapi.jxedt.com,
 
 
 # 云闪付
@@ -53,7 +53,7 @@ https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https:
 #解锁百度云盘会员（byddgksf2013）
 https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Crack/bdcloud.js
 #百度云盘解锁视频在线播放和倍速(by nobyda)
-https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js
+https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://raw.githubusercontent.com/nzw9314/QuantumultX/master/NobyDa/Surge/JS/BaiduCloud.js
 
 
 # ---(By yichahucha)---
@@ -79,3 +79,5 @@ https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response
 ^https?:\/\/api.bjxkhc.com\/index\.php\/app\/ios\/(vod\/show|(user|vod|topic|type)\/index) url script-response-body https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/aimeiju.js
 
 
+# 驾校一点通 (by @superuv)
+^https:\/\/vipapi\.jxedt\.com\/vip\/check url script-response-body https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Script/jxydt.js
