@@ -7,8 +7,8 @@ const signinfo = {}
 //let VAL_homeurl = chavy.getdata(KEY_homeurl)
 //let VAL_homeheader = chavy.getdata(KEY_homeheader)
 
-let VAL_homeurl = 'https://maicai.api.ddxq.mobi/point/home?api_version=9.7.3&app_client_id=3&station_id=5b988497c0a1ea8f1c8b5a6e&native_version=9.23.1&city_number=0101&latitude=31.316548&longitude=121.631177&_=1613301671742'
-let VAL_homeheader = '{"Cookie":"DDXQSESSID=30b2508d16e85542cc36e05e24a1b7b8","Accept":"*/*","Origin":"https://activity.m.ddxq.mobi","Connection":"keep-alive","Host":"maicai.api.ddxq.mobi","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 xzone/9.23.1 station_id/5b988497c0a1ea8f1c8b5a6e","Accept-Language":"zh-cn","Accept-Encoding":"gzip, deflate, br","Referer":"https://activity.m.ddxq.mobi/"}'
+let VAL_homeurl = 'https://maicai.api.ddxq.mobi/point/home?api_version=9.7.3&app_version=1.0.0&app_client_id=3&station_id=5b988497c0a1ea8f1c8b5a6e&native_version=9.30.0&city_number=0101&latitude=31.316548&longitude=121.631177&_=1625878100856'
+let VAL_homeheader = '{"Origin":"https://activity.m.ddxq.mobi","Cookie":"DDXQSESSID=f6e4911810bd0ddacb0c91ef433431f7","Connection":"keep-alive","Accept":"*/*","Referer":"https://activity.m.ddxq.mobi/","Host":"maicai.api.ddxq.mobi","User-Agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 xzone/9.30.0 station_id/5b988497c0a1ea8f1c8b5a6e","Accept-Encoding":"gzip, deflate, br","Accept-Language":"zh-cn"}'
 
 ;(exec = async () => {
   chavy.log(`🔔 ${cookieName} 开始签到`)
