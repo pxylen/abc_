@@ -60,5 +60,5 @@ https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response
 ^http?:\/\/business\.msstatic\.com\/advertiser\/material url script-response-body https://raw.githubusercontent.com/whyour/hundun/master/quanx/fold-ad.js
 
 # 卧龙影视
-^https?+:\/\/api\.wolong\.tv\/wolong\/user\/myinfo url script-response-body https://raw.githubusercontent.com/whyour/hundun/master/quanx/fold-ad.js
+^https?+:\/\/api\.wolong\.tv\/wolong\/user\/myinfo url script-response-body https://raw.githubusercontent.com/pxylen/abc_/master/scripts/wolong-vip.js
 

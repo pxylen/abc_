@@ -1,45 +1,25 @@
 /*
 #圈x
-https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/picsew.js
+^https?+:\/\/api\.wolong\.tv\/wolong\/user\/myinfo url script-response-body https://raw.githubusercontent.com/pxylen/abc_/master/scripts/wolong-vip.js
 #Loon
-http-response https:\/\/buy\.itunes\.apple\.com\/verifyReceipt script-path=https://raw.githubusercontent.com/Ariszy/Private-Script/master/Scripts/picsew.js, requires-body=true, timeout=10, tag=picsew专业版
+http-response ^https?+:\/\/api\.wolong\.tv\/wolong\/user\/myinfo script-path=https://raw.githubusercontent.com/pxylen/abc_/master/scripts/wolong-vip.js, requires-body=true, timeout=10, tag=picsew专业版
 #[mitm]
-hostname=buy.itunes.apple.com
+hostname=api.wolong.tv
 */
 var obj = JSON.parse($response.body);
-obj = {"receipt": {
-    "receipt_type": "Production",
-    "adam_id": 14789638028,
-    "app_item_id": 14789638028,
-    "bundle_id": "com.sugarmo.ScrollClip",
-    "application_version": "3082",
-    "download_id": 9999999,
-    "version_external_identifier": 77777777,
-    "receipt_creation_date": "2020-10-21 06:58:34 Etc/GMT",
-    "receipt_creation_date_ms": "1603263514000",
-    "receipt_creation_date_pst": "2020-10-21 23:58:34 America/Los_Angeles",
-    "request_date": "2020-10-21 06:59:15 Etc/GMT",
-    "request_date_ms": "1603263514000",
-    "request_date_pst": "2020-10-21 23:59:15 America/Los_Angeles",
-    "original_purchase_date": "2020-10-21 06:50:28 Etc/GMT",
-    "original_purchase_date_ms": "1603263514000",
-    "original_purchase_date_pst": "2020-10-21 23:50:28 America/Los_Angeles",
-    "original_application_version": "3082",
-    "in_app": [{
-      "quantity": "1",
-      "product_id": "com.sugarmo.ScrollClip.pro",
-      "transaction_id": "999999999999",
-      "original_transaction_id": "999999999999",
-      "purchase_date": "2020-02-01 00:00:00 Etc/GMT",
-      "purchase_date_ms": "1580540314000",
-      "purchase_date_pst": "2020-02-21 00:00:00 America/Los_Angeles",
-      "original_purchase_date": "2020-02-01 00:00:00 Etc/GMT",
-      "original_purchase_date_ms": "1580540314000",
-      "original_purchase_date_pst": "2020-02-01 00:00:00 America/Los_Angeles",
-      "is_trial_period": "false"
-    }]
+obj = {"data": {
+    "inviteCode": "WL39931",
+    "name": "雷赛猴",
+    "phone" : "15114894880",
+    "avatar" : "",
+    "userid" : 39931,
+    "introduction" : "",
+    "coin" : 999,
+    "vip": {
+      "isVip": 1,
+    }
   },
-  "status": 0,
-  "environment": "Production"
+  "code": 0,
+  "message": "ok"
   }
 $done({body: JSON.stringify(obj)});
