@@ -19,7 +19,7 @@ obj = {"data": {
       "isVip": 1,
     }
   },
-  "code": 0,
+  "code": 200,
   "message": "ok"
   }
 $done({body: JSON.stringify(obj)});
