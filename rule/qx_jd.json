@@ -2,8 +2,8 @@
   "name": "京东脚本",
   "description": "張彡个人脚本，自用",
   "task": [
-    "2 9 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_unsubscribe.js, tag=京东资产变动通知, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
-    "2 */30 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_bean_change.js, tag=取关京东店铺和商品, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+    "2 9 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_bean_change.js, tag=京东资产变动通知, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+    "2 */30 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_unsubscribe.js, tag=取关京东店铺和商品, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "0 0,6-18/6 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_fruit.js,tag=东东农场, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "1 7-21/2 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_plantBean.js,tag=京东种豆得豆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "10 * * * *  https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_factory.js,tag=京喜工厂(混沌), img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
