@@ -47,5 +47,7 @@ cookie集合：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/task/AllinOne.cook
 
 [@gxggxl](https://github.com/gxggxl/QuantumultX) - gxggxl
 
+[@passerby-b](https://github.com/passerby-b/JDDJ) - passerby-b
+
 
 
