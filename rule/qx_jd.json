@@ -2,7 +2,8 @@
   "name": "京东脚本",
   "description": "張彡个人脚本，自用",
   "task": [
-    "2 9 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_bean_change.js, tag=京东资产变动通知, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+    "2 9 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_unsubscribe.js, tag=京东资产变动通知, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+    "2 */30 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_bean_change.js, tag=取关京东店铺和商品, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "0 0,6-18/6 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_fruit.js,tag=东东农场, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "1 7-21/2 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_plantBean.js,tag=京东种豆得豆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "10 * * * *  https://raw.githubusercontent.com/whyour/hundun/master/quanx/jx_factory.js,tag=京喜工厂(混沌), img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
@@ -12,6 +13,7 @@
     "13 1,6,22 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_health.js, tag=东东健康社区, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
 
     "0 */4 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_speed_sign.js,tag=京东极速版, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+    "30 9,22 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_speed_redpocke.js,tag=京东极速版红包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "2 0-23/4 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_cash.js,tag=签到领现金, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "10 0 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_kd.js, tag=京东快递签到, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "10 7 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_bean_home.js, tag=领京豆额外奖励, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
