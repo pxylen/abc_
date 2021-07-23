@@ -36,6 +36,10 @@
     "1 1,2,23 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_redPacket.js, tag=京东全民开红包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "20 8 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_sgmh.js, tag=闪购盲盒, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "10 0 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_shop.js,tag=进店领豆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
-    "8 0-23/3 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_speed.js,tag=京东天天加速, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
+    "8 0-23/3 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_speed.js,tag=京东天天加速, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+
+    "21 9 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_MMdou.js, tag=MM领京豆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+    "18 0-23/2 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_wealth_island.js, tag=财富大陆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+    "1 8,12,18 * * *  https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/chinnkarahoi_jd_bookshop.js, tag=京东口袋书店, img-url=https://raw.githubusercontent.com/Youthsongs/QuanX/master/pic/wen.png"
   ]
 }
