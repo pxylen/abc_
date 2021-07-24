@@ -41,7 +41,9 @@
 
 
     "21 9 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_MMdou.js, tag=MM领京豆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
-    "18 0-23/2 * * * https://raw.githubusercontent.com/shufflewzc/faker2/main/jd_wealth_island.js, tag=财富大陆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+    "18 0-23/2 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_wealth_island.js, tag=财富大陆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+    "18 0,1,9,14,18 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_wealth_island_help.js tag=财富大陆互助, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
+    "20 0,20 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/jd_necklace.js, tag=点点券, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "1 8,12,18 * * *  https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/chinnkarahoi_jd_bookshop.js, tag=京东口袋书店, img-url=https://raw.githubusercontent.com/Youthsongs/QuanX/master/pic/wen.png"
   ]
 }
