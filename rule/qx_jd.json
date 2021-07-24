@@ -12,7 +12,7 @@
     "11 * * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_superMarket.js,tag=东东超市, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxc.png",
     "13 1,6,22 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_health.js, tag=东东健康社区, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
 
-    "0 */4 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_speed_sign.js,tag=京东极速版, img-url=https://qxzy.top/rules/QuantumultX/img/jd_speed_sign.pn",
+    "0 */4 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_speed_sign.js,tag=京东极速版, img-url=https://qxzy.top/rules/QuantumultX/img/jd_speed_sign.png",
     "30 9,22 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_speed_redpocke.js,tag=京东极速版红包, img-url=https://qxzy.top/rules/QuantumultX/img/jd_speed_sign.png",
     "2 0-23/4 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_cash.js,tag=签到领现金, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "10 0 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_kd.js, tag=京东快递签到, img-url=https://qxzy.top/rules/QuantumultX/img/jd_kd.png",
@@ -43,6 +43,6 @@
     "21 9 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_MMdou.js, tag=MM领京豆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "18 0-23/2 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_wealth_island.js, tag=财富大陆, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "18 0,1,9,14,18 * * * https://raw.githubusercontent.com/smiek2221/scripts/master/gua_wealth_island_help.js, tag=财富大陆互助, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
-    "1 8,12,18 * * *  https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/chinnkarahoi_jd_bookshop.js, tag=京东口袋书店, img-url=https://raw.githubusercontent.com/Youthsongs/QuanX/master/pic/wen.png"
+    "1 8,12,18 * * *  https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/chinnkarahoi_jd_bookshop.js, tag=京东口袋书店, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png"
   ]
 }
