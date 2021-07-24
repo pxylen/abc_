@@ -27,6 +27,7 @@
     "8 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.js, tag=IT之家, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/ithome.png",
     "9 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/feng/feng.js, tag=威锋网 (APP), img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/feng.png",
     "10 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/wps/wps.js, tag=WPS签到, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/wps.png",
+    "11 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.js, tag=网易新闻, img-url=https://qxzy.top/rules/QuantumultX/img/neteasenews.png",
     "30 10 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js, tag=哈罗单车, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/hellbike.png",
 
     "11 0 * * * https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/ttwk/ttwk.js, tag=支付宝天天挖矿, img-url=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/ttwk.png",
