@@ -33,6 +33,8 @@ cookie集合：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/task/AllinOne.cook
 
 [@panghu999](https://github.com/panghu999/panghu) - 柠檬
 
+[@smiek2221](https://github.com/smiek2221/scripts) - smiek2221
+
 [@NobyDa](https://github.com/NobyDa/Script/tree/master) - NobyDa
 
 [@chavyleung](https://github.com/chavyleung/scripts) - chavyleung
