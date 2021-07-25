@@ -37,7 +37,9 @@
     "20 8 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_sgmh.js, tag=闪购盲盒, img-url=https://qxzy.top/rules/QuantumultX/img/sgmh.png",
     "10 0 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_shop.js,tag=进店领豆, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_shop.png",
     "8 0-23/3 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_speed.js,tag=京东天天加速, img-url=https://qxzy.top/rules/QuantumultX/img/jdjs.png",
+    "10 0-23/8 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_try.js,tag=京东试用, img-url=https://qxzy.top/rules/QuantumultX/img/jdjs.png",
     "10 0,7,23 * * * https://raw.githubusercontent.com/JDHelloWorld/jd_scripts/main/jd_syj.js, tag=赚京豆, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_syj.png",
+
 
     "0 8 21-31 5-12 * https://qxzy.top/rules/QuantumultX/js/lxk0301/jd_gold_creator.js, tag=金榜创造营, img-url=https://qxzy.top/rules/QuantumultX/img/jd.png",
     "0 0,1-23/3 * * * https://qxzy.top/rules/QuantumultX/js/lxk0301/jd_mohe.js, tag=5G超级盲盒, img-url=https://qxzy.top/rules/QuantumultX/img/jd.png",
