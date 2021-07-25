@@ -61,7 +61,7 @@
     "5,35 * * * * https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/fqxs.js, tag=番茄小说, img-url=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/img/fqxs.png",
     "10 0,8,12,18 * * * https://raw.githubusercontent.com/passerby-b/didi_fruit/main/dd_fruit.js, tag=滴滴橙心果园, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png",
     "30 1,8,12,17 * * * https://raw.githubusercontent.com/passerby-b/ks_fruit/main/ks_fruit.js, tag=快手果园, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/kuaishou.png",
-    "30 16,22 * * * https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txstockqx.js, tag=自选股, img-url=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png"
+    "30 16,22 * * * https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txstockqx.js, tag=自选股, img-url=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png",
     "3,30 0 * * * https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txstockcow.js, tag=自选股长牛来了（看脚本手动加cookie订阅）, img-url=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/TXSTOCK/txzxg.png",
     "*/30 * * * * https://raw.githubusercontent.com/pxylen/abc_/sunert/Task/baidu_speed.js, tag=百度极速, img-url=https://qxzy.top/rules/QuantumultX/img/baidu_speed.png",
     "7 0-23 * * * https://raw.githubusercontent.com/ziye888/JavaScript/main/Task/shuqi.js, tag=书旗小说ziye版, img-url=https://raw.githubusercontent.com/CenBoMin/GithubSync/main/SHUQI/shuqi.png",
