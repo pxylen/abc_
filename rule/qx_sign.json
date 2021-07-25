@@ -1,6 +1,6 @@
 {
-  "name": "个人脚本",
-  "description": "張彡签到脚本，自用",
+  "name": "签到脚本",
+  "description": "張彡自用签到脚本",
   "task": [
     "13 0,22 * * * https://raw.githubusercontent.com/ztxtop/x/main/youth_banner.js, tag=中青看看赚, img-url=https://raw.githubusercontent.com/erdongchanyo/icon/main/taskicon/Youth.png",
     "6 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/videoqq/videoqq.js, tag=腾讯视频, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/videoqq.png",

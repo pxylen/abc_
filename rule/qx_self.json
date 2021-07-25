@@ -1,6 +1,6 @@
 {
-  "name": "京东脚本",
-  "description": "張彡个人脚本，自用",
+  "name": "自用脚本",
+  "description": "張彡自用脚本集合",
   "task": [
     "2 9 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_bean_change.js, tag=京东资产变动通知, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
     "2 */30 * * *  https://cdn.jsdelivr.net/gh/pxylen/dog_jd@master/jd_unsubscribe.js, tag=取关京东店铺和商品, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png",
