@@ -32,7 +32,7 @@ http-request https://sdk.121827.com/index/guoyuan script-path=https://raw.github
 http-request https:\/\/daojia\.jd\.com\/client\?_jdrandom=\d{13}&functionId=%2Fsignin script-path=https://gitee.com/Sunert/Scripts/raw/master/Task/jddj.js, requires-header=true, tag=京东到家
 
 #全民悦动获取TOKEN     qmyd.yichengw.cn
-http-request https:\/\/qmyd\.yichengw\.cn\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/qmyd.js, requires-header=true, tag=全民悦动获取TOKEN
+http-request https:\/\/qmyd\.yichengw\.cn\/* script-path=https://qxnav.com/rules/QuantumultX/js/ZIYE/Task/qmyd.js, requires-header=true, tag=全民悦动获取TOKEN
 
 #嘀嗒星球     ddstar.palmmob.com
 http-request https://ddstar.palmmob.com/ddstar_app/activity/ReceiveAdBonus? script-path=https://raw.githubusercontent.com/age174/-/main/ddxq.js, requires-header=true, tag=嘀嗒星球
@@ -47,7 +47,7 @@ http-request https:\/\/haokan\.baidu\.com\/activity\/h5\/vault\?productid=\d scr
 http-request https?:\/\/c\.tieba\.baidu\.com\/c\/s\/login script-path=https://raw.githubusercontent.com/NobyDa/Script/master/BDTieBa-DailyBonus/TieBa.js, requires-header=true, tag=百度贴吧
 
 #悦动族      yuedongzu.yichengw.cn
-http-request https:\/\/yuedongzu\.yichengw\.cn\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/yuedongzu.js, requires-header=true, tag=悦动族
+http-request https:\/\/yuedongzu\.yichengw\.cn\/* script-path=https://qxnav.com/rules/QuantumultX/js/ZIYE/Task/yuedongzu.js, requires-header=true, tag=悦动族
 
 #抖音火山版   *.huoshan.com
 http-request /hotsoon/flame/task_done/? script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/huoshan.js, requires-body=true, tag=抖音火山版
@@ -68,13 +68,13 @@ http-request http://.*.pceggs.com/IFS/ script-path=https://raw.githubusercontent
 http-request http://www.ipadview.com/rpads/score/award? script-path=https://raw.githubusercontent.com/age174/-/main/dka.js, requires-header=true, tag=蛋咖小说
 
 #聚看点    www.xiaodouzhuan.cn
-http-request https:\/\/www\.xiaodouzhuan\.cn\/jkd\/newMobileMenu\/infoMe\.action script-path=https://qxzy.top/rules/QuantumultX/js/jukan.js, requires-body=true, tag=聚看点
+http-request https:\/\/www\.xiaodouzhuan\.cn\/jkd\/newMobileMenu\/infoMe\.action script-path=https://qxnav.com/rules/QuantumultX/js/jukan.js, requires-body=true, tag=聚看点
 
 #TT语音    node.52tt.com
 http-request https://node.52tt.com/activity-production/new-user-month-checkin/activity.Checkin/checkin script-path=https://raw.githubusercontent.com/ZhiYi-N/Private-Script/master/Scripts/TT.js, requires-body=true, tag=TT语音
 
 #小乐获取ck   minapp.xqrobot.net
-http-request https:\/\/minapp\.xqrobot\.net\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/xiaole.js, requires-header=true, tag=小乐获取ck
+http-request https:\/\/minapp\.xqrobot\.net\/* script-path=https://qxnav.com/rules/QuantumultX/js/ZIYE/Task/xiaole.js, requires-header=true, tag=小乐获取ck
 
 #虎课网   api.huke88.com
 http-request ^https:\/\/api\.huke88\.com\/v5\/activity\/sign script-path=https://raw.githubusercontent.com/58xinian/Surge/master/Script/huke.js, requires-header=true, tag=虎课网
@@ -83,7 +83,7 @@ http-request ^https:\/\/api\.huke88\.com\/v5\/activity\/sign script-path=https:/
 http-request https:\/\/app\.klcw\.net\.cn\/omp\_cmanage\/mallgateway script-path=https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/klcw/klcw-app.js, requires-body=true, tag=酷乐潮玩App
 
 #步步宝获取TOKEN     bububao.duoshoutuan.com
-http-request https:\/\/bububao\.duoshoutuan\.com\/user\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/bububao.js, requires-header=true, tag=步步宝获取TOKEN
+http-request https:\/\/bububao\.duoshoutuan\.com\/user\/* script-path=https://qxnav.com/rules/QuantumultX/js/ZIYE/Task/bububao.js, requires-header=true, tag=步步宝获取TOKEN
 
 #番茄看看  m.*
 http-request ^http://m.*./reada/getTask script-path=https://raw.githubusercontent.com/age174/-/main/fqkk.js, requires-header=true, tag=番茄看看
@@ -107,7 +107,7 @@ http-request ^https:\/\/api\.yuncheapp\.cn\/pearl-incentive\/api\/v1\/task\/inte
 http-request https://interface.baoshixingqiu.com/member/user/batch-diggle script-path=https://raw.githubusercontent.com/age174/-/main/baosxq.js, requires-header=true, tag=宝石星球
 
 #笑谱获取更新TOKEN     veishop.iboxpay.com
-http-response https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* script-path=https://qxzy.top/rules/QuantumultX/js/ZIYE/Task/iboxpay.js,  tag=笑谱获取更新TOKEN
+http-response https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* script-path=https://qxnav.com/rules/QuantumultX/js/ZIYE/Task/iboxpay.js,  tag=笑谱获取更新TOKEN
 
 #陌嗨短视频   api.hemayoudao.cn
 http-request ^https://api.hemayoudao.cn/admin-dotask/app/spirit/v1/finish-task script-path=https://raw.githubusercontent.com/age174/-/main/mhdsp.js, requires-header=true, tag=陌嗨短视频
@@ -167,22 +167,22 @@ http-request http:\/\/uploads2\.gifshow\.com\/rest\/n\/system\/speed script-path
 http-request https:\/\/nebula\.kuaishou\.com\/nebula\/task\/earning\? script-path=https://raw.githubusercontent.com/GoodHolidays/Scripts/master/Task/kuaishou.js, requires-header=true, tag=快手极速版获取ck
 
 # 获取多账号京东Cookie      me-api.jd.com
-http-request https:\/\/me-api\.jd\.com\/user_new\/info\/GetJDUserInfoUnion script-path=https://qxzy.top/rules/QuantumultX/js/JD_extra_cookie.js, requires-header=true, tag=
+http-request https:\/\/me-api\.jd\.com\/user_new\/info\/GetJDUserInfoUnion script-path=https://qxnav.com/rules/QuantumultX/js/JD_extra_cookie.js, requires-header=true, tag=
 
 #京东获取Cookie    api.m.jd.com
 http-request https:\/\/api\.m\.jd\.com\/client\.action.*functionId=signBean script-path=https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js, requires-header=true, tag=京东获取Cookie
 
 # 宠汪汪强制为别人助力
-http-request ^https:\/\/draw\.jdfcloud\.com\/\/common\/pet\/enterRoom\/h5\?invitePin=.*(&inviteSource=task_invite&shareSource=\w+&inviteTimeStamp=\d+&openId=\w+)?&reqSource=weapp|^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/pet\/helpFriend\?friendPin script-path=https://qxzy.top/rules/QuantumultX/js/jd_joy_help.js, requires-header=true, tag=
+http-request ^https:\/\/draw\.jdfcloud\.com\/\/common\/pet\/enterRoom\/h5\?invitePin=.*(&inviteSource=task_invite&shareSource=\w+&inviteTimeStamp=\d+&openId=\w+)?&reqSource=weapp|^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/pet\/helpFriend\?friendPin script-path=https://qxnav.com/rules/QuantumultX/js/jd_joy_help.js, requires-header=true, tag=
 
 # 宠汪汪赛跑
-http-response ^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/api\/user\/addUser\?code= script-path=https://qxzy.top/rules/QuantumultX/js/jd_joy_run.js,  tag=
+http-response ^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/api\/user\/addUser\?code= script-path=https://qxnav.com/rules/QuantumultX/js/jd_joy_run.js,  tag=
 
 # 宠汪汪赛跑
-http-request ^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/api\/user\/user\/detail\?openId= script-path=https://qxzy.top/rules/QuantumultX/js/jd_joy_run.js, requires-header=true, tag=
+http-request ^https:\/\/draw\.jdfcloud\.com(\/mirror)?\/\/api\/user\/user\/detail\?openId= script-path=https://qxnav.com/rules/QuantumultX/js/jd_joy_run.js, requires-header=true, tag=
 
 # 小米运动       account.huami.com
-http-response ^https:\/\/account\.huami\.com\/v2\/client\/login script-path=https://qxzy.top/rules/QuantumultX/js/xmSports.js,  tag=
+http-response ^https:\/\/account\.huami\.com\/v2\/client\/login script-path=https://qxnav.com/rules/QuantumultX/js/xmSports.js,  tag=
 #QQ阅读APP获取ck    commontgw6.reader.qq.com, eventv3.reader.qq.com
 http-request ^https:\/\/(commontgw6|eventv3)\.reader\.qq\.com\/* script-path=https://raw.githubusercontent.com/XidNDD/2020scripts/master/QQReadSign.js, requires-header=true, tag=QQ阅读APP获取ck
 #朴朴签到cookie
@@ -215,7 +215,7 @@ http-request ^https:\/\/wapside.189.cn:9001\/api\/home\/sign script-path=https:/
 
 # 中国联通Cookie
 #联通流量话费提醒
-http-request https:\/\/m.client\.10010\.com\/mobileService\/home\/queryUserInfoSeven\.htm? script-path=https://qxzy.top/rules/QuantumultX/js/liantongnotice.js, requires-header=true, tag=联通流量话费提醒
+http-request https:\/\/m.client\.10010\.com\/mobileService\/home\/queryUserInfoSeven\.htm? script-path=https://qxnav.com/rules/QuantumultX/js/liantongnotice.js, requires-header=true, tag=联通流量话费提醒
 # 注意获取Cookie有两条脚本
 http-request ^https?:\/\/act.10010.com\/SigninApp\/signin\/querySigninActivity.htm script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js, requires-header=true, tag=
 http-request ^https?:\/\/act.10010.com\/SigninApp(.*?)\/signin\/daySign script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/10010/10010.cookie.js, requires-header=true, tag=
@@ -456,7 +456,7 @@ http-request https:\/\/club\.yili\.com\/MALLIFChe\/MCSWSIAPI\.asmx\/Call script-
 #彩云
 http-request https:\/\/((weather-data\.apple)|(api.weather))\.com script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Tasks/caiyun.js, requires-header=true, tag=彩云
 #京东粉丝专享
-http-request https:\/\/wq\.jd\.com\/bases\/jssdk\/GetWxJsApiSign script-path=https://qxzy.top/rules/QuantumultX/js/jd_wechat_sign.js, requires-header=true, tag=京东粉丝专享
+http-request https:\/\/wq\.jd\.com\/bases\/jssdk\/GetWxJsApiSign script-path=https://qxnav.com/rules/QuantumultX/js/jd_wechat_sign.js, requires-header=true, tag=京东粉丝专享
 
 
 #小米有品
@@ -485,16 +485,16 @@ http-request ^https:\/\/wx\.17u\.cn\/wcsign\/sign\/GetSignInfo script-path=https
 
 #wangdelu2020
 #陌陌
-http-request https:\/\/mk\.immomo\.com\/activity\/fastsign\/index\/signIn? script-path=https://qxzy.top/rules/QuantumultX/js/momosign.js, requires-body=true, tag=陌陌
+http-request https:\/\/mk\.immomo\.com\/activity\/fastsign\/index\/signIn? script-path=https://qxnav.com/rules/QuantumultX/js/momosign.js, requires-body=true, tag=陌陌
 
 #新浪超话签到
-http-request https:\/\/m\.weibo\.cn\/api\/config script-path=https://qxzy.top/rules/QuantumultX/js/newsinachaohua.js, requires-header=true, tag=新浪超话签到
+http-request https:\/\/m\.weibo\.cn\/api\/config script-path=https://qxnav.com/rules/QuantumultX/js/newsinachaohua.js, requires-header=true, tag=新浪超话签到
 #新浪微博签到
 http-request https:\/\/api\.weibo\.cn\/\d\/users\/show script-path=https://raw.githubusercontent.com/GoodHolidays/Scripts/master/Task/weibo.js, requires-header=true, tag=新浪微博签到
 http-request https:\/\/m\.weibo\.cn\/c\/checkin\/ug\/v2\/signin\/module\?module script-path=https://raw.githubusercontent.com/GoodHolidays/Scripts/master/Task/weibo.js, requires-header=true, tag=新浪微博签到
 #新浪news
-http-request https:\/\/newsapi\.sina\.cn\/\?resource=hbpage&newsId=HB-1-sina_gold_center script-path=https://qxzy.top/rules/QuantumultX/js/sinanews.js, requires-header=true, tag=新浪news
-http-request https:\/\/newsapi\.sina\.cn\/\?resource=userpoint\/signIn script-path=https://qxzy.top/rules/QuantumultX/js/sinanews.js, requires-header=true, tag=新浪news
+http-request https:\/\/newsapi\.sina\.cn\/\?resource=hbpage&newsId=HB-1-sina_gold_center script-path=https://qxnav.com/rules/QuantumultX/js/sinanews.js, requires-header=true, tag=新浪news
+http-request https:\/\/newsapi\.sina\.cn\/\?resource=userpoint\/signIn script-path=https://qxnav.com/rules/QuantumultX/js/sinanews.js, requires-header=true, tag=新浪news
 
 #iisams
 #梨涡
