@@ -20,7 +20,7 @@
     "12 0 * * * https://raw.githubusercontent.com/NobyDa/Script/master/iQIYI-DailyBonus/iQIYI.js, tag=爱奇艺, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/iQIYI.png",
     "15 0 * * * https://raw.githubusercontent.com/NobyDa/Script/master/52pojie-DailyBonus/52pojie.js, tag=吾爱破解, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/52pj.png",
 
-    "11 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.js, tag=网易新闻, img-url=https://qxzy.top/rules/QuantumultX/img/neteasenews.png",
+    "11 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/neteasenews/neteasenews.js, tag=网易新闻, img-url=https://qxnav.com/rules/QuantumultX/img/neteasenews.png",
     "30 10 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/hellobike/hellobike.js, tag=哈罗单车, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/hellbike.png",
     "1 0 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/zZPiglet/elemCheckIn.js, tag=饿了么-打卡领红包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/elem.png",
 

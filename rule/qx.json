@@ -2,8 +2,8 @@
   "name": "个人脚本",
   "description": "張彡个人脚本，自用",
   "task": [
-    "*/30 * * * * https://raw.githubusercontent.com/pxylen/abc_/sunert/Task/baidu_speed.js, tag=百度极速, img-url=https://qxzy.top/rules/QuantumultX/img/baidu_speed.png",
-    "*/10 0-1 6 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/baidu_speed_cash.js, tag=百度极速提现, img-url=https://qxzy.top/rules/QuantumultX/img/baidu_speed.png",
+    "*/30 * * * * https://raw.githubusercontent.com/pxylen/abc_/sunert/Task/baidu_speed.js, tag=百度极速, img-url=https://qxnav.com/rules/QuantumultX/img/baidu_speed.png",
+    "*/10 0-1 6 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/baidu_speed_cash.js, tag=百度极速提现, img-url=https://qxnav.com/rules/QuantumultX/img/baidu_speed.png",
 
     "2 0 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/zZPiglet/me/DiDi_new.js, tag=滴滴出行(自用), img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png",
     "40 8,20,9-21/2 * * * https://raw.githubusercontent.com/pxylen/abc_/master/workflow/zZPiglet/me/DiDi_drink.js, tag=滴滴喝水(自用), img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/didi.png",
