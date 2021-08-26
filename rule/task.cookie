@@ -1,5 +1,5 @@
 
-hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,*.video.qq.com,as.xiaojukeji.com, common.diditaxi.com.cn,operation-api.jimistore.com,*.m.163.com,49.234.36.200:9091,api.weibo.cn, pay.sc.weibo.com,c.tieba.baidu.com,api.st615.com,
+hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com,ifac*.iqiyi.com,*.video.qq.com,as.xiaojukeji.com, common.diditaxi.com.cn,operation-api.jimistore.com,*.m.163.com,49.234.36.200:9091,api.weibo.cn, pay.sc.weibo.com,c.tieba.baidu.com,
 
 
 # 58同城
@@ -47,7 +47,4 @@ http-request https:\/\/m\.weibo\.cn\/c\/checkin\/ug\/v2\/signin\/module\?module 
 # 百度贴吧签到
 http-request ^https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_checkin.js,tag=贴吧_获取Cookie
 http-request ^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/channelIconConfig script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_checkin.js,tag=贴吧_获取新版Cookie
-
-# 九章头条
-http-request https://api.st615.com/v1/user/info?  script-path=https://raw.githubusercontent.com/xl2101200/-/main/jztt.js,tag=九章头条Cookie
 
