@@ -15,7 +15,7 @@ cookie集合：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/task/AllinOne.cook
 
 [@Tartarus2014](https://github.com/Tartarus2014/Loon-Script) - 烧烤哥
 
-[@Youthsongs](https://github.com/Youthsongs/QuanX) - 少年歌行
+[@sngxmini](https://github.com/sngxmini/QuanX) - 少年歌行
 
 [@zwf234](https://github.com/zwf234/rules) - 奇心
 
