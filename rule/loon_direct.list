@@ -16,5 +16,9 @@ DOMAIN-KEYWORD,tgmmvip
 DOMAIN,ib.snssdk.com
 DOMAIN,apapia-history.manmanbuy.com
 DOMAIN,miaogouguanggaotest.haimiaogou.com
+
 # github代理
 DOMAIN-SUFFIX,ghproxy.com
+
+# 免流机场
+DOMAIN-SUFFIX,cwv587.ml
