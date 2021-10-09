@@ -1,7 +1,7 @@
 
 
 
-hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,pan.baidu.com,biz.caiyunapp.com,business.msstatic.com,api.wolong.tv,sirius.kakamobi.cn
+hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,pan.baidu.com,biz.caiyunapp.com,business.msstatic.com,api.wolong.tv
 
 
 # 云闪付
@@ -60,5 +60,3 @@ https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response
 # 卧龙影视
 ^https?+:\/\/api\.wolong\.tv\/wolong\/user\/myinfo url script-response-body https://raw.githubusercontent.com/pxylen/abc_/master/scripts/wolong-vip.js
 
-#驾考宝典vip
-https:\/\/sirius\.kakamobi\.cn\/api\/open\/goods\/is-vip.htm url script-response-body https://raw.githubusercontent.com/pxylen/abc_/master/scripts/jiakao.js
