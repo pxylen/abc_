@@ -11,11 +11,11 @@ cookie集合：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/task/AllinOne.cook
 
 饮水思源：
 
+[@freebaipiao](https://github.com/freebaipiao/freebaipiao) - freebaipiao
+
 [@blackmatrix7](https://github.com/blackmatrix7/ios_rule_script) - blackmatrix7
 
 [@Tartarus2014](https://github.com/Tartarus2014/Loon-Script) - 烧烤哥
-
-[@sngxmini](https://github.com/sngxmini/QuanX) - 少年歌行
 
 [@zwf234](https://github.com/zwf234/rules) - 奇心
 
@@ -23,15 +23,11 @@ cookie集合：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/task/AllinOne.cook
 
 [@ZhiYi-N](https://github.com/ZhiYi-N/Private-Script) - ZhiYi-N
 
-[@age174](https://github.com/age174/-) - age174
-
 [@CenBoMin](https://github.com/CenBoMin/GithubSync) - CenBoMin
 
 [@whyour](https://github.com/whyour/hundun) - 混沌
 
 [@Sunert](https://github.com/Sunert/Script/tree/master) - Sunert
-
-[@panghu999](https://github.com/panghu999/panghu) - 柠檬
 
 [@smiek2221](https://github.com/smiek2221/scripts) - smiek2221
 
