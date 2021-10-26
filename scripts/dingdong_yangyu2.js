@@ -48,7 +48,7 @@ let propsId = "", seedId = "";
 //const cookie = $hammer.read(CookieKey);
 //const station_id = $hammer.read(StationIdCookieKey);
 
-const cookie = 'DDXQSESSID=b0f956dfcfebddb06ee96c348a525b74';
+const cookie = 'DDXQSESSID=c54a115e9a29c4da88440a67708df133';
 const station_id = '5b988497c0a1ea8f1c8b5a6e';
 
 function GetCookie() {
