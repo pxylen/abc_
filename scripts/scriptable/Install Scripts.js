@@ -5,7 +5,7 @@
 const scripts = [
   {
       moduleName: "【小件件】吉利出行",
-      url:"https://ghproxy.com/https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/geely2.0.js",
+      url:"https://raw.githubusercontent.com/pxylen/abc_/master/scripts/scriptable/geely2.0.js",
    },
   {
     moduleName: "Install Scripts",
