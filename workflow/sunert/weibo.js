@@ -1,10 +1,10 @@
 /*
-更新时间: 2021-04-13 10:32
+更新时间: 2021-12-14 22:10
 
 本脚本仅适用于微博每日签到，支持多账号运行  
 
 
-获取ck: https:\/\/api\.weibo\.cn\/\d\/users\/show url script-request-header weibo.js
+获取ck: https:\/\/m?api\.weibo\.c(n|om)\/\d\/users\/show url script-request-header weibo.js
 */
 
 const $ = new Env('新浪微博')
@@ -135,7 +135,7 @@ function getsign() {
         let signurl = {
             url: `https://api.weibo.cn/2/checkin/add?c=iphone&`+token,
             headers: {
-                "User-Agent": `Weibo/52588 (iPhone; iOS 14.5; Scale/3.00)`
+                "User-Agent": `Weibo/62823 (iPhone; iOS 15.2; Scale/3.00)`
             }
         }
         $.get(signurl, async(error, resp, data) => {
@@ -150,8 +150,15 @@ function getsign() {
             } else if (result.status == 90005) {
                 wbsign = `【每日签到】‼️` + result.msg + '\n'
             } else {
-                wbsign = `【每日签到】 ❌ 签到失败 ` + result.errmsg;
-                $.msg($.name, wbsign, `请检查微博Token是否失效`)
+                wbsign = `【每日签到】 ❌ 签到失败，自动清除ck ` + result.errmsg;
+                let retoken =  $.getdata('sy_token_wb').replace(token,``)
+                if ((retoken.indexOf("#") == '0')||(retoken.indexOf("\n") == '0')){
+                    retoken = retoken.substr(1)
+                }
+                if ((retoken.substr(-1) == "#")||(retoken.substr(-1) == "\n")){
+                    retoken = retoken.substr(0,retoken.length-1)
+                }
+                $.setdata(retoken, 'sy_token_wb')
                 if ($.isNode()) {
                     await notify.sendNotify($.name, wbsign)
                 }
@@ -167,7 +174,7 @@ function getcash() {
         let url = {
             url: `https://m.weibo.cn/c/checkin/getcashdetail`,
             headers: {
-                "User-Agent": `Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Weibo (iPhone10,2__weibo__11.2.1__iphone__os14.5)`,
+                "User-Agent": `Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Weibo (iPhone12,3__weibo__11.12.2__iphone__os15.2)`,
                 Cookie: cookie
             }
         }
@@ -187,7 +194,7 @@ function doCard() {
         let doCardurl = {
             url: `https://api.weibo.cn/2/!/ug/king_act_home?c=iphone&${token}`,
             headers: {
-                "User-Agent": `Weibo/52588(iPhone; iOS 14.5; Scale/3.00)`
+                "User-Agent": `Weibo/62823 (iPhone; iOS 15.2; Scale/3.00)`
             }
         }
         $.get(doCardurl, (error, resp, data) => {
@@ -237,7 +244,7 @@ function payApi(api) {
             'Connection': 'keep-alive',
             'Content-Type': 'application/x-www-form-urlencoded',
             'Host': 'pay.sc.weibo.com',
-            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Weibo (iPhone10,1__weibo__11.2.1__iphone__os14.5)'
+            'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 15_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Weibo (iPhone12,3__weibo__11.12.2__iphone__os15.2)'
         },
         body: token + '&lang=zh_CN&wm=3333_2001'
     }
