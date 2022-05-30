@@ -1,7 +1,7 @@
 /*
 更新时间: 2021-12-14 22:10
 
-本脚本仅适用于微博每日签到，支持多账号运行  
+本脚本仅适用于微博每日签到，支持多账号运行  cookie修改为自动更新 而不是跳过！
 
 
 获取ck: https:\/\/m?api\.weibo\.c(n|om)\/\d\/users\/show url script-request-header weibo.js
@@ -10,8 +10,10 @@
 const $ = new Env('新浪微博')
 const notify = $.isNode() ? require('./sendNotify') : '';
 let tokenArr = [],  cookieArr = [];
-let wbtoken = $.getdata('sy_token_wb');
-let cookies = $.getdata('wb_cookie');
+//let wbtoken = $.getdata('sy_token_wb');
+//let cookies = $.getdata('wb_cookie');
+let wbtoken = '';
+let cookies = '';
 let signcash = "";
   
 
@@ -97,7 +99,10 @@ function GetCookie() {
                 uid = token.match(/uid=\d+/)[0];
             if (wbtoken) {
                 if (wbtoken.indexOf(uid) > -1) {
-                    $.log("此账号Cookie已存在，本次跳过")
+                    tokens = wbtoken + "#" + token;
+                    $.setdata(tokens, 'sy_token_wb');
+                    $.log("微博签到Cookie更新成功")
+//                    $.log("此账号Cookie已存在，本次跳过")
                 } else if (wbtoken.indexOf(uid) == -1) {
                     tokens = wbtoken + "#" + token;
                     $.setdata(tokens, 'sy_token_wb');
@@ -106,14 +111,19 @@ function GetCookie() {
                 }
             } else {
                 $.setdata(token, 'sy_token_wb');
-                $.log(`tokens: ${token}`)
-                $.msg($.name, `获取微博签到Cookie: 成功`, ``)
+//                $.log(`tokens: ${token}`)
+//                $.msg($.name, `获取微博签到Cookie: 成功`, ``)
+                $.log("微博签到Cookie更新成功")
             }
         } else if ($request && $request.method != 'OPTIONS' && $request.headers.Cookie.indexOf("SUB=") > -1) {
             const cookieval = $request.headers.Cookie.match(/SUB=[\w\-]+/)[0];
             if (cookies) {
                 if (cookies.indexOf(cookieval) > -1) {
-                    $.log("此账号Cookie已存在，本次跳过")
+                    cookie = cookies + "#" + cookieval;
+                    $.setdata(cookie, 'wb_cookie');
+                    Cookies = cookie.split('#');
+                    $.msg($.name, '获取微博用户' + Cookies.length + 'Cookie更新成功', ``)
+//                    $.log("此账号Cookie已存在，本次跳过")
                 } else if (cookies.indexOf(cookieval) == -1) {
                     cookie = cookies + "#" + cookieval;
                     $.setdata(cookie, 'wb_cookie');
@@ -123,8 +133,8 @@ function GetCookie() {
                 }
             } else {
                 $.setdata(cookieval, 'wb_cookie');
-                $.log(`cookies: ${cookieval}`);
-                $.msg($.name, `获取微博用户Cookie: 成功`, ``)
+//                $.log(`cookies: ${cookieval}`);
+//                $.msg($.name, `获取微博用户Cookie: 成功`, ``)
             }
         }
     }
