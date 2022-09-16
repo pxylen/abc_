@@ -8,7 +8,7 @@
 
     "3 0 * * * https://raw.githubusercontent.com/pxylen/abc_/sunert/Task/weibo.js, tag=微博&钱包, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/weibo.png",
     "4 0 * * * https://raw.githubusercontent.com/pxylen/abc_/master/scripts/kuaishou.js, tag=快手极速版签到(自用), img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/kuaishou.png",
-    "5 0 * * *  https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js tag=贴吧_每日签到, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba.png,",
+    "5 0 * * * https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, tag=贴吧_每日签到, img-url=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba.png,",
 
     "7 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/meituan/meituan.js, tag=美团签到领现金, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/meituan.png",
     "8 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.js, tag=IT之家, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/ithome.png",
