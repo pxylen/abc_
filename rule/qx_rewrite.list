@@ -48,9 +48,6 @@ hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m
 #picsew(by zhiyi)
 https:\/\/buy\.itunes\.apple\.com\/verifyReceipt url script-response-body https://raw.githubusercontent.com/pxylen/abc_/master/scripts/picsew.js
 
-#解锁百度云盘会员（byddgksf2013）
-https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user url script-response-body https://gitlab.com/ddgksf2013/Cuttlefish/-/raw/master/Crack/bdcloud.js
-
 # 彩云天气解锁vip
 https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response-body https://raw.githubusercontent.com/pxylen/abc_/master/scripts/caiyun_svip.js
 
