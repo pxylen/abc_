@@ -1,7 +1,7 @@
 
 
 
-hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,mobile.12306.cn,pan.baidu.com,biz.caiyunapp.com,api.wolong.tv
+hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,client-api.oray.com,mobile.12306.cn,pan.baidu.com,biz.caiyunapp.com,api.wolong.tv,api.m.mi.com
 
 
 # 云闪付
@@ -11,7 +11,9 @@ hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m
 # 向日葵去广告
 ^https?+:\/\/slapi\.oray\.net\/adver _ reject-dict
 ^https?+:\/\/slapi\.oray\.net\/adver\/promotion _ reject-dict
-
+上面的删除改为重写去广告
+# > 向日葵 主机名 client-api.oray.com
+^https?:\/\/client-api\.oray\.com\/materials\/SLCC_IOS_STARTUP\?lang=zh-Hans-CN url reject-200
 
 # 12306
 ^https?+:\/\/mobile\.12306\.cn\/otsmobile\/app\/mas\/loggw\/(logUpload.do|logConfig.do) _ reject
@@ -54,3 +56,5 @@ https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response
 # 卧龙影视
 ^https?+:\/\/api\.wolong\.tv\/wolong\/user\/myinfo url script-response-body https://raw.githubusercontent.com/pxylen/abc_/master/scripts/wolong-vip.js
 
+# > 小米商城开屏广告   主机名api.m.mi.com
+^https?:\/\/api\.m\.mi\.com\/v1\/app\/start url script-response-body https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/mimall.js
