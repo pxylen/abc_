@@ -1,7 +1,7 @@
 
 
 
-hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,client-api.oray.com,mobile.12306.cn,pan.baidu.com,biz.caiyunapp.com,api.wolong.tv
+hostname = c.tieba.baidu.com,ss0.bdstatic.com,sub.store,ms.jr.jd.com,trade-acs.m.taobao.com,acs.m.taobao.com,acs.m.taobao.com,buy.itunes.apple.com,cmsapi.wifi8.com,list-app-m.i4.cn,analytics.95516.com,tysdk.95516.com,ads.95516.com,slapi.oray.net,client-api.oray.com,mobile.12306.cn,pan.baidu.com,biz.caiyunapp.com,api.wolong.tv,api.m.jd.com
 
 # 云闪付
 ^https?+:\/\/(analytics|tysdk|ads)\.95516\.com _ reject-dict
@@ -54,3 +54,7 @@ https?:\/\/biz\.caiyunapp\.com\/(membership_rights|v2\/user) url script-response
 
 # 卧龙影视
 ^https?+:\/\/api\.wolong\.tv\/wolong\/user\/myinfo url script-response-body https://raw.githubusercontent.com/pxylen/abc_/master/scripts/wolong-vip.js
+
+# 京东抓cookie
+^https?:\/\/api\.m\.jd.com\/api\?functionId=(queryJdCouponListAppletForJd) url script-request-header https://raw.githubusercontent.com/pxylen/abc_/master/scripts/JD_extra_cookie.js
+
