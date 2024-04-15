@@ -47,7 +47,7 @@ function GetCookie() {
           }
           return verify;
         });
-       $.log("----------------京东cookie-----------------------/n"+CookieValue);
+       $.log("----------------京东cookie-----------------------\n"+CookieValue);
 	
       } else {
         $.notify("抓取京东Cookie失败", "", "请查看脚本内说明, 登录网页获取 ‼️");
