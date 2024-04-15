@@ -19,7 +19,6 @@ if ($request) GetCookie();
 
 function getCache() {
   var cache = $.read(CacheKey) || "[]";
-  $.log(cache);
   return JSON.parse(cache);
 }
 
