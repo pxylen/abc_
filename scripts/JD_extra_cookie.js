@@ -48,8 +48,8 @@ function GetCookie() {
           }
           return verify;
         });
-
-		$.log(cacheValue);
+       $.log(UserName);
+       $.log(CookieValue);
 	
       } else {
         $.notify("抓取京东Cookie失败", "", "请查看脚本内说明, 登录网页获取 ‼️");
