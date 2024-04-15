@@ -4,7 +4,6 @@ DOMAIN-KEYWORD,apple
 DOMAIN-KEYWORD,itunes
 DOMAIN-KEYWORD,testflight
 DOMAIN-KEYWORD,oray
-DOMAIN-KEYWORD,51zhaoyou
 
 DOMAIN-KEYWORD,xiaohongshu
 DOMAIN-KEYWORD,xhscdn
@@ -19,6 +18,10 @@ DOMAIN,miaogouguanggaotest.haimiaogou.com
 
 # github代理
 DOMAIN-SUFFIX,ghproxy.com
+DOMAIN-SUFFIX, mirror.ghproxy.com
 
-# 免流机场
-DOMAIN-SUFFIX,cwv587.ml
+host-suffix, gitlab.com
+host-suffix, ikandy.fun
+host, raw.iqiq.i
+DOMAIN-SUFFIX, 555dyy.top
+DOMAIN-SUFFIX, ikuuu.pw
