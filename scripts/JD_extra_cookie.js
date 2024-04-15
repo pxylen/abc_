@@ -24,19 +24,44 @@ function getCache() {
 }
 
 function GetCookie() {
+  try {
     if ($request.headers && $request.url.indexOf("queryJdCouponListAppletForJd") > -1) {
       var CV = $request.headers["Cookie"] || $request.headers["cookie"];
       if (CV.match(/(pt_key=.+?pt_pin=|pt_pin=.+?pt_key=)/)) {
         var CookieValue = CV.match(/pt_key=.+?;/) + CV.match(/pt_pin=.+?;/);
         var UserName = CookieValue.match(/pt_pin=([^; ]+)(?=;?)/)[1];
-        $.log(UserName);
-        $.log(CookieValue);
+        var DecodeName = decodeURIComponent(UserName);
+        var CookiesData = getCache();
+        var updateCookiesData = [...CookiesData];
+        var updateIndex;
+        var CookieName = "【账号】";
+        var updateCodkie = CookiesData.find((item, index) => {
+          var ck = item.cookie;
+          var Account = ck
+            ? ck.match(/pt_pin=.+?;/)
+              ? ck.match(/pt_pin=([^; ]+)(?=;?)/)[1]
+              : null
+            : null;
+          const verify = UserName === Account;
+          if (verify) {
+            updateIndex = index;
+          }
+          return verify;
+        });
+
+		$.log(cacheValue);
+	
       } else {
         $.notify("抓取京东Cookie失败", "", "请查看脚本内说明, 登录网页获取 ‼️");
       }
-    } else{
-     $.log("找不到 queryJdCouponListAppletForJd 检查脚本");
+      $.done();
+
+    } else {
+      $.notify("抓取京东Cookie失败", "", "找不到 queryJdCouponListAppletForJd ‼️");
     }
+  } catch (eor) {
+ 
+  }
   $.done();
 }
 
