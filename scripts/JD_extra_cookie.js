@@ -47,7 +47,7 @@ function GetCookie() {
           }
           return verify;
         });
-       $.log(UserName);
+       $.log("----------------京东cookie-----------------------");
        $.log(CookieValue);
 	
       } else {
