@@ -1,0 +1,13 @@
+#!name=途虎养车签到
+# BoxJs订阅：https://raw.githubusercontent.com/FoKit/Scripts/main/boxjs/fokit.boxjs.json
+# 更新时间：2023-06-02
+
+[task_local]
+# 途虎养车签到
+17 0,22 * * * https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/tuhu.js, tag=途虎养车, img-url=https://raw.githubusercontent.com/FoKit/Scripts/main/images/tuhu.png, enabled=true
+
+# 途虎养车cookie
+https:\/\/api\.tuhu\.cn\/User\/GetInternalCenterInfo url script-request-header https://raw.githubusercontent.com/FoKit/Scripts/main/scripts/tuhu.js
+
+#[MITM]
+hostname = api.tuhu.cn
