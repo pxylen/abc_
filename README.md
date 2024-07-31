@@ -11,7 +11,9 @@ cookie集合：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/task/AllinOne.cook
 
 饮水思源：
 
-[@freefq](https://github.com/freefq/free) - freefq
+[@freenode](https://github.com/ripaojiedian/freenode) - freenode
+
+[@ZYFXS](https://github.com/ZYFXS/ZYFXS001) - ZYFXS
 
 [@blackmatrix7](https://github.com/blackmatrix7/ios_rule_script) - blackmatrix7
 
