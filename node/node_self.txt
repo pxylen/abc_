@@ -1,0 +1,2 @@
+proxies:
+  - {name: "新加坡_3ec994d3", server: vpn-sg-003.fastervpn.world, port: 443, type: hysteria2, password: qQe1z5kU8kN6SlKnDt9Ru3Qp, sni: vpn-sg-003.fastervpn.world, skip-cert-verify: true, udp: true}
