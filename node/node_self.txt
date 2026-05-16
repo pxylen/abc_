@@ -1,2 +1,3 @@
 proxies:
   - {name: "新加坡_3ec994d3", server: vpn-sg-003.fastervpn.world, port: 443, type: hysteria2, password: qQe1z5kU8kN6SlKnDt9Ru3Qp, sni: vpn-sg-003.fastervpn.world, skip-cert-verify: true, udp: true}
+  - {name: "日本_529d92dd", server: 45.8.112.158, port: 443, type: trojan, password: "8r<[9'l6hAO#8ZQi", sni: Koma-YT.PAGeS.Dev, network: ws, udp: true, skip-cert-verify: true, client-fingerprint: chrome, ws-opts: {path: "/trTelegram🇨🇳 @WangCai2", headers: {User-Agent: "Mozilla/5.0 (Linux; Android 7.0; SM-G610M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.80 Mobile Safari/537.36"}}}
