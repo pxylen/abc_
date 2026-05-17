@@ -1,0 +1,73 @@
+payload:
+  - DOMAIN-SUFFIX,qq.com
+  - DOMAIN-SUFFIX,weixin.qq.com
+  - DOMAIN-SUFFIX,gtimg.com
+  - DOMAIN-SUFFIX,qpic.cn
+  - DOMAIN-SUFFIX,tenpay.com
+
+  - DOMAIN-SUFFIX,baidu.com
+  - DOMAIN-SUFFIX,bdimg.com
+  - DOMAIN-SUFFIX,bdstatic.com
+
+  - DOMAIN-SUFFIX,aliyun.com
+  - DOMAIN-SUFFIX,alicdn.com
+  - DOMAIN-SUFFIX,taobao.com
+  - DOMAIN-SUFFIX,tmall.com
+  - DOMAIN-SUFFIX,alipay.com
+
+  - DOMAIN-SUFFIX,bilibili.com
+  - DOMAIN-SUFFIX,bilivideo.com
+
+  - DOMAIN-SUFFIX,jd.com
+  - DOMAIN-SUFFIX,jdimg.com
+
+  - DOMAIN-SUFFIX,163.com
+  - DOMAIN-SUFFIX,126.net
+
+  - DOMAIN-SUFFIX,sina.com
+  - DOMAIN-SUFFIX,weibo.com
+
+  - DOMAIN-SUFFIX,douyin.com
+  - DOMAIN-SUFFIX,bytecdn.cn
+  - DOMAIN-SUFFIX,ixigua.com
+  - DOMAIN-SUFFIX,toutiao.com
+
+  - DOMAIN-SUFFIX,xiaomi.com
+  - DOMAIN-SUFFIX,miui.com
+
+  - DOMAIN-SUFFIX,huawei.com
+  - DOMAIN-SUFFIX,hicloud.com
+
+  - DOMAIN-SUFFIX,oppo.com
+  - DOMAIN-SUFFIX,vivo.com
+
+  - DOMAIN-SUFFIX,youku.com
+  - DOMAIN-SUFFIX,iqiyi.com
+  - DOMAIN-SUFFIX,iqiyipic.com
+  - DOMAIN-SUFFIX,mgtv.com
+
+  - DOMAIN-SUFFIX,csdn.net
+  - DOMAIN-SUFFIX,zhihu.com
+  - DOMAIN-SUFFIX,cnblogs.com
+
+  - DOMAIN-SUFFIX,pinduoduo.com
+  - DOMAIN-SUFFIX,meituan.com
+  - DOMAIN-SUFFIX,ele.me
+
+  - DOMAIN-SUFFIX,amap.com
+  - DOMAIN-SUFFIX,autonavi.com
+
+  - DOMAIN-SUFFIX,12306.cn
+
+  - DOMAIN-SUFFIX,cctv.com
+
+  - DOMAIN-SUFFIX,microsoft.com
+  - DOMAIN-SUFFIX,live.com
+  - DOMAIN-SUFFIX,office.com
+
+  # Apple（推荐直连）
+  - DOMAIN-SUFFIX,apple.com
+  - DOMAIN-SUFFIX,icloud.com
+  - DOMAIN-SUFFIX,cdn-apple.com
+  # Google 中国镜像建议直连
+  - DOMAIN-SUFFIX,googleapis.cn
