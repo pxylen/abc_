@@ -1,0 +1,96 @@
+payload:
+  - DOMAIN-KEYWORD,anthropic
+  - DOMAIN-KEYWORD,claude
+# Telegram
+  - DOMAIN-SUFFIX,t.me
+  - DOMAIN-SUFFIX,telegram.org
+  - DOMAIN-SUFFIX,telegram.me
+  - DOMAIN-SUFFIX,telegra.ph
+  - DOMAIN-SUFFIX,telesco.pe
+  - DOMAIN-SUFFIX,tdesktop.com
+  - IP-CIDR,91.108.0.0/16,no-resolve
+  - IP-CIDR,149.154.160.0/20,no-resolve
+# YouTube
+  - DOMAIN-SUFFIX,youtube.com
+  - DOMAIN-SUFFIX,youtu.be
+  - DOMAIN-SUFFIX,ytimg.com
+  - DOMAIN-SUFFIX,googlevideo.com
+  - DOMAIN-SUFFIX,youtubei.googleapis.com
+  - DOMAIN-SUFFIX,yt3.ggpht.com
+# Google
+  - DOMAIN-SUFFIX,google.com
+  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,gstatic.com
+  - DOMAIN-SUFFIX,googleusercontent.com
+  - DOMAIN-SUFFIX,gvt1.com
+  - DOMAIN-SUFFIX,gvt2.com
+  - DOMAIN-SUFFIX,ggpht.com
+  - DOMAIN-SUFFIX,withgoogle.com
+  - DOMAIN-SUFFIX,googletagmanager.com
+  - DOMAIN-SUFFIX,googlesyndication.com
+  - DOMAIN-SUFFIX,googletraveladservices.com
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+  - DOMAIN-SUFFIX,dl.google.com
+  - DOMAIN-SUFFIX,gvt1.com
+  - DOMAIN-SUFFIX,gvt2.com
+  - DOMAIN-SUFFIX,android.clients.google.com
+  - DOMAIN-SUFFIX,play.googleapis.com
+  - DOMAIN-SUFFIX,googleapis.com
+  - DOMAIN-SUFFIX,www.googleapis.com
+  - DOMAIN-SUFFIX,lh3.googleusercontent.com
+  - DOMAIN-SUFFIX,connectivitycheck.gstatic.com
+# Claude
+  - DOMAIN-SUFFIX,anthropic.com
+  - DOMAIN-SUFFIX,claude.ai
+# Gemini
+  - DOMAIN-SUFFIX,gemini.google.com
+  - DOMAIN-SUFFIX,ai.google.dev
+# Android / Firebase
+  - DOMAIN-SUFFIX,android.com
+  - DOMAIN-SUFFIX,dl.google.com
+  - DOMAIN-SUFFIX,android.googleapis.com
+  - DOMAIN-SUFFIX,firebaseio.com
+  - DOMAIN-SUFFIX,firebase.google.com
+  - DOMAIN-SUFFIX,firebaseinstallations.googleapis.com
+  - DOMAIN-SUFFIX,firebaselogging.googleapis.com
+# GitHub
+  - DOMAIN-SUFFIX,github.com
+  - DOMAIN-SUFFIX,githubusercontent.com
+  - DOMAIN-SUFFIX,githubassets.com
+  - DOMAIN-SUFFIX,github.io
+  - DOMAIN-SUFFIX,raw.githubusercontent.com
+  - DOMAIN-SUFFIX,githubstatus.com
+# GitLab / Bitbucket
+  - DOMAIN-SUFFIX,gitlab.com
+  - DOMAIN-SUFFIX,gitlab-static.net
+  - DOMAIN-SUFFIX,bitbucket.org
+# Gradle / Maven
+  - DOMAIN-SUFFIX,maven.org
+  - DOMAIN-SUFFIX,mvnrepository.com
+  - DOMAIN-SUFFIX,gradle.org
+  - DOMAIN-SUFFIX,gradle.com
+# JetBrains
+  - DOMAIN-SUFFIX,jetbrains.com
+  - DOMAIN-SUFFIX,jb.gg
+# Docker
+  - DOMAIN-SUFFIX,docker.com
+  - DOMAIN-SUFFIX,docker.io
+  - DOMAIN-SUFFIX,dockerusercontent.com
+  - DOMAIN-SUFFIX,hub.docker.com
+# CDN
+  - DOMAIN-SUFFIX,cloudflare.com
+  - DOMAIN-SUFFIX,cdnjs.com
+  - DOMAIN-SUFFIX,jsdelivr.net
+# WebRTC / STUN
+  - DOMAIN-SUFFIX,stun.l.google.com
+  - DOMAIN-SUFFIX,turn.googleapis.com
+# NTP
+  - DOMAIN-SUFFIX,time.google.com
+  - DOMAIN-SUFFIX,ntp.org
+# v2ray
+  - DOMAIN-SUFFIX,v2rayse.com
+# Microsoft
+  - DOMAIN-SUFFIX,githubcopilot.com
+# 其他
+  - DOMAIN-SUFFIX,gstatic.com
+  - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
