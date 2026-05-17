@@ -1,21 +1,7 @@
 proxies:
-  - name: "\U0001F534\U0001F1EF\U0001F1F5[\U0001F3AC\U0001F916\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_68f88197"
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    port: 443
-    server: vpn-jp-002.fastervpn.world
-    skip-cert-verify: true
-    sni: vpn-jp-002.fastervpn.world
-    type: hysteria2
-  - name: "\U0001F534\U0001F1F8\U0001F1EC[\U0001F3AC\U0001F916\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_838d4ffe"
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    port: 443
-    server: vpn-sg-002.fastervpn.world
-    skip-cert-verify: true
-    sni: vpn-sg-002.fastervpn.world
-    type: hysteria2
   - down: ""
     fingerprint: ""
-    name: "\U0001F534\U0001F1F0\U0001F1F7[\U0001F3AC\U0001F916\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_1baf71e7"
+    name: "韩国_1baf71e7"
     obfs: ""
     obfs-password: ""
     password: qQe1z5kU8kN6SlKnDt9Ru3Qp
@@ -26,7 +12,7 @@ proxies:
     type: hysteria2
   - down: ""
     fingerprint: ""
-    name: "\U0001F534\U0001F1F8\U0001F1EC[\U0001F3AC\U0001F916\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_3ec994d3"
+    name: "新加坡_3ec994d3"
     obfs: ""
     obfs-password: ""
     password: qQe1z5kU8kN6SlKnDt9Ru3Qp
@@ -38,7 +24,7 @@ proxies:
     up: ""
   - down: ""
     fingerprint: ""
-    name: "\U0001F534\U0001F1EF\U0001F1F5[\U0001F3AC\U0001F916\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_11f19215"
+    name: "日本_11f19215"
     obfs: ""
     obfs-password: ""
     password: qQe1z5kU8kN6SlKnDt9Ru3Qp
@@ -50,7 +36,7 @@ proxies:
     up: ""
   - down: ""
     fingerprint: ""
-    name: "\U0001F534\U0001F1F0\U0001F1F7[\U0001F3AC\U0001F916\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_55463ab2"
+    name: "韩国_55463ab2"
     obfs: ""
     obfs-password: ""
     password: qQe1z5kU8kN6SlKnDt9Ru3Qp
