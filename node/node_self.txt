@@ -24,18 +24,6 @@ proxies:
     up: ""
   - down: ""
     fingerprint: ""
-    name: "日本_11f19215"
-    obfs: ""
-    obfs-password: ""
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    port: 443
-    server: vpn-jp-004.fastervpn.world
-    skip-cert-verify: true
-    sni: vpn-jp-004.fastervpn.world
-    type: hysteria2
-    up: ""
-  - down: ""
-    fingerprint: ""
     name: "韩国_55463ab2"
     obfs: ""
     obfs-password: ""
