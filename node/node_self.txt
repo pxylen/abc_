@@ -1,17 +1,6 @@
 proxies:
   - down: ""
     fingerprint: ""
-    name: "韩国_1baf71e7"
-    obfs: ""
-    obfs-password: ""
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    port: 443
-    server: vpn-kr-003.fastervpn.world
-    skip-cert-verify: true
-    sni: vpn-kr-003.fastervpn.world
-    type: hysteria2
-  - down: ""
-    fingerprint: ""
     name: "新加坡_3ec994d3"
     obfs: ""
     obfs-password: ""
@@ -32,5 +21,44 @@ proxies:
     server: vpn-kr-001.fastervpn.world
     skip-cert-verify: true
     sni: vpn-kr-001.fastervpn.world
+    type: hysteria2
+    up: ""
+  - client-fingerprint: chrome
+    name: "\U0001F534\U0001F1EF\U0001F1F5[\U0001F3AC\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_2c88d77f"
+    network: ws
+    password: 8r<[9'l6hAO#8ZQi
+    port: 7005
+    server: 43.153.174.179
+    skip-cert-verify: true
+    sni: Koma-YT.PAGeS.Dev
+    type: trojan
+    udp: true
+    ws-opts:
+      headers:
+        User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532M Build/MMB29T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.91 Mobile Safari/537.36
+      path: "/trTelegram\U0001F1E8\U0001F1F3 @WangCai2"
+  - name: "\U0001F534\U0001F1EF\U0001F1F5[\U0001F3AC\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_34f50ab4"
+    network: ws
+    password: 8r<[9'l6hAO#8ZQi
+    port: 443
+    server: 43.207.197.79
+    skip-cert-verify: true
+    sni: Koma-YT.PAGeS.Dev
+    tls: true
+    type: trojan
+    ws-opts:
+      headers:
+        Host: Koma-YT.PAGeS.Dev
+      path: "/trTelegram\U0001F1E8\U0001F1F3 @WangCai2"
+  - down: ""
+    fingerprint: ""
+    name: "\U0001F534\U0001F1EF\U0001F1F5[\U0001F3AC\U0001F916\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_11f19215"
+    obfs: ""
+    obfs-password: ""
+    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+    port: 443
+    server: vpn-jp-004.fastervpn.world
+    skip-cert-verify: true
+    sni: vpn-jp-004.fastervpn.world
     type: hysteria2
     up: ""
