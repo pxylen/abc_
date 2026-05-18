@@ -8,6 +8,8 @@ cookie集合：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/task/AllinOne.cook
 
 自用QX订阅(京东)：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/rule/qx_jd.json
 
+开源节点库：https://raw.githubusercontent.com/Ruk1ng001/freeSub/refs/heads/main/clash.yaml
+
 
 饮水思源：
 
