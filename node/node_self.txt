@@ -24,7 +24,7 @@ proxies:
     type: hysteria2
     up: ""
   - client-fingerprint: chrome
-    name: "\U0001F534\U0001F1EF\U0001F1F5[\U0001F3AC\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_2c88d77f"
+    name: "日本_2c88d77f"
     network: ws
     password: 8r<[9'l6hAO#8ZQi
     port: 7005
@@ -37,7 +37,7 @@ proxies:
       headers:
         User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532M Build/MMB29T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.91 Mobile Safari/537.36
       path: "/trTelegram\U0001F1E8\U0001F1F3 @WangCai2"
-  - name: "\U0001F534\U0001F1EF\U0001F1F5[\U0001F3AC\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_34f50ab4"
+  - name: "日本_34f50ab4"
     network: ws
     password: 8r<[9'l6hAO#8ZQi
     port: 443
@@ -52,7 +52,7 @@ proxies:
       path: "/trTelegram\U0001F1E8\U0001F1F3 @WangCai2"
   - down: ""
     fingerprint: ""
-    name: "\U0001F534\U0001F1EF\U0001F1F5[\U0001F3AC\U0001F916\U0001F4FA\U0001F50D]_github.com/Ruk1ng001_11f19215"
+    name: "日本_11f19215"
     obfs: ""
     obfs-password: ""
     password: qQe1z5kU8kN6SlKnDt9Ru3Qp
