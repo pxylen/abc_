@@ -1,100 +1,38 @@
-
 proxies:
   - name: 美国
-    type: vless
-    server: 20.16.105.244
-    port: 443
-    uuid: bafacd98-136a-4530-838d-4e5c51838dac
-    network: ws
-    servername: juzi8186.qea.ccwu.cc
-    tls: true
-    ws-opts:
-      path: /hot/juzibaipiao
-      headers:
-        Host: juzi8186.qea.ccwu.cc
-    udp: true
-  - name: 美国_1
-    type: trojan
-    server: 218.150.34.228
-    port: 10912
-    password: GKHWMe2R4qwNcNxu6l3KMkdd
-    sni: vpn1.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /trj-ws
-      headers:
-        Host: vpn1.rnmcnm.com
-    udp: true
-  - name: 日本
-    type: vmess
-    server: 103.127.243.59
-    port: 56738
-    uuid: 5f49c80e-7770-4bd1-9c86-43c2068a3a26
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_2
-    type: ss
-    server: tinkered-pennies-puppies.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: hbGrpfvNrJsUmKmPbR3iY2
-    udp: true
-  - name: 美国_3
-    type: ss
-    server: 202.85.76.170
-    port: 13223
-    cipher: aes-128-gcm
-    password: JVrsLLN1tkN8oXZO
-    udp: true
-  - name: 美国_4
-    type: vless
-    server: 104.129.164.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime40.workers.dev
-    udp: true
-  - name: 美国_5
-    type: vless
-    server: 162.159.45.210
-    port: 80
-    uuid: 5aa7d17e-7dc2-46dd-9acf-c3c97440259b
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: sss.yaml7.ggff.net
-    udp: true
-  - name: 美国_6
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6001
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_7
     type: vmess
     server: 103.181.164.145
-    port: 54022
+    port: 51556
     uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国_8
+  - name: 香港
+    type: vmess
+    server: 103.181.164.145
+    port: 51556
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_1
+    type: vless
+    server: 198.41.223.121
+    port: 443
+    uuid: d555dac9-27cb-4ddb-89f5-6a1d8d1e4798
+    network: ws
+    servername: momi.timoreyhaneh.workers.dev
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: momi.timoreyhaneh.workers.dev
+    udp: true
+  - name: 美国_2
     type: vmess
     server: v4.hdacd.com
     port: 30804
@@ -104,46 +42,57 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 台湾
-    type: ss
-    server: r3mrcg007117fb8.cybervena.com
-    port: 50099
-    cipher: chacha20-ietf-poly1305
-    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
-    udp: true
-  - name: 美国_9
-    type: vless
-    server: 83.229.126.127
-    port: 32237
-    uuid: 73bcd72f-9545-4cb8-8daf-7d004501880d
-    network: ws
-    servername: dcsrzh.ccwu.cc
-    tls: true
-    ws-opts:
-      path: /?ed=2560
-      headers:
-        Host: dcsrzh.ccwu.cc
-    udp: true
-  - name: 美国_10
-    type: ss
-    server: r3mrcg0011499tl.cybervena.com
-    port: 50099
-    cipher: chacha20-ietf-poly1305
-    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
-    udp: true
-  - name: 美国_11
+  - name: 美国_3
     type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 64
+    server: 45.63.7.19
+    port: 49632
+    uuid: 05f2bbe3-f29a-480f-ebfb-0deebb80741d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /05f2bbe3-f29a-480f-ebfb-0deebb80741d
+    udp: true
+  - name: 美国_4
+    type: vmess
+    server: v9.hdacd.com
+    port: 30809
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国_12
+  - name: 美国_5
+    type: vless
+    server: 45.153.7.40
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+      headers:
+        Host: vms.lifetime11.workers.dev
+    udp: true
+  - name: 美国_6
     type: trojan
-    server: 104.21.40.34
+    server: 221.149.34.13
+    port: 10909
+    password: GKHWMe2R4qwNcNxu6l3KMkdd
+    sni: vpn1.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trj-ws
+      headers:
+        Host: vpn1.rnmcnm.com
+    udp: true
+  - name: 美国_7
+    type: trojan
+    server: 185.18.250.252
     port: 443
     password: humanity
     sni: www.gossipglove.com
@@ -154,18 +103,101 @@ proxies:
       headers:
         Host: www.gossipglove.com
     udp: true
-  - name: 美国_13
-    type: ss
-    server: nbmrcg0034686rw.cybervena.com
-    port: 50099
-    cipher: chacha20-ietf-poly1305
-    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
-    udp: true
-  - name: 美国_14
+  - name: 美国_8
     type: vmess
     server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6004
+    port: 6001
     uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_9
+    type: vless
+    server: 103.232.213.244
+    port: 9586
+    uuid: 00000000-0000-4000-8000-000000000000
+    network: ws
+    servername: oia8or7k8rs5.zrf.xx.kg
+    tls: true
+    ws-opts:
+      path: /@Marisa_kristifp=chrome
+      headers:
+        Host: oia8or7k8rs5.zrf.xx.kg
+    udp: true
+  - name: 美国_10
+    type: vless
+    server: 89.117.112.30
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+      headers:
+        Host: vms.lifetime11.workers.dev
+    udp: true
+  - name: 香港_1
+    type: vmess
+    server: v10.hdacd.com
+    port: 30807
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 新加坡
+    type: vmess
+    server: dotu-sgv1.kunlun03dns.com
+    port: 11137
+    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 香港_2
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_11
+    type: vless
+    server: 45.153.7.30
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+      headers:
+        Host: vms.lifetime11.workers.dev
+    udp: true
+  - name: 美国_12
+    type: trojan
+    server: 172.64.147.24
+    port: 443
+    password: humanity
+    sni: www.gossipglove.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.gossipglove.com
+    udp: true
+  - name: 新加坡_1
+    type: vmess
+    server: dotu-sgv1.kunlun03dns.com
+    port: 11135
+    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
     alterId: 0
     cipher: auto
     tls: false
@@ -184,32 +216,67 @@ proxies:
       headers:
         Host: vpn1.rnmcnm.com
     udp: true
-  - name: 美国_15
+  - name: 新加坡_2
+    type: vmess
+    server: dotu-sgv1.kunlun03dns.com
+    port: 11136
+    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 新加坡_3
+    type: vmess
+    server: dotu-sgv1.kunlun03dns.com
+    port: 11138
+    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_13
+    type: ss
+    server: chengbai02.ascwt179.com
+    port: 13223
+    cipher: aes-128-gcm
+    password: JVrsLLN1tkN8oXZO
+    udp: true
+  - name: 美国_14
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6004
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 韩国_1
     type: vless
-    server: 104.17.150.224
-    port: 443
-    uuid: ae0dd58e-e222-40bf-84ae-365a97532737
+    server: 222.113.18.214
+    port: 11310
+    uuid: b2b62085-f202-4c49-9f19-a44676a3d76d
     network: ws
-    servername: pagescm.freen15.cc.cd
+    servername: vpn2.rnmcnm.com
     tls: true
     ws-opts:
-      path: /album/bt
+      path: /ray
       headers:
-        Host: pagescm.freen15.cc.cd
+        Host: vpn2.rnmcnm.com
     udp: true
-  - name: 美国_16
-    type: vless
-    server: 91.206.71.50
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
+  - name: 英国
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
     tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime15.workers.dev
+    skip-cert-verify: false
     udp: true
-  - name: 美国_17
+  - name: 英国_1
     type: vmess
     server: v36.hdacd.com
     port: 30836
@@ -219,33 +286,91 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国_18
+  - name: 美国_15
+    type: trojan
+    server: www.gossipglove.com
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /assignment
+    udp: true
+  - name: 香港_3
+    type: vless
+    server: cf.008500.xyz
+    port: 443
+    uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
+    network: ws
+    servername: cloudflare-proxy-1jk.pages.dev
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: cloudflare-proxy-1jk.pages.dev
+    udp: true
+  - name: 日本
     type: vmess
-    server: v35.hdacd.com
-    port: 30835
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
+    server: 103.127.243.59
+    port: 56738
+    uuid: 5f49c80e-7770-4bd1-9c86-43c2068a3a26
+    alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国_19
+  - name: 美国_16
     type: vless
-    server: 104.20.50.17
+    server: up2-df6.pages.dev
     port: 443
-    uuid: 5aa7d17e-7dc2-46dd-9acf-c3c97440259b
+    uuid: ce69190e-935a-4394-9e5e-2ab2872ba242
     network: ws
-    servername: sss.yaml7.ggff.net
+    servername: up2-df6.pages.dev
     tls: true
     ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: sss.yaml7.ggff.net
+      path: /uTZSXPBI2IfoxF86
     udp: true
-  - name: 韩国_1
+  - name: 英国_2
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_17
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_18
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 台湾
+    type: ss
+    server: r3mrcg007117fb8.cybervena.com
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+    udp: true
+  - name: 美国_19
     type: trojan
-    server: 59.21.203.65
-    port: 10443
+    server: 112.166.213.102
+    port: 16993
     password: GKHWMe2R4qwNcNxu6l3KMkdd
     sni: vpn1.rnmcnm.com
     skip-cert-verify: false
@@ -256,80 +381,41 @@ proxies:
         Host: vpn1.rnmcnm.com
     udp: true
   - name: 美国_20
-    type: vmess
-    server: v29.hdacd.com
-    port: 30829
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
+    type: vless
+    server: 104.21.31.4
+    port: 8880
+    uuid: 0a5ab719-2407-4398-b507-8437ef365023
+    network: ws
     tls: false
-    skip-cert-verify: false
+    ws-opts:
+      path: /FCHANNEL---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY---ELiV2-RAY
+      headers:
+        Host: underthegun.cfd.
     udp: true
   - name: 美国_21
-    type: ss
-    server: hackney-latest-strike.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: XUMTygEM1jVYIvysXKqA5T
-    udp: true
-  - name: 美国_22
-    type: trojan
-    server: 221.149.34.13
-    port: 10909
-    password: GKHWMe2R4qwNcNxu6l3KMkdd
-    sni: vpn1.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /trj-ws
-      headers:
-        Host: vpn1.rnmcnm.com
-    udp: true
-  - name: 韩国_2
-    type: trojan
-    server: 121.178.83.161
-    port: 26214
-    password: GKHWMe2R4qwNcNxu6l3KMkdd
-    sni: vpn1.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /trj-ws
-      headers:
-        Host: vpn1.rnmcnm.com
-    udp: true
-  - name: 美国_23
-    type: vmess
-    server: v4.hdacd.com
-    port: 30804
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_24
-    type: vmess
-    server: 103.181.164.145
-    port: 51556
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_25
     type: vless
-    server: wangcai157.cloudflare.182682.xyz
-    port: 8880
-    uuid: 7890ce31-9a25-4fd4-90e7-80e5823ff510
+    server: speedtest.net
+    port: 80
+    uuid: 384e0806-fcee-4f92-b671-bfc6a4794148
     network: ws
-    servername: Telegram-channel-WangCai2
     tls: false
     ws-opts:
-      path: /Telegram🇨🇳@WangCai2/?ed=2560
+      path: /
       headers:
-        Host: frejd.11258.workers.dev
+        Host: oijji.global.ssl.fastly.net
+    udp: true
+  - name: 香港_4
+    type: vless
+    server: 83.229.120.141
+    port: 30050
+    uuid: 6e69871c-4506-4cb9-b375-ac97cb972742
+    network: ws
+    servername: o00o.osd.qzz.io
+    tls: true
+    ws-opts:
+      path: /proxyip=sjc.o00o.ooo
+      headers:
+        Host: o00o.osd.qzz.io
     udp: true
   - name: 日本_1
     type: vless
@@ -344,7 +430,73 @@ proxies:
       headers:
         Host: juzi.qea.ccwu.cc
     udp: true
-  - name: 美国_26
+  - name: 美国_22
+    type: vmess
+    server: v35.hdacd.com
+    port: 30835
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国_3
+    type: ss
+    server: 89.185.84.34
+    port: 31348
+    cipher: chacha20-ietf-poly1305
+    password: AQGAAMQLZoxMT4EUxNPuFwKImsAviZTHTEMmHFlRrDKJpMnS
+    udp: true
+  - name: 韩国_2
+    type: vless
+    server: 59.9.104.98
+    port: 18979
+    uuid: b2b62085-f202-4c49-9f19-a44676a3d76d
+    network: ws
+    servername: vpn2.rnmcnm.com
+    tls: true
+    ws-opts:
+      path: /ray
+      headers:
+        Host: vpn2.rnmcnm.com
+    udp: true
+  - name: 美国_23
+    type: trojan
+    server: cf.130519.xyz
+    port: 443
+    password: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
+    sni: cloudflare-proxy-1jk.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /
+      headers:
+        Host: cloudflare-proxy-1jk.pages.dev
+    udp: true
+  - name: 韩国_3
+    type: trojan
+    server: 112.166.213.102
+    port: 16993
+    password: GKHWMe2R4qwNcNxu6l3KMkdd
+    sni: vpn1.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trj-ws
+      headers:
+        Host: vpn1.rnmcnm.com
+    udp: true
+  - name: 美国_24
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_25
     type: vless
     server: 109.176.239.50
     port: 8880
@@ -356,47 +508,27 @@ proxies:
       headers:
         Host: vms.lifetime03.workers.dev
     udp: true
-  - name: 英国
+  - name: 美国_26
     type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 香港
-    type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国_1
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
+    server: v36.hdacd.com
+    port: 30836
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
   - name: 美国_27
     type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: aes-128-gcm
+    server: v29.hdacd.com
+    port: 30829
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英国_2
+  - name: 英国_4
     type: vmess
     server: 82.198.246.214
     port: 180
@@ -408,15 +540,15 @@ proxies:
     udp: true
   - name: 美国_28
     type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
+    server: v4.hdacd.com
+    port: 30804
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 德国
+  - name: 英国_5
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -436,31 +568,9 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英国_3
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
   - name: 美国_30
-    type: vless
-    server: 188.164.248.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
-    udp: true
-  - name: 德国_1
     type: vmess
-    server: 82.198.246.37
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -468,7 +578,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英国_4
+  - name: 德国
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -480,6 +590,88 @@ proxies:
     udp: true
   - name: 美国_31
     type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_32
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国_6
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德国_1
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_33
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: aes-128-gcm
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国_7
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_34
+    type: vless
+    server: 89.117.112.40
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+      headers:
+        Host: vms.lifetime11.workers.dev
+    udp: true
+  - name: 美国_35
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_36
+    type: vmess
     server: 82.198.246.37
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
@@ -487,7 +679,56 @@ proxies:
     cipher: auto
     tls: false
     skip-cert-verify: false
-    servername: <nil>
+    udp: true
+  - name: 美国_37
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_38
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国_8
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_39
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国_9
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
   - name: 德国_2
     type: vmess
@@ -509,26 +750,6 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英国_5
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国_6
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
   - name: 德国_4
     type: vmess
     server: 82.198.246.250
@@ -539,107 +760,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国_32
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
   - name: 德国_5
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_33
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_34
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国_7
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国_8
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国_9
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_35
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_36
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: aes-128-gcm
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国_10
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_37
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -659,7 +780,29 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国_38
+  - name: 德国_7
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_40
+    type: vless
+    server: 188.114.98.112
+    port: 80
+    uuid: 0991a0c4-0ee5-4213-af89-7ad589f853f3
+    network: ws
+    tls: false
+    ws-opts:
+      path: /ELiV2-RAY----ELiV2-RAY----ELiV2-RAY----ELiV2-RAY----ELiV2-RAY----ELiV2-RAY?ed=2560
+      headers:
+        Host: elenaaaaaaaaaa.cloudns.pro.
+    udp: true
+  - name: 德国_8
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -669,7 +812,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国_39
+  - name: 英国_10
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -691,16 +834,6 @@ proxies:
     udp: true
   - name: 英国_12
     type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 德国_7
-    type: vmess
     server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
@@ -711,7 +844,7 @@ proxies:
     udp: true
   - name: 英国_13
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -719,29 +852,52 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 德国_8
+  - name: 美国_41
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
+    udp: true
+  - name: 美国_42
+    type: vless
+    server: 104.18.15.19
+    port: 80
+    uuid: a2af6e7c-a792-4e51-9460-fff4bd74fbfc
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: vahidqaz-ft33vt-1.vahidqaz.workers.dev
+    udp: true
+  - name: 美国_43
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: aes-128-gcm
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_44
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    servername: <nil>
     udp: true
   - name: 英国_14
     type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_40
-    type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.214
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -759,68 +915,66 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国_41
+  - name: 英国_16
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_45
     type: trojan
-    server: 112.166.213.102
-    port: 16993
-    password: GKHWMe2R4qwNcNxu6l3KMkdd
-    sni: vpn1.rnmcnm.com
+    server: v1.dabache.top
+    port: 443
+    password: humanity
+    sni: www.multiplydose.com
     skip-cert-verify: false
     tls: true
     ws-opts:
-      path: /trj-ws
+      path: /assignment
       headers:
-        Host: vpn1.rnmcnm.com
-    udp: true
-  - name: 美国_42
-    type: vless
-    server: 45.131.4.192
-    port: 80
-    uuid: 5f4845b4-11dc-41d6-9508-4ff6a02e36c1
-    network: ws
-    tls: false
-    ws-opts:
-      path: /Cczu8jOo6HDo?ed=2560
-      headers:
-        Host: silent-paper-fa57.fipiyag989.workers.dev
-    udp: true
-  - name: 美国_43
-    type: vless
-    server: 104.18.15.19
-    port: 80
-    uuid: a2af6e7c-a792-4e51-9460-fff4bd74fbfc
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560
-      headers:
-        Host: vahidqaz-ft33vt-1.vahidqaz.workers.dev
-    udp: true
-  - name: 美国_44
-    type: vless
-    server: 188.164.248.50
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
-    udp: true
-  - name: 美国_45
-    type: vless
-    server: 188.164.248.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
+        Host: www.multiplydose.com
     udp: true
   - name: 美国_46
+    type: vless
+    server: 91.206.71.50
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+      headers:
+        Host: vms.lifetime15.workers.dev
+    udp: true
+  - name: 美国_47
+    type: vless
+    server: 104.129.164.30
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+      headers:
+        Host: vms.lifetime40.workers.dev
+    udp: true
+  - name: 美国_48
+    type: vless
+    server: cdn.tzpro.xyz
+    port: 80
+    uuid: f2083aa4-f27d-43da-81cf-8bab31730400
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2048
+      headers:
+        Host: germany.vipserver14.workers.dev
+    udp: true
+  - name: 美国_49
     type: vless
     server: www.visa.com
     port: 80
@@ -832,57 +986,14 @@ proxies:
       headers:
         Host: vahidqaz-ft33vt-1.vahidqaz.workers.dev
     udp: true
-  - name: 美国_47
-    type: vless
-    server: 210.123.143.214
-    port: 18789
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    servername: sni.111000.v6.army
-    tls: true
-    ws-opts:
-      path: /?ed=2560
-      headers:
-        Host: sni.111000.v6.army
-    udp: true
-  - name: 美国_48
-    type: vless
-    server: blackshadow.dpdns.org
-    port: 443
-    uuid: 2bcfbfba-b446-4ad5-93ad-72af9e008f61
-    network: ws
-    servername: blackshadow.dpdns.org
-    tls: true
-    ws-opts:
-      path: /44.209.52.7-443
-      headers:
-        Host: blackshadow.dpdns.org
-    udp: true
-  - name: 美国_49
-    type: vless
-    server: 213.219.247.50
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
-    udp: true
   - name: 美国_50
-    type: vless
-    server: 94.140.0.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
+    type: ss
+    server: hackney-latest-strike.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: XUMTygEM1jVYIvysXKqA5T
     udp: true
-  - name: 美国_51
+  - name: 英国_17
     type: vmess
     server: 82.198.246.37
     port: 180
@@ -892,27 +1003,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 香港_1
-    type: vmess
-    server: v10.hdacd.com
-    port: 30807
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_52
-    type: vmess
-    server: v9.hdacd.com
-    port: 30809
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国_16
+  - name: 英国_18
     type: vmess
     server: 82.198.246.214
     port: 180
@@ -922,46 +1013,41 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 韩国_3
-    type: trojan
-    server: 221.149.34.13
-    port: 10909
-    password: GKHWMe2R4qwNcNxu6l3KMkdd
-    sni: vpn1.rnmcnm.com
+  - name: 英国_19
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
     skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /trj-ws
-      headers:
-        Host: vpn1.rnmcnm.com
     udp: true
-  - name: 美国_53
+  - name: 美国_51
     type: vless
-    server: wangcai15.cloudflare.182682.xyz
-    port: 8880
-    uuid: 7890ce31-9a25-4fd4-90e7-80e5823ff510
+    server: 45.131.4.192
+    port: 80
+    uuid: 5f4845b4-11dc-41d6-9508-4ff6a02e36c1
     network: ws
-    servername: Telegram-channel-WangCai2
     tls: false
     ws-opts:
-      path: /Telegram🇨🇳@WangCai2/?ed=2560
+      path: /Cczu8jOo6HDo?ed=2560
       headers:
-        Host: frejd.11258.workers.dev
+        Host: silent-paper-fa57.fipiyag989.workers.dev
     udp: true
-  - name: 美国_54
+  - name: 美国_52
     type: vless
-    server: 103.232.213.244
-    port: 9586
-    uuid: 00000000-0000-4000-8000-000000000000
+    server: 45.153.7.50
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
     network: ws
-    servername: oia8or7k8rs5.zrf.xx.kg
-    tls: true
+    tls: false
     ws-opts:
-      path: /@Marisa_kristifp=chrome
+      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
       headers:
-        Host: oia8or7k8rs5.zrf.xx.kg
+        Host: vms.lifetime11.workers.dev
     udp: true
-  - name: 美国_55
+  - name: 美国_53
     type: vless
     server: 109.176.239.50
     port: 8880
@@ -973,43 +1059,153 @@ proxies:
       headers:
         Host: vms.lifetime03.workers.dev
     udp: true
-  - name: 美国_56
-    type: vless
-    server: 188.164.248.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
-    udp: true
-  - name: 美国_57
-    type: vless
-    server: 188.164.248.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
-    udp: true
-  - name: 香港_2
+  - name: 韩国_4
     type: vmess
-    server: 103.181.164.145
-    port: 51556
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    server: dotu-krv1.kunlun03dns.com
+    port: 11146
+    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
+    udp: true
+  - name: 新加坡_4
+    type: trojan
+    server: cf.090227.xyz
+    port: 443
+    password: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
+    sni: cloudflare-proxy-1jk.pages.dev
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: cloudflare-proxy-1jk.pages.dev
+    udp: true
+  - name: 德国_9
+    type: ss
+    server: hackney-latest-strike.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: XUMTygEM1jVYIvysXKqA5T
+    udp: true
+  - name: 美国_54
+    type: ss
+    server: 202.85.76.170
+    port: 13223
+    cipher: aes-128-gcm
+    password: JVrsLLN1tkN8oXZO
+    udp: true
+  - name: 韩国_5
+    type: trojan
+    server: 121.178.83.161
+    port: 26214
+    password: GKHWMe2R4qwNcNxu6l3KMkdd
+    sni: vpn1.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trj-ws
+      headers:
+        Host: vpn1.rnmcnm.com
+    udp: true
+  - name: 美国_55
+    type: vless
+    server: wangcai139.cloudflare.182682.xyz
+    port: 8880
+    uuid: 7890ce31-9a25-4fd4-90e7-80e5823ff510
+    network: ws
+    servername: Telegram-channel-WangCai2
+    tls: false
+    ws-opts:
+      path: /Telegram🇨🇳@WangCai2/?ed=2560
+      headers:
+        Host: frejd.11258.workers.dev
+    udp: true
+  - name: 韩国_6
+    type: vmess
+    server: dotu-krv1.kunlun03dns.com
+    port: 11145
+    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 韩国_7
+    type: vmess
+    server: dotu-krv1.kunlun03dns.com
+    port: 11143
+    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_56
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国_57
+    type: ss
+    server: tinkered-pennies-puppies.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: hbGrpfvNrJsUmKmPbR3iY2
+    udp: true
+  - name: 德国_10
+    type: vless
+    server: 104.17.15.87
+    port: 80
+    uuid: f929cc78-e2a1-4ce3-8051-3e9538405144
+    network: ws
+    tls: false
+    ws-opts:
+      path: /@WireXnet
+      headers:
+        Host: britain.xydcqd.workers.dev
+    udp: true
+  - name: 韩国_8
+    type: trojan
+    server: 59.21.203.65
+    port: 10443
+    password: GKHWMe2R4qwNcNxu6l3KMkdd
+    sni: vpn1.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trj-ws
+      headers:
+        Host: vpn1.rnmcnm.com
     udp: true
   - name: 美国_58
     type: vless
-    server: 94.140.0.40
+    server: 45.80.111.40
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+      headers:
+        Host: vms.lifetime52.workers.dev
+    udp: true
+  - name: 美国_59
+    type: ss
+    server: tinkered-pennies-puppies.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: hbGrpfvNrJsUmKmPbR3iY2
+    udp: true
+  - name: 美国_60
+    type: vless
+    server: 104.129.164.30
     port: 8880
     uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
     network: ws
@@ -1017,41 +1213,31 @@ proxies:
     ws-opts:
       path: /?https://t.me/YouTube@小青科学网🇨🇳
       headers:
-        Host: vms.lifetime26.workers.dev
+        Host: vms.lifetime40.workers.dev
     udp: true
-  - name: 美国_59
+  - name: 韩国_9
     type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    server: dotu-krv1.kunlun03dns.com
+    port: 11144
+    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
     alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_60
-    type: vmess
-    server: v10.hdacd.com
-    port: 30807
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
   - name: 美国_61
     type: vless
-    server: 188.164.248.50
+    server: 102.177.189.30
     port: 8880
     uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
     network: ws
     tls: false
     ws-opts:
-      path: /?https://t.me/YouTube@小青科学网🇨🇳
+      path: /
       headers:
-        Host: vms.lifetime26.workers.dev
+        Host: vms.lifetime29.workers.dev
     udp: true
-  - name: 德国_9
+  - name: 德国_11
     type: vless
     server: 31.185.108.30
     port: 8880
@@ -1065,78 +1251,6 @@ proxies:
     udp: true
   - name: 美国_62
     type: vless
-    server: 213.219.247.50
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
-    udp: true
-  - name: 美国_63
-    type: vless
-    server: 103.116.7.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /
-      headers:
-        Host: vms.lifetime35.workers.dev
-    udp: true
-  - name: 美国_64
-    type: vless
-    server: 162.159.44.66
-    port: 2053
-    uuid: 55d9ec38-1b8a-454b-981a-6acfe8f56d8c
-    network: ws
-    servername: fu.baiproxy.us.ci
-    tls: true
-    ws-opts:
-      path: /?ed=2560
-      headers:
-        Host: fu.baiproxy.us.ci
-    udp: true
-  - name: 美国_65
-    type: vless
-    server: ciallo-egb.pages.dev
-    port: 8443
-    uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-    network: ws
-    servername: CiallO-eGb.pAGEs.Dev
-    tls: true
-    ws-opts:
-      path: //
-    udp: true
-  - name: 美国_66
-    type: vless
-    server: 104.26.5.134
-    port: 2096
-    uuid: 7f50ec42-4673-41e2-94be-ae6253909def
-    network: ws
-    servername: joey.freen1.de5.net
-    tls: true
-    ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: joey.freen1.de5.net
-    udp: true
-  - name: 美国_67
-    type: vless
-    server: ciallo-egb.pages.dev
-    port: 443
-    uuid: 89b3cbba-e6ac-485a-9481-976a0415eab9
-    network: ws
-    servername: CiaLLO-egb.PAGeS.dEV
-    tls: true
-    ws-opts:
-      path: /
-    udp: true
-  - name: 美国_68
-    type: vless
     server: 91.206.71.50
     port: 8880
     uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
@@ -1147,7 +1261,42 @@ proxies:
       headers:
         Host: vms.lifetime15.workers.dev
     udp: true
-  - name: 美国_69
+  - name: 美国_63
+    type: trojan
+    server: 211.76.176.98
+    port: 19128
+    password: gcuCpQfaiVeDBdWG
+    sni: yazhou10.dynu.net
+    skip-cert-verify: false
+    tls: true
+    udp: true
+  - name: 美国_64
+    type: trojan
+    server: 104.21.40.34
+    port: 443
+    password: humanity
+    sni: www.gossipglove.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.gossipglove.com
+    udp: true
+  - name: 韩国_10
+    type: trojan
+    server: 221.149.34.13
+    port: 10909
+    password: GKHWMe2R4qwNcNxu6l3KMkdd
+    sni: vpn1.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trj-ws
+      headers:
+        Host: vpn1.rnmcnm.com
+    udp: true
+  - name: 美国_65
     type: vmess
     server: 2a02:6ea0:d32f::f8fe:349b
     port: 24202
@@ -1162,29 +1311,7 @@ proxies:
       headers:
         Host: 2a02:6ea0:d32f::f8fe:349b
     udp: true
-  - name: 美国_70
-    type: vless
-    server: 102.177.189.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /
-      headers:
-        Host: vms.lifetime29.workers.dev
-    udp: true
-  - name: 美国_71
-    type: vmess
-    server: v24.hdacd.com
-    port: 30824
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国_72
+  - name: 美国_66
     type: vmess
     server: 2a02:6ea0:d32f::f8fe:349b
     port: 24202
@@ -1197,17 +1324,42 @@ proxies:
     ws-opts:
       path: /github.com/Alvin9999-newpac/fanqiang
     udp: true
-  - name: 英国_17
+  - name: 香港_5
+    type: vless
+    server: 104.26.5.134
+    port: 2096
+    uuid: 7f50ec42-4673-41e2-94be-ae6253909def
+    network: ws
+    servername: joey.freen1.de5.net
+    tls: true
+    ws-opts:
+      path: /?ed=2048
+      headers:
+        Host: joey.freen1.de5.net
+    udp: true
+  - name: 美国_67
+    type: vless
+    server: 5.10.244.40
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
+      headers:
+        Host: vms.lifetime03.workers.dev
+    udp: true
+  - name: 美国_68
     type: vmess
-    server: v36.hdacd.com
-    port: 30836
+    server: v24.hdacd.com
+    port: 30824
     uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
     alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国_73
+  - name: 美国_69
     type: trojan
     server: jpbgp.netvigor.cc
     port: 19128
@@ -1216,33 +1368,33 @@ proxies:
     skip-cert-verify: false
     tls: true
     udp: true
-  - name: 美国_74
-    type: vless
-    server: wangcai139.cloudflare.182682.xyz
-    port: 8880
-    uuid: 7890ce31-9a25-4fd4-90e7-80e5823ff510
-    network: ws
-    servername: Telegram-channel-WangCai2
-    tls: false
-    ws-opts:
-      path: /Telegram🇨🇳@WangCai2/?ed=2560
-      headers:
-        Host: frejd.11258.workers.dev
-    udp: true
-  - name: 英国_18
+  - name: 美国_70
     type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
+    server: v10.hdacd.com
+    port: 30807
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国_75
+  - name: 美国_71
     type: ss
     server: chengbai02.ascwt179.com
     port: 13223
     cipher: aes-128-gcm
     password: JVrsLLN1tkN8oXZO
+    udp: true
+  - name: 美国_72
+    type: trojan
+    server: blackshadow.dpdns.org
+    port: 443
+    password: 2bcfbfba-b446-4ad5-93ad-72af9e008f61
+    sni: blackshadow.dpdns.org
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /195.123.218.174-443
+      headers:
+        Host: blackshadow.dpdns.org
     udp: true
