@@ -16,6 +16,7 @@ payload:
   - DOMAIN-SUFFIX,youtubei.googleapis.com
   - DOMAIN-SUFFIX,yt3.ggpht.com
 # Google
+  - DOMAIN-KEYWORD,google
   - DOMAIN-SUFFIX,google.com
   - DOMAIN-SUFFIX,googleapis.com
   - DOMAIN-SUFFIX,gstatic.com
