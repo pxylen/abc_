@@ -1,85 +1,54 @@
 proxies:
   - name: 美国(yudou789.top 玉豆免费节点)
-    type: trojan
-    server: 211.76.176.98
-    port: 19128
-    password: gcuCpQfaiVeDBdWG
-    sni: yazhou10.dynu.net
-    skip-cert-verify: false
-    tls: true
-    udp: true
-  - name: 香港(yudou789.top 玉豆免费节点)
-    type: vmess
-    server: dotu-twv1.kunlun03dns.com
-    port: 11113
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
+    type: ss
+    server: 4.168.201.246
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: XEnZedp2mkTbT1qC
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_1
     type: vmess
-    server: v29.hdacd.com
-    port: 30829
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_2
-    type: vless
-    server: 185.18.250.127
-    port: 2096
-    uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
-    network: ws
-    servername: 69565ce3109804e7813f98ee.mmdbay.blog
-    tls: true
-    ws-opts:
-      path: /graphql
-      headers:
-        Host: 69565ce3109804e7813f98ee.mmdbay.blog
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_3
-    type: vmess
-    server: v4.hdacd.com
-    port: 30804
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 香港(yudou789.top 玉豆免费节点)_1
-    type: vmess
-    server: cu7.ainivp.com
-    port: 33414
-    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
+    server: 2a02:6ea0:d32f::f8fe:349b
+    port: 24202
+    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
     alterId: 0
     cipher: auto
-    tls: true
+    tls: false
     skip-cert-verify: false
     network: ws
     ws-opts:
-      path: /ray
+      path: /github.com/Alvin9999-newpac/fanqiang
       headers:
-        Host: cu7.ainivp.com
+        Host: 2a02:6ea0:d32f::f8fe:349b
     udp: true
-  - name: 韩国(yudou789.top 玉豆免费节点)
+  - name: 美国(yudou789.top 玉豆免费节点)_2
+    type: ss
+    server: 202.85.76.170
+    port: 13223
+    cipher: aes-128-gcm
+    password: JVrsLLN1tkN8oXZO
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_3
     type: trojan
-    server: 112.166.213.102
-    port: 16993
-    password: GKHWMe2R4qwNcNxu6l3KMkdd
-    sni: vpn1.rnmcnm.com
+    server: 172.64.152.23
+    port: 443
+    password: humanity
+    sni: www.calmlunch.com
     skip-cert-verify: false
     tls: true
     ws-opts:
-      path: /trj-ws
+      path: /assignment
       headers:
-        Host: vpn1.rnmcnm.com
+        Host: www.calmlunch.com
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_4
+    type: ss
+    server: chengbai02.ascwt179.com
+    port: 13223
+    cipher: aes-128-gcm
+    password: JVrsLLN1tkN8oXZO
+    udp: true
+  - name: 挪威(mibei77.com 米贝节点分享)
     type: trojan
     server: 125.7.24.251
     port: 443
@@ -92,6 +61,16 @@ proxies:
       headers:
         Host: vpn5.rnmcnm.com
     udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_5
+    type: vmess
+    server: v24.hdacd.com
+    port: 30824
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
   - name: 英国(yudou789.top 玉豆免费节点)
     type: vmess
     server: v36.hdacd.com
@@ -102,163 +81,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 香港(yudou789.top 玉豆免费节点)_2
-    type: vmess
-    server: 103.181.164.145
-    port: 51556
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_5
-    type: ss
-    server: chengbai02.ascwt179.com
-    port: 13223
-    cipher: aes-128-gcm
-    password: JVrsLLN1tkN8oXZO
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_6
-    type: vmess
-    server: v29.hdacd.com
-    port: 30829
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_7
-    type: trojan
-    server: 59.30.42.194
-    port: 12345
-    password: 433e785b-2077-47f7-a43d-985f63dd18d1
-    sni: vpn.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /trojan
-      headers:
-        Host: vpn.rnmcnm.com
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_8
-    type: trojan
-    server: 104.152.48.205
-    port: 443
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
-    udp: true
-  - name: 韩国(yudou789.top 玉豆免费节点)_1
-    type: trojan
-    server: 121.178.83.161
-    port: 26214
-    password: GKHWMe2R4qwNcNxu6l3KMkdd
-    sni: vpn1.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /trj-ws
-      headers:
-        Host: vpn1.rnmcnm.com
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_9
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6001
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 香港(yudou789.top 玉豆免费节点)_3
-    type: vmess
-    server: dotu-krv1.kunlun03dns.com
-    port: 11144
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 韩国(yudou789.top 玉豆免费节点)_2
-    type: trojan
-    server: 59.21.203.65
-    port: 10443
-    password: GKHWMe2R4qwNcNxu6l3KMkdd
-    sni: vpn1.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /trj-ws
-      headers:
-        Host: vpn1.rnmcnm.com
-    udp: true
-  - name: 香港(yudou789.top 玉豆免费节点)_4
-    type: vmess
-    server: v10.hdacd.com
-    port: 30807
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_10
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6004
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_11
-    type: vmess
-    server: v10.hdacd.com
-    port: 30807
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_12
-    type: ss
-    server: chengbai02.ascwt179.com
-    port: 13223
-    cipher: aes-128-gcm
-    password: JVrsLLN1tkN8oXZO
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_13
-    type: vmess
-    server: 103.181.164.145
-    port: 51556
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_14
-    type: vmess
-    server: v24.hdacd.com
-    port: 30824
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_15
+  - name: 韩国(yudou789.top 玉豆免费节点)
     type: vless
     server: 222.113.18.214
     port: 11310
@@ -271,9 +94,26 @@ proxies:
       headers:
         Host: vpn2.rnmcnm.com
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_16
+  - name: 美国(yudou789.top 玉豆免费节点)_6
     type: vmess
-    server: 82.198.246.214
+    server: v24.hdacd.com
+    port: 30824
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_7
+    type: vless
+    server: 223.135.156.168
+    port: 50024
+    uuid: 390b0f89-5b07-4424-bc9d-5994c1631d87
+    tls: false
+    udp: true
+  - name: 德国(yudou789.top 玉豆免费节点)
+    type: vmess
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -281,50 +121,118 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_17
+  - name: 美国(yudou789.top 玉豆免费节点)_8
     type: vmess
-    server: v35.hdacd.com
-    port: 30835
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 新加坡(yudou789.top 玉豆免费节点)
-    type: vmess
-    server: dotu-sgv1.kunlun03dns.com
-    port: 11138
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6001
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 新加坡(yudou789.top 玉豆免费节点)_1
+  - name: 美国(yudou789.top 玉豆免费节点)_9
+    type: vless
+    server: 50.85.80.187
+    port: 4005
+    uuid: 92b94de0-5ba0-11f1-937d-7f84b37f9ab9
+    network: ws
+    tls: false
+    ws-opts:
+      path: /vpnjantit
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_10
     type: vmess
-    server: dotu-sgv1.kunlun03dns.com
-    port: 11137
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    server: 103.181.164.145
+    port: 51556
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 新加坡(yudou789.top 玉豆免费节点)_2
+  - name: 美国(yudou789.top 玉豆免费节点)_11
     type: vmess
-    server: dotu-sgv1.kunlun03dns.com
-    port: 11135
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    server: skk.moe
+    port: 80
+    uuid: 65b17c0b-0a52-4b54-9bc9-60e31397b841
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /65b17c0b-0a52-4b54-9bc9-60e31397b841-vmess
+      headers:
+        Host: accklsj.bufu.us.ci
+    udp: true
+  - name: 德国(yudou789.top 玉豆免费节点)_1
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 香港(yudou789.top 玉豆免费节点)_5
+  - name: 美国(yudou789.top 玉豆免费节点)_12
     type: vmess
-    server: ct2.ainivp.com
-    port: 33411
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6004
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_13
+    type: vless
+    server: blackshadow.dpdns.org
+    port: 443
+    uuid: 2bcfbfba-b446-4ad5-93ad-72af9e008f61
+    network: ws
+    servername: blackshadow.dpdns.org
+    tls: true
+    ws-opts:
+      path: /44.209.52.7-443
+      headers:
+        Host: blackshadow.dpdns.org
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_1
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_14
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6003
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德国(yudou789.top 玉豆免费节点)_2
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_15
+    type: vmess
+    server: ct3.ainivp.com
+    port: 33412
     uuid: 9204afcd-026e-781f-1abc-c03efabd1344
     alterId: 0
     cipher: auto
@@ -334,54 +242,19 @@ proxies:
     ws-opts:
       path: /ray
       headers:
-        Host: ct2.ainivp.com
+        Host: ct3.ainivp.com
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_18
+  - name: 英国(yudou789.top 玉豆免费节点)_2
     type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_19
-    type: vless
-    server: 109.176.239.50
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime03.workers.dev
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_20
-    type: vmess
-    server: v36.hdacd.com
-    port: 30836
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 日本(yudou789.top 玉豆免费节点)
-    type: vless
-    server: 104.25.242.55
-    port: 443
-    uuid: a6f1755f-0140-4bea-8727-0db1bed7c4df
-    network: ws
-    servername: juzi.qea.ccwu.cc
-    tls: true
-    ws-opts:
-      path: /
-      headers:
-        Host: juzi.qea.ccwu.cc
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_21
+  - name: 美国(yudou789.top 玉豆免费节点)_16
     type: vless
     server: wangcai157.cloudflare.182682.xyz
     port: 8880
@@ -394,77 +267,107 @@ proxies:
       headers:
         Host: frejd.11258.workers.dev
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_22
+  - name: 香港(yudou789.top 玉豆免费节点)
     type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: aes-128-gcm
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_1
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_17
+    type: vmess
+    server: v36.hdacd.com
+    port: 30836
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_18
+    type: vmess
+    server: v35.hdacd.com
+    port: 30835
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_19
+    type: trojan
+    server: 103.45.245.208
+    port: 2053
+    password: rYuChHcwQZskq9E0zdoR
+    sni: vpn5.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /ws-79dffb8106db
+      headers:
+        Host: vpn5.rnmcnm.com
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_20
+    type: trojan
+    server: www.ignitelimit.com
+    port: 443
+    password: humanity
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /assignment
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_21
+    type: vless
+    server: 193.233.23.121
+    port: 40611
+    uuid: f5a25ee5-ff24-41b0-80e8-ccafdc866614
+    tls: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_22
+    type: trojan
+    server: 125.7.24.251
+    port: 443
+    password: rYuChHcwQZskq9E0zdoR
+    sni: vpn5.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /ws-79dffb8106db
+      headers:
+        Host: vpn5.rnmcnm.com
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_23
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
+    type: vless
+    server: 108.61.103.99
+    port: 8880
+    uuid: 9f5b716b-434f-4e4b-84a0-7cf7576cf841
     tls: false
-    skip-cert-verify: false
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_24
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
+    type: vless
+    server: wangcai15.cloudflare.182682.xyz
+    port: 8880
+    uuid: 7890ce31-9a25-4fd4-90e7-80e5823ff510
+    network: ws
+    servername: Telegram-channel-WangCai2
     tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 德国(yudou789.top 玉豆免费节点)
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_2
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 德国(yudou789.top 玉豆免费节点)_1
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
+    ws-opts:
+      path: /Telegram🇨🇳@WangCai2/?ed=2560
+      headers:
+        Host: frejd.11258.workers.dev
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_25
+    type: vless
+    server: jet.testspeedpro.ir
+    port: 443
+    uuid: dd721878-c30f-4d28-ab23-151b29e3526b
+    tls: false
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_3
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -475,14 +378,14 @@ proxies:
     skip-cert-verify: false
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_26
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
+    type: vless
+    server: 5.75.252.191
+    port: 27620
+    uuid: 7d309744-800a-4fb4-813b-e6a8ab28c4f6
+    network: ws
     tls: false
-    skip-cert-verify: false
+    ws-opts:
+      path: /
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_27
     type: vmess
@@ -494,69 +397,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_3
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_28
-    type: vless
-    server: 89.117.112.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime11.workers.dev
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_4
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_29
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: aes-128-gcm
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_5
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_6
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 德国(yudou789.top 玉豆免费节点)_2
     type: vmess
     server: 82.198.246.37
     port: 180
@@ -576,26 +417,6 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_7
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_8
-    type: vmess
-    server: 82.198.246.250
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
   - name: 德国(yudou789.top 玉豆免费节点)_4
     type: vmess
     server: 82.198.246.250
@@ -606,48 +427,24 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_29
+    type: vless
+    server: 193.151.134.189
+    port: 8008
+    uuid: 5190d373-ff94-42da-a9d1-559d201dd77f
+    tls: false
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_4
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_30
-    type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    servername: <nil>
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_9
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_10
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_11
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_12
     type: vmess
     server: 82.198.246.214
     port: 180
@@ -659,26 +456,6 @@ proxies:
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_31
     type: vmess
-    server: 82.198.246.37
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_13
-    type: vmess
-    server: 82.198.246.214
-    port: 180
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_14
-    type: vmess
     server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
@@ -689,15 +466,15 @@ proxies:
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_32
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.37
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
-    cipher: auto
+    cipher: aes-128-gcm
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_15
+  - name: 美国(yudou789.top 玉豆免费节点)_33
     type: vmess
     server: 82.198.246.214
     port: 180
@@ -707,19 +484,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_33
-    type: vless
-    server: 45.153.7.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime11.workers.dev
-    udp: true
-  - name: 德国(yudou789.top 玉豆免费节点)_5
+  - name: 英国(yudou789.top 玉豆免费节点)_5
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -739,7 +504,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_16
+  - name: 英国(yudou789.top 玉豆免费节点)_6
     type: vmess
     server: 82.198.246.250
     port: 180
@@ -749,21 +514,39 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_35
-    type: vless
-    server: 45.153.7.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime11.workers.dev
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_36
+  - name: 英国(yudou789.top 玉豆免费节点)_7
     type: vmess
     server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_8
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_9
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 德国(yudou789.top 玉豆免费节点)_5
+    type: vmess
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -781,9 +564,20 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 德国(yudou789.top 玉豆免费节点)_7
+  - name: 美国(yudou789.top 玉豆免费节点)_35
+    type: vless
+    server: 204.168.234.22
+    port: 80
+    uuid: 997b5119-c015-4203-b402-0eb0f60b77c3
+    network: ws
+    servername: nobody.fastspeed.ir
+    tls: false
+    ws-opts:
+      path: /ws
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_36
     type: vmess
-    server: 82.198.246.250
+    server: 82.198.246.37
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -791,7 +585,7 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_17
+  - name: 英国(yudou789.top 玉豆免费节点)_10
     type: vmess
     server: 82.198.246.214
     port: 180
@@ -811,9 +605,9 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 英国(yudou789.top 玉豆免费节点)_18
+  - name: 美国(yudou789.top 玉豆免费节点)_38
     type: vmess
-    server: 82.198.246.37
+    server: 82.198.246.250
     port: 180
     uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
@@ -821,29 +615,94 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_38
-    type: vless
-    server: 45.153.7.50
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime11.workers.dev
-    udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_39
-    type: vless
-    server: 5.10.244.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
+    type: trojan
+    server: jpbgp.netvigor.cc
+    port: 19128
+    password: gcuCpQfaiVeDBdWG
+    sni: yazhou10.dynu.net
+    skip-cert-verify: false
+    tls: true
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_11
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
     tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime03.workers.dev
+    skip-cert-verify: false
+    udp: true
+  - name: 德国(yudou789.top 玉豆免费节点)_7
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_12
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_13
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_14
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_40
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_41
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: aes-128-gcm
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_15
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
   - name: 德国(yudou789.top 玉豆免费节点)_8
     type: vmess
@@ -855,216 +714,99 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_40
-    type: vless
-    server: 188.164.248.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
+  - name: 英国(yudou789.top 玉豆免费节点)_16
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
     tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_41
-    type: vless
-    server: 94.140.0.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
+    skip-cert-verify: false
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_42
-    type: vless
-    server: 213.219.247.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
+    type: ss
+    server: 212.192.15.225
+    port: 20129
+    cipher: aes-256-gcm
+    password: 7e1dd4c55bf85da5
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_17
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
     tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime26.workers.dev
+    skip-cert-verify: false
+    udp: true
+  - name: 英国(yudou789.top 玉豆免费节点)_18
+    type: vmess
+    server: 82.198.246.250
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_43
-    type: vless
-    server: 45.80.111.40
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime52.workers.dev
+    type: ss
+    server: 212.192.15.222
+    port: 8388
+    cipher: aes-256-gcm
+    password: oIu6zc7sYBef
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_44
-    type: vless
-    server: 89.117.112.30
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?ed=2560&https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime11.workers.dev
+    type: ss
+    server: 176.32.39.99
+    port: 40519
+    cipher: aes-256-gcm
+    password: 1a87017d0bf57f34
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_45
-    type: ss
-    server: 202.85.76.170
-    port: 13223
-    cipher: aes-128-gcm
-    password: JVrsLLN1tkN8oXZO
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6004
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_46
     type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_47
-    type: vless
-    server: 109.176.239.50
-    port: 8880
-    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-    network: ws
-    tls: false
-    ws-opts:
-      path: /?https://t.me/YouTube@小青科学网🇨🇳
-      headers:
-        Host: vms.lifetime03.workers.dev
+    type: ss
+    server: 195.133.2.2
+    port: 34898
+    cipher: chacha20-ietf-poly1305
+    password: v2LIewZzNUsIrqODr22FVc
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_48
     type: ss
-    server: hackney-latest-strike.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: XUMTygEM1jVYIvysXKqA5T
-    udp: true
-  - name: 香港(yudou789.top 玉豆免费节点)_6
-    type: vmess
-    server: 103.181.164.145
-    port: 54022
-    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
+    server: chengbai02.ascwt179.com
+    port: 13223
+    cipher: aes-128-gcm
+    password: JVrsLLN1tkN8oXZO
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_49
     type: vless
-    server: cdn.tzpro.xyz
-    port: 80
-    uuid: f2083aa4-f27d-43da-81cf-8bab31730400
-    network: ws
+    server: de-on-demand.not-a-projects.xyz
+    port: 47518
+    uuid: 25263c14-6cb5-499b-b462-dd498deecfe7
     tls: false
-    ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: germany.vipserver14.workers.dev
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_50
-    type: trojan
-    server: 104.21.40.34
-    port: 443
-    password: humanity
-    sni: www.gossipglove.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /assignment
-      headers:
-        Host: www.gossipglove.com
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_51
-    type: trojan
-    server: blackshadow.dpdns.org
-    port: 443
-    password: 2bcfbfba-b446-4ad5-93ad-72af9e008f61
-    sni: blackshadow.dpdns.org
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /195.123.218.174-443
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_52
-    type: trojan
-    server: jpbgp.netvigor.cc
-    port: 19128
-    password: gcuCpQfaiVeDBdWG
-    sni: yazhou10.dynu.net
-    skip-cert-verify: false
-    tls: true
-    udp: true
-  - name: 德国(yudou789.top 玉豆免费节点)_9
-    type: ss
-    server: hackney-latest-strike.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: XUMTygEM1jVYIvysXKqA5T
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_53
-    type: vless
-    server: 104.18.32.7
-    port: 443
-    uuid: 69d38faa-21a1-4d18-82cb-796a942c181b
-    network: ws
-    servername: sfsl.ardomains1.dpdns.org
-    tls: true
-    ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: sfsl.ardomains1.dpdns.org
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_54
-    type: trojan
-    server: 103.63.30.230
-    port: 443
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
-    udp: true
-  - name: 韩国(yudou789.top 玉豆免费节点)_3
-    type: vmess
-    server: yd4.ainivp.com
-    port: 33204
-    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /ray
-      headers:
-        Host: yd4.ainivp.com
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_55
-    type: vmess
-    server: v24.hdacd.com
-    port: 30824
-    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-    alterId: 2
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_56
     type: vless
     server: 104.16.239.205
     port: 80
@@ -1076,34 +818,31 @@ proxies:
       headers:
         Host: sfsl.ardomains1.dpdns.org
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_57
-    type: trojan
-    server: 2.56.204.246
-    port: 443
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
+  - name: 美国(yudou789.top 玉豆免费节点)_51
+    type: ss
+    server: r3mrcg001286ek2.cybervena.com
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_52
+    type: vmess
+    server: v9.hdacd.com
+    port: 30809
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
     skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_58
+  - name: 德国(yudou789.top 玉豆免费节点)_9
     type: ss
-    server: tinkered-pennies-puppies.freesocks.work
+    server: hackney-latest-strike.freesocks.work
     port: 443
     cipher: chacha20-ietf-poly1305
-    password: hbGrpfvNrJsUmKmPbR3iY2
+    password: XUMTygEM1jVYIvysXKqA5T
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_59
-    type: ss
-    server: tinkered-pennies-puppies.freesocks.work
-    port: 443
-    cipher: chacha20-ietf-poly1305
-    password: hbGrpfvNrJsUmKmPbR3iY2
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_60
+  - name: 美国(yudou789.top 玉豆免费节点)_53
     type: trojan
     server: 193.180.209.21
     port: 443
@@ -1116,7 +855,20 @@ proxies:
       headers:
         Host: vpn5.rnmcnm.com
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_61
+  - name: 美国(yudou789.top 玉豆免费节点)_54
+    type: trojan
+    server: 121.191.33.84
+    port: 30303
+    password: 433e785b-2077-47f7-a43d-985f63dd18d1
+    sni: vpn.rnmcnm.com
+    skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trojan
+      headers:
+        Host: vpn.rnmcnm.com
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_55
     type: vmess
     server: 103.181.164.145
     port: 54022
@@ -1126,25 +878,63 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 香港(yudou789.top 玉豆免费节点)_7
+  - name: 法国(yudou789.top 玉豆免费节点)
+    type: ss
+    server: 163.5.192.18
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: Sj2yu7qKPprUmPJoOCgN6q
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_56
     type: vmess
-    server: dotu-jpv1.kunlun03dns.com
-    port: 11121
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
+    server: v29.hdacd.com
+    port: 30829
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 韩国(yudou789.top 玉豆免费节点)_4
-    type: vmess
-    server: dotu-krv1.kunlun03dns.com
-    port: 11146
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
+  - name: 美国(yudou789.top 玉豆免费节点)_57
+    type: ss
+    server: hackney-latest-strike.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: XUMTygEM1jVYIvysXKqA5T
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_58
+    type: trojan
+    server: 121.154.96.50
+    port: 18000
+    password: 433e785b-2077-47f7-a43d-985f63dd18d1
+    sni: vpn.rnmcnm.com
     skip-cert-verify: false
+    tls: true
+    ws-opts:
+      path: /trojan
+      headers:
+        Host: vpn.rnmcnm.com
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_59
+    type: ss
+    server: tinkered-pennies-puppies.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: hbGrpfvNrJsUmKmPbR3iY2
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_60
+    type: ss
+    server: tinkered-pennies-puppies.freesocks.work
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: hbGrpfvNrJsUmKmPbR3iY2
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_61
+    type: ss
+    server: 51.254.128.106
+    port: 2083
+    cipher: aes-256-gcm
+    password: FjG3IPbny+0ZYU4/p1vULP84GcKpGoZpWKAay16VhIw=
     udp: true
   - name: 德国(yudou789.top 玉豆免费节点)_10
     type: vless
@@ -1158,103 +948,83 @@ proxies:
       headers:
         Host: vms.lifetime23.workers.dev
     udp: true
-  - name: 韩国(yudou789.top 玉豆免费节点)_5
-    type: vless
-    server: 104.26.5.134
-    port: 2096
-    uuid: 7f50ec42-4673-41e2-94be-ae6253909def
-    network: ws
-    servername: joey.freen1.de5.net
-    tls: true
-    ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: joey.freen1.de5.net
-    udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_62
-    type: trojan
-    server: www.gossipglove.com
-    port: 443
-    password: humanity
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /assignment
-    udp: true
-  - name: 韩国(yudou789.top 玉豆免费节点)_6
     type: vmess
-    server: dotu-krv1.kunlun03dns.com
-    port: 11145
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    server: 38.60.176.80
+    port: 52620
+    uuid: d60c7a89-40d9-4f09-e8f8-591932ce79ef
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
+    network: ws
+    ws-opts:
+      path: /8704a4ad
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_63
+    type: vless
+    server: 104.129.164.30
+    port: 8880
+    uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+    network: ws
+    tls: false
+    ws-opts:
+      path: /?https://t.me/YouTube@小青科学网🇨🇳
+      headers:
+        Host: vms.lifetime40.workers.dev
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_64
     type: trojan
-    server: blackshadow.dpdns.org
-    port: 443
-    password: 2bcfbfba-b446-4ad5-93ad-72af9e008f61
-    sni: blackshadow.dpdns.org
+    server: 211.76.176.98
+    port: 19128
+    password: gcuCpQfaiVeDBdWG
+    sni: yazhou10.dynu.net
     skip-cert-verify: false
     tls: true
-    ws-opts:
-      path: /195.123.218.174-443
-      headers:
-        Host: blackshadow.dpdns.org
     udp: true
-  - name: 新加坡(yudou789.top 玉豆免费节点)_3
+  - name: 美国(yudou789.top 玉豆免费节点)_65
+    type: vless
+    server: 185.255.95.247
+    port: 27265
+    uuid: 1f01e53a-f9d1-48a3-8b35-6f10b9be0736
+    network: ws
+    servername: 185.255.95.247
+    tls: false
+    ws-opts:
+      path: /ws
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_66
     type: vmess
-    server: dotu-sgv1.kunlun03dns.com
-    port: 11136
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
+    servername: <nil>
     udp: true
-  - name: 新加坡(yudou789.top 玉豆免费节点)_4
+  - name: 美国(yudou789.top 玉豆免费节点)_67
     type: vmess
-    server: yd3.ainivp.com
-    port: 33402
-    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
+    server: es.connfull.org
+    port: 2053
+    uuid: fd08f8fe-1521-4239-8a01-6d5d451a0edb
     alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /ray
-      headers:
-        Host: yd3.ainivp.com
     udp: true
-  - name: 日本(yudou789.top 玉豆免费节点)_1
+  - name: 美国(yudou789.top 玉豆免费节点)_68
     type: vmess
-    server: cu2.ainivp.com
-    port: 33203
-    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /ray
-      headers:
-        Host: cu2.ainivp.com
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_64
-    type: vmess
-    server: v9.hdacd.com
-    port: 30809
+    server: v29.hdacd.com
+    port: 30829
     uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
     alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_65
+  - name: 美国(yudou789.top 玉豆免费节点)_69
     type: vmess
     server: v4.hdacd.com
     port: 30804
@@ -1264,66 +1034,82 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_66
-    type: vless
-    server: 104.27.30.20
-    port: 443
-    uuid: 69d38faa-21a1-4d18-82cb-796a942c181b
-    network: ws
-    servername: sfsl.ardomains1.dpdns.org
-    tls: true
-    ws-opts:
-      path: /?ed=2048
-      headers:
-        Host: sfsl.ardomains1.dpdns.org
-    udp: true
-  - name: 韩国(yudou789.top 玉豆免费节点)_7
+  - name: 香港(yudou789.top 玉豆免费节点)_1
     type: vmess
-    server: dotu-krv1.kunlun03dns.com
-    port: 11143
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_67
-    type: trojan
-    server: 185.18.250.252
-    port: 443
-    password: humanity
-    sni: www.gossipglove.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /assignment
-      headers:
-        Host: www.gossipglove.com
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_68
-    type: vmess
-    server: 2a02:6ea0:d32f::f8fe:349b
-    port: 24202
-    uuid: b20a7042-70ff-4376-a79f-b68f9edb7519
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /github.com/Alvin9999-newpac/fanqiang
-    udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_69
-    type: vmess
-    server: dotu-usv1.kunlun03dns.com
-    port: 11129
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    server: 103.181.164.145
+    port: 51556
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
   - name: 美国(yudou789.top 玉豆免费节点)_70
+    type: ss
+    server: 45.140.169.244
+    port: 60156
+    cipher: aes-256-gcm
+    password: cfe685726eea2c4b
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_71
+    type: vmess
+    server: v4.hdacd.com
+    port: 30804
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_72
+    type: ss
+    server: 45.140.168.54
+    port: 30120
+    cipher: aes-256-gcm
+    password: 32c0ea6e823341a2
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_73
+    type: vless
+    server: 185.18.250.127
+    port: 2096
+    uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
+    network: ws
+    servername: 69565ce3109804e7813f98ee.mmdbay.blog
+    tls: true
+    ws-opts:
+      path: /graphql
+      headers:
+        Host: 69565ce3109804e7813f98ee.mmdbay.blog
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_74
+    type: ss
+    server: 45.140.169.216
+    port: 30129
+    cipher: aes-256-gcm
+    password: c5fcdf7829112cb4
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_75
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_76
+    type: vless
+    server: germany.samanidempire.org
+    port: 443
+    uuid: 21f1af13-f6e9-4483-8a17-a521a665b335
+    network: ws
+    servername: germany.samanidempire.org
+    tls: true
+    ws-opts:
+      path: /reteweef
+    udp: true
+  - name: 美国(yudou789.top 玉豆免费节点)_77
     type: vmess
     server: 2a02:6ea0:d32f::f8fe:349b
     port: 24202
@@ -1335,27 +1121,12 @@ proxies:
     network: ws
     ws-opts:
       path: /github.com/Alvin9999-newpac/fanqiang
-      headers:
-        Host: 2a02:6ea0:d32f::f8fe:349b
     udp: true
-  - name: 美国(yudou789.top 玉豆免费节点)_71
-    type: trojan
-    server: 39.108.133.242
-    port: 8443
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
-    udp: true
-  - name: 韩国(yudou789.top 玉豆免费节点)_8
+  - name: 美国(yudou789.top 玉豆免费节点)_78
     type: vmess
-    server: dotu-krv1.kunlun03dns.com
-    port: 11144
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
     alterId: 0
     cipher: auto
     tls: false
