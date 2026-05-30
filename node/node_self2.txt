@@ -1,148 +1,618 @@
 proxies:
+  - name: 台湾-youtube@资源分享师 01
+    type: vmess
+    server: ct3.ainivp.com
+    port: 33412
+    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: false
+    servername: ct3.ainivp.com
+    network: ws
+    ws-opts:
+      path: /ray
+      headers:
+        Host: ct3.ainivp.com
+    udp: true
+  - name: 台湾-youtube@资源分享师 02
+    type: vmess
+    server: ct3.ainivp.com
+    port: 33412
+    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: false
+    servername: ct3.ainivp.com
+    network: ws
+    ws-opts:
+      path: /ray
+      headers:
+        Host: ct3.ainivp.com
+    udp: true
+  - name: 台湾-youtube@资源分享师 03
+    type: vmess
+    server: ct3.ainivp.com
+    port: 33412
+    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: false
+    servername: ct3.ainivp.com
+    network: ws
+    ws-opts:
+      path: /ray
+      headers:
+        Host: ct3.ainivp.com
+    udp: true
+  - name: 加拿大-youtube@资源分享师 01
+    type: trojan
+    server: 104.17.121.8
+    port: 443
+    password: Mitivpn
+    sni: panel.hitgram.ir
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: /?ed=mitivpn
+      headers:
+        Host: panel.hitgram.ir
+    udp: true
+  - name: 加拿大-youtube@资源分享师 02
+    type: vless
+    server: www.speedtest.net
+    port: 8080
+    uuid: f6314e1e-8c40-4972-b1e2-de25d37611a7
+    network: http
+    tls: false
+    http-opts:
+      path:
+        - /
+      headers:
+        Host:
+          - ai.heroitweb.ir
+    udp: true
+  - name: 加拿大-youtube@资源分享师 03
+    type: vless
+    server: www.speedtest.net
+    port: 8080
+    uuid: f6314e1e-8c40-4972-b1e2-de25d37611a7
+    network: http
+    tls: false
+    http-opts:
+      path:
+        - /
+      headers:
+        Host:
+          - ai.heroitweb.ir
+    udp: true
+  - name: 加拿大-youtube@资源分享师 04
+    type: trojan
+    server: 104.17.121.8
+    port: 443
+    password: Mitivpn
+    sni: panel.hitgram.ir
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: /?ed=mitivpn
+      headers:
+        Host: panel.hitgram.ir
+    udp: true
+  - name: 加拿大-youtube@资源分享师 05
+    type: vless
+    server: www.speedtest.net
+    port: 8080
+    uuid: f6314e1e-8c40-4972-b1e2-de25d37611a7
+    network: http
+    tls: false
+    http-opts:
+      path:
+        - /
+      headers:
+        Host:
+          - ai.heroitweb.ir
+    udp: true
+  - name: 加拿大-youtube@资源分享师 06
+    type: vless
+    server: www.speedtest.net
+    port: 8080
+    uuid: f6314e1e-8c40-4972-b1e2-de25d37611a7
+    network: http
+    tls: false
+    http-opts:
+      path:
+        - /
+      headers:
+        Host:
+          - ai.heroitweb.ir
+    udp: true
+  - name: 加拿大-youtube@资源分享师 07
+    type: trojan
+    server: 104.17.121.8
+    port: 443
+    password: Mitivpn
+    sni: panel.hitgram.ir
+    alpn:
+      - h2
+      - http/1.1
+    skip-cert-verify: true
+    tls: true
+    ws-opts:
+      path: /?ed=mitivpn
+      headers:
+        Host: panel.hitgram.ir
+    udp: true
+  - name: 加拿大-youtube@资源分享师 08
+    type: vless
+    server: www.speedtest.net
+    port: 8080
+    uuid: f6314e1e-8c40-4972-b1e2-de25d37611a7
+    network: http
+    tls: false
+    http-opts:
+      path:
+        - /
+      headers:
+        Host:
+          - ai.heroitweb.ir
+    udp: true
+  - name: 加拿大-youtube@资源分享师 09
+    type: vless
+    server: www.speedtest.net
+    port: 8080
+    uuid: f6314e1e-8c40-4972-b1e2-de25d37611a7
+    network: http
+    tls: false
+    http-opts:
+      path:
+        - /
+      headers:
+        Host:
+          - ai.heroitweb.ir
+    udp: true
   - name: 香港-youtube@资源分享师 01
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 18006
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: douyu.com
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 47909
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: is.01.naiun.bilibili.com
     skip-cert-verify: true
     tls: true
     udp: true
   - name: 香港-youtube@资源分享师 02
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 18004
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: zhifubao.com
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 45553
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: ch.01.naiun.bilibili.com
     skip-cert-verify: true
     tls: true
     udp: true
   - name: 香港-youtube@资源分享师 03
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 18003
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: douyin.com
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 48697
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: gh.01.naiun.bilibili.com
     skip-cert-verify: true
     tls: true
     udp: true
   - name: 香港-youtube@资源分享师 04
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 18001
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: sina.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 香港-youtube@资源分享师 05
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 18008
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: zhengda.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 香港-youtube@资源分享师 06
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 18002
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: 58tc.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 香港-youtube@资源分享师 07
     type: vmess
-    server: dotu-hkv1.kunlun03dns.com
-    port: 11105
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
+    server: 103.181.164.145
+    port: 51556
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
+  - name: 香港-youtube@资源分享师 05
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 香港-youtube@资源分享师 06
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 47909
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: is.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: true
+    udp: true
+  - name: 香港-youtube@资源分享师 07
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 45553
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: ch.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: true
+    udp: true
   - name: 香港-youtube@资源分享师 08
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 44592
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: sina.com
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 48697
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: gh.01.naiun.bilibili.com
     skip-cert-verify: true
     tls: true
     udp: true
   - name: 香港-youtube@资源分享师 09
     type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6001
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    server: 103.181.164.145
+    port: 51556
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
     udp: true
   - name: 香港-youtube@资源分享师 10
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 19003
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: hk0ddddd1.feitu188.com
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 香港-youtube@资源分享师 11
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 47909
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: is.01.naiun.bilibili.com
     skip-cert-verify: true
     tls: true
     udp: true
-  - name: 香港-youtube@资源分享师 11
-    type: vmess
-    server: dotu-hkv1.kunlun03dns.com
-    port: 11101
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
   - name: 香港-youtube@资源分享师 12
-    type: vmess
-    server: dotu-hkv1.kunlun03dns.com
-    port: 11101
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 45553
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: ch.01.naiun.bilibili.com
+    skip-cert-verify: true
+    tls: true
     udp: true
   - name: 香港-youtube@资源分享师 13
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 18009
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: bilibili.com
+    type: trojan
+    server: 90081bb25c.node.tro.cac.cab
+    port: 48697
+    password: 4f4d1167-ef14-4304-9bce-0740472503ef
+    sni: gh.01.naiun.bilibili.com
     skip-cert-verify: true
     tls: true
     udp: true
   - name: 香港-youtube@资源分享师 14
-    type: vless
-    server: hk09zl.lovetutujiejie.com
-    port: 443
-    uuid: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    servername: php.net
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: ios
-    reality-opts:
-      public-key: ZRwvSxVj_M-Y-DK8fa_UdHf3VWMn9b8EABZKEmd8pUs
-      short-id: ab69
+    type: vmess
+    server: 103.181.164.145
+    port: 51556
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
   - name: 香港-youtube@资源分享师 15
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 19005
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: hk0ddddd1.feitu188.com
-    skip-cert-verify: true
-    tls: true
+    type: vmess
+    server: 103.181.164.145
+    port: 54022
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
-  - name: 香港-youtube@资源分享师 16
+  - name: 捷克-youtube@资源分享师 01
+    type: vless
+    server: 95.85.228.146
+    port: 8443
+    uuid: a67e3045-626c-42c9-8cc0-a5afa6b18b05
+    servername: io.ozone.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: A9jwrodyycJJV-apFQ91_rrh1vfJ_hSzZGNP9GBPGCM
+      short-id: 92d0c4089b6c1da3
+    udp: true
+  - name: 捷克-youtube@资源分享师 02
+    type: vless
+    server: 95.85.228.146
+    port: 8443
+    uuid: a67e3045-626c-42c9-8cc0-a5afa6b18b05
+    servername: io.ozone.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: A9jwrodyycJJV-apFQ91_rrh1vfJ_hSzZGNP9GBPGCM
+      short-id: 92d0c4089b6c1da3
+    udp: true
+  - name: 捷克-youtube@资源分享师 03
+    type: vless
+    server: 95.85.228.146
+    port: 8443
+    uuid: a67e3045-626c-42c9-8cc0-a5afa6b18b05
+    servername: io.ozone.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: A9jwrodyycJJV-apFQ91_rrh1vfJ_hSzZGNP9GBPGCM
+      short-id: 92d0c4089b6c1da3
+    udp: true
+  - name: 德国-youtube@资源分享师 01
+    type: vless
+    server: 1.lapis-lazuli.tech
+    port: 443
+    uuid: 0dd339d3-0b51-4582-94ec-ffd2397be1ab
+    servername: www.samsung.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 04mVXhKLy-N0tzEghrxuMJTQaVdvBxVCtGaJq8qNcCk
+      short-id: 4f0a
+    udp: true
+  - name: 德国-youtube@资源分享师 02
+    type: vless
+    server: 91.107.133.225
+    port: 443
+    uuid: c0506c1d-c26c-496f-a573-9c8f3958a9aa
+    tls: false
+    udp: true
+  - name: 德国-youtube@资源分享师 03
+    type: vless
+    server: 132.243.231.122
+    port: 8443
+    uuid: 7625adbb-52f7-4ff4-95f8-677471071a77
+    servername: io.ozone.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: A9jwrodyycJJV-apFQ91_rrh1vfJ_hSzZGNP9GBPGCM
+      short-id: 92d0c4089b6c1da3
+    udp: true
+  - name: 德国-youtube@资源分享师 04
+    type: vless
+    server: 178.215.238.148
+    port: 8443
+    uuid: 21c1132b-068c-46fb-880e-3268f6a30e7f
+    servername: eh.vk.com
+    tls: true
+    reality-opts:
+      public-key: Crjd0I6hcasRXZcfNf7cs-YtJLpQ8u-t1CbwHIDAciU
+      short-id: 478dc6
+    udp: true
+  - name: 德国-youtube@资源分享师 05
+    type: vless
+    server: saas.sin.fan
+    port: 443
+    uuid: 58225ed2-9017-4204-8852-1b5cc1311fb8
+    encryption: mlkem768x25519plus.native.0rtt.bgqmvppyqaHyHPHZXMTlM49okx_O5AWML7IZkg1UZSs
+    network: http
+    servername: 1-cloudflare.lapis-lazuli.tech
+    tls: true
+    client-fingerprint: chrome
+    http-opts:
+      path:
+        - /c544c1d5248bf014e3a8
+    udp: true
+  - name: 德国-youtube@资源分享师 06
+    type: vless
+    server: 1.lapis-lazuli.tech
+    port: 443
+    uuid: 0dd339d3-0b51-4582-94ec-ffd2397be1ab
+    servername: www.samsung.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 04mVXhKLy-N0tzEghrxuMJTQaVdvBxVCtGaJq8qNcCk
+      short-id: 4f0a
+    udp: true
+  - name: 德国-youtube@资源分享师 07
+    type: vless
+    server: 91.107.133.225
+    port: 443
+    uuid: c0506c1d-c26c-496f-a573-9c8f3958a9aa
+    tls: false
+    udp: true
+  - name: 德国-youtube@资源分享师 08
+    type: vless
+    server: 132.243.231.122
+    port: 8443
+    uuid: 7625adbb-52f7-4ff4-95f8-677471071a77
+    servername: io.ozone.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: A9jwrodyycJJV-apFQ91_rrh1vfJ_hSzZGNP9GBPGCM
+      short-id: 92d0c4089b6c1da3
+    udp: true
+  - name: 德国-youtube@资源分享师 09
+    type: vless
+    server: 178.215.238.148
+    port: 8443
+    uuid: 21c1132b-068c-46fb-880e-3268f6a30e7f
+    servername: eh.vk.com
+    tls: true
+    reality-opts:
+      public-key: Crjd0I6hcasRXZcfNf7cs-YtJLpQ8u-t1CbwHIDAciU
+      short-id: 478dc6
+    udp: true
+  - name: 德国-youtube@资源分享师 10
+    type: vless
+    server: saas.sin.fan
+    port: 443
+    uuid: 58225ed2-9017-4204-8852-1b5cc1311fb8
+    encryption: mlkem768x25519plus.native.0rtt.bgqmvppyqaHyHPHZXMTlM49okx_O5AWML7IZkg1UZSs
+    network: http
+    servername: 1-cloudflare.lapis-lazuli.tech
+    tls: true
+    client-fingerprint: chrome
+    http-opts:
+      path:
+        - /c544c1d5248bf014e3a8
+    udp: true
+  - name: 德国-youtube@资源分享师 11
+    type: vless
+    server: 1.lapis-lazuli.tech
+    port: 443
+    uuid: 0dd339d3-0b51-4582-94ec-ffd2397be1ab
+    servername: www.samsung.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 04mVXhKLy-N0tzEghrxuMJTQaVdvBxVCtGaJq8qNcCk
+      short-id: 4f0a
+    udp: true
+  - name: 德国-youtube@资源分享师 12
+    type: vless
+    server: 91.107.133.225
+    port: 443
+    uuid: c0506c1d-c26c-496f-a573-9c8f3958a9aa
+    tls: false
+    udp: true
+  - name: 德国-youtube@资源分享师 13
+    type: vless
+    server: 132.243.231.122
+    port: 8443
+    uuid: 7625adbb-52f7-4ff4-95f8-677471071a77
+    servername: io.ozone.ru
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: A9jwrodyycJJV-apFQ91_rrh1vfJ_hSzZGNP9GBPGCM
+      short-id: 92d0c4089b6c1da3
+    udp: true
+  - name: 德国-youtube@资源分享师 14
+    type: vless
+    server: 178.215.238.148
+    port: 8443
+    uuid: 21c1132b-068c-46fb-880e-3268f6a30e7f
+    servername: eh.vk.com
+    tls: true
+    reality-opts:
+      public-key: Crjd0I6hcasRXZcfNf7cs-YtJLpQ8u-t1CbwHIDAciU
+      short-id: 478dc6
+    udp: true
+  - name: 德国-youtube@资源分享师 15
+    type: vless
+    server: saas.sin.fan
+    port: 443
+    uuid: 58225ed2-9017-4204-8852-1b5cc1311fb8
+    encryption: mlkem768x25519plus.native.0rtt.bgqmvppyqaHyHPHZXMTlM49okx_O5AWML7IZkg1UZSs
+    network: http
+    servername: 1-cloudflare.lapis-lazuli.tech
+    tls: true
+    client-fingerprint: chrome
+    http-opts:
+      path:
+        - /c544c1d5248bf014e3a8
+    udp: true
+  - name: 英国-youtube@资源分享师 01
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国-youtube@资源分享师 02
+    type: vless
+    server: shop.harddahir.cyou
+    port: 443
+    uuid: 5bd36fef-18ac-4d69-8080-25df6c9b369e
+    servername: www.hollywoodreporter.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: SqNAL7L50tQTHhkvN4dT3O-DqdI1qan5iwg6ai4U_hY
+      short-id: a3a5df265540
+    udp: true
+  - name: 英国-youtube@资源分享师 03
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国-youtube@资源分享师 04
+    type: vless
+    server: shop.harddahir.cyou
+    port: 443
+    uuid: 5bd36fef-18ac-4d69-8080-25df6c9b369e
+    servername: www.hollywoodreporter.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: SqNAL7L50tQTHhkvN4dT3O-DqdI1qan5iwg6ai4U_hY
+      short-id: a3a5df265540
+    udp: true
+  - name: 英国-youtube@资源分享师 05
+    type: vmess
+    server: 82.198.246.214
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 英国-youtube@资源分享师 06
+    type: vless
+    server: shop.harddahir.cyou
+    port: 443
+    uuid: 5bd36fef-18ac-4d69-8080-25df6c9b369e
+    servername: www.hollywoodreporter.com
+    tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: SqNAL7L50tQTHhkvN4dT3O-DqdI1qan5iwg6ai4U_hY
+      short-id: a3a5df265540
+    udp: true
+  - name: 美国-youtube@资源分享师 01
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 美国-youtube@资源分享师 02
     type: vmess
     server: gtm-sg-cc54q7d1q01.365cloud0285.com
     port: 6001
@@ -152,601 +622,131 @@ proxies:
     tls: false
     skip-cert-verify: false
     udp: true
-  - name: 香港-youtube@资源分享师 17
-    type: vmess
-    server: dotu-jpv1.kunlun03dns.com
-    port: 11120
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 香港-youtube@资源分享师 18
-    type: vmess
-    server: dotu-usv1.kunlun03dns.com
-    port: 11130
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 香港-youtube@资源分享师 19
-    type: vmess
-    server: dotu-jpv1.kunlun03dns.com
-    port: 11120
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 香港-youtube@资源分享师 20
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 18010
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: huya.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 香港-youtube@资源分享师 21
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 19001
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: hk0ddddd1.feitu188.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 香港-youtube@资源分享师 22
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 19004
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: hk0ddddd1.feitu188.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 香港-youtube@资源分享师 23
+  - name: 美国-youtube@资源分享师 03
     type: vless
-    server: hk08zl.lovetutujiejie.com
-    port: 443
-    uuid: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    servername: php.net
+    server: r1.mizulina.top
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
     tls: true
     flow: xtls-rprx-vision
-    client-fingerprint: ios
-    reality-opts:
-      public-key: 3EKWkVUF95JEeENLJKR086rumgLxdQcKE1HM06Xh8EQ
-      short-id: a6ef52b9
-    udp: true
-  - name: 美国-youtube@资源分享师 01
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 49009
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: shipin.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 美国-youtube@资源分享师 02
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 49006
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: sanxing.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 美国-youtube@资源分享师 03
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 49010
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: eleme.com
-    skip-cert-verify: true
-    tls: true
+    client-fingerprint: edge
     udp: true
   - name: 美国-youtube@资源分享师 04
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 49008
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: uu.com
-    skip-cert-verify: true
-    tls: true
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
   - name: 美国-youtube@资源分享师 05
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 49001
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: dazhongdianping.com
-    skip-cert-verify: true
-    tls: true
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6001
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
   - name: 美国-youtube@资源分享师 06
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 49005
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: pinduoduo.com
-    skip-cert-verify: true
+    type: vless
+    server: r1.mizulina.top
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
     tls: true
+    flow: xtls-rprx-vision
+    client-fingerprint: edge
     udp: true
   - name: 美国-youtube@资源分享师 07
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 49003
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: dongqiudi.com
-    skip-cert-verify: true
-    tls: true
+    type: vmess
+    server: 82.198.246.37
+    port: 180
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
     udp: true
   - name: 美国-youtube@资源分享师 08
     type: vmess
-    server: planb.mojcn.com
-    port: 16648
-    uuid: 24e37e6e-7e01-4f68-afea-28fb14a47aef
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6001
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: false
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: 08071ec6f38bfb263ee89b1bb0c3ca1b.mobgslb.tbcache.com
     udp: true
   - name: 美国-youtube@资源分享师 09
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6001
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国-youtube@资源分享师 10
     type: vless
-    server: 63.141.128.5
-    port: 2083
-    uuid: 41f37ced-2021-4111-93a8-82d57ff2eb5b
-    network: ws
-    servername: mzaxmc.lizardshop.org
-    tls: true
-    client-fingerprint: chrome
-    ws-opts:
-      path: /?ed
-    udp: true
-  - name: 美国-youtube@资源分享师 11
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6004
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国-youtube@资源分享师 12
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 49007
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: xianyu.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 美国-youtube@资源分享师 13
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6004
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国-youtube@资源分享师 14
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6001
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国-youtube@资源分享师 15
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 49002
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: xinlang.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 美国-youtube@资源分享师 16
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6001
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国-youtube@资源分享师 17
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6001
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国-youtube@资源分享师 18
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6004
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 美国-youtube@资源分享师 19
-    type: vless
-    server: 64.186.237.75
-    port: 8443
-    uuid: 26524cce-d514-4014-a426-365fb266a14d
-    network: ws
-    servername: i8dxb.media-cdn-us.chinav.indevs.in
-    tls: true
-    ws-opts:
-      path: /danfeng-lo9ew8-vfksib-hwrl-84fg5mvl
-      headers:
-        Host: i8dxb.media-cdn-us.chinav.indevs.in
-    udp: true
-  - name: 美国-youtube@资源分享师 20
-    type: vless
-    server: 104.21.44.32
-    port: 80
-    uuid: 5eb1cee0-dca8-4018-a667-2d2184975799
-    network: ws
-    tls: false
-    ws-opts:
-      path: /
-      headers:
-        Host: v2configlab.v2configlab14.workers.dev
-    udp: true
-  - name: 日本-youtube@资源分享师 01
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 39008
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: qqyinyue.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 日本-youtube@资源分享师 02
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 39002
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: xinlang.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 日本-youtube@资源分享师 03
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 39005
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: yahu.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 日本-youtube@资源分享师 04
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6003
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 日本-youtube@资源分享师 05
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6003
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 日本-youtube@资源分享师 06
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 39001
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: Apple.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 日本-youtube@资源分享师 07
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 39004
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: baidu.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 日本-youtube@资源分享师 08
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 39007
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: weixin.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 日本-youtube@资源分享师 09
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 39006
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: qq.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 日本-youtube@资源分享师 10
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 39010
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: jingdong.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 日本-youtube@资源分享师 11
-    type: vmess
-    server: dotu-jpv1.kunlun03dns.com
-    port: 11120
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 日本-youtube@资源分享师 12
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 39009
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: yuanbo.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 新加坡-youtube@资源分享师 01
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 29006
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: huya.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 新加坡-youtube@资源分享师 02
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 29004
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: apple.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 新加坡-youtube@资源分享师 03
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 29008
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: weibo.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 新加坡-youtube@资源分享师 04
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 29002
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: baidu-csdn.net
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 新加坡-youtube@资源分享师 05
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 29010
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: dongqiudi.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 新加坡-youtube@资源分享师 06
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 29005
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: sina8791.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 新加坡-youtube@资源分享师 07
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6004
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 新加坡-youtube@资源分享师 08
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 29009
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: oppo.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 新加坡-youtube@资源分享师 09
-    type: vmess
-    server: gtm-sg-cc54q7d1q01.365cloud0285.com
-    port: 6004
-    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 新加坡-youtube@资源分享师 10
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 29007
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: dongchedi.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 新加坡-youtube@资源分享师 11
-    type: vmess
-    server: yd3.ainivp.com
-    port: 33402
-    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: false
-    servername: yd3.ainivp.com
-    network: ws
-    ws-opts:
-      path: /ray
-      headers:
-        Host: yd3.ainivp.com
-    udp: true
-  - name: 新加坡-youtube@资源分享师 12
-    type: vmess
-    server: yd3.ainivp.com
-    port: 33402
-    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: false
-    servername: yd3.ainivp.com
-    network: ws
-    ws-opts:
-      path: /ray
-      headers:
-        Host: yd3.ainivp.com
-    udp: true
-  - name: 加拿大-youtube@资源分享师 01
-    type: vless
-    server: 151.101.1.57
-    port: 80
-    uuid: InternetAzadRobot
-    network: http
-    tls: false
-    http-opts:
-      path:
-        - /login
-      headers:
-        Host:
-          - shangulin.global.ssl.fastly.net
-    udp: true
-  - name: 加拿大-youtube@资源分享师 02
-    type: vless
-    server: 151.101.1.57
-    port: 80
-    uuid: InternetAzadRobot
-    network: http
-    tls: false
-    http-opts:
-      path:
-        - /login
-      headers:
-        Host:
-          - shangulin.global.ssl.fastly.net
-    udp: true
-  - name: 加拿大-youtube@资源分享师 03
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 60026
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: qq.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 芬兰-youtube@资源分享师 01
-    type: vless
-    server: 185.18.250.127
-    port: 2096
-    uuid: 2ee26119-94e5-40b4-ba3a-16354021b600
-    network: ws
-    servername: 69565ce3109804e7813f98ee.mmdbay.blog
-    tls: true
-    ws-opts:
-      path: /graphql
-      headers:
-        Host: 69565ce3109804e7813f98ee.mmdbay.blog
-    udp: true
-  - name: 芬兰-youtube@资源分享师 02
-    type: ss
-    server: 109.107.182.229
-    port: 51544
-    cipher: chacha20-ietf-poly1305
-    password: pMZgtJEakEyHUSpe8a16ec
-    udp: true
-  - name: 芬兰-youtube@资源分享师 03
-    type: vless
-    server: 31.76.120.162
-    port: 443
-    uuid: 05e9d254-8ea8-4097-9450-d4aefc44bd7e
-    servername: www.sony.com
+    server: r1.mizulina.top
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
     tls: true
     flow: xtls-rprx-vision
-    client-fingerprint: random
-    reality-opts:
-      public-key: MBkIKCORF_f5gqwnugFO7K4HUR8HAKPUuYVIarrQNU0
-      short-id: bfc5
+    client-fingerprint: edge
     udp: true
-  - name: 芬兰-youtube@资源分享师 04
+  - name: 芬兰-youtube@资源分享师 01
     type: ss
     server: 195.133.2.2
     port: 34898
     cipher: chacha20-ietf-poly1305
-    password: sbJZP5jEcWVgNfVG6sH76z
+    password: v2LIewZzNUsIrqODr22FVc
     udp: true
-  - name: 越南-youtube@资源分享师 01
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 60020
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: python.com
-    skip-cert-verify: true
-    tls: true
+  - name: 芬兰-youtube@资源分享师 02
+    type: vless
+    server: 193.233.23.121
+    port: 40611
+    uuid: f5a25ee5-ff24-41b0-80e8-ccafdc866614
+    tls: false
+    udp: true
+  - name: 芬兰-youtube@资源分享师 03
+    type: ss
+    server: 195.133.2.2
+    port: 34898
+    cipher: chacha20-ietf-poly1305
+    password: v2LIewZzNUsIrqODr22FVc
+    udp: true
+  - name: 芬兰-youtube@资源分享师 04
+    type: vless
+    server: 193.233.23.121
+    port: 40611
+    uuid: f5a25ee5-ff24-41b0-80e8-ccafdc866614
+    tls: false
+    udp: true
+  - name: 芬兰-youtube@资源分享师 05
+    type: ss
+    server: 195.133.2.2
+    port: 34898
+    cipher: chacha20-ietf-poly1305
+    password: v2LIewZzNUsIrqODr22FVc
+    udp: true
+  - name: 芬兰-youtube@资源分享师 06
+    type: vless
+    server: 193.233.23.121
+    port: 40611
+    uuid: f5a25ee5-ff24-41b0-80e8-ccafdc866614
+    tls: false
     udp: true
   - name: 俄罗斯-youtube@资源分享师 01
+    type: vless
+    server: 77.73.238.191
+    port: 16622
+    uuid: f2e9df1b-e0ba-4b37-a301-6aab8662c926
+    servername: yahoo.com
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: E5N_ckakvqgTOjiQ6Rmuwz1fchiT1-J3tH4cbzcH_GQ
+      short-id: 1c01d60ea915
+    udp: true
+  - name: 俄罗斯-youtube@资源分享师 02
     type: vless
     server: r1.mizulina.top
     port: 22231
@@ -755,21 +755,14 @@ proxies:
     tls: true
     client-fingerprint: edge
     udp: true
-  - name: 俄罗斯-youtube@资源分享师 02
-    type: ss
-    server: 84.54.44.54
-    port: 11270
-    cipher: chacha20-ietf-poly1305
-    password: hcxv0CvT14Zki4b1p1J9nE
-    udp: true
   - name: 俄罗斯-youtube@资源分享师 03
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 60016
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: jd.com
-    skip-cert-verify: true
+    type: vless
+    server: 85.234.114.53
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
     tls: true
+    client-fingerprint: edge
     udp: true
   - name: 俄罗斯-youtube@资源分享师 04
     type: vless
@@ -783,13 +776,15 @@ proxies:
     udp: true
   - name: 俄罗斯-youtube@资源分享师 05
     type: vless
-    server: r1.mizulina.top
-    port: 22231
-    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
-    servername: r1.mizulina.top
+    server: 77.73.238.191
+    port: 16622
+    uuid: f2e9df1b-e0ba-4b37-a301-6aab8662c926
+    servername: yahoo.com
     tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: edge
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: E5N_ckakvqgTOjiQ6Rmuwz1fchiT1-J3tH4cbzcH_GQ
+      short-id: 1c01d60ea915
     udp: true
   - name: 俄罗斯-youtube@资源分享师 06
     type: vless
@@ -798,23 +793,21 @@ proxies:
     uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
     servername: r1.mizulina.top
     tls: true
-    flow: xtls-rprx-vision
     client-fingerprint: edge
     udp: true
   - name: 俄罗斯-youtube@资源分享师 07
     type: vless
     server: 85.234.114.53
-    port: 443
+    port: 22231
     uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
     servername: r1.mizulina.top
     tls: true
-    flow: xtls-rprx-vision
     client-fingerprint: edge
     udp: true
   - name: 俄罗斯-youtube@资源分享师 08
     type: vless
-    server: r1.mizulina.top
-    port: 22231
+    server: 85.234.114.53
+    port: 443
     uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
     servername: r1.mizulina.top
     tls: true
@@ -823,280 +816,221 @@ proxies:
     udp: true
   - name: 俄罗斯-youtube@资源分享师 09
     type: vless
-    server: 85.234.114.53
-    port: 443
+    server: 77.73.238.191
+    port: 16622
+    uuid: f2e9df1b-e0ba-4b37-a301-6aab8662c926
+    servername: yahoo.com
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: E5N_ckakvqgTOjiQ6Rmuwz1fchiT1-J3tH4cbzcH_GQ
+      short-id: 1c01d60ea915
+    udp: true
+  - name: 俄罗斯-youtube@资源分享师 10
+    type: vless
+    server: r1.mizulina.top
+    port: 22231
     uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
     servername: r1.mizulina.top
     tls: true
     client-fingerprint: edge
     udp: true
-  - name: 泰国-youtube@资源分享师 01
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 60024
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: 360.cn
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 荷兰-youtube@资源分享师 01
+  - name: 俄罗斯-youtube@资源分享师 11
     type: vless
-    server: 144.31.30.131
-    port: 8443
-    uuid: 301a4309-0f4d-42bf-a057-7d60c7a73259
-    servername: eh.vk.com
+    server: 85.234.114.53
+    port: 22231
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
     tls: true
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: -5-QemzFc7ddcsXFtVEn1ciZmhkdxjnBPmhnqYPJEzM
-      short-id: 18730e64df45
+    client-fingerprint: edge
     udp: true
-  - name: 荷兰-youtube@资源分享师 02
+  - name: 俄罗斯-youtube@资源分享师 12
     type: vless
-    server: 144.31.30.131
-    port: 8443
-    uuid: 301a4309-0f4d-42bf-a057-7d60c7a73259
-    servername: eh.vk.com
-    tls: true
-    reality-opts:
-      public-key: -5-QemzFc7ddcsXFtVEn1ciZmhkdxjnBPmhnqYPJEzM
-      short-id: 18730e64df45
-    udp: true
-  - name: 荷兰-youtube@资源分享师 03
-    type: vless
-    server: 37.49.225.189
+    server: 85.234.114.53
     port: 443
-    uuid: 01ea3b87-b7b1-4aef-b24a-9c43fbd3b26f
-    servername: sub.sbrf-cdn342.ru
-    tls: true
-    client-fingerprint: chrome
-    udp: true
-  - name: 荷兰-youtube@资源分享师 04
-    type: vless
-    server: 37.49.225.189
-    port: 443
-    uuid: 01ea3b87-b7b1-4aef-b24a-9c43fbd3b26f
-    servername: sub.sbrf-cdn342.ru
+    uuid: afcac633-0e1a-46c3-bef2-cc01cc0097c8
+    servername: r1.mizulina.top
     tls: true
     flow: xtls-rprx-vision
+    client-fingerprint: edge
     udp: true
-  - name: 德国-youtube@资源分享师 01
-    type: vless
-    server: 178.215.238.148
-    port: 8443
-    uuid: 21c1132b-068c-46fb-880e-3268f6a30e7f
-    servername: eh.vk.com
-    tls: true
-    reality-opts:
-      public-key: Crjd0I6hcasRXZcfNf7cs-YtJLpQ8u-t1CbwHIDAciU
-      short-id: 478dc6
-    udp: true
-  - name: 德国-youtube@资源分享师 02
-    type: vless
-    server: dey.lnmarketplace.net
-    port: 443
-    uuid: 3536e1fa-0850-44d1-b123-925ce12476cf
-    network: http
-    servername: dey.lnmarketplace.net
-    tls: true
-    client-fingerprint: chrome
-    http-opts:
-      path:
-        - /kavir
-      headers:
-        Host:
-          - dey.lnmarketplace.net
-    udp: true
-  - name: 德国-youtube@资源分享师 03
-    type: vless
-    server: de.connfull.org
-    port: 8443
-    uuid: e0021a91-e53a-4757-96fc-912c7c830721
-    servername: de.connfull.org
-    tls: true
-    udp: true
-  - name: 德国-youtube@资源分享师 04
-    type: vless
-    server: de-on-demand.not-a-projects.xyz
-    port: 47518
-    uuid: 25263c14-6cb5-499b-b462-dd498deecfe7
-    tls: false
-    udp: true
-  - name: 德国-youtube@资源分享师 05
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 60012
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: alibaba.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 德国-youtube@资源分享师 06
-    type: vless
-    server: 87.120.126.205
-    port: 443
-    uuid: 91e120bc-159a-4390-b4e1-197b19602ea0
-    servername: sub.sbrf-cdn342.ru
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: qq
-    udp: true
-  - name: 德国-youtube@资源分享师 07
-    type: vless
-    server: 87.120.93.240
-    port: 443
-    uuid: 91e120bc-159a-4390-b4e1-197b19602ea0
-    servername: sub.sbrf-cdn342.ru
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    udp: true
-  - name: 德国-youtube@资源分享师 08
-    type: vless
-    server: 87.120.93.243
-    port: 443
-    uuid: 91e120bc-159a-4390-b4e1-197b19602ea0
-    servername: sub.sbrf-cdn342.ru
-    tls: true
-    flow: xtls-rprx-vision
-    udp: true
-  - name: 德国-youtube@资源分享师 09
-    type: vless
-    server: 87.120.126.205
-    port: 443
-    uuid: 91e120bc-159a-4390-b4e1-197b19602ea0
-    servername: sub.sbrf-cdn342.ru
-    tls: true
-    flow: xtls-rprx-vision
-    udp: true
-  - name: 挪威-youtube@资源分享师 01
-    type: trojan
-    server: 125.7.24.251
-    port: 443
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
-    udp: true
-  - name: 挪威-youtube@资源分享师 02
-    type: trojan
-    server: 39.108.133.242
-    port: 8443
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
-    udp: true
-  - name: 挪威-youtube@资源分享师 03
-    type: trojan
-    server: 103.63.30.230
-    port: 443
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
-    udp: true
-  - name: 挪威-youtube@资源分享师 04
-    type: trojan
-    server: 103.45.245.208
+  - name: 西班牙-youtube@资源分享师 01
+    type: vmess
+    server: es.connfull.org
     port: 2053
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
-    skip-cert-verify: false
+    uuid: fd08f8fe-1521-4239-8a01-6d5d451a0edb
+    alterId: 0
+    cipher: auto
     tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
-    udp: true
-  - name: 挪威-youtube@资源分享师 05
-    type: trojan
-    server: 104.143.0.117
-    port: 8443
-    password: 433e785b-2077-47f7-a43d-985f63dd18d1
-    sni: vpn.rnmcnm.com
     skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /trojan
+    servername: es.connfull.org
     udp: true
-  - name: 挪威-youtube@资源分享师 06
-    type: trojan
-    server: 104.152.48.205
+  - name: 西班牙-youtube@资源分享师 02
+    type: vmess
+    server: es.connfull.org
+    port: 2053
+    uuid: fd08f8fe-1521-4239-8a01-6d5d451a0edb
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: false
+    servername: es.connfull.org
+    udp: true
+  - name: 西班牙-youtube@资源分享师 03
+    type: vmess
+    server: es.connfull.org
+    port: 2053
+    uuid: fd08f8fe-1521-4239-8a01-6d5d451a0edb
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: false
+    servername: es.connfull.org
+    udp: true
+  - name: 法国-youtube@资源分享师 01
+    type: ss
+    server: 163.5.192.18
     port: 443
-    password: rYuChHcwQZskq9E0zdoR
-    sni: vpn5.rnmcnm.com
-    skip-cert-verify: false
-    tls: true
-    ws-opts:
-      path: /ws-79dffb8106db
-      headers:
-        Host: vpn5.rnmcnm.com
+    cipher: chacha20-ietf-poly1305
+    password: Sj2yu7qKPprUmPJoOCgN6q
     udp: true
-  - name: 韩国-youtube@资源分享师 01
+  - name: 法国-youtube@资源分享师 02
+    type: ss
+    server: 163.5.192.18
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: Sj2yu7qKPprUmPJoOCgN6q
+    udp: true
+  - name: 法国-youtube@资源分享师 03
+    type: ss
+    server: 163.5.192.18
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: Sj2yu7qKPprUmPJoOCgN6q
+    udp: true
+  - name: 新加坡-youtube@资源分享师 01
     type: vmess
-    server: yd4.ainivp.com
-    port: 33204
-    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6004
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
     alterId: 0
     cipher: auto
-    tls: true
+    tls: false
     skip-cert-verify: false
-    servername: yd4.ainivp.com
-    network: ws
-    ws-opts:
-      path: /ray
-      headers:
-        Host: yd4.ainivp.com
     udp: true
-  - name: 韩国-youtube@资源分享师 02
+  - name: 新加坡-youtube@资源分享师 02
     type: vmess
-    server: yd4.ainivp.com
-    port: 33204
-    uuid: 9204afcd-026e-781f-1abc-c03efabd1344
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6004
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
     alterId: 0
     cipher: auto
-    tls: true
+    tls: false
     skip-cert-verify: false
-    servername: yd4.ainivp.com
-    network: ws
-    ws-opts:
-      path: /ray
-      headers:
-        Host: yd4.ainivp.com
     udp: true
-  - name: 韩国-youtube@资源分享师 03
+  - name: 新加坡-youtube@资源分享师 03
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6004
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 日本-youtube@资源分享师 01
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6003
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 日本-youtube@资源分享师 02
     type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 60014
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: qq.com
+    server: jp-iij.baipiao0721-dns78655.eu
+    port: 8443
+    password: 008541df-c970-4ee4-9455-fdf15bf1e855
+    sni: gw.alicdn.com
     skip-cert-verify: true
     tls: true
+    udp: true
+    client-fingerprint: chrome
+  - name: 日本-youtube@资源分享师 03
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6003
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 日本-youtube@资源分享师 04
+    type: anytls
+    server: jp-iij.baipiao0721-dns78655.eu
+    port: 8443
+    password: 008541df-c970-4ee4-9455-fdf15bf1e855
+    sni: gw.alicdn.com
+    skip-cert-verify: true
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+  - name: 日本-youtube@资源分享师 05
+    type: vmess
+    server: gtm-sg-cc54q7d1q01.365cloud0285.com
+    port: 6003
+    uuid: a030842a-d29a-4ea9-a776-14fc4b9e102d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: false
+    udp: true
+  - name: 日本-youtube@资源分享师 06
+    type: anytls
+    server: jp-iij.baipiao0721-dns78655.eu
+    port: 8443
+    password: 008541df-c970-4ee4-9455-fdf15bf1e855
+    sni: gw.alicdn.com
+    skip-cert-verify: true
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+  - name: 南非-youtube@资源分享师 01
+    type: ss
+    server: 4.168.201.246
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: OuG7PItcJrf8clK1
+    udp: true
+  - name: 南非-youtube@资源分享师 02
+    type: ss
+    server: 4.168.201.246
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: OuG7PItcJrf8clK1
+    udp: true
+  - name: 南非-youtube@资源分享师 03
+    type: ss
+    server: 4.168.201.246
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: OuG7PItcJrf8clK1
     udp: true
   - name: 瑞典-youtube@资源分享师 01
     type: vless
-    server: 148.253.211.237
+    server: 194.238.57.104
     port: 443
-    uuid: 980231fb-4372-5c81-b696-20aa34d33af0
-    servername: www.microsoft.com
+    uuid: 8046e3a1-83a7-4155-86e4-374153fe66f3
+    servername: www.icloud.com
     tls: true
     flow: xtls-rprx-vision
+    client-fingerprint: chrome
     reality-opts:
-      public-key: 978-Yxgtd3AWTVfiXEQqCstdwrT1qgsgleGPIRGQDl8
-      short-id: bdac121c7debdaba
+      public-key: 56RJlIcxwncUs5m9QSfd3waHxm6vJFBKso5IkMSsyCA
+      short-id: 5d
     udp: true
   - name: 瑞典-youtube@资源分享师 02
     type: vless
@@ -1113,182 +1047,35 @@ proxies:
     udp: true
   - name: 瑞典-youtube@资源分享师 03
     type: vless
-    server: 148.253.211.237
+    server: 194.238.57.104
     port: 443
-    uuid: 980231fb-4372-5c81-b696-20aa34d33af0
-    servername: www.microsoft.com
+    uuid: 8046e3a1-83a7-4155-86e4-374153fe66f3
+    servername: www.icloud.com
     tls: true
     flow: xtls-rprx-vision
     client-fingerprint: chrome
     reality-opts:
-      public-key: 978-Yxgtd3AWTVfiXEQqCstdwrT1qgsgleGPIRGQDl8
-      short-id: bdac121c7debdaba
+      public-key: 56RJlIcxwncUs5m9QSfd3waHxm6vJFBKso5IkMSsyCA
+      short-id: 5d
     udp: true
-  - name: 瑞典-youtube@资源分享师 04
-    type: vless
-    server: swe-8t.freeonline.pro
-    port: 443
-    uuid: "8546145579"
-    servername: www.microsoft.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 978-Yxgtd3AWTVfiXEQqCstdwrT1qgsgleGPIRGQDl8
-      short-id: bdac121c7debdaba
-    udp: true
-  - name: 瑞典-youtube@资源分享师 05
-    type: vless
-    server: swe-8t.freeonline.pro
-    port: 443
-    uuid: 980231fb-4372-5c81-b696-20aa34d33af0
-    servername: www.microsoft.com
-    tls: true
-    flow: xtls-rprx-vision
-    reality-opts:
-      public-key: 978-Yxgtd3AWTVfiXEQqCstdwrT1qgsgleGPIRGQDl8
-      short-id: bdac121c7debdaba
-    udp: true
-  - name: 台湾-youtube@资源分享师 01
-    type: hysteria2
-    server: vpn-tw-002.fastervpn.world
-    port: 443
-    password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-    sni: vpn-tw-002.fastervpn.world
-    skip-cert-verify: true
-    udp: true
-  - name: 台湾-youtube@资源分享师 02
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 59003
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: weipinhui.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 台湾-youtube@资源分享师 03
-    type: trojan
-    server: jpbgp.netvigor.cc
-    port: 19128
-    password: gcuCpQfaiVeDBdWG
-    sni: jpbgp.netvigor.cc
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 台湾-youtube@资源分享师 04
-    type: trojan
-    server: jpbgp.netvigor.cc
-    port: 19128
-    password: gcuCpQfaiVeDBdWG
-    sni: yazhou10.dynu.net
-    skip-cert-verify: false
-    tls: true
-    udp: true
-  - name: 台湾-youtube@资源分享师 05
-    type: vmess
-    server: dotu-twv1.kunlun03dns.com
-    port: 11113
-    uuid: 6b989fce-172e-37a6-b324-3922008b17f9
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: false
-    udp: true
-  - name: 台湾-youtube@资源分享师 06
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 59001
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: jingdong.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 台湾-youtube@资源分享师 07
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 59002
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: jingdong.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 台湾-youtube@资源分享师 08
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 59004
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: pinduoduo.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 台湾-youtube@资源分享师 09
-    type: anytls
-    server: h-k-t.51feitu.com
-    port: 59005
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: tengxun.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 南非-youtube@资源分享师 01
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 60018
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: php.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 土耳其-youtube@资源分享师 01
+  - name: 立陶宛-youtube@资源分享师 01
     type: ss
-    server: 5.230.184.16
+    server: 80.208.229.172
     port: 443
     cipher: chacha20-ietf-poly1305
-    password: 453u6Gcei04NyXbrWLKa0M
+    password: 4LuSQluWs3meAy5vOo7ikZ
     udp: true
-  - name: 意大利-youtube@资源分享师 01
+  - name: 立陶宛-youtube@资源分享师 02
     type: ss
-    server: it5.taskflowhub.org
-    port: 2083
-    cipher: aes-256-gcm
-    password: 34fItyZyz69uIrxkJ+cLR1pdclvG628pv8+fzUNTIC0=
-    udp: true
-  - name: 英国-youtube@资源分享师 01
-    type: vless
-    server: 31.76.120.162
+    server: 80.208.229.172
     port: 443
-    uuid: 05e9d254-8ea8-4097-9450-d4aefc44bd7e
-    servername: www.sony.com
-    tls: true
-    flow: xtls-rprx-vision
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: MBkIKCORF_f5gqwnugFO7K4HUR8HAKPUuYVIarrQNU0
-      short-id: bfc5
-    udp: true
-  - name: 英国-youtube@资源分享师 02
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 60010
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: alibaba.com
-    skip-cert-verify: true
-    tls: true
-    udp: true
-  - name: 乌克兰-youtube@资源分享师 01
-    type: ss
-    server: 130.0.233.100
-    port: 33610
     cipher: chacha20-ietf-poly1305
-    password: GnzWRAJLiobpt0BiiEPLST
+    password: 4LuSQluWs3meAy5vOo7ikZ
     udp: true
-  - name: 阿根廷-youtube@资源分享师 01
-    type: anytls
-    server: ft-cn2.woaitutu520.com
-    port: 60021
-    password: d755c3a2-f025-4af5-ade8-4d3d5c9e1418
-    sni: java.com
-    skip-cert-verify: true
-    tls: true
+  - name: 立陶宛-youtube@资源分享师 03
+    type: ss
+    server: 80.208.229.172
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: 4LuSQluWs3meAy5vOo7ikZ
     udp: true
-  - 
