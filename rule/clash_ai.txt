@@ -1,4 +1,5 @@
 payload:
+# openai
   - DOMAIN,browser-intake-datadoghq.com
   - DOMAIN,chat.openai.com.cdn.cloudflare.net
   - DOMAIN,openai-api.arkoselabs.com
@@ -34,3 +35,19 @@ payload:
   - DOMAIN-SUFFIX,ios.chat.openai.com 
   - DOMAIN-SUFFIX,cdn.oaistatic.com 
   - DOMAIN-SUFFIX,files.oaiusercontent.com
+# Gemini
+- DOMAIN-SUFFIX,gemini.google.com,GEMINI
+- DOMAIN-SUFFIX,google.ai,GEMINI
+- DOMAIN-SUFFIX,makersuite.google.com,GEMINI
+- DOMAIN-SUFFIX,aistudio.google.com,GEMINI
+- DOMAIN-SUFFIX,generativeai.google,GEMINI
+# Grok
+- DOMAIN-SUFFIX,grok.com,GROK
+- DOMAIN-SUFFIX,x.ai,GROK
+- DOMAIN-SUFFIX,api.x.ai,GROK
+- DOMAIN-SUFFIX,accounts.x.ai,GROK
+# X/Twitter
+- DOMAIN-SUFFIX,x.com,GROK
+- DOMAIN-SUFFIX,twitter.com,GROK
+- DOMAIN-SUFFIX,twimg.com,GROK
+- DOMAIN-SUFFIX,t.co,GROK
