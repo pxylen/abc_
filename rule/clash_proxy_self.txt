@@ -100,3 +100,6 @@ payload:
 - DOMAIN-SUFFIX,gvt2.com
 - DOMAIN-SUFFIX,googleusercontent.com
 - DOMAIN-SUFFIX,dl.google.com
+#ip查询
+- DOMAIN-SUFFIX,iplark.com
+- DOMAIN-SUFFIX,ping0.cc
