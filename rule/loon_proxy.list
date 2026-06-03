@@ -1,6 +1,8 @@
 # 代理规则
 
 DOMAIN-SUFFIX,ip138.com
+DOMAIN-SUFFIX,iplark.com
+DOMAIN-SUFFIX,ping0.cc
 DOMAIN-SUFFIX,ipchaxun.com
 
 # Pornhub
