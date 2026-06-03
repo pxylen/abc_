@@ -103,3 +103,4 @@ payload:
 #ip查询
 - DOMAIN-SUFFIX,iplark.com
 - DOMAIN-SUFFIX,ping0.cc
+- DOMAIN-SUFFIX,ipfino.cv
