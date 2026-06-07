@@ -47,7 +47,12 @@ cookie集合：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/task/AllinOne.cook
 
 [@Tom](https://github.com/xl2101200/-) - Tom
 
-IP纯净测试
+[@gxggxl](https://github.com/gxggxl/QuantumultX) - gxggxl
+
+[@passerby-b](https://github.com/passerby-b/JDDJ) - passerby-b
+
+IP纯净测试：
+
 https://ip.net.coffee/claude/
 
 https://iplark.com/
@@ -61,10 +66,4 @@ https://ipip0.net/
 https://ping0.cc/
 
 https://scamalytics.com/
-
-[@gxggxl](https://github.com/gxggxl/QuantumultX) - gxggxl
-
-[@passerby-b](https://github.com/passerby-b/JDDJ) - passerby-b
-
-
 
