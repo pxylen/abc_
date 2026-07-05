@@ -67,3 +67,14 @@ https://ping0.cc/
 
 https://scamalytics.com/
 
+节点池：
+
+Ruk1ng001：https://raw.githubusercontent.com/Ruk1ng001/freeSub/refs/heads/main/clash.yaml  
+
+go4sharing：https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml
+
+anaer：https://raw.githubusercontent.com/anaer/Sub/refs/heads/main/clash.yaml  
+
+ripaojiedian：https://raw.githubusercontent.com/ripaojiedian/freenode/refs/heads/main/clash  
+
+datiya：https://free.datiya.com/  
