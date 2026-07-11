@@ -51,6 +51,8 @@ cookie集合：https://cdn.jsdelivr.net/gh/pxylen/abc_@master/task/AllinOne.cook
 
 [@passerby-b](https://github.com/passerby-b/JDDJ) - passerby-b
 
+[@hwanz](https://github.com/hwanz/SSR-V2ray-Trojan-vpn) - 白嫖机场
+
 IP纯净测试：
 
 https://ip.net.coffee/claude/
