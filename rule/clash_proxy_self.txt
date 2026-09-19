@@ -93,6 +93,7 @@ payload:
 # 其他
   - DOMAIN-SUFFIX,gstatic.com
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com
+  - DOMAIN,wzyun.oadvan.cn
 # Google Play 下载
 - DOMAIN-SUFFIX,play.googleapis.com
 - DOMAIN-SUFFIX,android.clients.google.com
